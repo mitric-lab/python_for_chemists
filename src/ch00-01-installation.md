@@ -80,8 +80,10 @@ comes with the package manager conda while the Mamba distribution has mamba.
 Please install these packages by executing the following commands in your 
 terminal. 
 
-> **Note:** If you are using Windows, execute the commands in Anaconda Prompt 
-> or Miniforge Prompt that comes with your Anaconda or Mambaforge installation.
+```admonish note
+If you are using Windows, execute the commands in Anaconda Prompt 
+or Miniforge Prompt that comes with your Anaconda or Mambaforge installation.
+```
 
 | Library | conda | mamba |
 | ------- | ----- | ----- |
