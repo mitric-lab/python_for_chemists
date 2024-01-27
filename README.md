@@ -1,7 +1,5 @@
 # Programmierkurs für Chemiker
 
-Repository für die Bachelor-Veranstaltung "Programmierkurs für Chemiker" 
-im Sommersemester 2024.
-
-**SHOULD NOT BE PUBLIC!**
+Repository for the bachelor course "Programmierkurs für Chemiker"
+in summer term 2024 at the University of Würzburg.
 
