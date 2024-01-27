@@ -1,0 +1,21 @@
+[book]
+authors = ["Xincheng Miao", "Lasse Kreimendahl"]
+language = "de"
+multilingual = false
+src = "src"
+title = "Programmierkurs für Chemiker"
+
+[output.html]
+mathjax-support = true
+additional-css = [
+    "./theme/catppuccin.css", 
+    "./theme/catppuccin-admonish.css", 
+    "./mdbook-admonish.css",
+]
+
+[preprocessor]
+
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "3.0.2" # do not edit: managed by `mdbook-admonish install`
+

@@ -1,0 +1,15 @@
+# mdbook
+book/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Python
+**/__pycache__/
+**/*.py[cod]
+code/*/.hypothesis
+
+# Mac
+.DS_Store
+*/.DS_Store
+
