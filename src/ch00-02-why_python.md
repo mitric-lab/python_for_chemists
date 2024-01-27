@@ -5,20 +5,20 @@
 #### Popularity
 Python is one of the most widely used programming languages and is particularly beginner-friendly.
 The following figure shows the popularity of some programming languages. 
-![Popularity of Programming languages](figures/00_introduction/popularity_pypl_04_2022.svg)
+![Popularity of Programming languages](figures/00_preface/popularity_pypl_04_2022.svg)
 *Popularity of common programming languages. The popularities are taken
 from the [PYPL index](https://pypl.github.io/PYPL.html)*
 
 #### Requires often fewer lines of code and less work
 Python often requires significantly fewer lines of code to implement 
 the same algorithms than compiled languages such as Java or C/C++. 
-![LOC of PL](figures/00_introduction/loc.png)
+![LOC of PL](figures/00_preface/loc.png)
 *Program length, measured in number of noncomment source lines of code 
 (LOC).*
 
 Moreover, it is often possible to accomplish the same task in significantly 
 less time in a scripting language than it takes using a compiled language. 
-![Hours of work to code](figures/00_introduction/hours.png)
+![Hours of work to code](figures/00_preface/hours.png)
 
 #### But Python is slow!?
 
