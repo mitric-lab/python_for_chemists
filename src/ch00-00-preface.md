@@ -1,22 +1,21 @@
 # Vorwort
 
-**WARNING: Translate and adapt!**
+Liebe Studierende,
 
-Dear Students,
+herzlich willkommen zur Vorlesung "Programmierkurs für Chemiker".
+In dieser Veranstaltung werden Sie die Grundlagen des Programmierens 
+in der Programmiersprache Python kennenlernen und mit Hilfe dieser 
+viele in der Chemie nützliche numerische Algorithmen implementieren.
 
-Welcome to the programming course in theoretical chemistry.
-This class builds on the bachelor lecture 
-"Programming Course for Chemists" and assumes that you are already
-familiar with the basic principles of Python and the numerical 
-algorithms explained there. 
-
-According to current planning, the lecture will take place on
-- every Monday from 10:15 to 11:45 
-
-and
-- every Thursday from 12:15 to 13:45. 
+Die veranstaltung findet
+- dienstags von 10:15 bis 11:45 Uhr
+und
+- donnerstags von 14:15 bis 15:45 Uhr
+statt.
 
 ## Syllabus 
+
+**WARNING: Translate and adapt!**
 
 A preliminary syllabus is shown below. This can and will be continuously 
 updated throughout the semester according to the progress of the lecture.
