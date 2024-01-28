@@ -7,7 +7,7 @@ Wir empfehlen die Verwendung der
 Falls Sie bereits die [Anaconda](https://www.anaconda.com)/Distribution 
 installiert haben, können Sie auch diese problemlos für diese 
 Veranstaltung verwenden.
-Folgen Sie die untenstehenden Anweisungen, um Mamba zu installieren.
+Folgen Sie die untenstehenden Anweisungen, um Miniforge zu installieren.
 Sie sollten eine Python-Version von 3.9 oder höher verwenden.
 
 #### Installation
