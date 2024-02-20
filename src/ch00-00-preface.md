@@ -21,34 +21,34 @@ A preliminary syllabus is shown below. This can and will be continuously
 updated throughout the semester according to the progress of the lecture.
 
 
-| Week|Weekday| Date    | Type         | Topic           |
-|:---:|-------|---------|--------------|-----------------|
-| 1   | Mon.  | April 17 | Lecture      | Fundamentals I  |
-| 1   | Thur. | April 20 | Lecture      | Fundamentals II |
-| 2   | Mon.  | April 24 | Lecture      | SymPy: Basics   |
-| 2   | Thur. | April 27 | Lecture      | SymPy: Applications |
-|~~3~~| ~~Mon.~~ | ~~May 1~~ | ~~Holiday~~ | ~~_Workers' Day_~~ |
-|~~3~~| ~~Thur.~~ | ~~May 4~~ | ~~cancelled~~ |            |
-| 4   | Mon.  | May 8    | Lecture      | Overlap Integral I |
-| 4   | Thur. | May 11   | Exercise     | Exercise 0      |
-| 5   | Mon.  | May 15   | Lecture      | Overlap Integral II |
-|~~5~~| ~~Thur.~~ | ~~May 18~~ | ~~Holiday~~ | ~~_Ascension Day_~~|
-| 6   | Mon.  | May 22   | Lecture      | Molecule Class I |
-| 6   | Thur. | May 25   | Lecture      | Molecule Class II |
-|~~7~~| ~~Mon.~~ | ~~May 29~~  | ~~Holiday~~ | ~~_Whit Monday_~~    |
-| 7   | Thur. | June 1   | Exercise     | Exercise 1      |
-| 8   | Mon.  | June 5   | Lecture      | Nuclear Attraction Integral I |
-|~~8~~| ~~Thur.~~ | ~~Jun. 8~~ | ~~Holiday~~      | ~~_Corpus Christi_~~  |
-| 9   | Mon.  | June 12  | Lecture      | Optimization    |
-| 9   | Thur. | June 15  | Lecture      | Nuclear Attraction Integral II  |
-| 10  | Mon.  | June 19  | Lecture      | Electron Repulsion Integral I   |
-| 10  | Thur. | June 22  | Exercise     | Exercise 2      |
-| 11  | Mon.  | June 26  | Lecture      | Electron Repulsion Integral II  |
-| 11  | Thur. | June 29  | Lecture      ] Hartree-Fock I  |
-| 12  | Mon.  | July 3   | Lecture      | Hartree-Fock II |
-| 12  | Thur. | July 6   | Lecture      | Configuration Interaction Singles |
-| 13  | Mon.  | July 10  | Exercise     | Exercise 3      |
-| 13  | Thur. | July 13  | Lecture      | Second Quantization |
-| 14  | Mon.  | July 17  | Lecture      | Full Configurational Interaction I |
-| 14  | Thur. | July 20  | Lecture      | Full Configurational Interaction II |
+|Woche|Wochentag| Datum  | Typ         | Thema           |
+|:---:|---------|-------|-------------|-----------------|
+|  1  | Di.     | 16.04. | Vorlesung   |                 |
+|  1  | Do.     | 18.04. | Vorlesung   |                 |
+|  2  | Di.     | 23.04. | Vorlesung   |                 |
+|  2  | Do.     | 25.04. | Übung       |                 |
+|  3  | Di.     | 30.04. |             |                 |
+|  3  | Do.     | 02.05. |             |                 |
+|  4  | Di.     | 07.05. |             |                 |
+|~~4~~| ~~Do.~~ | ~~09.05.~~ | ~~Feiertag~~ | ~~_Christi Himmelfahrt_~~ |
+|  5  | Di.     | 14.05. |             |                 |
+|  5  | Do.     | 16.05. |             |                 |
+|  6  | Di.     | 21.05. |             |                 |
+|  6  | Do.     | 23.05. |             |                 |
+|  7  | Di.     | 28.05. |             |                 |
+|~~7~~| ~~Do.~~ | ~~30.05.~~ | ~~Feiertag~~ | ~~_Fronleichnam_~~ |
+|  8  | Di.     | 04.06. |             |                 |
+|  8  | Do.     | 06.06. |             |                 |
+|  9  | Di.     | 11.06. |             |                 |
+|  9  | Do.     | 13.06. |             |                 |
+| 10  | Di.     | 18.06. |             |                 |
+| 10  | Do.     | 20.06. |             |                 |
+| 11  | Di.     | 25.06. |             |                 |
+| 11  | Do.     | 27.06. |             |                 |
+| 12  | Di.     | 02.07. |             |                 |
+| 12  | Do.     | 04.07. |             |                 |
+| 13  | Di.     | 09.07. |             |                 |
+| 13  | Do.     | 11.07. |             |                 |
+| 14  | Di.     | 16.07. |             |                 |
+| 14  | Do.     | 18.07. |             |                 |
 
