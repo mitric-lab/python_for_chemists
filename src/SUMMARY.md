@@ -1,9 +1,9 @@
 # Summary
 
-- [Vorwort](ch00-00-preface.md)
-    - [Installation](ch00-01-installation.md)
-    - [Warum Python?](ch00-02-why_python.md)
-    - [Bedienung dieser Webseite](ch00-03-mdbook_usage.md)
+- [Preface](ch00-00-preface.md)
+    - [Motivation](ch00-01-motivation.md)
+    - [Getting started](ch00-02-getting_started.md)
+    - [Navigating this website](ch00-03-mdbook_usage.md)
 
 ---
 

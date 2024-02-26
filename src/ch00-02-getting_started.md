@@ -88,4 +88,3 @@ mitgeliefert wurde.
 | [pytest](https://docs.pytest.org/en/7.4.x/) | `mamba install pytest` |
 | [ipytest](https://github.com/chmp/ipytest) | `mamba install ipytest` |
 | [Hypothesis](https://hypothesis.readthedocs.io/en/latest/) | `mamba install hypothesis` |
-
