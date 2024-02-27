@@ -1,53 +1,53 @@
 # Motivation
 
-## Warum Python?
+## Why should I learn programming as a chemist?
 
-### Beliebtheit
+In the 21st century, programming is a skill that is becoming increasingly 
+important. This is not only true for computer scientists, but also for
+chemists, physicists, biologists, and many other scientists. The knowledge
+of programming languages can help you to solve a wide range of problems more 
+efficiently and to automate repetitive tasks. In addition, programming languages
+can be used to visualize and analyze data, which is an important part of
+scientific work.
 
-Python ist eine der am weitesten verbreiteten Programmiersprachen und
-besonders anfängerfreundlich.
-Die folgende Abbildung zeigt die Beliebtheit einiger Programmiersprachen
-gemäß des ***P**opularit**Y** of **P**rogramming **L**anguage*
-([PYPL](https://pypl.github.io/PYPL.html)) Indexes (Stand: Jan. 2024).
+## Why Python?
+
+Python is one of the most widely used programming languages and is particularly
+beginner-friendly. The following figure shows the popularity of some programming
+languages according to the ***P**opularit**Y** of **P**rogramming **L**anguage*
+([PYPL](https://pypl.github.io/PYPL.html)) Indexes (as of Jan. 2024). 
 
 ![Popularity of Programming languages](figures/00_preface/popularity_pypl_202401.svg)
-*Beliebtheit von Programmiersprachen. Die Beliebtheiten sind dem
-[PYPL Index](https://pypl.github.io/PYPL.html) entnommen.*
+*Popularity of programming languages. Taken from the 
+[PYPL Index](https://pypl.github.io/PYPL.html).*
 
-### Weniger Code, weniger Arbeit
+One reason for that is that Python often requires significantly less code than compiled languages
+like Java or C/C++ to implement the same algorithms.
 
-Python benötigt oft deutlich weniger Code als kompilierte Sprachen wie
-Java oder C/C++ um die gleichen Algorithmen zu implementieren.
 ![LOC of PL](figures/00_preface/loc.png)
-*Programmlänge, gemessen in der Anzahl der nicht-kommentierten
-Quellcodezeilen* (**L**ines **O**f **C**ode (LOC))*.*
+*Program length, measured in the number of non-commented lines of code (LOC).*
 
-Darüber hinaus ist es oft möglich, die gleiche Aufgabe mit einer 
-Skriptsprache, wie z.B. Python, in deutlich weniger Zeit zu erledigen,
-als mit einer kompilierten Sprache.
+Moreover, it is often possible to accomplish the same task with a scripting language,
+such as Python, in significantly less time than with a compiled language.
+
 ![Hours of work to code](figures/00_preface/hours.png)
-*Entwicklungszeit um eine bestimme Programmieraufgabe zu erledigen, 
-gemessen in Stunden.*
+*Development time to accomplish a certain programming task, measured in hours.*
 
-### Aber Python ist langsam?!
+On the other hand, some people argue that Python is a slow language. This is true
+to some extent. However, let us consider the following points:
 
-Ein häufiges Argument gegen die Verwendung von Python ist, dass es sich
-um eine vergleichsweise langsame Sprache handelt.
-An dieser Aussage ist etwas dran.
-Daher wollen wir uns einen der Gründe dafür ansehen und dann erklären,
-warum (in den meisten Fällen) dies für uns kein Problem darstellt.
+### Python is (also) an interpreted language
 
-#### Python ist (auch) eine interpretierte Sprache
-Python selbst ist ein C-Programm, das zuerst den Quellcode zum sog. 
-[*Bytecode*](https://de.wikipedia.org/wiki/Bytecode) kompiliert
-("übersetzt") und diesen dann interpretiert und ausführt.
-Dies ist im Gegensatz zu kompilierten Sprachen wie C, C++, Rust, etc., 
-bei denen der Quellcode in Maschinencode kompiliert wird. Der Compiler 
-kann dabei viele Optimierungen am Code vornehmen, was zu einer kürzeren
-Laufzeit führt.
-Dieses Verhalten lässt sich an einem einfachen Beispiel zeigen: 
-Eine naive Implementierung, die alle ungeraden Zahlen bis 100 Millionen
-aufsummiert. Diese könnte wie folgt aussehen:
+Python itself is a C program that first compiles the source code into so-called
+[*bytecode*](https://en.wikipedia.org/wiki/Bytecode) and then interprets and executes
+it. This is in contrast to compiled languages like C, C++, Rust, etc., where the source
+code is compiled into machine code. The compiler can perform many optimizations on the
+code, which leads to a shorter runtime. 
+
+~~~admonish example collapsible=true
+This behavior can be shown with a simple example:
+A naive implementation that sums all odd numbers up to 100 million.
+This could look like this:
 
 ```python
 s = 0
@@ -55,12 +55,10 @@ for i in range(100_000_000):
     if i % 2 == 1:
         s += i
 ```
-Dieser Code benötigt auf dem Computer des Autors ca. 8 Sekunden.
-Nun wird der gleiche Algorithmus in einer kompilierten Sprache 
-(in diesem Fall *Rust*) implementiert, um den Einfluss des Compilers 
-zu zeigen. 
-Die Details dieses Codes und die Programmiersprache sind an dieser
-Stelle nicht wichtig.
+
+This code takes about 8 seconds on the author's computer.
+Now, the same algorithm is implemented in a compiled language (in this case *Rust*)
+to show the influence of the compiler.
 
 ```rust,no_run,no_playground
 let mut s: usize = 0;
@@ -71,23 +69,20 @@ for i in 0..100_000_000 {
 }
 ```
 
-Dieser Code hat tatsächlich überhaupt keine Laufzeit und wird sofort
-ausgewertet. Der Compiler ist schlau genug zu verstehen, dass alles zur
-Compile-Zeit berechnet werden kann und ersetzt einfach den Wert für die
-Variable `s`. Dies macht nun deutlich, dass kompilierte Sprachen von
-Methoden profitieren können, die interpretierte Sprachen einfach aufgrund
-ihrer Herangehensweise nicht haben. Wir haben jedoch bereits gesehen,
-dass kompilierte Sprachen in der Regel mehr Codezeilen und mehr Arbeit
-erfordern. Darüber hinaus gibt es in der Regel viel mehr Konzepte in
-kompilierten Sprachen zu lernen.
+This code actually has no runtime at all and is evaluated immediately.
+The compiler is smart enough to understand that everything can be calculated at
+compile time and simply replaces the value for the variable `s`. This now makes
+clear that compiled languages can benefit from methods that interpreted languages
+simply do not have due to their approach. However, we have already seen that
+compiled languages usually require more lines of code and more work. Moreover,
+there are usually many more concepts to learn in compiled languages.
+~~~
 
-#### Python kann sehr performant sein
+### Python can be very performant
 
-Während dieser Veranstaltung werden wir oft Python-Bibliotheken wie NumPy 
-oder SciPy für mathematische Algorithmen und insbesondere lineare Algebra.
-Diese Pakete bringen zwei große Vorteile. Einerseits ermöglichen sie die
-sehr einfache Verwendung komplizierter Algorithmen und andererseits sind
-diese Pakete in kompilierten Sprachen wie C oder Fortran geschrieben.
-Auf diese Weise können wir von den Leistungsvorteilen profitieren,
-ohne eine möglicherweise kompliziertere Sprache lernen zu müssen.
-
+During this course, we will often use Python libraries like NumPy or SciPy for mathematical
+algorithms and especially linear algebra. These packages bring two major advantages.
+On the one hand, they allow the very easy use of complicated algorithms and, on the other
+hand, these packages are written in compiled languages like C or Fortran. This way, we can
+benefit from the performance advantages without having to learn a potentially more complicated
+language.
