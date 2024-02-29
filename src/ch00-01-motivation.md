@@ -7,7 +7,7 @@ important. This is not only true for computer scientists, but also for
 chemists, physicists, biologists, and many other scientists. The knowledge
 of programming languages can help you to solve a wide range of problems more 
 efficiently and to automate repetitive tasks. In addition, programming languages
-can be used to visualize and analyze data, which is an important part of
+can be used to visualise and analyse data, which is an important part of
 scientific work.
 
 ## Why Python?
