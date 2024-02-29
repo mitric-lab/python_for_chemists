@@ -16,13 +16,13 @@ in the seminar room 00.006 of the Institute of Theoretical Chemistry (Campus Hub
 
 A preliminary syllabus is shown below. This can and will be continuously updated throughout the semester according to the progress of the lecture.
 
-|Week|Weekday| Date  | Type        | Topic           |
-|:---:|---------|-------|-------------|-----------------|
-|  1  | Tue.    | 16.04. | Lecture     |                 |
-|  1  | Thu.    | 18.04. | Lecture     |                 |
-|  2  | Tue.    | 23.04. | Lecture     |                 |
-|  2  | Thu.    | 25.04. | Exercise    |                 |
-|  3  | Tue.    | 30.04. |             |                 |
+|Week |Weekday  | Date   | Type        | Topic           |
+|:---:|---------|--------|-------------|-----------------|
+|  1  | Tue.    | 16.04. | Introduction| Course Overview and Installation of Python |
+|  1  | Thu.    | 18.04. | Lecture     | Regression I    |
+|  2  | Tue.    | 23.04. | Lecture     | Regression II   |
+|  2  | Thu.    | 25.04. | Lecture     | Regression III  |
+|  3  | Tue.    | 30.04. | Exercise    | Regression      |
 |  3  | Thu.    | 02.05. |             |                 |
 |  4  | Tue.    | 07.05. |             |                 |
 |  4  | ~~Thu.~~ | ~~09.05.~~ | Holiday | Christi Himmelfahrt |
