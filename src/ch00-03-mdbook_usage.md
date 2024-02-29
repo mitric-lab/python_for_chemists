@@ -1,92 +1,72 @@
-## Bedienung dieser Webseite
+## How to interact with this website
 
-**WARNING: Translate and adapt!**
-
-Dieser Abschnitt gibt eine Einführung in die Bedienung dieses 
-Vorlesungsskripts. Die Inhalte sind in *Kapitel* organisiert und 
-jedes Kapitel stellt eine eigene Seite dar. Die Kapitel sind in einer
-Hierarchie von *Unterkapiteln* organisiert. Typischerweise ist jedes
-Kapitel in eine Reihe von *Überschriften* unterteilt.
+This section gives an introduction on how to interact with the lecture notes.
+These are organized into *chapters*.
+Each chapter is a separate page.
+Chapters are nested into a hierarchy of sub-chapters.
+Typically, each chapter will be organized into a series of *headings* to subdivide a chapter.
 
 ### Navigation
 
-Es gibt mehrere Möglichkeiten, um durch die Kapitel eines Buches zu
-navigieren.
+There are several methods for navigating through the chapters of a book.
 
-Die **Seitenleiste** auf der linken Seite bietet eine Liste aller
-Kapitel. Wenn Sie auf einen der Kapiteltitel klicken, wird diese Seite
-geladen.
+The **sidebar** on the left provides a list of all chapters.
+Clicking on any of the chapter titles will load that page.
 
-Die Seitenleiste erscheint möglicherweise nicht automatisch, wenn das
-Fenster zu schmal ist, insbesondere auf Mobilgeräten. In diesem
-Fall kann das Menüsymbol (drei horizontale Balken) oben links auf der
-Seite gedrückt werden, um die Seitenleiste zu öffnen und zu schließen.
+The sidebar may not automatically appear if the window is too narrow, particularly on mobile displays.
+In that situation, the menu icon (three horizontal bars) at the top-left of the page can be pressed to open and close the sidebar.
 
-Die **Pfeilschaltflächen** links und rechts mittig auf der Seite können 
-verwendet werden, um zum vorherigen oder nächsten Kapitel zu navigieren.
+The **arrow buttons** at the bottom of the page can be used to navigate to the previous or the next chapter.
 
-Die **Pfeiltasten** links und rechts auf der Tastatur können verwendet
-werden, um zum vorherigen oder nächsten Kapitel zu navigieren.
+The **left and right arrow keys** on the keyboard can be used to navigate to the previous or the next chapter.
 
-### Top-Menüleiste
+### Top menu bar
 
-Die Menüleiste oben auf der Seite bietet einige Symbole zur Interaktion
-mit dem Skript.
+The menu bar at the top of the page provides some icons for interacting with the notes.
 
-| Icon | Beschreibung |
+| Icon | Description |
 |------|-------------|
-| <i class="fa fa-bars"></i> | Öffnet und schließt die Seitenleiste. |
-| <i class="fa fa-paint-brush"></i> | Öffnet eine Dropdown-Liste, um ein anderes Farbschema auszuwählen. |
-| <i class="fa fa-search"></i> | Öffnet eine Suchleiste zum Suchen im Buch. |
-| <i class="fa fa-print"></i> | Fordert den Webbrowser auf, das Skript für den Druck zu formatieren. |
+| <i class="fa fa-bars"></i> | Opens and closes the chapter listing sidebar. |
+| <i class="fa fa-paint-brush"></i> | Opens a picker to choose a different color theme. |
+| <i class="fa fa-search"></i> | Opens a search bar for searching within the book. |
+| <i class="fa fa-print"></i> | Instructs the web browser to print the set of notes. |
 
-Das Tippen auf die Menüleiste scrollt die Seite nach oben.
+Tapping the menu bar will scroll the page to the top.
 
-### Suchen
+### Search
 
-Dieses Vorlesungsskript verfügt über ein integriertes Suchsystem.
-Durch Drücken des Suchsymbols (<i class="fa fa-search"></i>) in der
-Menüleiste oder Drücken der Taste `S` auf der Tastatur wird ein
-Eingabefeld zum Eingeben von Suchbegriffen geöffnet.
-Das Eingeben von Begriffen zeigt dann übereinstimmende Kapitel und
-Abschnitte in Echtzeit an.
+The lecture notes have a built-in search system.
+Pressing the search icon (<i class="fa fa-search"></i>) in the menu bar or pressing the `S` key on the keyboard will open an input box for entering search terms.
+Typing any terms will show matching chapters and sections in real time.
 
-Durch Klicken auf eines der Ergebnisse können Sie zu diesem Abschnitt
-wechseln. Die Pfeiltasten nach oben und unten können verwendet werden,
-um die Ergebnisse zu durchsuchen, und die Eingabetaste öffnet den
-hervorgehobenen Abschnitt.
+Clicking any of the results will jump to that section.
+The up and down arrow keys can be used to navigate the results, and enter will open the highlighted section.
 
-Nach dem Laden eines Suchergebnisses werden die übereinstimmenden
-Suchbegriffe im Text hervorgehoben. Durch Klicken auf ein hervorgehobenes
-Wort oder Drücken der Taste `Esc` wird die Hervorhebung entfernt.
+After loading a search result, the matching search terms will be highlighted in the text.
+Clicking a highlighted word or pressing the `Esc` key will remove the highlighting.
 
-### Codeblöcke
+### Code blocks
 
-Codeblöcke enthalten ein Kopiersymbol <i class="fa fa-copy"></i>, das den
-Codeblock in die lokale Zwischenablage kopiert.
+Code blocks contain a copy icon <i class="fa fa-copy"></i>, that copies the code block into your local clipboard. 
 
-Hier ist ein Beispiel:
+Here's an example:
 
 ```python
 print("Hello, World!")
 ```
 
-Oft wird die Anweisung `assert` in Codebeispielen verwendet, um Ihnen
-den Wert einer Variablen zu zeigen. Da die Codeblöcke in diesem Dokument
-nicht interaktiv sind (Sie können sie nicht einfach in Ihrem Browser
-ausführen), ist es nicht möglich, den Wert der Variablen auf dem Bildschirm
-anzuzeigen. Daher stellen wir sicher, dass alle Codeblöcke in diesem
-Skript ohne Fehler ausgeführt werden können, wenn es nicht anders 
-angegeben ist. Auf diese Weise können wir den Wert einer Variablen durch
-die Verwendung von `assert` darstellen. Das folgende Codebeispiel zeigt
-beispielsweise, dass die Variable `a` den Wert 2 hat:
-
+We will often use the `assert` statement in code listings to show you
+the value of a variable. Since the code blocks in this document are not
+interactive  (you can not simply execute them in your browser), it is
+not possible to print the value of the variable to the screen. 
+Therefore, we ensure for you that all code blocks in these lecture notes 
+run without errors and in this way we can represent the value of a
+variable through the use of `assert`. 
+The following code block for example shows that the variable `a` has
+the value 2:
 ```python
 a = 2
 assert a == 2
 ```
-
-Die `assert`-Anweisung überprüft, ob die Bedingung, die ihr übergeben
-wird, `True` ist. Wenn die Bedingung `False` ist, wird eine
-`AssertionError`-Ausnahme ausgelöst. 
-
+If the condition would evaluate to `False`, the `assert` statement would
+raise an `AssertionError`. 
