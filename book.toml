@@ -5,15 +5,20 @@ multilingual = false
 src = "src"
 title = "Programming Course for Chemists"
 
+[build]
+extra-watch-dirs = ["po"]
+
 [output.html]
 mathjax-support = true
 additional-css = [
     "./theme/catppuccin.css", 
     "./theme/catppuccin-admonish.css", 
     "./mdbook-admonish.css",
+    "./theme/css/language-picker.css",
 ]
 
-[preprocessor]
+[preprocessor.gettext]
+after = ["links"]
 
 [preprocessor.admonish]
 command = "mdbook-admonish"

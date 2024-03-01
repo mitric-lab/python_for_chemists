@@ -1,6 +1,6 @@
-# Motivation
+## Motivation
 
-## Why should I learn programming as a chemist?
+### Why should I learn programming as a chemist?
 
 In the 21st century, programming is a skill that is becoming increasingly 
 important. This is not only true for computer scientists, but also for
@@ -10,33 +10,33 @@ efficiently and to automate repetitive tasks. In addition, programming languages
 can be used to visualise and analyse data, which is an important part of
 scientific work.
 
-## Why Python?
+### Why Python?
 
 Python is one of the most widely used programming languages and is particularly
 beginner-friendly. The following figure shows the popularity of some programming
-languages according to the ***P**opularit**Y** of **P**rogramming **L**anguage*
+languages according to the <i>**P**opularit**Y** of **P**rogramming **L**anguage</i>
 ([PYPL](https://pypl.github.io/PYPL.html)) Indexes (as of Jan. 2024). 
 
-![Popularity of Programming languages](figures/00_preface/popularity_pypl_202401.svg)
+![Popularity of Programming languages](../assets/figures/00-preface/popularity_pypl_202401.svg)
 *Popularity of programming languages. Taken from the 
 [PYPL Index](https://pypl.github.io/PYPL.html).*
 
 One reason for that is that Python often requires significantly less code than compiled languages
 like Java or C/C++ to implement the same algorithms.
 
-![LOC of PL](figures/00_preface/loc.png)
+![LOC of PL](../assets/figures/00-preface/loc.png)
 *Program length, measured in the number of non-commented lines of code (LOC).*
 
 Moreover, it is often possible to accomplish the same task with a scripting language,
 such as Python, in significantly less time than with a compiled language.
 
-![Hours of work to code](figures/00_preface/hours.png)
+![Hours of work to code](../assets/figures/00-preface/hours.png)
 *Development time to accomplish a certain programming task, measured in hours.*
 
 On the other hand, some people argue that Python is a slow language. This is true
 to some extent. However, let us consider the following points:
 
-### Python is (also) an interpreted language
+#### Python is (also) an interpreted language
 
 Python itself is a C program that first compiles the source code into so-called
 [*bytecode*](https://en.wikipedia.org/wiki/Bytecode) and then interprets and executes
@@ -78,7 +78,7 @@ compiled languages usually require more lines of code and more work. Moreover,
 there are usually many more concepts to learn in compiled languages.
 ~~~
 
-### Python can be very performant
+#### Python can be very performant
 
 During this course, we will often use Python libraries like NumPy or SciPy for mathematical
 algorithms and especially linear algebra. These packages bring two major advantages.

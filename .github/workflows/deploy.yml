@@ -29,7 +29,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      MDBOOK_VERSION: 0.4.36
+      MDBOOK_VERSION: 0.4.37
     steps:
       - uses: actions/checkout@v4
       - name: Install mdBook
@@ -39,13 +39,16 @@ jobs:
           cargo install --version ${MDBOOK_VERSION} mdbook
       - name: Install mdBook preprocessors
         run: |
-          cargo install mdbook-admonish --vers "1.15.0" --locked
+          cargo install mdbook-admonish --locked --version 1.15.0
           mdbook-admonish install .
+          cargo install mdbook-i18n-helpers --locked --version 0.3.2
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
       - name: Build with mdBook
-        run: mdbook build
+        run: |
+          mdbook build
+          MDBOOK_BOOK__LANGUAGE=de mdbook build -d book/de
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
