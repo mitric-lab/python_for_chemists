@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Programming Course for Chemists\n"
-"POT-Creation-Date: 2024-03-01T14:29:56+01:00\n"
+"POT-Creation-Date: 2024-03-01T21:32:20+01:00\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -13,38 +13,42 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/SUMMARY.md:1
+msgid "SUMMARY"
+msgstr ""
+
+#: src/SUMMARY.md:3
 msgid "Table of Contents"
 msgstr ""
 
-#: src/SUMMARY.md:3 src/00-preface.md:1
+#: src/SUMMARY.md:5 src/00-preface.md:1
 msgid "Preface"
 msgstr ""
 
-#: src/SUMMARY.md:4 src/00-preface/01-motivation.md:1
+#: src/SUMMARY.md:6 src/00-preface/01-motivation.md:1
 msgid "Motivation"
 msgstr ""
 
-#: src/SUMMARY.md:5
+#: src/SUMMARY.md:7
 msgid "Getting started"
 msgstr ""
 
-#: src/SUMMARY.md:6
+#: src/SUMMARY.md:8
 msgid "Navigating this website"
 msgstr ""
 
-#: src/SUMMARY.md:9 src/01-regression.md:1
+#: src/SUMMARY.md:12 src/01-regression.md:1
 msgid "Regression Analysis"
 msgstr ""
 
-#: src/SUMMARY.md:10 src/01-regression/01-linear_regression.md:1
+#: src/SUMMARY.md:13 src/01-regression/01-linear_regression.md:1
 msgid "Linear Regression"
 msgstr ""
 
-#: src/SUMMARY.md:11 src/01-regression/02-nonlinear_regression.md:1
+#: src/SUMMARY.md:14 src/01-regression/02-nonlinear_regression.md:1
 msgid "Nonlinear Regression"
 msgstr ""
 
-#: src/SUMMARY.md:12 src/01-regression/03-numerical_optimisation.md:1
+#: src/SUMMARY.md:15 src/01-regression/03-numerical_optimisation.md:1
 msgid "Numerical Optimisation"
 msgstr ""
 
@@ -361,15 +365,21 @@ msgstr ""
 msgid ""
 "Python is one of the most widely used programming languages and is "
 "particularly beginner-friendly. The following figure shows the popularity of "
-"some programming languages according to the _**P**opularit**Y** of "
-"**P**rogramming **L**anguage_ ([PYPL](https://pypl.github.io/PYPL.html)) "
-"Indexes (as of Jan. 2024). "
+"some programming languages according to the "
+msgstr ""
+
+#: src/00-preface/01-motivation.md:17
+msgid "**P**opularit**Y** of **P**rogramming **L**anguage"
+msgstr ""
+
+#: src/00-preface/01-motivation.md:17
+msgid " ([PYPL](https://pypl.github.io/PYPL.html)) Indexes (as of Jan. 2024). "
 msgstr ""
 
 #: src/00-preface/01-motivation.md:20
 msgid ""
 "![Popularity of Programming "
-"languages](../assets/figures/00_preface/popularity_pypl_202401.svg) "
+"languages](../assets/figures/00-preface/popularity_pypl_202401.svg) "
 "_Popularity of programming languages. Taken from the  [PYPL "
 "Index](https://pypl.github.io/PYPL.html)._"
 msgstr ""
@@ -382,7 +392,7 @@ msgstr ""
 
 #: src/00-preface/01-motivation.md:27
 msgid ""
-"![LOC of PL](../assets/figures/00_preface/loc.png) _Program length, measured "
+"![LOC of PL](../assets/figures/00-preface/loc.png) _Program length, measured "
 "in the number of non-commented lines of code (LOC)._"
 msgstr ""
 
@@ -395,8 +405,9 @@ msgstr ""
 
 #: src/00-preface/01-motivation.md:33
 msgid ""
-"![Hours of work to code](..assets/figures/00_preface/hours.png) _Development "
-"time to accomplish a certain programming task, measured in hours._"
+"![Hours of work to code](../assets/figures/00-preface/hours.png) "
+"_Development time to accomplish a certain programming task, measured in "
+"hours._"
 msgstr ""
 
 #: src/00-preface/01-motivation.md:36
@@ -777,10 +788,6 @@ msgstr ""
 msgid "Here's an example:"
 msgstr ""
 
-#: src/00-preface/03-mdbook_usage.md:55
-msgid "\"Hello, World!\""
-msgstr ""
-
 #: src/00-preface/03-mdbook_usage.md:58
 msgid ""
 "We will often use the `assert` statement in code listings to show you the "
@@ -793,7 +800,7 @@ msgid ""
 "variable `a` has the value 2:"
 msgstr ""
 
-#: src/00-preface/03-mdbook_usage.md:71
+#: src/00-preface/03-mdbook_usage.md:73
 msgid ""
 "If the condition would evaluate to `False`, the `assert` statement would "
 "raise an `AssertionError`. "
@@ -801,6 +808,7 @@ msgstr ""
 
 #: src/01-regression.md:3 src/01-regression/01-linear_regression.md:3
 #: src/01-regression/02-nonlinear_regression.md:3
+#: src/01-regression/03-numerical_optimisation.md:3
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor  "
 "incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis  "

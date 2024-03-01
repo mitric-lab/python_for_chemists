@@ -50,7 +50,7 @@ Clicking a highlighted word or pressing the `Esc` key will remove the highlighti
 Code blocks contain a copy icon <i class="fa fa-copy"></i>, that copies the code block into your local clipboard. 
 
 Here's an example:
-
+<!-- mdbook-xgettext:skip -->
 ```python
 print("Hello, World!")
 ```
@@ -64,9 +64,11 @@ run without errors and in this way we can represent the value of a
 variable through the use of `assert`. 
 The following code block for example shows that the variable `a` has
 the value 2:
+<!-- mdbook-xgettext:skip -->
 ```python
 a = 2
 assert a == 2
 ```
+
 If the condition would evaluate to `False`, the `assert` statement would
 raise an `AssertionError`. 
