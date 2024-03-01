@@ -16,7 +16,7 @@ Clicking on any of the chapter titles will load that page.
 The sidebar may not automatically appear if the window is too narrow, particularly on mobile displays.
 In that situation, the menu icon (three horizontal bars) at the top-left of the page can be pressed to open and close the sidebar.
 
-The **arrow buttons** at the bottom of the page can be used to navigate to the previous or the next chapter.
+The **arrow buttons** left and right to the page can be used to navigate to the previous or the next chapter.
 
 The **left and right arrow keys** on the keyboard can be used to navigate to the previous or the next chapter.
 

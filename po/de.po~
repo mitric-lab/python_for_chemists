@@ -1,0 +1,944 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Programming Course for Chemists\n"
+"POT-Creation-Date: 2024-03-01T13:55:25+01:00\n"
+"PO-Revision-Date: 2024-03-01 14:29+0100\n"
+"Last-Translator: Xincheng Miao <xincheng.miao@uni-wuerzburg.de>\n"
+"Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#: src/SUMMARY.md:1
+msgid "Table of Contents"
+msgstr "Inhaltsverzeichnis"
+
+#: src/SUMMARY.md:3 src/00-preface.md:1
+msgid "Preface"
+msgstr "Vorwort"
+
+#: src/SUMMARY.md:4 src/00-preface/01-motivation.md:1
+msgid "Motivation"
+msgstr "Motivation"
+
+#: src/SUMMARY.md:5
+msgid "Getting started"
+msgstr "Erste Schritte"
+
+#: src/SUMMARY.md:6
+msgid "Navigating this website"
+msgstr "Navigieren auf dieser Website"
+
+#: src/SUMMARY.md:9
+msgid "Regression Analysis"
+msgstr "Regressionsanalyse"
+
+#: src/SUMMARY.md:10 src/01-regression/01-linear_regression.md:1
+msgid "Linear Regression"
+msgstr "Lineare Regression"
+
+#: src/SUMMARY.md:11 src/01-regression/02-nonlinear_regression.md:1
+msgid "Nonlinear Regression"
+msgstr "Nichtlineare Regression"
+
+#: src/SUMMARY.md:12 src/01-regression/03-numerical_optimisation.md:1
+msgid "Numerical Optimisation"
+msgstr "Numerische Optimierung"
+
+#: src/00-preface.md:3
+msgid "Dear students,"
+msgstr "Liebe Studierende,"
+
+#: src/00-preface.md:5
+msgid ""
+"welcome to the lecture \"Programming Course for Chemists\". In this course, "
+"you will learn the basics of programming in the Python programming language "
+"and implement many useful numerical algorithms for chemistry."
+msgstr ""
+"herzlich willkommen zur Vorlesung „Programmierkurs für Chemiker“. In diesem "
+"Kurs werden Sie die Grundlagen der Programmierung in der Programmiersprache "
+"Python erlernen und viele nützliche Algorithmen für die Chemie implementieren."
+
+#: src/00-preface.md:8
+msgid "The course takes place"
+msgstr "Der Kurs findet"
+
+#: src/00-preface.md:9
+msgid "on Tuesdays from 10:15 to 11:45 am and"
+msgstr "dienstags von 10:15 bis 11:45 Uhr und"
+
+#: src/00-preface.md:11
+msgid "on Thursdays from 2:15 to 3:45 pm"
+msgstr "donnerstags von 14:15 bis 15:45 Uhr"
+
+#: src/00-preface.md:13
+msgid ""
+"in the seminar room 00.006 of the Institute of Theoretical Chemistry (Campus "
+"Hubland Nord)."
+msgstr ""
+"im Seminarraum 00.006 des Instituts für Theoretische Chemie (Campus Hubland "
+"Nord) statt."
+
+#: src/00-preface.md:15
+msgid "Syllabus"
+msgstr "Syllabus"
+
+#: src/00-preface.md:17
+msgid ""
+"A preliminary syllabus is shown below. This can and will be continuously "
+"updated throughout the semester according to the progress of the lecture."
+msgstr ""
+"Ein vorläufiger Syllabus ist unten aufgeführt. Diese kann und wird im Laufe "
+"des Semesters entsprechend dem Fortschritt der Vorlesung aktualisiert."
+
+#: src/00-preface.md:19
+msgid "Week"
+msgstr "Woche"
+
+#: src/00-preface.md:19
+msgid "Weekday"
+msgstr "Wochentag"
+
+#: src/00-preface.md:19
+msgid "Date"
+msgstr "Datum"
+
+#: src/00-preface.md:19
+msgid "Type"
+msgstr "Typ"
+
+#: src/00-preface.md:19
+msgid "Topic"
+msgstr "Thema"
+
+#: src/00-preface.md:21 src/00-preface.md:22
+msgid "1"
+msgstr "1"
+
+#: src/00-preface.md:21 src/00-preface.md:23 src/00-preface.md:25
+#: src/00-preface.md:27 src/00-preface.md:29 src/00-preface.md:31
+#: src/00-preface.md:33 src/00-preface.md:35 src/00-preface.md:37
+#: src/00-preface.md:39 src/00-preface.md:41 src/00-preface.md:43
+#: src/00-preface.md:45 src/00-preface.md:47
+msgid "Tue."
+msgstr "Di."
+
+#: src/00-preface.md:21
+msgid "16.04."
+msgstr "16.04."
+
+#: src/00-preface.md:21
+msgid "Introduction"
+msgstr "Einführung"
+
+#: src/00-preface.md:21
+msgid "Course Overview and Installation of Python"
+msgstr "Kursübersicht und Installation von Python"
+
+#: src/00-preface.md:22 src/00-preface.md:24 src/00-preface.md:26
+#: src/00-preface.md:30 src/00-preface.md:32 src/00-preface.md:36
+#: src/00-preface.md:38 src/00-preface.md:40 src/00-preface.md:42
+#: src/00-preface.md:44 src/00-preface.md:46 src/00-preface.md:48
+msgid "Thu."
+msgstr "Do."
+
+#: src/00-preface.md:22
+msgid "18.04."
+msgstr "18.04."
+
+#: src/00-preface.md:22 src/00-preface.md:23 src/00-preface.md:24
+msgid "Lecture"
+msgstr "Vorlesung"
+
+#: src/00-preface.md:22
+msgid "Regression I"
+msgstr "Regression I"
+
+#: src/00-preface.md:23 src/00-preface.md:24
+msgid "2"
+msgstr "2"
+
+#: src/00-preface.md:23
+msgid "23.04."
+msgstr "23.04."
+
+#: src/00-preface.md:23
+msgid "Regression II"
+msgstr "Regression II"
+
+#: src/00-preface.md:24
+msgid "25.04."
+msgstr "25.04."
+
+#: src/00-preface.md:24
+msgid "Regression III"
+msgstr "Regression III"
+
+#: src/00-preface.md:25 src/00-preface.md:26
+msgid "3"
+msgstr "3"
+
+#: src/00-preface.md:25
+msgid "30.04."
+msgstr "30.04."
+
+#: src/00-preface.md:25
+msgid "Exercise"
+msgstr "Übung"
+
+#: src/00-preface.md:25
+msgid "Regression"
+msgstr "Regression"
+
+#: src/00-preface.md:26
+msgid "02.05."
+msgstr "02.05."
+
+#: src/00-preface.md:27 src/00-preface.md:28
+msgid "4"
+msgstr "4"
+
+#: src/00-preface.md:27
+msgid "07.05."
+msgstr "07.05."
+
+#: src/00-preface.md:28 src/00-preface.md:34
+msgid "~~Thu.~~"
+msgstr "~~Do.~~"
+
+#: src/00-preface.md:28
+msgid "~~09.05.~~"
+msgstr "~~09.05.~~"
+
+#: src/00-preface.md:28 src/00-preface.md:34
+msgid "Holiday"
+msgstr "Feiertag"
+
+#: src/00-preface.md:28
+msgid "Christi Himmelfahrt"
+msgstr "Christi Himmelfahrt"
+
+#: src/00-preface.md:29 src/00-preface.md:30
+msgid "5"
+msgstr "5"
+
+#: src/00-preface.md:29
+msgid "14.05."
+msgstr "14.05."
+
+#: src/00-preface.md:30
+msgid "16.05."
+msgstr "16.05."
+
+#: src/00-preface.md:31 src/00-preface.md:32
+msgid "6"
+msgstr "6"
+
+#: src/00-preface.md:31
+msgid "21.05."
+msgstr "21.05."
+
+#: src/00-preface.md:32
+msgid "23.05."
+msgstr "23.05."
+
+#: src/00-preface.md:33 src/00-preface.md:34
+msgid "7"
+msgstr "7"
+
+#: src/00-preface.md:33
+msgid "28.05."
+msgstr "28.05."
+
+#: src/00-preface.md:34
+msgid "~~30.05.~~"
+msgstr "~~30.05.~~"
+
+#: src/00-preface.md:34
+msgid "Fronleichnam"
+msgstr "Fronleichnam"
+
+#: src/00-preface.md:35 src/00-preface.md:36
+msgid "8"
+msgstr "8"
+
+#: src/00-preface.md:35
+msgid "04.06."
+msgstr "04.06."
+
+#: src/00-preface.md:36
+msgid "06.06."
+msgstr "06.06."
+
+#: src/00-preface.md:37 src/00-preface.md:38
+msgid "9"
+msgstr "9"
+
+#: src/00-preface.md:37
+msgid "11.06."
+msgstr "11.06."
+
+#: src/00-preface.md:38
+msgid "13.06."
+msgstr "13.06."
+
+#: src/00-preface.md:39 src/00-preface.md:40
+msgid "10"
+msgstr "10"
+
+#: src/00-preface.md:39
+msgid "18.06."
+msgstr "18.06."
+
+#: src/00-preface.md:40
+msgid "20.06."
+msgstr "20.06."
+
+#: src/00-preface.md:41 src/00-preface.md:42
+msgid "11"
+msgstr "11"
+
+#: src/00-preface.md:41
+msgid "25.06."
+msgstr "25.06."
+
+#: src/00-preface.md:42
+msgid "27.06."
+msgstr "27.06."
+
+#: src/00-preface.md:43 src/00-preface.md:44
+msgid "12"
+msgstr "12"
+
+#: src/00-preface.md:43
+msgid "02.07."
+msgstr "02.07."
+
+#: src/00-preface.md:44
+msgid "04.07."
+msgstr "04.07."
+
+#: src/00-preface.md:45 src/00-preface.md:46
+msgid "13"
+msgstr "13"
+
+#: src/00-preface.md:45
+msgid "09.07."
+msgstr "09.07."
+
+#: src/00-preface.md:46
+msgid "11.07."
+msgstr "11.07."
+
+#: src/00-preface.md:47 src/00-preface.md:48
+msgid "14"
+msgstr "14"
+
+#: src/00-preface.md:47
+msgid "16.07."
+msgstr "16.07."
+
+#: src/00-preface.md:48
+msgid "18.07."
+msgstr "18.07."
+
+#: src/00-preface/01-motivation.md:3
+msgid "Why should I learn programming as a chemist?"
+msgstr "Warum sollte ich als Chemiker:in Programmieren lernen?"
+
+#: src/00-preface/01-motivation.md:5
+msgid ""
+"In the 21st century, programming is a skill that is becoming increasingly  "
+"important. This is not only true for computer scientists, but also for "
+"chemists, physicists, biologists, and many other scientists. The knowledge of "
+"programming languages can help you to solve a wide range of problems more  "
+"efficiently and to automate repetitive tasks. In addition, programming "
+"languages can be used to visualise and analyse data, which is an important "
+"part of scientific work."
+msgstr ""
+"Im 21. Jahrhundert ist Programmieren eine Fähigkeit, die immer wichtiger wird. "
+"Das gilt nicht nur für Informatiker:innen, sondern auch für Chemiker:innen, "
+"Physiker:innen, Biolog:innen und viele andere Menschen in der "
+"Naturwissenschaft. Die Kenntnis von Programmiersprachen kann Ihnen dabei "
+"helfen, vielfältige Probleme effizienter zu lösen und sich wiederholende "
+"Aufgaben zu automatisieren. Darüber hinaus können Programmiersprachen zur "
+"Visualisierung und Analyse von Daten eingesetzt werden, was ein wichtiger "
+"Bestandteil wissenschaftlicher Arbeit ist."
+
+#: src/00-preface/01-motivation.md:13
+msgid "Why Python?"
+msgstr "Warum Python?"
+
+#: src/00-preface/01-motivation.md:15
+msgid ""
+"Python is one of the most widely used programming languages and is "
+"particularly beginner-friendly. The following figure shows the popularity of "
+"some programming languages according to the _**P**opularit**Y** of "
+"**P**rogramming **L**anguage_ ([PYPL](https://pypl.github.io/PYPL.html)) "
+"Indexes (as of Jan. 2024). "
+msgstr ""
+"Python ist eine der am weitesten verbreiteten Programmiersprachen und ist "
+"besonders anfängerfreundlich. Die folgende Abbildung zeigt die Beliebtheit "
+"einiger Programmiersprachen gemäß dem _**P**Popularit**Y** of **P**rogramming "
+"**L**anguage_ ([PYPL](https://pypl.github.io/PYPL.html)) Index (Stand: Jan. "
+"2024). "
+
+#: src/00-preface/01-motivation.md:20
+msgid ""
+"![Popularity of Programming languages](../assets/figures/00_preface/"
+"popularity_pypl_202401.svg) _Popularity of programming languages. Taken from "
+"the  [PYPL Index](https://pypl.github.io/PYPL.html)._"
+msgstr ""
+"![Beliebtheit von Programmiersprachen](../assets/figures/00_preface/"
+"popularity_pypl_202401.svg) _Beliebtheit von Programmiersprachen. Entnommen "
+"aus dem [PYPL-Index](https://pypl.github.io/PYPL.html)._"
+
+#: src/00-preface/01-motivation.md:24
+msgid ""
+"One reason for that is that Python often requires significantly less code than "
+"compiled languages like Java or C/C++ to implement the same algorithms."
+msgstr ""
+"Ein Grund dafür ist, dass Python zur Implementierung derselben Algorithmen oft "
+"deutlich weniger Code benötigt als kompilierte Sprachen wie Java oder C/C++."
+
+#: src/00-preface/01-motivation.md:27
+msgid ""
+"![LOC of PL](../assets/figures/00_preface/loc.png) _Program length, measured "
+"in the number of non-commented lines of code (LOC)._"
+msgstr ""
+"![LOC von PL](../assets/figures/00_preface/loc.png) _Programmlänge, gemessen "
+"in der Anzahl der nicht kommentierten Codezeilen (LOC)._"
+
+#: src/00-preface/01-motivation.md:30
+msgid ""
+"Moreover, it is often possible to accomplish the same task with a scripting "
+"language, such as Python, in significantly less time than with a compiled "
+"language."
+msgstr ""
+"Darüber hinaus ist es oft möglich, dieselbe Aufgabe mit einer Skriptsprache "
+"wie Python in deutlich kürzerer Zeit zu erledigen als mit einer kompilierten "
+"Sprache."
+
+#: src/00-preface/01-motivation.md:33
+msgid ""
+"![Hours of work to code](..assets/figures/00_preface/hours.png) _Development "
+"time to accomplish a certain programming task, measured in hours._"
+msgstr ""
+"![Arbeitsstunden zum Coden](..assets/figures/00_preface/hours.png) "
+"_Entwicklungszeit zur Durchführung einer bestimmten Programmieraufgabe, "
+"gemessen in Stunden._"
+
+#: src/00-preface/01-motivation.md:36
+msgid ""
+"On the other hand, some people argue that Python is a slow language. This is "
+"true to some extent. However, let us consider the following points:"
+msgstr ""
+"Andererseits argumentieren einige Leute, dass Python eine langsame Sprache "
+"sei. Das stimmt bis zu einem gewissen Grad. Betrachten wir jedoch folgende "
+"Punkte:"
+
+#: src/00-preface/01-motivation.md:39
+msgid "Python is (also) an interpreted language"
+msgstr "Python ist (auch) eine interpretierte Sprache"
+
+#: src/00-preface/01-motivation.md:41
+msgid ""
+"Python itself is a C program that first compiles the source code into so-"
+"called [_bytecode_](https://en.wikipedia.org/wiki/Bytecode) and then "
+"interprets and executes it. This is in contrast to compiled languages like C, "
+"C++, Rust, etc., where the source code is compiled into machine code. The "
+"compiler can perform many optimizations on the code, which leads to a shorter "
+"runtime. "
+msgstr ""
+"Python selbst ist ein C-Programm, das den Quellcode zunächst in sogenannten "
+"[_bytecode_](https://de.wikipedia.org/wiki/Bytecode) kompiliert und diesen "
+"dann interpretiert und ausführt. Dies steht im Gegensatz zu kompilierten "
+"Sprachen wie C, C++, Rust usw., bei denen der Quellcode in Maschinencode "
+"kompiliert wird. Der Compiler kann viele Optimierungen am Code vornehmen, was "
+"zu einer kürzeren Laufzeit führt. "
+
+#: src/00-preface/01-motivation.md:81
+msgid "Python can be very performant"
+msgstr "Python kann sehr leistungsfähig sein"
+
+#: src/00-preface/01-motivation.md:83
+msgid ""
+"During this course, we will often use Python libraries like NumPy or SciPy for "
+"mathematical algorithms and especially linear algebra. These packages bring "
+"two major advantages. On the one hand, they allow the very easy use of "
+"complicated algorithms and, on the other hand, these packages are written in "
+"compiled languages like C or Fortran. This way, we can benefit from the "
+"performance advantages without having to learn a potentially more complicated "
+"language."
+msgstr ""
+"In diesem Kurs werden wir häufig Python-Bibliotheken wie NumPy oder SciPy für "
+"mathematische Algorithmen und insbesondere für die lineare Algebra verwenden. "
+"Diese Pakete bringen zwei große Vorteile mit sich. Einerseits erlauben sie die "
+"sehr einfache Nutzung komplizierter Algorithmen und andererseits sind diese "
+"Pakete in kompilierten Sprachen wie C oder Fortran geschrieben. Auf diese "
+"Weise können wir von den Leistungsvorteilen profitieren, ohne eine "
+"möglicherweise kompliziertere Sprache lernen zu müssen."
+
+#: src/00-preface/02-getting_started.md:1 src/00-preface/02-getting_started.md:13
+msgid "Installation"
+msgstr "Installation"
+
+#: src/00-preface/02-getting_started.md:3
+msgid "Python Distribution"
+msgstr "Python-Distribution"
+
+#: src/00-preface/02-getting_started.md:5
+msgid ""
+"We highly recommend to use the  [Miniforge](https://github.com/conda-forge/"
+"miniforge) distribution. If you already have the installed the  [Anaconda]"
+"(https://www.anaconda.com) distribution, you can also use it for this course.  "
+"Follow the instructions below to install Miniforge.  You should use a Python "
+"version of 3.9 or higher."
+msgstr ""
+"Wir empfehlen die [Miniforge](https://github.com/conda-forge/miniforge)-"
+"Distribution  zu verwenden. Wenn Sie die [Anaconda](https://www.anaconda.com)-"
+"Distribution bereits installiert haben, können Sie sie auch für diesen Kurs "
+"verwenden. Folgen Sie die folgenden Anweisungen, um Miniforge zu installieren. "
+"Sie sollten eine Python-Version von 3.9 oder höher verwenden."
+
+#: src/00-preface/02-getting_started.md:14
+msgid ""
+"Download the Miniforge installer according to your operating system [here]"
+"(https://github.com/conda-forge/miniforge#miniforge3)."
+msgstr ""
+"Laden Sie den Miniforge-Installer entsprechend Ihrem Betriebssystem [hier]"
+"(https://github.com/conda-forge/miniforge#miniforge3) herunter."
+
+#: src/00-preface/02-getting_started.md:16
+msgid "Execute the installer:"
+msgstr "Führen Sie das Installationsprogramm aus:"
+
+#: src/00-preface/02-getting_started.md:17
+msgid "Unix-like platforms (Mac OS & Linux): Open the terminal and call"
+msgstr ""
+"Unixoide Plattformen (Mac OS & Linux): Öffnen Sie das Terminal und rufen Sie"
+
+#: src/00-preface/02-getting_started.md:22
+msgid ""
+"where `[Miniforge-Installer]` should be replaced by the name of the  "
+"installer, e.g. `Miniforge3-Linux-x86_64.sh` or  `Miniforge3-MacOSX-arm64.sh`."
+msgstr ""
+"auf, wobei „[Miniforge-Installer]“ durch den Namen des Installers ersetzt "
+"werden soll, z.B. „Miniforge3-Linux-x86_64.sh“ oder „Miniforge3-MacOSX-arm64."
+"sh“."
+
+#: src/00-preface/02-getting_started.md:25
+msgid "Windows: Double-click the installer on the file explorer."
+msgstr "Windows: Doppelklicken Sie im Explorer auf das Installationsprogramm."
+
+#: src/00-preface/02-getting_started.md:28
+msgid "Python Packages"
+msgstr "Python-Pakete"
+
+#: src/00-preface/02-getting_started.md:30
+msgid ""
+"During the lecture, we will use several Python packages that can be "
+"conveniently installed using the package manager `mamba`, which is installed "
+"with the Miniforge distribution. Some of the most important packages are "
+"listed in the table below. Please install these packages by executing the "
+"following commands in your terminal."
+msgstr ""
+"Während der Vorlesung werden wir mehrere Python-Pakete verwenden, die bequem "
+"mit dem Paketmanager „mamba“ installiert werden können, der mit der Miniforge-"
+"Distribution installiert wird. Einige der wichtigsten Pakete sind in der "
+"folgenden Tabelle aufgeführt. Bitte installieren Sie diese Pakete, indem Sie "
+"die folgenden Befehle in Ihrem Terminal ausführen."
+
+#: src/00-preface/02-getting_started.md:37
+msgid ""
+"```admonish note title=\"Note for Windows Users\"\n"
+"If you are using Windows, execute the commands in \n"
+"Miniforge Prompt that comes with your Miniforge installation.\n"
+"```"
+msgstr ""
+"```admonish note title=“Hinweis for Windows-Nutzer”\n"
+"Wenn Sie Windows verwenden, führen Sie die Befehle in \n"
+"Miniforge Prompt aus, welches mit Ihrer Miniforge-Installation geliefert "
+"wurde.\n"
+"```"
+
+#: src/00-preface/02-getting_started.md:42
+msgid "Package"
+msgstr "Paket"
+
+#: src/00-preface/02-getting_started.md:42
+msgid "Command"
+msgstr "Befehl"
+
+#: src/00-preface/02-getting_started.md:44
+msgid "[NumPy](https://numpy.org)"
+msgstr "[NumPy](https://numpy.org)"
+
+#: src/00-preface/02-getting_started.md:44
+msgid "`mamba install numpy`"
+msgstr "`mamba install numpy`"
+
+#: src/00-preface/02-getting_started.md:45
+msgid "[Matplotlib](https://matplotlib.org)"
+msgstr "[Matplotlib](https://matplotlib.org)"
+
+#: src/00-preface/02-getting_started.md:45
+msgid "`mamba install -c conda-forge matplotlib`"
+msgstr "`mamba install -c conda-forge matplotlib`"
+
+#: src/00-preface/02-getting_started.md:46
+msgid "[SciPy](https://scipy.org)"
+msgstr "[SciPy](https://scipy.org)"
+
+#: src/00-preface/02-getting_started.md:46
+msgid "`mamba install -c conda-forge scipy`"
+msgstr "`mamba install -c conda-forge scipy`"
+
+#: src/00-preface/02-getting_started.md:47
+msgid "[Jupyter](https://jupyter.org)"
+msgstr "[Jupyter](https://jupyter.org)"
+
+#: src/00-preface/02-getting_started.md:47
+msgid "`mamba install jupyter`"
+msgstr "`mamba install jupyter`"
+
+#: src/00-preface/02-getting_started.md:50
+msgid "Jupyter Notebook"
+msgstr "Jupyter Notebook"
+
+#: src/00-preface/02-getting_started.md:52
+msgid "WIP"
+msgstr "WIP"
+
+#: src/00-preface/02-getting_started.md:53
+msgid "[Jupyter Notebook](https://jupyter.org)"
+msgstr "[Jupyter Notebook](https://jupyter.org)"
+
+#: src/00-preface/02-getting_started.md:54
+msgid "blockwise executable documents that can contain code, text, and  graphics"
+msgstr ""
+"blockweise ausführbare Dokumente, die Code, Text und Grafiken enthalten können"
+
+#: src/00-preface/02-getting_started.md:56
+msgid ""
+"many tutorials available on the internet, e.g. [here](https://www.dataquest.io/"
+"blog/jupyter-notebook-tutorial/)"
+msgstr ""
+"viele Tutorials im Internet verfügbar, z.B. [hier](https://www.dataquest.io/"
+"blog/jupyter-notebook-tutorial/)"
+
+#: src/00-preface/02-getting_started.md:59
+msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+msgstr "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+
+#: src/00-preface/02-getting_started.md:62
+msgid ""
+"Recommendations for Further Integrated Development Environments (IDEs) or "
+"Editors"
+msgstr ""
+"Empfehlungen für weitere integrierte Entwicklungsumgebungen (IDEs) oder "
+"Editoren"
+
+#: src/00-preface/02-getting_started.md:64
+msgid ""
+"Although it is possible to write Python code using a conventional  text "
+"editor, a good integrated development environment can boost your  programming "
+"experience greatly. Therefore, we shall show you some  recommendations of IDEs "
+"and specialised editors here besides Jupyter  Notebook."
+msgstr ""
+"Obwohl es möglich ist, Python-Code mit einem herkömmlichen Texteditor zu "
+"schreiben, kann eine gute integrierte Entwicklungsumgebung Ihre "
+"Programmiererfahrung erheblich verbessern. Daher zeigen wir Ihnen hier neben "
+"Jupyter Notebook einige Empfehlungen von IDEs und spezialisierten Editoren."
+
+#: src/00-preface/02-getting_started.md:70
+msgid "[Spyder](https://www.spyder-ide.org)"
+msgstr "[Spyder](https://www.spyder-ide.org)"
+
+#: src/00-preface/02-getting_started.md:71
+msgid "full-featured Python IDE with a focus on scientific development"
+msgstr ""
+"Voll ausgestattete Python-IDE mit Schwerpunkt auf wissenschaftlicher "
+"Entwicklung"
+
+#: src/00-preface/02-getting_started.md:72
+msgid "lightweight and easy to configure"
+msgstr "leicht und einfach zu konfigurieren"
+
+#: src/00-preface/02-getting_started.md:74
+msgid "[Visual Studio Code](https://code.visualstudio.com)"
+msgstr "[Visual Studio Code](https://code.visualstudio.com)"
+
+#: src/00-preface/02-getting_started.md:75
+msgid "one of the most used editors despite its lightweightness"
+msgstr "trotz seiner Leichtigkeit einer der am häufigsten verwendeten Editoren"
+
+#: src/00-preface/02-getting_started.md:76
+msgid "almost all features of an IDE although it is officially not one"
+msgstr "fast alle Funktionen einer IDE, obwohl es offiziell keine ist"
+
+#: src/00-preface/02-getting_started.md:78
+msgid "[PyCharm](https://www.jetbrains.com/de-de/pycharm/)"
+msgstr "[PyCharm](https://www.jetbrains.com/de-de/pycharm/)"
+
+#: src/00-preface/02-getting_started.md:79
+msgid "commercial (free for students) IDE with lots of functionalities"
+msgstr ""
+"kommerzielle (kostenlose für Studierende) IDE mit vielen Funktionalitäten"
+
+#: src/00-preface/02-getting_started.md:80
+msgid "most suitable for very large and complex Python projects"
+msgstr "am besten geeignet für sehr große und komplexe Python-Projekte"
+
+#: src/00-preface/02-getting_started.md:81
+msgid "possibly too cumbersome for small projects like the ones in this  lecture"
+msgstr ""
+"möglicherweise zu umständlich für kleine Projekte wie die in dieser Vorlesung"
+
+#: src/00-preface/02-getting_started.md:84
+msgid "Vim/[NeoVim](https://neovim.io)"
+msgstr "Vim/[NeoVim](https://neovim.io)"
+
+#: src/00-preface/02-getting_started.md:85
+msgid "command-line editor pre-installed on almost all Unix-like computers"
+msgstr ""
+"Kommandozeilen-Editor, der auf fast allen Unixoiden Computern vorinstalliert "
+"ist"
+
+#: src/00-preface/02-getting_started.md:87
+msgid ""
+"possibly very unwieldy at the beginning due to the many  keyboard shortcuts "
+"and the lack of beginner-friendliness like  a typical IDE or Jupyter Notebooks"
+msgstr ""
+"Am Anfang möglicherweise sehr unhandlich aufgrund der vielen Tastaturkürzel "
+"und der fehlenden Anfängerfreundlichkeit wie bei einer typischen IDE oder "
+"Jupyter-Notebooks"
+
+#: src/00-preface/02-getting_started.md:90
+msgid "extremely configurable"
+msgstr "extrem konfigurierbar"
+
+#: src/00-preface/02-getting_started.md:91
+msgid "adaptable to a very extensive and  comfortable editor with some effort"
+msgstr ""
+"mit etwas Aufwand an einen sehr umfangreichen und komfortablen Editor anpassbar"
+
+#: src/00-preface/02-getting_started.md:93
+msgid "still one of the most used editors"
+msgstr "immer noch einer der am häufigsten verwendeten Editoren"
+
+#: src/00-preface/03-mdbook_usage.md:1
+msgid "How to interact with this website"
+msgstr "So interagieren Sie mit dieser Website"
+
+#: src/00-preface/03-mdbook_usage.md:3
+msgid ""
+"This section gives an introduction on how to interact with the lecture notes. "
+"These are organized into _chapters_. Each chapter is a separate page. Chapters "
+"are nested into a hierarchy of sub-chapters. Typically, each chapter will be "
+"organized into a series of _headings_ to subdivide a chapter."
+msgstr ""
+"Dieser Abschnitt enthält eine Einführung in die Interaktion mit diesen "
+"Vorlesungsskript. Dies ist in _Kapiteln_ organisiert. Jedes Kapitel ist eine "
+"separate Seite. Kapitel sind in einer Hierarchie von Unterkapiteln "
+"verschachtelt. Typischerweise wird jedes Kapitel in eine Reihe von "
+"_Überschriften_ gegliedert, um ein Kapitel zu unterteilen."
+
+#: src/00-preface/03-mdbook_usage.md:9
+msgid "Navigation"
+msgstr "Navigation"
+
+#: src/00-preface/03-mdbook_usage.md:11
+msgid "There are several methods for navigating through the chapters of a book."
+msgstr ""
+"Es gibt verschiedene Methoden, um durch die Kapitel eines Buches zu navigieren."
+
+#: src/00-preface/03-mdbook_usage.md:13
+msgid ""
+"The **sidebar** on the left provides a list of all chapters. Clicking on any "
+"of the chapter titles will load that page."
+msgstr ""
+"Die **Seitenleiste** auf der linken Seite bietet eine Liste aller Kapitel. "
+"Wenn Sie auf einen der Kapiteltitel klicken, wird diese Seite geladen."
+
+#: src/00-preface/03-mdbook_usage.md:16
+msgid ""
+"The sidebar may not automatically appear if the window is too narrow, "
+"particularly on mobile displays. In that situation, the menu icon (three "
+"horizontal bars) at the top-left of the page can be pressed to open and close "
+"the sidebar."
+msgstr ""
+"Die Seitenleiste wird möglicherweise nicht automatisch angezeigt, wenn das "
+"Fenster zu schmal ist, insbesondere auf Handydisplays. In diesem Fall kann das "
+"Menüsymbol (drei horizontale Balken) oben links auf der Seite gedrückt werden, "
+"um die Seitenleiste zu öffnen und zu schließen."
+
+#: src/00-preface/03-mdbook_usage.md:19
+msgid ""
+"The **arrow buttons** at the bottom of the page can be used to navigate to the "
+"previous or the next chapter."
+msgstr ""
+"Mit den **Pfeiltasten** unten auf der Seite können Sie zum vorherigen oder "
+"nächsten Kapitel navigieren."
+
+#: src/00-preface/03-mdbook_usage.md:21
+msgid ""
+"The **left and right arrow keys** on the keyboard can be used to navigate to "
+"the previous or the next chapter."
+msgstr ""
+"Mit den **linken und rechten Pfeiltasten** auf der Tastatur können Sie zum "
+"vorherigen oder nächsten Kapitel navigieren."
+
+#: src/00-preface/03-mdbook_usage.md:23
+msgid "Top menu bar"
+msgstr "Obere Menüleiste"
+
+#: src/00-preface/03-mdbook_usage.md:25
+msgid ""
+"The menu bar at the top of the page provides some icons for interacting with "
+"the notes."
+msgstr ""
+"Die Menüleiste oben auf der Seite bietet einige Symbole für die Interaktion "
+"mit dem Skript."
+
+#: src/00-preface/03-mdbook_usage.md:27
+msgid "Icon"
+msgstr "Symbol"
+
+#: src/00-preface/03-mdbook_usage.md:27
+msgid "Description"
+msgstr "Beschreibung"
+
+#: src/00-preface/03-mdbook_usage.md:29
+msgid "Opens and closes the chapter listing sidebar."
+msgstr "Öffnet und schließt die Seitenleiste mit der Liste der Kapitel."
+
+#: src/00-preface/03-mdbook_usage.md:30
+msgid "Opens a picker to choose a different color theme."
+msgstr "Öffnet eine Liste zur Auswahl eines anderen Farbthemas."
+
+#: src/00-preface/03-mdbook_usage.md:31
+msgid "Opens a search bar for searching within the book."
+msgstr "Öffnet eine Suchleiste für die Suche im Buch."
+
+#: src/00-preface/03-mdbook_usage.md:32
+msgid "Instructs the web browser to print the set of notes."
+msgstr "Weist den Webbrowser an, das Skript auszudrucken."
+
+#: src/00-preface/03-mdbook_usage.md:34
+msgid "Tapping the menu bar will scroll the page to the top."
+msgstr "Durch Tippen auf die Menüleiste wird die Seite nach oben gescrollt."
+
+#: src/00-preface/03-mdbook_usage.md:36
+msgid "Search"
+msgstr "Suchen"
+
+#: src/00-preface/03-mdbook_usage.md:38
+msgid ""
+"The lecture notes have a built-in search system. Pressing the search icon ("
+msgstr ""
+"Das Vorlesungsskript verfügt über ein integriertes Suchsystem. Durch Drücken "
+"des Suchsymbols ("
+
+#: src/00-preface/03-mdbook_usage.md:39
+msgid ""
+") in the menu bar or pressing the `S` key on the keyboard will open an input "
+"box for entering search terms. Typing any terms will show matching chapters "
+"and sections in real time."
+msgstr ""
+") in der Menüleiste oder durch Drücken der „S“-Taste auf der Tastatur öffnet "
+"sich ein Eingabefeld zur Eingabe von Suchbegriffen. Durch die Eingabe "
+"beliebiger Begriffe werden in Echtzeit passende Kapitel und Abschnitte "
+"angezeigt."
+
+#: src/00-preface/03-mdbook_usage.md:42
+msgid ""
+"Clicking any of the results will jump to that section. The up and down arrow "
+"keys can be used to navigate the results, and enter will open the highlighted "
+"section."
+msgstr ""
+"Wenn Sie auf eines der Ergebnisse klicken, gelangen Sie zu diesem Abschnitt. "
+"Mit den Aufwärts- und Abwärtspfeiltasten können Sie durch die Ergebnisse "
+"navigieren. Die Eingabetaste öffnet den markierten Abschnitt."
+
+#: src/00-preface/03-mdbook_usage.md:45
+msgid ""
+"After loading a search result, the matching search terms will be highlighted "
+"in the text. Clicking a highlighted word or pressing the `Esc` key will remove "
+"the highlighting."
+msgstr ""
+"Nach dem Laden eines Suchergebnisses werden die passenden Suchbegriffe im Text "
+"hervorgehoben. Durch Klicken auf ein hervorgehobenes Wort oder Drücken der "
+"„Esc“-Taste wird die Hervorhebung entfernt."
+
+#: src/00-preface/03-mdbook_usage.md:48
+msgid "Code blocks"
+msgstr "Codeblöcke"
+
+#: src/00-preface/03-mdbook_usage.md:50
+msgid "Code blocks contain a copy icon "
+msgstr "Codeblöcke enthalten ein Kopiersymbol "
+
+#: src/00-preface/03-mdbook_usage.md:50
+msgid ", that copies the code block into your local clipboard. "
+msgstr ", welches den Codeblock in Ihre lokale Zwischenablage kopiert."
+
+#: src/00-preface/03-mdbook_usage.md:52
+msgid "Here's an example:"
+msgstr "Hier ist ein Beispiel:"
+
+#: src/00-preface/03-mdbook_usage.md:55
+msgid "\"Hello, World!\""
+msgstr "“Hello, World!”"
+
+#: src/00-preface/03-mdbook_usage.md:58
+msgid ""
+"We will often use the `assert` statement in code listings to show you the "
+"value of a variable. Since the code blocks in this document are not "
+"interactive  (you can not simply execute them in your browser), it is not "
+"possible to print the value of the variable to the screen.  Therefore, we "
+"ensure for you that all code blocks in these lecture notes  run without errors "
+"and in this way we can represent the value of a variable through the use of "
+"`assert`.  The following code block for example shows that the variable `a` "
+"has the value 2:"
+msgstr ""
+"Wir verwenden die `assert`-Anweisung häufig in Codeblöcken, um Ihnen den Wert "
+"einer Variablen anzuzeigen. Da die Codeblöcke in diesem Dokument nicht "
+"interaktiv sind (Sie können sie nicht einfach in Ihrem Browser ausführen), ist "
+"es nicht möglich, den Wert der Variablen auf dem Bildschirm auszugeben. "
+"Deshalb stellen wir für Sie sicher, dass alle Codeblöcke in diesem "
+"Vorlesungsskript fehlerfrei laufen und wir auf diese Weise den Wert einer "
+"Variablen durch die Verwendung von `assert` darstellen können. Der folgende "
+"Codeblock zeigt beispielsweise, dass die Variable „a“ den Wert 2 hat:"
+
+#: src/00-preface/03-mdbook_usage.md:71
+msgid ""
+"If the condition would evaluate to `False`, the `assert` statement would raise "
+"an `AssertionError`. "
+msgstr ""
+"Wenn die Bedingung `False` ergeben würde, würde die `assert`-Anweisung einen "
+"`AssertionError` auslösen. "
+
+#: src/01-regression.md:1
+msgid "Regressionsanalyse"
+msgstr "Regressionsanalyse"
+
+#: src/01-regression.md:3 src/01-regression/01-linear_regression.md:3
+#: src/01-regression/02-nonlinear_regression.md:3
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor  "
+"incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis  "
+"nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat.  "
+"Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat  "
+"nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in  culpa "
+"qui officia deserunt mollit anim id est laborum."
+msgstr ""
+"Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor "
+"incidunt ut labore et dolore magna aliqua. Bis zu einem gewissen Grad sind "
+"unsere Anstrengungen nicht mehr als jede erforderliche Ware erledigt. Quis "
+"aute iure reprehenderit in voluptate velit esse cillum dolore eu fgiat nulla "
+"pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui "
+"officia deserunt mollit anim id est laborum."

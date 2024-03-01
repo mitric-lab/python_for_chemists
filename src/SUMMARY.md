@@ -1,13 +1,16 @@
-# Summary
+# SUMMARY
 
-- [Preface](ch00-00-preface.md)
-    - [Motivation](ch00-01-motivation.md)
-    - [Getting started](ch00-02-getting_started.md)
-    - [Navigating this website](ch00-03-mdbook_usage.md)
+# Table of Contents
+
+- [Preface](00-preface.md)
+    - [Motivation](00-preface/01-motivation.md)
+    - [Getting started](00-preface/02-getting_started.md)
+    - [Navigating this website](00-preface/03-mdbook_usage.md)
 
 ---
 
-- [Regressionsanalyse](./ch01-00-regression.md)
-    - [Lineare Regression](./ch01-01-linear_regression.md)
-    - [Nichtlineare Regression](./ch01-02-nonlinear_regression.md)
-    - [Numerische Optimierung](./ch01-03-numerical_optimization.md)
+- [Regression Analysis](01-regression.md)
+    - [Linear Regression](01-regression/01-linear_regression.md)
+    - [Nonlinear Regression](01-regression/02-nonlinear_regression.md)
+    - [Numerical Optimisation](01-regression/03-numerical_optimisation.md)
+
