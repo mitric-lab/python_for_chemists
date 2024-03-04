@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Programming Course for Chemists\n"
-"POT-Creation-Date: 2024-03-01T21:32:20+01:00\n"
-"PO-Revision-Date: 2024-03-01 19:09+0100\n"
+"POT-Creation-Date: 2024-03-03T22:24:14+01:00\n"
+"PO-Revision-Date: 2024-03-04 09:36+0100\n"
 "Last-Translator: Xincheng Miao <xincheng.miao@uni-wuerzburg.de>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -496,9 +496,8 @@ msgstr ""
 "müssen."
 
 #: src/00-preface/02-getting_started.md:1
-#: src/00-preface/02-getting_started.md:13
-msgid "Installation"
-msgstr "Installation"
+msgid "Getting Started"
+msgstr "Erste Schritte"
 
 #: src/00-preface/02-getting_started.md:3
 msgid "Python Distribution"
@@ -518,6 +517,10 @@ msgstr ""
 "Kurs verwenden. Folgen Sie die folgenden Anweisungen, um Miniforge zu "
 "installieren. Sie sollten eine Python-Version von 3.9 oder höher verwenden."
 
+#: src/00-preface/02-getting_started.md:13
+msgid "Installation"
+msgstr "Installation"
+
 #: src/00-preface/02-getting_started.md:14
 msgid ""
 "Download the Miniforge installer according to your operating system [here]"
@@ -531,9 +534,12 @@ msgid "Execute the installer:"
 msgstr "Führen Sie das Installationsprogramm aus:"
 
 #: src/00-preface/02-getting_started.md:17
-msgid "Unix-like platforms (Mac OS & Linux): Open the terminal and call"
+msgid ""
+"Unix-like platforms (Mac OS & Linux): Open the terminal, navigate to your "
+"Downloads folder and call"
 msgstr ""
-"Unixoide Plattformen (Mac OS & Linux): Öffnen Sie das Terminal und rufen Sie"
+"Unixoide Plattformen (Mac OS & Linux): Öffnen Sie das Terminal, navigieren "
+"Sie zu Ihrem Downloads-Ordner und rufen Sie"
 
 #: src/00-preface/02-getting_started.md:22
 msgid ""
@@ -625,33 +631,33 @@ msgid "Jupyter Notebook"
 msgstr "Jupyter Notebook"
 
 #: src/00-preface/02-getting_started.md:52
-msgid "WIP"
-msgstr "WIP"
-
-#: src/00-preface/02-getting_started.md:53
-msgid "[Jupyter Notebook](https://jupyter.org)"
-msgstr "[Jupyter Notebook](https://jupyter.org)"
-
-#: src/00-preface/02-getting_started.md:54
+#, fuzzy
 msgid ""
-"blockwise executable documents that can contain code, text, and  graphics"
+"If you are a beginner in Python, we recommend using  [Jupyter Notebook]"
+"(https://jupyter.org) for writing and executing your  Python code. It is a "
+"blockwise executable document that can contain code,  text, and graphics. To "
+"test your Python installation and to make yourself  familiar with Jupyter "
+"Notebook, please download and open the Juptyer  Notebook that is provided in "
+"WueCampus by calling"
 msgstr ""
-"blockweise ausführbare Dokumente, die Code, Text und Grafiken enthalten "
-"können"
+"Wenn Sie Anfänger in Python sind, empfehlen wir die Verwendung von [Jupyter "
+"Notebook] (https://jupyter.org) zum Schreiben und Ausführen Ihres Python-"
+"Codes. Es ist ein blockweise ausführbares Dokument, das Code, Text und "
+"Grafiken enthalten kann. Um Ihre Python-Installation zu testen und sich mit "
+"Jupyter Notebook vertraut zu machen, laden Sie bitte das in WueCampus zur "
+"Verfügung gestellte Juptyer Notebook herunter und öffnen Sie es, indem Sie"
 
-#: src/00-preface/02-getting_started.md:56
+#: src/00-preface/02-getting_started.md:63
 msgid ""
-"many tutorials available on the internet, e.g. [here](https://www.dataquest."
-"io/blog/jupyter-notebook-tutorial/)"
+"in your terminal. This will open a new tab in your web browser where you can "
+"navigate to the folder where the Jupyter Notebook is located and open it. If "
+"your installation was successful, you should be able to execute all code "
+"cells in the notebook without any errors. You can can find many more "
+"tutorials on the internet, e.g.  [here](https://www.dataquest.io/blog/"
+"jupyter-notebook-tutorial/)."
 msgstr ""
-"viele Tutorials im Internet verfügbar, z.B. [hier](https://www.dataquest.io/"
-"blog/jupyter-notebook-tutorial/)"
 
-#: src/00-preface/02-getting_started.md:59
-msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-msgstr "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-
-#: src/00-preface/02-getting_started.md:62
+#: src/00-preface/02-getting_started.md:71
 msgid ""
 "Recommendations for Further Integrated Development Environments (IDEs) or "
 "Editors"
@@ -659,75 +665,77 @@ msgstr ""
 "Empfehlungen für weitere integrierte Entwicklungsumgebungen (IDEs) oder "
 "Editoren"
 
-#: src/00-preface/02-getting_started.md:64
+#: src/00-preface/02-getting_started.md:73
+#, fuzzy
 msgid ""
-"Although it is possible to write Python code using a conventional  text "
-"editor, a good integrated development environment can boost your  "
-"programming experience greatly. Therefore, we shall show you some  "
-"recommendations of IDEs and specialised editors here besides Jupyter  "
-"Notebook."
+"If you are already familiar with Python and want to use a more sophisticated "
+"development environment, you might want to use an IDE or a specialised "
+"editor. Although it is possible to write Python code using a  conventional "
+"text editor, a good IDE can boost your programming experience  greatly. "
+"Therefore, we shall show you some recommendations of IDEs and  specialised "
+"editors here besides Jupyter Notebook."
 msgstr ""
 "Obwohl es möglich ist, Python-Code mit einem herkömmlichen Texteditor zu "
 "schreiben, kann eine gute integrierte Entwicklungsumgebung Ihre "
 "Programmiererfahrung erheblich verbessern. Daher zeigen wir Ihnen hier neben "
 "Jupyter Notebook einige Empfehlungen von IDEs und spezialisierten Editoren."
 
-#: src/00-preface/02-getting_started.md:70
+#: src/00-preface/02-getting_started.md:80
 msgid "[Spyder](https://www.spyder-ide.org)"
 msgstr "[Spyder](https://www.spyder-ide.org)"
 
-#: src/00-preface/02-getting_started.md:71
+#: src/00-preface/02-getting_started.md:81
 msgid "full-featured Python IDE with a focus on scientific development"
 msgstr ""
 "Voll ausgestattete Python-IDE mit Schwerpunkt auf wissenschaftlicher "
 "Entwicklung"
 
-#: src/00-preface/02-getting_started.md:72
+#: src/00-preface/02-getting_started.md:82
 msgid "lightweight and easy to configure"
 msgstr "leicht und einfach zu konfigurieren"
 
-#: src/00-preface/02-getting_started.md:74
+#: src/00-preface/02-getting_started.md:84
 msgid "[Visual Studio Code](https://code.visualstudio.com)"
 msgstr "[Visual Studio Code](https://code.visualstudio.com)"
 
-#: src/00-preface/02-getting_started.md:75
+#: src/00-preface/02-getting_started.md:85
 msgid "one of the most used editors despite its lightweightness"
 msgstr "trotz seiner Leichtigkeit einer der am häufigsten verwendeten Editoren"
 
-#: src/00-preface/02-getting_started.md:76
+#: src/00-preface/02-getting_started.md:86
 msgid "almost all features of an IDE although it is officially not one"
 msgstr "fast alle Funktionen einer IDE, obwohl es offiziell keine ist"
 
-#: src/00-preface/02-getting_started.md:78
+#: src/00-preface/02-getting_started.md:88
 msgid "[PyCharm](https://www.jetbrains.com/de-de/pycharm/)"
 msgstr "[PyCharm](https://www.jetbrains.com/de-de/pycharm/)"
 
-#: src/00-preface/02-getting_started.md:79
+#: src/00-preface/02-getting_started.md:89
 msgid "commercial (free for students) IDE with lots of functionalities"
 msgstr ""
 "kommerzielle (kostenlose für Studierende) IDE mit vielen Funktionalitäten"
 
-#: src/00-preface/02-getting_started.md:80
+#: src/00-preface/02-getting_started.md:90
 msgid "most suitable for very large and complex Python projects"
 msgstr "am besten geeignet für sehr große und komplexe Python-Projekte"
 
-#: src/00-preface/02-getting_started.md:81
+#: src/00-preface/02-getting_started.md:91
 msgid ""
 "possibly too cumbersome for small projects like the ones in this  lecture"
 msgstr ""
 "möglicherweise zu umständlich für kleine Projekte wie die in dieser Vorlesung"
 
-#: src/00-preface/02-getting_started.md:84
+#: src/00-preface/02-getting_started.md:94
 msgid "Vim/[NeoVim](https://neovim.io)"
 msgstr "Vim/[NeoVim](https://neovim.io)"
 
-#: src/00-preface/02-getting_started.md:85
+#: src/00-preface/02-getting_started.md:95
 msgid "command-line editor pre-installed on almost all Unix-like computers"
 msgstr ""
 "Kommandozeilen-Editor, der auf fast allen Unixoiden Computern vorinstalliert "
 "ist"
 
-#: src/00-preface/02-getting_started.md:87
+#: src/00-preface/02-getting_started.md:97
 msgid ""
 "possibly very unwieldy at the beginning due to the many  keyboard shortcuts "
 "and the lack of beginner-friendliness like  a typical IDE or Jupyter "
@@ -737,17 +745,17 @@ msgstr ""
 "und der fehlenden Anfängerfreundlichkeit wie bei einer typischen IDE oder "
 "Jupyter-Notebooks"
 
-#: src/00-preface/02-getting_started.md:90
+#: src/00-preface/02-getting_started.md:100
 msgid "extremely configurable"
 msgstr "extrem konfigurierbar"
 
-#: src/00-preface/02-getting_started.md:91
+#: src/00-preface/02-getting_started.md:101
 msgid "adaptable to a very extensive and  comfortable editor with some effort"
 msgstr ""
 "mit etwas Aufwand an einen sehr umfangreichen und komfortablen Editor "
 "anpassbar"
 
-#: src/00-preface/02-getting_started.md:93
+#: src/00-preface/02-getting_started.md:103
 msgid "still one of the most used editors"
 msgstr "immer noch einer der am häufigsten verwendeten Editoren"
 
@@ -958,6 +966,28 @@ msgstr ""
 "aute iure reprehenderit in voluptate velit esse cillum dolore eu fgiat nulla "
 "pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui "
 "officia deserunt mollit anim id est laborum."
+
+#~ msgid "WIP"
+#~ msgstr "WIP"
+
+#~ msgid "[Jupyter Notebook](https://jupyter.org)"
+#~ msgstr "[Jupyter Notebook](https://jupyter.org)"
+
+#~ msgid ""
+#~ "blockwise executable documents that can contain code, text, and  graphics"
+#~ msgstr ""
+#~ "blockweise ausführbare Dokumente, die Code, Text und Grafiken enthalten "
+#~ "können"
+
+#~ msgid ""
+#~ "many tutorials available on the internet, e.g. [here](https://www."
+#~ "dataquest.io/blog/jupyter-notebook-tutorial/)"
+#~ msgstr ""
+#~ "viele Tutorials im Internet verfügbar, z.B. [hier](https://www.dataquest."
+#~ "io/blog/jupyter-notebook-tutorial/)"
+
+#~ msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+#~ msgstr "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 
 #~ msgid "\"Hello, World!\""
 #~ msgstr "“Hello, World!”"
