@@ -1,4 +1,4 @@
-## Installation
+## Getting Started
 
 ### Python Distribution
 
@@ -15,7 +15,7 @@ You should use a Python version of 3.9 or higher.
    [here](https://github.com/conda-forge/miniforge#miniforge3).
 2. Execute the installer:
     - Unix-like platforms (Mac OS & Linux):
-        Open the terminal and call
+        Open the terminal, navigate to your Downloads folder and call
         ```bash
         bash [Miniforge-Installer].sh
         ```
@@ -49,23 +49,33 @@ Miniforge Prompt that comes with your Miniforge installation.
 
 #### Jupyter Notebook
 
-WIP
-- [Jupyter Notebook](https://jupyter.org)
-    - blockwise executable documents that can contain code, text, and 
-      graphics
-    - many tutorials available on the internet, e.g.
-      [here](https://www.dataquest.io/blog/jupyter-notebook-tutorial/)
+If you are a beginner in Python, we recommend using 
+[Jupyter Notebook](https://jupyter.org) for writing and executing your 
+Python code. It is a blockwise executable document that can contain code, 
+text, and graphics. To test your Python installation and to make yourself 
+familiar with Jupyter Notebook, please download and open the Juptyer 
+Notebook that is provided in WueCampus by calling
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+```bash
+jupyter notebook
+```
+
+in your terminal. This will open a new tab in your web browser where you
+can navigate to the folder where the Jupyter Notebook is located and open
+it. If your installation was successful, you should be able to execute
+all code cells in the notebook without any errors. You can can find many
+more tutorials on the internet, e.g. 
+[here](https://www.dataquest.io/blog/jupyter-notebook-tutorial/).
 
 
 ### Recommendations for Further Integrated Development Environments (IDEs) or Editors
 
-Although it is possible to write Python code using a conventional 
-text editor, a good integrated development environment can boost your 
-programming experience greatly. Therefore, we shall show you some 
-recommendations of IDEs and specialised editors here besides Jupyter 
-Notebook.
+If you are already familiar with Python and want to use a more
+sophisticated development environment, you might want to use an IDE or a
+specialised editor. Although it is possible to write Python code using a 
+conventional text editor, a good IDE can boost your programming experience 
+greatly. Therefore, we shall show you some recommendations of IDEs and 
+specialised editors here besides Jupyter Notebook.
 
 - [Spyder](https://www.spyder-ide.org)
     - full-featured Python IDE with a focus on scientific development
