@@ -171,12 +171,22 @@
                     <h1 class="menu-title">{{ book_title }}</h1>
 
                     <div class="right-buttons">
+		        <!--language toggle-->
+			{{#if (eq language "de")}}
+			<button id="language-toggle" class="icon-button" type="button"
+				title="Sprache ändern" aria-label="Sprache ändern"
+				aria-haspopup="true" aria-expanded="false"
+				aria-controls="language-list">
+			    <i class="fa fa-globe"></i>
+			</button>
+			{{else}}
 			<button id="language-toggle" class="icon-button" type="button"
                                 title="Change language" aria-label="Change language"
                                 aria-haspopup="true" aria-expanded="false"
                                 aria-controls="language-list">
                             <i class="fa fa-globe"></i>
                         </button>
+			{{/if}}
 			<ul id="language-list" class="theme-popup" aria-label="Languages" role="menu">
                           <li role="none"><button role="menuitem" class="theme">
                               <a id="en">English</a>
@@ -215,12 +225,20 @@
                               }
                           }
                         </script>
-
+			
+			<!--print button-->
                         {{#if print_enable}}
+			{{#if (eq language "de")}}
+			<a href="{{ path_to_root }}print.html" title="Buch drucken" aria-label="Buch drucken">
+			    <i id="print-button" class="fa fa-print"></i>
+			</a>
+			{{else}}
                         <a href="{{ path_to_root }}print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+			{{/if}}
                         {{/if}}
+
                         {{#if git_repository_url}}
                         <a href="{{git_repository_url}}" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa {{git_repository_icon}}"></i>
@@ -231,6 +249,17 @@
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
                         {{/if}}
+                        
+			<!-- WueCampus button -->
+			{{#if (eq language "de")}}
+			<a href="https://wuecampus.uni-wuerzburg.de/moodle/#" target="_blank" rel="noopener noreferrer" title="WueCampus-Kursraum besuchen" aria-label="WueCampus-Kursraum besuchen">
+			    <i id="wuecampus-button" class="icon-uw"></i>
+			</a>
+			{{else}}
+			<a href="https://wuecampus.uni-wuerzburg.de/moodle/#" target="_blank" rel="noopener noreferrer" title="Visit course on WueCampus" aria-label="Visit course on WueCampus">
+                            <i id="wuecampus-button" class="icon-uw"></i>
+                        </a>
+			{{/if}}
 
                     </div>
                 </div>

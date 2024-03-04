@@ -15,6 +15,7 @@ additional-css = [
     "./theme/catppuccin-admonish.css", 
     "./mdbook-admonish.css",
     "./theme/css/language-picker.css",
+    "./theme/icomoon.css",
 ]
 
 [preprocessor.gettext]
