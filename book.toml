@@ -25,3 +25,15 @@ after = ["links"]
 command = "mdbook-admonish"
 assets_version = "3.0.2" # do not edit: managed by `mdbook-admonish install`
 
+[preprocessor.katex]
+after = ["links"]
+output = "html"
+throw_on_error = false
+error_color = "#cc0000"
+trust = true
+
+[preprocessor.numeq]
+global = false
+prefix = true
+depth = 1
+

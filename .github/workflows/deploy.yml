@@ -42,6 +42,8 @@ jobs:
           cargo install mdbook-admonish --locked --version 1.15.0
           mdbook-admonish install .
           cargo install mdbook-i18n-helpers --locked --version 0.3.2
+          cargo install mdbook-katex --locked --version 0.6.0
+          cargo install --git https://github.com/xmiaocat/mdbook-numeq#d5592a53
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
