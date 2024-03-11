@@ -10,7 +10,12 @@
 ---
 
 - [Regression Analysis](01-regression.md)
-    - [Linear Regression](01-regression/01-linear_regression.md)
-    - [Nonlinear Regression](01-regression/02-nonlinear_regression.md)
-    - [Numerical Optimisation](01-regression/03-numerical_optimisation.md)
+    - [Least Squares](01-regression/01-least_squares.md)
+    - [Linear Regression](01-regression/02-linear_regression.md)
+    - [Nonlinear Regression](01-regression/03-nonlinear_regression.md)
+    - [Numerical Optimisation](01-regression/04-numerical_optimisation.md)
+
+---
+
+[Problem Set 1](problem_set/01.md)
 
