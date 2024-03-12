@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Programming Course for Chemists\n"
-"POT-Creation-Date: 2024-03-12T10:25:56+01:00\n"
-"PO-Revision-Date: 2024-03-12 10:26+0100\n"
+"POT-Creation-Date: 2024-03-12T10:25:01+01:00\n"
+"PO-Revision-Date: 2024-03-12 10:25+0100\n"
 "Last-Translator: Xincheng Miao <xincheng.miao@uni-wuerzburg.de>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -1169,7 +1169,7 @@ msgstr ""
 #: src/01-regression/01-least_squares.md:32
 #: src/01-regression/01-least_squares.md:58
 msgid " where "
-msgstr " wobei "
+msgstr "wobei "
 
 #: src/01-regression/01-least_squares.md:32
 #: src/01-regression/01-least_squares.md:34
@@ -1266,7 +1266,7 @@ msgstr " &nbsp;finden, mit Hilfe von"
 
 #: src/01-regression/01-least_squares.md:50
 msgid " If we define the vector of predicted values "
-msgstr " Wenn wir den Vektor der vorhergesagten Werte "
+msgstr "Wenn wir den Vektor der vorhergesagten Werte "
 
 #: src/01-regression/01-least_squares.md:50
 #: src/01-regression/01-least_squares.md:70
@@ -1321,7 +1321,7 @@ msgstr ""
 "Algebra für komplexere Modelle effizient gelöst werden kann. Es weist jedoch "
 "einige Nachteile auf, z.B. die Empfindlichkeit gegenüber Ausreißern und die "
 "Anfälligkeit für Überanpassungen. Eine Alternative zur Methode der kleinsten "
-"Quadrate ist die Methode der kleinsten absoluten Abweichungen, welche die "
+"Quadrate ist die Methode der kleinsten absoluten Abweichungen, welche die"
 
 #: src/01-regression/01-least_squares.md:69
 msgid "\\-norm instead of the "
@@ -1332,10 +1332,12 @@ msgid "\\-norm, defined for a vector "
 msgstr "\\-norm verwendet. Diese ist definiert für einen Vektor "
 
 #: src/01-regression/01-least_squares.md:74
-msgid " The optimisation problem is then formulated as:"
+#, fuzzy
+msgid " The optimisation problem is then formulated as"
 msgstr " Das Optimierungsproblem wird dann wie folgt formuliert:"
 
 #: src/01-regression/01-least_squares.md:78
+#, fuzzy
 msgid ""
 " There are many other loss functions that can be used for regression,  e.g. "
 "the [Huber loss](https://en.wikipedia.org/wiki/Huber_loss), the log-cosh "
@@ -1345,7 +1347,7 @@ msgid ""
 "limitations of the method and to consider other loss functions when "
 "appropriate."
 msgstr ""
-" Es gibt viele andere Verlustfunktionen, die für die Regression verwendet "
+"Es gibt viele andere Verlustfunktionen, die für die Regression verwendet "
 "werden können, z. die [Huber-Verlustfunktion](https://en.wikipedia.org/wiki/"
 "Huber_loss), der log-cosh-Verlustfunktion, der [Quantilverlustfunktion]"
 "(https://de.wikipedia.org/wiki/Quantilsregression#Optimierungsproblem), usw. "

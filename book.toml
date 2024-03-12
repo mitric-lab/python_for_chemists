@@ -18,14 +18,8 @@ additional-css = [
     "./theme/icomoon.css",
 ]
 
-[preprocessor.gettext]
-after = ["links"]
-
-[preprocessor.admonish]
-command = "mdbook-admonish"
-assets_version = "3.0.2" # do not edit: managed by `mdbook-admonish install`
-
 [preprocessor.katex]
+before = ["gettext"]
 after = ["links"]
 output = "html"
 throw_on_error = false
@@ -36,4 +30,11 @@ trust = true
 global = false
 prefix = true
 depth = 1
+
+[preprocessor.gettext]
+after = ["links"]
+
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "3.0.2" # do not edit: managed by `mdbook-admonish install`
 

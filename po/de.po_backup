@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Programming Course for Chemists\n"
-"POT-Creation-Date: 2024-03-12T10:25:56+01:00\n"
-"PO-Revision-Date: 2024-03-12 10:26+0100\n"
+"POT-Creation-Date: 2024-03-11T23:14:15+01:00\n"
+"PO-Revision-Date: 2024-03-04 14:40+0100\n"
 "Last-Translator: Xincheng Miao <xincheng.miao@uni-wuerzburg.de>\n"
 "Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
 "Language: de\n"
@@ -42,7 +42,7 @@ msgstr "Regressionsanalyse"
 
 #: src/SUMMARY.md:13 src/01-regression/01-least_squares.md:3
 msgid "Least Squares"
-msgstr "Methode der Kleinsten Quadrate"
+msgstr ""
 
 #: src/SUMMARY.md:14 src/01-regression/02-linear_regression.md:3
 msgid "Linear Regression"
@@ -58,7 +58,7 @@ msgstr "Numerische Optimierung"
 
 #: src/SUMMARY.md:20 src/problem_set/01.md:3
 msgid "Problem Set 1"
-msgstr "Übung 1"
+msgstr ""
 
 #: src/00-preface.md:5
 msgid "Dear students,"
@@ -128,7 +128,14 @@ msgid "Topic"
 msgstr "Thema"
 
 #: src/00-preface.md:23 src/00-preface.md:24
-#: src/01-regression/01-least_squares.md:69
+#: src/01-regression/01-least_squares.md:12
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:47
+#: src/01-regression/01-least_squares.md:55
+#: src/01-regression/01-least_squares.md:57
+#: src/01-regression/01-least_squares.md:59
 msgid "1"
 msgstr "1"
 
@@ -172,8 +179,13 @@ msgid "Regression I"
 msgstr "Regression I"
 
 #: src/00-preface.md:25 src/00-preface.md:26
-#: src/01-regression/01-least_squares.md:58
-#: src/01-regression/01-least_squares.md:70
+#: src/01-regression/01-least_squares.md:12
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:45
+#: src/01-regression/01-least_squares.md:47
+#: src/01-regression/01-least_squares.md:56
 msgid "2"
 msgstr "2"
 
@@ -975,11 +987,6 @@ msgid ""
 "uncovers the relationships between variables in countless scientific  "
 "inquiries, including those in chemistry."
 msgstr ""
-"Eine sehr häufige Aufgabe der Datenanalyse besteht darin, ein Modell an "
-"einen Datensatz anzupassen. Dies nennt man Regressionsanalyse, ein "
-"grundlegendes statistisches Werkzeug in unzähligen wissenschaftlichen "
-"Untersuchungen, auch in der Chemie, welches die Beziehungen zwischen "
-"Variablen aufdeckt."
 
 #: src/01-regression.md:10
 msgid ""
@@ -991,13 +998,6 @@ msgid ""
 "experimental data, extracting relationships between variables, and making "
 "predictions. "
 msgstr ""
-"Betrachten Sie die folgenden praktischen Beispiele: Anwendung des Lambert-"
-"Beerschen Gesetzes zur Quantifizierung der Konzentration einer Lösung "
-"basierend auf Lichtabsorption, Bestimmung des Einflusses der Temperatur auf "
-"Reaktionsgeschwindigkeiten, Herausfinden der Beziehung zwischen "
-"Substratkonzentration und Enzymaktivität. Jedes dieser Beispiele zeigt, wie "
-"die Regressionsanalyse dabei hilft, experimentelle Daten zu modellieren, "
-"Beziehungen zwischen Variablen zu extrahieren und Vorhersagen zu treffen. "
 
 #: src/01-regression.md:18
 msgid ""
@@ -1007,13 +1007,6 @@ msgid ""
 "these models to data. Furthermore, we will discuss the importance of model "
 "evaluation and regularisation techniques to prevent overfitting."
 msgstr ""
-"In diesem Kapitel werden wir uns mit den Grundlagen der Regressionsanalyse "
-"befassen, angefangen bei der einfachen linearen Regression bis hin zu "
-"komplexeren Modellen. Wir werden uns auch mit den zugrundeliegenden "
-"Optimierungsalgorithmen befassen, die zum Fitten dieser Modelle an die Daten "
-"verwendet werden. Darüberhinaus werden wir die Bedeutung der "
-"Modellevaluation und der Regularisierungstechniken zur Vermeidung vom "
-"Überfitten diskutieren."
 
 #: src/01-regression/01-least_squares.md:5
 msgid ""
@@ -1021,32 +1014,42 @@ msgid ""
 "which can hopefully be used to predict future data points.  For simplicity, "
 "we shall assume that our data only has one independent variable ("
 msgstr ""
-"Das Ziel aller Regressionsprobleme besteht darin, ein Modell zu finden, "
-"welches am besten zu den Daten passt und hoffentlich zur Vorhersage neuer "
-"Datenpunkte verwendet werden kann. Einfachheitshalber gehen wir davon aus, "
-"dass unsere Daten nur eine unabhängige Variable ("
 
 #: src/01-regression/01-least_squares.md:8
-#: src/01-regression/01-least_squares.md:15
+#: src/01-regression/01-least_squares.md:12
+#: src/01-regression/01-least_squares.md:13
+#: src/01-regression/01-least_squares.md:14
 #: src/01-regression/01-least_squares.md:16
 #: src/01-regression/01-least_squares.md:18
-#: src/01-regression/01-least_squares.md:24
-#: src/01-regression/01-least_squares.md:32
+#: src/01-regression/01-least_squares.md:20
+#: src/01-regression/01-least_squares.md:25
+#: src/01-regression/01-least_squares.md:26
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:42
 msgid "x"
-msgstr "x"
+msgstr ""
 
 #: src/01-regression/01-least_squares.md:8
 msgid ") and one dependent variable ("
-msgstr ") und eine abhängige Variable ("
+msgstr ""
 
 #: src/01-regression/01-least_squares.md:8
-#: src/01-regression/01-least_squares.md:15
+#: src/01-regression/01-least_squares.md:12
+#: src/01-regression/01-least_squares.md:13
+#: src/01-regression/01-least_squares.md:14
 #: src/01-regression/01-least_squares.md:16
 #: src/01-regression/01-least_squares.md:18
-#: src/01-regression/01-least_squares.md:24
-#: src/01-regression/01-least_squares.md:50
+#: src/01-regression/01-least_squares.md:20
+#: src/01-regression/01-least_squares.md:25
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:41
+#: src/01-regression/01-least_squares.md:42
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:59
 msgid "y"
-msgstr "y"
+msgstr ""
 
 #: src/01-regression/01-least_squares.md:8
 msgid ""
@@ -1054,290 +1057,458 @@ msgid ""
 "and will be discussed in a later chapter. In addition, we shall assume that "
 "the  data is real-valued. For a total of "
 msgstr ""
-") besitzen. Eine Verallgemeinerung auf mehrere unabhängige Variablen ist "
-"unkompliziert und wird in einem späteren Kapitel besprochen. Darüber hinaus "
-"gehen wir davon aus, dass es sich bei den Daten um reale Zahlen handelt. Für "
-"insgesamt "
 
 #: src/01-regression/01-least_squares.md:11
-#: src/01-regression/01-least_squares.md:15
+#: src/01-regression/01-least_squares.md:12
+#: src/01-regression/01-least_squares.md:13
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:47
+#: src/01-regression/01-least_squares.md:57
 msgid "N"
-msgstr "N"
+msgstr ""
 
 #: src/01-regression/01-least_squares.md:11
-msgid " data points, we write"
-msgstr " &nbsp;Datenpunkte notieren wir"
+msgid " data points, we write "
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:15
-msgid " i.e., "
-msgstr " d.h., "
-
-#: src/01-regression/01-least_squares.md:15
+#: src/01-regression/01-least_squares.md:12
+#: src/01-regression/01-least_squares.md:14
 #: src/01-regression/01-least_squares.md:16
 #: src/01-regression/01-least_squares.md:18
-#: src/01-regression/01-least_squares.md:24
-msgid " and "
-msgstr " &nbsp;und "
-
-#: src/01-regression/01-least_squares.md:15
-msgid " are "
-msgstr " &nbsp;sind "
-
-#: src/01-regression/01-least_squares.md:15
-msgid "\\-dimensional vectors with real-valued components  "
-msgstr "\\-dimensionale Vektoren mit reellwertigen Komponenten "
-
-#: src/01-regression/01-least_squares.md:16
-#: src/01-regression/01-least_squares.md:18
-#: src/01-regression/01-least_squares.md:24
-#: src/01-regression/01-least_squares.md:32
-#: src/01-regression/01-least_squares.md:34
+#: src/01-regression/01-least_squares.md:20
+#: src/01-regression/01-least_squares.md:25
+#: src/01-regression/01-least_squares.md:26
+#: src/01-regression/01-least_squares.md:28
+#: src/01-regression/01-least_squares.md:35
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
 #: src/01-regression/01-least_squares.md:41
-msgid "i"
-msgstr "i"
-
-#: src/01-regression/01-least_squares.md:16
-#: src/01-regression/01-least_squares.md:18
-#: src/01-regression/01-least_squares.md:24
-#: src/01-regression/01-least_squares.md:32
-#: src/01-regression/01-least_squares.md:34
-#: src/01-regression/01-least_squares.md:41
-#: src/01-regression/01-least_squares.md:50
-#: src/01-regression/01-least_squares.md:58
-#: src/01-regression/01-least_squares.md:69
-#: src/01-regression/01-least_squares.md:70
+#: src/01-regression/01-least_squares.md:42
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:45
+#: src/01-regression/01-least_squares.md:47
+#: src/01-regression/01-least_squares.md:55
+#: src/01-regression/01-least_squares.md:56
+#: src/01-regression/01-least_squares.md:57
+#: src/01-regression/01-least_squares.md:59
 msgid "​"
-msgstr "​"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:12
+#: src/01-regression/01-least_squares.md:18
+#: src/01-regression/01-least_squares.md:25
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:42
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:47
+#: src/01-regression/01-least_squares.md:57
+#: src/01-regression/01-least_squares.md:59
+msgid "="
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:12
+#: src/01-regression/01-least_squares.md:18
+#: src/01-regression/01-least_squares.md:25
+#: src/01-regression/01-least_squares.md:26
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:42
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:59
+msgid "("
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:12
+#: src/01-regression/01-least_squares.md:18
+#: src/01-regression/01-least_squares.md:25
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:42
+#: src/01-regression/01-least_squares.md:44
+msgid ","
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:12
+msgid "…"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:12
+#: src/01-regression/01-least_squares.md:18
+#: src/01-regression/01-least_squares.md:25
+#: src/01-regression/01-least_squares.md:26
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:42
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:59
+msgid ")"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:12
+#: src/01-regression/01-least_squares.md:27
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:59
+msgid "∈"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:12
+#: src/01-regression/01-least_squares.md:27
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:59
+msgid "R"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:12
+msgid " i.e., "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:13
+#: src/01-regression/01-least_squares.md:14
+#: src/01-regression/01-least_squares.md:16
+#: src/01-regression/01-least_squares.md:20
+msgid " and "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:13
+msgid " are "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:13
+msgid "\\-dimensional vectors with real-valued components  "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:14
+#: src/01-regression/01-least_squares.md:16
+#: src/01-regression/01-least_squares.md:18
+#: src/01-regression/01-least_squares.md:20
+#: src/01-regression/01-least_squares.md:25
+#: src/01-regression/01-least_squares.md:26
+#: src/01-regression/01-least_squares.md:28
+#: src/01-regression/01-least_squares.md:35
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:42
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:47
+#: src/01-regression/01-least_squares.md:57
+msgid "i"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:14
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:47
+#: src/01-regression/01-least_squares.md:57
+#: src/01-regression/01-least_squares.md:59
+msgid "."
+msgstr ""
 
 #: src/01-regression/01-least_squares.md:16
-msgid ". "
-msgstr ".<br><br> "
-
-#: src/01-regression/01-least_squares.md:18
 msgid "We can think of the relationship between "
-msgstr "Wir können uns die Beziehung zwischen "
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:18
+#: src/01-regression/01-least_squares.md:16
 msgid " as a function "
-msgstr " &nbsp;als eine Funktion "
+msgstr ""
 
+#: src/01-regression/01-least_squares.md:16
 #: src/01-regression/01-least_squares.md:18
+#: src/01-regression/01-least_squares.md:19
 #: src/01-regression/01-least_squares.md:23
-#: src/01-regression/01-least_squares.md:27
-#: src/01-regression/01-least_squares.md:32
+#: src/01-regression/01-least_squares.md:25
+#: src/01-regression/01-least_squares.md:26
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:42
 msgid "f"
-msgstr "f"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:16
+msgid ". In the ideal case, we have "
+msgstr ""
 
 #: src/01-regression/01-least_squares.md:18
-msgid ". In the ideal case, we have"
-msgstr "&nbsp;vorstellen. Im Idealfall haben wir"
+#: src/01-regression/01-least_squares.md:25
+msgid "+"
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:23
-msgid " where the function "
-msgstr " wobei die Funktion  "
-
-#: src/01-regression/01-least_squares.md:23
-msgid " describes the _true_ relationship between the  data points "
-msgstr " &nbsp;die _wahre_ Beziehung zwischen den Datenpunkten "
-
-#: src/01-regression/01-least_squares.md:24
-msgid ", while "
-msgstr ", während "
-
-#: src/01-regression/01-least_squares.md:24
-#: src/01-regression/01-least_squares.md:34
-#: src/01-regression/01-least_squares.md:41
+#: src/01-regression/01-least_squares.md:18
+#: src/01-regression/01-least_squares.md:20
+#: src/01-regression/01-least_squares.md:25
+#: src/01-regression/01-least_squares.md:28
+#: src/01-regression/01-least_squares.md:35
+#: src/01-regression/01-least_squares.md:36
 msgid "ϵ"
-msgstr "ϵ"
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:24
+#: src/01-regression/01-least_squares.md:18
+msgid "2.1"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:18
+msgid " where the function "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:19
+msgid " describes the _true_ relationship between the  data points "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:20
+msgid ", and "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:20
 msgid " describtes the random statistical error. "
-msgstr " &nbsp;den zufälligen statistischen Fehler darstellt.<br><br> "
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:27
+#: src/01-regression/01-least_squares.md:23
 msgid "In the real world, however, the relationship "
-msgstr "In der realen Welt ist die Beziehung "
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:27
+#: src/01-regression/01-least_squares.md:23
 msgid ""
 " is often unknown, and we must use a model to estimate it. In this case, we "
-"can write"
+"can write "
 msgstr ""
-" &nbsp;jedoch oft unbekannt und wir müssen ein Modell verwenden, um diese "
-"abzuschätzen. In diesem Fall gilt"
 
-#: src/01-regression/01-least_squares.md:32
-#: src/01-regression/01-least_squares.md:58
-msgid " where "
-msgstr " wobei "
-
-#: src/01-regression/01-least_squares.md:32
-#: src/01-regression/01-least_squares.md:34
-#: src/01-regression/01-least_squares.md:41
-#: src/01-regression/01-least_squares.md:50
-msgid "^"
-msgstr "^"
-
-#: src/01-regression/01-least_squares.md:32
-msgid "("
-msgstr "("
-
-#: src/01-regression/01-least_squares.md:32
-#: src/01-regression/01-least_squares.md:33
+#: src/01-regression/01-least_squares.md:25
+#: src/01-regression/01-least_squares.md:26
+#: src/01-regression/01-least_squares.md:28
+#: src/01-regression/01-least_squares.md:35
 #: src/01-regression/01-least_squares.md:36
-#: src/01-regression/01-least_squares.md:46
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:41
+#: src/01-regression/01-least_squares.md:42
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:59
+msgid "^"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:25
+#: src/01-regression/01-least_squares.md:26
+#: src/01-regression/01-least_squares.md:27
+#: src/01-regression/01-least_squares.md:30
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:38
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:42
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:59
 msgid "β"
-msgstr "β"
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:32
+#: src/01-regression/01-least_squares.md:25
+#: src/01-regression/01-least_squares.md:26
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:42
 msgid ";"
-msgstr ";"
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:32
-msgid ")"
-msgstr ")"
+#: src/01-regression/01-least_squares.md:25
+msgid "2.2"
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:32
-msgid " is the model estimator of "
-msgstr " &nbsp;der Abschätzer von "
+#: src/01-regression/01-least_squares.md:25
+#: src/01-regression/01-least_squares.md:44
+msgid " where "
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:32
-msgid " parametrised by "
-msgstr " &nbsp;ist, parametrisiert durch "
+#: src/01-regression/01-least_squares.md:26
+msgid " is the parameterised model estimator of "
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:33
-msgid "∈"
-msgstr "∈"
+#: src/01-regression/01-least_squares.md:26
+msgid " with  parameters "
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:33
-msgid "R"
-msgstr "R"
-
-#: src/01-regression/01-least_squares.md:33
+#: src/01-regression/01-least_squares.md:27
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:59
 msgid "n"
-msgstr "n"
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:33
-msgid ", with "
-msgstr "&nbsp;mit "
+#: src/01-regression/01-least_squares.md:27
+msgid ", where "
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:33
-msgid " being the number of parameters in the model. The error term "
-msgstr "  &nbsp;Parameter im Modell. Der Fehlerterm "
+#: src/01-regression/01-least_squares.md:27
+msgid " is the number of parameters  in the model. The error term "
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:34
+#: src/01-regression/01-least_squares.md:28
 msgid ""
 " now is a combination of the  statistical error and the unmodeled part of "
 "the relationship. The goal of  the regression analysis is to find the "
 "parameters "
 msgstr ""
-" &nbsp;besteht jetzt aus einer Kombination des statistischen Fehlers und des "
-"nicht modellierten Teils der Datenrelation. Das Ziel der Regressionsanalyse "
-"besteht darin, die Parameter "
 
-#: src/01-regression/01-least_squares.md:36
-msgid " that best fit  the data. "
-msgstr " zu finden, die am besten zu den Daten passen.<br><br> "
+#: src/01-regression/01-least_squares.md:30
+msgid " that best fit  the data."
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:33
 msgid ""
 "But what does \"best fit\" mean? On common approach is to use the _least "
 "squares_ method, which aims to minimise the sum of the squared errors "
 msgstr ""
-"Aber was bedeutet „am besten“? Ein üblicher Ansatz ist die Verwendung der "
-"_Methode der kleinsten Quadrate_, die die Summe der quadrierten Fehler zu "
-"minimiert "
+
+#: src/01-regression/01-least_squares.md:35
+msgid ", i.e. the least squares loss function "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+msgid "L"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:47
+#: src/01-regression/01-least_squares.md:57
+msgid "∑"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:36
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:59
+msgid "−"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:36
+msgid "2.3"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:36
+msgid " is minimised. Written mathematically, we want to find the parameters  "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:38
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:59
+msgid "∗"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:38
+msgid " using "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:59
+msgid "arg"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:39
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:59
+msgid "min"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:39
+#, fuzzy
+msgid "2.4"
+msgstr "23.04."
 
 #: src/01-regression/01-least_squares.md:41
-msgid ", i.e. the least squares loss function"
-msgstr ",&nbsp;also wird die Verlustfunktion der kleinsten Quadrate"
+msgid "If we define the vector of predicted values "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:41
+#: src/01-regression/01-least_squares.md:56
+msgid " as "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:42
+msgid " we can write eq. [(2.4)](#eq:least_squares_opt) as "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:44
+#: src/01-regression/01-least_squares.md:45
+#: src/01-regression/01-least_squares.md:47
+#: src/01-regression/01-least_squares.md:57
+#: src/01-regression/01-least_squares.md:59
+msgid "∥"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:44
+#, fuzzy
+msgid "2.5"
+msgstr "02.05."
 
 #: src/01-regression/01-least_squares.md:45
-msgid " is minimised. Written mathematically, we want to find the parameters  "
-msgstr " minimiert. Mathematisch ausgedrückt wollen wir die Parameter "
-
 #: src/01-regression/01-least_squares.md:46
-msgid "∗"
-msgstr "∗"
-
-#: src/01-regression/01-least_squares.md:46
-msgid " using"
-msgstr " &nbsp;finden, mit Hilfe von"
-
-#: src/01-regression/01-least_squares.md:50
-msgid " If we define the vector of predicted values "
-msgstr " Wenn wir den Vektor der vorhergesagten Werte "
-
-#: src/01-regression/01-least_squares.md:50
-#: src/01-regression/01-least_squares.md:70
-msgid " as"
-msgstr " &nbsp;als"
-
-#: src/01-regression/01-least_squares.md:54
-msgid " we can write eq. [(2.4)](#eq:least_squares_opt) as"
-msgstr ""
-" definieren, können wir Gl. [(2.4)](#eq:least_squares_opt) umschreiben als"
-
-#: src/01-regression/01-least_squares.md:58
-msgid "∥"
-msgstr "∥"
-
-#: src/01-regression/01-least_squares.md:58
-#: src/01-regression/01-least_squares.md:59
-#: src/01-regression/01-least_squares.md:70
+#: src/01-regression/01-least_squares.md:47
+#: src/01-regression/01-least_squares.md:56
+#: src/01-regression/01-least_squares.md:57
 msgid "v"
-msgstr "v"
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:58
+#: src/01-regression/01-least_squares.md:45
 msgid " denotes the Euclidean norm or the "
-msgstr " bezeichnet die euklidische Norm oder die "
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:58
-#: src/01-regression/01-least_squares.md:69
-#: src/01-regression/01-least_squares.md:70
+#: src/01-regression/01-least_squares.md:45
+#: src/01-regression/01-least_squares.md:55
+#: src/01-regression/01-least_squares.md:56
 msgid "ℓ"
-msgstr "ℓ"
+msgstr ""
 
-#: src/01-regression/01-least_squares.md:58
+#: src/01-regression/01-least_squares.md:45
 msgid "\\-norm of  a vector "
-msgstr "\\-Norm eines Vektors "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:46
+msgid ", defined as "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:49
+msgid ""
+"The least squares method is a popular choice for regression analysis because "
+"it has closed-form solutions for some simple but important models, and "
+"because it can be solved efficiently using numerical linear algebra methods "
+"for more complex models. However, it has some drawbacks, such as being "
+"sensitive to outliers and prone to overfitting.  An alternative to the least "
+"squares method is the least absolute deviations method, which uses the "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:55
+msgid "\\-norm instead of the "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:56
+msgid "\\-norm, defined for a vector "
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:57
+msgid "∣"
+msgstr ""
+
+#: src/01-regression/01-least_squares.md:57
+msgid " The optimisation problem is then formulated as "
+msgstr ""
 
 #: src/01-regression/01-least_squares.md:59
-msgid ", defined as"
-msgstr ", definiert als"
+#, fuzzy
+msgid "2.6"
+msgstr "20.06."
 
-#: src/01-regression/01-least_squares.md:63
-msgid ""
-" The least squares method is a popular choice for regression analysis "
-"because it has closed-form solutions for some simple but important models, "
-"and because it can be solved efficiently using numerical linear algebra "
-"methods for more complex models. However, it has some drawbacks, such as "
-"being sensitive to outliers and prone to overfitting.  An alternative to the "
-"least squares method is the least absolute deviations method, which uses the "
+#: src/01-regression/01-least_squares.md:59
+msgid " accordingly."
 msgstr ""
-" Die Methode der kleinsten Quadrate ist eine beliebte Wahl für die "
-"Regressionsanalyse, da sie geschlossene Lösungen für einige einfache, aber "
-"wichtige Modelle bietet und weil sie mit Methoden der numerischen linearen "
-"Algebra für komplexere Modelle effizient gelöst werden kann. Es weist jedoch "
-"einige Nachteile auf, z.B. die Empfindlichkeit gegenüber Ausreißern und die "
-"Anfälligkeit für Überanpassungen. Eine Alternative zur Methode der kleinsten "
-"Quadrate ist die Methode der kleinsten absoluten Abweichungen, welche die "
 
-#: src/01-regression/01-least_squares.md:69
-msgid "\\-norm instead of the "
-msgstr "\\-norm anstatt der "
-
-#: src/01-regression/01-least_squares.md:70
-msgid "\\-norm, defined for a vector "
-msgstr "\\-norm verwendet. Diese ist definiert für einen Vektor "
-
-#: src/01-regression/01-least_squares.md:74
-msgid " The optimisation problem is then formulated as:"
-msgstr " Das Optimierungsproblem wird dann wie folgt formuliert:"
-
-#: src/01-regression/01-least_squares.md:78
+#: src/01-regression/01-least_squares.md:62
 msgid ""
-" There are many other loss functions that can be used for regression,  e.g. "
+"There are many other loss functions that can be used for regression,  e.g. "
 "the [Huber loss](https://en.wikipedia.org/wiki/Huber_loss), the log-cosh "
 "loss,  the [quantile loss](https://en.wikipedia.org/wiki/"
 "Quantile_regression#Quantile_of_a_random_variable), etc. While the least "
@@ -1345,13 +1516,6 @@ msgid ""
 "limitations of the method and to consider other loss functions when "
 "appropriate."
 msgstr ""
-" Es gibt viele andere Verlustfunktionen, die für die Regression verwendet "
-"werden können, z. die [Huber-Verlustfunktion](https://en.wikipedia.org/wiki/"
-"Huber_loss), der log-cosh-Verlustfunktion, der [Quantilverlustfunktion]"
-"(https://de.wikipedia.org/wiki/Quantilsregression#Optimierungsproblem), usw. "
-"Obwohl die Methode der kleinsten Quadrate in vielen Fällen gut funktioniert, "
-"ist es wichtig, sich der Einschränkungen der Methode bewusst zu sein und "
-"gegebenenfalls andere Verlustfunktionen zu berücksichtigen."
 
 #: src/01-regression/02-linear_regression.md:5
 #: src/01-regression/03-nonlinear_regression.md:5
@@ -1371,65 +1535,39 @@ msgstr ""
 "pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui "
 "officia deserunt mollit anim id est laborum."
 
-#, fuzzy
-#~ msgid " accordingly."
-#~ msgstr " entsprechend."
+#: src/problem_set/01.md:5
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam "
+"lectus.  Set sit amet ipsum mauris. Maecenas congue ligula ac quam viverra "
+"nec  consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam "
+"eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, "
+"ut porta lorem lacinia consectetur. "
+msgstr ""
 
-#~ msgid ", and "
-#~ msgstr "beschreibt, während "
+#~ msgid "WIP"
+#~ msgstr "WIP"
 
-#~ msgid "="
-#~ msgstr "="
+#~ msgid "[Jupyter Notebook](https://jupyter.org)"
+#~ msgstr "[Jupyter Notebook](https://jupyter.org)"
 
-#~ msgid "+"
-#~ msgstr "+"
-
-#~ msgid ","
-#~ msgstr ","
-
-#~ msgid "2.1"
-#~ msgstr "2.1"
-
-#~ msgid "2.2"
-#~ msgstr "2.2"
-
-#~ msgid "L"
-#~ msgstr "L"
-
-#~ msgid "∑"
-#~ msgstr "∑"
-
-#~ msgid "−"
-#~ msgstr "−"
-
-#~ msgid "2.3"
-#~ msgstr "2.3"
-
-#~ msgid "arg"
-#~ msgstr "arg"
-
-#~ msgid "min"
-#~ msgstr "min"
-
-#~ msgid "2.4"
-#~ msgstr "2.4"
-
-#, fuzzy
-#~ msgid "2.5"
-#~ msgstr "02.05."
-
-#, fuzzy
-#~ msgid "∣"
-#~ msgstr "∣"
-
-#, fuzzy
-#~ msgid "2.6"
-#~ msgstr "20.06."
-
-#~ msgid "…"
-#~ msgstr "…"
-
-#~ msgid " now is a combination of the in the model. The error term "
+#~ msgid ""
+#~ "blockwise executable documents that can contain code, text, and  graphics"
 #~ msgstr ""
-#~ " ist in diesem Fall eine Kombination des Modells. die Anzahl der "
-#~ "Parameter im Modell. Der Fehlerterm "
+#~ "blockweise ausführbare Dokumente, die Code, Text und Grafiken enthalten "
+#~ "können"
+
+#~ msgid ""
+#~ "many tutorials available on the internet, e.g. [here](https://www."
+#~ "dataquest.io/blog/jupyter-notebook-tutorial/)"
+#~ msgstr ""
+#~ "viele Tutorials im Internet verfügbar, z.B. [hier](https://www.dataquest."
+#~ "io/blog/jupyter-notebook-tutorial/)"
+
+#~ msgid "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+#~ msgstr "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+
+#~ msgid "\"Hello, World!\""
+#~ msgstr "“Hello, World!”"
+
+#~ msgid "Regressionsanalyse"
+#~ msgstr "Regressionsanalyse"
