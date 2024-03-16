@@ -1,49 +1,53 @@
-# Preface
+# Vorwort
 
-Dear students,
+Liebe Studierende,
 
-welcome to the lecture "Programming Course for Chemists".
-In this course, you will learn the basics of programming in the Python programming language and implement many useful numerical algorithms for chemistry.
+herzlich willkommen zur Vorlesung "Programmierkurs für Chemiker".
+In diesem Kurs werden Sie die Grundlagen des Programmierens mit der 
+Programmiersprache Python erlernen und viele nützliche numerische 
+Algorithmen implementieren für die Chemie und darüber hinaus.
 
-The course takes place
-- on Tuesdays from 10:15 to 11:45 am
-and
-- on Thursdays from 2:15 to 3:45 pm
-
-in the seminar room 00.006 of the Institute of Theoretical Chemistry (Campus Hubland Nord).
+Diese Veranstaltung findet
+- dienstags von 10:15 bis 11:45 Uhr
+und
+- donnerstags von 14:15 bis 15:45 Uhr
+im Seminarraum 00.006 des Instituts für Theoretische Chemie 
+(Campus Hubland Nord) statt.
 
 ## Syllabus
 
-A preliminary syllabus is shown below. This can and will be continuously updated throughout the semester according to the progress of the lecture.
+Ein vorläufiger Syllabus ist unten dargestellt. Dieser wird
+sich im Laufe des Semesters entsprechend dem Fortschritt der Vorlesung
+kontinuierlich aktualisiert.
 
-|Week |Weekday  | Date   | Type        | Topic           |
+|Woche|Wochentag| Datum  | Typ         | Thema           |
 |:---:|---------|--------|-------------|-----------------|
-|  1  | Tue.    | 16.04. | Introduction| Course Overview and Installation of Python |
-|  1  | Thu.    | 18.04. | Lecture     | Regression I    |
-|  2  | Tue.    | 23.04. | Lecture     | Regression II   |
-|  2  | Thu.    | 25.04. | Lecture     | Regression III  |
-|  3  | Tue.    | 30.04. | Exercise    | Regression      |
-|  3  | Thu.    | 02.05. |             |                 |
-|  4  | Tue.    | 07.05. |             |                 |
-|  4  | ~~Thu.~~ | ~~09.05.~~ | Holiday | Christi Himmelfahrt |
-|  5  | Tue.    | 14.05. |             |                 |
-|  5  | Thu.    | 16.05. |             |                 |
-|  6  | Tue.    | 21.05. |             |                 |
-|  6  | Thu.    | 23.05. |             |                 |
-|  7  | Tue.    | 28.05. |             |                 |
-|  7  | ~~Thu.~~ | ~~30.05.~~ | Holiday | Fronleichnam |
-|  8  | Tue.    | 04.06. |             |                 |
-|  8  | Thu.    | 06.06. |             |                 |
-|  9  | Tue.    | 11.06. |             |                 |
-|  9  | Thu.    | 13.06. |             |                 |
-| 10  | Tue.    | 18.06. |             |                 |
-| 10  | Thu.    | 20.06. |             |                 |
-| 11  | Tue.    | 25.06. |             |                 |
-| 11  | Thu.    | 27.06. |             |                 |
-| 12  | Tue.    | 02.07. |             |                 |
-| 12  | Thu.    | 04.07. |             |                 |
-| 13  | Tue.    | 09.07. |             |                 |
-| 13  | Thu.    | 11.07. |             |                 |
-| 14  | Tue.    | 16.07. |             |                 |
-| 14  | Thu.    | 18.07. |             |                 |
+|  1  | Di.     | 16.04. | Einführung  | Kursüberblick und Installation von Python |
+|  1  | Do.     | 18.04. | Vorlesung   | Regression I    |
+|  2  | Di.     | 23.04. | Vorlesung   | Regression II   |
+|  2  | Do.     | 25.04. | Vorlesung   | Regression III  |
+|  3  | Di.     | 30.04. | Übung       | Regression      |
+|  3  | Do.     | 02.05. |             |                 |
+|  4  | Di.     | 07.05. |             |                 |
+|  4  | ~~Do.~~ | ~~09.05.~~ | Feiertag | Christi Himmelfahrt |
+|  5  | Di.     | 14.05. |             |                 |
+|  5  | Do.     | 16.05. |             |                 |
+|  6  | Di.     | 21.05. |             |                 |
+|  6  | Do.     | 23.05. |             |                 |
+|  7  | Di.     | 28.05. |             |                 |
+|  7  | ~~Do.~~ | ~~30.05.~~ | Feiertag | Fronleichnam   |
+|  8  | Di.     | 04.06. |             |                 |
+|  8  | Do.     | 06.06. |             |                 |
+|  9  | Di.     | 11.06. |             |                 |
+|  9  | Do.     | 13.06. |             |                 |
+| 10  | Di.     | 18.06. |             |                 |
+| 10  | Do.     | 20.06. |             |                 |
+| 11  | Di.     | 25.06. |             |                 |
+| 11  | Do.     | 27.06. |             |                 |
+| 12  | Di.     | 02.07. |             |                 |
+| 12  | Do.     | 04.07. |             |                 |
+| 13  | Di.     | 09.07. |             |                 |
+| 13  | Do.     | 11.07. |             |                 |
+| 14  | Di.     | 16.07. |             |                 |
+| 14  | Do.     | 18.07. |             |                 |
 

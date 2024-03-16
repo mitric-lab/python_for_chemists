@@ -1,21 +1,21 @@
 # SUMMARY
 
-# Table of Contents
+# Inhaltsverzeichnis
 
-- [Preface](00-preface.md)
+- [Vorwort](00-preface.md)
     - [Motivation](00-preface/01-motivation.md)
-    - [Getting started](00-preface/02-getting_started.md)
-    - [Navigating this website](00-preface/03-mdbook_usage.md)
+    - [Erste Schritte](00-preface/02-getting_started.md)
+    - [Bedienung dieser Website](00-preface/03-mdbook_usage.md)
 
 ---
 
-- [Regression Analysis](01-regression.md)
-    - [Least Squares](01-regression/01-least_squares.md)
-    - [Linear Regression](01-regression/02-linear_regression.md)
-    - [Nonlinear Regression](01-regression/03-nonlinear_regression.md)
-    - [Numerical Optimisation](01-regression/04-numerical_optimisation.md)
+- [Regressionsanalyse](01-regression.md)
+    - [Methode der kleinsten Quadrate](01-regression/01-least_squares.md)
+    - [Lineare Regression](01-regression/02-linear_regression.md)
+    - [Nichtlineare Regression](01-regression/03-nonlinear_regression.md)
+    - [Numerische Optimierung](01-regression/04-numerical_optimisation.md)
 
 ---
 
-[Problem Set 1](problem_set/01.md)
+[Übung 1](problem_set/01.md)
 

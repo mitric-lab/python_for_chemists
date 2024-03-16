@@ -1,12 +1,9 @@
 [book]
 authors = ["Xincheng Miao", "Lasse Kreimendahl", "Roland Mitrić"]
-language = "en"
+language = "de"
 multilingual = false
 src = "src"
-title = "Programming Course for Chemists"
-
-[build]
-extra-watch-dirs = ["po"]
+title = "Programmierkurs für Chemiker"
 
 [output.html]
 mathjax-support = true
@@ -14,12 +11,10 @@ additional-css = [
     "./theme/catppuccin.css", 
     "./theme/catppuccin-admonish.css", 
     "./mdbook-admonish.css",
-    "./theme/css/language-picker.css",
     "./theme/icomoon.css",
 ]
 
 [preprocessor.katex]
-before = ["gettext"]
 after = ["links"]
 output = "html"
 throw_on_error = false
@@ -30,9 +25,6 @@ trust = true
 global = false
 prefix = true
 depth = 1
-
-[preprocessor.gettext]
-after = ["links"]
 
 [preprocessor.admonish]
 command = "mdbook-admonish"

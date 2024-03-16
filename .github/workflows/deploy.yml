@@ -41,16 +41,14 @@ jobs:
         run: |
           cargo install mdbook-admonish --locked --version 1.15.0
           mdbook-admonish install .
-          cargo install mdbook-i18n-helpers --locked --version 0.3.2
           cargo install mdbook-katex --locked --version 0.6.0
-          cargo install --git https://github.com/xmiaocat/mdbook-numeq#d5592a53
+          cargo install mdbook-numeq --locked --version 0.3.0
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
       - name: Build with mdBook
         run: |
           mdbook build
-          MDBOOK_BOOK__LANGUAGE=de mdbook build -d book/de
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
