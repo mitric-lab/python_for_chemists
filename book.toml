@@ -10,7 +10,8 @@ mathjax-support = true
 additional-css = [
     "./theme/catppuccin.css", 
     "./theme/catppuccin-admonish.css", 
-    "./mdbook-admonish.css",
+    "./theme/mdbook-admonish.css",
+    "./theme/mdbook-admonish-custom.css",
     "./theme/icomoon.css",
 ]
 
@@ -29,4 +30,11 @@ depth = 1
 [preprocessor.admonish]
 command = "mdbook-admonish"
 assets_version = "3.0.2" # do not edit: managed by `mdbook-admonish install`
+
+
+[[preprocessor.admonish.custom]]
+directive = "derivation"
+icon = "./src/assets/icons/scroll-solid.svg"
+color = "#24ab38"
+aliases = ["proof", "herleitung", "beweis"]
 

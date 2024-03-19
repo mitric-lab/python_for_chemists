@@ -9,10 +9,10 @@ Variablen ist einfach und wird in einem späteren Kapitel diskutiert.
 Darüber hinaus gehen wir davon aus, dass die Daten reellwertig sind.
 Für insgesamt $N$ Datenpunkte schreiben wir
 $$
-  \begin{align*}
+  \begin{align}
     x &= (x_1, x_2, \ldots, x_N) \in \mathbb{R}^N \\
     y &= (y_1, y_2, \ldots, y_N) \in \mathbb{R}^N \,,
-  \end{align*}
+  \end{align}
 $$ 
 d.h. $x$ und $y$ sind $N$-dimensionale Vektoren mit reellwertigen
 Komponenten $x_i$ und $y_i$.
