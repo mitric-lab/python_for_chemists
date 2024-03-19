@@ -17,5 +17,5 @@
 
 ---
 
-[Übung 1](problem_set/01.md)
+[Übung 1](psets/01.md)
 

@@ -380,3 +380,10 @@ mit analytischen Methoden nicht weit. In solchen Fällen müssen wir
 das Optimierungsproblem in Gl. {{eqref: eq:least_squares_opt}} numerisch
 lösen. 
 
+---
+
+### Übung
+
+#### Aufgabe 1.1
+{{#include ../psets/01.md:aufgabe_1}}
+
