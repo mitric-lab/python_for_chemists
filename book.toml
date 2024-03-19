@@ -13,6 +13,10 @@ additional-css = [
     "./theme/mdbook-admonish.css",
     "./theme/mdbook-admonish-custom.css",
     "./theme/icomoon.css",
+    "./theme/pagetoc.css",
+]
+additional-js = [
+    "./theme/pagetoc.js",
 ]
 
 [preprocessor.katex]
