@@ -238,8 +238,14 @@ lösen, um die optimalen Parameter $\beta_0$ und $\beta_1$ zu erhalten:
 ```
 Die Funktion 
 [`np.linalg.solve`](https://numpy.org/doc/stable/reference/generated/numpy.linalg.solve.html)
-löst ein lineares Gleichungssystem. Mit der `print`-Funktion geben wir die
-Lösung anschließend aus.
+löst (numerisch) ein lineares Gleichungssystem. Mit der `print`-Funktion 
+geben wir die Lösung anschließend aus.
+
+```admonish note title="Hinweis"
+Eine analytische Lösung des Gleichungssystems 
+{{eqref: eq:least_squares_linear_params}} ist möglich, da die Systemmatrix
+$\bm{A}$ nur $2 \times 2$ groß ist und damit analytisch invertierbar. 
+```
 
 Wenn man schon weiß, welche Werte $\beta_0$ und $\beta_1$ haben sollen und 
 nur den Algorithmus testen möchte, kann man die Verifikation z.B. wie folgt
@@ -367,4 +373,10 @@ import matplotlib.pyplot as plt
 # Rest des Skripts
 ```
 ~~~
+
+Eine analytische Lösung ist zwar für einfache Regressionsmodelle wie das
+lineare Modell hier möglich, aber für komplexere Modelle kommen wir
+mit analytischen Methoden nicht weit. In solchen Fällen müssen wir
+das Optimierungsproblem in Gl. {{eqref: eq:least_squares_opt}} numerisch
+lösen. 
 

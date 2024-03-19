@@ -12,8 +12,8 @@
 - [Regressionsanalyse](01-regression.md)
     - [Methode der kleinsten Quadrate](01-regression/01-least_squares.md)
     - [Lineare Regression](01-regression/02-linear_regression.md)
-    - [Nichtlineare Regression](01-regression/03-nonlinear_regression.md)
-    - [Numerische Optimierung](01-regression/04-numerical_optimisation.md)
+    - [Numerische Optimierung](01-regression/03-numerical_optimisation.md)
+    - [Nichtlineare Regression](01-regression/04-nonlinear_regression.md)
 
 ---
 
