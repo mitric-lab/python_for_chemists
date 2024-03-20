@@ -1,6 +1,6 @@
 ## Motivation
 
-### Warum sollte ich als Chemiker:in programmieren lernen?
+### Warum sollte ich im Chemie-Studium programmieren lernen?
 
 Im 21. Jahrhundert wird Programmieren zu einer immer wichtigeren Fähigkeit. Dies gilt
 nicht nur für die Informatik, sondern auch für die Chemie, Physik, Biologie und viele
