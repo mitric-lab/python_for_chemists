@@ -228,7 +228,7 @@ zusammenstellen:
 {{#include ../codes/01-regression/linreg_lambert_beer.py:create_system_arrays}}
 ```
 
-Beachte, dass für die Erstellung einer Matrix (bzw. eines sog. *2D-Arrays*)
+Beachte Sie, dass für die Erstellung einer Matrix (bzw. eines sog. *2D-Arrays*)
 eine Liste von Listen verwendet wird. Die innere Liste entspricht einer
 Zeile der Matrix. Die äußere Liste enthält die Zeilen der Matrix. Jetzt können
 wir endlich das Gleichungssystem {{eqref: eq:least_squares_linear_params}}
@@ -254,7 +254,7 @@ durchführen:
 {{#include ../codes/01-regression/linreg_lambert_beer.py:beta_verification}}
 ```
 Hier haben wir zuerst den Array `beta` *indexiert* mit eckigen Klammern `[]`.
-Beachte, dass die Indizierung in Python bei 0 beginnt. Das bedeutet, dass
+Beachten Sie, dass die Indizierung in Python bei 0 beginnt. Das bedeutet, dass
 $\beta_0$ den 0-ten Eintrag und $\beta_1$ den 1-ten Eintrag des Arrays `beta`
 entspricht. Anschließend haben wir die Werte von $\beta_0$ und $\beta_1$
 mit Referenzwerten verglichen. 
