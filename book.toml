@@ -19,6 +19,16 @@ additional-js = [
     "./theme/pagetoc.js",
 ]
 
+[preprocessor.chapter-zero]
+before = ["numeq"]
+levels = [0]
+
+[preprocessor.numeq]
+before = ["katex"]
+global = false
+prefix = true
+depth = 1
+
 [preprocessor.katex]
 after = ["links"]
 output = "html"
@@ -26,19 +36,14 @@ throw_on_error = false
 error_color = "#cc0000"
 trust = true
 
-[preprocessor.numeq]
-global = false
-prefix = true
-depth = 1
-
 [preprocessor.admonish]
 command = "mdbook-admonish"
 assets_version = "3.0.2" # do not edit: managed by `mdbook-admonish install`
-
 
 [[preprocessor.admonish.custom]]
 directive = "derivation"
 icon = "./src/assets/icons/scroll-solid.svg"
 color = "#24ab38"
 aliases = ["proof", "herleitung", "beweis"]
+
 
