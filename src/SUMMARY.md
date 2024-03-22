@@ -15,6 +15,24 @@
     - [Numerische Optimierung](01-regression/03-numerical_optimisation.md)
     - [Nichtlineare Regression](01-regression/04-nonlinear_regression.md)
 
+- [Differentialgleichungen](02-differential_equations.md)
+    - [Anfangswertproblem]()
+    - [Euler-Verfahren]()
+    - [Runge-Kutta-Verfahren]()
+    - [Finite-Differenzen-Verfahren]()
+
+- [Fourier-Transformation]()
+
+- [Eigenwert- und Singulärwertzerlegung]()
+
+- [Überwachtes Lernen: Regression]()
+
+- [Überwachtes Lernen: Klassifikation]()
+
+- [Nichtüberwachtes Lernen]()
+
+[Zusammenfassung und Ausblick]()
+
 ---
 
 [Übung 1](psets/01.md)
