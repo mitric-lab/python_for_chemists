@@ -110,7 +110,7 @@ $$
   \begin{pmatrix}
     \displaystyle \sum_{i=1}^N\, y_i \\[1.5em]
     \displaystyle \sum_{i=1}^N\, x_i y_i
-  \end{pmatrix}}_{\displaystyle \vec{b}} \,.
+  \end{pmatrix}}_ {\displaystyle \vec{b}} \,.
   {{numeq}}{eq:least_squares_linear_params}
 $$
 Die Lösung dieses Gleichungssystems liefert uns die optimalen
