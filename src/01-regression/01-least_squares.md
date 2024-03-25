@@ -53,18 +53,18 @@ wird minimiert. Mathematisch ausgedrückt wollen wir die Parameter
 $\beta^* $ durch Lösen des Optimierungsproblems
 $$
   \beta^* 
-    = \underset{\beta\in\mathbb{R}^n}{\mathrm{arg\,min}}\ L(\beta; x, y)
-    = \underset{\beta\in\mathbb{R}^n}{\mathrm{arg\,min}} \sum_{i=1}^N\, (y_i - \hat{f}(\beta; x_i))^2 \,. {{numeq}}{eq:least_squares_opt}
+    = \argmin{\beta\in\mathbb{R}^n} L(\beta; x, y)
+    = \argmin{\beta\in\mathbb{R}^n} \sum_{i=1}^N\, (y_i - \hat{f}(\beta; x_i))^2 \,. {{numeq}}{eq:least_squares_opt}
 $$
 finden. Wenn wir den Vektor der vorhergesagten Werte $\hat{y}$ als
 $$
-  \hat{y}_i = \hat{f}(\beta; x_i)\,,
+  \hat{y}_ i = \hat{f}(\beta; x_i)\,,
 $$
 schreiben, können wir Gl. {{eqref: eq:least_squares_opt}} als
 $$
-  \beta^* 
-    = \underset{\beta\in\mathbb{R}^n}{\mathrm{arg\,min}}\ \sum_{i=1}^N\, (y_i - \hat{y}_i)^2 
-    = \underset{\beta\in\mathbb{R}^n}{\mathrm{arg\,min}}\ \|y - \hat{y}\|_2^2 \,, {{numeq}}{eq:least_squares_opt2}
+  \beta^{* } 
+    = \argmin{\beta\in\mathbb{R}^n} \sum_{i=1}^N\, (y_ i - \hat{y}_ i)^2 
+    = \argmin{\beta\in\mathbb{R}^n} \|y - \hat{y}\|_ 2^2 \,, {{numeq}}{eq:least_squares_opt2}
 $$
 formulieren, wobei $\| v \|_2$ die euklidische Norm oder die $\ell_2$-Norm
 eines Vektors $v$ bezeichnet, definiert als
@@ -88,7 +88,7 @@ $$
 Das Optimierungsproblem wird dann formuliert als
 $$
   \beta^* 
-    = \underset{\beta\in\mathbb{R}^n}{\mathrm{arg\,min}}\ \|y - \hat{y}\|_1 \,. {{numeq}}{eq:least_absolute_deviations_opt}
+    = \argmin{\beta\in\mathbb{R}^n} \|y - \hat{y}\|_1 \,. {{numeq}}{eq:least_absolute_deviations_opt}
 $$
 
 Es gibt viele andere Verlustfunktionen, die für die Regression verwendet

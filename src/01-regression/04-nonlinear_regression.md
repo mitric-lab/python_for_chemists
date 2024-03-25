@@ -19,7 +19,7 @@ Dort haben wir die Absorbanz $A$ in Abhängigkeit der Zeit $t$ gemessen und
 dadurch die Geschwindigkeitskonstante $k$ bestimmt. Die zugrunge liegende
 Beziehung ist exponentiell:
 $$
-  A(t) = A_0\, \mathrm{e}^{-k t}
+  A(t) = A_0\, \eu^{-k t}
 $$
 mit dem Parametern $A_0$ und $k$, d.h. $\beta = (A_0, k)^\intercal$.
 
@@ -27,7 +27,7 @@ Hier gilt also $A(t) = \hat{f}(\beta; t)$ und wir können mit Hilfe der
 Verlustfunktion der kleinsten Quadrate das Regressionsproblem als das folgende
 Optimierungsproblem formulieren:
 $$
-  \beta^{* } = \underset{\beta\in\mathbb{R}^2}{\mathrm{arg\,min}}\ \sum_{i=1}^N\, (A_i - A_0\, \mathrm{e}^{-k t_i})^2
+  \beta^{* } = \argmin{\beta\in\mathbb{R}^2} \sum_{i=1}^N\, (A_i - A_0\, \eu^{-k t_i})^2
   {{numeq}}{eq:least_squares_exp_opt}
 $$
 
