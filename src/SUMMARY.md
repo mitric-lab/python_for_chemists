@@ -16,10 +16,10 @@
     - [Nichtlineare Regression](01-regression/04-nonlinear_regression.md)
 
 - [Differentialgleichungen](02-differential_equations.md)
-    - [Anfangswertproblem]()
-    - [Euler-Verfahren]()
-    - [Runge-Kutta-Verfahren]()
-    - [Finite-Differenzen-Verfahren]()
+    - [Anfangswertproblem](02-differential_equations/01-initial_value_problem.md)
+    - [Euler-Verfahren](02-differential_equations/02-euler_method.md)
+    - [Runge-Kutta-Verfahren](02-differential_equations/03-runge_kutta.md)
+    - [Finite-Differenzen-Verfahren](02-differential_equations/04-finite_differences.md)
 
 - [Fourier-Transformation]()
 

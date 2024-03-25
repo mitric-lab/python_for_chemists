@@ -35,6 +35,7 @@ output = "html"
 throw_on_error = false
 error_color = "#cc0000"
 trust = true
+macros = "katex_macros.txt"
 
 [preprocessor.admonish]
 command = "mdbook-admonish"

@@ -1,0 +1,5 @@
+\iu:{\mathrm{i}}
+\du:{\mathrm{d}}
+\eu:{\mathrm{e}}
+\equalhat:{\ \mathrel{\widehat{=}}\ }
+
