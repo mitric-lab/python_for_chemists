@@ -1,22 +1,26 @@
-@media only screen and (max-width:1439px) {
+:root {
+    --pagetoc-width: 250px;
+}
+
+@media only screen and (max-width:1359px) {
     .sidetoc {
         display: none;
     }
 }
 
-@media only screen and (min-width:1440px) {
+@media only screen and (min-width:1360px) {
     main {
         position: relative;
     }
     .sidetoc {
         margin-left: auto;
         margin-right: auto;
-        left: calc(100% + (var(--content-max-width))/4 - 140px);
+        left: calc(100% + (var(--content-max-width))/4 - 160px - var(--pagetoc-width));
         position: absolute;
     }
     .pagetoc {
         position: fixed;
-        width: 200px;
+        width: var(--pagetoc-width);
         height: calc(100vh - var(--menu-bar-height) - 0.67em * 4);
         overflow: auto;
     }

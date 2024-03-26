@@ -86,8 +86,18 @@ h6:target::before {
 .content main {
     margin-left: auto;
     margin-right: auto;
-    max-width: var(--content-max-width);
+    max-width: calc(var(--content-max-width) + var(--pagetoc-width));
+    padding-right: var(--pagetoc-width); /* Compensate for the pagetoc */
+    box-sizing: border-box;
 }
+@media only screen and (max-width:1359px) {
+    /* pagetoc is hidden on small screens */
+    .content main {
+	max-width: var(--content-max-width);
+        padding-right: 0px;
+    }
+}
+
 .content p { line-height: 1.45em; }
 .content ol { line-height: 1.45em; }
 .content ul { line-height: 1.45em; }
