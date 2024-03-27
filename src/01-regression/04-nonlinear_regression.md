@@ -261,8 +261,11 @@ Man erkennt sehr schnell, dass die Regression an $[\mathrm{H^+}]$
 die früheren Datenpunkte bevorzugt und dadurch den Äquivalenzpunkt
 völlig falsch bestimmt. 
 
+---
+
 ### Übung
 
-Lores ipsum...
+#### Aufgabe 1.3
+{{#include ../psets/01.md:aufgabe_3}}
 
 

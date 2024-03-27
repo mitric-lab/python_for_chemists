@@ -291,7 +291,13 @@ zu einer Familie von Methoden, die als *Runge-Kutta-Verfahren* bekannt sind.
 
 
 
-
 [^field1986]: R. J. Field, H.-D. Försterling, *J. Phys. Chem.* **1986**, *90*, 5400&ndash;5407.
 [^schneider1996]: F. W. Schneider, A. F. Münster, in *Nichelineare Dynamik in der Chemie*, Spektrum Akademischer Verlag, Heidelberg, **1996**, pp. 67&ndash;72.
+
+---
+
+### Übung
+
+#### Aufgabe 2.1
+{{#include ../psets/02.md:aufgabe_1}}
 

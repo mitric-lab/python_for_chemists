@@ -361,6 +361,7 @@ Funktion `minimize` zu verwenden.
 
 ### Übung
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec nulla
-nec nunc tincidunt tincidunt. 
+#### Aufgabe 1.2
+{{#include ../psets/01.md:aufgabe_2}}
+
 
