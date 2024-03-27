@@ -148,7 +148,16 @@ ist eine klassisches Beispiel für eine oszillierende Reaktion.
 Dabei wird ein Redox-System ($\mathrm{Ce^{3+}/Ce^{4+}}$ in der Originalreaktion)
 zum Oszillieren zwischen der oxidierten und der reduzierten Form gebracht.
 In dem untenstehende Video können Sie die Reaktion beobachten:
-<iframe width="750" height="422" src="https://www.youtube.com/embed/kw9wF-GNjqs?start=140&end=154" title="Everything about the Belousov Zhabotinsky reaction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="750" height="422" src="https://www.youtube.com/embed/kw9wF-GNjqs?start=141&end=154" title="Everything about the Belousov Zhabotinsky reaction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<!--
+<div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
+   <img src="../assets/figures/02-differential_equations/bz_thumbnail.png" style="cursor:pointer" />
+</div>
+<div style="display:none">
+<iframe width="750" height="422" src="https://www.youtube.com/embed/kw9wF-GNjqs?start=141&end=154" title="Everything about the Belousov Zhabotinsky reaction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+-->
 
 *Hier wird als Redox-System [Ferroin](https://de.wikipedia.org/wiki/Ferroin) 
 verwendet, welches eine stärkere Farbänderung zeigt.*
