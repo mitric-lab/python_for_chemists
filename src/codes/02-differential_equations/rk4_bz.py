@@ -29,19 +29,38 @@ def dydx(x: float, y: np.ndarray) -> np.ndarray:
 ### ANCHOR_END: dydx
 
 
-### ANCHOR: euler_step
-def euler_step(
+### ANCHOR: rk4_step
+def rk4_step(
     x_n: float,
     y_n: np.ndarray,
     h: float,
     dydx: Callable[[float, np.ndarray], np.ndarray],
 ) -> np.ndarray:
-    return y_n + h * dydx(x_n, y_n)
-### ANCHOR_END: euler_step
+    a21 = 1.0 / 3.0
+    a31 = -1.0 / 3.0
+    a32 = 1.0
+    a41 = 1.0
+    a42 = -1.0
+    a43 = 1.0
+    b1 = 1.0 / 8.0
+    b2 = 3.0 / 8.0
+    b3 = 3.0 / 8.0
+    b4 = 1.0 / 8.0
+    c2 = 1.0 / 3.0
+    c3 = 2.0 / 3.0
+    c4 = 1.0
+
+    k1 = dydx(x_n, y_n)
+    k2 = dydx(x_n + h * c2, y_n + h * a21 * k1)
+    k3 = dydx(x_n + h * c3, y_n + h * (a31 * k1 + a32 * k2))
+    k4 = dydx(x_n + h * c4, y_n + h * (a41 * k1 + a42 * k2 + a43 * k3))
+
+    return y_n + h * (b1 * k1 + b2 * k2 + b3 * k3 + b4 * k4)
+### ANCHOR_END: rk4_step
 
 
-### ANCHOR: euler_method
-def euler_method(
+### ANCHOR: rk4_method
+def rk4_method(
     x0: float, 
     y0: np.ndarray,
     h: float, 
@@ -55,25 +74,11 @@ def euler_method(
     y[:, 0] = y0
 
     for i in range(0, n):
-        y[:, i + 1] = euler_step(x[i], y[:, i], h, dydx)
+        y[:, i + 1] = rk4_step(x[i], y[:, i], h, dydx)
 
     return x, y
-### ANCHOR_END: euler_method
+### ANCHOR_END: rk4_method
 
-
-### ANCHOR: solve_ode_bad
-CX_0 = 0.0    # M
-CY_0 = 0.001  # M
-CZ_0 = 0.0    # M
-C0 = np.array([CX_0, CY_0, CZ_0])
-
-T0 = 0.0
-STEP = 1.0
-TMAX = 200.0
-
-nsteps = int(TMAX / STEP)
-x, y = euler_method(0, C0, STEP, dydx, nsteps)
-### ANCHOR_END: solve_ode_bad
 
 ### ANCHOR: solve_ode
 CX_0 = 0.0    # M
@@ -82,11 +87,11 @@ CZ_0 = 0.0    # M
 C0 = np.array([CX_0, CY_0, CZ_0])
 
 T0 = 0.0
-STEP = 0.0005
+STEP = 0.001
 TMAX = 200.0
 
 nsteps = int(TMAX / STEP)
-x, y = euler_method(0, C0, STEP, dydx, nsteps)
+x, y = rk4_method(0, C0, STEP, dydx, nsteps)
 ### ANCHOR_END: solve_ode
 
 ### ANCHOR: plot
@@ -108,5 +113,5 @@ ax.legend(loc='upper right')
 plt.show()
 ### ANCHOR_END: plot
 
-fig.savefig('../../assets/figures/02-differential_equations/euler_bz.svg')
+fig.savefig('../../assets/figures/02-differential_equations/rk4_bz.svg')
 

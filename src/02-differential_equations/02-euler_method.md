@@ -83,8 +83,12 @@ $$
   c'(t) = -k c(t)
   {{numeq}}{eq:mn_decay}
 $$
-beschrieben wird. Damit können wir die Funktion `dydx` implementieren, die
-$f(x_n, y(x_n))$ berechnet:
+beschrieben wird. Damit können wir nach dem Importieren der benötigten
+Libraries
+```python
+{{#include ../codes/02-differential_equations/euler_mn.py:imports}}
+```
+die Funktion `dydx` implementieren, die $f(x_n, y(x_n))$ berechnet:
 ```python
 {{#include ../codes/02-differential_equations/euler_mn.py:dydx}}
 ```
@@ -93,7 +97,7 @@ gibt die Ableitung $c'(t_n) = -k c(t_n)$ zurück. Hier haben wir die gefittete
 Geschwindigkeitskonstante $k$ aus Abschnitt 
 [1.4](../01-regression/04-nonlinear_regression.md#reaktionskinetik) verwendet.
 Dann können wir nach Gl. {{eqref: eq:euler_method}} die Funktion `euler_step`
-implementieren, die den Funktiowert $y(x_{n+1})$ berechnet:
+implementieren, die den Funktionswert $y(x_{n+1})$ berechnet:
 ```python
 {{#include ../codes/02-differential_equations/euler_mn.py:euler_step}}
 ```
@@ -196,7 +200,11 @@ DGL-Systeme genauso gültig wie für einzelne DGLs, wenn wir für $y(x)$
 eine vektorwertige Funktion einsetzen, also in diesem Fall
 $y(x) \equalhat ([X](t), [Y](t), [Z](t))^\intercal$.
 
-Wir können die Funktion `dydx` für das Oregonator-Modell z.B. so 
+Nach dem Importieren der benötigten Libraries
+```python
+{{#include ../codes/02-differential_equations/euler_bz.py:imports}}
+```
+können wir die Funktion `dydx` für das Oregonator-Modell z.B. so 
 implementieren:
 ```python
 {{#include ../codes/02-differential_equations/euler_bz.py:dydx}}
@@ -222,9 +230,9 @@ Nun lösen wir das DGL-System in Gl. {{eqref: eq:oregonator}}:
 ```python
 {{#include ../codes/02-differential_equations/euler_bz.py:solve_ode_bad}}
 ```
-Hier haben wir die Anfangsbedingungen `C0 = np.array([0.0, 0.03, 0.0])` 
+Hier haben wir die Anfangsbedingungen `C0 = np.array([0.0, 0.001, 0.0])` 
 definiert, welche bedeutet, dass in der Anfangsmischung nur die Spezies 
-$\mathrm{Br^-}$ mit einer Konzentration von $0.03\ \mathrm{M}$ vorhanden ist, 
+$\mathrm{Br^-}$ mit einer Konzentration von $0.001\ \mathrm{M}$ vorhanden ist, 
 und die Spezies $\mathrm{HBrO_ 2}$ und $\mathrm{Ce^{4+}}$ liegen nicht vor.
 
 Dieser Code-Block schafft es aber nicht, uns die richtige Lösung zu liefern.
@@ -240,29 +248,26 @@ Das ist ein Zeichen dafür, dass die Schrittweite $h$ zu groß ist und das
 Euler-Verfahren instabil wird.
 
 Um also die numerische Lösung zu erhalten, müssen wir die Schrittweite $h$
-verkleinern. Tatächlich brauchen wir hier eine Schrittweite von `h = 0.00002`,
+verkleinern. Tatächlich brauchen wir hier eine Schrittweite von `h = 0.0005`,
 um eine stabile Lösung zu erhalten:
 ```python
 {{#include ../codes/02-differential_equations/euler_bz.py:solve_ode}}
 ```
 Obwohl wir hier eine korrekte Lösung erhalten, haben wir
-$200/0.00002 = 10.000.000$ Schritte benötigt, was eine relativ lange 
-Rechenzeit bedeutet.
+$200/0.0005 = 400.000$ Schritte benötigt. Wäre die Anfangsbedingung
+so gewählt, dass $c_Y^0$ noch größer ist als $0.001\ \mathrm{M}$, dann
+wäre die DGLs noch schwieriger zu lösen und wir müssten noch kleinere
+Schrittweiten verwenden.
 
 Nun plotten wir das Ergebnis:
 ```python
 {{#include ../codes/02-differential_equations/euler_bz.py:plot}}
 ```
-Wir haben hier mit dem *Slice* `[::100]` ausgewählt, dass die betroffenen
-Arrays nur an jedem 100. Punkt geplottet werden. Damit können wir das 
-Plotten erheblich beschleunigen. 
-Zudem haben wir mit den Funktionen `ax.set_xlim` und `ax.set_ylim` die Achsen
-eingeschränkt, um die Oszillation von $[\mathrm{HBrO_ 2}]$ und 
-$[\mathrm{Ce^{4+}}]$ besser beobachten zu können. 
-Außerdem haben wir das Argument `loc='upper right'` an die Funktion 
-`ax.legend` gegeben, um die Legende nach oben rechts zu verschieben. Das 
-voreingestellte Argument ist `loc='best'`, was die "beste" Position für die 
-Legende automatisch berechnet.
+Wir haben hier mit den Funktionen `ax.set_xlim` und `ax.set_ylim` die Achsen
+eingeschränkt. Außerdem haben wir das Argument `loc='upper right'` an die 
+Funktion `ax.legend` gegeben, um die Legende nach oben rechts zu verschieben. 
+Das voreingestellte Argument ist `loc='best'`, was die "beste" Position für 
+die Legende automatisch berechnet.
 
 Das Diagramm sieht dann so aus:
 ![Euler-Verfahren für Oregonator-Modell](../assets/figures/02-differential_equations/euler_bz.svg)
@@ -271,12 +276,11 @@ was in der Originalreaktion $[\mathrm{Ce^{4+}}]$ entspricht und in dem obigen
 Video die Konzentration vom Fe(III) in Ferroin darstellt und dort als die 
 Blaufärbung zu sehen ist.
 
-
 Woher weiß man denn, ob die Schrittweite $h$ klein genug ist?
 Eine Faustregel besagt, dass man die Lösung mit halbierter Schrittweite $h/2$
 berechnen soll. Bleibt die Lösung gleich wie bei $h$, dann ist $h$ klein genug.
 
-Unabhängig davon, ob $h = 0.00002$ klein genug ist oder nicht, können wir
+Unabhängig davon, ob $h = 0.0005$ klein genug ist oder nicht, können wir
 uns darauf einigen, dass das Euler-Verfahren Schwierigkeiten mit Gl. 
 {{eqref: eq:oregonator}} hat. Gibt es Methoden, die trotz größerer
 Schrittweiten stabile Lösungen liefern können? 

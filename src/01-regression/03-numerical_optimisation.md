@@ -345,6 +345,18 @@ Abweichungen (vgl. Gl. {{eqref: eq:least_absolute_deviations_opt}}).
 oder die der kleinsten Quadrate mit Regularisierung, was Sie in der Übung
 kennenlernen werden.
 
+~~~admonish note title="Funktion `scipy.optimize.curve_fit`"
+Es gibt auch die Funktion 
+[`scipy.optimize.curve_fit`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html),
+die eine (nichtlineare) Regression durchführt. 
+Allerdings ist sie nicht so flexibel wie die Funktion
+`minimize`, da sie nur über wenige Optimierungsmethoden verfügt und die
+Objektivfunktion als die Verlustfunktion der kleinsten Quadrate festlegt.
+Deshalb ist die Funktion für einfachere Regressionen geeignet und benötigt
+weniger Code. Bei komplizierteren Modellen ist es jedoch sinnvoller, die
+Funktion `minimize` zu verwenden.
+~~~
+
 ---
 
 ### Übung

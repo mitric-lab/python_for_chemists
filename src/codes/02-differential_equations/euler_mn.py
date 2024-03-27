@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 
+### ANCHOR: imports
 import numpy as np
 import matplotlib.pyplot as plt
 from typing import Callable
+### ANCHOR_END: imports
 
 
 ### ANCHOR: dydx
