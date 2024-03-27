@@ -52,3 +52,8 @@ pre, code {
 .fa {
     display: none !important;
 }
+
+.sidetoc {
+    display: none;
+}
+
