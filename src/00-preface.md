@@ -8,11 +8,10 @@ Programmiersprache Python erlernen und viele nützliche numerische
 Algorithmen implementieren für die Chemie und darüber hinaus.
 
 Diese Veranstaltung findet
-- dienstags von 10:15 bis 11:45 Uhr
+- dienstags von 10:15 bis 11:45 Uhr im Seminarraum 0x.0xx
 und
-- donnerstags von 14:15 bis 15:45 Uhr
-im Seminarraum 00.006 des Instituts für Theoretische Chemie 
-(Campus Hubland Nord) statt.
+- donnerstags von 14:15 bis 15:45 Uhr im Seminarraum 00.006
+des Instituts für Theoretische Chemie (Campus Hubland Nord) statt.
 
 ## Syllabus
 
