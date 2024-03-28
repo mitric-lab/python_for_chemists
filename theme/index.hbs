@@ -197,13 +197,16 @@
                         </a>
                         {{/if}}
                         
-			<!-- WueCampus button -->
-			{{#if (eq language "de")}}
-			<a href="https://wuecampus.uni-wuerzburg.de/moodle/#" target="_blank" rel="noopener noreferrer" title="WueCampus-Kursraum besuchen" aria-label="WueCampus-Kursraum besuchen">
+                        <!-- WueCampus button -->
+                        <script>
+                            var wueCampusLink = "https://wuecampus.uni-wuerzburg.de/moodle/course/view.php?id=66271";
+                        </script>
+                        {{#if (eq language "de")}}
+			<a href="javascript:void(0);" onclick="window.open(wueCampusLink)" target="_blank" rel="noopener noreferrer" title="WueCampus-Kursraum besuchen" aria-label="WueCampus-Kursraum besuchen">
 			    <i id="wuecampus-button" class="icon-uw"></i>
 			</a>
 			{{else}}
-			<a href="https://wuecampus.uni-wuerzburg.de/moodle/#" target="_blank" rel="noopener noreferrer" title="Visit course on WueCampus" aria-label="Visit course on WueCampus">
+			<a href="javascript:void(0);" onclick="window.open(wueCampusLink)" target="_blank" rel="noopener noreferrer" title="Visit course on WueCampus" aria-label="Visit course on WueCampus">
                             <i id="wuecampus-button" class="icon-uw"></i>
                         </a>
 			{{/if}}

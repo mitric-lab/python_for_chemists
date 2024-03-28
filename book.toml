@@ -6,6 +6,9 @@ src = "src"
 title = "Programmierkurs für Chemiker"
 
 [output.html]
+default-theme = "latte"
+preferred-dark-theme = "mocha"
+curly-quotes = true
 mathjax-support = true
 additional-css = [
     "./theme/catppuccin.css", 
