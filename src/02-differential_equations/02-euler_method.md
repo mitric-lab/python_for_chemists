@@ -308,5 +308,6 @@ zu einer Familie von Methoden, die als *Runge-Kutta-Verfahren* bekannt sind.
 ### Übung
 
 #### Aufgabe 2.1
+<!--
 {{#include ../psets/02.md:aufgabe_1}}
-
+-->

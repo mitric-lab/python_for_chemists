@@ -362,6 +362,7 @@ Funktion `minimize` zu verwenden.
 ### Übung
 
 #### Aufgabe 1.2
+<!--
 {{#include ../psets/01.md:aufgabe_2}}
-
+-->
 

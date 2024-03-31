@@ -35,5 +35,5 @@
 
 ---
 
-[Übung 1](psets/01.md)
-[Übung 2](psets/02.md)
+[Übung 1]()
+[Übung 2]()

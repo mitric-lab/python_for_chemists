@@ -266,6 +266,7 @@ völlig falsch bestimmt.
 ### Übung
 
 #### Aufgabe 1.3
+<!--
 {{#include ../psets/01.md:aufgabe_3}}
-
+-->
 
