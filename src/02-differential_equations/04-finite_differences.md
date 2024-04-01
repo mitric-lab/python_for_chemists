@@ -55,6 +55,7 @@ welcher Methode, kann als Ergebnis die Koeffizienten $c_{-1} = -1/(2h)$,
 $c_0 = 0$ und $c_1 = 1/(2h)$ erhalten werden. Das ergibt die Formel
 $$
   y'(x) \approx \frac{y(x+h) - y(x-h)}{2h}\,,
+  {{numeq}}{eq:finite_difference_symmetric_second_order}
 $$
 was identisch zu Gl. {{eqref: eq:finite_difference_symmetric}} ist.
 
@@ -130,6 +131,7 @@ $$
     \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
     0 & 0 & 0 & 0 & \cdots & -1 & 0 \\
   \end{pmatrix}\,.
+  {{numeq}}{eq:finite_difference_symmetric_second_order_matrix}
 $$
 
 Die *Darstellung des Differentialoperators* mit symmetrischen 
@@ -140,7 +142,7 @@ mit $0$ auf der Hauptdiagonale und $\pm 1$ auf den Nebendiagonalen.
 Wie sieht es mit der Darstellung der zweiten oder höheren Ableitungen aus?
 Natürlich könnte man eine Differentialgleichung höherer Ordnung als ein
 System von Differentialgleichungen erster Ordnung auffassen und die 
-finite-Differenzen-Methode für vektorwertige Funktionen anpassen. Aber 
+Finite-Differenzen-Methode für vektorwertige Funktionen anpassen. Aber 
 hier können wir die Matrix auf einem direkten Weg konstruieren.
 
 Zuerst schauen wir an, wie man es nicht machen sollte. Die Form des Operators
@@ -174,6 +176,8 @@ $$
   \end{align}
 $$
 wobei wir zweimal die symmetrische Differenz zweiter Ordnung verwendet haben.
+Diese Herleitung lässt sich trivialerweise auf die $n$-te Ableitung
+verallgemeinern.
 
 Mit dieser Formel können wir die Matrixdarstellung des Operators für die
 zweite Ableitung, hier als $\bm{D}^{(2)}$ notiert, konstruieren:
@@ -186,13 +190,106 @@ $$
     \vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
     0 & 0 & 0 & 0 & \cdots & 1 & -2 \\
   \end{pmatrix}\,.
+  {{numeq}}{eq:second_finite_difference_symmetric_second_order_matrix}
 $$
 Diese Matrix ist wieder eine Tridiagonalmatrix, aber mit $-2$ auf der
 Hauptdiagonale und $1$ auf den Nebendiagonalen.
 
 #### Finite-Differenzen-Verfahren
 
+In einer Differentialgleichung tauchen neben der gesuchten Funktion $y(x)$ und
+ihren Ableitungen auch Funktionen von $x$ auf. Wir benötigen also eine
+Darstellung für solche Funktionen. Eine Besonderheit hierbei ist, dass es
+es zwei Darstellungsvarianten gibt, welche man gemäß des Kontexts wählen
+muss. 
+
+Fungiert eine Funktion von $x$ als eine Inhomogenität $u(x)$
+(vgl. Gl. {{eqref: eq:lode_general}}), also als ein alleinstehender Term ohne 
+$y(x)$ oder ihre Ableitungen, wird sie genau so wie bei $y(x)$ diskretisiert 
+und als ein Vektor $\vec{u} = (u(x_1), \ldots, u(x_N))^\intercal$ dargestellt. 
+Wird die Funktion aber mit $y(x)$ oder ihren Ableitungen multipliziert, 
+dient sie als eine Koeffizientenfunktion $a_i(x)$ 
+(vgl. Gl. {{eqref: eq:lode_general}}), 
+und muss als eine Matrix darstellt werden. Da die Multiplikation zweier
+Funktionen punktweise erfolgt, nimmt die Darstellungsmatrix $\bm{A}_ i$ 
+eine Diagonalmatrixform an, wobei die Diagonalelemente die diskretisierten
+Funktionswerte von $a_i(x)$ sind, also
+$\bm{A}_ i = \text{diag}(a_i(x_1), \ldots, a_i(x_N))$.
+
+Nun kennen wir die (approximative) Darstellung aller Elemente einer 
+DGL und können eine beliebige **lineare** Differentialgleichung
+(vgl. Gl. {{eqref: eq:lode_general}}) in eine Matrixgleichung umwandeln:
+$$
+  \underbrace{
+    A_n \bm{D}^{(n)} \vec{y} + A_{n-1} \bm{D}^{(n-1)} \vec{y} + \ldots + A_1 \bm{D} \vec{y} + A_0 \vec{y}
+  }_ {\bm{L} \vec{y}} = \bm{B}_ 0 \vec{u}\,,
+$$
+mit $\bm{B}_ 0 = (b_0(x_1), \ldots, b_0(x_N))^\intercal$ als die 
+Matrixdarstellung der Koeffizientenfunktion $b_0(x)$.
+In der obigen Gleichung haben wir alle lineare Operatoren zu einem Operator
+$$
+  \bm{L} = A_n \bm{D}^{(n)} + A_{n-1} \bm{D}^{(n-1)} + \ldots + A_1 \bm{D} + A_0
+$$
+zusammengefasst. Die Lösung des linearen Gleichungssystems 
+$\bm{L} \vec{y} = \bm{B}_ 0 \vec{u}$ liefert die diskretisierte Funktion
+$\vec{y}$.
+
+```admonish note title="Anmerkung zu nichtlinearen DGLs"
+Tatsächlich lassen sich auch nichtlineare DGLs mit 
+Finiten-Differenzen-Operatoren umschreiben. Das resultierte Gleichungssystem
+ist allerdings ein nichtlineares Gleichungssystem, welches nicht direkt mit
+Methoden der linearen Algebra gelöst werden kann. 
+```
+
+Zwischen dem Lösen des linearen Gleichungssystems und dem Lösen einer 
+Differentialgleichung gibt es aber einen entscheidenden Unterschied: 
+Der Anfangswert. Während bei der Lösung der DGLs eine Anfangs- oder
+Randbedingung benötigt wird, um eine spezielle Lösung zu erhalten, 
+gibt es bei einem linearen Gleichungssystem keine solche Bedingungen. 
+Wie sollen wir dann die Anfangsbedingungen der DGL bei der diskretisierten 
+Version berücksichtigen?
+
+Betrachten wir nun die Matrixdarstellung des Differentialoperators $\bm{D}$
+in Gl. {{eqref: eq:finite_difference_symmetric_second_order_matrix}}, 
+insbesondere die erste Zeile $(0, 1, 0, \ldots, 0)$. Diese Zeile besagt
+$$
+  y'(x_1) = \frac{1}{2h} y(x_2).
+$$
+Aber nach Gl. {{eqref: eq:finite_difference_symmetric_second_order}} sollte
+doch
+$$
+  y'(x_1) = \frac{1}{2h} \left( y(x_2) - y(x_0) \right)
+$$
+gelten. Damit beide Gleichungen richtig sind, muss $y(x_0) = 0$ gelten. 
+Die letzte Zeile von $\bm{D}$ liefert wiederum die Bedingung $y(x_{N+1}) = 0$.
+
+Also durch die Konstruktion der Finite-Differenzen-Operatoren werden die 
+Randbedingungen implizit festgelegt. Das Finiten-Differenzen-Verfahren ist 
+deshalb eher geeignet für Randwertprobleme als für Anfangswertprobleme.
+
+```admonish note title="Anmerkung zu anderen Randbedingungen"
+Neben der 
+[*Dirichlet-Randbedingung*](https://de.wikipedia.org/wiki/Dirichlet-Randbedingung)
+in unserem Fall, also dass die Funktionswerte außerhalb des Grids 
+verschwinden, können noch andere Randbedingungen, wie z.B. 
+[*periodische Randbedingungen*](https://de.wikipedia.org/wiki/Periodische_Randbedingung)
+oder 
+[*Neumann-Randbedingungen*](https://de.wikipedia.org/wiki/Neumann-Randbedingung)
+mit dem Finite-Differenzen-Verfahren behandelt werden.
+
+In dieser Vorlesung behandeln wir aber nur Finite-Differenzen-Operatoren
+mit Dirichlet-Randbedingungen.
+```
+
+### Implementierung
+
+Wir wollen nun das Finite-Differenzen-Verfahren am Beispiel der 
+Schrödingergleichung für den harmonischen Oszillator implementieren.
+
 WIP
+
+
+
 
 ---
 
