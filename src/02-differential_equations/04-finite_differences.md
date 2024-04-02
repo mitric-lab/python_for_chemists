@@ -65,7 +65,20 @@ Stelle $x$ symmetrisch aus den Funktionswerten $y(x-h)$ und $y(x+h)$
 berechnet wird und bei der Entwicklung der Taylor-Reihe bis zur zweiten
 Ordnung verwendet wird.
 
-Mit diesem Verfahren können wir auch die Ableitungen höherer Ordnung
+Mit den Stützpunkten $x$ und $x+h$ bzw. $x$ und $x-h$ kann man auf 
+gleiche Weise die forwärtsdifferenzen
+$$
+  y'(x) \approx \frac{y(x+h) - y(x)}{h}
+  {{numeq}}{eq:finite_difference_forward_first_order}
+$$
+und die rückwärtsdifferenzen
+$$
+  y'(x) \approx \frac{y(x) - y(x-h)}{h}
+  {{numeq}}{eq:finite_difference_backward_first_order}
+$$
+herleiten. Die zwei Formeln haben allerdings nur die Ordnung eins.
+
+Gemäß dieses Verfahrens können wir auch die Ableitungen höherer Ordnung
 mithilfe der Funktionswerte an bliebigen Grid bis zur beliebigen Ordnung
 approximieren. 
 
@@ -170,13 +183,16 @@ Ableitung als die Ableitung der ersten Ableitung auf:
 $$
   \begin{align}
     y''(x) = \frac{\du}{\du x} y'(x) 
-      &\approx \frac{1}{2h} \left( y'(x+h) - y'(x-h) \right) \\
-      &= \frac{1}{2h} \left( \frac{y(x+2h) - y(x)}{2h} - \frac{y(x) - y(x-2h)}{2h} \right) \\
-      &= \frac{1}{4h^2} \left( y(x+2h) - 2y(x) + y(x-2h) \right)\,,
+      &\approx \frac{1}{h} \left( y'(x) - y'(x-h) \right) \\
+      &= \frac{1}{h} \left( \frac{y(x+h) - y(x)}{h} - \frac{y(x) - y(x-h)}{h} \right) \\
+      &= \frac{1}{h^2} \left( y(x+h) - 2y(x) + y(x-h) \right)\,,
   \end{align}
 $$
-wobei wir zweimal die symmetrische Differenz zweiter Ordnung verwendet haben.
-Diese Herleitung lässt sich trivialerweise auf die $n$-te Ableitung
+wobei wir für $\frac{\du}{\du x} y'(x)$ die rückwärtsdifferenzen
+{{eqref: eq:finite_difference_backward_first_order}} und
+für $\frac{\du}{\du x} y(x)$ die vorwärtsdifferenzen
+{{eqref: eq:finite_difference_forward_first_order}} benutzt haben.
+Diese Herleitung lässt sich leicht auf die $n$-te Ableitung
 verallgemeinern.
 
 Mit dieser Formel können wir die Matrixdarstellung des Operators für die
@@ -286,9 +302,139 @@ mit Dirichlet-Randbedingungen.
 Wir wollen nun das Finite-Differenzen-Verfahren am Beispiel der 
 Schrödingergleichung für den harmonischen Oszillator implementieren.
 
-WIP
+Die Schrödingergleichung lautet in atomaren Einheiten
+$$
+  -\frac{1}{2} \frac{\du^2}{\du x^2} \psi(x) + \frac{1}{2} k x^2 \psi(x) = E \psi(x)
+$$
+mit Randbedingungen $\lim_{x \to \pm \infty} \psi(x) = 0$.
 
+Es eignet sich also die Darstellungsmatrix $\bm{D}^{(2)}$ in 
+Gl. {{eqref: eq:second_finite_difference_symmetric_second_order_matrix}} für die
+Implementierung. Um diese zu generieren, können wir 
+nach dem Importieren
+```python
+{{#include ../codes/02-differential_equations/fdm_harm_osc.py:imports}}
+```
+eine Funktion wie folgt definieren:
+```python
+{{#include ../codes/02-differential_equations/fdm_harm_osc.py:generate_d2_naive}}
+```
+Während diese einfache Implementierung korrekt ist, ist sie nicht sehr 
+effizient, v.a. wenn die Anzahl der Gridpunkte $N$ groß ist.
+Eine effizientere Implementierung kann mithilfe der Funktion
+[`np.diag_indices`](https://numpy.org/doc/stable/reference/generated/numpy.diag_indices.html)
+erzielt werden:
+```python
+{{#include ../codes/02-differential_equations/fdm_harm_osc.py:generate_d2}}
+```
+Hier haben wir zuerst die Indizes der Hauptdiagonale mit `np.diag_indices`
+erhalten und die entsprechenden Elemente des Arrays `d2` auf $-2$ gesetzt.
+Danach haben wir durch Verschieben der Indizes um $\pm 1$ die Nebendiagonalen
+erhalten und die entsprechenden Elemente auf $1$ gesetzt. Durch Verzicht auf
+Schleifen in Python wird die Berechnung der Matrix deutlich beschleunigt.
 
+```admonish note title="Anmerkung zu Python-Loops"
+Wie wir schon in der Einführung erwähnt haben, ist Python eine eher langsame
+Sprache im Vergleich zu kompilierten Sprachen. Deshalb sollte man, wenn die
+Effizienz eine Rolle spielt, Python-Loops vermeiden und stattdessen
+Funktionen aus der Bibliothek `numpy` benutzen.
+```
+
+Danach können wir den Hamiltonoperator für den harmonischen Oszillator
+konstruieren:
+```python
+{{#include ../codes/02-differential_equations/fdm_harm_osc.py:build_hamiltonian}}
+```
+Hier haben wir zuerst die $D^{(2)}$-Matrix mit der Funktion `generate_d2`
+erzeugt und dann die Koeffizientenfunktion $\frac{1}{2} k x^2$ als eine
+Diagonalmatrix mit `np.diag` erstellt. Die Summe 
+$-\frac{1}{2} D^{(2)} + \frac{1}{2} k x^2$ ergibt den Hamiltonoperator
+bzw. den linearen Operator $\bm{L}$ (`l_mat`).
+
+Damit lautet die Schrödingergleichung in diskreter Form
+$$
+  \bm{L} \vec{\psi} = E \vec{\psi}\,.
+$$
+Man erkennt jetzt leicht, dass es sich um eine Eigenwertgleichung handelt.
+Deshalb können wir die Funktion 
+[`np.linalg.eigh`](https://numpy.org/doc/stable/reference/generated/numpy.linalg.eigh.html)
+benutzen, um die Eigenwerte und Eigenvektoren des Hamiltonoperators zu
+berechnen. 
+
+Wir setzen nun $k = 1$ und wählen ein Grid von -5 bis 5 mit 512 Punkten:
+```python
+{{#include ../codes/02-differential_equations/fdm_harm_osc.py:define_parameters}}
+```
+
+Danach wird der Hamiltonoperator konstruiert und die Eigenwerte und
+Eigenvektoren berechnet:
+```python
+{{#include ../codes/02-differential_equations/fdm_harm_osc.py:main}}
+```
+Da die Funktion `np.linalg.eigh` eine symmetrische Matrix erwartet, haben
+wir mit `assert` und
+[`np.allclose`](https://numpy.org/doc/stable/reference/generated/numpy.allclose.html)
+überprüft, ob die Matrix `hamiltonian` identisch zu ihrer Transponierten ist.
+
+Wir nehmen nun die Energien und die zugehörigen Wellenfunktionen aus den
+ersten 20 Eigenvektoren und Eigenwerten. 
+```python
+{{#include ../codes/02-differential_equations/fdm_harm_osc.py:solve_harmonic_oscillator}}
+```
+Allerdings sollten die Wellenfunktionen gemäß 
+$$
+  \int_{-\infty}^{\infty} |\psi(x)|^2 \du x = 1
+$$
+normiert sein, was in der diskreten Form
+$$
+  \sum_{i=1}^{N} |\psi(x_i)|^2 \Delta x = 1
+$$
+bedeutet. Die Eigenvektoren aus `np.linalg.eigh` sind aber nach
+$$
+  \sum_{i=1}^{N} |v_i|^2 = 1
+$$
+normiert. Deshalb teilen wir die Eigenvektoren durch $\sqrt{\Delta x}$,
+um die normierten Wellenfunktionen zu erhalten.
+
+Zuletzt wollen wir unsere Ergebnisse wieder visualisieren. Dieses Mal wollen
+wir sowohl die Eigenenergien als auch die Wellenfunktionen plotten, und zwar
+in einem Plot. Das können wir erzielen, in dem wir entsprechende Argumente
+der Funktion `plt.subplots` übergeben:
+```python
+{{#include ../codes/02-differential_equations/fdm_harm_osc.py:plot_results_subplots}}
+```
+Hier bedeuten die Argumente `1, 2`, dass wir den Plotbereich in 1 Zeile und
+2 Spalten aufteilen. Die Achsen werden dann in der Variable `axs` gespeichert.
+
+Danach plotten wir die numerischen sowie die analytischen Eigenenergien
+des harmonischen Oscillators in der ersten Achse `axs[0]`:
+```python
+{{#include ../codes/02-differential_equations/fdm_harm_osc.py:plot_eigenenergies}}
+```
+Anschließend plotten wir in der zweiten Achse `axs[1]` das harmonische
+Potential sowie die ersten 5 numerischen Wellenfunktionen:
+```python
+{{#include ../codes/02-differential_equations/fdm_harm_osc.py:plot_eigenfunctions}}
+```
+Beim Plotten des Potentials haben wir das Argument `lw=2` benutzt, um die
+Linienbreite zu erhöhen. 
+
+Zuletzt formatieren wir den Plot und zeigen ihn an:
+```python
+{{#include ../codes/02-differential_equations/fdm_harm_osc.py:show_plot}}
+```
+
+Das Diagramm sollte wie folgt aussehen:
+![Eigenenergien und Wellenfunktionen des harmonischen Oszillators](../assets/figures/02-differential_equations/fdm_harm_osc.svg)
+Man erkennt, dass die numerischen Eigenenergien von den ersten ca. 10
+Zuständen sehr gut mit den analytischen Eigenenergien übereinstimmen.
+Danach wird die Übereinstimmung schlechter. Die numerischen Wellenfunktionen
+sehen zumindest sinnvoll aus.
+
+Sollte man höhere Genauigkeit für die höheren Zustände benötingen, muss 
+das Grid sowohl feiner als auch größer gewählt werden, da die 
+Wellenfunktionen einerseits mehr Oszillationen haben und andererseits
+räumlich ausgedehnter sind.
 
 
 ---
