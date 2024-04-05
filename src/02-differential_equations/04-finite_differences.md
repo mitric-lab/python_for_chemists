@@ -340,6 +340,34 @@ Effizienz eine Rolle spielt, Python-Loops vermeiden und stattdessen
 Funktionen aus der Bibliothek `numpy` benutzen.
 ```
 
+```admonish info title="Noch effizientere Implementierung" collapsible=true
+Bei größeren $N$ durch z.B. feineres aber v.a. mehrdimensionales Grid kann
+die Finite-Differenzen-Matrix sehr groß werden. Allerdings ist der
+Großteil der Elemente dieser Matrix Null. Solche Matrizen werden als
+[*dünnbesetzte Matrizen*](https://de.wikipedia.org/wiki/Dünnbesetzte_Matrix)
+(engl. *sparse matrices*) bezeichnet und durch spezielle Algorithmen
+effizienter gespeichert und verarbeit werden. Die 
+Fininte-Differenzen-Matrix haben nur Einträge auf der Hauptdiagonale und
+einigen Nebendiagonalen und wird deshalb auch als 
+[*Bandmatrix*](https://de.wikipedia.org/wiki/Bandmatrix) bezeichnet,
+welche eine verallgemeinerung der Tridiagonalmatrix ist. Bandmatrizen
+können leicht mit der Funktion
+[`scipy.sparse.diags_array`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.diags_array.html)
+als dünnbesetzte Matrizen implementiert werden.
+
+Dann können Methoden aus dem Untermodul
+[`scipy.sparse.linalg`](https://docs.scipy.org/doc/scipy/reference/sparse.linalg.html)
+eingesetzt werden, um lineare Gleichungssysteme zu lösen oder Eigenwerte
+und Eigenvektoren zu berechnen.
+
+Möchte man nur die Eigenwerte und Eigenvektoren von Bandmatrizen berechnen,
+kann die Funktion
+[`scipy.linalg.eigh_banded`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.eigh_banded.html)
+oder
+[`scipy.linalg.eigh_tridiagonal`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.eigh_tridiagonal.html)
+eingesezt werden, die als Argument Bänder der Bandmatrix erwartet.
+```
+
 Danach können wir den Hamiltonoperator für den harmonischen Oszillator
 konstruieren:
 ```python
@@ -369,7 +397,7 @@ Wir setzen nun $k = 1$ und wählen ein Grid von -5 bis 5 mit 512 Punkten:
 Danach wird der Hamiltonoperator konstruiert und die Eigenwerte und
 Eigenvektoren berechnet:
 ```python
-{{#include ../codes/02-differential_equations/fdm_harm_osc.py:main}}
+{{#include ../codes/02-differential_equations/fdm_harm_osc.py:solve_matrix_equation}}
 ```
 Da die Funktion `np.linalg.eigh` eine symmetrische Matrix erwartet, haben
 wir mit `assert` und
