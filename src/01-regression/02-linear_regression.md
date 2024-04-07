@@ -384,7 +384,7 @@ lösen.
 
 ### Übung
 
-#### Aufgabe 1.1
+#### Aufgabe 1.1: Lineare Regression
 <!--
 {{#include ../psets/01.md:aufgabe_1}}
 -->
