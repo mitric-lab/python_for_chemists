@@ -55,17 +55,18 @@ Wenn Sie ein Anfänger in Python sind, empfehlen wir die Verwendung von
 Python-Codes. Es handelt sich um ein blockweise ausführbares Dokument, das
 Code, Text und Grafiken enthalten kann. Um Ihre Python-Installation zu
 testen und sich mit Jupyter Notebook vertraut zu machen, laden Sie bitte
-das Jupyter Notebook herunter, das in WueCampus bereitgestellt wird, und
-öffnen Sie es, indem Sie
+die Datei <em>Crashkurs: Jupyter Notebooks und Python</em> 
+herunter, die in WueCampus bereitgestellt ist. Sie können das Notebook öffnen
+indem Sie
 ```bash
 jupyter notebook
 ```
-in Ihrem Terminal eingeben. Dies öffnet einen neuen Tab in Ihrem Webbrowser,
-wo Sie zum Ordner navigieren können, in dem sich das Jupyter Notebook.
-Öffnen Sie das Notebook und führen Sie alle Code-Zellen aus. Wenn Ihre
-Installation erfolgreich war, sollten Sie alle Code-Zellen im Notebook
-ohne Fehler ausführen können. Sie können viele weitere Tutorials 
-zum Jupyter Notebook im Internet finden, wie z.B. 
+in Ihrem Terminal eingeben. Anschließend öffnet sich ein neuer Tab in 
+Ihrem Webbrowser, wo Sie zum Ordner navigieren können, in dem sich das 
+Jupyter Notebook befindet. Öffnen Sie das Notebook und führen Sie alle 
+Code-Zellen aus. Wenn Ihre Installation erfolgreich war, sollten Sie 
+keinen Fehler erhalten. Zur Bedienung des Notebooks finden Sie viele 
+weitere Tutorials im Internet, wie z.B. 
 [hier](https://www.dataquest.io/blog/jupyter-notebook-tutorial/).
 
 ### Empfehlungen für weitere integrierte Entwicklungsumgebungen (IDEs) oder Editoren
