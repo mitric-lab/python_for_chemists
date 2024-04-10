@@ -147,22 +147,23 @@ Nun wollen wir mit Hilfe der Gl. {{eqref: eq:least_squares_linear_params}}
 die lineare Regression für ein einfaches Beispiel implementieren.
 
 ### Implementierung
-Betrachten wir die folgenden "Messdaten" für die Lambert-Beer-Beziehung
-bei verschiedenen Konzentrationen $c$ und den zugehörigen Absorbanzen $A$
+Betrachten wir die folgenden Messdaten der Lambert-Beer-Beziehung 
+für Methylenblau im Wasser bei verschiedenen Konzentrationen $c$ und den 
+zugehörigen Absorbanzen $A$ gemessen bei $610\ \mathrm{nm}$
 mit einer Schichtdicke $d$ von 1 cm:
 
-| $c$ / mM | $A$      | $c$ / mM | $A$      |
-|:--------:|:--------:|:--------:|:--------:|
-| 0.1      | 0.0522   | 1.1      | 0.5080   |
-| 0.2      | 0.1010   | 1.2      | 0.5486   |
-| 0.3      | 0.1518   | 1.3      | 0.5899   |
-| 0.4      | 0.2017   | 1.4      | 0.6245   |
-| 0.5      | 0.2453   | 1.5      | 0.6630   |
-| 0.6      | 0.2920   | 1.6      | 0.7020   |
-| 0.7      | 0.3404   | 1.7      | 0.7382   |
-| 0.8      | 0.3831   | 1.8      | 0.7766   |
-| 0.9      | 0.4240   | 1.9      | 0.8091   |
-| 1.0      | 0.4685   | 2.0      | 0.8424   |
+| $c$ / &micro;M | $A$      | $c$ / &micro;M | $A$      |
+|:--------------:|:--------:|:--------------:|:--------:|
+| 2.125          | 0.0572   | 23.38          | 0.8242   |
+| 4.250          | 0.1391   | 25.50          | 0.9130   |
+| 6.375          | 0.2049   | 27.63          | 1.0043   |
+| 8.500          | 0.2754   | 29.75          | 1.0809   |
+| 10.63          | 0.3420   | 31.88          | 1.1511   |
+| 12.75          | 0.4139   | 34.00          | 1.2483   |
+| 14.88          | 0.4956   | 36.13          | 1.3373   |
+| 17.00          | 0.5815   | 38.25          | 1.4027   |
+| 19.13          | 0.6806   | 40.38          | 1.4927   |
+| 21.25          | 0.7481   | 42.50          | 1.5853   |
 
 Bevor wir etwas anderes machen können, müssen wir die Daten irgendwie
 in Python importieren. Der einfachste Weg für so einen kleinen Datensatz
@@ -278,7 +279,8 @@ $$
 Das molare Extinktionskoeffizient $\varepsilon$ kann also aus dem
 linearen Parameter $\beta_1$ berechnet werden als
 $$
-  \varepsilon = \beta_1 / d = 0.415\ \mathrm{mM^{-1}\cdot cm^{-1}} \,.
+  \varepsilon = \beta_1 / d = 0.038\ \mathrm{{\mu M}^{-1}\cdot cm^{-1}} 
+    = 38000\ \mathrm{M^{-1}\cdot cm^{-1}} \,.
 $$
 
 Jetzt haben wir die optimalen Parameter $\beta_0$ und $\beta_1$ für den
@@ -350,13 +352,32 @@ kennenlernen, die uns helfen, Elemente des Diagramms des persönlichen
 Geschmacks entsprechend zu gestalten.
 
 Auf den ersten Blick scheint die Regressionsgerade sehr gut zu den Messdaten
-zu passen. Bei genauerer Betrachtung kann es einem aber auffallen, dass die
-Datenpunkte eine leichte Krümmung nach unten aufweisen. 
-Eine Zuordnung dieses Fehlers zu einer
+zu passen. Um den Unterschied zwischen den Messdaten und der Regressionsgerade
+deutlicher zu machen, können wir die Residuen, also die Differenz zwischen
+den Messdaten und der Regressionsgerade, in einem weiteren Diagramm darstellen.
+```python
+{{#include ../codes/01-regression/linreg_lambert_beer.py:plot_residuals}}
+```
+Nach dem Berechnen und Speichern der Residuen in der Variablen `residuals`
+wurden ein weiteres `Figure`- sowie `Axes`-Objekt erstellt. Die Residuen
+wurden in ein Balkendiagramm dargestellt, welches mit der Methode `ax2.bar`
+erstellt werden kann. Das Diagramm sieht dann wie folgt aus:
+![Residuen der linearen Regression der Lambert-Beer-Beziehung](../assets/figures/01-regression/linreg_lambert_beer_residuals.svg)
+
+Jetzt kann man erkennen, dass bei niedrigen und hohen Konzentrationen die
+Abweichung positiv ist, während sie bei mittleren Konzentrationen negativ ist.
+Das könnte auf eine leichte positive Krümmung der Daten hinweisen, die mit
+dem linearen Modell nicht erfasst wird. Eine Zuordnung dieses Verhaltens
 unmodellierten systematischen Abweichung oder zu einer zufälligen Abweichung
-bedarf in der Regel einer tieferen Analyse. Tatächlich wurden die Daten
-hier mit einer leichten Nichtlinearität generiert, um die Abweichung von 
-dem Lambert-Beer-Gesetz bei hohen Konzentrationen zu simulieren. 
+bedarf allerdings in der Regel einer tieferen Analyse. Tatächlich liegt hier 
+in den Daten eine leichte Nichtlinearität vor, um die 
+[Abweichung von dem Lambert-Beer-Gesetz](https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Instrumental_Analysis_(LibreTexts)/13%3A_Introduction_to_Ultraviolet_Visible_Absorption_Spectrometry/13.02%3A_Beer%27s_Law)
+v.a. bei hohen Konzentrationen zu demonstrieren, die durch verschiedene
+Effekte verursacht werden kann. Wer sich für die genaue Erklärung der
+Abweichung vom Methylenblau im Wasser interessiert, kann sich z.B. die
+Publikation
+[A. Fernández-Pérez, T. Valdés-Solís, G. Marbán, *Dyes and Pigments* **2019**, *161*, 448&ndash;456](https://www.sciencedirect.com/science/article/pii/S014372081831845X)
+durchlesen.
 Ob die lineare Regression in diesem Fall sinnvoll ist, hängt von der
 gewünschten Genauigkeit der Modellierung ab.
 
