@@ -340,6 +340,7 @@ Effizienz eine Rolle spielt, Python-Loops vermeiden und stattdessen
 Funktionen aus der Bibliothek `numpy` benutzen.
 ```
 
+Es gibt eine
 ```admonish info title="Noch effizientere Implementierung" collapsible=true
 Bei größeren $N$ durch z.B. feineres aber v.a. mehrdimensionales Grid kann
 die Finite-Differenzen-Matrix sehr groß werden. Allerdings ist der
@@ -367,6 +368,12 @@ oder
 [`scipy.linalg.eigh_tridiagonal`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.eigh_tridiagonal.html)
 eingesezt werden, die als Argument Bänder der Bandmatrix erwartet.
 ```
+
+mit Hilfe von
+[dünnbesetzten Matrizen](https://de.wikipedia.org/wiki/Dünnbesetzte_Matrix)
+(engl. *sparse matrices*), die bei einer sehr großen Anzahl von Gitterpunkten
+notwendig werden. Da wir in diesem Beispiel nur eine moderate Anzahl von
+Gitterpunkten benötigen, werden wir nicht hier darauf eingehen.
 
 Danach können wir den Hamiltonoperator für den harmonischen Oszillator
 konstruieren:
