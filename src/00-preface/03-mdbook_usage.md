@@ -1,10 +1,9 @@
 ## Bedienung dieser Webseite
 
 Dieser Abschnitt gibt eine Einführung in die Bedienung dieses 
-Vorlesungsskripts. Dieses ist in *Kapitel* organisiert. Jedes Kapitel ist eine
-eigene Seite. Kapitel sind in einer Hierarchie von Unterkapiteln
-verschachtelt. Typischerweise ist jedes (Unter-)Kapitel in eine Reihe von
-*Überschriften* unterteilt.
+Vorlesungsskripts. Dieses ist in *Kapitel* organisiert, welche wiederum in
+*Abschnitte* unterteilt sind. Typischerweise ist jedes (Unter-)Kapitel in 
+eine Reihe von *Überschriften* unterteilt.
 
 ### Navigation
 
@@ -26,7 +25,8 @@ oder nächsten Kapitel zu navigieren.
 
 ### Obere Menüleiste
 
-Die Menüleiste oben auf der Seite bietet einige Symbole zur Interaktion mit den Notizen.
+Die Menüleiste oben auf der Seite bietet einige Symbole zur Interaktion mit dem
+Vorlesungsskript.
 
 | Symbol | Beschreibung |
 |--------|--------------|
@@ -36,7 +36,7 @@ Die Menüleiste oben auf der Seite bietet einige Symbole zur Interaktion mit den
 | <i class="fa fa-print"></i> | Fordert den Webbrowser auf, das Skript zu drucken. |
 | <i class="icon-uw"></i> | Öffnet den WueCampus-Kursraum zu dieser Veranstaltung. |
 
-Ein Klick auf die Menüleiste scrollt die Seite nach oben.
+Mit einem Klick auf die Menüleiste scrollt die Seite nach oben.
 
 ### Suche
 
@@ -66,19 +66,15 @@ Hier ein Beispiel:
 print("Hello, World!")
 ```
 
-Wir verwenden die `assert`-Anweisung häufig in Codeblöcken, um Ihnen den
+Wir verwenden häufig die `assert`-Anweisung in Codeblöcken, um Ihnen den
 Wert einer Variablen anzuzeigen. Da die Codeblöcke in diesem Dokument nicht 
 interaktiv sind (Sie können sie nicht einfach in Ihrem Browser ausführen), 
 ist es nicht möglich, den Wert der Variablen auf dem Bildschirm auszugeben. 
 Deshalb stellen wir für Sie sicher, dass alle Codeblöcke in diesem 
-Vorlesungsskript fehlerfrei laufen und wir auf diese Weise den Wert einer 
-Variablen durch die Verwendung von `assert` darstellen können. Der folgende 
-Codeblock zeigt beispielsweise, dass die Variable „a“ den Wert 2 hat:
+Vorlesungsskript fehlerfrei laufen. Der folgende 
+Codeblock zeigt Ihnen beispielsweise an, dass der Variable „a“ der Wert 2
+zugewiesen wurde:
 ```python
 a = 2
 assert a == 2
 ```
-
-Falls die Bedingung `False` ergeben würde, würde die `assert`-Anweisung 
-einen `AssertionError` auslösen.
-
