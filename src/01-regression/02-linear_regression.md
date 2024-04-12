@@ -1,13 +1,13 @@
 ## Lineare Regression
 
-Ein der einfachsten Modell der Regressionsanalyse ist das lineare
-Modell, wo der Abschätzer $\hat{f}(\beta; x_i)$ durch eine lineare
+Eines der einfachsten Modell der Regressionsanalyse ist das lineare
+Modell, wobei der Abschätzer $\hat{f}(\beta; x_i)$ durch eine lineare
 Funktion der Form
 $$
   \hat{f}(\beta; x_i) = \beta_0 + \beta_1 x_i
   {{numeq}}{eq:linear_model}
 $$
-gegeben ist, mit den skalaren Parametern $\beta_0$ und $\beta_1$.
+mit den skalaren Parametern $\beta_0$ und $\beta_1$ gegeben ist.
 Die Regressionsanalyse mit dem linearen Modell wird als lineare
 Regression bezeichnet.
 
@@ -22,9 +22,9 @@ $$
   {{numeq}}{eq:least_squares_loss_linear}
 $$
 
-Da unser Ziel darin besteht, die Parameter $\beta$ zu finden, die die
+Da unser Ziel darin besteht, die Parameter $\beta$ zu finden, welche die
 Verlustfunktion minimieren (vgl. Gl. {{eqref: eq:least_squares_opt}}),
-müssen zumindest die notwendigen Bedingungen für ein Minimum erfüllt
+müssen zumindest die notwendigen Bedingungen dafür erfüllt
 werden, d.h. die partiellen Ableitungen von $L$ nach $\beta_0$ und
 $\beta_1$ müssen verschwinden:
 
@@ -148,8 +148,8 @@ die lineare Regression für ein einfaches Beispiel implementieren.
 
 ### Implementierung
 Betrachten wir die folgenden Messdaten der Lambert-Beer-Beziehung 
-für Methylenblau im Wasser bei verschiedenen Konzentrationen $c$ und den 
-zugehörigen Absorbanzen $A$ gemessen bei $610\ \mathrm{nm}$
+für Methylenblau in Wasser bei verschiedenen Konzentrationen $c$ und den 
+zugehörigen Absorbanzen $A$, gemessen bei $610\ \mathrm{nm}$
 mit einer Schichtdicke $d$ von 1 cm:
 
 | $c$ / &micro;M | $A$      | $c$ / &micro;M | $A$      |
@@ -165,7 +165,7 @@ mit einer Schichtdicke $d$ von 1 cm:
 | 19.13          | 0.6806   | 40.38          | 1.4927   |
 | 21.25          | 0.7481   | 42.50          | 1.5853   |
 
-Bevor wir etwas anderes machen können, müssen wir die Daten irgendwie
+Bevor wir fortfahren können, müssen wir die Daten irgendwie
 in Python importieren. Der einfachste Weg für so einen kleinen Datensatz
 ist die manuelle Eingabe. 
 ```python
@@ -208,7 +208,7 @@ Hier haben wir die
 [built-in Funktion](https://docs.python.org/3/library/functions.html)
 `len` verwendet, um die Länge der Arrays zu bestimmen. Die Funktion
 `np.sum` berechnet die Summe aller Elemente in einem Array. Mit dem
-Stern `*` ist die Multiplikation gemeint. Die Verwendung von `*` für
+Stern `*` ist die Multiplikation gemeint. Die Verwendung von `*` zwischen
 zwei Arrays führt zu einer elementweisen Multiplikation. Der 
 Doppelstern `**` bedeutet in Python die Potenzierung. Hier wird also
 das Array `concentrations` elementweise quadriert.
@@ -254,9 +254,9 @@ durchführen:
 ```python
 {{#include ../codes/01-regression/linreg_lambert_beer.py:beta_verification}}
 ```
-Hier haben wir zuerst den Array `beta` *indexiert* mit eckigen Klammern `[]`.
+Hier haben wir zuerst den Array `beta` mit eckigen Klammern `[]` *indexiert*.
 Beachten Sie, dass die Indizierung in Python bei 0 beginnt. Das bedeutet, dass
-$\beta_0$ den 0-ten Eintrag und $\beta_1$ den 1-ten Eintrag des Arrays `beta`
+$\beta_0$ dem 0-ten Eintrag und $\beta_1$ den ersten Eintrag des Arrays `beta`
 entspricht. Anschließend haben wir die Werte von $\beta_0$ und $\beta_1$
 mit Referenzwerten verglichen. 
 ```admonish note title="Hinweis"
@@ -291,14 +291,14 @@ optimalen Parameter grafisch darstellen und die Qualität der Regression
 visuell beurteilen.
 
 ### Visualisierung
-Zur Visualisierung der optimalen linearen Regression verwenden wir den
-Python-Paket `matplotlib`. Hier importieren wir den Untermodul `pyplot`
+Zur Visualisierung der optimalen linearen Regression verwenden wir das
+Python-Paket `matplotlib`. Hier importieren wir das Untermodul `pyplot`
 mit dem Alias `plt`:
 ```python
 {{#include ../codes/01-regression/linreg_lambert_beer.py:import_mpl}}
 ```
 
-Für die graphische Darstellung in mit `matplotlib` benötigen wir immer
+Für die graphische Darstellung mit `matplotlib` benötigen wir immer
 die Objekte `Figure` und `Axes`. Diese können wir mit der Funktion
 [`plt.subplots`](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html)
 erstellen:
@@ -311,11 +311,11 @@ in Stein gemeißelt und kann je nach Bedarf angepasst werden.
 
 Nun wollen wir die Messdaten als Punkte und die lineare Regression als
 Linie in das Diagramm eintragen. Dafür verwenden wir die Funktion
-[`ax.plot`](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)
+[`ax.plot`](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html):
 ```python
 {{#include ../codes/01-regression/linreg_lambert_beer.py:plot_data}}
 ```
-Für die Messdaten haben wir den Argument `o` verwendet, damit diese als
+Für die Messdaten haben wir das Argument `o` verwendet, damit diese als
 Punkte dargestellt werden. Andere 
 [Marker](https://matplotlib.org/stable/api/markers_api.html)
 wie z.B. `s` für Quadrate oder `x` für Kreuze können auch verwendet werden.
@@ -329,7 +329,7 @@ eine Legende hinzufügen:
 {{#include ../codes/01-regression/linreg_lambert_beer.py:customize_ax}}
 ```
 
-Die Funktion `ax.set_xlabel` und `ax.set_ylabel` akzeptieren einen
+Die Funktionen `ax.set_xlabel` und `ax.set_ylabel` akzeptieren einen
 *str* (String, Zeichenkette) als Argument, der als Achsenbeschriftung
 dient. Die Funktion `ax.legend` fügt eine Legende hinzu. Ruft man sie
 ohne Argumente auf, wird die Legende aus den `label`-Argumenten der
@@ -342,14 +342,14 @@ Abbildung mit der Funktion `plt.show` anzeigen lassen:
 ```
 
 Wenn das Programm erfolgreich ausgeführt wird, sollte ein Diagramm
-wie folgendes erscheinen:
+wie das Folgende erscheinen:
 ![Lineare Regression der Lambert-Beer-Beziehung](../assets/figures/01-regression/linreg_lambert_beer.svg)
 
-Dieses Diagramm zeigt uns die Ergebnisse der linearen Regression. auch wenn 
-man über die ästhetische Gestaltung des Diagramms streiten kann. Im Lauf
+Dieses Diagramm zeigt uns die Ergebnisse der linearen Regression, auch wenn 
+man über die ästhetische Gestaltung des Diagramms streiten kann. Im Laufe
 dieses Kurses werden wir noch mehr Funktionalitäten von `matplotlib` 
-kennenlernen, die uns helfen, Elemente des Diagramms des persönlichen
-Geschmacks entsprechend zu gestalten.
+kennenlernen, die uns helfen, Elemente des Diagramms dem persönlichen
+Geschmack entsprechend zu gestalten.
 
 Auf den ersten Blick scheint die Regressionsgerade sehr gut zu den Messdaten
 zu passen. Um den Unterschied zwischen den Messdaten und der Regressionsgerade
@@ -368,13 +368,12 @@ Jetzt kann man erkennen, dass bei niedrigen und hohen Konzentrationen die
 Abweichung positiv ist, während sie bei mittleren Konzentrationen negativ ist.
 Das könnte auf eine leichte positive Krümmung der Daten hinweisen, die mit
 dem linearen Modell nicht erfasst wird. Eine Zuordnung dieses Verhaltens
-unmodellierten systematischen Abweichung oder zu einer zufälligen Abweichung
+zu einer systematischen oder zufälligen Abweichung
 bedarf allerdings in der Regel einer tieferen Analyse. Tatächlich liegt hier 
-in den Daten eine leichte Nichtlinearität vor, um die 
-[Abweichung von dem Lambert-Beer-Gesetz](https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Instrumental_Analysis_(LibreTexts)/13%3A_Introduction_to_Ultraviolet_Visible_Absorption_Spectrometry/13.02%3A_Beer%27s_Law)
-v.a. bei hohen Konzentrationen zu demonstrieren, die durch verschiedene
-Effekte verursacht werden kann. Wer sich für die genaue Erklärung der
-Abweichung vom Methylenblau im Wasser interessiert, kann sich z.B. die
+in den Daten eine leichte Nichtlinearität vor, welches die 
+[Abweichung vom Lambert-Beer-Gesetz](https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Instrumental_Analysis_(LibreTexts)/13%3A_Introduction_to_Ultraviolet_Visible_Absorption_Spectrometry/13.02%3A_Beer%27s_Law)
+v.a. bei hohen Konzentrationen demonstriert. Wer sich für die genaue Erklärung dieser
+Abweichung von Methylenblau in Wasser interessiert, kann sich z.B. die
 Publikation
 [A. Fernández-Pérez, T. Valdés-Solís, G. Marbán, *Dyes and Pigments* **2019**, *161*, 448&ndash;456](https://www.sciencedirect.com/science/article/pii/S014372081831845X)
 durchlesen.
@@ -385,7 +384,7 @@ gewünschten Genauigkeit der Modellierung ab.
 Hier haben wir die `import` Befehle in den jeweiligen Abschnitten platziert, 
 um die Abhängigkeiten der verschiedenen Teile des Skripts zu verdeutlichen.
 Der resultierende Code kann ohne Fehler interpretiert werden.
-Allerdings ist es üblich in Python, die Importe am Anfang des Skripts zu
+Allerdings ist es in Python üblich, die Importe am Anfang des Skripts zu
 platzieren, also 
 ```python
 import numpy as np
@@ -394,12 +393,6 @@ import matplotlib.pyplot as plt
 # Rest des Skripts
 ```
 ~~~
-
-Eine analytische Lösung ist zwar für einfache Regressionsmodelle wie das
-lineare Modell hier möglich, aber für komplexere Modelle kommen wir
-mit analytischen Methoden nicht weit. In solchen Fällen müssen wir
-das Optimierungsproblem in Gl. {{eqref: eq:least_squares_opt}} numerisch
-lösen. 
 
 ---
 

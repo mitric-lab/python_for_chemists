@@ -5,7 +5,7 @@ welches am besten zu den Daten passt und hoffentlich zur Vorhersage neuer
 Datenpunkte verwendet werden kann. Einfachheitshalber gehen wir davon aus, 
 dass unsere Daten nur eine unabhängige Variable ($x$) und eine abhängige
 Variable ($y$) haben. Eine Verallgemeinerung auf mehrere unabhängige
-Variablen ist einfach und wird in einem späteren Kapitel diskutiert.
+Variablen ist simpel und wird in einem späteren Kapitel diskutiert.
 Darüber hinaus gehen wir davon aus, dass die Daten reellwertig sind.
 Für insgesamt $N$ Datenpunkte schreiben wir
 $$
@@ -49,7 +49,7 @@ $$
     = \sum_{i=1}^N\, \hat{\epsilon}_i^2
     = \sum_{i=1}^N\, (y_i - \hat{f}(\beta; x_i))^2 \,. {{numeq}}{eq:least_squares_loss}
 $$
-wird minimiert. Mathematisch ausgedrückt wollen wir die Parameter
+zu minimieren. Mathematisch ausgedrückt wollen wir die Parameter
 $\beta^* $ durch Lösen des Optimierungsproblems
 $$
   \beta^* 
@@ -74,7 +74,7 @@ $$
 
 Die Methode der kleinsten Quadrate ist eine beliebte Wahl für die 
 Regressionsanalyse, da sie geschlossene Lösungen für einige einfache, aber 
-wichtige Modelle bietet und weil sie mit Methoden der numerischen linearen 
+wichtige Modelle bietet und mit Methoden der numerischen linearen 
 Algebra für komplexere Modelle effizient gelöst werden kann. Es weist jedoch 
 einige Nachteile auf, z.B. die Empfindlichkeit gegenüber Ausreißern und die 
 Anfälligkeit für Überanpassungen. Eine Alternative zur Methode der kleinsten 
@@ -98,6 +98,5 @@ die log-cosh-Verlustfunktion,
 die [Quantilverlustfunktion](https://de.wikipedia.org/wiki/Quantilsregression#Optimierungsproblem)
 usw. 
 Obwohl die Methode der kleinsten Quadrate in vielen Fällen gut funktioniert,
-ist es wichtig, sich der Grenzen der Methode bewusst zu sein und in
-gegebenenfalls andere Verlustfunktionen zu berücksichtigen.
-
+ist es wichtig, sich der Grenzen der Methode bewusst zu sein und
+gegebenenfalls andere Verlustfunktionen heranzuziehen.

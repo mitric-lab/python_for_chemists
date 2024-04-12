@@ -1,15 +1,15 @@
 ## Numerische Optimierung
 
-Die numerishe Optimierung bietet uns die Möglichkeit, komplexe Funktionen,
+Die numerische Optimierung bietet uns die Möglichkeit, komplexe Funktionen,
 wie die Verlustfunktionen der kleinsten Quadrate
 (Gl. {{eqref: eq:least_squares_loss}}), aber auch Funktionen im anderen
 Kontext, wie z.B. die Energie eines Moleküls, zu minimieren oder maximieren.
-Da die Maximierung eienr Funktion $f$ äquivalent zur Minimierung von $-f$ 
+Da die Maximierung einer Funktion $f$ äquivalent zur Minimierung von $-f$ 
 ist, werden wir im Folgenden nur noch vom Minimieren sprechen.
 Die Fähigkeit, Optimierungsprobleme anzugehen, 
 für die keine geschlossenen Lösungsformeln existieren, oder die Auswertung
 des analytischen Ausdrucks zu aufwendig ist, 
-erweitert signifikant unser Werkzeugset in der Datenanalyse. Insbesondere 
+erweitert unser Werkzeugset in der Datenanalyse signifikant. Insbesondere 
 erlaubt sie es, Lösungen für Modelle zu finden, die durch 
 Nichtlinearitäten, hohe Dimensionalitäten oder ungewöhnliche 
 Datenverteilungen charakterisiert sind.
@@ -17,12 +17,12 @@ Datenverteilungen charakterisiert sind.
 ### Theoretische Grundlagen
 
 Ein besonders zugänglicher und grundlegender Ansatz für die numerische
-Optimierung ist das Verfahren das 
+Optimierung ist das 
 [Gradientenverfahren](https://de.wikipedia.org/wiki/Gradientenverfahren)
-(engl. *Gradient Descent*). Das ist ein *iteratives Verfahren*, welches
-von einem geschätzten Startpunkt $x^0$ ausgeht und in jedem Schritt die
+(engl. *Gradient Descent*). Dies ist ein *iteratives Verfahren*, welches
+von einem gegebenen Startpunkt $x^0$ ausgeht und in jedem Schritt der
 Richtung des steilsten Abstiegs der Funktion folgt. Mathematisch
-formuliert heißt es
+formuliert heißt das
 $$
   x^{k+1} = x^k - \alpha \nabla f(x^k)
   {{numeq}}{eq:gradient_descent}
@@ -30,7 +30,7 @@ $$
 wobei $x^k$ der Schätzwert des Minimums im $k$-ten Schritt ist. Das 
 hochgestellte $k$ hat hier nichts mit Potenzierung zu tun, sondern ist 
 lediglich eine Notation,
-um die Verwechselung mit der $i$-ten Komponente, die hier tiefgestellt wird,
+um die Verwechselung mit der $i$-ten Komponente des Vektors, die hier tiefgestellt wird,
 zu vermeiden. Der Gradient der *Objektivfunktion* $f$ bei $x^k$ kann dann als
 $\nabla f(x^k) = \left(\frac{\partial f}{\partial x^k_1}, \ldots, \frac{\partial f}{\partial x^k_n}\right)^{\intercal}$ 
 notiert werden. 
@@ -38,10 +38,10 @@ Die Propotionialitätskonstante $\alpha$ wird als *Schrittweite* oder
 *learning rate* bezeichnet. Das Verfahren wird solange wiederholt, bis
 eine oder mehrere Abbruchbedingungen erfüllt sind. Typische 
 Abbruchbedingungen für iterative Optimierungsverfahren sind:
-- Die Änderung des Funktionswertes ist kleiner als ein Schwellwert
-- Die Änderung des Schätzwertes ist kleiner als ein Schwellwert
+- Die Änderung des Funktionswertes ist kleiner als ein Schwellenwert
+- Die Änderung des Schätzwertes ist kleiner als ein Schwellenwert
 - Eine maximale Anzahl an Iterationen ist erreicht
-- Die Norm des Gradienten ist kleiner als ein Schwellwert.
+- Die Norm des Gradienten ist kleiner als ein Schwellenwert.
 
 Die Schrittweite $\alpha$ ist der einzige und zugleich ein wichtiger 
 Parameter des Gradientenverfahrens, da sie die Konvergenzgeschwindigkeit 
@@ -53,7 +53,7 @@ großer Wert dazu führen kann, dass das Verfahren divergiert.
 Damit wir das Gradientenverfahren nutzen können, müssen wir Zugang zum 
 Gradienten der Objektivfunktion haben. Liegt dieser nicht analytisch vor, 
 muss eine numerische Approximation verwendet werden. Ein einfacher Ansatz 
-liefert die 
+liefert die Methode der
 [Finite Differenz](https://en.wikipedia.org/wiki/Finite_difference)
 . Hierbei wird die tangente der partiellen Ableitung durch die
 Sekante ersetzt, was zu einer Approximation der Form
@@ -62,8 +62,8 @@ $$
     \frac{f(x^k + h \hat{e}_i) - f(x^k - h \hat{e}_i)}{2h}
   {{numeq}}{eq:finite_difference_symmetric}
 $$
-führt. Hierbei ist $\hat{e}_i$ der $i$-te Einheitsvektor und $h$ ein
-kleiner Wert, der die Schrittweite der Approximation bestimmt. Genauer 
+führt. Zudem ist $\hat{e}_i$ der $i$-te Einheitsvektor und $h$ ein
+kleiner Wert, der die Schrittweite der Approximation bestimmt. Genau 
 genommen stellt Gl. {{eqref: eq:finite_difference_symmetric}} die 
 *zentrale finite Differenz 2. Ordnung* dar. Es gibt auch *einseitige*
 Approximationen und Approximationen höherer Ordnung, die wir hier aber 
@@ -76,22 +76,22 @@ nicht weiter betrachten.
 Als erstes implementieren wir die finite Differenz. Da wir mehrmals 
 Ableitungen berechnen werden müssen, ist es sinnvoll, eine *Funktion* zu
 implementieren. Funktionen im Programmierkontext sind ähnlich zu
-mathematischen Funktionen, die eine Eingabe in eine Ausgabe umwandeln, 
-können aber auch einiges mehr. 
+mathematischen Funktionen, die eine Eingabe in eine Ausgabe umwandeln. Sie
+können aber noch einiges mehr. 
 
-Wir importieren zuerst `numpy` und die Objekt `Callable` und `Any`
+Wir importieren zuerst `numpy` und die Objekte `Callable` und `Any`
 aus dem Modul `typing`:
 ```python
 {{#include ../codes/01-regression/numerical_optimisation.py:import_numpy}}
 ```
-Dann definieren die Funktion `finite_difference`, die den Gradienten einer
+Dann definieren wir die Funktion `finite_difference`, die den Gradienten einer
 Funktion `func` an der Stelle `x0` berechnet. 
 ```python
 {{#include ../codes/01-regression/numerical_optimisation.py:finite_difference}}
 ```
 Der erste Block der Funktion ist die *Signatur*, die angibt, welche
 Argumente die Funktion erwartet und welchen Typ die Rückgabe hat. Hierfür
-wurde die Objekte `Callable` und `Any` benutzt. Obwohl die explizite Angabe 
+wurden die Objekte `Callable` und `Any` benutzt. Obwohl die explizite Angabe 
 der Datentypen in Python optional und immer noch selten ist, ist es nach
 Meinung der Autoren eine gute Praxis. Näheres dazu finden Sie in dem 
 folgenden
@@ -151,19 +151,19 @@ der Gradient berechnet werden soll, die Schrittweite `h` vom Typ Float
 und ein *Tuple* (engl. *tuple*) `args`, das zusätzliche Argumente für die 
 Funktion `func` liefern kann. Außerdem haben wir in der Signatur 
 voreingestellte (engl. *default*) Werte für `h` und `args` definiert. 
-Das bedeutet, dass wenn die Funktion `finite_difference` ohne die 
-Argumente `h` und `args` aufgerufen wird, die Werte `h = 1e-5` und `args = ()`
-verwendet werden.
+Das bedeutet, dass die Werte `h = 1e-5` und `args = ()`
+verwendet werden, wenn die Funktion `finite_difference` ohne die 
+Argumente `h` und `args` aufgerufen wird.
 
 In der Funktion wird zuerst die Dimension des Punktes `x0` bestimmt und
-in den Integer `n` gespeichert. Der Gradient einer reellwertigen
+in der Integer `n` gespeichert. Der Gradient einer reellwertigen
 Funktion mit $n$ Variablen ist ein Vektor der Länge $n$. Daher wird
-die Variable `grad` als ein np.ndarray der Länge `n` mit Nullen
+die Variable `grad` als ein np.ndarray der Länge `n` aus Nullen
 durch die Funktion 
 [`np.zeros`](https://numpy.org/doc/stable/reference/generated/numpy.zeros.html)
 initialisiert. 
 
-Weil wir Gl. {{eqref: eq:finite_difference_symmetric}} an allen $n$ 
+Weil wir Gl. {{eqref: eq:finite_difference_symmetric}} auf alle $n$ 
 Komponenten des Punktes $x^k$ anwenden müssen, ist die Nutzung einer
 *Schleife* (engl. *loop*) sinnvoll. Hier benutzen wir eine 
 [*for*-Schleife](https://docs.python.org/3/tutorial/controlflow.html#for-statements),
@@ -175,31 +175,31 @@ den Endwert `n` nicht einschließt.
 In jeder Iteration der Schleife definieren wir zuerst den Einheitsvektor
 $\hat{e}_ i$, indem wir zuerst ein Null-Array der Länge `n` mit 
 `np.zeros(n)` erstellen und dann die $i$-te Komponente auf `1` setzen.
-Danach können wir den `i`-ten Eintrag des Gradientenarrays `grad` nach
+Danach können wir den `i`-ten Eintrag des Gradientenarrays `grad` gemäß
 Gl. {{eqref: eq:finite_difference_symmetric}} berechnen. Der einzige
-Unterschied zwischen dem Code und der Gleichung ist, dass wir den
-Zusatzargument `args` an die Funktion `func` übergeben. Hier 
-steht ein Stern `*` vor dem Argument `args`. Das ist die Verwendung
-von `*` als einen unären Operator, der ein Objekt in seine Bestandteile
-entpackt
+Unterschied zwischen unserem Code und dieser Gleichung ist, dass wir das
+Zusatzargument `args` an die Funktion `func` übergeben, wobei
+ein Stern `*` vor dem Argument `args` steht. Die Verwendung
+von `*` wirkt an dieser Stelle als einen unären Operator, 
+der ein Objekt in seine Bestandteile entpackt
 (engl. [*unpacking*](https://docs.python.org/3/tutorial/controlflow.html#unpacking-argument-lists)).
 Das bedeutet, dass die Funktion `func` nach dem ersten Argument 
 die weitere Argumente im Tuple `args` **einzelnd** akzeptiert.
 
-Nach allen Iterationen geben wir den Gradienten gespeichert in `grad` 
+Nach der letzten Iteration geben wir den Gradienten in Form der Variable `grad` 
 zurück. 
 
 #### Objektivfunktion
 
 Als nächstes implementieren wir die Objektivfunktion, deren Wert wir
 minimieren wollen. Gemäß Gl. {{eqref: eq:least_squares_loss_linear}} 
-können wir die Funktion `objective_function` so implementieren:
+können wir die Funktion `objective_function` folgendermaßen definieren:
 ```python
 {{#include ../codes/01-regression/numerical_optimisation.py:objective_function}}
 ```
 
-Die Signatur der Funktion `objective_function` folgt die Typdefinition
-vom Argument `func` in der Funktion `finite_difference` 
+Die Signatur der Funktion `objective_function` folgt der Typdefinition
+des Arguments `func` in der Funktion `finite_difference` 
 (`Callable[[np.ndarray, Any], float]`):
 - Das Argument `beta` ist vom Typ np.ndarray,
 - das Argument `args` ist vom Typ np.ndarray, also auch `Any` und
@@ -212,8 +212,8 @@ viele weitere Argumente nach `beta` akzeptiert.
 Die Funktion `objective_function` definiert zuerst die Arrays
 `concenctrations` und `absorbances` aus dem Argument `args`
 und gibt anschließend den Wert der Verlustfunktion der kleinsten
-Quadrate nach Gl. {{eqref: eq:least_squares_loss_linear}} zurück.
-Hier gibt es wieder keine große Unterschiede zwischen der mathematischen
+Quadrate gemäß Gl. {{eqref: eq:least_squares_loss_linear}} zurück.
+Hier gibt es erneut keine große Unterschiede zwischen der mathematischen
 Formulierung und der programmatischen Implementierung.
 
 Mit Hilfe der Funktionen `finite_difference` können wir die Funktion
@@ -223,8 +223,10 @@ Objektivfunktion berechnet:
 {{#include ../codes/01-regression/numerical_optimisation.py:objective_function_gradient}}
 ```
 Die Signatur dieser Funktion ist ähnlich zu der der Funktion 
-`objective_function`, nur der Rückgabetyp ist ein np.ndarray, da die 
-Objektivfunktion einen $n$-dimensionalen Vektor als Argument hat.
+`objective_function`; lediglich der Rückgabetyp ist ein np.ndarray. 
+Erinnern Sie sich daran, dass, da die Objektivfunktion einen 
+$n$-dimensionalen Vektor als Argument hat, der Gradient
+ebenfalls ein $n$-dimensionaler Vektor ist.
 Nach der Definition der Arrays `concenctrations` und `absorbances`
 berechnen wir den Gradienten der Objektivfunktion einfach durch
 Aufrufen der Funktion `finite_difference`. Der Rückgabewert wird in der 
@@ -233,19 +235,16 @@ Variable `grad` gespeichert und zurückgegeben.
 #### Gradientenverfahren
 
 Anschließend implementieren wir das Gradientenverfahren. 
-Gl. {{eqref: eq:gradient_descent}} sagt uns, dass wir als Argumente
+Aus Gl. {{eqref: eq:gradient_descent}} folgt, dass wir zum Starten des Verfahrens
 den Gradienten der Objektivfunktion `func_grad`, den Startpunkt `x0`
 und die Schrittweite `alpha` benötigen. Als Abbruchbedingung verwenden 
 wir eine Kombination aus der maximalen Anzahl an Iterationen und der Norm 
 des Gradienten. Das führt zu den zusätzlichen Argumenten `max_iter` und 
 `max_norm`. Außerdem brauchen wir noch das Argument `args`, das die
-weiteren Argumente für die Funktion `func_grad` enthält. Das führt zu
-der folgenden Implementierung:
+weiteren Argumente für die Funktion `func_grad` enthält.
 ```python
 {{#include ../codes/01-regression/numerical_optimisation.py:gradient_descent}}
 ```
-Als Rückgabewert haben wir hier nicht nur das Optimum `x`, sondern auch
-die Anzahl der Iterationen `niter`. 
 
 Zuerst setzen wir die Variable `x` auf den Startpunkt `x0`. Danach verwenden 
 wir eine `for`-Schleife, die die Variable `niter` von `0` bis `max_iter - 1`
@@ -258,10 +257,11 @@ mit der Funktion
 und prüfen, ob sie kleiner als `max_norm` ist. Wenn ja, brechen wir die
 Schleife mit dem `break`-Befehl ab.
 
-Nach allen Iterationen überprüfen wir, ob die Variable `niter` die maximale
-Anzahl an Iterationen erreicht hat. Wenn ja, geben wir eine Warnung aus, da
-die Güte des Ergebnisses fragwürdig ist. Am Ende geben wir das Optimum `x`
-so wie die Anzahl der Iterationen `niter` zurück.
+Nach der letzen Iteration überprüfen wir, ob die Variable `niter` die maximale
+Anzahl an Iterationen erreicht hat. Wenn ja, bedeutet das, dass das verfahren 
+möglicherweise nicht konvergiert ist und wir geben wir eine Warnung aus.
+Am Ende geben wir das Optimum `x` so wie die Anzahl der tatsächlich benötigten I
+terationen `niter` zurück.
 
 ### Anwendung
 
