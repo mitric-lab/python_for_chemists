@@ -271,13 +271,13 @@ wieder die Arrays `concentrations` und `absorbances`:
 ```python
 {{#include ../codes/01-regression/numerical_optimisation.py:data_array}}
 ```
-Dann definieren wir den Startpunkt `x0` und rufen die Funktion
+Dann definieren wir den Startpunkt `x0`, hier `beta_guess`, und rufen die Funktion
 `gradient_descent` auf:
 ```python
 {{#include ../codes/01-regression/numerical_optimisation.py:gradient_descent_call}}
 ```
 
-Die optimale Parameter `beta0` und `beta1` sind identisch wie die analytische
+Die optimalen Parameter `beta0` und `beta1` sind identisch wie die der analytischen
 Lösung. Auf dem Computer des Autors wurden 2507 Iterationen benötigt, um
 die Abbruchbedingung zu erfüllen. Die genaue Anzahl der Iterationen kann
 je nach Hardware leicht variieren. Da dieses Optimierungsproblem sehr
@@ -285,14 +285,14 @@ je nach Hardware leicht variieren. Da dieses Optimierungsproblem sehr
 dass das Verfahren divergiert.
 
 ```admonish tip title="Tipp"
-Spielen Sie gerne mit den Argumenten `alpha` herum und beobachten Sie, wie
-sich die Anzahl der Iterationen und die Güte des Ergebnisses verändern.
+Versuchen Sie, die Schrittweite `alpha` zu verändern und beobachten Sie, wie
+sich die Anzahl der Iterationen ändert.
 ```
 
 Da Optimierung ein sehr allgemeines Problem ist, existieren viele
-Implementierungen von verschiedensten Algorithmen in Bibliotheken wie
+Implementierungen von verschiedensten Algorithmen in Bibliotheken wie z.B.
 [`scipy.optimize`](https://docs.scipy.org/doc/scipy/reference/optimize.html).
-Wir wollen die Funktion `sci.optimize.minimize` verwenden, um die optimalen
+Wir wollen die Funktion `scipy.optimize.minimize` verwenden, um die optimalen
 Parameter $\beta$ zu finden:
 ```python
 {{#include ../codes/01-regression/numerical_optimisation.py:scipy_minimize}}
@@ -303,13 +303,11 @@ Berechnung der numerischen Gradienten kümmert sich die `minimize`-Funktion
 selbst.
 
 ~~~admonish note title="Anmerkung zur Funktion `minimize`"
-Die Funktion `minimize` akzeptiert auch den Argument `jac` 
-([Jacobi-Matrix](https://de.wikipedia.org/wiki/Jacobi-Matrix)).
-Das ist eine Funktion,
+Die Funktion `minimize` akzeptiert auch das Argument `jac` 
+([Jacobi-Matrix](https://de.wikipedia.org/wiki/Jacobi-Matrix)), also eine Funktion,
 die den Gradienten der Objektivfunktion berechnet. Sollte man den analytischen
-Gradienten zur Verfügung haben, der nicht sehr zeitaufwendig zu berechnen
-ist, sollte man ihn als Argument `jac` übergeben. Das kann den 
-Optimierungsprozess beschleunigen.
+und leicht zu berechnenden Gradienten zur Verfügung haben, kann man ihn als 
+Argument `jac` übergeben, was den Optimierungsprozess beschleunigen kann.
 ~~~
 
 
@@ -325,36 +323,38 @@ verwendet werden können. Eine Übersicht finden Sie in der
 - `method='Nelder-Mead'`: 
     Das [Nelder-Mead-Verfahren](https://de.wikipedia.org/wiki/Downhill-Simplex-Verfahren)
     ist eine heutristische Methode, die ohne die Berechnung des Gradienten
-    auskommt. Deshalb ist sie besonders nützlich, wenn die Berechnung des
-    Gradienten sehr aufwendig ist oder der Gradient durch Rauschen stark
-    fluktuiert. Deshalb ist sie besonders geeignet für Regressionen mit
-    experimentellen Daten.
+    auskommt. Sie ist daher besonders nützlich, wenn die Berechnung des
+    Gradienten sehr aufwendig ist oder dieser stark variiert. Sie eignet sich deshalb
+    besonders für Regressionen mit experimentellen Daten.
 - `method='BFGS'`: 
     Das [Broyden-Fletcher-Goldfarb-Shanno-Verfahren](https://de.wikipedia.org/wiki/BFGS-Verfahren)
     ist eine Methode, die den Gradienten benutzt, um die Hesse-Matrix der
-    Objektivfunktion zu approximieren. Deshalb zeigt sie eine sehr schnelle
-    Konvergenz in der Nähe des Minimums. In der Praxis benögtigt sie weniger 
-    Iterationen als andere Optimierungsmethoden und ist deshalb eine der
-    am häufigsten verwendeten Methoden.
+    Objektivfunktion zu approximieren. Die Hesse-Matrix enthält die zweiten 
+    Ableitungen der Funktion nach ihren Parametern. Die Methode zeigt deshaln eine 
+    sehr schnelle Konvergenz in der Nähe des Minimums. In der Praxis benögtigt sie weniger 
+    Iterationen als andere Optimierungsmethoden und wird deshalb häufig verwendet.
 
+Wir werden in der Übung sehen, dass es für die Regression mit der Methode der kleinsten Quadrate
+eine geschlossene Lösung gibt, die die optimalen Parameter direkt berechnet. 
+Warum sollten wir dann die numerische Optimierung verwenden?
 Im Kontext der Regression erlaubt uns die numerische Optimierung 
 einerseits den Einsatz komplizierterer Modelle, die keine analytische
 Lösung haben, und andererseits die Verwendung sophistizierterer
 Verlustfunktionen, wie z.B. die der Methode der kleinsten absoluten 
 Abweichungen (vgl. Gl. {{eqref: eq:least_absolute_deviations_opt}}).
-oder die der kleinsten Quadrate mit Regularisierung, was Sie in der Übung
-kennenlernen werden.
+Zudem können wir damit eine zusätzliche Kontrolle über die Parameter
+einführen (**Regularisierung**), was die allgemeine Leistung des Modells
+verbessern kann. 
 
 ~~~admonish note title="Funktion `scipy.optimize.curve_fit`"
 Es gibt auch die Funktion 
 [`scipy.optimize.curve_fit`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html),
-die eine (nichtlineare) Regression durchführt. 
-Allerdings ist sie nicht so flexibel wie die Funktion
+die eine (nichtlineare) Regression der Daten direkt durchführt. 
+Allerdings ist sie nicht so flexibel wie die allgemeine Methode mit der Funktion
 `minimize`, da sie nur über wenige Optimierungsmethoden verfügt und die
 Objektivfunktion als die Verlustfunktion der kleinsten Quadrate festlegt.
-Deshalb ist die Funktion für einfachere Regressionen geeignet und benötigt
-weniger Code. Bei komplizierteren Modellen ist es jedoch sinnvoller, die
-Funktion `minimize` zu verwenden.
+Sie kann für einfache Regressionen angewendet werden und benötigt in der Regel
+weniger Code.
 ~~~
 
 ---
@@ -362,6 +362,7 @@ Funktion `minimize` zu verwenden.
 ### Übung
 
 #### Aufgabe 1.2
+
 <!--
 {{#include ../psets/01.md:aufgabe_2}}
 -->

@@ -100,3 +100,4 @@ usw.
 Obwohl die Methode der kleinsten Quadrate in vielen Fällen gut funktioniert,
 ist es wichtig, sich der Grenzen der Methode bewusst zu sein und
 gegebenenfalls andere Verlustfunktionen heranzuziehen.
+

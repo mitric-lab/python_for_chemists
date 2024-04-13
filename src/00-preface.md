@@ -17,7 +17,7 @@ im Seminarraum 00.006 des Instituts für Theoretische Chemie (Campus Hubland Nor
 ## Syllabus
 
 Ein vorläufiger Syllabus ist unten dargestellt. Dieser wird
-sich im Laufe des Semesters entsprechend dem Fortschritt der Vorlesung
+im Laufe des Semesters entsprechend dem Fortschritt der Vorlesung
 kontinuierlich aktualisiert.
 
 |Woche|Wochentag| Datum  | Typ         | Thema           |

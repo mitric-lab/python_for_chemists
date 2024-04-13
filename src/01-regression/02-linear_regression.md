@@ -147,7 +147,7 @@ Nun wollen wir mit Hilfe der Gl. {{eqref: eq:least_squares_linear_params}}
 die lineare Regression für ein einfaches Beispiel implementieren.
 
 ### Implementierung
-Betrachten wir die folgenden Messdaten der Lambert-Beer-Beziehung 
+Betrachten wir die folgenden Messdaten[^1] der Lambert-Beer-Beziehung 
 für Methylenblau in Wasser bei verschiedenen Konzentrationen $c$ und den 
 zugehörigen Absorbanzen $A$, gemessen bei $610\ \mathrm{nm}$
 mit einer Schichtdicke $d$ von 1 cm:
@@ -395,9 +395,11 @@ import matplotlib.pyplot as plt
 ~~~
 
 ---
+[^1]: Die Autoren bedanken sich bei Dr. Hans-Christian Schmitt für die Bereitstellung der Daten.
 
 ### Übung
 
 #### Aufgabe 1.1: Lineare Regression
 
 {{#include ../psets/01.md:aufgabe_1}}
+

@@ -1,22 +1,25 @@
 ## Nichtlineare Regression
 
-Nun sind wir in der Lage, auch nichtlineare Zusammenhänge zu modellieren. 
-Die nichtlineare Regression ist nicht viel anders als die lineare Regression. 
-Im Rahmen der kleinsten Quadrate setzen wir einfach das Modell
-$\hat{f(\beta; x)}$ in Gl. {{eqref: eq:least_squares_opt}} ein. Nur in 
-diesem Fall ist eine analytische Lösung wie 
+Wir haben in den vorherigen Abschnitten die lineare Regression kennengelernt,
+die uns erlaubt, lineare Zusammenhänge zwischen Variablen zu modellieren.
+Zwar sind viele physikalische Zusammenhänge linear, oder können als solche 
+formuliert werden, aber es gibt auch viele nichtlineare Zusammenhänge, 
+die wir modellieren wollen. Im Rahmen der Methode der kleinsten Quadrate 
+ersetzen wir dazu einfach das Modell $\hat{f(\beta; x)}$ in 
+Gl. {{eqref: eq:least_squares_opt}} durch eine nichtlineare Funktion. 
+Allerdings ist in diesem Fall ist eine analytische Lösung wie 
 Gl. {{eqref: eq:least_squares_linear_params}}
-nicht mehr möglich, weshalb numerische Optimierungsverfahren verwendet werden 
+nicht immer möglich, weshalb numerische Optimierungsverfahren verwendet werden 
 müssen.
 
 ### Anwendung
 
 #### Reaktionskinetik
-Wir erinnern uns an den Versuch im Physikalisch-Chmischen Praktikum:
+Sie haben im Physikalisch-Chemischen Praktikum sicherlich den Versuch
 "Bestimmung der Geschwindigkeitskonstante und der Aktivierungsenergie 
-der Mangan(III)-Trioxalat-Zersetzungsreaktion", auch "Mn-Zerfall" genannt.
-Dort haben wir die Absorbanz $A$ in Abhängigkeit der Zeit $t$ gemessen und
-dadurch die Geschwindigkeitskonstante $k$ bestimmt. Die zugrunge liegende
+der Mangan(III)-Trioxalat-Zersetzungsreaktion", auch "Mn-Zerfall" genannt,
+durchgeführt. Dort haben Sie die Absorbanz $A$ in Abhängigkeit der Zeit $t$ gemessen und
+durch fitten der Messdaten die Geschwindigkeitskonstante $k$ bestimmt. Die zugrungeliegende
 Beziehung ist exponentiell:
 $$
   A(t) = A_0\, \eu^{-k t}
@@ -31,71 +34,71 @@ $$
   {{numeq}}{eq:least_squares_exp_opt}
 $$
 
-Wir importieren als erstes wieder die benötigten Libraries:
+Wir importieren als erstes wieder die benötigten Module und Bibliotheken:
 ```python
 {{#include ../codes/01-regression/nonlinreg_mn.py:import}}
 ```
 
-Danach müssen wir die Daten in Form von Arrays bereitstellen. Weil wir dieses 
-Mal doch relativ viele Datenpunkte haben, wird das manuelle Eintippen
+Anschließend müssen wir die Daten in Form von Arrays bereitstellen. Weil wir hier 
+doch relativ viele Datenpunkte haben, wird das manuelle Eintippen
 ziemlich mühsam. Deshalb verwenden wir die Funktion 
 [`np.loadtxt`](https://numpy.org/doc/stable/reference/generated/numpy.loadtxt.html),
 um die Daten aus einer Textdatei zu lesen.
-Die Textdatei `mn_decay.txt` enthält zwei Spalten, die die Zeit $t$ und die
-Absorbanz $A$ dokumentieren. Der Anfang der Datei sieht so aus:
+Die Textdatei `mn_decay.txt` (<a href="../codes/01-regression/mn_decay.txt" download>hier</a> herunterladen) enthält zwei Spalten, welche die Werte für Zeit $t$ und
+Absorbanz $A$ enthalten. Die ersten Zeilen der Datei sehen wie folgt aus:
 ```txt
 {{#include ../codes/01-regression/mn_decay.txt::10}}
 ```
-Sie können die Datei 
-<a href="../codes/01-regression/mn_decay.txt" download>hier</a>
-herunterladen.
 
-Das Einlesen der Datei ist durch Eingabe des Dateipfades bereits erledigt:
+Zum Einlesen der Daten benötigt die Funktion `np.loadtxt` den Dateinamen:
 ```python
 {{#include ../codes/01-regression/nonlinreg_mn.py:read_data}}
 ```
-Hier liegt die Textdatei im gleichen Verzeichnis wie das Skript. Wenn 
-Sie die Textdatei in einem anderen Verzeichnis haben, müssen Sie den Pfad
-entsprechend anpassen. Das optionale Argument `unpack=True` sorgt dafür, da
-wir hier die Daten in Spaltenform haben, dass die Daten in zwei Arrays
-konvertiert und simultan in die Variablen `time` und `absorbance` gespeichert
-werden können. Wären die Daten in zwei Zeilen in der Textdatei gespeichert,
-müssten wir `unpack=False` setzen, welches auch der Defaultwert ist.
-
+In diesem Fall liegt die Textdatei im gleichen Verzeichnis wie das ausführende Skript. 
+Wenn Sie die Textdatei in einem anderen Verzeichnis haben, müssen Sie den Pfad
+entsprechend anpassen. Das optionale Argument `unpack=True` sorgt dafür, dass die 
+Spalten der Datei einzeln ausgegeben und als Arrays `time` und `absorbance` gespeichert
+werden. Würden wir `unpack=False` setzen, welches auch der Defaultwert ist,
+würde die Funktion ein 2D-Array zurückgeben, in dem die Spalten zusammengefasst sind.
 Die erste Zeile dieser Datei beginnt mit einem Kommentarzeichen `#`, was
-`np.loadtxt` dazu veranlasst, die erste Zeile zu ignorieren. Mit dem 
-optionalen Argument `comments` können wir das Kommentarzeichen ändern.
+`np.loadtxt` dazu veranlasst, diese Zeile zu ignorieren. 
+
+```admonish note title="Hinweis"
+Mit dem optionalen Argument `comments` können wir das Zeichen, welches für Kommentare
+verwendet wird, ändern. 
+```
 
 Nun können wir das Modell definieren:
 ```python
 {{#include ../codes/01-regression/nonlinreg_mn.py:exp_model}}
 ```
 Obwohl `t` ein Array und `k` ein Skalar ist, funktioniert die Multiplikation
-`-k * t` auch, weil `t` als Array interpretiert wird. Dieses Konzept wird als
+`-k * t` elementweise. In diesem Fall wird auch `k` als ein Array interpretiert, was als
 [Broadcasting](https://numpy.org/doc/stable/user/basics.broadcasting.html)
-bezeichnet. Die Funktion `np.exp` berechnet den Exponential von jedem Element 
-des Produktarrays, welches wiederum mit dem Skalar `a0` multipliziert wird.
+bezeichnet wird. Die Funktion `np.exp` berechnet den elementweisen Exponential
+des Arrays. Das Ergebnis ist demnach wieder ein Array, welches wir mit dem Skalar `a0`
+multiplizieren.
 
-Danach definieren wir die Objektivfunktion in 
+Anschließend definieren wir die Objektivfunktion in 
 Gl. {{eqref: eq:least_squares_exp_opt}}:
 ```python
 {{#include ../codes/01-regression/nonlinreg_mn.py:objective_function}}
 ```
 
-Nun können wir die `miniimize`-Funktion verwenden, um dieses 
+Wir verwenden nun die `minimize`-Funktion, um dieses 
 Optimierungsproblem zu lösen:
 ```python
 {{#include ../codes/01-regression/nonlinreg_mn.py:optimise}}
 ```
-Hier haben wir das Nelder-Mead-Verfahren verwendet mit den Startparametern
-$A_0^0 = 1$ und $k^0 = 0.01$. Bei Ausgeben des Ergebnisses haben wir
-vor den Zeichenketten ein `f` gesetzt. Das signalisiert, dass die Zeichenkette
-ein sog. 
+Hier haben wir das Nelder-Mead-Verfahren mit den Startparametern
+$A_0^0 = 1$ und $k^0 = 0.01$ angewandt. Zum Ausgeben des Ergebnisses mit dem 
+`print`-Befehl haben wir vor der Zeichenkette jeweils ein `f` gesetzt. 
+Das signalisiert, dass die Zeichenkette ein sog. 
 [f-string](https://realpython.com/python-f-strings/#doing-string-interpolation-with-f-strings-in-python)
-ist, in der wir Variablen mit geschweiften Klammern `{}` einbetten können.
-Tatsächlich können f-Strings noch einiges mehr, was wir in der Zukunft
+ist, in welchen wir Variablen mit geschweiften Klammern `{}` einbetten können.
+Tatsächlich können f-Strings noch einiges mehr, was wir in Zukunft
 noch sehen werden.
-Die optimierten Parameter sollen die folgenden Werte haben:
+Die optimierten Parameter sollten die folgenden Werte haben:
 ```python
 {{#include ../codes/01-regression/nonlinreg_mn.py:verification}}
 ```
@@ -107,19 +110,18 @@ Zum Schluss können wir die Ergebnisse plotten:
 Sie sollten die meisten Funktionen im obigen Codeblock aus 
 Kap. [1.2](02-linear_regression.md) kennen. Die einzige neue Funktion ist
 `fig.tight_layout()`, die eine automatische Anpassung des Layouts des Plots
-vornimmt. Ein Diagramm wie folgt sollte erscheinen:
+vornimmt. Wir erkennen aus dem folgendem Diagramm, dass die exponentielle Funktion die Daten
+sehr gut beschreibt.
 ![Exponentielle Regression des Mn-Zerfalls](../assets/figures/01-regression/nonlinreg_mn.svg)
-Wir erkennen aus dem Diagramm, dass die exponentielle Funktion die Daten
-sehr gut beschreibt. 
 
 Einige von Ihnen würden vielleicht fragen, warum wir nicht die Funktion
-linearisiert haben, um die lineare Regression zu verwenden. Das ist eine
-gute Frage. Tatsächlich ist es möglich, die Funktion zu linearisieren, indem
+linearisiert haben, um die lineare Regression zu verwenden, was eine
+berechtigte Frage ist. Tatsächlich ist es möglich, die Funktion zu linearisieren, indem
 wir beide Seiten der Gleichung logarithmieren:
 $$
   \ln(A(t)) = \ln(A_0) - k t
 $$
-Eine lineare Regression dieser Gleichung liefert allerdings nicht die
+Eine lineare Regression mittels dieser Gleichung liefert allerdings nicht die
 gleichen Ergebnisse, wie Sie im folgenden Diagramm sehen können:
 ![Expontielle Regression des Mn-Zerfalls mit linearisierter Funktion](../assets/figures/01-regression/nonlinreg_mn_wlin.svg)
 
@@ -131,33 +133,33 @@ erhaltenen Parameter
 ```python
 {{#include ../codes/01-regression/nonlinreg_mn.py:verification_lin}}
 ```
-sind durchaus etwas unterschiedlich zu den vorherigen. 
-Deshalb ist es oft wichtig, nichtlineare Regressionen an den urprünglichen
+sind durchaus unterschiedlich zu den vorherigen. 
+Deshalb ist es oft notwendig, nichtlineare Regressionen an den urprünglichen
 Daten durchzuführen, anstatt lineare Modelle mit linearisierten Daten zu
 verwenden.
 
 #### Titrationskurve
 
-Im Analytikpraktikum haben Sie eine Titration von einer Starken Base gegen
+Im Analytikpraktikum haben Sie sicherlich ebenfalls eine Titration einer starken Base gegen
 eine starke Säure mit einem pH-Meter durchgeführt. Damals mussten Sie die
-Werte auf einem Millimeterpapier auftragen und anhand der Position des 
+Werte wahrscheinlich auf einem Millimeterpapier auftragen und anhand der Position des 
 pH-Sprungs den Äquivalenzpunkt bestimmen. Das ist einerseits mühsam und
-andererseits ungenau, da nur die Messdaten in der Nähe des Sprungs
+andererseits ungenau, da nur die wenigen Messdaten in der Nähe des steilen Anstiegs
 berücksichtigt werden. 
 
 Da die pH-Kurve eine Funktion in Abhängigkeit der zugegebenen Menge an
 Base ist, können wir sie mithilfe der nichtlinearen Regression modellieren
-und den Äquivalenzpunkt viel genauer bestimmen. 
+und den Äquivalenzpunkt mit deutlich höherer Genauigkeit bestimmen. 
 
-Die $\mathrm{H^+}$-Konzentration während der Titration von einer starken
-Base gegen eine starke Säure ist gegeben durch:
+Die $\mathrm{H^+}$-Konzentration während der Titration einer starken
+Base gegen eine starke Säure ist (unter gewissen Näherungen) gegeben durch:
 $$
   [\mathrm{H^+}] = \frac{\Delta + \sqrt{\Delta^2 + 4K_w}}{2}\,,
   {{numeq}}{eq:titration_sasb_hplus}
 $$
 wobei $\Delta = [\mathrm{A^-}] - [\mathrm{B^+}]$ die Konzentrationsdifferenz
 zwischen den Gegenionen der Säure $\mathrm{A^-}$ und der Base $\mathrm{B^+}$
-ist. $K_w$ ist die Ionenprodukt des Wassers.
+ist. $K_w$ ist das Ionenprodukt des Wassers.
 
 Da starke Säuren und Basen vollständig dissoziieren, lassen sich die
 Konzentrationen ihrer Gegenionen wie folgt ausdrücken:
@@ -180,11 +182,11 @@ $$
 $$
 
 Fasst man die Gleichungen {{eqref: eq:titration_sasb_hplus}} und
-{{eqref: eq:titration_sasb_ph}} in eine Funktion zusammenfassen, so erhalten
+{{eqref: eq:titration_sasb_ph}} in einer Funktion zusammenfassen, so erhalten
 wir das Modell $f(\beta; V_\mathrm{B})$, wobei 
 $\beta = (c_\mathrm{A}^0, V^0)^\intercal$.
 
-Wir implmeentieren nun das Modell und die Objektivfunktion:
+Wir implmentieren zunächst das Modell und die Objektivfunktion:
 ```python
 {{#include ../codes/01-regression/nonlinreg_titration.py:titration_model}}
 ```
@@ -192,17 +194,17 @@ Wir implmeentieren nun das Modell und die Objektivfunktion:
 {{#include ../codes/01-regression/nonlinreg_titration.py:objective_function}}
 ```
 Obwohl die Funktion des pH-Werts relativ kompliziert ist, können wir durch
-die Definition von Zwischenvariablen, sowie in 
-Gl. {{eqref: eq:titration_sasb_hplus}}, die Funktion in Python einfach
-implementieren. Die Objektivfunktion ist fast identisch zu der des 
-Mn-Zerfalls. Der wesentliche Unterschied ist die Ersetzung des Modells.
+die Definition von Zwischenvariablen, wie in 
+Gl. {{eqref: eq:titration_sasb_hplus}}, die Implementierung der Funktion in Python
+deutlich vereinfachen. Die Objektivfunktion ist fast identisch zu der des 
+Mn-Zerfalls, wobei der wesentliche Unterschied die Ersetzung unseres Modells darstellt.
 
-Genau so wie beim Mn-Zerfall lesen wir die Daten aus einer Textdatei ein:
+Genau so wie im vorherigen Beispiel lesen wir die Daten aus einer Textdatei ein:
 ```python
 {{#include ../codes/01-regression/nonlinreg_titration.py:read_data}}
 ```
 Zusätzlich haben wir hier die Konzentration der Maßlösung `C0_B` definiert.
-Nach Konvention sollen alle Konstanten in Python in Großbuchstaben
+Gemäß der allgemeinen Konvention sollen alle Konstanten in Python in Großbuchstaben
 geschrieben werden. Anschließend können wir die nichtlineare Regression
 durchführen und die Ergebnisse plotten:
 ```python
@@ -211,55 +213,51 @@ durchführen und die Ergebnisse plotten:
 ```python
 {{#include ../codes/01-regression/nonlinreg_titration.py:plot}}
 ```
-Eine Stoffmenge des Analyts von $n_\mathrm{A}^0 = 1.7698\ \mathrm{mmol}$ 
-wurde durch die Regression bestimmt. Das Diagramm sollte wie folgt aussehen:
+Aus den gefitteten Parametern wurde eine Stoffmenge des Analyts von 
+$n_\mathrm{A}^0 = 1.7698\ \mathrm{mmol}$ bestimmt. Das entsprechende Diagramm sollte wie folgt aussehen:
 ![Nichtlineare Regression der Titrationskurve](../assets/figures/01-regression/nonlinreg_titration.svg)
-
 Obwohl der Fit am Anfang und am Ende der Kurve nicht perfekt ist,
-ist die Anpassung in der Nähe des Äquivalenzpunkts sehr gut, weshalb
-es möglich ist, den Äquivalenzpunkt sehr genau zu bestimmen.
+ist die Übereinstimmung in der Nähe des Äquivalenzpunkts sehr gut.
 
-Vielleicht haben Sie bemerkt, dass die optimierten Parameter $c_\mathrm{A}^0$
-und $V^0$ hier nicht aufgeführt sind, sondern lediglich ihr Produkt. 
+Vielleicht haben Sie sich gefragt, warum die optimierten Parameter $c_\mathrm{A}^0$
+und $V^0$ hier nicht explizit aufgeführt sind, sondern lediglich ihr Produkt. 
 ```admonish warning title="Warnung: korrelierte Parameter"
 Die Modellparameter $\beta$ können korreliert sein, d.h., die Änderung 
 zweier oder mehrerer Parameter führt zu einer ähnlichen Änderung der
-Objektivfunktion. Sollten Parameter stark korreliert sein, weist es oft 
-auf *overfitting* hin. In diesem Fall ist es ratsam zu prüfen, ob das Modell
-nicht doch mit weniger Parametern auskommt.
+Objektivfunktion. Dieser Umstand kann auf sog. *overfitting* der Daten durch das Modell hinweisen. 
+In diesem Fall ist es ratsam zu prüfen, ob das Modell nicht auch mit weniger Parametern auskommt.
 
 In unserem Fall sind die Parameter $c_\mathrm{A}^0$ und $V^0$ korreliert, 
-da die Stoffmenge des Analyts $n_\mathrm{A}^0$ die wesentliche Auswirkung
+da es die Stoffmenge des Analyts $n_\mathrm{A}^0$ ist, die eine wesentliche Auswirkung
 auf die Titrationskurve hat. Das Anfangsvolumen $V^0$ dagegen
-spielt nur eine untergeordnete Rolle. 
-Deshalb fungiert das Produkt $c_\mathrm{A}^0 V^0$ näherungsweise als ein 
-Parameter. Nichtsdestotrotz ist $V^0$ hier ein wichtiger Parameter, da
-das es auf der gleichen Größenordnung wie $V_\mathrm{B}$ und deshalb 
-die Verdünnung nicht vernachlässigt werden kann. Zum Glück braucht man bei 
-der Titrationsanalyse nur das Produkt $c_\mathrm{A}^0 V^0$ zu kennen, 
-weshalb uns die Korrelation der Parameter in diesem Fall nicht stört.
+spielt nur eine untergeordnete Rolle, weshalb das Produkt $c_\mathrm{A}^0 V^0$ näherungsweise als ein 
+Parameter dient. Nichtsdestotrotz ist $V^0$ hier ein wichtiger Parameter, da
+das es auf der gleichen Größenordnung wie $V_\mathrm{B}$ liegt und 
+die Verdünnung daher nicht vernachlässigt werden kann. Da man aber für  
+die Titrationsanalyse nur das Produkt $c_\mathrm{A}^0 V^0$ kennen muss, 
+stört uns die Korrelation der Parameter in diesem Fall nicht.
 ```
 
 ```admonish tip title="Tipp"
-Spielen Sie mit den Startparametern herum und beobachten Sie, wie sich die
+Ändern Sie die Startparameter und beobachten Sie, wie sich die
 optimierten Parameter ändern, aber ihr Produkt nahezu konstant bleibt.
 ```
 
-Als letztes wird es nochmal betont, dass es manchmal wirklich wichtig ist,
-die Regression an Originaldaten durchzuführen, und nicht an irgendwie
-transformierten Daten. Im Fall der Säure-Base-Titration könnte man z.B. auf 
-die Idee kommen, $[\mathrm{H^+}]$ anstatt des pH-Werts zu fitten. Das ist
-aber nicht sinnvoll. Da der gleiche Fehler auf der pH-Skala zu größeren
+Als letztes betonen wir nochmal, dass es oft wichtig ist,
+die Regression an den Originaldaten durchzuführen und keine
+transformierten Daten zu verwenden. Im Fall der Säure-Base-Titration könnte man z.B. auf 
+die Idee kommen, $[\mathrm{H^+}]$ anstatt des pH-Werts zu fitten. Aus den gleichen
+Gründen wie zuvor ist das allerdings nicht sinnvoll: Da der gleiche Fehler auf der pH-Skala zu größeren
 Fehlern bei höheren $\mathrm{H^+}$-Konzentrationen und kleineren Fehlern
-bei niedrigeren $\mathrm{H^+}$-Konzentrationen führt, "lohnt" es sich
-mehr, die Datenpunkte bei höheren $\mathrm{H^+}$-Konzentrationen besser
-anzupassen. Das führt zu einer Verzerrung der Ergebnisse, wie im folgenden
+bei niedrigeren $\mathrm{H^+}$-Konzentrationen führt, werden
+die Datenpunkte bei höheren $\mathrm{H^+}$-Konzentrationen besser
+angepasst. Das führt zu einer Verzerrung der Ergebnisse, wie im folgenden
 Diagramm zu sehen ist:
 ![Nichtlineare Regression der Titrationskurve mit Regression an H+ Konzentration](../assets/figures/01-regression/nonlinreg_titration_ch.svg)
 Als freiwillige Übung können Sie versuchen, das obige Diagramm reproduzieren. 
-Man erkennt sehr schnell, dass die Regression an $[\mathrm{H^+}]$
+Man erkennt, dass die Regression an $[\mathrm{H^+}]$
 die früheren Datenpunkte bevorzugt und dadurch den Äquivalenzpunkt
-völlig falsch bestimmt. 
+völlig falsch bestimmt wird. 
 
 ---
 
