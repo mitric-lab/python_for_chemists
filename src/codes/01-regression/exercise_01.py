@@ -2,14 +2,14 @@
 
 ### ANCHOR: data_list
 concentrations = [
-    0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0,
-    1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0,
+    2.125, 4.250, 6.375, 8.500, 10.63, 12.75, 14.88, 17.00, 19.13, 21.25,
+    23.38, 25.50, 27.63, 29.75, 31.88, 34.00, 36.13, 38.25, 40.38, 42.50,
 ]
 absorbances = [
-    0.0522, 0.1010, 0.1518, 0.2017, 0.2453, 
-    0.2920, 0.3404, 0.3831, 0.4240, 0.4685,
-    0.5080, 0.5486, 0.5899, 0.6245, 0.6630,
-    0.7020, 0.7382, 0.7766, 0.8091, 0.8424,
+    0.0572, 0.1391, 0.2049, 0.2754, 0.3420, 
+    0.4139, 0.4956, 0.5815, 0.6806, 0.7481,
+    0.8242, 0.9130, 1.0043, 1.0809, 1.1511,
+    1.2483, 1.3373, 1.4027, 1.4927, 1.5853,
 ]
 ### ANCHOR_END: data_list
 
@@ -21,25 +21,25 @@ concentrations = np.array(concentrations)
 absorbances = np.array(absorbances)
 ### ANCHOR_END: data_array
 
-### ANCHOR: exercise_01_1
-# Umbennenung der Variablen
+### ANCHOR: exercise_01_b
+# Rename variables for better readability
 x = concentrations
 y = absorbances
 
-# Berechnung der Mittelwerte
+# Calculate the mean values
 x_mean = np.mean(x)
 y_mean = np.mean(y)
 
-# Berechnung der Parameter der linearen Regression
+# Calculate the slope and the intercept
 beta_1 = np.sum((x - x_mean) * (y - y_mean)) / np.sum((x - x_mean)**2)
 beta_0 = y_mean - beta_1 * x_mean
 
-assert np.isclose(beta_0, 0.03735158)
-assert np.isclose(beta_1, 0.41501278)
-### ANCHOR_END: exercise_01_1
+assert np.isclose(beta_0, -0.04907034)
+assert np.isclose(beta_1, 0.03800109)
+### ANCHOR_END: exercise_01_b
 
-### ANCHOR: exercise_01_2
-# Aufstellen des Gleichungssystems
+### ANCHOR: exercise_01_d
+# Build the set of equations
 a_arr = np.array([
     [len(x),        np.sum(x),      np.sum(x**2)],
     [np.sum(x),     np.sum(x**2),   np.sum(x**3)],
@@ -47,14 +47,17 @@ a_arr = np.array([
 ])
 b_arr = np.array([np.sum(y), np.sum(x * y), np.sum(x**2 * y)])
 
-# Lösen des Gleichungssystems
+# Solve the set of equations
 beta = np.linalg.solve(a_arr, b_arr)
-print(beta)
 
-# Extrahieren der Parameter
+# Extract the parameters
 beta_0, beta_1, beta_2 = beta
 
-# Plotten der Daten
+assert np.isclose(beta_0, -0.0208204)
+assert np.isclose(beta_1, 0.0343756)
+assert np.isclose(beta_2, 8.123859e-5)
+
+# Plot the data and the fit
 fig, ax = plt.subplots(figsize=(8, 6))
 
 ax.plot(x, y, 'o', label='data')
@@ -65,6 +68,48 @@ ax.set_ylabel('absorbance')
 
 ax.legend()
 plt.show()
-### ANCHOR_END: exercise_01_2
+### ANCHOR_END: exercise_01_d
 
 fig.savefig('../../assets/figures/01-regression/quadreg_lambert_beer.svg')
+
+### ANCHOR: exercise_02_a
+# Calculate the coefficients of the polynomial fit
+degree = 20
+beta = np.polyfit(concentrations, absorbances, degree)
+
+# Plot the data and the fit
+fig, ax = plt.subplots(figsize=(8, 6))
+
+ax.plot(x, y, 'o', label='data')
+ax.plot(x, np.polyval(beta, x), label='fit')
+
+ax.set_xlabel('concentration / mM')
+ax.set_ylabel('absorbance')
+
+ax.legend()
+plt.show()
+### ANCHOR_END: exercise_02_a
+
+fig.savefig('../../assets/figures/01-regression/polyreg_lambert_beer.svg')
+
+### ANCHOR: exercise_02_b
+# Create a finer grid for the plot
+x_grid = np.linspace(0, 50, 1000)
+
+# Plot the data and the fit
+fig, ax = plt.subplots(figsize=(8, 6))
+
+ax.plot(x, y, 'o', label='data')
+ax.plot(x, np.polyval(beta, x), label='fit discrete')
+ax.plot(x_grid, np.polyval(beta, x_grid), label='fit continuous')
+
+ax.set_xlabel('concentration / mM')
+ax.set_ylabel('absorbance')
+
+ax.set_ylim(0, 2.0)
+
+ax.legend()
+plt.show()
+### ANCHOR_END: exercise_02_b
+
+fig.savefig('../../assets/figures/01-regression/polyreg_lambert_beer_overfitting.svg')

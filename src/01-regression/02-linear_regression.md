@@ -399,7 +399,7 @@ import matplotlib.pyplot as plt
 
 ### Übung
 
-#### Aufgabe 1.1: Lineare Regression
+#### Aufgabe 1.1: Lineare und quadratische Regression
 
 {{#include ../psets/01.md:aufgabe_1}}
 

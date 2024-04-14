@@ -361,9 +361,7 @@ weniger Code.
 
 ### Übung
 
-#### Aufgabe 1.2
+#### Aufgabe 1.2: Polynomiale Regression
 
-<!--
 {{#include ../psets/01.md:aufgabe_2}}
--->
 
