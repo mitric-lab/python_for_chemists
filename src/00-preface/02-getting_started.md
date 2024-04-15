@@ -13,7 +13,7 @@ Sie sollten eine Python-Version von 3.9 oder höher verwenden.
 1. Laden Sie den Miniforge-Installer gemäß Ihrem Betriebssystem
    [hier](https://github.com/conda-forge/miniforge#miniforge3) herunter.
 2. Führen Sie den Installer aus:
-    - Unixoide Plattformen (Mac OS & Linux):
+    - Mac OS & Linux:
         Öffnen Sie das Terminal, navigieren Sie zu Ihrem Downloads-Ordner und
         rufen Sie
         ```bash
@@ -23,7 +23,7 @@ Sie sollten eine Python-Version von 3.9 oder höher verwenden.
         ersetzt werden sollte, z.B. `Miniforge3-Linux-x86_64.sh` oder
         `Miniforge3-MacOSX-arm64.sh`.
     - Windows:
-        Doppelklicken Sie den Installer im Explorer.
+        Doppelklicken Sie auf den Installer im Explorer.
 
 ### Python-Pakete
 
@@ -71,7 +71,7 @@ weitere Tutorials im Internet, wie z.B.
 
 ### Empfehlungen für weitere integrierte Entwicklungsumgebungen (IDEs) oder Editoren
 
-Wenn Sie bereits mit Python vertraut sind und eine raffiniertere 
+Wenn Sie bereits mit Python vertraut sind und eine erweiterte 
 Entwicklungsumgebung nutzen möchten, sollten Sie eine IDE oder einen 
 spezialisierten Editor verwenden. Obwohl es möglich ist, Python-Code mit 
 einem herkömmlichen Texteditor zu schreiben, kann eine gute IDE Ihre 
@@ -80,7 +80,7 @@ einige Empfehlungen für IDEs und spezialisierte Editoren neben Jupyter
 Notebook vor.
 
 - [Spyder](https://www.spyder-ide.org)
-    - Voll ausgestattete Python-IDE mit Schwerpunkt auf wissenschaftlichr
+    - voll ausgestattete Python-IDE mit Schwerpunkt auf wissenschaftlichr
       Entwicklung
     - leichtgewichtig und einfach zu konfigurieren
 
@@ -90,7 +90,7 @@ Notebook vor.
 
 - [PyCharm](https://www.jetbrains.com/de-de/pycharm/)
     - kommerzielle (für Studierende kostenlos) IDE mit vielen Funktionen
-    - am besten für sehr große und komplexe Python-Projekte geeignet
+    - für sehr große und komplexe Python-Projekte geeignet
     - möglicherweise zu umständlich für kleine Projekte wie die in dieser
       Veranstaltung
 
@@ -98,10 +98,10 @@ Notebook vor.
     - Kommandozeilen-Editor, der auf fast allen Unix-ähnlichen Computern 
       vorinstalliert ist
     - möglicherweise sehr unhandlich am Anfang aufgrund der vielen 
-      Tastenkombinationen und der mangelnden Anfängerfreundlichkeit wie bei 
+      Tastenkombinationen und der mangelnden Anfängerfreundlichkeit im Vergleich zu 
       einer typischen IDE oder Jupyter Notebooks
     - extrem konfigurierbar
     - mit einigem Aufwand zu einem sehr umfangreichen und 
       komfortablen Editor anpassbar
-    - immer noch einer der meistgenutzten Editoren
-
+    - immer noch einer der meistgenutzten Editoren in der 
+      Softwareentwicklung

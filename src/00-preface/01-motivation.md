@@ -4,7 +4,7 @@
 
 Im 21. Jahrhundert wird Programmieren zu einer immer wichtigeren Fähigkeit. Dies gilt
 nicht nur für die Informatik, sondern auch für die Chemie, Physik, Biologie und viele
-andere Wissenschaften. Die Kenntnis von Programmiersprachen kann einem helfen, eine
+andere Wissenschaften. Die Kenntnis von Programmiersprachen kann helfen, eine
 Vielzahl von Problemen effizienter zu lösen und repetitive Aufgaben zu automatisieren.
 Darüber hinaus können Programmiersprachen verwendet werden, um Daten zu visualisieren
 und zu analysieren, was ein wichtiger Bestandteil wissenschaftlicher Arbeit ist.
@@ -36,7 +36,7 @@ gemessen in Stunden.*
 
 Auf der anderen Seite argumentieren einige Leute, dass Python eine langsame 
 Sprache ist. Dies ist bis zu einem gewissen Grad wahr. Im folgenden 
-betrachten wir ein Grund, warum Python als langsam angesehen wird, aber
+betrachten wir einen Grund, warum Python als langsam angesehen wird, aber
 auch, warum Python trotzdem sehr performant sein kann.
 
 
@@ -50,9 +50,9 @@ kompiliert wird. Der Compiler kann viele Optimierungen am Code vornehmen,
 was zu einer kürzeren Laufzeit führt.
 
 ~~~admonish example title="Beispiel" collapsible=true
-Dieses Verhalten kann anhand eines einfachen Beispiels gezeigt werden:
-Eine naive Implementierung, die alle ungeraden Zahlen bis 100 Millionen
-aufsummiert. Dies könnte wie folgt aussehen:
+Dieses Verhalten kann anhand eines einfachen Beispiels gezeigt werden.
+Im Folgenden sehen Sie eine naive Implementierung, die alle ungeraden Zahlen 
+bis 100 Millionen aufsummiert:
 
 ```python
 s = 0
@@ -76,10 +76,11 @@ for i in 0..100_000_000 {
 ```
 
 Dieser Code hat tatsächlich überhaupt keine Laufzeit und wird sofort 
-ausgewertet. Der Compiler ist schlau genug zu verstehen, dass alles zur 
-Compilezeit berechnet werden kann und ersetzt einfach den Wert für die 
-Variable `s`. Dies zeigt nun, dass kompilierte Sprachen von Methoden 
-profitieren können, über die interpretierte Sprachen aufgrund ihres 
+ausgewertet. Der Compiler ist klug genug, das Ziel des Codes zu verstehen 
+und den endgültigen Wert der Variable `s` durch die gegebende Zahl zu 
+ersetzen, so dass alles zur Compilezeit berechnet werden kann. Dies zeigt 
+nun, dass kompilierte Sprachen von Methoden profitieren können, 
+über die interpretierte Sprachen aufgrund ihres 
 Ansatzes einfach nicht verfügen. Allerdings haben wir bereits gesehen, 
 dass kompilierte Sprachen in der Regel mehr Codezeilen und mehr Arbeit 
 erfordern. Außerdem gibt es bei kompilierten Sprachen in der Regel viele 
@@ -95,4 +96,3 @@ ermöglichen sie die sehr einfache Verwendung komplizierter Algorithmen und
 andererseits sind diese Pakete in kompilierten Sprachen wie C oder Fortran
 geschrieben. Auf diese Weise können wir von den Leistungsvorteilen profitieren,
 ohne eine potenziell kompliziertere Sprache lernen zu müssen.
-

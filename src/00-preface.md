@@ -5,19 +5,19 @@ Liebe Studierende,
 herzlich willkommen zur Vorlesung "Programmierkurs für Chemiker".
 In diesem Kurs werden Sie die Grundlagen des Programmierens mit der 
 Programmiersprache Python erlernen und viele nützliche numerische 
-Algorithmen implementieren für die Chemie und darüber hinaus.
+Algorithmen für die Chemie und darüber hinaus implementieren.
 
 Diese Veranstaltung findet
-- dienstags von 10:15 bis 11:45 Uhr im Seminarraum 0x.0xx
+- dienstags von 10:15 bis 11:45 Uhr
 und
-- donnerstags von 14:15 bis 15:45 Uhr im Seminarraum 00.006
+- donnerstags von 14:15 bis 15:45 Uhr 
 
-des Instituts für Theoretische Chemie (Campus Hubland Nord) statt.
+im Seminarraum 00.006 des Instituts für Theoretische Chemie (Campus Hubland Nord) statt.
 
 ## Syllabus
 
 Ein vorläufiger Syllabus ist unten dargestellt. Dieser wird
-sich im Laufe des Semesters entsprechend dem Fortschritt der Vorlesung
+im Laufe des Semesters entsprechend dem Fortschritt der Vorlesung
 kontinuierlich aktualisiert.
 
 |Woche|Wochentag| Datum  | Typ         | Thema           |
