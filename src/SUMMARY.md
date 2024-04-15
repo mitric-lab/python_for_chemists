@@ -21,7 +21,10 @@
     - [Runge-Kutta-Verfahren](02-differential_equations/03-runge_kutta.md)
     - [Finite-Differenzen-Verfahren](02-differential_equations/04-finite_differences.md)
 
-- [Fourier-Transformation]()
+- [Fourier-Analyse](03-fourier_analysis.md)
+    - [Fourier-Reihen](03-fourier_analysis/01-fourier_series.md)
+    - [Fourier-Transformation](03-fourier_analysis/02-fourier_transform.md)
+    - [Diskrete Fourier-Transformation](03-fourier_analysis/03-discrete_fourier_transform.md)
 
 - [Eigenwert- und Singulärwertzerlegung]()
 
