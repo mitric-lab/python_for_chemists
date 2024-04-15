@@ -56,9 +56,14 @@ print(f'n0_a = {c0_a * v0} mmol')
 
 ### ANCHOR: plot
 fig, ax = plt.subplots(figsize=(8, 6))
+v_b_interp = np.linspace(v_b.min(), v_b.max(), 1000)
 
 ax.plot(v_b, ph, 'o', label='data')
-ax.plot(v_b, titration_sasb_model(v_b, C0_B, c0_a, v0), label='pH fit')
+ax.plot(
+    v_b_interp, 
+    titration_sasb_model(v_b_interp, C0_B, c0_a, v0), 
+    label='pH fit',
+)
 
 ax.set_xlabel('volume of base / ml')
 ax.set_ylabel('pH')
@@ -100,8 +105,8 @@ res = minimize(
     method='Nelder-Mead',
 )
 ax.plot(
-    v_b, 
-    -np.log10(titration_sasb_model_ch(v_b, C0_B, res.x[0], res.x[1])),
+    v_b_interp, 
+    -np.log10(titration_sasb_model_ch(v_b_interp, C0_B, res.x[0], res.x[1])),
     label='[H+] fit',
 )
 ax.legend()

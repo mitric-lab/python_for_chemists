@@ -105,7 +105,16 @@ Zum Schluss können wir die Ergebnisse plotten:
 {{#include ../codes/01-regression/nonlinreg_mn.py:plot}}
 ```
 Sie sollten die meisten Funktionen im obigen Codeblock aus 
-Kap. [1.2](02-linear_regression.md) kennen. Die einzige neue Funktion ist
+Kap. [1.2](02-linear_regression.md) kennen. Ein Unterschied ist die 
+Verwendung der Funktion
+[np.linspace](https://numpy.org/doc/stable/reference/generated/numpy.linspace.html),
+welche Zeiten zwischen den Messpunkten generiert, sodass wir
+das Regressionsmodell für eine Interpolation verwenden können.
+Diese Funktion akzeptiert drei Argumente: den Startwert, den Endwert und
+die Anzahl der zu generierenden Punkte. Dann produziert sie ein Array
+mit gleichmäßig verteilten Werten zwischen dem Start- und Endwert.
+
+Ein weitere neue Funktion ist
 `fig.tight_layout()`, die eine automatische Anpassung des Layouts des Plots
 vornimmt. Ein Diagramm wie folgt sollte erscheinen:
 ![Exponentielle Regression des Mn-Zerfalls](../assets/figures/01-regression/nonlinreg_mn.svg)
