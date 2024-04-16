@@ -26,13 +26,11 @@
     - [Fourier-Transformation](03-fourier_analysis/02-fourier_transform.md)
     - [Diskrete Fourier-Transformation](03-fourier_analysis/03-discrete_fourier_transform.md)
 
-- [Eigenwert- und Singulärwertzerlegung]()
+- [Eigenwert- und Singulärwertzerlegung](04-eigenvalue_svd.md)
 
-- [Überwachtes Lernen: Regression]()
+- [Maschinelles Lernen](05-machine_learning.md)
 
-- [Überwachtes Lernen: Klassifikation]()
-
-- [Nichtüberwachtes Lernen]()
+- [Neuronale Netzwerke](06-neural_networks.md)
 
 [Zusammenfassung und Ausblick]()
 
