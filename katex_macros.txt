@@ -2,6 +2,7 @@
 \du:{\mathrm{d}}
 \eu:{\mathrm{e}}
 \R:{\mathbb{R}^{#1 \times #2}}
+\C:{\mathbb{C}^{#1 \times #2}}
 \argmin:{\underset{#1}{\mathrm{arg\,min\,}}}
 \equalhat:{\ \mathrel{\widehat{=}}\ }
-
+\identity:{1\kern-0.25em\text{l}}
