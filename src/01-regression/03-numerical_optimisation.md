@@ -297,7 +297,7 @@ Parameter $\beta$ zu finden:
 ```python
 {{#include ../codes/01-regression/numerical_optimisation.py:scipy_minimize}}
 ```
-Beim Aufruden der Funktion `minimize` müssen wir nur die Objektivfunktion
+Beim Aufrufen der Funktion `minimize` müssen wir nur die Objektivfunktion
 `objective_function` und den Startpunkt `beta_guess` angeben. Um die 
 Berechnung der numerischen Gradienten kümmert sich die `minimize`-Funktion
 selbst.

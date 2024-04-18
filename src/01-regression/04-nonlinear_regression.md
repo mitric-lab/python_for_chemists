@@ -272,8 +272,7 @@ völlig falsch bestimmt wird.
 
 ### Übung
 
-#### Aufgabe 1.3
-<!--
+#### Aufgabe 1.3: Regularisierung
+
 {{#include ../psets/01.md:aufgabe_3}}
--->
 
