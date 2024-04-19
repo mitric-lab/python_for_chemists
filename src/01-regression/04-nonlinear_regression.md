@@ -110,7 +110,7 @@ Zum Schluss können wir die Ergebnisse plotten:
 Sie sollten die meisten Funktionen im obigen Codeblock aus 
 Kap. [1.2](02-linear_regression.md) kennen. Ein Unterschied ist die 
 Verwendung der Funktion
-[np.linspace](https://numpy.org/doc/stable/reference/generated/numpy.linspace.html),
+[`np.linspace`](https://numpy.org/doc/stable/reference/generated/numpy.linspace.html),
 welche Zeiten zwischen den Messpunkten generiert, sodass wir
 das Regressionsmodell für eine Interpolation verwenden können.
 Diese Funktion akzeptiert drei Argumente: den Startwert, den Endwert und

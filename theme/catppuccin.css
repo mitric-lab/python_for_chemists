@@ -144,6 +144,9 @@
   color: #cdd6f4;
   background: #181825;
 }
+.mocho a code {
+  color: #89b4fa;
+}
 .mocha blockquote blockquote {
   border-top: 0.1em solid #585b70;
   border-bottom: 0.1em solid #585b70;
@@ -308,6 +311,9 @@
 .macchiato code {
   color: #cad3f5;
   background: #1e2030;
+}
+.macchiato a code {
+  color: #8aadf4;
 }
 .macchiato blockquote blockquote {
   border-top: 0.1em solid #5b6078;
@@ -474,6 +480,9 @@
   color: #c6d0f5;
   background: #292c3c;
 }
+.frappe a code {
+  color: #8caaee;
+}
 .frappe blockquote blockquote {
   border-top: 0.1em solid #626880;
   border-bottom: 0.1em solid #626880;
@@ -638,6 +647,9 @@
 .latte code {
   color: #4c4f69;
   background: #e6e9ef;
+}
+.latte a code {
+  color: #1e66f5;
 }
 .latte blockquote blockquote {
   border-top: 0.1em solid #acb0be;
