@@ -233,3 +233,34 @@ C-H-Streckschwingungen um $3000\ \mathrm{cm^{-1}}$. Weiterhin sehen wir
 noch Gerüstschwingungen im Fingerprint-Bereich. Es handelt sich hierbei
 um ein IR-Spektrum von Mesitylen.
 
+Bei einem so verbreiteten Algorithmus wie die diskrete Fourier-Transformation
+bietet NumPy selbstverständlich eine Implementierung. Diese können wir
+mit der Funktion
+[`np.fft.fft`](https://numpy.org/doc/stable/reference/generated/numpy.fft.fft.html)
+wie folgt aufrufen:
+```python
+{{#include ../codes/03-fourier_analysis/ftir.py:numpy_fft}}
+```
+Das Umsortieren der Frequenzen und des Spektrums erfolgt mit der Funktion
+[`np.fft.fftshift`](https://numpy.org/doc/stable/reference/generated/numpy.fft.fftshift.html):
+```python
+{{#include ../codes/03-fourier_analysis/ftir.py:numpy_fftshift}}
+```
+
+Es wird Ihnen vielleicht auffallen, dass die NumPy-Implementierung viel 
+schneller ist als unsere eigene Implementierung. Das liegt einerseits daran,
+dass NumPy in C/C++ geschrieben ist und deshalb schneller ist als Python. 
+Andererseits liegt es daran, dass in NumPy eine effiziente Implementierung der
+diskreten Fourier-Transformation, die sog. *Fast Fourier Transformation* (FFT), 
+verwendet wird. Unsere Implementierung der DFT hat eine Komplexität von
+$\mathcal{O}(N^2)$, d.h., dass für große Anzahlen von Datenpunkten $N$ die
+die Laufzeit quadratisch mit $N$ steigt. Die FFT hat dagegen eine Komplexität
+von $\mathcal{O}(N \log N)$.
+
+Die FFT ist keine Nährung der DFT, sondern eine exakte Implementierung. Wir 
+können die gleichen Skalierungen an den Intensitäten und Frequenzen der FFT
+anwenden und die Ergebnisse der unserer Implementierung vergleichen:
+```python
+{{#include ../codes/03-fourier_analysis/ftir.py:numpy_verification}}
+```
+

@@ -30,7 +30,7 @@ fig1.tight_layout()
 plt.show()
 ### ANCHOR_END: plot_interferograms
 
-fig1.savefig('../../assets/figures/03-fourier_analysis/ir_interferograms.svg')
+#fig1.savefig('../../assets/figures/03-fourier_analysis/ir_interferograms.svg')
 
 ### ANCHOR: dft_signal
 int_x = spl_int - bg_int
@@ -66,7 +66,7 @@ assert np.max(np.abs(int_nu.imag)) / np.max(np.abs(int_nu)) < 0.05
 ### ANCHOR_END: signal_shift
 
 ### ANCHOR: nu_conversion
-nu /= 100  # cm^-
+nu /= 100  # cm^-1
 ### ANCHOR_END: nu_conversion
 
 ### ANCHOR: plot_spectrum
@@ -83,5 +83,23 @@ fig2.tight_layout()
 plt.show()
 ### ANCHOR_END: plot_spectrum
 
-fig2.savefig('../../assets/figures/03-fourier_analysis/ir_spectrum.svg')
+#fig2.savefig('../../assets/figures/03-fourier_analysis/ir_spectrum.svg')
+
+### ANCHOR: numpy_fft
+int_nu_np = np.fft.fft(int_x)
+nu_np = np.fft.fftfreq(nx, d=dx)
+### ANCHOR_END: numpy_fft
+
+### ANCHOR: numpy_fftshift
+int_nu_np = np.fft.fftshift(int_nu_np)
+nu_np = np.fft.fftshift(nu_np)
+### ANCHOR_END: numpy_fftshift
+
+### ANCHOR: numpy_verification
+int_nu_np *= np.exp(-1j * 2 * np.pi * nu_np * x_grid[0])
+nu_np /= 100  # cm^-1
+
+assert np.allclose(int_nu, int_nu_np)
+assert np.allclose(nu, nu_np)
+### ANCHOR_END: numpy_verification
 
