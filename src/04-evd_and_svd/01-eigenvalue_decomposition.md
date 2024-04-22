@@ -1,6 +1,7 @@
 ## Eigenwertzerlegung
 
-Für die Definition der Eigenwertzerlegung benötigen wir zunächst die 
+Für die Definition der Eigenwertzerlegung (engl. *eigenvalue decomposition*, EVD)
+benötigen wir zunächst die 
 Definition eines Vektorraums. Obwohl dieser viel allgemeiner definiert wird,
 beschränken wir uns hier auf $\mathbb{C}^n$, also den $n$-dimensionalen
 Vektorraum über die komplexen Zahlen. 
@@ -97,7 +98,8 @@ $$
       \text{---}\ \vec{v}_n^\dag\ \text{---}
     \end{pmatrix} \\
     &= \lambda_1 \vec{v}_1 \vec{v}_1^\dag + \lambda_2 \vec{v}_2 \vec{v}_2^\dag + \cdots + \lambda_n \vec{v}_n \vec{v}_n^\dag \\
-    &= \sum_{i=1}^n \lambda_i \vec{v}_i \vec{v}_i^\dag
+    &= \sum_{i=1}^n \lambda_i \vec{v}_i \vec{v}_i^\dag 
+    {{numeq}}{eq:eigenvalue_decomposition_normal}
   \end{align}
 $$
 
