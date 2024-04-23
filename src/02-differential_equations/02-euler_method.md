@@ -18,13 +18,15 @@ Wie bei vielen numerischen Verfahren, beginnen wir mit einer Diskretisierung
 der Funktion $y(x)$, d.h. wir wählen eine Menge von Punkten $x_i$ und
 betrachten die Funktion nur an diesen Punkten anstatt auf dem gesamten
 Definitionsbereich. Die konzeptionell wohl einfachste Wahl der Punkte ist
-ein gleichmäßiges Gitter (Grid), welches bedeutet, dass man einen Anfangspunkt
-$x_0$ wählt und dann die Schrittweite $h$ festlegt, so dass die weiteren
+ein gleichmäßiges Gitter (Grid), was bedeutet, dass man einen Anfangspunkt
+$x_0$ und eine Schrittweite $h$ wählt, so dass die weiteren
 Punkte durch $x_n = x_0 + n h$ für $n = 0, 1, 2, \ldots$ festgelegt werden.
+Unser Ziel in den folgenden Abschnitten wird es sein, die Funktionswerte von
+$y(x)$ an diesen Punkten $x_1, x_2, \ldots$ zu berechnen, bzw. zu approximieren.
 
-Der Funktionswert von $y(x)$ an dem Punkt $x_{n+1}$ kann, unter bestimmter
-Voraussetzung an $y(x)$, durch ihre Taylor-Entwicklung um den Punkt
-$x_n$ ersetz werden, also
+Der Funktionswert von $y$ an dem Punkt $x_{n+1}$ kann (unter bestimmten
+Voraussetzung an $y(x)$) durch eine Taylor-Entwicklung um den Punkt
+$x_n$ ersetzt werden, also
 $$
   y(x_{n+1}) = y(x_n) 
   + h y'(x_n) 
@@ -34,7 +36,7 @@ $$
 $$
 
 ```admonish info title="Info für Mathematik-Interessierte" collapsible=true
-Die Voraussetzung ist, dass $y(x)$ im Punkt $x_n$ analytisch ist, d.h. dass
+Die Voraussetzung ist, dass $y(x)$ im Punkt $x_n$ analytisch ist, d.h. dass es
 eine Potenzreihe
 $$
   \sum_{k=0}^\infty a_k (x - x_n)^k
@@ -46,45 +48,45 @@ größer als die Schrittweite $h$ sein, also $h < R$.
 
 ### Theoretische Grundlagen
 
-Gehen wir nun davon aus, dass wir die Funktion $y(x)$ gut durch ihr
-Taylor-Polynom 1. Ordnung approximieren können, also
+Gehen wir nun davon aus, dass die Funktion $y(x)$ gut durch ihr
+Taylor-Polynom 1. Ordnung
 $$
-  y(x_{n+1}) = y(x_n) + h y'(x_n) + \mathcal{O}(h^2)\,.
+  y(x_{n+1}) = y(x_n) + h y'(x_n) + \mathcal{O}(h^2)
 $$
-Das Landau-Symbol $\mathcal{O}(h^2)$ bedeutet, dass der Fehler dieser
-Approximation proportional zu $h^2$ ist. Mathematisch unsauber, aber praktisch
-für die Implementierung, können wir 
+approximiert werden kann, also dass der Fehler $\mathcal{O}(h^2)$, der proportional zu $h^2$ ist,
+klein ist. Mathematisch unsauber, aber praktisch für die Implementierung, schreiben wir 
+im Folgenden 
 $$
-  y(x_{n+1}) = y(x_n) + h y'(x_n)
+  y(x_{n+1}) = y(x_n) + h y'(x_n)\,,
   {{numeq}}{eq:ode_taylor_first_order}
 $$
-schreiben, wobei wir den Fehler vernachlässigen. 
-Gl. {{eqref: eq:ode_taylor_first_order}} zeigt, dass wenn wir den 
+wobei wir den Fehler vernachlässigen. 
+Gl. {{eqref: eq:ode_taylor_first_order}} zeigt, dass wir, wenn wir den
 Funktionswert $y$ und die Ableitung $y'$ an dem Punkt $x_n$ kennen,
-können wir den Funktionswert an dem nächsten Punkt des Gitters, $x_{n+1}$,
-berechnen. Mit Hilfe der DGL in Gl. {{eqref: eq:ivp_first_order}} können
-wir die Ableitung $y'(x_n)$ durch $f(x_n, y(x_n))$ ersetzen, was zu
+den Funktionswert an dem nächsten Punkt $x_{n+1}$
+berechnen können. Mit Hilfe der DGL in Gl. {{eqref: eq:ivp_first_order}} können
+wir dabei die Ableitung $y'(x_n)$ durch $f(x_n, y(x_n))$ ersetzen, was zu
 $$
   y(x_{n+1}) = y(x_n) + h f(x_n, y(x_n))
   {{numeq}}{eq:euler_method}
 $$
-führt. Gl. {{eqref: eq:euler_method}} ist das *explizite Euler-Verfahren* 
-für die numerische Lösung vom AWP erster Ordnung. Durch die Anfangsbedingung
-kennen wir $y(x_0)$ und können dann Schritt für Schritt alle weiteren
+führt. Gl. {{eqref: eq:euler_method}} beschreibt das *explizite Euler-Verfahren* 
+für die numerische Lösung eines AWP erster Ordnung. Durch die Anfangsbedingung
+kennen wir $y(x_0)$ und können dann, Schritt für Schritt, alle weiteren
 $y(x_{n})$ mit Hilfe von Gl. {{eqref: eq:euler_method}} berechnen.
 
 ### Implementierung
 
 #### Mn-Zerfall
 
-Wir nehmen wieder Mn-Zerfall als Beispiel. Dort haben wir eine 
+Wir nehmen wieder den Mn-Zerfall als Beispiel. Dort haben wir eine 
 Reaktion 1. Ordnung, welche durch die DGL
 $$
   c'(t) = -k c(t)
   {{numeq}}{eq:mn_decay}
 $$
-beschrieben wird. Damit können wir nach dem Importieren der benötigten
-Libraries
+beschrieben wird, wobei $c(t)$ die Konzentration des Mn-Komplexes zum Zeitpunk $t$ beschreibt. 
+Wir können nach dem Importieren der benötigten Libraries
 ```python
 {{#include ../codes/02-differential_equations/euler_mn.py:imports}}
 ```
@@ -96,7 +98,7 @@ Diese Funktion akzeptiert die Argumente `x` ($t_n$) und `y` ($c(t_n)$) und
 gibt die Ableitung $c'(t_n) = -k c(t_n)$ zurück. Hier haben wir die gefittete
 Geschwindigkeitskonstante $k$ aus Abschnitt 
 [1.4](../01-regression/04-nonlinear_regression.md#reaktionskinetik) verwendet.
-Dann können wir nach Gl. {{eqref: eq:euler_method}} die Funktion `euler_step`
+Anschließend können wir gemäß Gl. {{eqref: eq:euler_method}} die Funktion `euler_step`
 implementieren, die den Funktionswert $y(x_{n+1})$ berechnet:
 ```python
 {{#include ../codes/02-differential_equations/euler_mn.py:euler_step}}
@@ -107,38 +109,41 @@ Wir können jetzt das Euler-Verfahren implementieren:
 {{#include ../codes/02-differential_equations/euler_mn.py:euler_method}}
 ```
 
-Diese Funktion akzeptiert neben der Anfangsbedingungen `x0` und `y0` noch die
-Schrittweite `h`, die Ableitungsfunction `dydx` und die Anzahl der Schritte
-`n`. Wir erstellen zuerst das Grid `x` mit der Funktion 
+Diese Funktion akzeptiert neben der Anfangsbedingungen `x0` und `y0` die
+Schrittweite `h`, die Ableitungsfunktion `dydx` und die Anzahl der Schritte
+`n`. Wir erstellen zunächst das Grid `x` mit der Funktion 
 [`np.arange`](https://numpy.org/doc/stable/reference/generated/numpy.arange.html)
-und das Nullarray `y`, um später die Lösung zu speichern. Dann wird `y[0]` mit 
-dem Anfangswert `y0` initialisiert. Anschließend können wir eine for-Schleife
-über die Anzahl der Schritte machen und in jedem Schritt die Funktion
-`euler_step` aufrufen, um den Funktionswert an dem nächsten Punkt zu berechnen
-und in `y[i + 1]` zu speichern. Am Ende wird das Grid `x` und die Lösung `y`
+und initialisieren das Nullarray `y`, um später die Lösung zu speichern. Dann wird 
+der erste Eintrag `y[0]` dieses Arrays mit 
+dem Anfangswert `y0` überschrieben. Anschließend verwenden wir eine for-Schleife
+über die Anzahl der Schritte und rufen in jedem Schritt die Funktion
+`euler_step` auf, die den Funktionswert an dem jeweils nächsten Punkt berechnet, 
+und speichern diesen in `y[i + 1]`. Am Ende wird das Grid `x` und die Lösung `y`
 zurückgegeben.
 
-Nun lösen wir Gl. {{eqref: eq:mn_decay}} mit dem Euler-Verfahren:
+Nun wenden wir das Euler-Verfahren auf Gl. {{eqref: eq:mn_decay}} an:
 ```python
 {{#include ../codes/02-differential_equations/euler_mn.py:solve_ode}}
 ```
-Wir setzen die Anfangsbedingungen `C0 = 1.0` und `T0 = 0.0`, die Schrittweite
+Wir setzen dazu zunächst die Anfangsbedingungen `C0 = 1.0` und `T0 = 0.0`, die Schrittweite
 `h = 1.0` sowie die maximale Zeit `MAXTIME = 600.0`. Die Anzahl der Schritte
 `nsteps` wird durch `int(MAXTIME / h)` berechnet. Die `int`-Funktion rundet
-das Ergebnis der Division ab und konvertiert es in eine Ganzzahl. Dann rufen
+dabei das Ergebnis der Division ab und konvertiert es in eine Ganzzahl. Anschließend rufen
 wir die Funktion `euler_method` auf und speichern das Ergebnis in `x` und `y`.
 
 Zum Schluss können wir das numerische Ergebnis mit der analytischen Lösung
-plotten:
+vergleichen. Dabei sei angemerkt, dass die analytische Lösung von Gl. 
+{{eqref: eq:mn_decay}} leicht zu berechnen ist und durch $c(t) = c_0 \exp(-k t)$
+gegeben ist.
 ```python
 {{#include ../codes/02-differential_equations/euler_mn.py:plot}}
 ```
-Dieses Diagramm soll erscheinen:
+Dabei sollte dieses Diagramm erscheinen:
 ![Euler-Verfahren für Mn-Zerfall](../assets/figures/02-differential_equations/euler_mn.svg)
 
 Erst durch Hineinzoomen können wir den Unterschied zwischen der analytischen
 und der numerischen Lösung erkennen. Das Euler-Verfahren mit $h = 1$ liefert
-hier eine sehr gute Approximation. 
+demnach eine sehr gute Approximation.
 
 #### Belousov-Zhabotinsky-Reaktion
 

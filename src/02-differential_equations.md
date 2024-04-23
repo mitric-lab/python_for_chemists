@@ -11,8 +11,8 @@ beschreiben können, und welche auf Differentialgleichungen (DGLs) basieren.
 
 Ein weiteres wichtiges Anwendungsgebiet von DGLs in der Chemie ist die
 Beschreibung quantenchemischer Systeme durch die Schrödingergleichung.
-Sie wissen sicherlich, dass die Schrödingergleichung für Modellsystemen wie dem
-Teilchen im Kasten oder dem harmonischen Oszillator analytisch lösbar ist. Für molekulare Systeme
+Sie wissen sicherlich, dass die Schrödingergleichung für Modellsysteme wie das
+Teilchen im Kasten oder der harmonischen Oszillator analytisch lösbar ist. Für molekulare Systeme
 ist dies jedoch nicht der Fall. Die Quantenchemie
 basiert daher auf der (approximativen) numerischen Lösung dieser Gleichung, um
 die elektronischen Struktur und Eigenschaften von Molekülen zu berechnen.

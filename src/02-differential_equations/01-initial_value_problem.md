@@ -5,7 +5,7 @@ und ihre Ableitungen enthält. Eine allgemeine Form solcher Gleichungen ist
 kompliziert, da die Funktion und ihre (partiellen) Ableitungen von 
 verschiedester Ordnung und zu unterschiedlichen Potenzen auftreten können.
 In diesem Abschnitt werden wir uns auf die 
-*gewöhnlichen Differentialgleichungen* (GDGLs) beschränken, bei denen die
+*gewöhnlichen Differentialgleichungen* (GDGLs, engl. *ODEs*) beschränken, bei denen die
 Funktion nur von einer Variablen abhängt. Außerdem werden wir nur 
 *lineare* Differentialgleichungen betrachten, bei denen die Funktion und
 ihre Ableitungen nur in der ersten Potenz auftreten (d.h. ersten *Grades* sind). 
@@ -37,7 +37,7 @@ spezieller Fall von Gl. {{eqref: eq:lode_first_order}} ist, mit
 $f(x, y(x)) = -\frac{a_0(x)}{a_1(x)} y(x) + \frac{b_0(x)}{a_1(x)} u(x)$.
 
 Da bei der Bildung der Ableitung der konstante Term verschwindet,
-ist die (allgemeine) Lösung einer DGL $y(x)$ nicht eine eindeutige Funktion, 
+ist die (allgemeine) Lösung $y(x)$ einer DGL nicht eine eindeutige Funktion, 
 sondern eine Funktionsschar, die durch Integrationskonstanten parametrisiert 
 ist. Um eine eindeutige Lösung zu erhalten, müssen diese Konstanten bestimmt 
 werden, wie z.B. durch die Wahl von Anfangsbedingungen.
