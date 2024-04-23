@@ -59,6 +59,15 @@ fig, ax = plt.subplots(figsize=(8, 4))
 ax.plot(x, C0 * np.exp(-0.0039022970 * x), label='analytical solution')
 ax.plot(x, y, label='numerical solution')
 
+axins = ax.inset_axes(
+    [0.4, 0.5, 0.27, 0.47],                 # position and size of the inset
+    xlim=(300, 305), ylim=(0.3, 0.315),     # limits of the inset
+    xticks=[], yticks=[]                    # remove ticks
+    )
+axins.plot(x, C0 * np.exp(-0.0039022970 * x))
+axins.plot(x, y)
+ax.indicate_inset_zoom(axins, edgecolor="black")
+
 ax.set_xlabel('time / s')
 ax.set_ylabel('concentration / M')
 ax.legend(loc='upper right')

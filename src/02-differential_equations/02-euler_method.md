@@ -141,8 +141,9 @@ gegeben ist.
 Dabei sollte dieses Diagramm erscheinen:
 ![Euler-Verfahren für Mn-Zerfall](../assets/figures/02-differential_equations/euler_mn.svg)
 
-Erst durch Hineinzoomen können wir den Unterschied zwischen der analytischen
-und der numerischen Lösung erkennen. Das Euler-Verfahren mit $h = 1$ liefert
+Erst durch eine vergrößerung des Konzentrationsverlaufes können wir den Unterschied zwischen der analytischen
+und der numerischen Lösung erkennen, was hier mit Hilfe des Befehls `ax.inset_axes` erreicht wurde
+(die genaue Funktionsweise dieses Befehls ist an dieser Stelle unwichtig). Das Euler-Verfahren mit $h = 1$ liefert
 demnach eine sehr gute Approximation.
 
 #### Belousov-Zhabotinsky-Reaktion
