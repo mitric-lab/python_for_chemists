@@ -246,7 +246,13 @@ weiteren Argumente für die Funktion `func_grad` enthält.
 {{#include ../codes/01-regression/numerical_optimisation.py:gradient_descent}}
 ```
 
-Zuerst setzen wir die Variable `x` auf den Startpunkt `x0`. Danach verwenden 
+Zuerst kopieren wir explizit den Array `x0` mit der Funktion 
+`np.copy` und speichern die Kopie in der Variable `x`. Das ist notwendig,
+da Python standardmäßig Arrays nicht kopiert, sondern nur Referenzen
+auf sie speichert. Das bedeutet, dass, wenn wir `x0` ändern, auch `x`
+geändert wird. Um das zu vermeiden, kopieren wir den Array explizit.
+
+Danach verwenden 
 wir eine `for`-Schleife, die die Variable `niter` von `0` bis `max_iter - 1`
 iteriert. In jeder Iteration berechnen wir den Gradienten `grad` durch 
 Aufrufen der Funktion `func_grad` mit den Argumenten `x` und `args`.
@@ -278,11 +284,11 @@ Dann definieren wir den Startpunkt `x0`, hier `beta_guess`, und rufen die Funkti
 ```
 
 Die optimalen Parameter `beta0` und `beta1` sind identisch wie die der analytischen
-Lösung. Auf dem Computer des Autors wurden 2507 Iterationen benötigt, um
+Lösung. Auf dem Computer des Autors wurden 34683 Iterationen benötigt, um
 die Abbruchbedingung zu erfüllen. Die genaue Anzahl der Iterationen kann
-je nach Hardware leicht variieren. Da dieses Optimierungsproblem sehr
-"einfach" ist, kann die Schrittweite `alpha` größer gewählt werden, ohne
-dass das Verfahren divergiert.
+je nach Hardware leicht variieren. Wählt man die Schrittweite `alpha` 
+geringfügig größer, werden weniger Iterationen benötigt. Ist `alpha`
+aber zu groß, divergiert das Verfahren.
 
 ```admonish tip title="Tipp"
 Versuchen Sie, die Schrittweite `alpha` zu verändern und beobachten Sie, wie
@@ -292,8 +298,9 @@ sich die Anzahl der Iterationen ändert.
 Da Optimierung ein sehr allgemeines Problem ist, existieren viele
 Implementierungen von verschiedensten Algorithmen in Bibliotheken wie z.B.
 [`scipy.optimize`](https://docs.scipy.org/doc/scipy/reference/optimize.html).
-Wir wollen die Funktion `scipy.optimize.minimize` verwenden, um die optimalen
-Parameter $\beta$ zu finden:
+Wir wollen die Funktion 
+[`scipy.optimize.minimize`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html)
+verwenden, um die optimalen Parameter $\beta$ zu finden:
 ```python
 {{#include ../codes/01-regression/numerical_optimisation.py:scipy_minimize}}
 ```
@@ -315,7 +322,7 @@ Mit dem Argument `method='CG'` haben wir die
 *Methode des nichtlinearen Konjugierten Gradienten*
 (engl. [<i>nonlinear **C**onjugate **G**radient method</i>](https://en.wikipedia.org/wiki/Nonlinear_conjugate_gradient_method))
 ausgewählt. Diese Methode ist ein Verbesseung des Gradientenverfahrens und 
-erreicht das Minimum in nur 3 Iterationen auf dem Computer des Autors.
+erreicht das Minimum in nur 2 Iterationen auf dem Computer des Autors.
 
 Bei `minimize` gibt es eine Reihe von weiteren Minimierungsmethoden, die
 verwendet werden können. Eine Übersicht finden Sie in der 

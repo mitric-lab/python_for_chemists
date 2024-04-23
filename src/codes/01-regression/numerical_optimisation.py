@@ -63,7 +63,7 @@ def gradient_descent(
     max_iter: int = 10000,
     args: tuple = (),
 ) -> tuple[np.ndarray, int]:
-    x: np.ndarray = x0
+    x: np.ndarray = np.copy(x0)
     for niter in range(0, max_iter):
         grad: np.ndarray = func_grad(x, *args)
         x = x - alpha * grad
@@ -79,14 +79,14 @@ def gradient_descent(
 
 ### ANCHOR: data_array
 concentrations = [
-    0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0,
-    1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0,
+    2.125, 4.250, 6.375, 8.500, 10.63, 12.75, 14.88, 17.00, 19.13, 21.25,
+    23.38, 25.50, 27.63, 29.75, 31.88, 34.00, 36.13, 38.25, 40.38, 42.50,
 ]
 absorbances = [
-    0.0522, 0.1010, 0.1518, 0.2017, 0.2453, 
-    0.2920, 0.3404, 0.3831, 0.4240, 0.4685,
-    0.5080, 0.5486, 0.5899, 0.6245, 0.6630,
-    0.7020, 0.7382, 0.7766, 0.8091, 0.8424,
+    0.0572, 0.1391, 0.2049, 0.2754, 0.3420, 
+    0.4139, 0.4956, 0.5815, 0.6806, 0.7481,
+    0.8242, 0.9130, 1.0043, 1.0809, 1.1511,
+    1.2483, 1.3373, 1.4027, 1.4927, 1.5853,
 ]
 concentrations: np.ndarray = np.array(concentrations)
 absorbances: np.ndarray = np.array(absorbances)
@@ -97,13 +97,14 @@ beta_guess = np.array([1.0, 1.0])
 beta_opt, niter = gradient_descent(
     objective_function_gradient, 
     beta_guess,
-    alpha=0.001,
+    alpha=0.00005,
+    max_iter=100000,
     args=(concentrations, absorbances),
 )
 
 beta0, beta1 = beta_opt
-assert np.isclose(beta0, 0.03735158)
-assert np.isclose(beta1, 0.41501278)
+assert np.isclose(beta0, -0.04907034)
+assert np.isclose(beta1, 0.03800109)
 
 print(beta_opt)
 print(niter)
@@ -124,8 +125,8 @@ res = minimize(
 
 beta0, beta1 = res.x
 niter = res.nit
-assert np.isclose(beta0, 0.03735158)
-assert np.isclose(beta1, 0.41501278)
+assert np.isclose(beta0, -0.04907034)
+assert np.isclose(beta1, 0.03800109)
 ### ANCHOR_END: scipy_minimize
 
 print(res.x)
