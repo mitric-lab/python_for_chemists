@@ -44,7 +44,9 @@ doch relativ viele Datenpunkte haben, wird das manuelle Eintippen
 ziemlich mühsam. Deshalb verwenden wir die Funktion 
 [`np.loadtxt`](https://numpy.org/doc/stable/reference/generated/numpy.loadtxt.html),
 um die Daten aus einer Textdatei zu lesen.
-Die Textdatei `mn_decay.txt` (<a href="../codes/01-regression/mn_decay.txt" download>hier</a> herunterladen) enthält zwei Spalten, welche die Werte für Zeit $t$ und
+Die Textdatei `mn_decay.txt` 
+(<a href="../codes/01-regression/mn_decay.txt" download>hier</a> herunterladen) 
+enthält zwei Spalten, welche die Werte für Zeit $t$ und
 Absorbanz $A$ enthalten. Die ersten Zeilen der Datei sehen wie folgt aus:
 ```txt
 {{#include ../codes/01-regression/mn_decay.txt::10}}
@@ -208,7 +210,9 @@ Gl. {{eqref: eq:titration_sasb_hplus}}, die Implementierung der Funktion in Pyth
 deutlich vereinfachen. Die Objektivfunktion ist fast identisch zu der des 
 Mn-Zerfalls, wobei der wesentliche Unterschied die Ersetzung unseres Modells darstellt.
 
-Genau so wie im vorherigen Beispiel lesen wir die Daten aus einer Textdatei ein:
+Genau so wie im vorherigen Beispiel lesen wir die Daten aus einer Textdatei 
+(<a href="../codes/01-regression/titration_sasb.txt" download>hier</a> herunterladen) 
+ein:
 ```python
 {{#include ../codes/01-regression/nonlinreg_titration.py:read_data}}
 ```
