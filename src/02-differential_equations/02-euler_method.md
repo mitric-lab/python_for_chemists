@@ -141,19 +141,19 @@ gegeben ist.
 Dabei sollte dieses Diagramm erscheinen:
 ![Euler-Verfahren für Mn-Zerfall](../assets/figures/02-differential_equations/euler_mn.svg)
 
-Erst durch eine vergrößerung des Konzentrationsverlaufes können wir den Unterschied zwischen der analytischen
+Erst durch Vergrößerung des Konzentrationsverlaufes können wir den Unterschied zwischen der analytischen
 und der numerischen Lösung erkennen, was hier mit Hilfe des Befehls `ax.inset_axes` erreicht wurde
 (die genaue Funktionsweise dieses Befehls ist an dieser Stelle unwichtig). Das Euler-Verfahren mit $h = 1$ liefert
 demnach eine sehr gute Approximation.
 
 #### Belousov-Zhabotinsky-Reaktion
 
-Nun wollen wir etwas kompliziertere Kinetik betrachten. Die 
+Nun wollen wir eine Reaktion mit deutlich komplizierterer Kinetik betrachten. Die 
 [Belousov-Zhabotinsky-Reaktion](https://de.wikipedia.org/wiki/Belousov-Zhabotinsky-Reaktion)
-ist eine klassisches Beispiel für eine oszillierende Reaktion. 
-Dabei wird ein Redox-System ($\mathrm{Ce^{3+}/Ce^{4+}}$ in der Originalreaktion)
-zum Oszillieren zwischen der oxidierten und der reduzierten Form gebracht.
-In dem untenstehende Video können Sie die Reaktion beobachten:
+ist ein klassisches Beispiel einer oszillierenden Reaktion, wobei
+ein Redox-System ($\mathrm{Ce^{3+}/Ce^{4+}}$ in der Originalreaktion) abwechselnd
+in der oxidierten und der reduzierten Form vorliegt.
+In dem folgenden Video können Sie die Reaktion beobachten:
 
 <iframe width="750" height="422" src="https://www.youtube.com/embed/kw9wF-GNjqs?start=141&end=154" title="Everything about the Belousov Zhabotinsky reaction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 <!--
@@ -165,10 +165,10 @@ In dem untenstehende Video können Sie die Reaktion beobachten:
 </div>
 -->
 
-*Hier wird als Redox-System [Ferroin](https://de.wikipedia.org/wiki/Ferroin) 
+*Hier wird allerdings als Redox-System [Ferroin](https://de.wikipedia.org/wiki/Ferroin) 
 verwendet, welches eine stärkere Farbänderung zeigt.*
 
-Der Mechanismus dieser Reaktion ist sehr
+Der detaillierte Mechanismus dieser Reaktion ist sehr
 kompliziert, weshalb wir hier nur eine vereinfachte Version, das sog.
 [Oregonator-Modell](https://de.wikipedia.org/wiki/Oregonator), betrachten.
 Ein häufig verwendetes Oregonator-Modell besteht aus fünf gekoppelten
@@ -180,23 +180,21 @@ $$
   \mathrm{X} + \mathrm{Y} &\xrightarrow{k_2} 2\ \mathrm{P} \\
   \mathrm{A} + \mathrm{X} &\xrightarrow{k_3} 2\ \mathrm{X} + \mathrm{Z} \\
   2\ \mathrm{X} &\xrightarrow{k_4} \mathrm{A} + \mathrm{P} \\
-  \mathrm{B} + \mathrm{Z} &\xrightarrow{k_5} \mathrm{Y}
+  \mathrm{B} + \mathrm{Z} &\xrightarrow{k_5} \mathrm{Y}\,,
 \end{align}
 $$
-mit der Identifikation
+wobei
 $\mathrm{A} = \mathrm{BrO_ 3^-}$, 
 $\mathrm{B} = \mathrm{Brommalonsäure}$, 
 $\mathrm{X} = \mathrm{HBrO_ 2}$, 
 $\mathrm{Y} = \mathrm{Br^-}$, 
 $\mathrm{Z} = \mathrm{2\ Ce^{4+}}$ 
 und $\mathrm{P} = \mathrm{HOBr}$. 
-Möglicherweise fällt Ihnen auf, dass die
-obigen Reaktionsgleichungen nicht ausbalanciert sind. Das liegt daran, dass
-dieses annimmt, dass die Konzentrationen dieser Spezies entweder aufgrund
+Möglicherweise fällt Ihnen auf, dass die obigen Reaktionsgleichungen nicht ausbalanciert sind. 
+Der Grund dafür ist, dass die Konzentrationen einiger Spezies entweder aufgrund
 ihrer hohen Konzentration ($\mathrm{H^+}$, Malonsäure, etc.) oder ihrer schnellen
-Reaktionen ($\mathrm{BrO_ 2^\cdot}$) als konstant angenommen werden können
-und in die Geschwindigkeitskonstanten $k_i$ absorbiert werden.
-Außerdem wird angenommen, dass die Konzentrationen der Spezies $[\mathrm{A}]$
+Reaktionen ($\mathrm{BrO_ 2^\cdot}$) als konstant angenommen werden können.
+Insbesondere wird angenommen, dass die Konzentrationen $[\mathrm{A}]$
 und $[\mathrm{B}]$ konstant sind.
 
 Das führt zu einem System von drei gekoppelten DGLs:
@@ -209,25 +207,24 @@ $$
     {{numeq}}{eq:oregonator}
 $$
 
-Ein wichtiger Unterschied zu Mn-Zerfall ist, dass wir hier ein System von
-DGLs haben. Dankenswerterweise ist Gl. {{eqref: eq:euler_method}} für
-DGL-Systeme genauso gültig wie für einzelne DGLs, wenn wir für $y(x)$
-eine vektorwertige Funktion einsetzen, also in diesem Fall
+Ein wichtiger Unterschied zum Mn-Zerfall ist, dass wir hier ein System von
+DGLs vorliegen haben. Glücklicherweise ist Gl. {{eqref: eq:euler_method}} für
+DGL-Systeme genauso gültig wie für einzelne DGLs, sofern wir $y(x)$
+als eine vektorwertige Funktion ansetzten, d.h.
 $y(x) \equalhat ([X](t), [Y](t), [Z](t))^\intercal$.
 
-Nach dem Importieren der benötigten Libraries
+Nachdem wir die benötigten Libraries importiert haben
 ```python
 {{#include ../codes/02-differential_equations/euler_bz.py:imports}}
 ```
-können wir die Funktion `dydx` für das Oregonator-Modell z.B. so 
-implementieren:
+können wir die Funktion `dydx` für das Oregonator-Modell implementieren:
 ```python
 {{#include ../codes/02-differential_equations/euler_bz.py:dydx}}
 ```
-Beachten Sie, dass der Datentyp für das Argument `y` ein `np.ndarray` ist.
-Dann implementieren wir die Funktion `euler_step` und `euler_method` genau
-so wie für den Mn-Zerfall, nur dass wir hier die Typ-Deklaraionen in 
-den Signaturen angepasst werden müssen.
+Beachten Sie, dass der Datentyp des Arguments `y` ein `np.ndarray` ist.
+Die Funktionen `euler_step` und `euler_method` sind analog zu den
+Funktionen für den Mn-Zerfall implementiert, nur dass wir hier die 
+Typ-Deklarationen in den Signaturen anpassen müssen.
 ```python
 {{#include ../codes/02-differential_equations/euler_bz.py:euler_step}}
 ```
@@ -235,44 +232,43 @@ den Signaturen angepasst werden müssen.
 {{#include ../codes/02-differential_equations/euler_bz.py:euler_method}}
 ```
 
-Ein weiterer Unterschied ist, dass die Variablen `y` in der Funktion
-`euler_method` als ein 2D-Array initialisiert wird, wo die erste Dimension
-die Anzahl der Komponenten und die zweite Dimension die Anzahl der Schritte
-ist. Das Grid `x` bleibt ein 1D-Array, da die Zeit für alle Komponenten
-gleich ist. 
+Ein weiterer Unterschied ist, dass die Variable `y` in der Funktion
+`euler_method` als ein 2D-Array initialisiert wird, wobei die erste Dimension
+die Anzahl der Komponenten angibt (hier: `ndim = 3`) und die zweite Dimension 
+die Anzahl der Schritte enthält. Das Grid `x` bleibt ein 1D-Array, 
+da die Zeit für alle Komponenten gleichermaßen gilt. 
 
-Nun lösen wir das DGL-System in Gl. {{eqref: eq:oregonator}}:
+Nun lösen wir das DGL-System in Gl. {{eqref: eq:oregonator}} mit dem Euler-Verfahren:
 ```python
 {{#include ../codes/02-differential_equations/euler_bz.py:solve_ode_bad}}
 ```
 Hier haben wir die Anfangsbedingungen `C0 = np.array([0.0, 0.001, 0.0])` 
-definiert, welche bedeutet, dass in der Anfangsmischung nur die Spezies 
-$\mathrm{Br^-}$ mit einer Konzentration von $0.001\ \mathrm{M}$ vorhanden ist, 
-und die Spezies $\mathrm{HBrO_ 2}$ und $\mathrm{Ce^{4+}}$ liegen nicht vor.
+gewählt, was bedeutet, dass zu Beginn nur die Spezies 
+$\mathrm{Br^-}$ mit einer Konzentration von $0.001\ \mathrm{M}$ vorhanden ist. 
+Die Spezies $\mathrm{HBrO_ 2}$ und $\mathrm{Ce^{4+}}$ liegen nicht vor.
 
-Dieser Code-Block schafft es aber nicht, uns die richtige Lösung zu liefern.
-Im Gegenteil erhalten wir mehrere Warnungen wie
+Dieser Code-Block schafft es jedoch nicht, uns die richtige Lösung zu liefern.
+Der Code wird zwar ohne Fehlermeldung ausgeführt, wir erhalten 
+jedoch eine Reihe von Warnungen, wie z.B.
 ```
 /path/to/your/python_script.py:line: RuntimeWarning: overflow encountered in xxxxx
 ```
-Sollten Sie das Ergebnis plotten und anschauen, werden Sie feststellen, dass 
-die Komponenten in `y` betragsmäßig sehr groß werden, was zum
-[arithmetischen Überläuf](https://de.wikipedia.org/wiki/Arithmetischer_Überlauf)
+Sollten Sie das Ergebnis plotten, werden Sie feststellen, dass 
+die Komponenten in `y` betragsmäßig sehr groß werden, was zu einem
+[arithmetischen Überlauf](https://de.wikipedia.org/wiki/Arithmetischer_Überlauf)
 (*engl. overflow*) führt. 
-Das ist ein Zeichen dafür, dass die Schrittweite $h$ zu groß ist und das
-Euler-Verfahren instabil wird.
+Das kann ein Zeichen dafür sein, dass wir die Schrittweite $h$ zu groß gewählt haben 
+und das Euler-Verfahren instabil wird.
 
-Um also die numerische Lösung zu erhalten, müssen wir die Schrittweite $h$
-verkleinern. Tatächlich brauchen wir hier eine Schrittweite von `h = 0.0005`,
-um eine stabile Lösung zu erhalten:
+In diesem Fall müssen wir die Schrittweite $h$ tatsächlich auf `h = 0.0005` verkleinern,
+um eine stabile numerische Lösung zu erhalten:
 ```python
 {{#include ../codes/02-differential_equations/euler_bz.py:solve_ode}}
 ```
-Obwohl wir hier eine korrekte Lösung erhalten, haben wir
-$200/0.0005 = 400.000$ Schritte benötigt. Wäre die Anfangsbedingung
-so gewählt, dass $c_Y^0$ noch größer ist als $0.001\ \mathrm{M}$, dann
-wäre die DGLs noch schwieriger zu lösen und wir müssten noch kleinere
-Schrittweiten verwenden.
+Es sei angemerkt, dass sich dadurch natürlich auch die Anzahl der Schritte erhöht;
+hier waren es $200/0.0005 = 400.000$ Schritte. Für Anfangsbedingungen
+$c_Y^0 > 0.001$ wären die DGLs sogar noch schwieriger zu lösen und wir müssten eine noch 
+kleinere Schrittweite verwenden.
 
 Nun plotten wir das Ergebnis:
 ```python
@@ -280,31 +276,27 @@ Nun plotten wir das Ergebnis:
 ```
 Wir haben hier mit den Funktionen `ax.set_xlim` und `ax.set_ylim` die Achsen
 eingeschränkt. Außerdem haben wir das Argument `loc='upper right'` an die 
-Funktion `ax.legend` gegeben, um die Legende nach oben rechts zu verschieben. 
+Funktion `ax.legend` übergeben, um die Legende nach oben rechts zu verschieben. 
 Das voreingestellte Argument ist `loc='best'`, was die "beste" Position für 
-die Legende automatisch berechnet.
+die Legende automatisch bestimmt.
 
-Das Diagramm sieht dann so aus:
+Wir erhalten das folgende Diagramm:
 ![Euler-Verfahren für Oregonator-Modell](../assets/figures/02-differential_equations/euler_bz.svg)
-Man erkennt hier der periodische, impulsartige Verlauf von $[\mathrm{Z}]$,
-was in der Originalreaktion $[\mathrm{Ce^{4+}}]$ entspricht und in dem obigen
-Video die Konzentration vom Fe(III) in Ferroin darstellt und dort als die 
-Blaufärbung zu sehen ist.
+Man erkennt hier den periodischen, impulsartigen Verlauf von $[\mathrm{Z}]$,
+was in dem obigen Video der Konzentration von Fe(III) entspricht ($[\mathrm{Ce^{4+}}]$ in der Originalreaktion) 
+und dort als Blaufärbung zu sehen ist.
 
-Woher weiß man denn, ob die Schrittweite $h$ klein genug ist?
-Eine Faustregel besagt, dass man die Lösung mit halbierter Schrittweite $h/2$
-berechnen soll. Bleibt die Lösung gleich wie bei $h$, dann ist $h$ klein genug.
+Woher weiß man nun, ob die Schrittweite $h$ klein genug ist?
+Eine Faustregel besagt, dass man bei erfolgter Rechnung mit gegebenem $h$ die Rechnung mit halbierter Schrittweite $h/2$
+erneut durchführen soll. Bleibt das Ergebnis gleich wie mit $h$, dann ist $h$ klein genug.
 
-Unabhängig davon, ob $h = 0.0005$ klein genug ist oder nicht, können wir
-uns darauf einigen, dass das Euler-Verfahren Schwierigkeiten mit Gl. 
-{{eqref: eq:oregonator}} hat. Gibt es Methoden, die trotz größerer
-Schrittweiten stabile Lösungen liefern können? 
-Da das Euler-Verfahren nur den konstanten und linearen Term der 
-Taylor-Entwicklung berücksichtigt (vgl. Gl. {{eqref: eq:ode_taylor_first_order}}),
-kommt man unschwer auf die Idee, weitere Ordnungen mitzunehmen. Das führt
-zu einer Familie von Methoden, die als *Runge-Kutta-Verfahren* bekannt sind.
-
-
+Unabhängig davon, ob $h = 0.0005$ klein genug ist oder nicht, konnten wir erkennen, 
+dass das Euler-Verfahren Schwierigkeiten hat das Gleichungssystem {{eqref: eq:oregonator}} 
+zu lösen. Wir werden uns im folgenden Abschnitt mit Methoden befassen, die trotz größerer
+Schrittweiten stabile Lösungen liefern können. Dabei sei daran erinnert, dass das Euler-Verfahren 
+nur den konstanten und linearen Term der Taylor-Entwicklung berücksichtigt (vgl. Gl. {{eqref: eq:ode_taylor_first_order}}).
+Es liegt daher nahe, auch höhere Ordungen zu berücksichitgen, was zu einer Familie von Methoden führt, die als
+*Runge-Kutta-Verfahren* bekannt sind.
 
 [^field1986]: R. J. Field, H.-D. Försterling, *J. Phys. Chem.* **1986**, *90*, 5400&ndash;5407.
 [^schneider1996]: F. W. Schneider, A. F. Münster, in *Nichelineare Dynamik in der Chemie*, Spektrum Akademischer Verlag, Heidelberg, **1996**, pp. 67&ndash;72.
