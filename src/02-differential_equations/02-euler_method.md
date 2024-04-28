@@ -305,7 +305,7 @@ Es liegt daher nahe, auch höhere Ordungen zu berücksichitgen, was zu einer Fam
 
 ### Übung
 
-#### Aufgabe 2.1
-<!--
+#### Aufgabe 2.1: Lösen des klassischen harmonischen Oszillators mit Euler-Verfahren
+
 {{#include ../psets/02.md:aufgabe_1}}
--->
+
