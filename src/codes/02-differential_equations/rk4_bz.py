@@ -69,7 +69,7 @@ def rk4_method(
 ) -> np.ndarray:
     ndim = len(y0)
 
-    x = np.arange(0, n + 1) * h
+    x = x0 + np.arange(0, n + 1) * h
     y = np.zeros((ndim, n + 1))
     y[:, 0] = y0
 
@@ -91,7 +91,7 @@ STEP = 0.001
 TMAX = 200.0
 
 nsteps = int(TMAX / STEP)
-x, y = rk4_method(0, C0, STEP, dydx, nsteps)
+x, y = rk4_method(T0, C0, STEP, dydx, nsteps)
 ### ANCHOR_END: solve_ode
 
 ### ANCHOR: plot

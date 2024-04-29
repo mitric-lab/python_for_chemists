@@ -33,7 +33,7 @@ def euler_method(
     dydx: Callable[[float, float], float], 
     n: int,
 ) -> np.ndarray:
-    x = np.arange(0, n + 1) * h
+    x = x0 + np.arange(0, n + 1) * h
     y = np.zeros(n + 1)
     y[0] = y0
 
@@ -50,7 +50,7 @@ STEP = 1.0  # s
 MAXTIME = 900.0  # s
 
 nsteps = int(MAXTIME / STEP)
-x, y = euler_method(0, C0, STEP, dydx, nsteps)
+x, y = euler_method(T0, C0, STEP, dydx, nsteps)
 ### ANCHOR_END: solve_ode
 
 
