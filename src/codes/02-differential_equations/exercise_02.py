@@ -15,7 +15,7 @@ def euler_step(t_n, f_n, dt, dfdt, omega):
 def euler_method(t0, f0, dt, dfdt, omega, n):
     ndim = len(f0)
 
-    t = np.arange(t0, n + 1) * dt
+    t = t0 + np.arange(0, n + 1) * dt
     f = np.zeros((ndim, n + 1))
     f[:, 0] = f0
 
@@ -102,7 +102,7 @@ def rk4_step(t_n, f_n, dt, dfdt, omega):
 def rk4_method(t0, f0, dt, dfdt, omega, n):
     ndim = len(f0)
 
-    t = np.arange(t0, n + 1) * dt
+    t = t0 + np.arange(0, n + 1) * dt
     f = np.zeros((ndim, n + 1))
     f[:, 0] = f0
 
