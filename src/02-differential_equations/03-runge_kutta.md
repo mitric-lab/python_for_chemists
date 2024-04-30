@@ -533,7 +533,7 @@ Phasenraumtrajektorie wiederzuerkennen.
 
 ### Übung
 
-#### Aufgabe 2.2
-<!--
+#### Aufgabe 2.2: Lösen des klassischen harmonischen Oszillators mit Runge-Kutta-Verfahren
+
 {{#include ../psets/02.md:aufgabe_2}}
--->
+
