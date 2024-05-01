@@ -471,7 +471,7 @@ räumlich ausgedehnter sind.
 
 ### Übung
 
-#### Aufgabe 2.3
-<!--
+#### Aufgabe 2.3: Lösen der Schrödinger-Gleichung mit dem Schießverfahren
+
 {{#include ../psets/02.md:aufgabe_3}}
--->
+
