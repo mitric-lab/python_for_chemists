@@ -72,7 +72,7 @@ plt.subplots_adjust(hspace=0.0)
 plt.show()
 ### ANCHOR_END: exercise_01_c
 
-#fig.savefig('../../assets/figures/02-differential_equations/euler_harm_osc.svg')
+fig.savefig('../../assets/figures/02-differential_equations/euler_harm_osc.svg')
 
 ### ANCHOR: exercise_02
 # Implement the Runge-Kutta method
@@ -137,7 +137,7 @@ plt.subplots_adjust(hspace=0.0)
 plt.show()
 ### ANCHOR_END: exercise_02
 
-#fig.savefig('../../assets/figures/02-differential_equations/euler_rk4_harm_osc.svg')
+fig.savefig('../../assets/figures/02-differential_equations/euler_rk4_harm_osc.svg')
 
 ### ANCHOR: exercise_03_a
 from scipy.integrate import solve_ivp
@@ -172,7 +172,7 @@ def solve_for_energy(num_states, L, step_size=0.01, tolerance=0.01):
 
 # Parameters for the problem
 L = 4.0
-num_states = 6
+num_states = 5
 step_size = 0.001
 tolerance = 0.001
 
@@ -204,4 +204,71 @@ plt.show()
 ### ANCHOR_END: exercise_03_a
 
 fig.savefig('../../assets/figures/02-differential_equations/shooting_method_pib.svg')
+
+### ANCHOR: exercise_03_b
+# Define differential equation for particle in a box with step potential
+def dfdx(x, f, E, V0, a):
+    psi, phi = f
+    V = V0 if x > a else 0
+    dpsi_dx = phi
+    dphi_dx = 2 * (V - E) * psi
+    return [dpsi_dx, dphi_dx]
+
+# Solve Schrodinger equation with shooting method
+def solve_for_energy(num_states, L, v0, a, step_size=0.01, tolerance=0.01):
+    wavefunctions, energies = [], []
+    E = 0
+    while len(energies) < num_states:
+
+        # Solve Schrodinger equation
+        sol = solve_ivp(dfdx, [0, L], [0, 0.1], args=(E, V0, a), dense_output=True, t_eval=np.linspace(0, L, 1000))
+        psi = sol.y[0]
+        error = psi[-1]
+
+        # Check if wavefunction is zero at boundary
+        if np.abs(error) < tolerance:
+            energies.append(E)
+            wavefunctions.append(psi)
+            E += 1
+        else:
+            E += step_size
+
+    return np.array(energies), np.array(wavefunctions)
+
+# Parameters for the problem
+L = 4.0
+V0 = 10.0
+a = 2.0
+num_states = 5
+step_size = 0.001
+tolerance = 0.001
+
+# Solve Schroedinger equation with shooting method
+E, Psi = solve_for_energy(num_states, L, V0, a, step_size, tolerance)
+
+# Normalize wavefunctions 
+dx = L / len(Psi[0])
+for i in range(len(Psi)):
+    Psi[i] /= np.sqrt(np.sum(Psi[i]**2) * dx)
+
+# Plot energy levels and wavefunctions
+fig, [ax1, ax2] = plt.subplots(1, 2, figsize=(8, 4))
+
+ax1.plot(np.arange(num_states), E, 'o', label='numerical eigenenergies')
+ax1.set_xlabel('state')
+ax1.set_ylabel('energy')
+ax1.legend()
+
+for i in range(num_states):
+    ax2.plot(np.linspace(0, L, len(Psi[i])), Psi[i] + E[i], label=f'state {i}')
+ax2.plot([0, a, a, L], [0, 0, V0, V0], 'k', label='potential')
+ax2.set_xlabel('x')
+ax2.set_ylabel('energy')
+ax2.legend()
+
+plt.tight_layout()
+plt.show()
+### ANCHOR_END: exercise_03_a
+
+fig.savefig('../../assets/figures/02-differential_equations/shooting_method_pib_step.svg')
 
