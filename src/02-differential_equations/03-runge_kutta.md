@@ -12,6 +12,8 @@ ist das
 gemeint, was aber nur ein Spezialfall der Runge-Kutta-Verfahren darstellt.
 
 ### Theoretische Grundlagen
+Wir betrachten wieder das Anfangswertproblem (AWP) in Gl.
+{{eqref: eq:ivp_first_order}}.
 Genau so wie beim Euler-Verfahren, wählen wir zunächst ein gleichmäßiges
 Grid $\{x_n\}_ {n=0,\cdots,N}$ mit $x_n = x_0 + n\cdot h$ und $h$ als
 Schrittweite, sowie eine Anfangsbedingung $y_0 = y(x_0)$.

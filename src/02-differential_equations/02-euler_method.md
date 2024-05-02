@@ -66,6 +66,11 @@ berechnen. Mit Hilfe der DGL in Gl. {{eqref: eq:ivp_first_order}} können
 wir die Ableitung $y'(x_n)$ durch $f(x_n, y(x_n))$ ersetzen, was zu
 $$
   y(x_{n+1}) = y(x_n) + h f(x_n, y(x_n))
+$$
+führt. Um zu betonen, dass die Euler-Methode nur diskrete Werte von $y(x)$
+liefert, schreiben wir $y_n = y(x_n)$ und $y_{n+1} = y(x_{n+1})$, was zu
+$$
+  y_{n+1} = y_n + h f(x_n, y_n)
   {{numeq}}{eq:euler_method}
 $$
 führt. Gl. {{eqref: eq:euler_method}} ist das *explizite Euler-Verfahren* 

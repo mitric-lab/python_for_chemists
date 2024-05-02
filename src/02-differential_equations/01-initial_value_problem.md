@@ -53,7 +53,7 @@ der DGL bezeichnet wird.
 Für eine DGL $n$-ter Ordnung benötigen wir $n$ Anfangsbedingungen, um
 eine spezielle Lösung zu erhalten. Diese sind gegeben durch
 $$
-  y(x_0) = y_0\,,\quad y'(x_0) = y_1\,,\quad \ldots\,,\quad y^{(n-1)}(x_0) = y_{n-1}\,.
+  y(x_0) = y_0\,,\quad y'(x_0) = y'_0\,,\quad \ldots\,,\quad y^{(n-1)}(x_0) = y^{(n-1)}_0\,.
 $$
 
 Es gibt noch weitere Möglichkeiten, eine spezielle Lösung zu erhalten,

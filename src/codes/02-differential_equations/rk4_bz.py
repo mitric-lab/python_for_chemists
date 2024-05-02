@@ -69,7 +69,7 @@ def rk4_method(
 ) -> np.ndarray:
     ndim = len(y0)
 
-    x = np.arange(0, n + 1) * h
+    x = x0 + np.arange(0, n + 1) * h
     y = np.zeros((ndim, n + 1))
     y[:, 0] = y0
 

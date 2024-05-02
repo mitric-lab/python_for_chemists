@@ -33,7 +33,7 @@ def euler_method(
     dydx: Callable[[float, float], float], 
     n: int,
 ) -> np.ndarray:
-    x = np.arange(0, n + 1) * h
+    x = x0 + np.arange(0, n + 1) * h
     y = np.zeros(n + 1)
     y[0] = y0
 
