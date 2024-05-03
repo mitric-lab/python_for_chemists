@@ -229,7 +229,7 @@ def solve_for_energy(num_states, L, v0, a, step_size=0.01, tolerance=0.01):
         if np.abs(error) < tolerance:
             energies.append(E)
             wavefunctions.append(psi)
-            E += 1
+            E += 0.5
         else:
             E += step_size
 
@@ -239,9 +239,9 @@ def solve_for_energy(num_states, L, v0, a, step_size=0.01, tolerance=0.01):
 L = 4.0
 V0 = 10.0
 a = 2.0
-num_states = 5
-step_size = 0.001
-tolerance = 0.001
+num_states = 3
+step_size = 0.0002
+tolerance = 0.05
 
 # Solve Schroedinger equation with shooting method
 E, Psi = solve_for_energy(num_states, L, V0, a, step_size, tolerance)
