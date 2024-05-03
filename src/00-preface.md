@@ -27,18 +27,18 @@ kontinuierlich aktualisiert.
 |  2  | Di.     | 23.04. | Vorlesung   | Regression II   |
 |  2  | Do.     | 25.04. | Vorlesung   | Regression III  |
 |  3  | Di.     | 30.04. | Übung       | Regression      |
-|  3  | Do.     | 02.05. |             |                 |
-|  4  | Di.     | 07.05. |             |                 |
+|  3  | Do.     | 02.05. | Vorlesung   | Differentialgleichung I |
+|  4  | Di.     | 07.05. | Vorlesung   | Differentialgleichung II |
 |  4  | ~~Do.~~ | ~~09.05.~~ | Feiertag | Christi Himmelfahrt |
-|  5  | Di.     | 14.05. |             |                 |
-|  5  | Do.     | 16.05. |             |                 |
-|  6  | Di.     | 21.05. |             |                 |
-|  6  | Do.     | 23.05. |             |                 |
-|  7  | Di.     | 28.05. |             |                 |
+|  5  | Di.     | 14.05. | Vorlesung   | Differentialgleichung III |
+|  5  | Do.     | 16.05. | Übung       | Differentialgleichung |
+|  6  | Di.     | 21.05. | Vorlesung   | Fourier-Analyse |
+|  6  | Do.     | 23.05. | Übung       | Fourier-Analyse |
+|  7  | Di.     | 28.05. | Vorlesung   | EVD und SVD I   |
 |  7  | ~~Do.~~ | ~~30.05.~~ | Feiertag | Fronleichnam   |
-|  8  | Di.     | 04.06. |             |                 |
-|  8  | Do.     | 06.06. |             |                 |
-|  9  | Di.     | 11.06. |             |                 |
+|  8  | Di.     | 04.06. | Vorlesung   | EVD und SVD II  |
+|  8  | Do.     | 06.06. | Vorlesung   | EVD und SVD III |
+|  9  | Di.     | 11.06. | Übung       | EVD und SVD     |
 |  9  | Do.     | 13.06. |             |                 |
 | 10  | Di.     | 18.06. |             |                 |
 | 10  | Do.     | 20.06. |             |                 |
