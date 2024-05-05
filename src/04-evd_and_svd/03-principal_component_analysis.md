@@ -319,7 +319,8 @@ euklidisch ist. Verwendet man aber eine andere Abstandsmetrik, so liefert
 die PCoA andere Projektionen der Datenpunkte als die PCA. In diesem Fall ist 
 die erhaltene Projektion oft eine gute Approximation der opti
 
-Die PCoA gehört zur einen Familie von Verfahren, die als
+Es sei noch angemerkt, dass die PCoA zu einer Familie von Verfahren gehört,
+die als
 ```admonish info title="Multidimensionale Skalierung" collapsible=true
 Die
 [*Multidimensionale Skalierung*](https://de.wikipedia.org/wiki/Multidimensionale_Skalierung)
@@ -357,5 +358,106 @@ bekannt sind.
 
 ### Implementierung
 
-WIP
+Als erstes implementieren wir die PCA am Beispiel eines Weindatensatzes. 
+Dieser enthält die Messungen von 13 physikalischen und chemischen 
+Eigenschaften von insgesamt 178 Weinen aus drei verschiedenen Rebsorten:
+Barolo, Grignolino und Barbera. Der Datensatz sieht in den ersten Zeilen
+wie folgt aus:
+```txt
+{{#include ../codes/04-evd_and_svd/wine.csv::10}}
+```
+und kann
+<a href="../codes/04-evd_and_svd/wine.csv" download>hier</a> heruntergeladen
+werden. Diese Datei `wine.csv` enthält die Daten in der 
+*Comma-Separated Values* (CSV) Format, also mit den Werten durch Kommata
+getrennt. 
+
+Als erstes importieren wir die benötigten Bibliotheken
+```python
+{{#include ../codes/04-evd_and_svd/pca_wine.py:imports}}
+```
+und lesen die Daten aus der Datei `wine.csv` ein:
+```python
+{{#include ../codes/04-evd_and_svd/pca_wine.py:load_data}}
+```
+Hier haben wir das Argument `delimiter=','` an die Funktion `np.loadtxt`
+übergeben, da die Werte in der Datei durch Kommata 
+(und nicht durch Leerzeichen) getrennt sind.
+Zudem haben wir die Labels der Rebsorten (nullte Spalte) in der Variable
+`categories` als 0-indizierte Integers gespeichert, getrennt von den
+Eigenschaften der Weine, die wir als Floats in der Variable `features`
+gespeichert haben.
+
+Dieser Datensatz hat noch einige versteckte Informationen, die für die 
+Mathematik zwar nicht relevant sind, aber für die Interpretation der
+Ergebnisse sehr hilfreich sein können. Diese sind die Namen der Rebsorten
+und der gemessenen Eigenschaften. Nun definieren wir diese als Listen
+```python
+{{#include ../codes/04-evd_and_svd/pca_wine.py:labels}}
+```
+
+Weil in diesem Fall sich die Größenordnungen der Eigenschaften sehr
+stark unterscheiden, führen wir eine Standardisierung der Daten durch:
+```python
+{{#include ../codes/04-evd_and_svd/pca_wine.py:standardise}}
+```
+Anschließend führen wir die Singulärwertzerlegung der standardisierten
+Datenmatrix durch:
+```python
+{{#include ../codes/04-evd_and_svd/pca_wine.py:svd}}
+```
+Zusätzlich haben wir die Hauptkomponenten, die Projektion der Datenpunkte
+auf die Hauptkomponenten sowie die Varianzanteile berechnet.
+Die Ergebnisse sehen wie folgt aus:
+```python
+{{#include ../codes/04-evd_and_svd/pca_wine.py:verify_pca}}
+```
+Wir können sehen, dass die erste Hauptkomponente eine Linearkombination
+der Eigenschaften der Weine ist, wobei die 5., 6. und 11. Eigenschaft
+(0-indiziert, also "total phenols", "flavanoids" und 
+"OD280/OD315") die größten Gewichte haben. Diese Hauptkomponente erklärt
+bereits ca. 36 % der Varianz der Daten. Mit der zweiten Hauptkomponente
+zusammen können ca. 55 % der Varianz erklärt werden. Die Varianzanteile
+können wir mit dem folgenden Code visualisieren:
+```python
+{{#include ../codes/04-evd_and_svd/pca_wine.py:plot_variance}}
+```
+Hier haben wir die Funktion `np.cumsum` verwendet, um die kumulierten
+Summen der Varianzanteile zu berechnen. Der Plot sieht wie folgt aus:
+![Varianzanteile der Hauptkomponenten](../assets/figures/04-evd_and_svd/pca_wine_variance.svg)
+
+Weil wir Datenpunkte in 2D leicht visualisieren können, plotten wir die
+Projektion der Datenpunkte auf die ersten beiden Hauptkomponenten:
+```python
+{{#include ../codes/04-evd_and_svd/pca_wine.py:plot_pca}}
+```
+Weil wir durch die Standardisierung die Datenpunkte auf die Einheitsvarianz
+gebracht haben, ist es sinnvoll, die Hauptkomponenten mit der gleichen
+Skalierung zu plotten. Deshalb haben wir die Methode `set_aspect('equal')`
+auf die Achsenobjekte angewendet. Der resultierende Plot sieht wie folgt aus:
+![Projektion der Weindaten auf die ersten beiden Hauptkomponenten](../assets/figures/04-evd_and_svd/pca_wine_projection.svg)
+
+Da die ersten beiden Hauptkomponenten bereits ca. 55 % der Varianz der Daten
+erklären, können wir davon ausgehen, dass wichtige Strukturen des Datensatzes
+in dieser 2D-Projektion erhalten sind. In diesem Plot erkennen wir aber 
+erstmal nur einen Streifen an Punkten, sowie ein "Loch" in der Mitte, welches 
+bedeutet, dass keine Weine in diesem Bereich liegen. Um die Struktur der
+Datenpunkte besser zu erkennen, können wir die Datenpunkte nach den Rebsorten,
+die wir für die PCA **nicht** verwendet haben, einfärben:
+```python
+{{#include ../codes/04-evd_and_svd/pca_wine.py:plot_pca_coloured}}
+```
+Anstatt einen neuen Plot zu erstellen, haben wir die Farben der Datenpunkte
+mit der Methode `set_color` des Scatter-Objekts geändert. Um eine Legende
+zu erstellen, haben wir Dummy-Scatter-Objekte erstellt mit passenden Farben
+und Labels, aber ohne Datenpunkte. Der resultierende Plot sieht wie folgt aus:
+![Projektion der Weindaten auf die ersten beiden Hauptkomponenten, eingefärbt nach Rebsorten](../assets/figures/04-evd_and_svd/pca_wine_projection_coloured.svg)
+
+Wir erkennen jetzt deutlich, dass alle Rebsorten, bis auf wenige Ausnahmen,
+in den 2D-Projektionen gut voneinander getrennt sind. Wir haben also eine 
+einfache Methode gefunden, die Rebsorten anhand der physikalischen und
+chemischen Eigenschaften zu unterscheiden.
+
+WIP: PCoA
+
 
