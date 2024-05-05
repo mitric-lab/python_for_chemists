@@ -156,7 +156,7 @@ def solve_for_energy(num_states, L, step_size=0.01, tolerance=0.01):
     while len(energies) < num_states:
 
         # Solve Schrodinger equation
-        sol = solve_ivp(dfdx, [0, L], [0, 0.1], args=(E,), dense_output=True, t_eval=np.linspace(0, L, 1000))
+        sol = solve_ivp(dfdx, [0, L], [0, 1.0], args=(E,), dense_output=True, t_eval=np.linspace(0, L, 1000))
         psi = sol.y[0]
         error = psi[-1]
 
@@ -164,7 +164,7 @@ def solve_for_energy(num_states, L, step_size=0.01, tolerance=0.01):
         if np.abs(error) < tolerance:
             energies.append(E)
             wavefunctions.append(psi)
-            E += 1
+            E += 0.5
         else:
             E += step_size
 
@@ -173,8 +173,8 @@ def solve_for_energy(num_states, L, step_size=0.01, tolerance=0.01):
 # Parameters for the problem
 L = 4.0
 num_states = 5
-step_size = 0.001
-tolerance = 0.001
+step_size = 0.0005
+tolerance = 0.002
 
 # Solve Schroedinger equation with shooting method
 E, Psi = solve_for_energy(num_states, L, step_size, tolerance)
@@ -188,7 +188,7 @@ for i in range(len(Psi)):
 fig, [ax1, ax2] = plt.subplots(1, 2, figsize=(8, 4))
 
 ax1.plot(np.arange(num_states), E, 'o', label='numerical eigenenergies')
-ax1.plot(np.arange(num_states), np.arange(num_states)**2 * np.pi**2 / (2 * L**2), label='analytical eigenenergies')
+ax1.plot(np.arange(num_states), np.arange(1, num_states + 1)**2 * np.pi**2 / (2 * L**2), label='analytical eigenenergies')
 ax1.set_xlabel('state')
 ax1.set_ylabel('energy')
 ax1.legend()
@@ -219,9 +219,8 @@ def solve_for_energy(num_states, L, v0, a, step_size=0.01, tolerance=0.01):
     wavefunctions, energies = [], []
     E = 0
     while len(energies) < num_states:
-
         # Solve Schrodinger equation
-        sol = solve_ivp(dfdx, [0, L], [0, 0.1], args=(E, V0, a), dense_output=True, t_eval=np.linspace(0, L, 1000))
+        sol = solve_ivp(dfdx, [0, L], [0, 1.0], args=(E, V0, a), dense_output=True, t_eval=np.linspace(0, L, 1000), rtol=1e-6, atol=1e-8)
         psi = sol.y[0]
         error = psi[-1]
 
@@ -229,7 +228,7 @@ def solve_for_energy(num_states, L, v0, a, step_size=0.01, tolerance=0.01):
         if np.abs(error) < tolerance:
             energies.append(E)
             wavefunctions.append(psi)
-            E += 1
+            E += 0.5
         else:
             E += step_size
 
@@ -240,8 +239,8 @@ L = 4.0
 V0 = 10.0
 a = 2.0
 num_states = 5
-step_size = 0.001
-tolerance = 0.001
+step_size = 0.0005 # works with 0.0002
+tolerance = 0.002 # works with 0.05
 
 # Solve Schroedinger equation with shooting method
 E, Psi = solve_for_energy(num_states, L, V0, a, step_size, tolerance)
