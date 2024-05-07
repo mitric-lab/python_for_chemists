@@ -46,15 +46,15 @@ def euler_method(
     y0: np.ndarray,
     h: float, 
     dydx: Callable[[float, np.ndarray], np.ndarray],
-    n: int,
+    nsteps: int,
 ) -> np.ndarray:
     ndim = len(y0)
 
-    x = x0 + np.arange(0, n + 1) * h
-    y = np.zeros((ndim, n + 1))
+    x = x0 + np.arange(0, nsteps + 1) * h
+    y = np.zeros((ndim, nsteps + 1))
     y[:, 0] = y0
 
-    for i in range(0, n):
+    for i in range(0, nsteps):
         y[:, i + 1] = euler_step(x[i], y[:, i], h, dydx)
 
     return x, y
