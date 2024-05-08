@@ -32,14 +32,14 @@ kontinuierlich aktualisiert.
 |  4  | ~~Do.~~ | ~~09.05.~~ | Feiertag | Christi Himmelfahrt |
 |  5  | Di.     | 14.05. | Vorlesung   | Differentialgleichung III |
 |  5  | Do.     | 16.05. | Übung       | Differentialgleichung |
-|  6  | Di.     | 21.05. | Vorlesung   | Fourier-Analyse |
-|  6  | Do.     | 23.05. | Übung       | Fourier-Analyse |
-|  7  | Di.     | 28.05. | Vorlesung   | EVD und SVD I   |
+|  6  | ~~Di.~~ | ~~21.05.~~ | Vorlesungsfrei | Pfingsten    |
+|  6  | Do.     | 23.05. | Vorlesung   | Fourier-Analyse |
+|  7  | Di.     | 28.05. | Übung       | Fourier-Analyse |
 |  7  | ~~Do.~~ | ~~30.05.~~ | Feiertag | Fronleichnam   |
-|  8  | Di.     | 04.06. | Vorlesung   | EVD und SVD II  |
-|  8  | Do.     | 06.06. | Vorlesung   | EVD und SVD III |
-|  9  | Di.     | 11.06. | Übung       | EVD und SVD     |
-|  9  | Do.     | 13.06. |             |                 |
+|  8  | Di.     | 04.06. | Vorlesung   | EVD und SVD I   |
+|  8  | Do.     | 06.06. | Vorlesung   | EVD und SVD II  |
+|  9  | Di.     | 11.06. | Vorlesung   | EVD und SVD III |
+|  9  | Do.     | 13.06. | Übung       | EVD und SVD     |
 | 10  | Di.     | 18.06. |             |                 |
 | 10  | Do.     | 20.06. |             |                 |
 | 11  | Di.     | 25.06. |             |                 |
