@@ -83,6 +83,7 @@ fig2.tight_layout()
 plt.show()
 ### ANCHOR_END: plot_spectrum
 
+#np.savetxt('ir_spec.txt', np.column_stack((nu, np.abs(int_nu.real))))
 #fig2.savefig('../../assets/figures/03-fourier_analysis/ir_spectrum.svg')
 
 ### ANCHOR: numpy_fft
