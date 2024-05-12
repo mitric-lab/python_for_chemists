@@ -6,9 +6,8 @@ from matplotlib.offsetbox import AnnotationBbox, OffsetImage
 from rdkit import Chem
 from rdkit.Chem import Draw
 from collections import Counter
-from mol import parse_mol
 
-DATASET = 'gdb9_subset_7.sdf'
+DATASET = 'gdb9_subset_5.sdf'
 BOND_TYPES = {
     'CC1': 0, 'CC2': 1, 'CC3': 2, 'CC4': 3,
     'CN1': 4, 'CN2': 5, 'CN3': 6, 'CN4': 7,
@@ -16,39 +15,42 @@ BOND_TYPES = {
     'NN1': 12, 'NN2': 13, 'NN3': 14, 'NN4': 15,
     'NO1': 16, 'NO2': 17, 'NO3': 18, 'NO4': 19,
     'OO1': 20, 'OO2': 21, 'OO3': 22, 'OO4': 23,
-    'CH1': 24, 'NH1': 25, 'OH1': 26,
 }
 
 
 def get_fingerprint(mol):
     fingerprint = np.zeros(len(BOND_TYPES), dtype=np.int32)
-    for btype, count in mol['bonds'].items():
+    bonds = mol.GetBonds()
+    for bond in bonds:
+        sym1 = bond.GetBeginAtom().GetSymbol()
+        sym2 = bond.GetEndAtom().GetSymbol()
+        rd_btype = bond.GetBondType()
+        
+        if rd_btype == Chem.rdchem.BondType.DOUBLE:
+            btype_num = 2
+        elif rd_btype == Chem.rdchem.BondType.TRIPLE:
+            btype_num = 3
+        elif rd_btype == Chem.rdchem.BondType.AROMATIC:
+            btype_num = 4
+        else:
+            btype_num = 1
+        
+        btype = ''.join(sorted([sym1, sym2])) + str(btype_num)
+
         if btype in BOND_TYPES:
-            fingerprint[BOND_TYPES[btype]] = count
+            fingerprint[BOND_TYPES[btype]] += 1
+    
     return fingerprint
 
-
-mols = []
-mol_strings = []
-with open(DATASET, 'r') as f:
-    mol_lines = []
-    for line in f:
-        if line.startswith('$$$$'):
-            mol = parse_mol(mol_lines)
-            mol_string = ''.join(mol_lines)
-            mols.append(mol)
-            mol_strings.append(mol_string)
-            mol_lines = []
-        else:
-            mol_lines.append(line)
-
+supplier = Chem.SDMolSupplier(DATASET)
+mols = [mol for mol in supplier]
 fingerprints = np.array([get_fingerprint(mol) for mol in mols])
-# formulas = [mol['comment'].strip() for mol in mols]
 
-n = len(mols)
+n = len(fingerprints)
+print(n)
 distances = np.zeros((n, n))
-for i in range(len(mols)):
-    for j in range(i + 1, len(mols)):
+for i in range(0, n):
+    for j in range(i + 1, n):
         distances[i, j] = np.sum(np.abs(fingerprints[i] - fingerprints[j]))
         distances[j, i] = distances[i, j]
 
@@ -75,7 +77,7 @@ ax.add_artist(ab)
 
 def update_annotation_box(idx):
     ab.xy = (embedding[idx, 0], embedding[idx, 1])
-    mol = Chem.MolFromMolBlock(mol_strings[idx])
+    mol = mols[idx]
     Chem.rdDepictor.Compute2DCoords(mol)
     img = Draw.MolToImage(mol, size=(100, 100), wedgeBonds=False)
     ab.offsetbox.set_data(img)

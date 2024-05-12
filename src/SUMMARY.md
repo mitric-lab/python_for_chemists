@@ -30,7 +30,8 @@
     - [Eigenwertzerlegung](04-evd_and_svd/01-eigenvalue_decomposition.md)
     - [Singulärwertzerlegung](04-evd_and_svd/02-singular_value_decomposition.md)
     - [Hauptkomponentenanalyse](04-evd_and_svd/03-principal_component_analysis.md)
-    - [Lineare Gleichungssysteme](04-evd_and_svd/04-linear_equations.md)
+    - [Hauptkoordinatenanalyse](04-evd_and_svd/04-principal_coordinate_analysis.md)
+    - [Lineare Gleichungssysteme](04-evd_and_svd/05-linear_equations.md)
 
 
 - [Maschinelles Lernen](05-machine_learning.md)

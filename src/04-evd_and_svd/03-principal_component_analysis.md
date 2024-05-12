@@ -94,8 +94,6 @@ welche in der Praxis häufig zur Dimensionsreduktion von Daten verwendet wird.
 
 ### Theoretische Grundlagen
 
-#### Principal Component Analysis (PCA)
-
 Wir betrachten eine Messung von $P$ Merkmalen (engl. *features*) an $N$ 
 Proben (engl. *samples*), welche durch eine $N \times P$-Matrix 
 $\widetilde{\bm{X}}$ repräsentiert wird. Die $i$-te Zeile der Matrix 
@@ -214,147 +212,6 @@ liefert. Also können wir PCA verwenden, um einen hochdimensionalen Datensatz
 mit wenigen Hauptkomponenten zu approximieren, ohne dabei zu viel Information
 zu verlieren.
 
-Um die PCA auf einen Datensatz anzuwenden, benötigen wir die Kooridnaten
-der Datenpunkte in der Basis der Features. Bei Messdaten ist dies in der Regel
-gegeben, aber was ist, wenn wir einen Datensatz mit sehr vielen Features
-haben, wie z.B. Bilder? Ein kleines Bild mit $100 \times 100$ Pixeln hat
-bereits 10000 Features, und ein hochauflösendes Bild mit $1000 \times 1000$
-Pixeln hat sogar 1 Million Features. In diesem Fall würde die Durchführung
-der PCA auf den Datenpunkten in der Basis der Pixelwerte sehr viel Resourcen
-benötigen. Es wäre in diesem Fall schön, wenn der Abstand zwischen den
-Datenpunkten für die PCA verwendet werden könnten, da wir nur einen Skalar
-für jedes Paar von Datenpunkten berechnen müssten. Der Abstand kann auch 
-hilfreich sein, wenn keine wirklich sinnvolle Koordinaten für die Datenpunkte
-vorliegen, wie z.B. bei Texten oder chemischen Verbindungen.
-
-Tatsächlich lassen sich die Hauptkomponenten allein aus den Abständen 
-bestimmen. Eine Realisierung bietet die Methode der 
-*Hauptkoordinatenanalyse* (engl. *Principal Coordinate Analysis*, PCoA).
-
-#### Principal Coordinate Analysis (PCoA)
-
-Damit wir am Ende die PCA durchführen können, benötigen wir eine 
-Koordinatendarstellung der Datenpunkte $\widetilde{\bm{X}}$. Nehmen wir zuerst
-an, dass wir eine solche Koordinatendarstellung durch eine magische Kraft
-erhalten haben. Dann können wir die an der zentrierten Datenmatrix $\bm{X}$
-die SVD durchführen ($\bm{X} = \bm{U} \bm{\Sigma} \bm{V}^\dag$) und erhalten 
-die Projektion auf die Hauptkomponenten durch $\bm{U} \bm{\Sigma}$.
-
-Betrachten wir nun die *Gram-Matrix* $\bm{G}$ der zentrierten Datenmatrix 
-$\bm{X}$, die durch $\bm{G} = \bm{X} \bm{X}^\dag$ gegeben ist. Setzen wir
-die SVD von $\bm{X}$ ein, so erhalten wir
-$$
-  \bm{G} = \bm{X} \bm{X}^\dag 
-  = \bm{U} \bm{\Sigma} \bm{V}^\dag \bm{V} \bm{\Sigma}^\dag \bm{U}^\dag 
-  = \bm{U} \underbrace{\bm{\Sigma} \bm{\Sigma}^\dag}_ {:=\bm{\Lambda}} \bm{U}^\dag\,,
-$$
-ganz nach Gl. {{eqref: eq:svd_and_evd}}. Die Projektion der Datenpunkte 
-auf die Hauptkomponenten kann also aus der Eigenwertzerlegung der Gram-Matrix
-berechnet werden als $\bm{U} \bm{\Lambda}^{1/2}$.
-
-Setzen wir nun Gl. {{eqref: eq:centre_data_matrix}} in die Definition der
-zentrierten Gram-Matrix ein, so erhalten wir
-$$
-  \begin{align}
-    \bm{G} &= \bm{X} \bm{X}^\dag 
-    = (\identity_N - \frac{1}{N} \mathbf{1}_ N) \widetilde{\bm{X}} \widetilde{\bm{X}}^\dag (\identity_N - \frac{1}{N} \mathbf{1}_ N) \\
-    &= \widetilde{\bm{X}} \widetilde{\bm{X}}^\dag 
-      - \frac{\mathbf{1}_ N}{N} \mathbf{1}_ N \widetilde{\bm{X}} \widetilde{\bm{X}}^\dag 
-      - \widetilde{\bm{X}} \widetilde{\bm{X}}^\dag \frac{\mathbf{1}_ N}{N}
-      + \frac{\mathbf{1}_ N}{N} \widetilde{\bm{X}} \widetilde{\bm{X}}^\dag \frac{\mathbf{1}_ N}{N} \\
-    &= \widetilde{\bm{G}} - \frac{\mathbf{1}_ N}{N} \widetilde{\bm{G}} - \widetilde{\bm{G}} \frac{\mathbf{1}_ N}{N} + \frac{\mathbf{1}_ N}{N} \widetilde{\bm{G}} \frac{\mathbf{1}_ N}{N}\,,
-  \end{align}
-$$
-wo wir die Gram-Matrix der unzentrierten Datenmatrix als
-$\widetilde{\bm{G}} = \widetilde{\bm{X}} \widetilde{\bm{X}}^\dag$ definiert 
-haben. Dieser Prozess wird als *Double Centering* bezeichnet, da wir von der
-Matrix $\widetilde{\bm{G}}$ sowohl die Zeilen- als auch die Spaltenmittelwerte
-durch $\frac{\mathbf{1}_ N}{N} \widetilde{\bm{G}}$ und 
-$\widetilde{\bm{G}} \frac{\mathbf{1}_ N}{N}$ abziehen, und dann den Mittelwert
-der gesamten Matrix, der doppelt abgezogen wurde, durch
-$\frac{\mathbf{1}_ N}{N} \widetilde{\bm{G}} \frac{\mathbf{1}_ N}{N}$ wieder
-hinzufügen. Die Matrix $\bm{G}$ hat also 0 als Spalten- und Zeilenmittelwert.
-
-Das ist zwar schön und gut, dass wir aus den unverarbeiteten Datenkoordinaten
-die Hauptkomponenten berechnen können, aber wie müssen erst (ohne Magie)
-die Koordinaten erhalten. Wir betrachten nun das was wir haben: die
-Abstände zwischen den Datenpunktpaaren. Diese lassen sich in einer
-symmetrischen $N \times N$-Matrix $\bm{D}$ mit den Elementen $d_{ij}$ 
-speichern, wobei $d_{ij}$ den Abstand zwischen den Datenpunkten $i$ und $j$
-angibt. Des Weiteren nehmen wir an, dass die euklidischen Abstände
-zwischen den Datenpunkten gegeben sind. Damit gilt
-$$
-  \begin{align}
-  d_{ij}^2 = \|\vec{x}_ i - \vec{x}_ j\|_ 2^2
-    &= \|\vec{x}_ i - \vec{\mu}\|_ 2^2 + \|\vec{x}_ j - \vec{\mu}\|_ 2^2 
-      - 2 \langle \vec{x}_ i - \vec{\mu}, \vec{x}_ j - \vec{\mu} \rangle \\
-    &= \|\vec{x}_ i - \vec{\mu}\|_ 2^2 + \|\vec{x}_ j - \vec{\mu}\|_ 2^2
-      -2 G_{ij}\,,
-  \end{align}
-$$
-wobei wir den Kosinussatz verwendet haben. Das Skalarprodukt der zentrierten
-Datenpunkte $\vec{x}_ i - \vec{\mu}$ und $\vec{x}_ j - \vec{\mu}$ ist
-gerade das Element $G_{ij}$ der zentrierten Gram-Matrix $\bm{G}$.
-
-Wenn wir die Matrix $\bm{D}^{(2)}$ der quadrierten Abstände durch 
-$D^{(2)}_{ij} = d_{ij}^2$ definieren, so unterscheidet sich 
-$-\frac{1}{2} \bm{D}^{(2)}$ von der zentrierten Gram-Matrix $\bm{G}$ nur
-durch einen Zeilen- und einen Spaltenmittelwert. Führt man das Double Centering
-auf $\bm{D}^{(2)}$ durch, so erhält man die Matrix $\bm{G}$:
-$$
-  \bm{G} = -\frac{1}{2}\left(\identity_N - \frac{1}{N} \mathbf{1}_ N\right) \bm{D}^{(2)} \left(\identity_N - \frac{1}{N} \mathbf{1}_ N\right)\,.
-$$
-Das ist genau die "magische Kraft", die wir benötigen, um die Abstände
-in Koordinaten umzuwandeln. Es ergibt sich der folgende Algorithmus:
-1. Berechne die Matrix $\bm{D}^{(2)}$ der quadrierten Abstände.
-2. Führe das Double Centering auf $\bm{D}^{(2)}$ durch.
-3. Berechne die Eigenwertzerlegung von $\bm{G}$ als 
-   $\bm{G} = \bm{U} \bm{\Lambda} \bm{U}^\dag$.
-4. Berechne projizierten Koordinaten auf die Hauptkomponenten mit
-   $\bm{U} \bm{\Lambda}^{1/2}$.
-Dieser Algorithmus wird als *Principal Coordinate Analysis* (PCoA) bezeichnet.
-
-Damit ist PCoA äquivalent zur PCA, wenn der Abstand zwischen den Datenpunkten
-euklidisch ist. Verwendet man aber eine andere Abstandsmetrik, so liefert 
-die PCoA andere Projektionen der Datenpunkte als die PCA. In diesem Fall ist 
-die erhaltene Projektion oft eine gute Approximation der opti
-
-Es sei noch angemerkt, dass die PCoA zu einer Familie von Verfahren gehört,
-die als
-```admonish info title="Multidimensionale Skalierung" collapsible=true
-Die
-[*Multidimensionale Skalierung*](https://de.wikipedia.org/wiki/Multidimensionale_Skalierung)
-(engl. *Multidimensional Scaling*, MDS) versucht,
-eine Koordinatendarstellung von Datenpunkten in 
-$k$ Dimensionen zu finden, so dass die Abstände zwischen den Datenpunkten
-möglichst gut erhalten bleiben. Sei also der Abstand zwischen dem $i$-ten
-und $j$-ten Datenpunkt in den ursprünglichen Koordinaten durch $d_{ij}$
-und ihre Koordinaten im $k$-dimensionalen Raum durch $\vec{x}_ i$ und
-$\vec{x}_ j$ gegeben. Dann wird der *Stress*-Wert
-$$
-  \text{Stress}(\vec{x}_ 1, \ldots, \vec{x}_ n) = \sqrt{
-    \sum_{i\neq j} (d_{ij} - \|\vec{x}_ i - \vec{x}_ j\|)^2
-  }
-$$
-durch die MDS minimiert. Hier wurde die genaue Abstandsmetrik für die 
-Berechnung von $d_{ij}$ und die Norm für die Berechnung der Distanz
-zwischen den Koordinaten $\vec{x}_ i$ und $\vec{x}_ j$ nicht angegeben,
-da die MDS für beliebige Metriken und Normen definiert werden kann. 
-
-Streng genommen ist die PCoA keine MDS, auch wenn die in diesem Kontext als
-*Klassische MDS* (CMDS) bezeichnet wird. Es liegt daran, dass die PCoA
-den *Strain*-Wert
-$$
-  \text{Strain}(\vec{x}_ 1, \ldots, \vec{x}_ n) = \sqrt{
-     \frac{\sum_{i\neq j} (G_{ij} - \langle \vec{x}_ i, \vec{x}_ j \rangle)^2}
-          {\sum_{i\neq j} G_{ij}^2}
-  }
-$$
-minimiert. Diese Funktion ist nicht äuquivalent zum *Stress*-Wert der MDS.
-Aber weil die Idee des Strain-Werts sehr ähnlich zum Stress-Wert ist, wird
-die PCoA oder die CMDS oft als eine variante der MDS betrachtet.
-```
-bekannt sind.
 
 ### Implementierung
 
@@ -458,6 +315,21 @@ in den 2D-Projektionen gut voneinander getrennt sind. Wir haben also eine
 einfache Methode gefunden, die Rebsorten anhand der physikalischen und
 chemischen Eigenschaften zu unterscheiden.
 
-WIP: PCoA
+In diesem Abschnitt haben wir gesehen, dass für die PCA die Kooridnaten der
+Datenpunkte in der Basis der Features vollständig bekannt sein müssen. 
+Bei Messdaten ist diese Vorraussetzung in der Regel erfüllt, 
+aber was ist, wenn wir einen Datensatz mit sehr vielen Features
+haben, wie z.B. Bilder? Ein kleines Bild mit $100 \times 100$ Pixeln hat
+bereits 10000 Features, und ein hochauflösendes Bild mit $1000 \times 1000$
+Pixeln hat sogar 1 Million Features. In diesem Fall würde die Durchführung
+der PCA auf den Datenpunkten in der Basis der Pixelwerte sehr viel Resourcen
+benötigen. Es wäre in diesem Fall schön, wenn der Abstand zwischen den
+Datenpunkten für die PCA verwendet werden könnten, da wir nur einen Skalar
+für jedes Paar von Datenpunkten berechnen müssten. Der Abstand kann auch 
+hilfreich sein, wenn keine wirklich sinnvolle Koordinaten für die Datenpunkte
+vorliegen, wie z.B. bei Texten oder chemischen Verbindungen.
 
+Tatsächlich lassen sich die Hauptkomponenten allein aus den Abständen 
+bestimmen. Eine Realisierung bietet die Methode der 
+*Hauptkoordinatenanalyse* (engl. *Principal Coordinate Analysis*, PCoA).
 
