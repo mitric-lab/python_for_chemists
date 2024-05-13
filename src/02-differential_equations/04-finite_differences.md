@@ -115,7 +115,7 @@ mit dem Hilfsvektor
 $$
   \hat{e}^{i+1} - \hat{e}^{i-1} = 
   \begin{pmatrix}
-    0_1 & \cdots & 0_{i-2} & 1_{i-1} & 0_i & -1_{i+1} & 0_{i+2} & \cdots & 0_N
+    0_1 & \cdots & 0_{i-2} & -1_{i-1} & 0_i & 1_{i+1} & 0_{i+2} & \cdots & 0_N
   \end{pmatrix}\,.
 $$
 
