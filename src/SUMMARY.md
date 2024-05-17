@@ -44,4 +44,4 @@
 
 [Übung 1](psets/01.md)
 [Übung 2](psets/02.md)
-[Übung 3]()
+[Übung 3](psets/03.md)

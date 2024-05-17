@@ -267,7 +267,7 @@ ax2.legend()
 
 plt.tight_layout()
 plt.show()
-### ANCHOR_END: exercise_03_a
+### ANCHOR_END: exercise_03_b
 
 fig.savefig('../../assets/figures/02-differential_equations/shooting_method_pib_step.svg')
 
