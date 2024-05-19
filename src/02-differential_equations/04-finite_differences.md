@@ -115,11 +115,11 @@ mit dem Hilfsvektor
 $$
   \hat{e}^{i+1} - \hat{e}^{i-1} = 
   \begin{pmatrix}
-    0_1 & \cdots & 0_{i-2} & 1_{i-1} & 0_i & -1_{i+1} & 0_{i+2} & \cdots & 0_N
+    0_1 & \cdots & 0_{i-2} & -1_{i-1} & 0_i & 1_{i+1} & 0_{i+2} & \cdots & 0_N
   \end{pmatrix}\,.
 $$
 
-Die Ableitung an der Stelle $x_i$ kann gemäß Gl. {eqref: eq:finite_difference_symmetric_second_order} 
+Die Ableitung an der Stelle $x_i$ kann gemäß Gl. {{eqref: eq:finite_difference_symmetric_second_order}} 
 also als  $\frac{1}{2h} \langle \hat{e}^{i+1} - \hat{e}^{i-1}, \vec{y} \rangle$
 geschrieben werden. Da wir die Ableitung an allen Gridpunkten berechnen wollen,
 setzen wir das Muster fort und erhalten eine Matrixgleichung
@@ -195,7 +195,7 @@ verallgemeinern.
 Mit dieser Formel können wir die Matrixdarstellung des Operators für die
 zweite Ableitung, hier als $\bm{D}^{(2)}$ bezeichnet, konstruieren:
 $$
-  \bm{D}^{(2)} = \frac{1}{4h^2}
+  \bm{D}^{(2)} = \frac{1}{h^2}
   \begin{pmatrix}
     -2 & 1 & 0 & 0 & \cdots & 0 & 0 \\
     1 & -2 & 1 & 0 & \cdots & 0 & 0 \\
