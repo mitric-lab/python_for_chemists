@@ -14,11 +14,11 @@ das Anwendungsgebiet noch weiter ausdehnt: die Konversion der
 Röntgenbeugungsmuster in die Struktur eines Kristalls, die Berechnung des
 Infrarot-Spektrums aus dem Interferogramm, die Beziehung zwischen dem Ort und
 dem Impuls eines Teilchens in der Quantenmechanik, um nur einige Beispiele 
-aus der Chemie zu nennen. Es gibt fast unzählige writere Anwendungen in
+aus der Chemie zu nennen. Es gibt fast unzählige weitere Anwendungen in
 verschiedesten Bereichen. Damit dieses Skript nicht zu lang wird, werden
-wir uns in diesem Kapitel auf wenige v.a. chemische Anwendungen beschränken.
+wir uns in diesem Kapitel auf einige wenige chemische Anwendungen beschränken.
 
-Es sei noch angemerkt, dass die Fourier-Analyse für die Lösung einiger Arten
+Es sei noch angemerkt, dass die Fourier-Analyse auch für die Lösung einiger Arten
 von Differentialgleichungen verwendet werden kann, um eine Verknüpfung zum
 vorherigen Kapitel herzustellen.
 

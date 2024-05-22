@@ -15,16 +15,27 @@ assert np.allclose(bg_dx, spl_dx)
 ### ANCHOR_END: import_data
 
 ### ANCHOR: plot_interferograms
-fig1, ax1 = plt.subplots(figsize=(8, 4))
+int_x = spl_int - bg_int
+
+fig1, [ax1, ax2] = plt.subplots(1, 2, figsize=(8, 4))
 
 ax1.plot(bg_dx, bg_int, label='background')
 ax1.plot(spl_dx, spl_int, label='sample')
 
 ax1.set_xlabel('relative shift / step')
 ax1.set_ylabel('intensity / arb. u.')
-ax1.set_xlim(-250, 250)
+ax1.set_xlim(-200, 200)
 
 ax1.legend()
+
+ax2.plot(bg_dx, int_x, label='difference')
+
+ax2.set_xlabel('relative shift / step')
+ax2.set_ylabel('intensity / arb. u.')
+ax2.set_xlim(-200, 200)
+
+ax2.legend()
+
 fig1.tight_layout()
 
 plt.show()
@@ -33,8 +44,6 @@ plt.show()
 #fig1.savefig('../../assets/figures/03-fourier_analysis/ir_interferograms.svg')
 
 ### ANCHOR: dft_signal
-int_x = spl_int - bg_int
-
 nx = len(spl_dx)
 int_nu = np.zeros(nx, dtype=complex)
 n_array = np.arange(nx)
