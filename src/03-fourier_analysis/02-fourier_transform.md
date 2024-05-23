@@ -10,7 +10,7 @@ $$
 $$
 oder explizit mit der Winkelfrequenz:
 $$
-  c: \mathbb{Z} \ni n \mapsto c(\omega_n) \in \mathbb{c}\,,
+  c: \mathbb{Z} \ni n \mapsto c(\omega_n) \in \mathbb{C}\,,
 $$
 wobei $\omega_n = n \omega$.
 
@@ -22,8 +22,10 @@ $$
   F_{\mathrm{b}}(\omega_n) = \int_{-\infty}^{\infty} f(t) \eu^{-\iu \omega_n t} \du t\,,
 $$
 wobei wir den Vorfaktor $1/T$ ignoriert haben, da dieser für $T \to \infty$
-verschwindet. Da wir so keine sinnvolle Definition für die Koeffizienten erhalten,
-werden diese nicht mehr als $c$, sondern als $F_{\mathrm{b}}$ bezeichnet. 
+gegen unendlich explodiert und wir somit keine sinnvolle Definition für
+die Koeffizienten erhalten. Um den Unterschied dieser Größe zu den 
+Fourier-Koeffizienten zu verdeutlichen, bezeichnen wir diese nicht mehr als $c$,
+sondern als $F_{\mathrm{b}}$. 
 
 Die Grenzwertbildung hat auch eine Auswirkung auf die Winkelfrequenz 
 $\omega_n$:
@@ -138,14 +140,14 @@ $$
 $$
 ```
 
-Diese "Funktion" hat die Eigenschaft, dass das Integral über ihr Produkt
-mit einer beliebigen Funktion $g(t)$, diese Funktion ausgewertet an der Stelle
-$0$ liefert:
+Diese "Funktion" hat die Eigenschaft, wenn das Integral über ihr Produkt
+mit einer beliebigen Funktion $g(t)$ gebildet wird, diese Funktion ausgewertet 
+an der Stelle $0$ liefert, also
 $$
   \int_{-\infty}^{\infty} \delta(t) g(t) \du t = g(0)\,.
 $$
 
-Es gilt also insgesamt
+Es gilt insgesamt
 $$
   \mathring{f}(t) = \int_{-\infty}^{\infty} f(t') (2\pi \delta(t-t')) \du t'
     = 2\pi f(t)\,.

@@ -63,9 +63,28 @@ in diesem Fall $2\pi \frac{2}{50}$ ist.
 Tatsächlich können Kreisfrequenzen, die größer sind als die halbe Abtastfrequenz 
 (hier also etwa $\pi$), nicht mehr dargestellt werden.
 Die folgende Animation zeigt das diskretisierte Signal für $k = 0, \cdots, 49$:
+
 <p>
   <img src="../assets/figures/03-fourier_analysis/dft_sampling_figures/dft_sampling.gif" alt="DFT Sampling animation" />
 </p>
+
+<img id="dft_anim">
+<input id="val_dft" type="range" min="0" max="49" value="0" step="1" oninput="showVal(this.value)" onchange="showVal(this.value)" style="width: 100%;"/>
+<!--
+<span id="range">0</span>
+-->
+
+<script>
+    var basePath = "../assets/figures/03-fourier_analysis/dft_sampling_figures/";
+    var val = document.getElementById("val_dft").value;
+    // document.getElementById("range").innerHTML=val;
+    document.getElementById("dft_anim").src = basePath + String(val).padStart(4, "0") + ".png";
+    function showVal(newVal){
+    //     document.getElementById("range").innerHTML=newVal;
+        document.getElementById("dft_anim").src = basePath + String(newVal).padStart(4, "0") + ".png";
+    }
+</script>
+
 Es kann gezeigt werden, dass abhängig von der Anzahl der Datenpunkte $N$ folgende
 Beziehung gilt:
 $$
