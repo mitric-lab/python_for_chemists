@@ -52,3 +52,9 @@ pre, code {
 .sidetoc {
     display: none;
 }
+
+.content main {
+    max-width: var(--content-max-width);
+    padding-right: 0px;
+}
+
