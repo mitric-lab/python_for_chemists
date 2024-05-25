@@ -40,7 +40,7 @@ kontinuierlich aktualisiert.
 |  8  | Do.     | 06.06. | Vorlesung   | EVD und SVD II  |
 |  9  | Di.     | 11.06. | Vorlesung   | EVD und SVD III |
 |  9  | Do.     | 13.06. | Übung       | EVD und SVD     |
-| 10  | Di.     | 18.06. |             |                 |
+| 10  | ~~Di.~~ | ~~18.06.~~ | Vorlesungsfrei | ChemCup         |
 | 10  | Do.     | 20.06. |             |                 |
 | 11  | Di.     | 25.06. |             |                 |
 | 11  | Do.     | 27.06. |             |                 |
