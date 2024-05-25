@@ -293,7 +293,17 @@ anwenden und die Ergebnisse mit denen unserer eigener Implementierung vergleiche
 
 ---
 
-### Übung: IR-Spektrum von Mesitylen aus Molekulardynamik-Simulation
+### Übung
+
+#### Aufgabe 1: IR-Spektrum von Mesitylen aus Molekulardynamik-Simulation
 
 {{#include ../psets/03.md:aufgabe_1}}
+
+#### Aufgabe 2: Eigenschaften der Fourier-Transformation
+
+{{#include ../psets/03.md:aufgabe_2}}
+
+#### Zusatzaufgabe: Matrix- und Vektormultiplikation
+
+{{#include ../psets/03.md:aufgabe_3}}
 
