@@ -381,3 +381,11 @@ Die Antwort ist ein klares Ja, und wir werden uns im nächsten Abschnitt mit
 der Singulärwertzerlegung beschäftigen, die als die Verallgemeinerung der
 Eigenwertzerlegung für allgemeine Matrizen betrachtet werden kann.
 
+---
+
+### Übung
+
+#### Aufgabe 1: Hückel-Theorie
+
+{{#include ../psets/04.md:aufgabe_1}}
+

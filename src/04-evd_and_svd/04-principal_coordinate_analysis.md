@@ -285,3 +285,11 @@ im Detail verstehen, aber es lohnt sich, ihn auszuprobieren:
 
 Die Interpretation der resultierenden Abbildung ist dem Lesenden überlassen.
 
+---
+
+### Übung
+
+#### Aufgabe 3: PCoA und Molekulare Fingerprints
+
+{{#include ../psets/04.md:aufgabe_3}}
+

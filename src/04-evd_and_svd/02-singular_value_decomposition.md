@@ -148,3 +148,11 @@ a = np.random.rand(9, 6)
 u, s, vh = np.linalg.svd(a, full_matrices=False)
 ```
 
+---
+
+### Übung
+
+#### Aufgabe 2: SVD und Eigengesichter
+
+{{#include ../psets/04.md:aufgabe_2}}
+
