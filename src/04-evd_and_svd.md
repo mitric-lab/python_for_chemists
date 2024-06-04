@@ -13,13 +13,13 @@ definiert ist. Die Singulärwertzerlegung einer Matrix
 $\bm{A}\in \R{m}{n}$ ist gegeben durch $\bm{A} = \bm{U} \bm{\Sigma} \bm{V}^\intercal$, 
 wobei $\bm{\Sigma}\in \R{m}{n}$ eine Diagonalmatrix der Singulärwerte
 und $\bm{U}\in \R{m}{m}$ und $\bm{V}\in \R{n}{n}$ orthogonale Matrizen sind.
-Die genauen Definitionen werden wir noch in diesem Kapitel kennenlernen.
+Die genauen Hintergründe werden wir noch in diesem Kapitel kennenlernen.
 
 Nach der Meinung der Autoren ist die Singulärwertzerlegung **die** wichtigste
-Matrixzerlegung in der (numerischen) linearen Algebra, die fast unzählige
-Anwendungen in der Naturwissenschaft, Technik und darüber hinaus hat. 
+Matrixzerlegung in der (numerischen) linearen Algebra und umfasst unzählige
+Anwendungen in der Naturwissenschaft, Technik und darüber hinaus. 
 Gleichzeitig bildet sie die Basis für viele moderne Algorithmen.
-In diesem Kapitel werden wir uns mit
+In diesem Kapitel werden wir uns mit der
 Eigenwert- und Singulärwertzerlegung beschäftigen und ihre Bedeutung für die
 Quantenchemie, die Datenanalyse und das maschinelle Lernen diskutieren.
 
