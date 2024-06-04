@@ -66,7 +66,7 @@ beschränken, die sogenannten
 Matrix $\bm{A}\in\C{n}{n}$ heißt normal, wenn sie mit ihrer Transponierten
 kommutiert, also wenn $\bm{A}^\dag \bm{A} = \bm{A} \bm{A}^\dag$ gilt.
 Solche Matrizen sind unitärdagonalisierbar, d.h. die Matrix $\bm{Q}$ ist
-orthogonal. Damit gilt
+unitär. Damit gilt
 $$
   \bm{Q}^{-1} = \bm{Q}^\dag = \begin{pmatrix}
     \text{---}\ \vec{v}_1^\dag\ \text{---} \\
