@@ -1,22 +1,24 @@
 ## Hauptkomponentenanalyse
 
-Die Singulärwertzerlegung einer Matrix $\bm{A}$ in der Form
+Wir betrachten wieder die Singulärwertzerlegung einer Matrix $\bm{A}$ in der Form
 $$
   \bm{A} = \sum_{i=1}^p \sigma_i \vec{u}_ i \vec{v}_ i^\dag
 $$
-mit Singulärvektoren $\vec{u}_ i$ und $\vec{v}_ i$ sowie Singulärwerten 
-$\sigma_i$ 
-(vgl. Gl. {{eqref: eq:singular_value_decomposition}})
-suggestiert eine Approximation der Matrix $\bm{A}$ durch Abschneiden der Summe
-bis zum $k$-ten Summanden:
+mit Singulärvektoren $\vec{u}_ i$ und $\vec{v}_ i$, sowie Singulärwerten 
+$\sigma_i$ (vgl. Gl. {{eqref: eq:singular_value_decomposition}}).
+Diese Gleichung suggestiert eine Approximation der Matrix $\bm{A}$ durch 
+Abschneiden der Summe nach dem $k$-ten Summanden:
 $$
-  \bm{A_k} = \sum_{i=1}^k \sigma_i \vec{u}_ i \vec{v}_ i^\dag\,.
+  \bm{A_k} = \sum_{i=1}^k \sigma_i \vec{u}_ i \vec{v}_ i^\dag\,,
 $$
-mit $k \leq p$ und absteigend sortierten Singulärwerten 
-$\sigma_1 \geq \sigma_2 \geq \ldots \geq \sigma_p$.
+wobei wir absteigend sortierten Singulärwerten 
+$\sigma_1 \geq \sigma_2 \geq \ldots \geq \sigma_p$ annehmen, und $k < p$.
 Man spricht hier von einer Rang-$k$-Approximation der Matrix $\bm{A}$,
-da $\bm{A_k}$ aus der Summe von $k$ (linear unabhängigen) Rang-1-Matrizen besteht.
-Wie gut ist denn diese Approximation? Eine Antwort auf diese Frage liefert das
+da $\bm{A_k}$ aus der Summe von $k$ (linear unabhängigen) Rang-1-Matrizen 
+$\vec{u}_ i \vec{v}_ i^\dag$ besteht.
+Wie gut ist diese Approximation? Eine Antwort auf diese Frage liefert das
+folgende Theorem, welches erstmals von Erhard Schmidt bewiesen wurde:
+
 ```admonish note title="Eckart-Young-Theorem"
 Sei $\bm{A} \in \C{m}{n}$ eine beliebige Matrix mit der SVD
 $\bm{A} = \sum_{i=1}^p \sigma_i \vec{u}_ i \vec{v}_ i^\dag$, wobei 
@@ -33,17 +35,16 @@ $$
   \|\bm{A}\|_F = \sqrt{\sum_{i=1}^m \sum_{j=1}^n |a_{ij}|^2}\,.
 $$
 
-Der Beweis dieses Theorems erfordert einige Kenntnisse der linearen Algebra
-und wird sehr schnell sehr technisch, wenn man alles "zu Fuß" zeigt. Deshalb
-wird hier auf den Beweis verzichtet, die Interessierten können z.B.
-[hier](https://en.wikipedia.org/wiki/Low-rank_approximation#Proof_of_Eckart–Young–Mirsky_theorem_(for_Frobenius_norm)
-einen Beweis finden.
+Der Beweis dieses Theorems erfordert einige Kenntnisse der linearen Algebra,
+weswegen wir hier auf den Beweis verzichten. Interessierten können ihn z.B.
+[hier](https://en.wikipedia.org/wiki/Low-rank_approximation#Proof_of_Eckart–Young–Mirsky_theorem_(for_Frobenius_norm))
+nachlesen.
 ```
 
 
 ```admonish note title="Eckart-Young-Mirsky-Theorem" collapsible=true
-Leon Mirsky konnte die obige Approximationseigenschaft auf beliebigt
-*unitär invariante Norm* erweitern. 
+Leon Mirsky konnte die obige Approximationseigenschaft auf beliebig
+*unitär invariante Normen* erweitern. 
 Eine Norm $\|\cdot\|$ ist *unitär invariant*, wenn für beliebige unitäre
 Matrizen $\bm{U}\in \C{m}{m}$ und $\bm{V}\in \C{n}{n}$ die Bedingung
 $$
@@ -58,49 +59,59 @@ mit $p = \min(m,n)$ aufgeführt:
     \|\bm{A}\|_F = \sqrt{\sum_{i=1}^m \sum_{j=1}^n |a_{ij}|^2}
     = \sqrt{\sum_{i=1}^{p} \sigma_i^2}\,,
   $$
-- Die [Spektralnorm](https://de.wikipedia.org/wiki/Spektralnorm)
+- die [Spektralnorm](https://de.wikipedia.org/wiki/Spektralnorm)
   $$
     \|\bm{A}\|_2 = \max_{\|\vec{x}\|_2 = 1} \|\bm{A}\vec{x}\|_2
     = \sigma_1\,,
   $$
-  und
-- Die [Ky-Fan-Norm](https://en.wikipedia.org/wiki/Matrix_norm#Ky-Fan_norm)
+- und die [Ky-Fan-Norm](https://en.wikipedia.org/wiki/Matrix_norm#Ky-Fan_norm)
 oder auch Spurnorm
   $$
     \|\bm{A}\|_{*} = \sum_{i=1}^{p} \sigma_i\,.
   $$
+
 Alle drei Normen sind Spezialfälle der 
 [Schatten-Normen](https://de.wikipedia.org/wiki/Matrixnorm#Schatten-Normen).
 ```
 
-Das [Eckart-Young-Theorem](https://en.wikipedia.org/wiki/Low-rank_approximation#Basic_low-rank_approximation_problem),
-welches zuerst von Erhard Schmidt bewiesen wurde, besagt also, dass
+Das [Eckart-Young-Theorem](https://en.wikipedia.org/wiki/Low-rank_approximation#Basic_low-rank_approximation_problem) besagt also, dass
 die SVD nicht nur eine gute Approximation der Matrix $\bm{A}$ liefert,
 sondern sogar die **beste** Approximation bis zum Rang $k$ bezüglich der 
-Frobenius-Norm.
+Frobenius-Norm ist.
 
 Die SVD liefert uns aber noch mehr als nur eine Approximation der Matrix 
-$\bm{A}$. Da die Approximation sukzessive durch Abschneiden der Singulärwerte
-erfolgt, kann die Rang-1-Matrix korrespondierend zum Größten Singulärwert
-$\sigma_1 \vec{u}_ 1 \vec{v}_ 1^\dag$ als die "wichtigste" Komponente, 
+$\bm{A}$. Da die Approximation durch die gewichteten Summe von Rang-1-Matrizen
+erfolgt, kann diejenige Rang-1-Matrix korrespondierend zum Größten Singulärwert
+$\sigma_1 \vec{u}_ 1 \vec{v}_ 1^\dag$ als die *wichtigste* Komponente, 
 die *Hauptkomponente*, der Matrix $\bm{A}$ interpretiert werden.
-Der Singulärwert $\sigma_1$ gibt dabei an, wie wichtig diese Hauptkomponente
+Der Singulärwert $\sigma_1$ gibt dabei an, wie *wichtig* diese Hauptkomponente
 für die Matrix $\bm{A}$ ist. Die weiteren Rang-1-Matrizen 
-$\sigma_i \vec{u}_ i \vec{v}_ i^\dag$ mit $i > 1$ können als die
-nächsten wichtigen Komponenten interpretiert werden, mit dem jeweiligen
+$\sigma_i \vec{u}_ i \vec{v}_ i^\dag$ mit $i > 1$ können dann als die
+nachfolgenden Komponenten interpretiert werden, mit dem jeweiligen
 Gewicht $\sigma_i$. Diese Interpretation führt uns zur 
 *Hauptkomponentenanalyse* (engl. *Principal Component Analysis*, PCA),
 welche in der Praxis häufig zur Dimensionsreduktion von Daten verwendet wird.
 
 ### Theoretische Grundlagen
 
-Wir betrachten eine Messung von $P$ Merkmalen (engl. *features*) an $N$ 
+Wir betrachten eine Messung von jeweils $P$ Merkmalen (engl. *features*) an $N$ 
 Proben (engl. *samples*), welche durch eine $N \times P$-Matrix 
 $\widetilde{\bm{X}}$ repräsentiert wird. Die $i$-te Zeile der Matrix 
 $\widetilde{\bm{X}}$ entspricht dabei den $P$ Merkmalen der $i$-ten Probe.
 
-Der erste Schritt der PCA ist die Vorverarbeitung der Daten auf einer
-der zwei möglichen Arten: Zentrierung oder Standardisierung. Hierzu
+```admonish note title="Die Datenmatrix"
+Stellen Sie sich als Beispiel eine Messreihe von $N$ Proben vor (z.B. bei verschiedenen
+Konzentrationen), wobei Sie für jede Probe $P$ Merkmale messen (Temperatur, Absorption, 
+etc.). Die Datenmatrix $\widetilde{\bm{X}}$ repräsentiert dann Ihre gesamten Messdaten, 
+wobei jede Zeile die Merkmale einer Messung enthält.
+
+Wir werden in den folgenden Abschnitten und Kapiteln häufig von dieser Darstellung der 
+Daten ausgehen, da sie die Basis für die meisten Methoden der Datenanalyse und des
+maschinellen Lernens bildet.
+```
+
+Der erste Schritt der PCA ist die Vorverarbeitung der Daten auf eine der
+zwei möglichen Arten: Zentrierung oder Standardisierung. Hierzu
 schreiben wir die Datenmatrix $\widetilde{\bm{X}}$ als
 $$
   \widetilde{\bm{X}} =
@@ -113,11 +124,11 @@ $$
 $$
 mit den Messdaten $\vec{x}_ i \in \mathbb{R}^P$. Jeder Datenpunkt ist also 
 ein $P$-dimensionaler Vektor, wobei die Features die Basisvektoren darstellen. 
-Nun definieren wir die Mittelwerte Messung $\vec{\mu}$ als
+Nun definieren wir die Mittelwerte über alle Messungen $\vec{\mu}$ als
 $$
   \vec{\mu} = \frac{1}{N} \sum_{i=1}^N \vec{x}_ i\,.
 $$
-Bei der **Zentrierung** subtrahieren wir von jedem Datenpunkt den Mittelwert:
+Bei der **Zentrierung** subtrahieren wir von jedem Datenpunkt diesen Mittelwert:
 $$
   \bm{X} = 
     \begin{pmatrix}
@@ -128,25 +139,25 @@ $$
     \end{pmatrix}\,,
 $$ 
 um die zentrierte Datenmatrix $\bm{X}$ zu erhalten. Man kann sich leicht
-überzeugen, dass die zentrierte Datenmatrix $\bm{X}$ sich durch
+überzeugen, dass die zentrierte Datenmatrix $\bm{X}$ durch
 $$
   \bm{X} = \widetilde{\bm{X}} - \frac{1}{N} \mathbf{1}_N \widetilde{\bm{X}} 
   = (\identity_N - \frac{1}{N} \mathbf{1}_N) \widetilde{\bm{X}}
   {{numeq}}{eq:centre_data_matrix}
 $$
-berechnen lässt, wobei $\identity_N$ die $N \times N$-Einheitsmatrix und
+gegeben ist, wobei $\identity_N$ die $N \times N$-Einheitsmatrix und
 $\mathbf{1}_N$ eine $N \times N$-Matrix mit lauter Einsen ist.
 
 Manchmal kommt es vor, dass die Features in unterschiedlichen 
-Größenordnungen auftreten bzw. in unterschiedlichen Einheiten gemessen 
-werden. In diesem Fall ist es sinnvoll, neben der Mittelwertsubtraktion
-noch eine Normierung der Daten durchzuführen. Die Kombination dieser
-zwie Schritte wird als **Standardisierung** bezeichnet.
-Nach der Berechnung der Standardabweichung der $j$-ten Feature durch
+Größenordnungen auftreten, bzw. in unterschiedlichen Einheiten gemessen 
+werden. In diesem Fall ist es sinnvoll, **zusätzlich** zu der Mittelwertsubtraktion
+auch eine Normierung der Daten durchzuführen. Die Kombination dieser
+zwei Schritte wird als **Standardisierung** bezeichnet.
+Nach der Berechnung der Standardabweichung der $j$-ten Features durch
 $$
-  \sigma_j = \sigma(\{x_{1j}, x_{2j}, \ldots, x_{Nj}\}) = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_{ij} - \mu_j)^2}\,.
+  \sigma_j = \sigma(\{x_{1j}, x_{2j}, \ldots, x_{Nj}\}) = \sqrt{\frac{1}{N} \sum_{i=1}^N (x_{ij} - \mu_j)^2}\,,
 $$
-kann die Standardisierte Datenmatrix $\bm{X}$ durch
+kann die standardisierte Datenmatrix $\bm{X}$ durch
 $$
   \bm{X} = 
     \begin{pmatrix}
@@ -162,11 +173,10 @@ $$
        &  &  & \sigma_P^{-1}
     \end{pmatrix}
 $$
-berechnet werden. In anderen Worten heißt das, dass wir zusätzlich zu
-der zeilenweisen Mittelwertsubtraktion noch 
-die $j$-te Spalte durch die Standardabweichung $\sigma_j$ teilen müssen.
-Je nach Art der Daten soll entschieden werden, ob eine Zentrierung
-oder Standardisierung durchgeführt werden soll.
+berechnet werden. In anderen Worten heißt das, dass die Gesamtheit unserer
+Messdaten nun Mittelwert 0 und Standardabweichung 1 haben.
+Je nach Art der Daten muss entschieden werden, ob eine Zentrierung
+oder Standardisierung durchgeführt werden sollte.
 
 Anschließend berechnen wir die Singulärwertzerlegung der standardisierten
 Datenmatrix $\bm{X}$:
