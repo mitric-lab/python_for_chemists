@@ -118,7 +118,6 @@ plot_faces(faces[:,idx], n, m, ncols=6)
 ### ANCHOR: exercise_02_b
 # Define training set
 X = faces[:,:idx[36]]
-print(idx[36])
 
 # Calculate the mean face and subtract it from the training set
 mean_face = np.mean(X, axis=1)
@@ -277,3 +276,5 @@ fig.canvas.mpl_connect('motion_notify_event', hover)
 
 plt.show()
 ### ANCHOR_END: exercise_03_a
+
+#fig.savefig('../../assets/figures/04-evd_and_svd/molecule_with_h_pcoa.svg')
