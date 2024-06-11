@@ -343,3 +343,10 @@ Tatsächlich lassen sich die Hauptkomponenten allein aus solchen Abständen
 bestimmen. Eine Realisierung bietet die Methode der 
 *Hauptkoordinatenanalyse* (engl. *Principal Coordinate Analysis*, PCoA).
 
+---
+
+### Übung
+
+#### Aufgabe 3: PCA mit Eigengesichtern
+
+{{#include ../psets/04.md:aufgabe_3}}

@@ -289,7 +289,7 @@ Die Interpretation der resultierenden Abbildung ist dem Lesenden überlassen.
 
 ### Übung
 
-#### Aufgabe 3: PCoA und Molekulare Fingerprints
+#### Aufgabe 4: PCoA und Molekulare Fingerprints
 
-{{#include ../psets/04.md:aufgabe_3}}
+{{#include ../psets/04.md:aufgabe_4}}
 
