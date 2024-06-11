@@ -33,8 +33,9 @@
     - [Hauptkoordinatenanalyse](04-evd_and_svd/04-principal_coordinate_analysis.md)
     - [Lineare Gleichungssysteme](04-evd_and_svd/05-linear_equations.md)
 
-
 - [Maschinelles Lernen](05-machine_learning.md)
+    - [Überwachtes Lernen]()
+    - [Unüberwachtes Lernen]()
 
 - [Neuronale Netzwerke](06-neural_networks.md)
 
