@@ -66,7 +66,7 @@ beschränken, die sogenannten
 Matrix $\bm{A}\in\C{n}{n}$ heißt normal, wenn sie mit ihrer Transponierten
 kommutiert, also wenn $\bm{A}^\dag \bm{A} = \bm{A} \bm{A}^\dag$ gilt.
 Solche Matrizen sind unitärdagonalisierbar, d.h. die Matrix $\bm{Q}$ ist
-orthogonal. Damit gilt
+unitär. Damit gilt
 $$
   \bm{Q}^{-1} = \bm{Q}^\dag = \begin{pmatrix}
     \text{---}\ \vec{v}_1^\dag\ \text{---} \\
@@ -215,8 +215,8 @@ $$
     &= \bm{Q}_k^\dag \textcolor{darkcyan}{\bm{R}_{k-1} \bm{Q}_{k-1}} \bm{Q}_k \\
     &= \bm{Q}_k^\dag \textcolor{orange}{\identity} \textcolor{darkcyan}{\bm{R}_{k-1} \bm{Q}_{k-1}} \bm{Q}_k \\
     &= \bm{Q}_k^\dag \textcolor{orange}{\bm{Q}_{k-1}^\dag \bm{Q}_{k-1}} \textcolor{darkcyan}{\bm{R}_{k-1} \bm{Q}_{k-1}} \bm{Q}_k \\
-    &= \bm{Q}_k^\dag \textcolor{orange}{\bm{Q}_{k-1}^\dag} \textcolor{lightgreen}{\bm{A}_{k-1}} \textcolor{darkcyan}{\bm{Q}_{k-1}} \bm{Q}_k \\
-    &  \vdots \\
+    &= \bm{Q}_k^\dag \textcolor{orange}{\bm{Q}_{k-1}^\dag} \textcolor{brown}{\bm{A}_{k-1}} \textcolor{darkcyan}{\bm{Q}_{k-1}} \bm{Q}_k \\
+    &  \phantom{=} \vdots \\
     &= \bm{Q}_k^\dag \bm{Q}_{k-1}^\dag \cdots \bm{Q}_0^\dag \textcolor{red}{\bm{A}_0} \bm{Q}_0 \bm{Q}_1 \cdots \bm{Q}_{k-1} \bm{Q}_k \\
     &= \underbrace{\bm{Q}_k^\dag \bm{Q}_{k-1}^\dag \cdots \bm{Q}_0^\dag \textcolor{red}{\bm{Q}}}_{:=\bm{P}_k} 
       \textcolor{red}{\bm{\Lambda}}
@@ -234,7 +234,7 @@ deren Eigenwerte auf der Diagonalen stehen. Diese Eigenwerte sind dann
 gleichzeitig die Eigenwerte der Ausgangsmatrix $\bm{A}$. Ist die Ausgangsmatrix
 $\bm{A}$ zudem normal, so konvergiert die Folge der Matrizen gegen eine 
 Diagonalmatrix, da alle normalen Dreiecksmatrizen diagonal sind.
-Da die Matrix der Eigenvektoren $\bm{Q}$ einer Diagonalmatrix die 
+Da die Matrix der Eigenvektoren $\bm{Q}$ eine Diagonalmatrix die 
 Einheitsmatrix $\identity$ ist, also $\bm{P}_k \approx \identity$, folgt aus
 der obigen Definition
 $$

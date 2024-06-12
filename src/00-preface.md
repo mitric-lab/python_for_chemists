@@ -41,10 +41,10 @@ kontinuierlich aktualisiert.
 |  9  | Di.     | 11.06. | Vorlesung   | EVD und SVD III |
 |  9  | Do.     | 13.06. | Übung       | EVD und SVD     |
 | 10  | ~~Di.~~ | ~~18.06.~~ | Vorlesungsfrei | ChemCup         |
-| 10  | Do.     | 20.06. |             |                 |
-| 11  | Di.     | 25.06. |             |                 |
-| 11  | Do.     | 27.06. |             |                 |
-| 12  | Di.     | 02.07. |             |                 |
+| 10  | Do.     | 20.06. | Vorlesung   | Maschinelles Lernen I |
+| 11  | Di.     | 25.06. | Vorlesung   | Maschinelles Lernen II |
+| 11  | Do.     | 27.06. | Vorlesung   | Maschinelles Lernen III |
+| 12  | Di.     | 02.07. | Übung       | Maschinelles Lernen |
 | 12  | Do.     | 04.07. |             |                 |
 | 13  | Di.     | 09.07. |             |                 |
 | 13  | Do.     | 11.07. |             |                 |

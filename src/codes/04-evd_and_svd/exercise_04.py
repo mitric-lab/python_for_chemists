@@ -118,7 +118,6 @@ plot_faces(faces[:,idx], n, m, ncols=6)
 ### ANCHOR: exercise_02_b
 # Define training set
 X = faces[:,:idx[36]]
-print(idx[36])
 
 # Calculate the mean face and subtract it from the training set
 mean_face = np.mean(X, axis=1)
@@ -174,6 +173,42 @@ plot_faces(np.array(recon_images).T, n, m, ncols=4)
 #plt.savefig('../../assets/figures/04-evd_and_svd/eigenfaces_dog_reconstruction.svg')
 
 ### ANCHOR: exercise_03_a
+# Choose two persons
+p1 = 5
+p2 = 7
+
+# Extract the faces of the two persons
+p1_faces = faces[:,idx[p1-1]:idx[p1]] - mean_face[:, np.newaxis]
+p2_faces = faces[:,idx[p2-1]:idx[p2]] - mean_face[:, np.newaxis]
+
+# Choose two principal axes
+pa1 = 5
+pa2 = 6
+
+# Project the faces of the two persons onto the two principal axes
+pca_p1 = U[:,[pa1-1, pa2-1]].T @ p1_faces
+pca_p2 = U[:,[pa1-1, pa2-1]].T @ p2_faces
+
+# Plot the faces of the two persons in the PCA space
+fig, ax = plt.subplots(figsize=(6, 6))
+
+ax.plot(pca_p1[0,:], pca_p1[1,:], 'o', color='blue', label=f'Person {p1}')
+ax.plot(pca_p2[0,:], pca_p2[1,:], 'o', color='red', label=f'Person {p2}')
+
+ax.set_xticks([])
+ax.set_xlabel(f'PCA {pa1}')
+ax.set_yticks([])
+ax.set_ylabel(f'PCA {pa2}')
+ax.legend()
+
+fig.tight_layout()
+
+plt.show()
+### ANCHOR_END: exercise_03_a
+
+#plt.savefig('../../assets/figures/04-evd_and_svd/eigenfaces_pca.svg')
+
+### ANCHOR: exercise_04_a
 from matplotlib.offsetbox import AnnotationBbox, OffsetImage
 from rdkit import Chem
 from rdkit.Chem import Draw
@@ -276,4 +311,6 @@ def hover(event):
 fig.canvas.mpl_connect('motion_notify_event', hover)
 
 plt.show()
-### ANCHOR_END: exercise_03_a
+### ANCHOR_END: exercise_04_a
+
+#fig.savefig('../../assets/figures/04-evd_and_svd/molecule_with_h_pcoa.svg')
