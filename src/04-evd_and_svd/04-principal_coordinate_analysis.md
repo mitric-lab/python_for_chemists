@@ -228,7 +228,7 @@ sinnvoll, die Anzahl der unterschiedlichen Bindungen zwischen den Molekülen
 als Abstand zu verwenden. Wir bilden also die Differenz der 
 Fingerprint-Arrays und zählen die Absolutwerte der Unterschiede zusammen:
 ```python
-{{#include ../codes/04-evd_and_svd/molecule_pcoa.py:distance_matrix}}
+{{#include ../codes/04-evd_and_svd/molecule_pcoa.py:calculate_distances}}
 ```
 Nach dem Initialisieren der Abstandsmatrix `distances` mit Nullen iterieren
 wir die Index `i` über die Anzahl der Moleküle und die Index `j` von `i + 1`
