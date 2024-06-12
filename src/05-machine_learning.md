@@ -19,7 +19,7 @@ betrachten wir das folgende Schaubild:
 
 <figure>
     <center>
-    <img src="../assets/figures/05-machine_learning/ml_scheme.pdf"
+    <img src="./assets/figures/05-machine_learning/ml_scheme.pdf"
          alt="Classical Algorithms vs. ML"
          width="400"\>
     <figcaption>Klassisches Programmieren vs. ML. Quelle: François Chollet, Deep Learning with Python.</figcaption>
