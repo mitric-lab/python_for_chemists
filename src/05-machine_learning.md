@@ -3,6 +3,8 @@
 **Maschinelles Lernen** (engl. *machine learning*, ML) wird häufig als ein Teilgebiet der **Künstlichen 
 Intelligenz** (engl. *artificial intelligence*, AI) betrachtet, welches sich mit der Entwicklung 
 von Algorithmen beschäftig, die es uns erlauben, aus Daten zu lernen und Vorhersagen zu treffen. 
+Dabei wollen wir die grundlegenden Muster und Strukturen in den Daten erkennen, um diese für
+zukünftige Vorhersagen zu nutzen.
 Als Künstliche Intelligenz wiederum verstehen wir diejenigen Systeme, die in der Lage sind, Aufgaben 
 zu erfüllen, die sonst *menschliche Intelligenz* erfordern würden. Dazu gehören beispielsweise das Erkennen 
 von Sprache, das Verstehen von Texten oder das Erkennen von Objekten in Bildern. 
