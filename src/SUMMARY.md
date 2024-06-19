@@ -34,8 +34,7 @@
     - [Lineare Gleichungssysteme](04-evd_and_svd/05-linear_equations.md)
 
 - [Maschinelles Lernen](05-machine_learning.md)
-    <!-- - [Überwachtes Lernen](05-machine_learning/01-supervised_learning.md) -->
-    - [Überwachtes Lernen]()
+    - [Überwachtes Lernen](05-machine_learning/01-supervised_learning.md)
     - [Unüberwachtes Lernen]()
 
 - [Neuronale Netzwerke](06-neural_networks.md)
