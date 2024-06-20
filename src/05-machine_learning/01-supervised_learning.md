@@ -11,7 +11,7 @@ tatsächlichen Ausgabe $y_i$ und der approximierten Ausgabe $\hat{f}_{\theta}(\v
 Dieses Lernen wird als **überwachtes Lernen** bezeichnet, da wir $y_i$ für jede Eingabe 
 $\vec{x}_i$ kennen und somit den Fehler direkt berechnen können.
 
-Gemäß den obigen Überlegungen können wir festhalten, dass jedes ML-Modell, das auf überwachtem Lernen basiert,
+Gemäß der obigen Überlegungen können wir festhalten, dass jedes ML-Modell, welches auf überwachtem Lernen basiert,
 die folgenden Komponenten enthält:
 
 1. **Modell**: Die Funktion $\hat{f}_{\theta}$, die die Eingabe auf die Ausgabe abbildet.
@@ -33,7 +33,7 @@ Lernens einordnen.
 
 Zunächst möchten wir anmerken, dass wir bisher lediglich Inputs $x_i$ betrachtet haben, die nur eine Dimension 
 besitzen, also $x_i \in \mathbb{R}$ für $i = 1,2,\dots,N$. Diese stellten beispielsweise die Konzentrationen von 
-Methylenblau, welche auf die Absorption abgebildet wurden, dar. In der Praxis haben wir jedoch oft mit 
+Methylenblau, welche auf die Absorbanz abgebildet wurden, dar. In der Praxis haben wir jedoch oft mit 
 mehrdimensionalen Inputs $\vec{x}_i \in \mathbb{R}^n$ zu tun, welche $n$ *Features* besitzen. In den vorherigen
 Abschnitten haben wir zur Darstellung dieser Daten die Datenmatrix $\bm{X}$ kennengelernt, welche die Inputs 
 $\vec{x}_i$ in den Zeilen
@@ -69,7 +69,7 @@ einen konstanten Wert $1$ erweitert werden, sodass $\vec{x}_i = (1, x_{i1}, x_{i
 Überprüfen Sie, dass die lineare Regression in diesem Fall äquivalent zur obigen Formulierung ist.
 ```
 
-Gemäß den oben diskutierten Komponenten eines ML-Modells, fehlt uns nun nur noch die Angabe eines 
+Gemäß der oben diskutierten Komponenten eines ML-Modells fehlt uns nun nur noch die Angabe eines 
 Optimierungsverfahrens, 
 um die Modellparameter $\theta$ so zu wählen, dass der Fehler zwischen den Vorhersagen $\hat{\vec{y}}$ und den
 tatsächlichen Labels $\vec{y}$ minimiert wird. In der ersten Übung haben Sie gesehen, dass dieses Problem 
@@ -262,7 +262,7 @@ angewendet werden. Dazu gibt es zwei gängige Verfahren:
 
 ### Objektorientierte Programmierung
 
-Jetzt, da wir das Ziel der binären Klassifikation definiert haben, möchten wir uns einer Art des Programmierens 
+Nachdem wir das Ziel der binären Klassifikation definiert haben, möchten wir uns einer Art des Programmierens 
 zuwenden, die es uns erlaubt, ein solches ML-Modell als ein abstraktes Objekt zu implementieren, das bestimmte 
 Funktionaltäten besitzt. Diese Art des Programmierens nennen wir *Objektorientierte Programmierung* (OOP), und
 sie unterscheidet sich von der Art und Weise, wie wir bisher in diesem Kurs programmiert haben.
@@ -303,14 +303,14 @@ Klasse. Zudem definieren wir die Methode `set_charge`, die die Ladung des Atoms 
 Wir definieren eine weitere Methode `get_electron_configuration`, die auf die Ordnungszahl des Atoms zugreift, 
 um die Elektronenkonfiguration zu bestimmen und als String auszugeben.
 
-Zuletzt können wir mit ´__str__´ eine Methode definieren, die ausgeführt wird, wenn die Instanz des Atoms mit 
+Zuletzt können wir mit `__str__` eine Methode definieren, die ausgeführt wird, wenn die Instanz des Atoms mit 
 dem `print`-Befehl aufgerufen wird:
 
 ```python
 {{#include ../codes/05-machine_learning/atom.py:atom_print}}
 ```
 
-Wir initialisieren nun eine Instanz des Wasserstoffatoms und rufen die Methoden auf:
+Wir initialisieren nun eine Instanz des Kohlenstoffatoms und rufen die Methoden auf:
 
 ```python
 {{#include ../codes/05-machine_learning/atom.py:atom_example}}

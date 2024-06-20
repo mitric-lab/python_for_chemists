@@ -2,12 +2,12 @@
 
 **Maschinelles Lernen** (engl. *machine learning*, ML) wird häufig als ein Teilgebiet der **Künstlichen 
 Intelligenz** (engl. *artificial intelligence*, AI) betrachtet, welches sich mit der Entwicklung 
-von Algorithmen beschäftig, die es uns erlauben, aus Daten zu lernen und Vorhersagen zu treffen. 
+von Algorithmen beschäftigt, die es uns erlauben, aus Daten zu lernen und Vorhersagen zu treffen. 
 Dabei wollen wir die grundlegenden Muster und Strukturen in den Daten erkennen, um diese für
 zukünftige Vorhersagen zu nutzen.
 Als Künstliche Intelligenz wiederum verstehen wir diejenigen Systeme, die in der Lage sind, Aufgaben 
 zu erfüllen, die sonst *menschliche Intelligenz* erfordern würden. Dazu gehören beispielsweise das Erkennen 
-von Sprache, das Verstehen von Texten oder das Erkennen von Objekten in Bildern. 
+von Sprache, das Verstehen von Texten oder die Identifikation von Objekten in Bildern. 
 
 Die Anwendung von ML-Methoden ist in den letzten Jahren immer populärer geworden und hat in unzähligen
 Bereichen Einzug gehalten, auch in der chemischen Forschung. Wir möchten jedoch zu Beginn anmerken, 
@@ -21,7 +21,7 @@ betrachten wir das folgende Schaubild:
 
 <figure>
     <center>
-    <img src="./assets/figures/05-machine_learning/ml_scheme.pdf"
+    <img src="./assets/figures/05-machine_learning/ml_scheme.svg"
          alt="Classical Algorithms vs. ML"
          width="400"\>
     <figcaption>Klassisches Programmieren vs. ML. Quelle: François Chollet, Deep Learning with Python.</figcaption>
@@ -30,18 +30,18 @@ betrachten wir das folgende Schaubild:
 
 Der herkömliche Weg einen Computer nützliche Aufgaben erfüllen zu lassen, besteht darin, ihm
 eine Reihe von Regeln zu übergeben. Diese Regeln werden von einem Programmierer festgelegt und 
-in Form eines Programms umgesetzt. Für einen gegebenen Input, soll der Computer diese Regeln dann
+in Form eines Programms umgesetzt. Für einen gegebenen Input soll der Computer diese Regeln dann
 befolgen, um ein bestimmtes Resultat zu erzeugen.
 
-Im Gegensatz dazu, *lernt* ein ML-Algorithmus aus Daten. Anstatt ihm Regeln vorzugeben, wird ihm
+Im Gegensatz dazu *lernt* ein ML-Algorithmus aus Daten. Anstatt ihm Regeln vorzugeben, wird ihm
 eine Menge von Daten gegeben, die aus den Inputs und erwarteten Outputs bestehen. Der Algorithmus lernt dann
 aus diesen Daten, wie er den Input in den Output umwandeln kann. Das bedeutet, dass der Algorithmus
 selbstständig Regeln aus den Daten extrahiert, anstatt dass diese ihm vorgegeben werden. Diese Regeln 
 werden in Form von *Modellen* repräsentiert, die aus den Daten gelernt werden. Wir werden in den folgenden
 Abschnitten einen Programmierstil kennenlernen, der es uns erlaubt, solche Modelle zu erstellen und anzuwenden.
 
-Man unterscheidet im Allgemeinen zwischen zwei oder mehr Arten von ML-Verfahren, die sich in der Art und Weise
-unterscheiden, wie sie aus den Daten lernen:
+Man unterscheidet im Allgemeinen zwischen zwei oder mehr Arten von ML-Verfahren, die sich durch ihre
+Art des Lernens aus den Daten auszeichnen:
 
 - **Überwachtes Lernen** (engl. *supervised learning*): Hierbei werden dem Algorithmus Daten gegeben, die aus
   Inputs und den dazugehörigen Outputs bestehen. Der Algorithmus lernt dann, wie er die Inputs in die Outputs

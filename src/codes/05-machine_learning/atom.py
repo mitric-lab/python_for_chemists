@@ -36,7 +36,8 @@ class Atom:
 
 ### ANCHOR: atom_print
     def __str__(self):
-        return f"{self.symbol} ({self.charge})"
+        return f"{self.symbol} ({self.charge:+d})" if self.charge != 0 \
+            else f"{self.symbol} (0)"
 ### ANCHOR_END: atom_print
 
 ### ANCHOR: atom_example
@@ -46,7 +47,7 @@ print(atom) # C (0)
 print(atom.get_atomic_number()) # 6
 print(atom.get_electron_config()) # 1s^2 2s^2 2p^2
 atom.set_charge(1)
-print(atom) # C (1)
+print(atom) # C (+1)
 print(atom.get_electron_config()) # 1s^2 2s^2 2p^1
 ### ANCHOR_END: atom_example
 
