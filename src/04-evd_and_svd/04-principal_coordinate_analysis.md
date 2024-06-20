@@ -238,7 +238,7 @@ Abstandsmatrix symmetrisch ist mit Nullen auf der Diagonalen. Nach der
 Berechnung des Abstandes in jeder Iteration setzen wir sowohl das Element
 `distances[i, j]` als auch `distances[j, i]` auf den berechneten Wert.
 
-Jetzt können wir die PCoA gemäß des oben beschriebenen Algorithmus 
+Jetzt können wir die PCoA gemäß dem oben beschriebenen Algorithmus 
 durchführen:
 ```python
 {{#include ../codes/04-evd_and_svd/molecule_pcoa.py:pcoa}}

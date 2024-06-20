@@ -308,7 +308,7 @@ Da die ersten beiden Hauptkomponenten bereits ca. 55 % der Varianz der Daten
 erklären, können wir davon ausgehen, dass wichtige Strukturen des Datensatzes
 in dieser 2D-Projektion erhalten sind. In diesem Plot erkennen wir aber 
 zunächst nur einen Halbkreis an Punkten, sowie ein "Loch" in der Mitte. Um die Struktur der
-Datenpunkte in dieser Projektion besser zu verstehen, können wir die Datenpunkte gemäß der Rebsorten,
+Datenpunkte in dieser Projektion besser zu verstehen, können wir die Datenpunkte gemäß den Rebsorten,
 die wir für die PCA **nicht** verwendet haben, einfärben:
 ```python
 {{#include ../codes/04-evd_and_svd/pca_wine.py:plot_pca_coloured}}

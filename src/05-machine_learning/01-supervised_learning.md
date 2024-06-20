@@ -41,6 +41,7 @@ und die Features in den Spalten speichert. Die lineare Regression für mehrdimen
 
 $$
 \hat{f}(\vec{x}_i) = w_1 x_{i1} + w_2 x_{i2} + \dots + w_n x_{in} + b = \sum_{j=1}^n w_j x_{ij} + b\,,
+{{numeq}}{eq:multilinear_regression_model}
 $$
 
 was wir als Skalarprodukt zwischen dem Vektor $\vec{w} = (w_1, w_2, \dots, w_n)^T$ und dem Inputvektor $\vec{x}_i$
@@ -78,6 +79,7 @@ analytische Lösung,
 
 $$
 \hat{\theta} = (\bm{X}^T \bm{X})^{-1} \bm{X}^T \vec{y}\,,
+{{numeq}}{eq:multilinear_regression_solution}
 $$
 
 was Sie leicht durch Berechnen und Nullsetzen des Gradienten der Verlustfunktion nach $\theta$ 
@@ -328,3 +330,12 @@ aufrufen (und ggf. verändern):
 ### Rosenblatt-Perzeptron
 
 WIP
+
+---
+
+### Übung
+
+#### Aufgabe 1: Lineare Regression
+
+{{#include ../psets/05.md:aufgabe_1}}
+

@@ -215,7 +215,7 @@ ersten und zweiten Ableitungen. In einer Differentialgleichung tauchen
 neben der gesuchten Funktion $y(x)$ und
 ihren Ableitungen allerdings auch Funktionen von $x$ auf. Wir benötigen also eine
 Darstellung für solche Funktionen. Eine Besonderheit hierbei ist, dass es
-es dafür zwei Darstellungsvarianten gibt, welche man gemäß des Kontexts wählen
+es dafür zwei Darstellungsvarianten gibt, welche man gemäß dem Kontext wählen
 muss. 
 
 Fungiert eine Funktion von $x$ als eine Inhomogenität $u(x)$
