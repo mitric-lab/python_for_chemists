@@ -70,7 +70,9 @@ $$
   \end{alignat}
 $$
 ```
-erfüllt.
+erfüllt. Umgekehrt definieren diese Bedingungen die MP-Pseudoinverse eindeutig.
+Ist die Matrix $\bm{A}$ invertierbar, so ist die MP-Pseudoinverse
+identisch zur Inversen, also $\bm{A}^+ = \bm{A}^{-1}$.
 
 Betrachten wir nun ein überbestimmtes Gleichungssystem 
 $\bm{A} \vec{x} = \vec{b}$ mit $\bm{A}\in \R{m}{n}$, $m > n$ 
@@ -244,16 +246,20 @@ $$
     \vdots & \vdots \\
     \text{---}\ \vec{x}_ N \text{---} & 1 \\
   \end{pmatrix}}_ {\bm{A}\in \R{N}{(n+1)}}
-  \begin{pmatrix}
+  \underbrace{\begin{pmatrix}
     \vert \\
     \vec{w} \\
     \vert \\
     b
-  \end{pmatrix}
+  \end{pmatrix}}_ {\vec{\beta} \in \mathbb{R}^{n+1}}
   = \underbrace{\begin{pmatrix}
     y_1 \\
     \vdots \\
     y_N
   \end{pmatrix}}_ {\vec{y} \in \mathbb{R}^N}
 $$
-gegeben, also $(\text{---}\ \vec{w} \text{---}, b)^\intercal = \bm{A}^+ \vec{y}$.
+gegeben, also 
+$$
+\vec{\beta} = \bm{A}^+ \vec{y}\,.
+{{numeq}}{eq:multilinear_regression_pinv}
+$$
