@@ -18,18 +18,17 @@ print(df.head())
 #print(df.head().to_markdown())
 
 ### ANCHOR: correlation
-#import seaborn as sns
-#corr = df.corr()
-
-# creat heatmap of correlation
-#fig, ax = plt.subplots(figsize = [20, 10], facecolor = 'white')
-#sns.heatmap(corr, annot = True)
-#plt.show()
+# Plot correlation matrix for the first four features
+features = df.columns[:4]
+pd.plotting.scatter_matrix(df[features], figsize=(10, 10))
 ### ANCHOR_END: correlation
+
+#plt.tight_layout()
+#plt.savefig('../../assets/figures/05-machine_learning/wine_correlation.svg')
 
 ### ANCHOR: preprocess_data
 # Define data matrix and labels
-X = df.drop(columns="quality").to_numpy()
+X = df[["alcohol", "volatile acidity"]].to_numpy()
 y = df["quality"].to_numpy()
 
 # Add a column of ones to the data matrix
@@ -37,9 +36,8 @@ X = np.hstack([np.ones((X.shape[0], 1)), X])
 ### ANCHOR_END: preprocess_data
 
 ### ANCHOR: linear_regression
-# Perform Ridge regression
-lambda_ = 0.01
-theta = np.linalg.inv(X.T @ X + lambda_ * np.eye(X.shape[1])) @ X.T @ y
+# Perform linear regression
+theta = np.linalg.inv(X.T @ X) @ X.T @ y
 print(theta)
 ### ANCHOR_END: linear_regression
 
@@ -54,12 +52,16 @@ ax.scatter(df['alcohol'], df['volatile acidity'], y, c='r', marker='o')
 x = np.linspace(8, 15, 100) # alcohol
 y = np.linspace(0, 1.6, 100) # volatile acidity
 X, Y = np.meshgrid(x, y)
-Z = theta[-1] * X + theta[2] * Y + theta[0]
+Z = theta[0] + theta[1] * X + theta[2] * Y
 ax.plot_surface(X, Y, Z, alpha=0.5)
 
+# Set labels
 ax.set_xlabel('Alcohol')
 ax.set_ylabel('Volatile acidity')
 ax.set_zlabel('Quality')
+
+fig.tight_layout()
+
 plt.show()
 ### ANCHOR_END: plot_results
 

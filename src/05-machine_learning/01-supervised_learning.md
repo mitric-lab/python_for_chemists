@@ -11,7 +11,7 @@ tatsächlichen Ausgabe $y_i$ und der approximierten Ausgabe $\hat{f}_{\theta}(\v
 Dieses Lernen wird als **überwachtes Lernen** bezeichnet, da wir $y_i$ für jede Eingabe 
 $\vec{x}_i$ kennen und somit den Fehler direkt berechnen können.
 
-Gemäß der obigen Überlegungen können wir festhalten, dass jedes ML-Modell, welches auf überwachtem Lernen basiert,
+Gemäß den obigen Überlegungen können wir festhalten, dass jedes ML-Modell, welches auf überwachtem Lernen basiert,
 die folgenden Komponenten enthält:
 
 1. **Modell**: Die Funktion $\hat{f}_{\theta}$, die die Eingabe auf die Ausgabe abbildet.
@@ -69,7 +69,7 @@ einen konstanten Wert $1$ erweitert werden, sodass $\vec{x}_i = (1, x_{i1}, x_{i
 Überprüfen Sie, dass die lineare Regression in diesem Fall äquivalent zur obigen Formulierung ist.
 ```
 
-Gemäß der oben diskutierten Komponenten eines ML-Modells fehlt uns nun nur noch die Angabe eines 
+Gemäß den oben diskutierten Komponenten eines ML-Modells fehlt uns nun nur noch die Angabe eines 
 Optimierungsverfahrens, 
 um die Modellparameter $\theta$ so zu wählen, dass der Fehler zwischen den Vorhersagen $\hat{\vec{y}}$ und den
 tatsächlichen Labels $\vec{y}$ minimiert wird. In der ersten Übung haben Sie gesehen, dass dieses Problem 
@@ -137,7 +137,7 @@ $$
 die optimale Lösung mit minimaler Norm. 
 ```
 
-### Regression am Wine Quality Dataset
+#### Regression am Wine Quality Dataset
 
 Um den Datensatz, den wir im Folgenden verwenden werden, zu erkunden, nutzen wir eine der bekanntesten 
 Bibliotheken für die Datenanalyse und -manipulation in Python: [`pandas`](https://pandas.pydata.org). 
@@ -179,38 +179,38 @@ Ihnen die folgende Tabelle angezeigt werden:
 Der [Wine Quality Datensatz](https://archive.ics.uci.edu/dataset/186/wine+quality) enthält Daten von ca. 1600 
 Rot- und Weißweinen aus dem Norden Portugals. Die *Features* beschreiben verschiedene physikalische und chemische
 Eigenschaften der Weine, wie beispielsweise den Alkoholgehalt, den pH-Wert oder den Zitronensäuregehalt.
-Zudem besitzt jeder Wein eine Qualitätsbewertung zwischen 0 und 10, die als *Label* oder *Target* in der
-Regression oder Klassifikation verwendet werden kann.
+`pandas` besitzt neben einer Vielzahl von Methoden, um den Datensatz zu analysieren, auch die Möglichkeit, 
+Daten zu filtern, zu gruppieren oder zu visualisieren. So kann mit der Methode `scatter_matrix` ein 
+Streudiagramm der Features erstellt werden, um Korrelationen zwischen den Features zu erkennen,
 
-Dazu extrahieren wir zunächst die Datenmatrix $\bm{X}$ und den Vektor der Labels $\vec{y}$ aus dem
-`DataFrame`, wobei Sie einzelne Spalten des `DataFrame` mit dem Namen der Spalte als Index abrufen können:
+```python
+{{#include ../codes/05-machine_learning/wine_regression.py:correlation}}
+```
+
+was Ihnen die folgende Abbildung anzeigen sollte:
+
+![Wine Quality Correlation](../assets/figures/05-machine_learning/wine_correlation.svg)
+
+Neben den Features besitzt jeder Wein eine Qualitätsbewertung zwischen 0 und 10, die als *Label* oder *Target* in der
+Regression oder Klassifikation verwendet werden kann. Dieses Target wollen wir nun anhand von zwei ausgewählten
+Features, `alcohol` und `volatile acidity`, regressieren. Dazu extrahieren wir zunächst die Datenmatrix $\bm{X}$ und den Vektor 
+der Labels $\vec{y}$ aus dem `DataFrame`, wobei Sie einzelne Spalten des `DataFrame` mit dem Namen der Spalte als Index abrufen können:
 
 ```python
 {{#include ../codes/05-machine_learning/wine_regression.py:preprocess_data}}
 ```
 
-Außerdem fügen wir eine Spalte mit Einsen hinzu, um den Bias $b$ in die Gewichtsmatrix $\bm{X}$ zu 
+Außerdem fügen wir eine Spalte mit Einsen hinzu, um den Bias $b$ in den Gewichten $\vec{w}$ zu
 integrieren. Dazu definieren wir mit `np.ones` einen Vektor der Länge $N$ mit Einsen und fügen ihn 
-mit `np.hstack` als erste Spalte in die Datenmatrix ein.
-
-Wir führen nun die lineare Regression an alles Features wie oben beschrieben durch. Da die Features des 
-Datensatzes aber auf unterschiedlichen Skalen liegen, versuchen wir
-durch Regularisierung die Modellparameter, insbesondere den Bias, möglichst klein zu halten. Glücklicherweise 
-gibt es auch für die *Ridge Regression* eine analytische Lösung,
-
-$$
-\hat{\vec{w}} = (\bm{X}^T \bm{X} + \lambda \bm{I})^{-1} \bm{X}^T \vec{y}\,,
-$$
-
-die analog zur linearen Regression berechnet werden kann.
+mit `np.hstack` als erste Spalte in die Datenmatrix ein. Die optimalen Gewichte $\theta = (\vec{w}, b)$ 
+berechnen wir gemäß der obigen Formel:
 
 ```python
 {{#include ../codes/05-machine_learning/wine_regression.py:linear_regression}}
 ```
 
-Für die 12 Features des Datensatzes, sowie den Bias, enthält das Array `theta` also die optimalen Gewichte.
-Wir visualisieren die Vorhersagen des Modells und die tatsächlichen Labels anhand zwei ausgewählter Features
-in einem 3D-Plot:
+Für die zwei ausgewählten Features, sowie den Bias, enthält das Array `theta` also die optimalen Gewichte.
+Wir visualisieren die Vorhersagen des Modells und die tatsächlichen Labels in einem 3D-Plot:
 
 ```python
 {{#include ../codes/05-machine_learning/wine_regression.py:plot_results}}
@@ -228,12 +228,11 @@ berechnen. Das Plotten der Fläche erfolgt dann mit `plot_surface` und sollte da
 ![Wine Quality Regression](../assets/figures/05-machine_learning/wine_regression.svg)
 
 Durch Klicken und Ziehen können Sie den Plot drehen und die Vorhersagen des Modells aus verschiedenen
-Blickwinkeln betrachten. Sie sehen, dass die Vorhersagen des Modells die tatsächlichen Targets nicht wirklich 
-gut abbilden, was der hohen Dimensionalität des Problems, aber auch der Regularisierung geschuldet sein kann.
+Blickwinkeln betrachten. 
 
 ### Klassifikation
 
-Was Sie sicherlich auch in dem Plot beobachtet haben, ist, dass die Labels des Datensatzes diskrete
+Was Sie bei genauerer Betrachtung des Plots sicherlich bemerkt haben, ist, dass die Labels der Datenpunkte diskrete
 Werte zwischen 3 und 8 annehmen. Im obigen Beispiel haben wir diese Labels als kontinuierliche Werte
 interpretiert, um die Regression durchzuführen. In der Praxis ist es jedoch oft sinnvoller, solche 
 Probleme als *Klassifikation* zu betrachten, bei denen die Labels diskrete Klassen repräsentieren.
@@ -259,11 +258,34 @@ angewendet werden. Dazu gibt es zwei gängige Verfahren:
 
 ```
 
+In [Übung 4](../psets/04.md), als wir die Gesichter von zwei Personen auf zwei Hauptkomponenten
+(Eigenfaces) projiziert haben, ist uns bereits aufgefallen, dass die Projektionen der Gesichter der beiden Personen
+in einem 2D-Plot durch eine Gerade getrennt werden können. Basierend auf einer solchen *Entscheidungsgrenze*
+(engl. *decision boundary*) wollen nun wir ein Modell trainieren, welches möglichst alle Datenpunkte korrekt
+klassifiziert und auch für neue, unbekannte Datenpunkte eine Vorhersage treffen kann. Ein sehr naiver Ansatz
+wäre es, wie im obigen Beispiel die Labels als kontinuierliche Werte zu interpretieren und eine lineare
+Regression durchzuführen. Die Vorhersagen des Modells könnten dann als Klassen interpretiert werden, indem
+wir die kontinuierlichen Werte auf die nächstgelegene Klasse abbilden. Sie können die Projektionen der
+Gesichter der beiden Personen <a href="../codes/05-machine_learning/eigenfaces_pca.csv" download>hier</a>
+herunterladen, wobei die dritte Spalte die Labels der Personen enthält. 
 
-### Objektorientierte Programmierung
+```python
+{{#include ../codes/05-machine_learning/eigenfaces_regression.py:eigenfaces_regression}}
+```
 
-Nachdem wir das Ziel der binären Klassifikation definiert haben, möchten wir uns einer Art des Programmierens 
-zuwenden, die es uns erlaubt, ein solches ML-Modell als ein abstraktes Objekt zu implementieren, das bestimmte 
+Die Vorhersagen des Modells können Sie in einem 2D-Plot visualisieren, wobei die Farben der Punkte die
+Klassen repräsentieren:
+
+![Eigenfaces Regression](../assets/figures/05-machine_learning/eigenfaces_regression.svg)
+
+Zudem haben wir die Entscheidungsgrenze des Modells in den Plot eingefügt, die durch die gestrichelte Linie
+dargestellt wird. Wenn Sie allerdings den Plot von *oben* betrachten, werden Sie feststellen, dass die
+Entscheidungsgrenze nicht optimal ist, da sie nicht alle Datenpunkte korrekt klassifiziert. 
+
+#### Objektorientierte Programmierung
+
+Bevor wir uns robusteren Algorithmen zur Klassifizierung zuwenden, möchten wir eine Art des Programmierens 
+einführen, die es uns erlaubt, ein ML-Modell als ein abstraktes Objekt zu implementieren, das bestimmte 
 Funktionaltäten besitzt. Diese Art des Programmierens nennen wir *Objektorientierte Programmierung* (OOP), und
 sie unterscheidet sich von der Art und Weise, wie wir bisher in diesem Kurs programmiert haben.
 
@@ -325,6 +347,6 @@ aufrufen (und ggf. verändern):
 
 ~~~
 
-### Rosenblatt-Perzeptron
+#### Rosenblatt-Perzeptron
 
 WIP
