@@ -206,6 +206,12 @@ fig.tight_layout()
 plt.show()
 ### ANCHOR_END: exercise_03_a
 
+# save data as csv
+pca1 = np.concatenate([pca_p1[0,:], pca_p2[0,:]])
+pca2 = np.concatenate([pca_p1[1,:], pca_p2[1,:]])
+labels = np.concatenate([np.ones_like(pca_p1[0,:]), -np.ones_like(pca_p2[0,:])])
+#np.savetxt('eigenfaces_pca.csv', np.vstack([pca1, pca2, labels]).T, delimiter=',')
+
 #plt.savefig('../../assets/figures/04-evd_and_svd/eigenfaces_pca.svg')
 
 ### ANCHOR: exercise_04_a
