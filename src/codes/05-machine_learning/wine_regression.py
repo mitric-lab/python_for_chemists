@@ -59,6 +59,7 @@ ax.plot_surface(X, Y, Z, alpha=0.5)
 ax.set_xlabel('Alcohol')
 ax.set_ylabel('Volatile acidity')
 ax.set_zlabel('Quality')
+ax.view_init(elev=30, azim=45)
 
 fig.tight_layout()
 

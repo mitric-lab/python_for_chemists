@@ -261,33 +261,106 @@ angewendet werden. Dazu gibt es zwei gängige Verfahren:
 ```
 
 In [Übung 4](../psets/04.md), als wir die Gesichter von zwei Personen auf zwei Hauptkomponenten
-(Eigenfaces) projiziert haben, ist uns bereits aufgefallen, dass die Projektionen der Gesichter der beiden Personen
-in einem 2D-Plot durch eine Gerade getrennt werden können. Basierend auf einer solchen *Entscheidungsgrenze*
-(engl. *decision boundary*) wollen nun wir ein Modell trainieren, welches möglichst alle Datenpunkte korrekt
-klassifiziert und auch für neue, unbekannte Datenpunkte eine Vorhersage treffen kann. Ein sehr naiver Ansatz
-wäre es, wie im obigen Beispiel die Labels als kontinuierliche Werte zu interpretieren und eine lineare
-Regression durchzuführen. Die Vorhersagen des Modells könnten dann als Klassen interpretiert werden, indem
-wir die kontinuierlichen Werte auf die nächstgelegene Klasse abbilden. Sie können die Projektionen der
-Gesichter der beiden Personen <a href="../codes/05-machine_learning/eigenfaces_pca.csv" download>hier</a>
-herunterladen, wobei die dritte Spalte die Labels der Personen enthält. 
+(Eigenfaces) projiziert haben, ist uns bereits eine Darstellung der Daten in $\mathbb{R}^2$ begegnet, 
+die durch eine Gerade getrennt werden könnte. Basierend auf einer solchen *Entscheidungsgrenze*
+(engl. *decision boundary*) wollen nun wir nun ein Modell trainieren, welches möglichst alle Datenpunkte korrekt
+klassifiziert und auch für neue, unbekannte Datenpunkte eine korrekte Vorhersage treffen kann. Sie können dazu Ihre 
+Implementation aus der Übung verwenden oder die Daten 
+der Gesichter <a href="../codes/05-machine_learning/eigenfaces_pca.csv" download>hier</a>
+herunterladen, wobei die dritte Spalte die Labels $y \in \{-1, 1\}$ der Personen enthält.
 
+Wir zeigen zunächst anhand eines Negativbeispiels, wie eine solche lieare Entschiedungsgrenze zustande kommen kann.
+Dazu interpretieren wir die Labels wie im obigen Beispiel als kontinuierliche Werte und führen lineare
+Regression durch. Die (kontinulierlichen) Vorhersagen des Modells könnten dann als Klassen interpretiert werden, indem
+wir die Werte auf die nächstgelegene Klasse abbilden. Da die Klassen hier durch -1 und 1 repräsentiert werden,
+bilden wir die Vorhersagen auf die Klasse ab, die dem Vorzeichen der Vorhersage entspricht. Das Modell hat also die Form
+
+$$
+\hat{f}_{\theta}(\vec{x}_i) = 
+\begin{cases}
+    1 & \text{falls } \left\langle \vec{w}, \vec{x}_i \right\rangle + b > 0 \\
+    -1 & \text{sonst}
+\end{cases}\,.
+{{numeq}}{eq:linear_classification_model}
+$$
+
+Wir nutzen dazu im Grunde den gleichen Code wie im obigen Beispiel:
+
+~~~admonish note title="Code" collapsible=true
 ```python
 {{#include ../codes/05-machine_learning/eigenfaces_regression.py:eigenfaces_regression}}
 ```
+~~~
 
-Die Vorhersagen des Modells können Sie in einem 2D-Plot visualisieren, wobei die Farben der Punkte die
-Klassen repräsentieren:
+Zusätzlich haben wir die Entscheidungsgrenze des Modells 
+
+$$
+    \left\langle \vec{w}, \vec{x} \right\rangle + b = 0
+$$
+
+in den Plot eingefügt, die durch die gestrichelte Linie dargestellt wird: 
 
 ![Eigenfaces Regression](../assets/figures/05-machine_learning/eigenfaces_regression.svg)
 
-Zudem haben wir die Entscheidungsgrenze des Modells in den Plot eingefügt, die durch die gestrichelte Linie
-dargestellt wird. Wenn Sie allerdings den Plot von *oben* betrachten, werden Sie feststellen, dass die
-Entscheidungsgrenze nicht optimal ist, da sie nicht alle Datenpunkte korrekt klassifiziert. 
+Wenn Sie allerdings den Plot von *oben* betrachten, werden Sie feststellen, dass die Entscheidungsgrenze nicht 
+optimal ist, da sie nicht alle Datenpunkte korrekt klassifiziert. Die Methode der linearen Regression durch 
+Minimierung der quadratischen Fehler ist also nicht geeignet, um Klassifikationsprobleme zu lösen.
+
+#### Rosenblatt-Perzeptron
+
+Anstatt die Labels als kontinuierliche Werte zu interpretieren und eine lineare Regression durchzuführen,
+wäre es sinnvoller, die Gewichte des Models zu lernen, indem die Anzahl der falsch klassifizierten Datenpunkte 
+minimiert wird. Ein Modell, welches die Daten nach einer linearen Projektion auf das Vorzeichen der
+Vorhersage abbildet, wird auch als *Perzeptron* bezeichnet.
+Dem Perzeptron liegt ein einfacher Algorithmus zugrunde, der die Datenpunkte iterativ durchgeht und die Gewichte 
+$\vec{w}$ und $b$ anpasst, wenn ein Datenpunkt falsch klassifiziert wurde. Betrachten wir dazu die folgende 
+Verlustfunktion:
+
+$$
+\mathcal{L} = - \sum_{i \in \mathcal{M}} y_i (\left\langle \vec{w}, \vec{x}_i \right\rangle + b) \,,
+$$
+
+wobei die Summe über die Menge $\mathcal{M}$ der **falsch** klassifizierten Datenpunkte läuft. Dabei erinnern wir uns 
+daran, dass wir überprüfen können, ob ein Datenpunkt falsch klassifiziert wurde, indem wir die Vorhergesage gemäß
+Gleichung {{eqref: eq:linear_classification_model}} mit dem tatsächlichen Label vergleichen. Werden alle Datenpunkte 
+von unserem Modell $\hat{f}_{\theta}$ korrekt klassifiziert, so ist $\mathcal{L} = 0$ und damit minimal. Für den
+Fall, dass ein (oder mehrere) Datenpunkt(e) falsch klassifiziert wurde(n), gibt es zwei Mögkichkeiten:
+
+1. $\left\langle \vec{w}, \vec{x}_i \right\rangle + b > 0$ und $y_i = -1$.
+
+2. $\left\langle \vec{w}, \vec{x}_i \right\rangle + b < 0$ und $y_i = 1$.
+
+In beiden Fällen ist die Verlustfunktion größer als Null, was bedeutet, dass die Gewichte $\vec{w}$ und $b$ so
+angepasst werden müssen, dass der Fehler minimiert wird. Mit ein wenig linearer Algebra kann zudem gezeigt werden, 
+dass $\mathcal{L}$ dann proportional zur Distanz des falsch klassifizierten Datenpunkts zur Entscheidungsgrenze ist.
+Das einfachste, aber auch effektivste Verfahren, um die Verlustfunktion zu minimieren, ist das *Gradientenabstiegsverfahren*, welches Sie bereits in Abschnitt [(1.3)](../01-regression/03-numerical_optimisation.md) kennengelernt haben. Dazu benötigen wir den Gradienten der Verlustfunktion nach den Gewichten $\vec{w}$ und dem Bias $b$:
+
+$$
+\begin{aligned}
+\nabla_{\vec{w}} \mathcal{L} &= - \sum_{i \in \mathcal{M}} y_i \vec{x}_i\,, \\
+\nabla_b \mathcal{L} &= - \sum_{i \in \mathcal{M}} y_i\,.
+\end{aligned}
+$$
+
+Die Gewichte und der Bias werden dann in jedem Schritt, d.h. für jeden falsch klassifizierten Datenpunkt, angepasst:
+
+$$
+\begin{aligned}
+\vec{w} &\leftarrow \vec{w} + \tau y_i \vec{x}_i\,, \\
+b &\leftarrow b + \tau y_i\,,
+\end{aligned}
+$$
+
+wobei $\tau$ die Lernrate ist, die die Schrittweite des Gradientenabstiegs bestimmt. Hat das Modell alle Datenpunkte 
+einmal durchlaufen, so nennen wir dies eine *Epoche*. Dieser Algorithmus, der auch als *Roseblatts Perzeptron* bekannt
+ist, wird dann für eine festgelegte Anzahl von Epochen durchgeführt, oder bis alle Datenpunkte korrekt klassifiziert
+wurden. Für Daten, die durch eine Grade (bzw. Hyperebene) linear separierbar sind, kann bewiesen werden, dass 
+der Algorithmus konvergiert und eine Entscheidungsgrenze findet, die die Daten korrekt klassifiziert.
 
 #### Objektorientierte Programmierung
 
-Bevor wir uns robusteren Algorithmen zur Klassifizierung zuwenden, möchten wir eine Art des Programmierens 
-einführen, die es uns erlaubt, ein ML-Modell als ein abstraktes Objekt zu implementieren, das bestimmte 
+Bevor wir uns der Implementierung zuwenden, möchten wir eine Art des Programmierens 
+einführen, die es uns erlaubt, ein solches ML-Modell als ein abstraktes Objekt zu implementieren, das bestimmte 
 Funktionaltäten besitzt. Diese Art des Programmierens nennen wir *Objektorientierte Programmierung* (OOP), und
 sie unterscheidet sich von der Art und Weise, wie wir bisher in diesem Kurs programmiert haben.
 
@@ -348,8 +421,6 @@ aufrufen (und ggf. verändern):
 ```
 
 ~~~
-
-#### Rosenblatt-Perzeptron
 
 WIP
 

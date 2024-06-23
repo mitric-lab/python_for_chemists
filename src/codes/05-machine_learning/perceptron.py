@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-### ANCHOR: rosenblatt_perceptron
+### ANCHOR: perceptron_init
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -9,6 +9,8 @@ class Perceptron:
     
     Parameters
     ------------
+    dim : int
+      Dimension of the input data.
     tau : float
       Learning rate (between 0.0 and 1.0)
     epochs : int
@@ -28,15 +30,17 @@ class Perceptron:
       Number of misclassifications (updates) in each epoch.
 
     """
-    def __init__(self, tau=.1, epochs=100):
+    def __init__(self, dim=2, tau=.1, epochs=100):
         self.tau = tau
         self.epochs = epochs
-        self.w = np.random.randn(X.shape[-1])
+        self.w = np.random.randn(dim)
         self.b = 0.0
-        self.w_list = [self.w.copy()]
-        self.b_list = [self.b]
+        self.w_list = [self.w.copy()] # need to copy to avoid reference
+        self.b_list = [self.b] # no need to copy, scalar
         self.errors = []
-        
+### ANCHOR_END: perceptron_init
+
+### ANCHOR: perceptron_fit        
     def fit(self, X, y):
         '''Fit training data'''
         
@@ -66,8 +70,10 @@ class Perceptron:
     def net_input(self, x):
         """Calculate net input"""
         return np.dot(x, self.w) + self.b
+### ANCHOR_END: perceptron_fit
     
+### ANCHOR: perceptron_predict
     def predict(self, x):
         """Return class label after unit step"""
         return np.where(self.net_input(x) >= 0.0, 1, -1)
-### ANCHOR_END: rosenblatt_perceptron
+### ANCHOR_END: perceptron_predict
