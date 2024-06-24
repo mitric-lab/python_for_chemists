@@ -342,12 +342,18 @@ $$
 \end{aligned}
 $$
 
-Die Gewichte und der Bias werden dann in jedem Schritt, d.h. für jeden falsch klassifizierten Datenpunkt, angepasst:
+Im Gegensatz zu bisherigen Verfahren, verwenden wir zur Aktualisierung der Gewichte und des Bias jedoch nicht 
+den gesamten Gradienten, sondern lediglich den Gradienten für einen einzelnen Datenpunkt.
+Dies wird als *Stochastisches Gradientenabstiegsverfahren* (engl. *Stochastic Gradient Descent*, SGD) bezeichnet,
+und kann insebsondere bei hochdimensionalen Daten die Rechenzeit erheblich reduzieren, sowie die Konvergenz
+beschleunigen.
+Das heißt, dass die Gewichte und der Bias werden dann in jedem Schritt, d.h. für jeden falsch klassifizierten 
+Datenpunkt, angepasst werden:
 
 $$
 \begin{aligned}
-\vec{w} &\leftarrow \vec{w} + \tau y_i \vec{x}_i\,, \\
-b &\leftarrow b + \tau y_i\,,
+\vec{w} &\leftarrow \vec{w} + \frac{\tau}{N} y_i \vec{x}_i\,, \\
+b &\leftarrow b + \frac{\tau}{N} y_i\,,
 \end{aligned}
 $$
 

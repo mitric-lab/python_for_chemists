@@ -117,8 +117,8 @@ Z = classifier.w[0] * X + classifier.w[1] * Y + classifier.b
 ax1.contour(X, Y, Z, levels=[0], colors='black', linestyles='dashed')
 
 # Set labels
-ax1.set_xticklabels([])
-ax1.set_yticklabels([])
+ax1.set_xticks([])
+ax1.set_yticks([])
 ax1.set_xlabel('PCA 5')
 ax1.set_ylabel('PCA 6')
 

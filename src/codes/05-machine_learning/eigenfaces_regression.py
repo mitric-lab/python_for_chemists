@@ -9,9 +9,6 @@ import pandas as pd
 path = './eigenfaces_pca.csv'
 df = pd.read_csv(path, sep=';')
 
-print(df.shape) # (1599, 12)
-print(df.head())
-
 # Define data matrix and labels
 X = df[["pca1", "pca2"]].to_numpy()
 y = df["label"].to_numpy()
