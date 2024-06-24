@@ -422,7 +422,69 @@ aufrufen (und ggf. verändern):
 
 ~~~
 
-WIP
+Mit diesen Konzepten im Hinterkopf wenden wir uns nun der Implementierung des Rosenblatt-Perzeptrons zu.
+Dazu ist es nützlich, sich zunächst zu überlegen, welche Eigenschaften und Methoden unser Modell besitzen soll.
+Globale Parameter, die nicht vom Modell gelernt werden (sogenannte *Hyperparameter*), sind beispielsweise die
+die Lernrate $\tau$ oder die Anzahl der Epochen. Die Gewichte $\vec{w}$ und der Bias $b$ hingegen werden 
+vom Modell gelernt und müssen daher zu Beginn initialisiert werden. Da die Länge des Gewichtsvektors $\vec{w}$
+von der Anzahl der Features abhängt, benötigen wir zu Beginn also auch diese Information. Der Konstruktor der
+Klasse `Perceptron` könnte also folgendermaßen aussehen:
+
+```python
+{{#include ../codes/05-machine_learning/perceptron.py:perceptron_init}}
+```
+
+Lassen Sie sich nicht von der ausführlichen Dokumentation abschrecken, die wir hier für die Klasse `Perceptron`
+definiert haben. Sie werden feststellen, dass in der `__init__`-Methode im Grunde nur die Attribute der Klasse
+initialisiert werden. Zusätzlich haben wir dabei Listen für die Gewichte und den Fehler definiert, um diese
+im Verlauf des Trainings zu speichern und später zu visualisieren. 
+
+Jedes ML-Modell braucht natürlich eine Methode, welche die Modellparameter an einem gegebenen Datensatz lernt.
+Diese Methode nennen wir `fit`, und sie folgt dem Algorithmus des Rosenblatt-Perzeptrons, den wir oben
+beschrieben haben:
+
+```python
+{{#include ../codes/05-machine_learning/perceptron.py:perceptron_fit}}
+```
+
+Innerhalb dieser Methode können wir die Klassenattribute, wie z.B. `self.weights` oder `self.bias`, direkt
+aufrufen und verändern, da wir sie im Konstruktor als solche initialisiert haben. Da wir die Skalarmultiplikation 
+der Gewichte mit den Features und dem Bias häufiger benötigen, haben wir diese in der Methode `net_input` 
+ausgelagert. 
+
+Die Methode `predict` gibt dann die Vorhersage des Modells für einen gegebenen Datenpunkt zurück:
+
+```python
+{{#include ../codes/05-machine_learning/perceptron.py:perceptron_predict}}
+```
+
+Damit haben wir die Klasse `Perceptron` vollständig definiert. Wir erstellen nun zunächst eine Instanz dieser 
+Klasse und trainieren das Modell dann mit den Daten der Gesichter:
+
+```python
+{{#include ../codes/05-machine_learning/perceptron.py:fit}}
+```
+
+Anschließend visualisieren wir die gelernte Entscheidungsgrenze des Modells und betrachten die Anzahl der falsch 
+klassifizierten Datenpunkte über die Epochen:
+
+```python
+{{#include ../codes/05-machine_learning/perceptron.py:plot_results}}
+```
+
+![Eigenfaces Klassifikation](../assets/figures/05-machine_learning/perceptron.svg)
+
+```admonish tip title="Robustheit des Perzeptrons"
+Sie sehen, dass das Perzeptron in der Lage ist, die Datenpunkte korrekt zu klassifizieren. Bereits nach wenigen
+Epochen konvergiert der Algorithmus und findet eine Entscheidungsgrenze, die die Datenpunkte trennt.
+
+Sie sehen allerdings auch, dass die Entscheidungsgrenze sehr dicht an den Datenpunkten liegt.
+Was würde jedoch passieren, wenn wir nun einen neuen Datenpunkt hinzufügen, der zwischen den beiden Klassen
+liegt? Würde das Perzeptron diesen korrekt klassifizieren?
+
+Überlegen Sie, warum die Entschiedungsgrenze (für eine ausreichend kleine Lernrate) immer dicht an den Datenpunkten
+liegt, indem Sie die Verlustfunktion des Perzeptrons betrachten.
+```
 
 ---
 
