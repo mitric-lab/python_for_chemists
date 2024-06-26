@@ -35,7 +35,7 @@
 
 - [Maschinelles Lernen](05-machine_learning.md)
     - [Überwachtes Lernen](05-machine_learning/01-supervised_learning.md)
-    - [Unüberwachtes Lernen]()
+    - [Unüberwachtes Lernen](05-machine_learning/02-unsupervised_learning.md)
 
 - [Neuronale Netzwerke](06-neural_networks.md)
 
