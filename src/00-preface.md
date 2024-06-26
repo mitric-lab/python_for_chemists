@@ -45,9 +45,10 @@ kontinuierlich aktualisiert.
 | 11  | Di.     | 25.06. | Vorlesung   | Maschinelles Lernen II |
 | 11  | Do.     | 27.06. | Vorlesung   | Maschinelles Lernen III |
 | 12  | Di.     | 02.07. | Übung       | Maschinelles Lernen |
-| 12  | Do.     | 04.07. |             |                 |
-| 13  | Di.     | 09.07. |             |                 |
-| 13  | Do.     | 11.07. |             |                 |
-| 14  | Di.     | 16.07. |             |                 |
-| 14  | Do.     | 18.07. |             |                 |
+| 12  | Do.     | 04.07. | Vorlesung   | Neuronale Netzwerke I  |
+| 13  | Di.     | 09.07. | Vorlesung   | Neuronale Netzwerke II |
+| 13  | Do.     | 11.07. | Vorlesung   | Neuronale Netzwerke III |
+| 14  | Di.     | 16.07. | Übung       | Neuronale Netzwerke |
+| 14  | Do.     | 18.07. | Zusammenfassung | Wiederholung und Ausblick |
+|     | Fr.     | 09.08. | Klausur     |                 |
 
