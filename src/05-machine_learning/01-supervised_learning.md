@@ -427,12 +427,16 @@ aufrufen (und ggf. verändern):
 {{#include ../codes/05-machine_learning/atom.py:atom_example_2}}
 ```
 
+Sie werden feststellen, dass Sie in der Vergangenheit bereits mit Klassen und Instanzen in Python gearbeitet 
+haben, ohne es zu wissen. Sei es mit Listen (`list.append(element)`), Dictionaries (`dict.keys()`) oder
+numpy-Arrays (`arr.shape`). Tatsächlich sind all diese Datentypen Klassen, die von Python bereitgestellt
+werden.
 ~~~
 
 Mit diesen Konzepten im Hinterkopf wenden wir uns nun der Implementierung des Rosenblatt-Perzeptrons zu.
 Dazu ist es nützlich, sich zunächst zu überlegen, welche Eigenschaften und Methoden unser Modell besitzen soll.
 Globale Parameter, die nicht vom Modell gelernt werden (sogenannte *Hyperparameter*), sind beispielsweise die
-die Lernrate $\tau$ oder die Anzahl der Epochen. Die Gewichte $\vec{w}$ und der Bias $b$ hingegen werden 
+Lernrate $\tau$ oder die Anzahl der Epochen. Die Gewichte $\vec{w}$ und der Bias $b$ hingegen werden 
 vom Modell gelernt und müssen daher zu Beginn initialisiert werden. Da die Länge des Gewichtsvektors $\vec{w}$
 von der Anzahl der Features abhängt, benötigen wir zu Beginn also auch diese Information. Der Konstruktor der
 Klasse `Perceptron` könnte also folgendermaßen aussehen:
@@ -496,11 +500,11 @@ liegt, indem Sie die Verlustfunktion des Perzeptrons betrachten.
 #### Support Vector Machine
 
 Obwohl uns der Rosenblatt-Perzeptron *eine* Entscheidungsgrenze liefert, 
-die die Daten korrekt klassifiziert, könnte es zu falschen Vorhersagen 
-führen, wenn es Datenpunkte gibt, die (knapp) auf der falschen Seite der
-Entscheidungsgrenze liegen, welche nicht im Trainingssatz erfasst wurden.
-Für eine robustere Klassifikation benötigen wir also nicht nur irgendeine
-Entscheidungsgrenze, sondern eine, die uns den größtmöglichen Spielraum
+welche die Daten korrekt klassifiziert, könnte es zu falschen Vorhersagen 
+führen, wenn wir neue Datenpunkte betrachten, die zwischen den Klassen liegen
+oder Ausreißer enthalten.
+Für eine robustere Klassifikation benötigen wir also nicht nur irgendeine, 
+sondern die *optimale* Entscheidungsgrenze, die uns den größtmöglichen Spielraum
 zwischen den Klassen lässt. Eine solche Entscheidungsgrenze kann durch die
 *Support Vector Machine* (SVM) gefunden werden.
 
@@ -514,14 +518,14 @@ Wir betrachten dazu die folgende Abbildung:
     </center>
 </figure>
 
-Die Entscheidungsgrenzen sowohl in der linken als auch in der rechten 
-Abbildung trennen die Datenpunkte korrekt. Die Entscheidungsgrenze in der
-linken Abbildung hat jedoch einen größeren *Margin*, d.h. den Abstand
-zwischen der Entscheidungsgrenze und den nächsten Datenpunkten. 
+Sowohl in der linken als auch in der rechten Abbildung werden die 
+Datenpunkte korrekt klassifiziert. Die Entscheidungsgrenze in der
+linken Abbildung hat jedoch einen größeren *Margin*, d.h. Abstand
+zwischen der Entscheidungsgrenze und den nächstgelegenen Datenpunkten.
 
 Es kann gezeigt werden, dass der Abstand zwischen einem Punkt 
 $\vec{x}_ 0 \in \mathbb{R}^n$ und der (Hyper-)Ebene 
-$\mathcal{H} := \{x \in \mathbb{R}^n \,|\, \langle \vec{w}, \vec{x}\rangle + b = 0\}$,
+$\mathcal{H} := \{\vec{x} \in \mathbb{R}^n \,|\, \langle \vec{w}, \vec{x}\rangle + b = 0\}$,
 notiert als $\mathrm{dist}(\vec{x}_ 0, \mathcal{H})$, durch
 $$
 \mathrm{dist}(\vec{x}_ 0, \mathcal{H}) = \frac{\left| \langle \vec{w}, \vec{x}_ 0 \rangle + b \right|}{\left\| \vec{w} \right\|}
@@ -541,6 +545,7 @@ $$
     + \min \{ \mathrm{dist}(\vec{x}_ i^-, \mathcal{H}) \}
     = \frac{2d}{\left\| \vec{w} \right\|}
 $$
+ausgedrückt werden.
 
 Da das Ziel der SVM darin besteht, den Margin zu maximieren, können wir
 gleichwertig das Quadrat der Inverse von $M$ minimieren, also
@@ -564,10 +569,10 @@ $\vec{w}$ und dem Bias $b$:
 $$
   \begin{align}
     \nabla_{\vec{w}} \mathcal{L} &= - \sum_{i \in \mathcal{M}} y_i \vec{x}_ i + \lambda \vec{w}\,, \\
-    \nabla_b \mathcal{L} &= - \sum_{i \in \mathcal{M}} y_i\,.
+    \nabla_b \mathcal{L} &= - \sum_{i \in \mathcal{M}} y_i\,,
   \end{align}
 $$
-und der Aktualisierung der Gewichte und des Bias im stochastischen 
+und der Aktualisierung der Modellparameter im stochastischen 
 Gradientenabstiegsverfahren:
 $$
   \begin{align}
