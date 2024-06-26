@@ -276,9 +276,9 @@ wir die Werte auf die nächstgelegene Klasse abbilden. Da die Klassen hier durch
 bilden wir die Vorhersagen auf die Klasse ab, die dem Vorzeichen der Vorhersage entspricht. Das Modell hat also die Form
 
 $$
-\hat{f}_{\theta}(\vec{x}_i) = 
+\hat{f}_ {\theta}(\vec{x}_ i) = 
 \begin{cases}
-    1 & \text{falls } \left\langle \vec{w}, \vec{x}_i \right\rangle + b > 0 \\
+    1 & \text{falls } \left\langle \vec{w}, \vec{x}_ i \right\rangle + b > 0 \\
     -1 & \text{sonst}
 \end{cases}\,.
 {{numeq}}{eq:linear_classification_model}
@@ -317,7 +317,8 @@ $\vec{w}$ und $b$ anpasst, wenn ein Datenpunkt falsch klassifiziert wurde. Betra
 Verlustfunktion:
 
 $$
-\mathcal{L} = - \sum_{i \in \mathcal{M}} y_i (\left\langle \vec{w}, \vec{x}_i \right\rangle + b) \,,
+\mathcal{L} = - \sum_{i \in \mathcal{M}} y_i (\left\langle \vec{w}, \vec{x}_ i \right\rangle + b) \,,
+{{numeq}}{eq:rosenblatt_loss}
 $$
 
 wobei die Summe über die Menge $\mathcal{M}$ der **falsch** klassifizierten Datenpunkte läuft. Dabei erinnern wir uns 
@@ -345,22 +346,22 @@ $$
 Im Gegensatz zu bisherigen Verfahren, verwenden wir zur Aktualisierung der Gewichte und des Bias jedoch nicht 
 den gesamten Gradienten, sondern lediglich den Gradienten für einen einzelnen Datenpunkt.
 Dies wird als *Stochastisches Gradientenabstiegsverfahren* (engl. *Stochastic Gradient Descent*, SGD) bezeichnet,
-und kann insebsondere bei hochdimensionalen Daten die Rechenzeit erheblich reduzieren, sowie die Konvergenz
+und kann insbesondere bei hochdimensionalen Daten die Rechenzeit erheblich reduzieren, sowie die Konvergenz
 beschleunigen.
-Das heißt, dass die Gewichte und der Bias werden dann in jedem Schritt, d.h. für jeden falsch klassifizierten 
-Datenpunkt, angepasst werden:
-
+Das heißt, dass die Gewichte und der Bias in jedem Schritt des Gradientenabstiegs 
+für jeden falsch klassifizierten Datenpunkt angepasst werden:
 $$
 \begin{aligned}
-\vec{w} &\leftarrow \vec{w} + \frac{\tau}{N} y_i \vec{x}_i\,, \\
+\vec{w} &\leftarrow \vec{w} + \frac{\tau}{N} y_i \vec{x}_ i\,, \\
 b &\leftarrow b + \frac{\tau}{N} y_i\,,
 \end{aligned}
 $$
 
 wobei $\tau$ die Lernrate ist, die die Schrittweite des Gradientenabstiegs bestimmt. Hat das Modell alle Datenpunkte 
-einmal durchlaufen, so nennen wir dies eine *Epoche*. Dieser Algorithmus, der auch als *Roseblatts Perzeptron* bekannt
+einmal durchlaufen, so nennen wir dies eine *Epoche*. Dieser Algorithmus, 
+der auch als *Rosenblatt Perzeptron* bekannt
 ist, wird dann für eine festgelegte Anzahl von Epochen durchgeführt, oder bis alle Datenpunkte korrekt klassifiziert
-wurden. Für Daten, die durch eine Grade (bzw. Hyperebene) linear separierbar sind, kann bewiesen werden, dass 
+wurden. Für Daten, die durch eine Gerade bzw. eine (Hyper-)Ebene linear separierbar sind, kann bewiesen werden, dass 
 der Algorithmus konvergiert und eine Entscheidungsgrenze findet, die die Daten korrekt klassifiziert.
 
 #### Objektorientierte Programmierung
@@ -492,6 +493,96 @@ liegt? Würde das Perzeptron diesen korrekt klassifizieren?
 liegt, indem Sie die Verlustfunktion des Perzeptrons betrachten.
 ```
 
+#### Support Vector Machine
+
+Obwohl uns der Rosenblatt-Perzeptron *eine* Entscheidungsgrenze liefert, 
+die die Daten korrekt klassifiziert, könnte es zu falschen Vorhersagen 
+führen, wenn es Datenpunkte gibt, die (knapp) auf der falschen Seite der
+Entscheidungsgrenze liegen, welche nicht im Trainingssatz erfasst wurden.
+Für eine robustere Klassifikation benötigen wir also nicht nur irgendeine
+Entscheidungsgrenze, sondern eine, die uns den größtmöglichen Spielraum
+zwischen den Klassen lässt. Eine solche Entscheidungsgrenze kann durch die
+*Support Vector Machine* (SVM) gefunden werden.
+
+Wir betrachten dazu die folgende Abbildung:
+<figure>
+    <center>
+    <img src="../assets/figures/05-machine_learning/svm_margin.svg"
+         alt="Margin of Support Vector Machine"
+         width="600"\>
+    <figcaption>Visualisierung des Margins einer Support Vector Machine. Quelle: Steven L. Brunton and J. Nathan Kutz, Data-Driven Science and Engineering.</figcaption>
+    </center>
+</figure>
+
+Die Entscheidungsgrenzen sowohl in der linken als auch in der rechten 
+Abbildung trennen die Datenpunkte korrekt. Die Entscheidungsgrenze in der
+linken Abbildung hat jedoch einen größeren *Margin*, d.h. den Abstand
+zwischen der Entscheidungsgrenze und den nächsten Datenpunkten. 
+
+Es kann gezeigt werden, dass der Abstand zwischen einem Punkt 
+$\vec{x}_ 0 \in \mathbb{R}^n$ und der (Hyper-)Ebene 
+$\mathcal{H} := \{x \in \mathbb{R}^n \,|\, \langle \vec{w}, \vec{x}\rangle + b = 0\}$,
+notiert als $\mathrm{dist}(\vec{x}_ 0, \mathcal{H})$, durch
+$$
+\mathrm{dist}(\vec{x}_ 0, \mathcal{H}) = \frac{\left| \langle \vec{w}, \vec{x}_ 0 \rangle + b \right|}{\left\| \vec{w} \right\|}
+{{numeq}}{eq:distance_point_hyperplane}
+$$
+gegeben ist. 
+
+Sind die Datenpunkte separierbar, so existiert ein $d > 0$, sodass 
+für alle Datenpunkte auf einer Seite der Entscheidungsgrenze 
+$\langle \vec{w}, \vec{x}_ i^+ \rangle + b \geq d$ 
+und auf der anderen Seite 
+$\langle \vec{w}, \vec{x}_ i^- \rangle + b \leq -d$ gilt.
+Die Breite des Margins $M$ kann dann unter Verwendung von Gleichung 
+{{eqref: eq:distance_point_hyperplane}} als
+$$
+  M = \min \{ \mathrm{dist}(\vec{x}_ i^+, \mathcal{H}) \}
+    + \min \{ \mathrm{dist}(\vec{x}_ i^-, \mathcal{H}) \}
+    = \frac{2d}{\left\| \vec{w} \right\|}
+$$
+
+Da das Ziel der SVM darin besteht, den Margin zu maximieren, können wir
+gleichwertig das Quadrat der Inverse von $M$ minimieren, also
+$$
+  \min_{\vec{w}, b} \frac{1}{4d^2} \left\| \vec{w} \right\|^2
+    := \min_{\vec{w}, b} \frac{\lambda}{2} \left\| \vec{w} \right\|^2\,;
+    \quad \lambda = \frac{1}{2d^2}\,.
+$$
+
+Nun addieren wir diesen Term zur Verlustfunktion des Rosenblatt-Perzeptrons
+und erhalten die Verlustfunktion der SVM als
+$$
+  \mathcal{L} = 
+    - \sum_{i \in \mathcal{M}} y_i (\left\langle \vec{w}, \vec{x}_ i \right\rangle + b)
+    + \frac{\lambda}{2} \left\| \vec{w} \right\|^2\,.
+{{numeq}}{eq:svm_loss}
+$$
+
+Das führt zu den folgenden Gradienten der Verlustfunktion nach den Gewichten
+$\vec{w}$ und dem Bias $b$:
+$$
+  \begin{align}
+    \nabla_{\vec{w}} \mathcal{L} &= - \sum_{i \in \mathcal{M}} y_i \vec{x}_ i + \lambda \vec{w}\,, \\
+    \nabla_b \mathcal{L} &= - \sum_{i \in \mathcal{M}} y_i\,.
+  \end{align}
+$$
+und der Aktualisierung der Gewichte und des Bias im stochastischen 
+Gradientenabstiegsverfahren:
+$$
+  \begin{align}
+    \vec{w} &\leftarrow \begin{cases}
+      \vec{w} + \frac{\tau}{N} (y_i \vec{x}_ i - \lambda \vec{w}) & i \in \mathcal{M} \\
+      \vec{w} - \frac{\tau}{N} \lambda \vec{w} & i \notin \mathcal{M}
+    \end{cases}\,, \\
+    b &\leftarrow \begin{cases}
+      b + \frac{\tau}{N} y_i & i \in \mathcal{M} \\
+      b & i \notin \mathcal{M}
+    \end{cases}\,.
+  \end{align}
+$$
+
+
 ---
 
 ### Übung
@@ -499,4 +590,8 @@ liegt, indem Sie die Verlustfunktion des Perzeptrons betrachten.
 #### Aufgabe 1: Lineare Regression
 
 {{#include ../psets/05.md:aufgabe_1}}
+
+#### Aufgabe 2: Support Vector Machines
+
+{{#include ../psets/05.md:aufgabe_2}}
 

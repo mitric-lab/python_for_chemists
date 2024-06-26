@@ -46,8 +46,8 @@ class Perceptron:
         '''Fit training data'''
         
         N = X.shape[0]
-        for e in range(epochs):
-            print(f"Epoch {e+1}/{epochs}")
+        for e in range(self.epochs):
+            print(f"Epoch {e + 1}/{self.epochs}")
             
             errors = 0
             for xi, yi in zip(X, y):
