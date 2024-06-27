@@ -32,7 +32,7 @@ mit PCA auf wenige Dimensionen reduziert werden, bevor ein Klassifikator darauf
 trainiert wird oder Clustering durchgeführt wird.
 ```
 
-#### PCA Imlementierung
+#### PCA Implementierung
 
 Wir haben bereits diskutiert, dass die Hauptkomponenten der Datenmatrix $\bm{X}$ durch 
 die rechtsseitigen Singulärvektoren $\bm{V}$ der Singulärwertzerlegung 
