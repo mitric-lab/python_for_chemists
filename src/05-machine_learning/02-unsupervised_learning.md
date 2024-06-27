@@ -233,3 +233,11 @@ dass die drei Cluster mit hinreichender Genauigkeit den korrekten Schwertlilien-
 werden konnten. Dabei sei nochmal angemerkt, dass es sich bei Clustering um eine Methode des 
 unüberwachten Lernens handelt, d.h. wir haben keine Information über die tatsächlichen Labels
 der Datenpunkte verwendet.
+
+---
+
+### Übung
+
+#### Aufgabe 3: $k$-Means Clustering
+
+{{#include ../psets/05.md:aufgabe_3}}
