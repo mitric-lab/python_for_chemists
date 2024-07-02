@@ -38,6 +38,10 @@
     - [Unüberwachtes Lernen](05-machine_learning/02-unsupervised_learning.md)
 
 - [Neuronale Netzwerke](06-neural_networks.md)
+    - [Single-Layer-Perzeptron]()
+    - [Multi-Layer-Perzeptron]()
+
+---
 
 [Zusammenfassung und Ausblick]()
 
