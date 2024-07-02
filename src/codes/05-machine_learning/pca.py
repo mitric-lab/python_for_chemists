@@ -47,40 +47,41 @@ class PCA:
         return self.transform(X)
 ### ANCHOR_END: pca_transform
 
-### ANCHOR: pca_example
-# Import Iris dataset
-csv_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
-col_names = ['Sepal_Length', 'Sepal_Width', 'Petal_Length', 'Petal_Width', 'Class']
-df =  pd.read_csv(csv_url, names=col_names)
-
-# Show the first few rows
-print(df.head())
-
-# Convert class labels to integers
-df['Class'] = df['Class'].astype('category').cat.codes
-
-# Define data matrix and labels
-X = df.drop('Class', axis=1).to_numpy()
-y = df['Class'].to_numpy()
-
-# Perform PCA
-pca = PCA(n_components=2)
-X_pca = pca.fit_transform(X)
-
-# Plot projected data and color-code by class
-fig, ax = plt.subplots(figsize=(7, 5))
-
-ax.scatter(X_pca[y == 0, 0], X_pca[y == 0, 1], color='blue', label='Iris-setosa')
-ax.scatter(X_pca[y == 1, 0], X_pca[y == 1, 1], color='red', label='Iris-versicolor')
-ax.scatter(X_pca[y == 2, 0], X_pca[y == 2, 1], color='green', label='Iris-virginica')
-
-ax.set_xlabel('Principal Component 1')
-ax.set_ylabel('Principal Component 2')
-ax.legend()
-
-fig.tight_layout()
-
-plt.show()
-### ANCHOR_END: pca_example
-
-#fig.savefig('../../assets/figures/05-machine_learning/pca_iris.svg')
+if __name__ == '__main__':
+    ### ANCHOR: pca_example
+    # Import Iris dataset
+    csv_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+    col_names = ['Sepal_Length', 'Sepal_Width', 'Petal_Length', 'Petal_Width', 'Class']
+    df =  pd.read_csv(csv_url, names=col_names)
+    
+    # Show the first few rows
+    print(df.head())
+    
+    # Convert class labels to integers
+    df['Class'] = df['Class'].astype('category').cat.codes
+    
+    # Define data matrix and labels
+    X = df.drop('Class', axis=1).to_numpy()
+    y = df['Class'].to_numpy()
+    
+    # Perform PCA
+    pca = PCA(n_components=2)
+    X_pca = pca.fit_transform(X)
+    
+    # Plot projected data and color-code by class
+    fig, ax = plt.subplots(figsize=(7, 5))
+    
+    ax.scatter(X_pca[y == 0, 0], X_pca[y == 0, 1], color='blue', label='Iris-setosa')
+    ax.scatter(X_pca[y == 1, 0], X_pca[y == 1, 1], color='red', label='Iris-versicolor')
+    ax.scatter(X_pca[y == 2, 0], X_pca[y == 2, 1], color='green', label='Iris-virginica')
+    
+    ax.set_xlabel('Principal Component 1')
+    ax.set_ylabel('Principal Component 2')
+    ax.legend()
+    
+    fig.tight_layout()
+    
+    plt.show()
+    ### ANCHOR_END: pca_example
+    
+    #fig.savefig('../../assets/figures/05-machine_learning/pca_iris.svg')
