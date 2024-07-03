@@ -46,7 +46,7 @@ ausnutzen, dass $\bm{V}$ den Eigenvektoren der so genannten (empirischen) Kovari
 $\bm{C} = \bm{X}^T \bm{X}$ der (zentrierten) Datenmatrix $\bm{X}$ entsprechen:
 
 $$
-\bm{C} = \bm{X}^T \bm{X} = (\bm{U} \bm{\Sigma} \bm{V})^T \bm{U} \bm{\Sigma} \bm{V}^T = \bm{V} \bm{\Sigma} \bm{U}^T \bm{U} \bm{\Sigma} \bm{V}^T = \bm{V} \bm{\Sigma}^2 \bm{V}^T\,,
+\bm{C} = \bm{X}^T \bm{X} = (\bm{U} \bm{\Sigma} \bm{V}^T)^T \bm{U} \bm{\Sigma} \bm{V}^T = \bm{V} \bm{\Sigma}^T \bm{U}^T \bm{U} \bm{\Sigma} \bm{V}^T = \bm{V} \bm{\Sigma}^2 \bm{V}^T\,,
 $$
 
 wobei Sie die letze Gleichung an die Eigenwertzerlegung $\bm{C} = \bm{Q} \bm{\Lambda} \bm{Q}^T$ 
@@ -54,7 +54,7 @@ erinnern sollte. Die PCA wird also durch die folgenden Schritte beschrieben:
 
 1. Normalisieren (bzw. Standardisieren) der Datenmatrix $\bm{X}$.
 2. Berechnen der Eigenvektoren und Eigenwerte von $\bm{X}^T \bm{X}$.
-3. Behalten der $d$ Eigenvektoren mit den größten Eigenwerten, gegeben als $\bm{P}_d$.
+3. Behalten der $d$ Eigenvektoren mit den größten Eigenwerten, gegeben als Matrix $\bm{P}_d$.
 4. Transformieren der Datenmatrix $\bm{X}$ in den Raum der Hauptkomponenten durch $\bm{Z}_d = \bm{X} \bm{P}_d$.
 
 Wir werden die PCA nun als Klasse implementieren, wobei wir die Berechnung der Hauptkomponenten
