@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
-### ANCHOR: single_layer_perceptron
+### ANCHOR: sigmoid
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
 
 # Define activation function class
 class Sigmoid:
@@ -11,6 +12,7 @@ class Sigmoid:
 
     def gradient(self, x):
         return self(x) * (1 - self(x))
+### ANCHOR_END: sigmoid
 
 # Plot sigmoid function
 x_grid = np.linspace(-5, 5, 100)
@@ -26,24 +28,28 @@ plt.show()
 
 #fig.savefig('../../assets/figures/06-neural_networks/sigmoid.svg')
 
+### ANCHOR: slp_feedforward
 # Define model class
 class SLP:
     def __init__(self, dim=2, hidden_size=2, activation='Sigmoid', epochs=100, tau=0.1, batch_size=5):
-        self.weights = np.random.randn(dim, hidden_size) # (d, n)
-        self.bias = np.random.randn(hidden_size) # (n,)
-        self.linear_weights = np.random.randn(hidden_size) # (n,)
+        self.weights = np.random.randn(dim, hidden_size)
+        self.bias = np.random.randn(hidden_size)
+        self.linear_weights = np.random.randn(hidden_size)
         if activation == "Sigmoid":
-            self.activation = Sigmoid()    
+            self.activation = Sigmoid()
+        else:
+            raise NotImplementedError(f"Activation function not implemented.")
         self.epochs = epochs
         self.tau = tau
         self.batch_size = batch_size
         self.losses = []
     
     def feedforward(self, x): 
-        # x: (d,)
-        z = np.dot(self.weights.T, x) + self.bias # (n,)
-        return np.dot(self.linear_weights.T, self.activation(z)) # (1,)
+        z = np.dot(self.weights.T, x) + self.bias
+        return np.dot(self.linear_weights.T, self.activation(z))
+### ANCHOR_END: slp_feedforward
     
+### ANCHOR: slp_train
     def train(self, X, y):        
         N = X.shape[0]
         for e in range(self.epochs):
@@ -70,50 +76,75 @@ class SLP:
                 # Accumulate gradients over the batch
                 for xi, yi in zip(X_batch, y_batch):
             
-                    zi = np.dot(self.weights.T, xi) + self.bias # (n,)
-                    d_inner = self.linear_weights * self.activation.gradient(zi) # (n,)
-                    residue = self.feedforward(xi) - yi # (1,)
+                    zi = np.dot(self.weights.T, xi) + self.bias
+                    d_inner = self.linear_weights * self.activation.gradient(zi)
+                    residue = self.feedforward(xi) - yi
                     loss += residue ** 2
 
+                    # Compute gradients
                     gradient_w += residue * np.outer(d_inner, xi).T
                     gradient_b += residue * d_inner
                     gradient_lw += residue * self.activation(zi)
 
                 # Update parameters after each batch
-                self.linear_weights -= self.tau / N * gradient_lw
-                self.weights -= self.tau / N * gradient_w
-                self.bias -= self.tau / N * gradient_b
-                
+                self.weights -= self.tau / self.batch_size * gradient_w
+                self.bias -= self.tau / self.batch_size * gradient_b
+                self.linear_weights -= self.tau / self.batch_size * gradient_lw
+            
             self.losses.append(loss / N)
+### ANCHOR_END: slp_train
 
+### ANCHOR: slp_example
+# Load the data
+path = './circles.csv'
+df = pd.read_csv(path, sep=';')
 
+# Define data matrix and labels
+X = df[['x_1', 'x_2']].to_numpy()
+y = df['label'].to_numpy()
+
+# Set hyperparameters
 hidden_size = 50
-tau = 0.1
-dim = 1
-N = 20
-epochs = 10000
-batch_size = 5
+tau = 0.01
+dim = X.shape[1]
+epochs = 100
+batch_size = 12
 
-# initialize network
+# Instantiate the model
 f_hat = SLP(dim=dim, hidden_size=hidden_size, tau=tau, epochs=epochs, batch_size=batch_size)
-f = lambda x: np.sin(4*x) + np.cos(6*x)
 
-# plot data points
-X = np.linspace(-1.5, 1.5, N)
-X = X.reshape(-1, 1) # (N, n)
-y = f(X).flatten() # (N,)
-
-# train network
+# Train the model
 f_hat.train(X, y)
+### ANCHOR_END: slp_example
 
-# plot loss
-plt.plot(f_hat.losses)
-plt.show()
+### ANCHOR: slp_plot
+# Make plot
+fig, [ax1, ax2] = plt.subplots(1, 2, figsize=(12, 6))
 
-# plot data points and network output
-plt.scatter(X, y, color='blue')
-x_grid = np.linspace(-1.5, 1.5, 100)
-predictions = np.array([f_hat.feedforward([x]) for x in x_grid])
-plt.plot(x_grid, predictions, color='red')
-plt.plot(x_grid, f(x_grid), color='green')
+# Plot the data points, color-coded by the labels
+ax1.scatter(X[y == 1, 0], X[y == 1, 1], color='blue', label='Class 0')
+ax1.scatter(X[y == -1, 0], X[y == -1, 1], color='red', label='Class 1')
+
+# Plot the decision boundary
+x_grid = np.linspace(-8, 8, 100)
+y_grid = np.linspace(-8, 8, 100)
+X_grid, Y_grid = np.meshgrid(x_grid, y_grid)
+Z = np.zeros_like(X_grid)
+for i, x in enumerate(x_grid):
+    for j, y in enumerate(y_grid):
+        Z[i, j] = f_hat.feedforward([x, y])
+
+ax1.contour(X_grid, Y_grid, Z, levels=[0.0], colors='black', linestyles='dashed')
+ax1.contourf(X_grid, Y_grid, Z, levels=[-10.0, 0.0, 10.0], colors=['red', 'blue'], alpha=0.2)
+
+# Plot the loss over epochs
+ax2.plot(f_hat.losses)
+ax2.set_xlabel('Epoch')
+ax2.set_ylabel('Loss')
+
+fig.tight_layout()
+
 plt.show()
+### ANCHOR_END: slp_plot
+
+#fig.savefig('../../assets/figures/06-neural_networks/slp_circles.svg')
