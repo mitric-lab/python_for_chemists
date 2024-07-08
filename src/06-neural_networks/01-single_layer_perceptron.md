@@ -51,6 +51,7 @@ Unser Model lautet dann
 
 $$
     P(\hat{y}_i = 1 | \vec{x}_i) = \sigma (\left\langle \vec{w}, \vec{x}_i \right\rangle + b) ,
+    {{numeq}}{eq:logistische_regression}
 $$
 
 was als *logistische Regression* (engl. *logistic regression*) bezeichnet wird. Beachten Sie, 
@@ -157,9 +158,13 @@ Auch wenn die logistische Regression deutlich besserere Ergebnisse liefert als d
 lineare Regression, müssen wir zur entgültigen Klassifizierung von neuen Datenpunkten 
 eine Entscheidungsgrenze festlegen, z.B. $P(\hat{y}_i = 1 | \vec{x}_i) > 0.5$. 
 Damit haben wir jedoch wieder das Problem, dass wir nur lineare Entscheidungsgrenzen
-erhalten, die nicht immer die beste Trennung der Datenpunkte ermöglichen.
+erhalten, die nicht immer die beste Trennung der Datenpunkte ermöglichen. Dies wird 
+anhand des sogennanten [*XOR*-Problems](https://en.wikipedia.org/wiki/Exclusive_or) deutlich, 
+was Ende der 60er Jahre zu einem Stillstand in der Entwicklung von neuronalen Netzwerken 
+geführt hat.
 
-Um zu verstehen, wie wir das Modell erweitern können, betrachten wir zunächst die Vorhersage 
+Um zu verstehen, wie wir das Modell {{eqref: eq:logistische_regression}} erweitern können, 
+betrachten wir zunächst die Vorhersage 
 der logistischen Regression in einem sogenannten *Rechengraphen* (engl. *computational graph*):
 
 <figure>
@@ -167,17 +172,137 @@ der logistischen Regression in einem sogenannten *Rechengraphen* (engl. *computa
     <img src="../assets/figures/06-neural_networks/neuron.svg"
          alt="Ridge Regression"
          width="400"\>
-    <figcaption>Rechengraph des Ridge-Regression-Modells.</figcaption>
+    <figcaption>Rechengraph der logistischen Regression.</figcaption>
     </center>
 </figure>
 
-Dabei repräsentieren die Knoten $\vec{x}_i$ die Eingabedaten, und die Knoten $\sum$ und $\sigma$ 
-die Rechenoperation der Summation und der Sigmoid-Aktivierungsfunktion der eingehehenden Daten.
-Die Kanten $\vec{w}$ und repräsentieren die Multiplikation der Eingabedaten mit den Gewichten, 
-wobei wir die Addition des Bias $b$ implizit annehmen. 
-
-In Anlehnung an die biologischen Neuronen, bezeichnet man diese Zusammenstellung von Knoten
-und Kanten als *künstliches Neuron*. Damit stellt die logistische Regression bereits ein
+Dabei repräsentieren die Knoten $(\vec{x}_i)_j$ die Eingabedaten, welche entlang der Kanten
+mit den Gewichten $\vec{w}_j$ multipliziert werden. Die Knoten $\sum$ und $\sigma$ 
+stellen dann die Rechenoperation der Summation und der Sigmoid-Aktivierungsfunktion der eingehehenden Daten dar,
+wobei wir die Addition des Bias $b$ implizit angenommen haben. Basierend auf der Ausgabe 
+kann dann das Label oder Target $y_i$ bestimmt werden. In Anlehnung an die biologischen Neuronen, bezeichnet 
+man diese Rechenoperation als *künstliches Neuron*. Damit stellt die logistische Regression bereits ein
 einfaches *künstliches neuronales Netzwerk* dar, das aus einem einzigen Neuron besteht.
 
+```admonish warning title="Neuronen in der Biologie"
+*Neuronen*, oder auch *Nervenzellen*, sind die Grundbausteine des Nervensystems und bilden die
+Grundlage für die Informationsverarbeitung im Gehirn. Ein Neuron ist im wesentlichen eine 
+elektrisch erregbare Zelle, die in der folgenden Abbildung schematisch dargestellt ist:
+
+<figure>
+    <center>
+    <img src="../assets/figures/06-neural_networks/Neuron_wiki.svg"
+         alt="Neuron"
+         width="500"\>
+    <figcaption>Schematische Darstellung eines Neurons. Quelle: "Anatomy and Physiology", SEER Program.</figcaption>
+    </center>
+</figure>
+
+Es besteht aus einem Zellkörper, den Dendriten, die die eingehenden Signale empfangen, und
+dem Axon, das die Signale weiterleitet. Durch Akkumulation der Signale an den Dendriten
+wird ein elektrisches Potential aufgebaut. Wenn das Potential zusammen mit dem eigenen 
+Restpotential einen Schwellwert überschreitet, wird ein elektrischer Impuls, das sogenannte 
+Aktionspotential, entlang des Axons weitergeleitet. Am Ende des Axons wird der Impuls auf andere Neuronen 
+übertragen, wobei die Synapsen die Verbindungen zwischen den Neuronen darstellen. Dieses 
+Prinizip wird häufig als *Alles-oder-Nichts-Prinzip* bezeichnet, da ein Neuron entweder
+*feuert* oder nicht. 
+
+Sie können nun selbst die Parallelen zwischen den
+biologischen Neuronen und den künstlichen Neuronen ziehen oder auch die Unterschiede
+erkennen.
+```
+
 ### Single-Layer-Perzeptron
+
+Wir können das Modell der logistischen Regression nun erweitern, indem wir mehrere
+künstliche Neuronen miteinander verknüpfen. Die Eingabe wird dabei zunächst an zwei 
+oder mehrere Neuronen weitergeleitet ($d$ i.A.), die jeweils eine eigene Gewichtung und Aktivierungsfunktion
+besitzen. Die Ausgabe der Neuronen wird dann (in Analogie zu den biologischen Neuronen) 
+an ein weiteres Neuron weitergeleitet, welches diese Signale erneut gewichtet und aufsummiert.
+Ggf. kann diese gewichtete Summe noch durch einen Bias ergänzt und durch eine weitere Aktivierungsfunktion 
+modifiziert werden. Dieses Modell wird als *Single-Layer-Perzeptron* 
+(SLP) bezeichnet, da es nur eine eine einzelne Schicht an *versteckten Neuronen* besitzt.
+
+Mit der Notation $\vec{x}_i \in \mathbb{R}^n$, $W \in \mathbb{R}^{d \times n}$, $\vec{b} \in \mathbb{R}^n$ 
+und $\vec{a} \in \mathbb{R}^d$ kann die zugrundeliegende Rechenoperation des SLPs als
+
+$$
+    \hat{f}(\vec{x}_i) = \sum_{j=1}^n \vec{a}_j \sigma ( \sum_{k=1}^d w_{jk} (\vec{x}_i)_j + \vec{b}_j)
+$$
+
+dargestellt werden, wobei $w_{jk}$, $\vec{b}_j$ und $\vec{a}_j$ lernbare Parameter sind, und 
+$\sigma$ die Aktivierungsfunktion der Neuronen darstellt. Unter Verwendung der Matrix $W$ und 
+der Vektoren $\vec{b}$ und $\vec{a}$ kann die Rechenoperation auch als Skalarprodukt 
+
+$$
+    \hat{f}(\vec{x}_i) = \vec{a}^T \sigma(W^T \vec{x}_i + \vec{b})
+    {{numeq}}{eq:slp}
+$$
+
+geschrieben werden. Der detaillierte Rechengraph des SLP ist in der folgenden Abbildung dargestellt:
+
+<figure>
+    <center>
+    <img src="../assets/figures/06-neural_networks/slp_graph.svg"
+         alt="Ridge Regression"
+         width="500"\>
+    <figcaption>Rechengraph des SLPs mit $d = 2$.</figcaption>
+    </center>
+</figure>
+
+Auch wenn wir auf den ersten Blick nur minimale Änderungen vorgenommen haben, erlaubt uns
+das Einführen einer einzelnen versteckten Schicht (engl. *hidden layer*) bereits
+nichtlineare Entscheidungsgrenzen zu modellieren. Tatsächlich können wir mit dem SLP, sofern wir 
+eine nichtlineare Aktivierungsfunktion wählen,
+**jede beliebige Funktion** approximieren, was als das *universelle Approximationstheorem* bezeichnet wird. 
+
+~~~admonish note title="Universelles Approximationstheorem"
+Das universelle Approximationstheorem besagt, dass ein neuronales Netzwerk mit mindestens einer versteckten Schicht
+und einer nichtlinearen Aktivierungsfunktion jede beliebige Funktion approximieren kann, sofern genügend Neuronen
+in der versteckten Schicht vorhanden sind. Mathematisch ausgedrückt bedeutet dies, dass für jede stetige Funktion
+$f: \mathbb{R}^n \rightarrow \mathbb{R}$ und für jedes $\epsilon > 0$ ein neuronales Netzwerk existiert, sodass
+der Fehler $|f(\vec{x}) - \hat{f}(\vec{x})| < \epsilon$ für alle $\vec{x} \in \mathbb{R}^n$ gilt.
+
+Der Beweis des Theorems ist simpel, sofern man einige Kenntnisse der Funktionalanalysis besitzt. Da dies 
+jedoch den Rahmen dieses Kurses sprengen würde, bieten wir im Folgenden eine interaktive und stark vereinfachte 
+Visualisierung des Theorems an. Dabei beschränken wir uns auf die Approximation einer einfachen Funktion 
+$f: \mathbb{R} \rightarrow \mathbb{R}$ durch ein SLP mit einer versteckten Schicht, die aus 2 Neuronen besteht. 
+Mit den Slidern können Sie die Parameter $w_j$, $b_j$ und $a_j$ der Neuronen verändern und die beste 
+Approximation der Funktion durch das SLP finden. Wir möchten Sie dazu ermuntern, die Funktion zu ändern oder die 
+Anzahl der Neuronen zu erhöhen, um die Approximation zu verbessern.
+
+```python
+{{#include ../codes/06-neural_networks/slp_interactive.py:slp_interactive}}
+```
+~~~
+
+Damit das SLP-Modell, also das neuronale Netzwerk mit einer versteckten Schicht, die Zielfunktion 
+approximieren kann, müssen wir die Parameter $\vec{a}$, $W$ und $\vec{b}$ so anpassen, dass der
+Fehler zwischen der Vorhersage $\hat{f}(\vec{x}_i)$ und dem tatsächlichen Wert $y_i$ minimiert wird. 
+Die ist das normale Vorgehen im überwachten Lernen, wobei wir die Verlustfunktion 
+
+$$
+    \mathcal{L} = \frac{1}{2} \sum_{i=1}^N ( \hat{f}(\vec{x}_i) - y_i )^2
+$$
+
+minimieren wollen. Dazu müssen wir die Gradienten der Verlustfunktion nach den Parametern 
+$\vec{a}$, $W$ und $\vec{b}$ berechnen, um diese mit Hilfe des Gradientenverfahrens zu optimieren.
+Unter Verwendung der Kettenregel, der Definition des SLPs in Gl. {{eqref: eq:slp}} sowie
+der Hilfsvariable $res_i = \hat{f}(\vec{x}_i) - y_i$ können die Gradienten wie folgt berechnet werden:
+
+$$
+\begin{align}
+    \frac{\partial \mathcal{L}}{\partial \vec{a}} &= \sum_{i=1}^N res_i \cdot \sigma(W^T \vec{x}_i + \vec{b}) \\
+    \frac{\partial \mathcal{L}}{\partial W} &= \sum_{i=1}^N res_i \cdot (\vec{a} \odot \sigma'(W^T \vec{x}_i + \vec{b}) \vec{x}_i^T)^T \\
+    \frac{\partial \mathcal{L}}{\partial \vec{b}} &= \sum_{i=1}^N res_i \cdot (\vec{a} \odot \sigma'(W^T \vec{x}_i + \vec{b})) .
+\end{align}
+$$
+
+<!-- <figure>
+    <center>
+    <img src="../assets/figures/06-neural_networks/slp.svg"
+         alt="Ridge Regression"
+         width="400"\>
+    <figcaption>Rechengraph des Ridge-Regression-Modells.</figcaption>
+    </center>
+</figure> -->
