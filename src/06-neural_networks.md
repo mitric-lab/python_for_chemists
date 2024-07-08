@@ -16,7 +16,7 @@ Motivation geben, warum wir uns überhaupt mit diesem Thema beschäftigen sollte
 
 <figure>
     <center>
-    <img src="./assets/figures/06-neural_networks/deep_learning_scheme.pdf"
+    <img src="./assets/figures/06-neural_networks/deep_learning_scheme.svg"
          alt="AI vs. ML vs. DL"
          width="400"\>
     <figcaption>Einordnung von AI, ML und Deep Learning. Quelle: François Chollet, 
