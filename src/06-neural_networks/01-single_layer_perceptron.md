@@ -378,6 +378,10 @@ Dazu verwenden wir eine versteckte Schicht mit 50 Neuronen und der Sigmoid-Aktiv
 Wir visualisieren die Entscheidungsgrenze des SLPs ($\hat{f}(\vec{x}) = 0$) 
 zusammen mit dem Loss des Modells und erhalten den folgenden Plot:
 
+```python
+{{#include ../codes/06-neural_networks/single_layer_perceptron.py:slp_plot}}
+```
+
 ![Single-Layer-Perzeptron](../assets/figures/06-neural_networks/slp_circles.svg)
 
 Wie Sie sehen können, ist das SLP in der Lage, eine nichtlineare Entscheidungsgrenze zu modellieren,
