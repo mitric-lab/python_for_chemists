@@ -1,5 +1,14 @@
 ## Multi-Layer-Perzeptron
 
+<!-- <figure>
+    <center>
+    <img src="../assets/figures/06-neural_networks/slp.svg"
+         alt="Ridge Regression"
+         width="400"\>
+    <figcaption>Rechengraph des Ridge-Regression-Modells.</figcaption>
+    </center>
+</figure> -->
+
 
 <!-- <figure>
     <center>
