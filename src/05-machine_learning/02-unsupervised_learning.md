@@ -145,7 +145,7 @@ folgenden Abbildung ein Beispiel für den $k$-Means Algorithmus dargestellt:
 
 <figure>
     <center>
-    <img src="../assets/figures/05-machine_learning/k_means.pdf"
+    <img src="../assets/figures/05-machine_learning/k_means.svg"
          alt="k_means"
          width="600"\>
     <figcaption>Illustration des $k$-Means Algorithmus für $K = 2$ Cluster. Quelle: Christopher M. Bishop, Pattern Recognition and Machine Learning.</figcaption>
@@ -163,7 +163,7 @@ definiert sind und in Voronoi-Diagrammen dargestellt werden können:
 
 <figure>
     <center>
-    <img src="../assets/figures/05-machine_learning/voronoi.pdf"
+    <img src="../assets/figures/05-machine_learning/voronoi.svg"
          alt="voronoi"
          width="400"\>
     <figcaption>Voronoi-Zellen, wobei die Punkte die Mittelwerte der Cluster darstellen und die Linien die Grenzen der Zellen. Quelle: Kevin P. Murphy, Machine Learning - A Probabilistic Perspective.</figcaption>

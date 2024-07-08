@@ -164,7 +164,7 @@ der logistischen Regression in einem sogenannten *Rechengraphen* (engl. *computa
 
 <figure>
     <center>
-    <img src="../assets/figures/06-neural_networks/single_neuron.pdf"
+    <img src="../assets/figures/06-neural_networks/neuron.svg"
          alt="Ridge Regression"
          width="400"\>
     <figcaption>Rechengraph des Ridge-Regression-Modells.</figcaption>
