@@ -55,7 +55,7 @@ $$
       \vdots \\
       \text{---}\ \vec{v}_ n^\dag\ \text{---}
     \end{pmatrix} \\
-    &= \sigma_1 \vec{u}_ 1 \vec{v}_ 1^\dag + \sigma_2 \vec{u}_ 2 \vec{v}_ 2^\dag + \cdots + \sigma_n \vec{u}_ p \vec{v}_ p^\dag \\
+    &= \sigma_1 \vec{u}_ 1 \vec{v}_ 1^\dag + \sigma_2 \vec{u}_ 2 \vec{v}_ 2^\dag + \cdots + \sigma_p \vec{u}_ p \vec{v}_ p^\dag \\
     &= \sum_{i=1}^p \sigma_i \vec{u}_ i \vec{v}_ i^\dag 
     {{numeq}}{eq:singular_value_decomposition}
   \end{align}
