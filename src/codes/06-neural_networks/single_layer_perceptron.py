@@ -126,16 +126,16 @@ ax1.scatter(X[y == 1, 0], X[y == 1, 1], color='blue', label='Class 0')
 ax1.scatter(X[y == -1, 0], X[y == -1, 1], color='red', label='Class 1')
 
 # Plot the decision boundary
-x_grid = np.linspace(-8, 8, 100)
-y_grid = np.linspace(-8, 8, 100)
-X_grid, Y_grid = np.meshgrid(x_grid, y_grid)
-Z = np.zeros_like(X_grid)
-for i, x in enumerate(x_grid):
-    for j, y in enumerate(y_grid):
-        Z[i, j] = f_hat.feedforward([x, y])
+x1_grid = np.linspace(-8, 8, 100)
+x2_grid = np.linspace(-8, 8, 100)
+X1_grid, X2_grid = np.meshgrid(x1_grid, x2_grid)
+Y = np.zeros_like(X1_grid)
+for i, x1 in enumerate(x1_grid):
+    for j, x2 in enumerate(x2_grid):
+        Y[i, j] = f_hat.feedforward([x1, x2])
 
-ax1.contour(X_grid, Y_grid, Z, levels=[0.0], colors='black', linestyles='dashed')
-ax1.contourf(X_grid, Y_grid, Z, levels=[-10.0, 0.0, 10.0], colors=['red', 'blue'], alpha=0.2)
+ax1.contour(X1_grid, X2_grid, Y, levels=[0.0], colors='black', linestyles='dashed')
+ax1.contourf(X1_grid, X2_grid, Y, levels=[-10.0, 0.0, 10.0], colors=['red', 'blue'], alpha=0.2)
 
 # Plot the loss over epochs
 ax2.plot(f_hat.losses)
