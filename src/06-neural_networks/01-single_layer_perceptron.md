@@ -224,14 +224,14 @@ Ggf. kann diese gewichtete Summe noch durch einen Bias ergänzt und durch eine w
 modifiziert werden. Dieses Modell wird als *Single-Layer-Perzeptron* 
 (SLP) bezeichnet, da es nur eine eine einzelne Schicht an *versteckten Neuronen* besitzt.
 
-Mit der Notation $\vec{x}_i \in \mathbb{R}^n$, $W \in \mathbb{R}^{d \times n}$, $\vec{b} \in \mathbb{R}^n$ 
+Mit der Notation $\vec{x}_i \in \mathbb{R}^n$, $W \in \mathbb{R}^{n \times d}$, $\vec{b} \in \mathbb{R}^d$ 
 und $\vec{a} \in \mathbb{R}^d$ kann die zugrundeliegende Rechenoperation des SLPs als
 
 $$
-    \hat{f}(\vec{x}_i) = \sum_{j=1}^n \vec{a}_j \sigma ( \sum_{k=1}^d w_{jk} (\vec{x}_i)_j + \vec{b}_j)
+    \hat{f}(\vec{x}_i) = \sum_{j=1}^n \vec{a}_j \sigma ( \sum_{k=1}^d w_{kj} (\vec{x}_i)_j + \vec{b}_j)
 $$
 
-dargestellt werden, wobei $w_{jk}$, $\vec{b}_j$ und $\vec{a}_j$ lernbare Parameter sind, und 
+dargestellt werden, wobei $w_{kj}$, $\vec{b}_j$ und $\vec{a}_j$ lernbare Parameter sind, und 
 $\sigma$ die Aktivierungsfunktion der Neuronen darstellt. Unter Verwendung der Matrix $W$ und 
 der Vektoren $\vec{b}$ und $\vec{a}$ kann dies auch als Skalarprodukt 
 
