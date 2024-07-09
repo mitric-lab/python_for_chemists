@@ -97,6 +97,7 @@ $$
                         &= - \sum_{i=1}^N \left[ y_i \log P(\hat{y}_i = 1 | \vec{x}_i) + (1 - y_i) \log (1 - P(\hat{y}_i = 1 | \vec{x}_i)) \right] \\
                         &= - \sum_{i=1}^N \left[ y_i \log \sigma(\left\langle \vec{w}, \vec{x}_i \right\rangle + b) + (1 - y_i) \log (1 - \sigma(\left\langle \vec{w}, \vec{x}_i \right\rangle + b)) \right] .
 \end{align}
+{{numeq}}{eq:logistic_loss}
 $$
 
 Sie können sich als Übungsaufgabe davon überzeugen, dass die Gradienten der Verlustfunktion 
@@ -391,3 +392,16 @@ die die Datenpunkte korrekt klassifiziert.
 Ändern Sie die Batch-Size, die Anzahl der Neuronen oder 
 die Lernrate, und beobachten Sie, wie sich die Entscheidungsgrenze und der Loss des Modells verändern.
 ```
+
+---
+
+### Übung
+
+#### Aufgabe 1: Gradienten der logistischen Regression
+
+{{#include ../psets/06.md:aufgabe_1}}
+
+#### Aufgabe 2: Binäre Kreuzentropie
+
+{{#include ../psets/06.md:aufgabe_2}}
+

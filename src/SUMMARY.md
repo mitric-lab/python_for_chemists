@@ -52,4 +52,5 @@
 [Übung 3](psets/03.md)
 [Übung 4](psets/04.md)
 [Übung 5](psets/05.md)
+[Übung 6](psets/06.md)
 

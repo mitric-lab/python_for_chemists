@@ -25,7 +25,7 @@ Multi-Layer-Perzeptron (MLP) bezeichnet und ist in der Abbildung unten dargestel
     <center>
     <img src="../assets/figures/06-neural_networks/mlp.svg"
          alt="MLP"
-         width="400"\>
+         width="600"\>
     <figcaption>Schematische Darstellung eines MLP.</figcaption>
     </center>
 </figure>
