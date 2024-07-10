@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
+### ANCHOR: sigmoid
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
 
 class Sigmoid():
     def __call__(self, x):
@@ -10,6 +10,7 @@ class Sigmoid():
     
     def gradient(self, x):
         return self(x) * (1 - self(x))
+### ANCHOR_END: sigmoid
 
 class ReLU():
     def __call__(self, x):
@@ -18,10 +19,11 @@ class ReLU():
     def gradient(self, x):
         return np.heaviside(x, 0) 
 
-
+### ANCHOR: mlp_init
 class MLP():
 
-    def __init__(self, sizes, tau=0.1, batch_size=5):        
+    def __init__(self, sizes, tau=0.1, batch_size=5):
+        # Initialize the network's parameters
         self.sizes = list(sizes.keys())
         self.activations = list(sizes.values())
         self.num_layers = len(self.sizes)
@@ -36,7 +38,9 @@ class MLP():
         for b_l, w_l, activation_l in zip(self.biases, self.weights, self.activations[1:]):
             h_l = activation_l(np.dot(w_l.T, h_l) + b_l)
         return h_l
+### ANCHOR_END: mlp_init
         
+### ANCHOR: mlp_train_step
     def train_step(self, X, y):
         # Train the network using mini-batch gradient descent
 
@@ -70,7 +74,9 @@ class MLP():
         # Update the network's parameters using the gradients
         self.weights = [w - (self.tau / self.batch_size) * dw for w, dw in zip(self.weights, gradient_weights)]
         self.biases = [b - (self.tau / self.batch_size) * db for b, db in zip(self.biases, gradient_bias)]
+### ANCHOR_END: mlp_train_step
 
+### ANCHOR: mlp_backprop
     def backprop(self, xi, yi):
         # Compute the gradients of the network's parameters for input xi and target yi
 
@@ -78,12 +84,12 @@ class MLP():
         gradient_weights_i = [np.zeros_like(w) for w in self.weights]
         gradient_bias_i = [np.zeros_like(b) for b in self.biases]
         
-        ### Feedforward step ###
+        ### Feedforward pass ###
         
         # First layer is just the input
         h_l = xi
-        h_vectors = [h_l] # list to store all the outputs, layer by layer
-        a_vectors = [] # list to store all the activations a, layer by layer
+        h_vectors = [h_l] # store hidden layer outputs
+        a_vectors = [] # store activations
         
         # Perform forward pass through the network and store activations and outputs
         for w_l, b_l, activation_l in zip(self.weights, self.biases, self.activations[1:]):
@@ -112,7 +118,9 @@ class MLP():
             gradient_bias_i[-l] = delta_l
         
         return  gradient_weights_i, gradient_bias_i
+### ANCHOR_END: mlp_backprop
 
+### ANCHOR: mlp_train
     def train(self, X, y, epochs=10, validate=False):
         # Train or validate the network for a number of epochs
 
@@ -131,34 +139,54 @@ class MLP():
             accuracy /= N
             
             print(f"Epoch: {e+1}, Accuracy: {accuracy:.3f}")
+### ANCHOR_END: mlp_train
 
-
-
+### ANCHOR: mnist
 import mnist_loader as loader
 
-# load MNIST handwritten digits database
+# Load the MNIST dataset
 train_data, valid_data, test_data = loader.load_MNIST('./mnist.pkl.gz')
 
-tau = 3.0
+# Plot the first 5 images in the training set
+fig, ax = plt.subplots(1, 5, figsize=(10, 2))
+
+for i in range(5):
+    ax[i].imshow(train_data[i][0].reshape(28, 28), cmap='gray')
+    ax[i].axis('off')
+
+fig.tight_layout()
+
+plt.show()
+### ANCHOR_END: mnist
+
+#fig.savefig('../../assets/figures/06-neural_networks/mnist_samples.svg')
+
+### ANCHOR: mlp_init_model
+tau = 1.0
 batch_size = 10
-epochs = 5
+epochs = 20
             
-sizes = {784: None,
-        30: Sigmoid(),
-        10: Sigmoid()}
+sizes = {784: None,       # input dimension
+        30: Sigmoid(),    # hidden layer
+        10: Sigmoid()}    # output layer (classes)
 
 f_hat = MLP(sizes, tau=tau, batch_size=batch_size)
+### ANCHOR_END: mlp_init_model
 
+### ANCHOR: mlp_train_model
 N = len(train_data)
 X_train = np.array([train_data[i][0] for i in range(N)])
 y_train = np.array([train_data[i][1] for i in range(N)])
-print(X_train.shape, y_train.shape)
+#print(X_train.shape, y_train.shape)
 
 f_hat.train(X_train, y_train, epochs=epochs, validate=False)
+### ANCHOR_END: mlp_train_model
         
+### ANCHOR: mlp_validate_model
 N_valid = len(valid_data)
 X_valid = np.array([valid_data[i][0] for i in range(N_valid)])
 y_valid = np.array([valid_data[i][1] for i in range(N_valid)])
-print(X_valid.shape, y_valid.shape)
+#print(X_valid.shape, y_valid.shape)
 
 f_hat.train(X_valid, y_valid, epochs=1, validate=True)
+### ANCHOR_END: mlp_validate_model
