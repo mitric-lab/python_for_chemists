@@ -159,7 +159,7 @@ Bestandteile der Berechnung, wie $\vec{a}_l$ und $\vec{h}_l$, sind bereits aus d
 bedeutet, dass wir für die Berechnung des Gradienten eines Datenpunktes zunächst einen *forward pass* mit den 
 aktuellen Gewichten und Bias durchführen und dabei die Aktivierungen $\vec{a}_l$ und $\vec{h}_l$ speichern.
 
-<!-- ### Implementierung eines MLP
+### Implementierung eines MLP
 
 Das genaue Vorgehen sollte spätestens während der Implementierung des MLP klar werden. Wir beginnen mit der 
 Aktivierungsfunktion, die wir bereits für das SLP verwendet haben. 
@@ -174,8 +174,51 @@ die in der Praxis verwendet werden. Recherchieren Sie dazu z.B. die *Rectified L
 *Hyperbolic Tangent* (tanh) Funktion und implementieren Sie diese in Ihrem Code.
 ```
 
-Anschließend 
+Anschließend implementieren wir die `__init__` Methode der Klasse `MLP`, die die Klassenattribute setzt und die 
+Gewichte und Bias initialisiert. Die Gewichte und Bias der einzelnen Schichten müssen hierbei in Listen gespeichert werden, da die 
+Schichten unterschiedlich viele Neuronen haben können. Wir gehen hier davon aus, dass die Architektur des MLP in einem Dictionary 
+`sizes` festgelegt ist, das als Keys die Anzahl der Neuronen pro Schicht und als Values die Aktivierungsfunktion 
+enthält. 
+
+```python
+{{#include ../codes/06-neural_networks/multi_layer_perceptron.py:mlp_init}}
+```
+
+Die `feedforward`-Methode ist dann relativ einfach zu implementieren, wobei wir zusammen über die Gewichte, Bias und 
+Aktivierungsfunktionen der Schichten iterieren und die Ausgabe rekursiv berechnen.
+
+Um das Training des MLP ein wenig zu entzerren, implementieren wir zunächst die Methode `train_step`, welche für 
+alle Daten eine Epoche das mini-batch Gradientenverfahren durchführt.
+
+```python
+{{#include ../codes/06-neural_networks/multi_layer_perceptron.py:mlp_train_step}}
+```
+
+Diese Methode ruft wiederum die Methode `update_mini_batch` auf, die die Gradienten für ein mini-batch aufsummiert und
+die Gewichte und Bias entsprechend anpasst. Dies muss aus den oben genannten Gründen in Form einer *list comprehension* 
+geschehen.
+
+Die eigentliche Berechnung der Gradienten der Verlustfunktion für ein einzelnes Datenpaar erfolgt dann in der 
+`backprop`-Methode. Dabei führen wir zunächst einen *forward pass* durch, um die Aktivierungen und Ausgaben der 
+einzelnen Schichten zu berechnen und zu speichern. Anschließend berechnen wir $\delta_L$ und die Gradienten der 
+letzten Schicht gemäß Gl. {{eqref: eq:partial_derivatives_last_layer}}. Die Rekursion für die versteckten Schichten 
+erfolgt dann über eine Schleife $l = 2, \dots, L$, wobei wir die *backpropagation* durch negative Indizes 
+erreichen.
+
+```python
+{{#include ../codes/06-neural_networks/multi_layer_perceptron.py:mlp_backprop}}
+```
+
+Der gesamte Trainingsprozess über mehrere Epochen ist dann in der Methode `train` zusammengefasst. Hierbei wird 
+für jede Epoche die `train_step`-Methode aufgerufen. Wir wollen das MLP zunächst auf ein Klassifikationsproblem 
+mit $C$ Klassen trainieren, weshalb die Dimension der Ausgabe der letzten Schicht ebenfalls $C$ betragen soll. 
+Die vorhergesagte Klasse ist dabei das Neuron mit dem höchsten Wert in der Ausgabe der letzten Schicht. Um die 
+Genauigkeit des Modells zu überprüfen, können wir also für jeden Trainingsdatenpunkt die Vorhersage mit dem 
+tatsächlichen Label vergleichen und den Anteil der korrekten Vorhersagen berechnen.
+
+```python
+{{#include ../codes/06-neural_networks/multi_layer_perceptron.py:mlp_train}}
+```
 
 
-
-![MNIST](../assets/figures/06-neural_networks/mnist_samples.svg) -->
+<!-- ![MNIST](../assets/figures/06-neural_networks/mnist_samples.svg) -->
