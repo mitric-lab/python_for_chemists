@@ -49,6 +49,6 @@ kontinuierlich aktualisiert.
 | 13  | Di.     | 09.07. | Vorlesung   | Neuronale Netzwerke II |
 | 13  | Do.     | 11.07. | Vorlesung   | Neuronale Netzwerke III |
 | 14  | Di.     | 16.07. | Übung       | Neuronale Netzwerke |
-| 14  | Do.     | 18.07. | Zusammenfassung | Wiederholung und Ausblick |
+| 14  | Do.     | 18.07. | Vorlesung   | Ausblick, Fragestunde und Klausurvorbereitung |
 |     | Fr.     | 09.08. | Klausur     |                 |
 
