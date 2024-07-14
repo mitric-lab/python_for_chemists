@@ -43,7 +43,7 @@
 
 ---
 
-[Zusammenfassung und Ausblick](07-summary.md)
+[Zusammenfassung und Ausblick]()
 
 ---
 
@@ -53,4 +53,5 @@
 [Übung 4](psets/04.md)
 [Übung 5](psets/05.md)
 [Übung 6](psets/06.md)
+[Klausurvorbereitung](psets/exam_preparation.md)
 
