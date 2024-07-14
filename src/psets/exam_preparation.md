@@ -47,7 +47,7 @@ Die Klasse von $\vec{x}_i$ ist dann diejenige Klasse, die am häufigsten unter d
 nächsten Nachbarn vorkommt. Dies ist im folgenden Bild veranschaulicht, wobei 
 für $k = 3$ die Klasse $y_i =$ *rot* ist.
 
-![kNN](../assets/figures/07-summary/knn.svg)
+![kNN](../assets/figures/07-summary/kNN.svg)
 
 Vervollständigen Sie die Methode `predict` der Klasse `kNN_Classifier` in der folgenden 
 Implementierung.
