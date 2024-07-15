@@ -23,8 +23,9 @@ def euler_method(
     dydx: Callable[[float, float], float], 
     nsteps: int,
 ) -> np.ndarray:
-    x = x0 + np.arange(0, nsteps) * h
-    y = np.zeros(nsteps)
+    x = x0 * np.arange(0, nsteps) * h
+    y = np.zeros(nsteps + 1)
+    y[1] = y0
 
     for i in range(0, nsteps):
         y[i] = euler_step(x[i], y[i], h, dydx)
