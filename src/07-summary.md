@@ -54,18 +54,24 @@ von Cyclobutanon eingesetzt.[^miao2024] Eine Darstellung von
 
 ### Fragment-basierte Methoden für die Berechnung von angeregten Zuständen in großen molekularen Aggregaten
 
-Die theoretische Beschreibung von dynamischen Prozessen, wie Exciton-Transfer oder 
-Ladungstransfer, in organischen Halbleitern und komplexen molekularen System erfordert 
-Methoden, die die Berechnung von großen molekularen Aggregaten ermöglichen, die aus 
-tausenden Atomen bestehen. Um diese Problematik anzugehen, entwickelt unsere Gruppe 
+Die theoretische Beschreibung von dynamischen Prozessen, wie Exciton-Transfer 
+oder Ladungstransfer, in organischen Halbleitern und komplexen molekularen 
+System erfordert Methoden, die die Berechnung von großen molekularen 
+Aggregaten ermöglichen, die aus tausenden Atomen bestehen. Die 
+"traditionellen" quantenchemische Methoden, wie z.B. Hartree-Fock oder
+Dichtefunktionaltheorie, sind aufgrund ihrer starken Skalierung mit der
+Systemgröße nicht in der Lage, solche Systeme in angemessener Zeit zu
+berechnen. Um diese Problematik anzugehen, entwickelt unsere Gruppe 
 neue theoretische Methoden, die solche großen molekularen Systeme beschreiben 
-können. Dazu kombinieren wir semiempirische quantenchemische Methoden (DFTB) mit 
-einem Fragmentierungsansatz (FMO) in einem neuen theoretischen Formalismus, der 
-es erlaubt die angeregten Zustände von großen molekularen Aggregaten zu berechnen 
-und die Molekulardynamik dieser angeregten Zustände zu simulieren.[^einsele2023],[^einsele2024]
+können. Dazu kombinieren wir semiempirische quantenchemische Methoden (DFTB) 
+mit einem Fragmentierungsansatz (FMO) in einem neuen theoretischen 
+Formalismus, der es erlaubt die angeregten Zustände von großen molekularen 
+Aggregaten zu berechnen und die Molekulardynamik dieser angeregten Zustände 
+zu simulieren.[^einsele2023]<sup>,</sup>[^einsele2024]
 
 ```rust
-// create the A matrix from the orbital energy differences, the Coulomb and the exchange contributions
+// create the A matrix from the orbital energy differences, 
+// the Coulomb and the exchange contributions
 let h: Array2<f64> = self.fock_and_coulomb() - self.exchange();
 // solve the eigenvalue problem A x = w A using the eigenvalue decomposition
 let (eigenvalues, eigenvectors) = h.eigh(UPLO::Upper).unwrap();
@@ -87,15 +93,16 @@ let f: Array1<f64> = oscillator_strength(eigenvalues.view(), tr_dipoles.view());
 
 Energietransport in excitonischen Materialien spielt eine große Rolle für die 
 Anwendung in vielen optoelektronischen Systemen. Während in der Vergangenheit 
-versucht wurden den Energietransport durch strukturelle Veränderung der verwendeten 
-Moleküle zu verbessern, zielt meine Forschung darauf ab dies durch Kopplung der 
+versucht wurden, den Energietransport durch strukturelle Veränderung der verwendeten 
+Moleküle zu verbessern, zielt ein Forschungsschwerpunkt unseres Arbeitskreises 
+darauf ab, dies durch Kopplung der 
 elektronischen Übergänge an starke elektromagnetische Felder zu erreichen, bspw. 
 in Mikrokavitäten. Die Quasiteilchen, die in solchen Systemen entstehen, werden 
-Polaritonen genannt. Genauer beschäftige ich mich mit der theoretischen Beschreibung 
+Polaritonen genannt. Genauer beschäftigen wir uns mit der theoretischen Beschreibung
 von Polaritonen. Dazu müssen viele Konzepte aus dem Studium der theoretischen 
 Chemie zum Einsatz gebracht werden und zusätzlich kombiniert werden mit Methoden 
-der Quantenelektrodynamik. Um reale Systeme zu berechnen werden die entstehenden 
-Gleichungen numerisch gelöst. (Ich muss ab und zu programmieren)
+der Quantenelektrodynamik. Um reale Systeme zu berechnen, werden die entstehenden 
+Gleichungen numerisch gelöst.
 
 ```python
 system.build_system()
@@ -107,7 +114,8 @@ coeff = np.dot(v.T, np.dot(system.a + system.a_dagger, v))
 
 ### Nikita titel
 
-Der Forschungsbereich konzentriert sich auf kleine Metallcluster sowohl im Zeit- als 
+Dieser Forschungsbereich konzentriert sich auf kleine Metallcluster 
+sowohl im Zeit- als 
 auch im Energieraum (zeitabhängige und zeitunabhängige Prozesse). Ziel ist es, diese 
 kleinen Metallcluster theoretisch so genau wie möglich zu beschreiben. Obwohl diese 
 Cluster nur eine geringe Anzahl von Atomen enthalten, ist ihre Untersuchung aufgrund 
@@ -116,7 +124,7 @@ Diese Cluster sind besonders interessant, weil das Verständnis ihrer katalytisc
 Aktivität stark von theoretischen Studien profitieren könnte, die derzeit nicht in 
 ausreichendem Maße verfügbar sind.
 
-Dieses Code-Snippet stammt aus einem Programm, das die eindimensionale Schrödinger-Gleichung numerisch exakt löst. Diese Gleichung ist fundamental in der Quantenmechanik, insbesondere für das Verständnis von Zwei-Atom-Molekülen. 
+Dieses Code-Snippet stammt aus einem Programm, das die eindimensionale Schrödinger-Gleichung numerisch exakt löst. Diese Gleichung ist fundamental in der Quantenmechanik, insbesondere für das Verständnis von zweiatomigen Molekülen. 
  
 ```python
 def getHamiltonian(self):
@@ -141,19 +149,26 @@ def getHamiltonian(self):
         self.hamiltonian[i,:] = oneminusone * np.fft.fft(tmp) / dim
 ```
 
-Dieses Code-Snippet stammt aus einem Programm, das die eindimensionale Schrödinger-Gleichung numerisch exakt löst. Diese Gleichung ist fundamental in der Quantenmechanik, insbesondere für das Verständnis von Zwei-Atom-Molekülen. 
- 
-Der vorliegende Code hat die Aufgabe, eine Hamilton-Matrix (self.hamiltonian) zu konstruieren und eine Fourier-Transformation des kinetischen Teils durchzuführen, da dieser Operator im Impulsraum multiplikativ ist. Zunächst wird die Dimension des Grids (dim) ermittelt und eine komplexe Nullmatrix für den Hamiltonian (self.hamiltonian) initialisiert. Anschließend werden die Impulswerte (pk) berechnet und daraus der kinetische Term (tk) abgeleitet. Durch eine exponentielle Funktion (W) und eine Schleife über die Matrixzeilen wird der kinetische Term in den Impulsraum transformiert und mittels Fourier-Transformation (np.fft.fft) in die Hamilton-Matrix eingetragen. 
+Der vorliegende Code hat die Aufgabe, eine Hamilton-Matrix (`self.hamiltonian`)
+zu konstruieren und eine Fourier-Transformation des kinetischen Teils 
+durchzuführen, da dieser Operator im Impulsraum multiplikativ ist. Zunächst 
+wird die Dimension des Grids (`dim`) ermittelt und eine komplexe Nullmatrix 
+für den Hamiltonian (`self.hamiltonian`) initialisiert. Anschließend werden 
+die Impulswerte (`pk`) berechnet und daraus der kinetische Term (`tk`) abgeleitet. 
+Durch eine exponentielle Funktion (`W`) und eine Schleife über die Matrixzeilen 
+wird der kinetische Term in den Impulsraum transformiert und mittels 
+Fourier-Transformation (`np.fft.fft`) in die Hamilton-Matrix eingetragen. 
 
-Abbildung: Theoretische Untersuchung von Ce2.
- 
-Links: Vergleich zwischen dem beobachteten NeNePo-Signal im Experiment und den theoretischen Simulationen (Zeitraum).
- 
-Mitte: Berechnete potentielle Energiekurven. Die hervorgehobenen Zustände stellen die identifizierten Zustände dar, die für das beobachtete Signal verantwortlich sind.
- 
-Rechts: Vergleich zwischen dem experimentellen Photoelektronenspektrum von Ce2- und dem simulierten Spektrum (Energieraum).
 
-![Cer](./assets/figures/07-summary/together3.svg)
+![Cer](./assets/figures/07-summary/ce2_together.svg)
+Abbildung: Theoretische Untersuchung von Ce<sub>2</sub>. 
+Links: Vergleich zwischen dem beobachteten NeNePo-Signal im Experiment 
+und den theoretischen Simulationen (Zeitraum).
+Mitte: Berechnete potentielle Energiekurven. Die hervorgehobenen Zustände 
+stellen die identifizierten Zustände dar, die für das beobachtete Signal 
+verantwortlich sind.
+Rechts: Vergleich zwischen dem experimentellen Photoelektronenspektrum von 
+Ce<sub>2</sub> und dem simulierten Spektrum (Energieraum).
 
 
 ### Johannes Titel
@@ -181,4 +196,4 @@ centroids = np.array(kmeans.cluster_centers_)
 
 [^einsele2023]: R. Einsele, J. Hoche, R. Mitrić, *J. Chem. Phys.* **2023**, *158*, 044121.
 
-[^einsele2024]: R. Einsele, R. Mitrić, *arXiv:2404.14174v1*.
+[^einsele2024]: R. Einsele, R. Mitrić, *J. Comput. Theor. Chem.* **2024**, just accepted.
