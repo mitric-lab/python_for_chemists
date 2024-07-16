@@ -291,7 +291,8 @@ einen der wohl meist genutzten Datensätze in der Vorhersage von Moleküleigensc
 [Quantum Machine 9](http://quantum-machine.org/datasets/) (QM9)
 Datensatz. Dieser enthält Daten von ca. 134.000 Molekülen mit bis zu 9 Atomen, die durch 21 Eigenschaften 
 beschrieben werden. Dazu gehören z.B. das Dipolmoment, die HOMO- und LUMO-Energien, die Enthalpie, Gibbs-Energie 
-und Wärmekapazität.
+und Wärmekapazität. Sie können eine bereits prozessierte Version des Datensatzes 
+<a href="../codes/06-neural_networks/qm9.npy" download>hier</a> herunterladen.
 
 ---
 
