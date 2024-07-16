@@ -96,6 +96,7 @@ Wir betrachten zunächst die letzte Schicht $L$. Da $\vec{h}_L = \sigma_L(\vec{a
 
 $$
     (\delta_L)_j := \frac{\partial \ell(\hat{f}(\vec{x}_i), \vec{y}_i)}{\partial (\vec{a}_L)_j} = \frac{\partial \ell(\hat{f}(\vec{x}_i), \vec{y}_i)}{\partial (\vec{h}_L)_j} \frac{\partial (\vec{h}_L)_j}{\partial (\vec{a}_L)_j} = \frac{\partial \ell(\hat{f}(\vec{x}_i), \vec{y}_i)}{\partial (\vec{h}_L)_j} \sigma_L'((\vec{a}_L)_j) \,.
+    {{numeq}}{eq:delta_L}
 $$
 
 Das Ergebnis sieht auf den ersten Blick kompliziert aus, jedoch hat es eine einfache Interpretation. Der erste Faktor, 
@@ -220,5 +221,83 @@ tatsächlichen Label vergleichen und den Anteil der korrekten Vorhersagen berech
 {{#include ../codes/06-neural_networks/multi_layer_perceptron.py:mlp_train}}
 ```
 
+### Anwendung auf den MNIST Datensatz
 
-<!-- ![MNIST](../assets/figures/06-neural_networks/mnist_samples.svg) -->
+Wir können das MLP nun auf den MNIST Datensatz anwenden, um die Klassifikation von handgeschriebenen Ziffern zu 
+üben. Der Datensatz besteht aus 60.000 Trainings- und 10.000 Testbildern, die jeweils 28x28 Pixel groß sind. 
+Wir können die Bilder also als Vektoren der Länge 784 interpretieren. Die Labels sind die Ziffern von 0 bis 9,
+die wir als One-Hot-Vektoren der Länge 10 kodieren. Das bedeutet, dass das Label $j = 0, \dots, 9$ 
+eines Bildes $\vec{x}_i$ ein Vektor $\vec{y}_i$ der Länge 10 ist, der an der Stelle $j$ eine 1 enthält 
+und an allen anderen Stellen 0. Sie können den MNIST Datensatz 
+<a href="../codes/06-neural_networks/mnist.pkl.gz" download>hier</a> herunterladen, sowie ein 
+<a href="../codes/06-neural_networks/mnist_loader.py" download>Hilfsprogramm</a> zum Laden des Datensatzes. 
+Liegen die Dateien `mnist.pkl.gz` und `mnist_loader.py` im gleichen Verzeichnis wie ihr Skript, 
+können Sie den Datensatz mit folgendem Befehl laden und die ersten fünf Bilder anzeigen lassen:
+
+```python
+{{#include ../codes/06-neural_networks/multi_layer_perceptron.py:mnist}}
+```
+
+![MNIST](../assets/figures/06-neural_networks/mnist_samples.svg)
+
+Zum Testen von ML-Modellen an großen Datenstrukturen ist es sinnvoll, das Modell nicht anhand aller 
+zur Verfügung stehenden Daten zu trainieren. Führen wir das Training auf dem gesamten Datensatz durch, und 
+das ggf. über mehrere Epochen, würden wir intuitiv erwarten, dass das Modell die Trainingsdaten perfekt 
+approximiert. Das bedeutet jedoch nicht, dass das Modell auch auf unbekannten Daten gut generalisiert.
+Daher ist es üblich, die zu Verfügung stehenden Daten
+in einen **Trainings-** und einen **Validierungsdatensatz** aufzuteilen. Das Model wird dann nur auf den Trainingsdaten 
+trainiert. Nach dem Training, oder auch nach jeder Epoche, kann dann die Genauigkeit des Modells auf den 
+Validierungsdaten überprüft werden. Dies nennt man auch *Kreuzvalidierung* (engl. *cross-validation*) und es 
+kann helfen, *overfitting*, also das Überanpassen des Modells an die Trainingsdaten, zu vermeiden. 
+Erhalten wir auf den Validierungsdaten eine schlechtere Genauigkeit als auf den Trainingsdaten, 
+könnte dies ein Hinweis auf *overfitting* sein.
+
+Da unser MLP Bilder als Vektoren interpretiert, müssen wir die Dimension der Eingabe auf 784 setzen. 
+Wir wählen eine Architektur mit einer versteckten Schicht mit 30 Neuronen und der Sigmoid-Aktivierungsfunktion. 
+Die Ausgabe der letzten Schicht hat 10 Neuronen, die die Amplituden für die Ziffern 0 bis 9 darstellen.
+
+```python
+{{#include ../codes/06-neural_networks/multi_layer_perceptron.py:mlp_init_model}}
+```
+
+Nachdem wir unseren Trainingsdatensatz in die korrecte Form gebracht haben, können wir das Modell für 20 Epochen 
+trainieren.
+
+```python
+{{#include ../codes/06-neural_networks/multi_layer_perceptron.py:mlp_train_model}}
+```
+
+Im Anschluss an den Trainingsprozess können wir die Genauigkeit des Modells auf den Validierungsdaten überprüfen.
+
+```python
+{{#include ../codes/06-neural_networks/multi_layer_perceptron.py:mlp_validate_model}}
+```
+
+```admonish note title="Hyperparameter"
+Machen Sie sich bewusst, dass die Wahl der Hyperparameter, wie z.B. Lernrate, Anzahl der Neuronen pro Schicht, 
+Anzahl der Schichten, Batch-Größe, etc., einen großen Einfluss auf die Performance des Modells haben. Da es 
+keine allgemeingültigen Regeln für die Wahl der Hyperparameter gibt, ist es sinnvoll, verschiedene Werte zu testen 
+und die Genauigkeit des Modells auf den Validierungsdaten zu überprüfen.
+
+Hat man die optimalen Hyperparameter gefunden, wird das Model einmalig auf den Testdaten evaluiert, was die 
+tatsächliche Performance des Modells auf unbekannten Daten darstellt.
+```
+
+### Anwenden auf den QM9 Datensatz
+
+Wir haben im obigen Abschnitt ein MLP auf den MNIST Datensatz angewendet, der ein Klassifikationsproblem darstellt. 
+Dank der Flexibilität des MLP können wir es jedoch auch auf Regressionsprobleme anwenden. Dazu verwenden wir 
+einen der wohl meist genutzten Datensätze in der Vorhersage von Moleküleigenschaften, den 
+[Quantum Machine 9](http://quantum-machine.org/datasets/) (QM9)
+Datensatz. Dieser enthält Daten von ca. 134.000 Molekülen mit bis zu 9 Atomen, die durch 21 Eigenschaften 
+beschrieben werden. Dazu gehören z.B. das Dipolmoment, die HOMO- und LUMO-Energien, die Enthalpie, Gibbs-Energie 
+und Wärmekapazität.
+
+---
+
+### Übung
+
+#### Aufgabe 3: Softmax und Kreuzentropie
+
+{{#include ../psets/06.md:aufgabe_3}}
+

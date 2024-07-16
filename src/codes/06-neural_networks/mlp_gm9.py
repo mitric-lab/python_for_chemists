@@ -149,7 +149,7 @@ np.random.shuffle(indices)
 X_train = X[indices[:N_train]]
 y_train = y[indices[:N_train]]
 
-print(y_train[:10])
+#print(y_train[:10])
 
 X_test = X[indices[N_train:]]
 y_test = y[indices[N_train:]]
@@ -165,6 +165,10 @@ epochs = 20
 
 f_hat = MLP(sizes, tau=tau, batch_size=batch_size)
 
+print("Training the network")
+
 f_hat.train(X_train, y_train, epochs=epochs, validate=False)
+
+print("Validating the network")
 
 f_hat.train(X_test, y_test, epochs=1, validate=True)

@@ -19,6 +19,11 @@ class ReLU():
     def gradient(self, x):
         return np.heaviside(x, 0) 
 
+class Softmax():
+    def __call__(self, x):
+        exps = np.exp(x - np.max(x))
+        return exps / np.sum(exps)
+
 ### ANCHOR: mlp_init
 class MLP():
 
