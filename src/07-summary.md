@@ -1,13 +1,45 @@
 # Zusammenfassung und Ausblick
 
+In diesem Kurs haben Sie neben den Grundlagen des Programmierens mit Python 
+auch einige grundlegende Konzepte und Methoden des maschinellen Lernens kennengelernt. 
+Dazu zählen Methoden des überwachten und unüberwachten Lernens, sowie 
+neuronale Netzwerke, wobei wir uns auf die Anwendung dieser Methoden in der Chemie 
+konzentriert haben. Wir möchten dabei betonen, dass 
+wir Ihnen in diesem Kurs nur einen kleinen Einblick in die Welt des 
+maschinellen Lernens geben konnten. Mit Ihrem erworbenen Wissen und 
+Fähigkeiten sind Sie jedoch nun durchaus in der Lage, auch komplexere 
+Probleme zu lösen und eigene Projekte zu realisieren, wozu wir Sie 
+ausdrücklich ermutigen. 
+
+In der Chemie spielen maschinelle Lernverfahren eine immer 
+wichtigere Rolle, da sie es ermöglichen, komplexe Zusammenhänge in großen 
+Datenmengen zu erkennen und zu nutzen. Wir möchten Ihnen daher abschließend 
+einen Einblick in den aktuellen Stand des maschinellen Lernens in der Chemie 
+geben, sowie einige aktuelle Forschungsthemen aus unserem Arbeitskreis vorstellen.
+
 ## Aktueller Stand des maschinellen Lernens in der Chemie
+
+Um eines der spannendsten Anwendungsgebiete des maschinellen Lernens (in der Chemie 
+und allgemein), das *generative Modellieren*, zu motivieren, möchten wir 
+Sie zunächst . 
+Wir haben gesehen, dass neuronale Netzwerke sowohl zur Klassifikation als auch 
+zur Regression eingesetzt werden können. Dabei benötigen wir zum Training 
+des Netzwerks 
+
+In der Chemie finden sie daher 
+Anwendung in der Vorhersage von Moleküleigenschaften, wie z.B. der Synthetisierbarkeit 
+oder der Aktivität von Wirkstoffen. 
+
+Können wir neuronale Netzwerke jedoch auch 
+für das unüberwachte Lernen einsetzen? 
 
 ## Aktuelle Forschungsthemen in unserem Arbeitskreis
 
 Im Folgenden möchten wir Ihnen einen Einblick in die aktuellen Forschungsthemen 
 am Lehrstuhl für Theoretische Chemie geben. Dazu zählen die Arbeitskreise von 
 Prof. Dr. Roland Mitrić und Dr. Merle Röhr. Zudem stellen wir Ihnen kurze 
-Codebeispiele vor, die beispielhaft für die Forschungsthemen stehen und in denen 
+Codebeispiele vor (Python und andere Programmiersprachen), die beispielhaft 
+für die Forschungsthemen stehen und in denen 
 Sie sicherlich einige der in diesem Kurs erlernten Konzepte wiedererkennen werden.
 
 ### Nicht-adiabadische Dynamik mit Trajectory Surface Hopping
@@ -89,7 +121,9 @@ let tr_dipoles: Array2<f64> = mulliken_dipoles(q_trans.view(), &self.atoms);
 let f: Array1<f64> = oscillator_strength(eigenvalues.view(), tr_dipoles.view());
 ```
 
-### Luca Titel
+![FMO](./assets/figures/07-summary/fig_10.svg)
+
+### Simulation von stark gekoppelten Licht-Materie-Systemen
 
 Energietransport in excitonischen Materialien spielt eine große Rolle für die 
 Anwendung in vielen optoelektronischen Systemen. Während in der Vergangenheit 
@@ -112,7 +146,7 @@ e, v = np.linalg.eigh(np.real(system.H))
 coeff = np.dot(v.T, np.dot(system.a + system.a_dagger, v))
 ```
 
-### Nikita titel
+### Theoretische Untersuchung von kleinen Metallclustern
 
 Dieser Forschungsbereich konzentriert sich auf kleine Metallcluster 
 sowohl im Zeit- als 
@@ -124,7 +158,9 @@ Diese Cluster sind besonders interessant, weil das Verständnis ihrer katalytisc
 Aktivität stark von theoretischen Studien profitieren könnte, die derzeit nicht in 
 ausreichendem Maße verfügbar sind.
 
-Dieses Code-Snippet stammt aus einem Programm, das die eindimensionale Schrödinger-Gleichung numerisch exakt löst. Diese Gleichung ist fundamental in der Quantenmechanik, insbesondere für das Verständnis von zweiatomigen Molekülen. 
+Dieses Code-Snippet stammt aus einem Programm, das die eindimensionale Schrödinger-Gleichung 
+numerisch exakt löst. Diese Gleichung ist fundamental in der Quantenmechanik, insbesondere 
+für das Verständnis von zweiatomigen Molekülen. 
  
 ```python
 def getHamiltonian(self):
@@ -171,7 +207,12 @@ Rechts: Vergleich zwischen dem experimentellen Photoelektronenspektrum von
 Ce<sub>2</sub> und dem simulierten Spektrum (Energieraum).
 
 
-### Johannes Titel
+### Optimierung von Dimeren für Singlet Fission
+
+Singlet Fission ist ein Prozess in bestimmten organischen Molekülen, bei dem ein einzelnes 
+angeregtes Singulett-Exciton in zwei Triplett-Excitonen zerfällt. Dies kann theoretisch den 
+Wirkungsgrad von Solarzellen erhöhen, da ein einzelnes Photon zwei Elektronen-Loch-Paare 
+anregen kann.
 
 ```python
 scaler = StandardScaler()
@@ -187,6 +228,54 @@ kmeans.fit(transformed_data)
 labels = np.array(kmeans.labels_)
 centroids = np.array(kmeans.cluster_centers_)
 ```
+
+Wir haben zufällige Dimere konstruiert und diese hinsichtlicher einer Eigenschaft, der 
+sogenannten Singlet-Fission Rate optimiert und die optimierten Dimer-Strukturen, dann 
+analysiert wie z.B Translation und Rotation usw.. Um dann in den Daten Gemeinsamkeiten 
+zu finden, habe ich eine PCA und ein K-Means-Clustering genutzt.
+
+![PCA](./assets/figures/07-summary/3D_cluster.svg)
+
+### Supramolekulare Aggregate des Lichtsammelkomplexes der grünen Schwefelbakterien
+
+Mein Forschungsbereich konzentriert sich auf die Strukturaufklärung von Aggregaten, die in 
+grünen Schwefelbakterien vorkommen. Diese Bakterien sind bemerkenswert für ihre Fähigkeit, 
+in extremen Lichtverhältnissen Photosynthese zu betreiben, wobei sie spezielle 
+Lichtsammelkomplexe, sogenannte Chlorosomen, nutzen. Diese Chlorosomen bestehen aus dicht 
+gepackten Bacteriochlorophyll-Molekülen, die außergewöhnlich effiziente Energietransferprozesse 
+aufweisen. Diese Aggregate bestehen oft aus mehreren konzentrischen Ringen, die eine 
+zylindrische Form zeigen (siehe Abbildung).
+
+![Chlorosomen](./assets/figures/07-summary/SimplifiedPaperTube_combined_wholeSide_gray_cropped.svg)
+
+Der Code Ausschnitt zeigt eine Implementierung des Frenkel-Exziton-Hamiltonian, der die 
+Wechselwirkungen zwischen den Übergangsdipolmomenten der einzelenen Moleküle im Aggregat 
+einbezieht. Damit kann ein Spektrum des Aggregates simuliert werden und dieses mit experimentellen 
+Daten verglichen werden.
+
+```python
+def getExcitonHamiltonian(self):
+        nmol = len(self.allMolecules)
+        self.hamiltonian = np.zeros((nmol, nmol))
+        for i, m in enumerate(self.allMolecules):
+            self.hamiltonian[i, i] = m.siteEnergy
+        # convert units! a.u/Angstrom --> eV/a.u
+        self.hamiltonian += self.getExcitonCoupling() * toang * toev
+
+    # create exciton states for aggregate
+    def getExcitonStates(self):
+        print("First step: Calculate hamiltonian.")
+        self.getExcitonHamiltonian()
+        print("Second step: Solve hamiltonian.")
+        self.excitonStateEnergies, self.excitonStateCoefficients = np.linalg.eigh(self.hamiltonian)
+        self.getSiteDipoles()
+        self.tdMoments = []
+        print("Third step: tdMoments.")
+        self.tdMoments = np.dot(np.transpose(self.excitonStateCoefficients), self.dipoles)
+        np.save("td", self.tdMoments)
+        np.save("excitonStates", self.excitonStateEnergies)
+```
+
 
 ---
 
