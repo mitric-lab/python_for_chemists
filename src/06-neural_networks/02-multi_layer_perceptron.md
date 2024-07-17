@@ -288,8 +288,8 @@ tatsächliche Performance des Modells auf unbekannten Daten darstellt.
 Wir haben im obigen Abschnitt ein MLP auf den MNIST Datensatz angewendet, der ein Klassifikationsproblem darstellt. 
 Dank der Flexibilität des MLP können wir es jedoch auch auf Regressionsprobleme anwenden. Dazu verwenden wir 
 einen der wohl meist genutzten Datensätze in der Vorhersage von Moleküleigenschaften, den 
-[Quantum Machine 9](http://quantum-machine.org/datasets/) (QM9)
-Datensatz. Dieser enthält Daten von ca. 134.000 Molekülen mit bis zu 9 Atomen, die durch 21 Eigenschaften 
+[Quantum Machine 9](http://quantum-machine.org/datasets/) (QM9) Datensatz. 
+Dieser enthält Daten von ca. 134.000 Molekülen mit bis zu 9 schweren Atomen (CNOF), die durch skalare 21 Eigenschaften 
 beschrieben werden. Dazu gehören z.B. das Dipolmoment, die HOMO- und LUMO-Energien, die Enthalpie, Gibbs-Energie 
 und Wärmekapazität. Sie können eine bereits prozessierte Version des Datensatzes 
 <a href="../codes/06-neural_networks/qm9.npy" download>hier</a> herunterladen.
