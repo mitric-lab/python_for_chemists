@@ -13,3 +13,6 @@ code/*/.hypothesis
 .DS_Store
 */.DS_Store
 
+# Pytorch data sets
+src/codes/07-summary/data/
+
