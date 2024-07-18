@@ -1,13 +1,15 @@
 # Zusammenfassung und Ausblick
 
 In diesem Kurs haben Sie neben den Grundlagen des Programmierens mit Python 
-auch einige grundlegende Konzepte und Methoden des maschinellen Lernens kennengelernt. 
+auch einige wichtige numerische Methoden, wie die Lösung von 
+Differentialgleichungen oder die Fourier-Transformation, kennengelernt, 
+sowie einen Einblick in das maschinelle Lernen erhalten.
 Dazu zählen Methoden des überwachten und unüberwachten Lernens, sowie 
 neuronale Netzwerke, wobei wir uns auf die Anwendung dieser Methoden in der Chemie 
 konzentriert haben. Wir möchten dabei betonen, dass 
-wir Ihnen in diesem Kurs nur einen kleinen Einblick in die Welt des 
-maschinellen Lernens geben konnten. Mit Ihrem erworbenen Wissen und 
-Fähigkeiten sind Sie jedoch nun durchaus in der Lage, auch komplexere 
+wir Ihnen in diesem Kurs nur einen kleinen Einblick in die behandelten 
+Themen geben konnten. Mit Ihrem erworbenen Wissen und 
+Fähigkeiten sind Sie jedoch durchaus in der Lage, auch komplexere 
 Probleme zu lösen und eigene Projekte zu realisieren, wozu wir Sie 
 ausdrücklich ermutigen. 
 
@@ -19,19 +21,172 @@ geben, sowie einige aktuelle Forschungsthemen aus unserem Arbeitskreis vorstelle
 
 ## Aktueller Stand des maschinellen Lernens in der Chemie
 
-Um eines der spannendsten Anwendungsgebiete des maschinellen Lernens (in der Chemie 
-und allgemein), das *generative Modellieren*, zu motivieren, möchten wir 
-Sie zunächst . 
-Wir haben gesehen, dass neuronale Netzwerke sowohl zur Klassifikation als auch 
-zur Regression eingesetzt werden können. Dabei benötigen wir zum Training 
-des Netzwerks 
+Zunächst möchten wir eines der spannendsten Anwendungsgebiete des maschinellen Lernens 
+(in der Chemie und allgemein) motivieren, der Generierung von neuen und unbekannten 
+Daten (engl. *generative modeling*). Dies ist abzugrenzen von den bisherigen 
+*diskriminativen* Methoden, die darauf abzielen, bekannte Daten zu klassifizieren 
+oder zu regressieren. Generative Modelle hingegen erlauben es, neue Daten zu generieren, 
+die den bekannten Daten ähneln, aber nicht notwendigerweise identisch sind.
 
-In der Chemie finden sie daher 
-Anwendung in der Vorhersage von Moleküleigenschaften, wie z.B. der Synthetisierbarkeit 
-oder der Aktivität von Wirkstoffen. 
+### Variational Autoencoder (VAE)
 
-Können wir neuronale Netzwerke jedoch auch 
-für das unüberwachte Lernen einsetzen? 
+Da dies ein Problem des unüberwachten Lernens ist, überlegen wir zunächst, wie 
+wir neuronale Netzwerke für das unüberwachte Lernen, z.B. die Dimensionsreduktion 
+einsetzen können. Erkennen wir die Flexibilität von neuronalen Netzwerken, so 
+ist es naheliegend, einfach die Anzahl der Neuronen in der Ausgabeschicht zu 
+reduzieren, um eine Dimensionsreduktion zu erreichen. Wir müssen uns jedoch 
+bewusst sein, dass wir, um eine möglichst effiziente Dimensionsreduktion zu 
+erreichen, eine Objektivfunktion definieren müssen. Eine Möglichkeit besteht darin, 
+nach der Dimensionsreduktion die Daten wieder zu rekonstruieren. Solche 
+Modelle werden als **Autoencoder** bezeichnet, da sie an ihrer *schmalsten* Stelle 
+die wichtigsten Informationen über die Daten automatisch *enkodieren* müssen, um 
+sie im Anschluss wieder *dekodieren* zu können (siehe Abbildung).
+
+![Autoencoder](./assets/figures/07-summary/Autoencoder_scheme.svg)
+
+Die Verlustfunktion eines Autoencoders, die die Differenz zwischen den 
+Eingabedaten $\vec{x}$ und den rekonstruierten Daten $\hat{\vec{x}}$
+bestimmt, wird als *Rekonstruktionsfehler* bezeichnet:
+
+$$
+    \mathcal{L}_{\text{recon}}(\vec{x}, \hat{\vec{x}}) = \frac{1}{2} \sum_{i=1}^{N} \| \vec{x}_i - \hat{\vec{x}}_i \|^2.
+$$
+
+Wir können uns die komprierte Darstellung $\vec{z}$ der Daten als einen 
+*versteckten Raum* (engl. *latent space*) vorstellen, der durch die 
+schmalste Schicht des Autoencoders definiert wird. In der folgenden Abbildung 
+ist dies für Bilder des MNIST-Datensatzes dargestellt, wobei wir erkennen, 
+dass der Autoencoder die Daten gemäß ihrer Klassen gruppieren kann, obwohl 
+er nicht explizit darauf trainiert wurde. 
+
+![MNIST](./assets/figures/07-summary/autoencoder_latent_space.svg)
+
+Wie können wir diese Architektur nun nutzen, um neue Daten zu generieren? 
+Ein naiver Ansatz wäre, einfach zufällige Werte für den versteckten Raum 
+zu samplen und diese durch den Dekoder zu schicken. Dies führt jedoch 
+zu keinen sinnvollen Ergebnissen, da der Autoencoder nicht explizit darauf 
+trainiert wurde, dass der versteckte Raum eine sinnvolle Struktur aufweist. 
+Wir benötigen also eine Form der Regularisierung, die sicherstellt, dass 
+der versteckte Raum koninuierlich ist und das Generieren neuer Daten 
+ermöglicht. Eine Möglichkeit besteht darin, die Verteilung der versteckten 
+Variablen $p(\vec{z})$ so zu modellieren, dass sie einer bekannten und 
+einheitlichen Verteilung, z.B. einer Normalverteilung, entspricht. Dazu 
+enkodieren wir die Daten nicht direkt als latente Vektoren $\vec{z}$, sondern 
+lernen stattdessen den Mittelwert $\vec{\mu}$ und die Varianz $\vec{\sigma}^2$ der 
+Normalverteilung, die die versteckten Variablen beschreibt. Ein neuer 
+Datenpunkt wird dann durch Sampling eines zufälligen latenten Vektors 
+$\vec{z} \sim \mathcal{N}(\vec{\mu}, \vec{\sigma}^2)$ und Dekodierung durch den 
+Dekoder generiert. Dieses Modell 
+wird als **Variational Autoencoder** (VAE) bezeichnet (siehe Abbildung).
+
+![VAE](./assets/figures/07-summary/VAE_scheme.svg)
+
+Die Parameter des VAE (Gewichte und Bias der neuronalen Netze) werden 
+dann durch Minimierung der Verlustfunktion
+
+$$
+    \mathcal{L}(\vec{x}, \hat{\vec{x}}) = \mathcal{L}_{\text{recon}} + \mathcal{L}_{\text{KL}}.
+$$
+
+optimiert, die aus zwei Teilen besteht. Der erste Teil ist der 
+Rekonstruktionsfehler, analog zum Autoencoder. Der 
+zweite Teil misst die Ähnlichkeit zwischen der Verteilung der versteckten 
+Variablen $p(\vec{z})$ und der gewünschten  Normalverteilung, was in der Regel durch die
+*Kullback-Leibler-Divergenz* (KL-Divergenz) dargestellt wird.
+Dadurch erreichen wir, dass der versteckte Raum eine sinnvolle Struktur 
+annimmt, was in der folgenden Abbildung für den MNIST-Datensatz dargestellt ist.
+
+![MNIST](./assets/figures/07-summary/vae_latent_space.svg)
+
+Da die Generierung von schwarz-weißen Bilder von Ziffern ein 
+zugegebenermaßen langweiliges Beispiel darstellt, haben wir einen (einfachen) 
+VAE auf dem [CelebA-Datensatz](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)
+trainiert, der ca. 200.000 Bilder von prominenten Persönlichkeiten 
+enthält. In der folgenden Abbildung sehen Sie oben einige Beispiele von 
+Bildern aus dem Datensatz und die im Trainingsprozess rekonstruierten Bilder. 
+Unten sehen Sie einige Beispiele von zufällig generierten Bildern, die 
+durch den VAE erzeugt wurden.
+
+![CelebA](./assets/figures/07-summary/VAE_celeb.svg)
+
+VAEs sind eines der ersten generativen Modelle, die neben der Generierung 
+von Bildern auch für die Generierung neuer Moleküle eingesetzt wurden. 
+Die Struktur des versteckten Raums erlaubt es, eine kontinuierliche 
+Repräsentation von Molekülen zu erlernen, die es ermöglicht, neue Moleküle 
+zu generieren.[^bombarelli2018] 
+
+<!-- ![Bombarelli](./assets/figures/07-summary/Bombarelli_VAE.svg) -->
+
+```admonish warning title="Pytorch und automatische Differenzierung"
+Auch wenn wir mit unserer eigenen Implementierungen von neuronalen Netzen 
+in diesem Kurs theoretisch in der Lage wären, einen (variational) Autoencoder 
+zu konstruieren und trainieren, ist dies doch sehr ineffizient und umständlich. 
+Das liegt insbesondere daran, dass wir die Gradienten der Verlustfunktionen manuell 
+berechnen müssten, was sehr zeitaufwändig ist. 
+
+In der Praxis verwendet man daher spezielle Bibliotheken, wie z.B. 
+[Pytorch](https://pytorch.org/), die es erlauben, Gradienten von 
+allgemeinen Funktionen automatisch zu berechnen. In Pytorch wird dazu 
+ein Rechengraph erstellt, der die Abhängigkeiten der Variablen und 
+Funktionen darstellt. Die Bibliothek kann dann automatisch die 
+Gradienten von beliebigen Funktionen berechnen, indem sie den 
+Rechengraphen rückwärts durchläuft.
+
+Sie können die Implementierung des oben gezeigten Modells in Pytorch 
+<a href="./codes/07-summary/vae_celeba.py" download>hier</a> 
+herunterladen und auf Ihrem eigenen Rechner ausführen.
+
+**Achtung**: Wir empfehlen Ihnen, Python-Pakete wie Pytorch, die 
+viele Abhängigkeiten von anderen Paketen haben, **nicht in Ihrer 
+`base`-Umgebung** zu installieren, sondern stattdessen 
+[eine separate Umgebung](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment) 
+zu erstellen.
+```
+
+### Diffusionsmodelle
+
+Auch wenn VAEs in der Lage sind, versteckte Strukturen in den Daten zu 
+lernen und neue Daten zu generieren, sind sie für der Generierung von 
+hochqualitativen und realistischen Daten nicht optimal geeignet. Für [sehr 
+detailreiche Bilder](https://thispersondoesnotexist.com) eignen sich z.B.
+*Generative Adversarial Networks* (GANs), die allerdings auch ihre eigenen 
+Schwächen haben. Als besonders vielversprechend haben sich in den letzten 
+Jahren **Diffusionsmodelle** (eng. *diffusion models*) herausgestellt, die auf Prinzipien der 
+statistischen Physik basieren. Die grundlegende Idee ist ähnlich zu VAEs, 
+nämlich eine latente Darstellung der Daten zu nutzen, die einfach zu 
+erlernen ist und die es erlaubt, neue Daten zu generieren. Anstatt jedoch die 
+Dimensionalität der Daten zu verringern, fügt man in kleinen Schritten 
+zufälliges Rauschen $\epsilon_t$ zu den Daten hinzu, 
+bis die Struktur der Daten nicht mehr erkennbar 
+ist. Für jeden Schritt kann dann ein neuronales Netzwerk $\epsilon_{\theta}(t)$ 
+trainiert werden, welches das im *Diffusionsprozess* hinzugefügte Rauschen vorhersagt. 
+Die zugrundeliegende Verlustfunktion 
+
+$$
+    \mathcal{L} = \mathbb{E}_t [ \| \epsilon_t - \epsilon_{\theta}(t) \|^2 ]
+$$
+
+ist dann denkbar einfach, was die Effektivität des Modells unterstreicht. 
+Im umgekehrten Diffusionsprozess kann dann das Rauschen schrittweise entfernt werden, um 
+eine verbesserte Version der Daten zu erhalten. Neue Daten können generiert werden, 
+indem ausgehend von einem zufälligen Rauschen schrittweise das Rauschen 
+entfernt wird, bis ein neuer Datenpunkt generiert wurde, der den Trainingsdaten 
+ähnelt. Zudem erlauben Sie es, zusätzliche Informationen, wie z.B. 
+eine Beschreibung des gewünschten Objekts auf einem Bild, in den Prozess zu integrieren.
+
+Diffusionsmodelle sind heutzutage die Grundlage für die meisten kommerziell oder 
+frei verfügbaren Modelle zur Generierung von Bildern, wie z.B. *Stable Diffusion*, 
+*DALL-E* oder *Imagen*. In letzter Zeit wurden sie auch für die Generierung 
+von Molekülen eingesetzt, wobei sie die Atomtypen und -positionen in einem 
+Molekül vorhersagen. Ein solcher Generierungsprozess, der aus einer zufälligen 
+Verteilung ein Molekül generiert, ist in der folgenden Animation dargestellt.
+
+<figure>
+    <center>
+    <img src="./assets/figures/07-summary/output.gif" alt="Diffusion Model Generation Process" width="250"/>
+    </center>
+</figure>
+
 
 ## Aktuelle Forschungsthemen in unserem Arbeitskreis
 
@@ -107,21 +262,26 @@ zu simulieren.[^einsele2023]<sup>,</sup>[^einsele2024]
 let h: Array2<f64> = self.fock_and_coulomb() - self.exchange();
 // solve the eigenvalue problem A x = w A using the eigenvalue decomposition
 let (eigenvalues, eigenvectors) = h.eigh(UPLO::Upper).unwrap();
-
 // Reference to the o-v transition charges.
 let q_ov: ArrayView2<f64> = self.properties.q_ov().unwrap();
-
 // The transition charges for all excited states are computed.
 let q_trans: Array2<f64> = q_ov.dot(&eigenvectors);
-
 // The Mulliken transition dipole moments are computed.
 let tr_dipoles: Array2<f64> = mulliken_dipoles(q_trans.view(), &self.atoms);
-
 // The oscillator strengths are computed.
 let f: Array1<f64> = oscillator_strength(eigenvalues.view(), tr_dipoles.view());
 ```
 
 ![FMO](./assets/figures/07-summary/fig_10.svg)
+
+Abbildung der Ladungstransferdynamik in einem Molekularen System aus 8 BTBT Monomeren. 
+Die Population der Monomere beschreibt den Anteil der elektronischen Anregung, der 
+sich auf den jeweiligen Monomeren befindet. Am Anfang der Dynamik befindet sich das 
+System im Ladungstransferzustand zwischen dem ersten und dem letzten Monomer 
+(Loch auf Monomer 1 und Elektron auf Monomer 8), weshalb die Population auf den 
+Monomeren 50% beträgt. Im weiteren Verlauf der Ladungstransferdynamik bewegt sich 
+die Anregung im molekularen Aggregat langsam vom ersten Monomer in Richtung des 
+letzten Monomers, weil es sich bei diesem Molekül um einen Lochleiter handelt. 
 
 ### Simulation von stark gekoppelten Licht-Materie-Systemen
 
@@ -145,6 +305,14 @@ system.set_H()
 e, v = np.linalg.eigh(np.real(system.H))
 coeff = np.dot(v.T, np.dot(system.a + system.a_dagger, v))
 ```
+
+![Polaritonen](./assets/figures/07-summary/bild_sfb.svg)
+Unten rechts: Abhängigkeit der Licht-Materie-Kopplung von der relativen Orientierung 
+zwischen der elektrischen Feldstärke des Oberflächenplasmons und dem 
+Übergangsdipolmoment des energetisch tiefsten elektronisch angeregten Zustands 
+der Helix. Links: Dreisträngige helikale Struktur des supramolekularen 
+Perylenbisimid-Aggregats. Oben rechts: Simulierte Dispersionsrelation der Polaritonen 
+bei maximaler Licht-Materie-Kopplung.
 
 ### Theoretische Untersuchung von kleinen Metallclustern
 
@@ -209,10 +377,17 @@ Ce<sub>2</sub> und dem simulierten Spektrum (Energieraum).
 
 ### Optimierung von Dimeren für Singlet Fission
 
-Singlet Fission ist ein Prozess in bestimmten organischen Molekülen, bei dem ein einzelnes 
-angeregtes Singulett-Exciton in zwei Triplett-Excitonen zerfällt. Dies kann theoretisch den 
-Wirkungsgrad von Solarzellen erhöhen, da ein einzelnes Photon zwei Elektronen-Loch-Paare 
-anregen kann.
+In der Arbeitsgruppe Röhr beschäftigen wir uns mit der Optimierung bestimmter 
+Eigenschaften molekularer Aggregate. So hängen bestimmte Eigenschaften stark 
+von der Anordnung der einzelnen Moleküle ab. Ein besonders interessantes Phänomen, 
+mit dem wir uns beschäftigen, ist Singlet Fission. Dabei handelt es sich um 
+einen Prozess in bestimmten organischen Molekülen, bei dem ein einzelnes 
+angeregtes Singlet Exciton in zwei Triplett-Excitonen zerfällt. Dieser Prozess 
+könnte theoretisch den Wirkungsgrad von Solarzellen erhöhen, da ein einzelnes 
+Photon zwei Elektronen-Loch-Paare anregen kann. Unser Ziel ist es, eine 
+Molekülanordnung zu finden, die diesen Singlet Fission sehr schnell durchführt. 
+Solche Molekülanordnungen könnten dann in Solarzellen integriert werden, um 
+deren Wirkungsgrad zu erhöhen.
 
 ```python
 scaler = StandardScaler()
@@ -229,10 +404,12 @@ labels = np.array(kmeans.labels_)
 centroids = np.array(kmeans.cluster_centers_)
 ```
 
-Wir haben zufällige Dimere konstruiert und diese hinsichtlicher einer Eigenschaft, der 
-sogenannten Singlet-Fission Rate optimiert und die optimierten Dimer-Strukturen, dann 
-analysiert wie z.B Translation und Rotation usw.. Um dann in den Daten Gemeinsamkeiten 
-zu finden, habe ich eine PCA und ein K-Means-Clustering genutzt.
+In diesem Forschungsprojekt wurden zufällige PBI-Dimere konstruiert, diese 
+hinsichtlich der sogenannten Singlet Fission-Rate optimiert und aus den 
+optimierten Dimerstrukturen unter anderem Translation und Rotation extrahiert. 
+Anschließend wurde mittels PCA und K-Means-Clustering nach Gemeinsamkeiten in 
+den 500 Strukturen gesucht. Auf diese Weise konnten vier sehr charakteristische 
+Gruppen von Dimeren identifiziert werden.[^greiner2024]
 
 ![PCA](./assets/figures/07-summary/3D_cluster.svg)
 
@@ -279,10 +456,32 @@ def getExcitonHamiltonian(self):
 
 ---
 
-
+[^bombarelli2018]: R. Bombarelli, et al., *ACS Cent. Sci.* **2018**, *4*, 2, 268–276.
 
 [^miao2024]: X. Miao, K. Diemer, R. Mitrić, *J. Chem. Phys.* **2024**, *160*, 124309.
 
 [^einsele2023]: R. Einsele, J. Hoche, R. Mitrić, *J. Chem. Phys.* **2023**, *158*, 044121.
 
 [^einsele2024]: R. Einsele, R. Mitrić, *J. Comput. Theor. Chem.* **2024**, just accepted.
+
+[^greiner2024]: J. Greiner, A. Singh, M.I.S. Röhr, *Phys. Chem. Chem. Phys.* **2024**, *26*, 19257-19265.
+
+---
+
+### Klausurvorbereitung
+
+Die folgenden Aufgaben sollen Ihnen dabei helfen, sich auf die Klausur vorzubereiten. 
+Die Aufgaben sind so gewählt, dass sie den Prüfungsfragen ähneln und Themen aus 
+den Übungen und Vorlesungen abdecken.
+
+#### Aufgabe 1: Code-Snippets
+
+{{#include ./psets/exam_preparation.md:aufgabe_1}}
+
+#### Aufgabe 2: Euler-Verfahren
+
+{{#include ./psets/exam_preparation.md:aufgabe_2}}
+
+#### Aufgabe 3: $k$-Nearest Neighbors
+
+{{#include ./psets/exam_preparation.md:aufgabe_3}}

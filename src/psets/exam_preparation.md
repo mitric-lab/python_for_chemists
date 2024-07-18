@@ -6,6 +6,7 @@ den Übungen und Vorlesungen abdecken.
 
 ## Aufgabe 1: Code-Snippets
 
+<!--- ANCHOR: aufgabe_1 --->
 Wählen Sie für die folgenden Code-Snippets die erwartete Ausgabe aus.
 
 | a) | b) | c) |
@@ -15,18 +16,22 @@ Wählen Sie für die folgenden Code-Snippets die erwartete Ausgabe aus.
 | &#9744; <code>6</code>     | &#9744; <code>81</code>    | &#9744; <code>[[6], 2]</code> |
 | &#9744; <code>9</code>     | &#9744; <code>-81</code>   | &#9744; <code>[[3], 2]</code> |
 | &#9744; <code>Error</code> | &#9744; <code>100</code>   | &#9744; <code>Error</code> |
+<!--- ANCHOR_END: aufgabe_1 --->
 
 ## Aufgabe 2: Euler-Verfahren
 
+<!--- ANCHOR: aufgabe_2 --->
 In der folgenden Implementierung des Euler-Verfahrens haben sich **fünf Fehler** 
 eingeschlichen. Finden Sie die Fehler und korrigieren Sie diese.
 
 ```python
 {{#include ../codes/07-summary/exam_preparation.py:euler_errors}}
 ```
+<!--- ANCHOR_END: aufgabe_2 --->
 
 ## Aufgabe 3: $k$-Nearest Neighbors
 
+<!--- ANCHOR: aufgabe_3 --->
 Der $k$-Nearest Neighbors (KNN) Algorithmus ist ein einfacher Algorithmus,
 den wir hier für Klassifikationsprobleme implementieren, der aber auch für 
 Regressionsprobleme verwendet werden kann. Er ist ein 
@@ -60,3 +65,12 @@ Das Model soll wie folgt verwendet werden:
 ```python
 {{#include ../codes/07-summary/exam_preparation.py:knn_example}}
 ```
+
+<!-- 
+Lösung:
+```
+{{#include ../codes/07-summary/exam_preparation.py:knn_complete}}
+```
+ -->
+
+<!--- ANCHOR_END: aufgabe_3 --->
