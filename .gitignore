@@ -13,6 +13,7 @@ code/*/.hypothesis
 .DS_Store
 */.DS_Store
 
-# Pytorch data sets
+# Pytorch data sets and models
 src/codes/07-summary/data/
+src/codes/07-summary/models/
 

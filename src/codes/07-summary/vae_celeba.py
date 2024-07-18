@@ -7,12 +7,12 @@ import torch.utils.data
 from os import mkdir
 from torch import optim
 from torch.nn import functional as F
+import torchvision
 from torchvision.utils import save_image
 from torchvision.datasets import CelebA
 from torch.utils.data import DataLoader
 
 import numpy as np
-from tqdm import tqdm
 import matplotlib.pyplot as plt
 
 
@@ -24,6 +24,7 @@ else:
     device = 'cpu'
 
 print(f'Using device: {device}')
+
 
 class VAE(nn.Module):
     def __init__(self, IMAGE_SIZE=150, LATENT_DIM=128):
@@ -171,15 +172,16 @@ if __name__ == "__main__":
     image_dim = 3 * IMAGE_SIZE * IMAGE_SIZE
     LATENT_DIM = 128
     EPOCHS = 20  # number of training epochs
-    BATCH_SIZE = 16  # for data loaders
+    BATCH_SIZE = 64  # for data loaders
     CELEB_PATH = 'data/'
 
-    # data = torch.utils.data.DataLoader(
-    #         torchvision.datasets.CelebA('./data',
-    #             transform=torchvision.transforms.ToTensor(),
-    #             download=True),
-    #         batch_size=128,
-    #         shuffle=True)
+    # Download the dataset once
+    data = torch.utils.data.DataLoader(
+            torchvision.datasets.CelebA(CELEB_PATH,
+                transform=torchvision.transforms.ToTensor(),
+                download=True),
+            batch_size=128,
+            shuffle=True)
 
     celeb_transform = transforms.Compose([
         transforms.Resize(IMAGE_SIZE, antialias=True),
@@ -208,7 +210,7 @@ if __name__ == "__main__":
     optimizer = optim.Adam(model.parameters(), lr=1e-3)
 
 
-    for epoch in tqdm(range(1, EPOCHS + 1)):
+    for epoch in range(1, EPOCHS + 1):
         train(epoch)
         torch.save(model, f'{directory}/vae_model_{epoch}.pth')
         test(epoch)
@@ -217,3 +219,4 @@ if __name__ == "__main__":
             sample = model.decode(sample).cpu()
             save_image(sample.view(64, 3, IMAGE_SIZE, IMAGE_SIZE),
                        f'{directory}/sample_{str(epoch)}.png')
+            del sample
