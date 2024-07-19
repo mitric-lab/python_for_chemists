@@ -466,22 +466,3 @@ def getExcitonHamiltonian(self):
 
 [^greiner2024]: J. Greiner, A. Singh, M.I.S. Röhr, *Phys. Chem. Chem. Phys.* **2024**, *26*, 19257-19265.
 
----
-
-### Klausurvorbereitung
-
-Die folgenden Aufgaben sollen Ihnen dabei helfen, sich auf die Klausur vorzubereiten. 
-Die Aufgaben sind so gewählt, dass sie den Prüfungsfragen ähneln und Themen aus 
-den Übungen und Vorlesungen abdecken.
-
-#### Aufgabe 1: Code-Snippets
-
-{{#include ./psets/exam_preparation.md:aufgabe_1}}
-
-#### Aufgabe 2: Euler-Verfahren
-
-{{#include ./psets/exam_preparation.md:aufgabe_2}}
-
-#### Aufgabe 3: $k$-Nearest Neighbors
-
-{{#include ./psets/exam_preparation.md:aufgabe_3}}
