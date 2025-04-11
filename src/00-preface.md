@@ -14,6 +14,8 @@ und
 
 im Seminarraum 00.006 des Instituts für Theoretische Chemie (Campus Hubland Nord) statt.
 
+Die erste Veranstaltung findet am Donnerstag, den 24.04.2025 statt.
+
 ## Syllabus
 
 Ein vorläufiger Syllabus ist unten dargestellt. Dieser wird
@@ -22,33 +24,32 @@ kontinuierlich aktualisiert.
 
 |Woche|Wochentag| Datum  | Typ         | Thema           |
 |:---:|---------|--------|-------------|-----------------|
-|  1  | Di.     | 16.04. | Einführung  | Kursüberblick und Installation von Python |
-|  1  | Do.     | 18.04. | Vorlesung   | Regression I    |
-|  2  | Di.     | 23.04. | Vorlesung   | Regression II   |
-|  2  | Do.     | 25.04. | Vorlesung   | Regression III  |
-|  3  | Di.     | 30.04. | Übung       | Regression      |
-|  3  | Do.     | 02.05. | Vorlesung   | Differentialgleichung I |
-|  4  | Di.     | 07.05. | Vorlesung   | Differentialgleichung II |
-|  4  | ~~Do.~~ | ~~09.05.~~ | Feiertag | Christi Himmelfahrt |
-|  5  | Di.     | 14.05. | Vorlesung   | Differentialgleichung III |
-|  5  | Do.     | 16.05. | Übung       | Differentialgleichung |
-|  6  | ~~Di.~~ | ~~21.05.~~ | Vorlesungsfrei | Pfingsten    |
-|  6  | Do.     | 23.05. | Vorlesung   | Fourier-Analyse |
-|  7  | Di.     | 28.05. | Übung       | Fourier-Analyse |
-|  7  | ~~Do.~~ | ~~30.05.~~ | Feiertag | Fronleichnam   |
-|  8  | Di.     | 04.06. | Vorlesung   | EVD und SVD I   |
-|  8  | Do.     | 06.06. | Vorlesung   | EVD und SVD II  |
-|  9  | Di.     | 11.06. | Vorlesung   | EVD und SVD III |
-|  9  | Do.     | 13.06. | Übung       | EVD und SVD     |
-| 10  | ~~Di.~~ | ~~18.06.~~ | Vorlesungsfrei | ChemCup         |
-| 10  | Do.     | 20.06. | Vorlesung   | Maschinelles Lernen I |
-| 11  | Di.     | 25.06. | Vorlesung   | Maschinelles Lernen II |
-| 11  | Do.     | 27.06. | Vorlesung   | Maschinelles Lernen III |
-| 12  | Di.     | 02.07. | Übung       | Maschinelles Lernen |
-| 12  | Do.     | 04.07. | Vorlesung   | Neuronale Netzwerke I  |
-| 13  | Di.     | 09.07. | Vorlesung   | Neuronale Netzwerke II |
-| 13  | Do.     | 11.07. | Vorlesung   | Neuronale Netzwerke III |
-| 14  | Di.     | 16.07. | Übung       | Neuronale Netzwerke |
-| 14  | Do.     | 18.07. | Vorlesung   | Ausblick, Fragestunde und Klausurvorbereitung |
-|     | Fr.     | 09.08. | Klausur     |                 |
+|  1  | ~~Di.~~ | ~~22.04.~~ | Vorlesungsfrei | Osterdienstag |
+|  1  | Do.     | 24.04. | Einführung  | Kursüberblick und Installation von Python |
+|  2  | Di.     | 29.04. | Einführung  | Python-Grundlagen |
+|  2  | ~~Do.~~ | ~~01.05.~~ | Feiertag | Tag der Arbeit  |
+|  3  | Di.     | 06.05. | Vorlesung   | Regression I    |
+|  3  | Do.     | 08.05. | Vorlesung   | Regression II   |
+|  4  | Di.     | 13.05. | Vorlesung   | Regression III  |
+|  4  | Do.     | 15.05. | Übung       | Regression      |
+|  5  | Di.     | 20.05. | Vorlesung   | Differentialgleichung I |
+|  5  | Do.     | 22.05. | Vorlesung   | Differentialgleichung II |
+|  6  | Di.     | 27.05. | Vorlesung   | Differentialgleichung III |
+|  6  | ~~Do.~~ | ~~29.05.~~ | Feiertag | Christi Himmelfahrt |
+|  7  | Di.     | 03.06. | Übung       | Differentialgleichung |
+|  7  | Do.     | 05.06. | Vorlesung   | EVD und SVD I   |
+|  8  | Di.     | 10.06. | Vorlesung   | EVD und SVD II  |
+|  8  | Do.     | 12.06. | Vorlesung   | EVD und SVD III |
+|  9  | Di.     | 17.06. | Übung       | EVD und SVD     |
+|  9  | ~~Do.~~ | ~~19.06.~~ | Feiertag | Fronleichnam   |
+| 10  | Di.     | 24.06. | Vorlesung   | Maschinelles Lernen I |
+| 10  | Do.     | 26.06. | Vorlesung   | Maschinelles Lernen II |
+| 11  | Di.     | 01.07. | Vorlesung   | Maschinelles Lernen III |
+| 11  | Do.     | 03.07. | Übung       | Maschinelles Lernen |
+| 12  | Di.     | 08.07. | Vorlesung   | Neuronale Netzwerke I  |
+| 12  | Do.     | 10.07. | Vorlesung   | Neuronale Netzwerke II |
+| 13  | Di.     | 15.07. | Vorlesung   | Neuronale Netzwerke III |
+| 13  | Do.     | 17.07. | Übung       | Neuronale Netzwerke |
+| 14  | Di.     | 22.07. |             |                 |
+| 14  | Do.     | 24.07. |             |                 |
 

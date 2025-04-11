@@ -9,49 +9,49 @@
 
 ---
 
-- [Regressionsanalyse](01-regression.md)
-    - [Methode der kleinsten Quadrate](01-regression/01-least_squares.md)
-    - [Lineare Regression](01-regression/02-linear_regression.md)
-    - [Numerische Optimierung](01-regression/03-numerical_optimisation.md)
-    - [Nichtlineare Regression](01-regression/04-nonlinear_regression.md)
+- [Regressionsanalyse]()
+    - [Methode der kleinsten Quadrate]()
+    - [Lineare Regression]()
+    - [Numerische Optimierung]()
+    - [Nichtlineare Regression]()
 
-- [Differentialgleichungen](02-differential_equations.md)
-    - [Anfangswertproblem](02-differential_equations/01-initial_value_problem.md)
-    - [Euler-Verfahren](02-differential_equations/02-euler_method.md)
-    - [Runge-Kutta-Verfahren](02-differential_equations/03-runge_kutta.md)
-    - [Finite-Differenzen-Verfahren](02-differential_equations/04-finite_differences.md)
+- [Differentialgleichungen]()
+    - [Anfangswertproblem]()
+    - [Euler-Verfahren]()
+    - [Runge-Kutta-Verfahren]()
+    - [Finite-Differenzen-Verfahren]()
 
-- [Fourier-Analyse](03-fourier_analysis.md)
-    - [Fourier-Reihen](03-fourier_analysis/01-fourier_series.md)
-    - [Fourier-Transformation](03-fourier_analysis/02-fourier_transform.md)
-    - [Diskrete Fourier-Transformation](03-fourier_analysis/03-discrete_fourier_transform.md)
+- [Fourier-Analyse]()
+    - [Fourier-Reihen]()
+    - [Fourier-Transformation]()
+    - [Diskrete Fourier-Transformation]()
 
-- [Eigenwert- und Singulärwertzerlegung](04-evd_and_svd.md)
-    - [Eigenwertzerlegung](04-evd_and_svd/01-eigenvalue_decomposition.md)
-    - [Singulärwertzerlegung](04-evd_and_svd/02-singular_value_decomposition.md)
-    - [Hauptkomponentenanalyse](04-evd_and_svd/03-principal_component_analysis.md)
-    - [Hauptkoordinatenanalyse](04-evd_and_svd/04-principal_coordinate_analysis.md)
-    - [Lineare Gleichungssysteme](04-evd_and_svd/05-linear_equations.md)
+- [Eigenwert- und Singulärwertzerlegung]()
+    - [Eigenwertzerlegung]()
+    - [Singulärwertzerlegung]()
+    - [Hauptkomponentenanalyse]()
+    - [Hauptkoordinatenanalyse]()
+    - [Lineare Gleichungssysteme]()
 
-- [Maschinelles Lernen](05-machine_learning.md)
-    - [Überwachtes Lernen](05-machine_learning/01-supervised_learning.md)
-    - [Unüberwachtes Lernen](05-machine_learning/02-unsupervised_learning.md)
+- [Maschinelles Lernen]()
+    - [Überwachtes Lernen]()
+    - [Unüberwachtes Lernen]()
 
-- [Neuronale Netzwerke](06-neural_networks.md)
-    - [Single-Layer-Perzeptron](06-neural_networks/01-single_layer_perceptron.md)
-    - [Multi-Layer-Perzeptron](06-neural_networks/02-multi_layer_perceptron.md)
-
----
-
-[Zusammenfassung und Ausblick](07-summary.md)
+- [Neuronale Netzwerke]()
+    - [Single-Layer-Perzeptron]()
+    - [Multi-Layer-Perzeptron]()
 
 ---
 
-[Übung 1](psets/01.md)
-[Übung 2](psets/02.md)
-[Übung 3](psets/03.md)
-[Übung 4](psets/04.md)
-[Übung 5](psets/05.md)
-[Übung 6](psets/06.md)
-[Klausurvorbereitung](psets/exam_preparation.md)
+[Zusammenfassung und Ausblick]()
+
+---
+
+[Übung 1]()
+[Übung 2]()
+[Übung 3]()
+[Übung 4]()
+[Übung 5]()
+[Übung 6]()
+[Klausurvorbereitung]()
 
