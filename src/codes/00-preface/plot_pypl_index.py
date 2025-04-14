@@ -28,7 +28,7 @@ ax.set_ylabel('Share', fontsize=12)
 ax.set_xlim(-0.7, len(languages) - 1.0 + 0.7)
 
 fig.tight_layout()
-fig.savefig('popularity_pypl_202401.svg')
+fig.savefig('../../assets/figures/00-preface/popularity_pypl_202504.svg')
 
 plt.show()
 

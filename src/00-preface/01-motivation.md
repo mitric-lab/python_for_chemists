@@ -14,9 +14,9 @@ und zu analysieren, was ein wichtiger Bestandteil wissenschaftlicher Arbeit ist.
 Python ist eine der am weitesten verbreiteten Programmiersprachen und besonders
 anfängerfreundlich. Die folgende Abbildung zeigt die Beliebtheit einiger 
 Programmiersprachen gemäß dem <i>**P**opularit**Y** of **P**rogramming **L**anguage</i>
-([PYPL](https://pypl.github.io/PYPL.html)) Index (Stand Jan. 2024).
+([PYPL](https://pypl.github.io/PYPL.html)) Index (Stand Apr. 2025).
 
-![Popularity of Programming languages](../assets/figures/00-preface/popularity_pypl_202401.svg)
+![Popularity of Programming languages](../assets/figures/00-preface/popularity_pypl_202504.svg)
 *Beliebtheit von Programmiersprachen. Entnommen aus dem
 [PYPL Index](https://pypl.github.io/PYPL.html).*
 
