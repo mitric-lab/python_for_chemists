@@ -1,79 +1,53 @@
 ## Bedienung dieser Webseite
 
-Dieser Abschnitt gibt eine Einführung in die Bedienung dieses 
-Vorlesungsskripts. Dieses ist in *Kapitel* organisiert, welche wiederum in
-*Abschnitte* unterteilt sind. Typischerweise ist jedes (Unter-)Kapitel in 
-eine Reihe von *Überschriften* unterteilt.
+Dieses Vorlesungsskript ist in *Kapitel* gegliedert, welche wiederum in *Abschnitte* unterteilt sind. Typischerweise ist jedes (Unter-)Kapitel durch mehrere *Überschriften* strukturiert.
 
 ### Navigation
 
-Es gibt mehrere Methoden, um durch die Kapitel eines Buches zu navigieren.
+Es gibt verschiedene Möglichkeiten, um durch die Kapitel und Abschnitte dieses Skripts zu navigieren:
 
-Die **Seitenleiste** auf der linken Seite bietet eine Liste aller Kapitel.
-Durch Klicken auf einen der Kapiteltitel wird die entsprechende Seite geladen.
+- Die **Seitenleiste** auf der linken Seite enthält eine Übersicht aller Kapitel und Abschnitte. Durch Klicken auf einen Titel gelangen Sie direkt zur entsprechenden Seite.
 
-Die Seitenleiste erscheint möglicherweise nicht automatisch, wenn das 
-Fenster zu schmal ist, insbesondere auf mobilen Displays.
-In diesem Fall kann das Menüsymbol (drei horizontale Balken) oben links auf
-der Seite gedrückt werden, um die Seitenleiste zu öffnen und zu schließen.
+- Auf kleineren Bildschirmen (z.B. mobile Geräte) ist die Seitenleiste möglicherweise ausgeblendet. In diesem Fall öffnen und schließen Sie sie über das **Menüsymbol** (drei horizontale Balken) oben links auf der Seite.
 
-Die **Pfeiltasten** links und rechts neben der Seite können verwendet werden, 
-um zum vorherigen oder nächsten Kapitel zu navigieren.
+- Die **Pfeiltasten** links und rechts neben dem Inhalt ermöglichen das einfache Blättern zum vorherigen bzw. nächsten Kapitel.
 
-Die **Pfeiltasten** auf der Tastatur können verwendet werden, um zum vorherigen 
-oder nächsten Kapitel zu navigieren.
+- Zusätzlich können Sie die **Pfeiltasten auf Ihrer Tastatur** verwenden, um zwischen den Kapiteln zu wechseln.
 
 ### Obere Menüleiste
 
-Die Menüleiste oben auf der Seite bietet einige Symbole zur Interaktion mit dem
-Vorlesungsskript.
+Die obere Menüleiste bietet nützliche Interaktionsmöglichkeiten mit dem Vorlesungsskript:
 
 | Symbol | Beschreibung |
 |--------|--------------|
 | <i class="fa fa-bars"></i> | Öffnet und schließt die Seitenleiste. |
-| <i class="fa fa-paint-brush"></i> | Öffnet eine Liste zur Auswahl eines anderen Farbthemas. |
-| <i class="fa fa-search"></i> | Öffnet eine Suchleiste für die Suche im Skript. |
-| <i class="fa fa-print"></i> | Fordert den Webbrowser auf, das Skript zu drucken. |
-| <i class="icon-uw"></i> | Öffnet den WueCampus-Kursraum zu dieser Veranstaltung. |
+| <i class="fa fa-paint-brush"></i> | Ermöglicht die Auswahl eines anderen Farbthemas. |
+| <i class="fa fa-search"></i> | Öffnet die Suchfunktion innerhalb des Skripts. |
+| <i class="fa fa-print"></i> | Öffnet den Druckdialog Ihres Webbrowsers. |
+| <i class="icon-uw"></i> | Führt zum WueCampus-Kursraum der Veranstaltung. |
 
-Mit einem Klick auf die Menüleiste scrollt die Seite nach oben.
+Ein Klick auf die Menüleiste selbst scrollt die aktuelle Seite nach oben.
 
 ### Suche
 
-Dieses Vorlesungsskript verfügt über ein eingebautes Suchsystem.
-Durch Drücken des Suchsymbols (<i class="fa fa-search"></i>) in der 
-Menüleiste oder Drücken der Taste `S` auf der Tastatur wird ein Eingabefeld 
-zum Eingeben von Suchbegriffen geöffnet.
-Das Eingeben von Begriffen zeigt passende Kapitel und Abschnitte in 
-Echtzeit an.
+Dieses Skript verfügt über eine integrierte Suchfunktion. Zum Öffnen der Suche klicken Sie entweder auf das Lupensymbol (<i class="fa fa-search"></i>) in der Menüleiste oder drücken Sie die Taste `S` auf Ihrer Tastatur. Sobald das Suchfeld erscheint, können Sie Ihre Suchbegriffe eingeben.
 
-Durch Klicken auf eines der Ergebnisse wird zu diesem Abschnitt gesprungen.
-Die Pfeil-nach-oben- und Pfeil-nach-unten-Tasten können verwendet werden, um
-die Ergebnisse zu navigieren, und Enter öffnet den markierten Abschnitt.
+Passende Kapitel und Abschnitte erscheinen bereits während der Eingabe in Echtzeit. Ein Klick auf ein Suchergebnis navigiert Sie direkt zum entsprechenden Abschnitt. Verwenden Sie die Pfeil-nach-oben- und Pfeil-nach-unten-Tasten, um die Suchergebnisse zu durchlaufen; mit `Enter` öffnen Sie den markierten Abschnitt.
 
-Nach dem Laden eines Suchergebnisses werden die passenden Suchbegriffe 
-im Text hervorgehoben.
-Durch Klicken auf ein hervorgehobenes Wort oder Drücken der `Esc`-Taste
-werden die Hervorhebungen entfernt.
+Nach Auswahl eines Suchergebnisses werden die gefundenen Begriffe im Text hervorgehoben. Die Hervorhebungen lassen sich durch einen Klick auf einen hervorgehobenen Begriff oder durch Drücken der `Esc`-Taste entfernen.
 
 ### Codeblöcke
 
-Codeblöcke besitzen ein Kopieren-Symbol <i class="fa fa-copy"></i>, das den
-Codeblock in die lokale Zwischenablage kopiert.
+Codeblöcke enthalten ein Kopier-Symbol <i class="fa fa-copy"></i>, mit dem Sie den Inhalt des jeweiligen Codeblocks direkt in Ihre lokale Zwischenablage kopieren können.
 
-Hier ein Beispiel:
+Beispiel:
 ```python
 print("Hello, World!")
 ```
 
-Wir verwenden häufig die `assert`-Anweisung in Codeblöcken, um Ihnen den
-Wert einer Variablen anzuzeigen. Da die Codeblöcke in diesem Dokument nicht 
-interaktiv sind (Sie können sie nicht einfach in Ihrem Browser ausführen), 
-ist es nicht möglich, den Wert der Variablen auf dem Bildschirm auszugeben. 
-Deshalb stellen wir für Sie sicher, dass alle Codeblöcke in diesem 
-Vorlesungsskript fehlerfrei laufen. Der folgende 
-Codeblock zeigt Ihnen beispielsweise an, dass der Variable „a“ der Wert 2
-zugewiesen wurde:
+In den Codeblöcken verwenden wir häufig die `assert`-Anweisung, um Ihnen den Wert einer Variablen anzuzeigen. Da die Codeblöcke in diesem Skript nicht interaktiv sind (sie können nicht direkt im Browser ausgeführt werden), zeigen wir Ihnen mit assert, dass die Beispiele korrekt und fehlerfrei funktionieren.
+
+Der folgende Codeblock bestätigt zum Beispiel, dass der Variable `a` erfolgreich der Wert `2` zugewiesen wurde:
 ```python
 a = 2
 assert a == 2

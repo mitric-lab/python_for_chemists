@@ -2,10 +2,7 @@
 
 Liebe Studierende,
 
-herzlich willkommen zur Vorlesung "Programmierkurs für Chemiker".
-In diesem Kurs werden Sie die Grundlagen des Programmierens mit der 
-Programmiersprache Python erlernen und viele nützliche numerische 
-Algorithmen für die Chemie und darüber hinaus implementieren.
+herzlich willkommen zur Vorlesung **Programmierkurs für Chemiker**. Dieser Programmierkurs vermittelt grundlegende Kenntnisse in Python und zeigt, wie numerische Algorithmen in der Chemie praktisch angewendet werden können.
 
 Diese Veranstaltung findet
 - dienstags von 10:15 bis 11:45 Uhr
@@ -14,7 +11,9 @@ und
 
 im Seminarraum 00.006 des Instituts für Theoretische Chemie (Campus Hubland Nord) statt.
 
-Die erste Veranstaltung findet am Donnerstag, den 24.04.2025 statt.
+**Die erste Veranstaltung findet am Donnerstag, den 24.04.2025 statt.**
+
+Ansprechpartner für diese Veranstaltung sind [Xincheng Miao](mailto:xincheng.miao@uni-wuerzburg.de) und [Lasse Kreimendahl](mailto:lasse.kreimendahl@uni-wuerzburg.de), Doktoranden am Lehrstuhl für Theoretische Chemie. Bei Fragen oder Anregungen können Sie uns jederzeit kontaktieren.
 
 ## Syllabus
 
