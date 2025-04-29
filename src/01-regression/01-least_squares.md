@@ -1,103 +1,96 @@
-## Methode der kleinsten Quadrate
+## Least Squares
 
-Das Ziel aller Regressionsprobleme besteht darin, ein Modell zu finden, 
-welches am besten zu den Daten passt und hoffentlich zur Vorhersage neuer 
-Datenpunkte verwendet werden kann. Einfachheitshalber gehen wir davon aus, 
-dass unsere Daten nur eine unabhängige Variable ($x$) und eine abhängige
-Variable ($y$) haben. Eine Verallgemeinerung auf mehrere unabhängige
-Variablen ist simpel und wird in einem späteren Kapitel diskutiert.
-Darüber hinaus gehen wir davon aus, dass die Daten reellwertig sind.
-Für insgesamt $N$ Datenpunkte schreiben wir
+The goal of all regression problems is to find a model that best fits 
+the data and hopefully can be used to predict new data points. 
+For simplicity, we assume that our data has only one independent 
+variable ($x$) and one dependent variable (y). A generalisation to multiple 
+independent variables is straightforward and will be discussed in a later 
+chapter. Furthermore, we assume that the data are real-valued. 
+For a total of $N$ data points we write
 $$
   \begin{align}
     x &= (x_1, x_2, \ldots, x_N) \in \mathbb{R}^N \\
     y &= (y_1, y_2, \ldots, y_N) \in \mathbb{R}^N \,,
   \end{align}
 $$ 
-d.h. $x$ und $y$ sind $N$-dimensionale Vektoren mit reellwertigen
-Komponenten $x_i$ und $y_i$.
+meaning that $x$ and $y$ are $N$-dimensional vectors with real-valued
+components $x_i$ and $y_i$.
 
-Wir können die Beziehung zwischen $x_i$ und $y_i$ als eine Funktion $f$
-betrachten. Unter idealisierten Bedingungen haben wir
+We can think of the relationship between $x_i$ and $y_i$ as a function $f$.
+Under idealised conditions we have
 $$
   y_i = f(x_i) + \epsilon_i \,, {{numeq}}{eq:regression_true}
 $$
-wobei die Funktion $f$ die *wahre* Beziehung zwischen den Datenpunkten
-$x_i$ und $y_i$ beschreibt, während $\epsilon_i$ den zufälligen
-statistischen Fehler darstellt.
+where the function $f$ describes the *true* relationship between the data
+points $x_i$ and $y_i$, while $\epsilon_i$ represents the random
+statistical error.
 
-In der realen Welt ist die Beziehung $f$ jedoch oft unbekannt. Daher
-müssen wir ein Modell verwenden, um sie abzuschätzen. In diesem Fall
-schreiben wir
+In the real world, however, the relationship $f$ is often unknown.
+Therefore, we need to use a model to estimate it. In this case we write
 $$
   y_i = \hat{f}(\beta; x_i) + \hat{\epsilon}_ i\,, {{numeq}}{eq:regression_estimated}
 $$
-wobei $\hat{f}(\beta; x_i)$ der Abschätzer des Modells von $f$ ist,
-parametrisiert durch $\beta \in \mathbb{R}^n$ mit $n$ Parametern im
-Modell. Der Fehlerterm $\hat{\epsilon}_i$ ist nun eine Kombination aus
-dem statistischen Fehler und dem unmodellierten Teil der echten
-Beziehung. Das Ziel der Regressionsanalyse besteht darin, die
-Parameter $\beta$ zu finden, sodass das Modell die Daten am besten
-wiedergibt.
+where $\hat{f}(\beta; x_i)$ is the model's estimator of $f$, parameterised
+by $\beta \in \mathbb{R}^n$ with $n$ parameters in the model. The error term
+$\hat{\epsilon}_i$ is now a combination of the statistical error and the
+unmodelled part of the true relationship. The goal of regression analysis is
+to find the parameters $\beta$ such that the model best represents the data.
 
-Aber was bedeutet "am besten"? Ein üblicher Ansatz ist die
-*Methode der kleinsten Quadrate*, die darauf abzielt, die Summe der
-quadratischen Fehler $\hat{\epsilon}_i$ zu minimieren, d.h. die
-Verlustfunktion der kleinsten Quadrate
+But what does "best" mean? A common approach is the *least squares method*,
+which aims to minimise the sum of the squared errors $\hat{\epsilon}_i$,
+i.e. the least squares loss function
 $$
   L(\beta; x, y) 
     = \sum_{i=1}^N\, \hat{\epsilon}_i^2
     = \sum_{i=1}^N\, (y_i - \hat{f}(\beta; x_i))^2 \,. {{numeq}}{eq:least_squares_loss}
 $$
-zu minimieren. Mathematisch ausgedrückt wollen wir die Parameter
-$\beta^* $ durch Lösen des Optimierungsproblems
+Mathematically speaking, we want to find the parameters $\beta^*$ by solving the
+optimisation problem
 $$
   \beta^* 
     = \argmin{\beta\in\mathbb{R}^n} L(\beta; x, y)
     = \argmin{\beta\in\mathbb{R}^n} \sum_{i=1}^N\, (y_i - \hat{f}(\beta; x_i))^2 \,. {{numeq}}{eq:least_squares_opt}
 $$
-finden. Wenn wir den Vektor der vorhergesagten Werte $\hat{y}$ als
+If we write the vector of predicted values $\hat{y}$ as
 $$
   \hat{y}_ i = \hat{f}(\beta; x_i)\,,
 $$
-schreiben, können wir Gl. {{eqref: eq:least_squares_opt}} als
+we can rewrite Eq. {{eqref: eq:least_squares_opt}} into
 $$
   \beta^{* } 
     = \argmin{\beta\in\mathbb{R}^n} \sum_{i=1}^N\, (y_ i - \hat{y}_ i)^2 
     = \argmin{\beta\in\mathbb{R}^n} \|y - \hat{y}\|_ 2^2 \,, {{numeq}}{eq:least_squares_opt2}
 $$
-formulieren, wobei $\| v \|_2$ die euklidische Norm oder die $\ell_2$-Norm
-eines Vektors $v$ bezeichnet, definiert als
+where $\| v \|_2$ denotes the Euclidean norm or the $\ell_2$-norm of a
+vector $v$, defined as
 $$
   \| v \|_2 = \sqrt{\sum_{i=1}^N\, v_i^2} \,.
 $$
 
-Die Methode der kleinsten Quadrate ist eine beliebte Wahl für die 
-Regressionsanalyse, da sie geschlossene Lösungen für einige einfache, aber 
-wichtige Modelle bietet und mit Methoden der numerischen linearen 
-Algebra für komplexere Modelle effizient gelöst werden kann. Es weist jedoch 
-einige Nachteile auf, z.B. die Empfindlichkeit gegenüber Ausreißern und die 
-Anfälligkeit für Überanpassungen. Eine Alternative zur Methode der kleinsten 
-Quadrate ist die Methode der kleinsten absoluten Abweichungen, welche die
-$\ell_1$-Norm anstelle der $\ell_2$-Norm verwendet. Diese ist für einen
-Vektor $v$ definiert als
+The least squares method is a popular choice for regression analysis
+because it provides closed-form solutions for some simple but important
+models and can be solved efficiently with numerical linear algebra methods.
+However, it has some disadvantages, such as sensitivity to outliers and
+vulnerability to overfitting. An alternative to the least squares method
+is the *least absolute deviations method*, which uses the $\ell_1$-norm
+instead of the $\ell_2$-norm. This is defined for a vector $v$ as
 $$
   \| v \|_1 = \sum_{i=1}^N\, |v_i| \,.
 $$
 
-Das Optimierungsproblem wird dann formuliert als
+The optimisation problem is then formulated as
 $$
   \beta^* 
     = \argmin{\beta\in\mathbb{R}^n} \|y - \hat{y}\|_1 \,. {{numeq}}{eq:least_absolute_deviations_opt}
 $$
 
-Es gibt viele andere Verlustfunktionen, die für die Regression verwendet
-werden können, z.B. 
-die [Huber-Verlustfunktion](https://en.wikipedia.org/wiki/Huber_loss),
-die log-cosh-Verlustfunktion,
-die [Quantilverlustfunktion](https://de.wikipedia.org/wiki/Quantilsregression#Optimierungsproblem)
-usw. 
-Obwohl die Methode der kleinsten Quadrate in vielen Fällen gut funktioniert,
-ist es wichtig, sich der Grenzen der Methode bewusst zu sein und
-gegebenenfalls andere Verlustfunktionen heranzuziehen.
+There are many other loss functions that can be used for regression,
+e.g. the
+- [Huber loss function](https://en.wikipedia.org/wiki/Huber_loss),
+- log-cosh loss function,
+- [quantile loss function](https://en.wikipedia.org/wiki/Quantile_regression#Quantile_of_a_random_variable)
+etc.
+Although the least squares method works well in many cases, it is important
+to be aware of its limitations and to consider other loss functions 
+if necessary.
 

@@ -9,11 +9,11 @@
 
 ---
 
-- [Regressionsanalyse]()
-    - [Methode der kleinsten Quadrate]()
-    - [Lineare Regression]()
-    - [Numerische Optimierung]()
-    - [Nichtlineare Regression]()
+- [Regression Analysis](01-regression.md)
+    - [Least Squares](01-regression/01-least_squares.md)
+    - [Linear Regression](01-regression/02-linear_regression.md)
+    - [Numerical Optimisation]()
+    - [Nonlinear Regression]()
 
 - [Differentialgleichungen]()
     - [Anfangswertproblem]()

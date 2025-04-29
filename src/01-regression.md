@@ -1,24 +1,21 @@
-# Regressionsanalyse
+# Regression Analysis
 
-Eine sehr häufige Aufgabe der Datenanalyse besteht darin, ein Modell an 
-einen Datensatz anzupassen. Dies nennt man Regressionsanalyse, ein 
-grundlegendes statistisches Werkzeug in unzähligen wissenschaftlichen 
-Untersuchungen, auch in der Chemie, welches die Beziehungen zwischen 
-Variablen aufdeckt.
+A very common task in data analysis is to fit a model to a data set. This is 
+called regression analysis, a fundamental statistical tool in countless 
+scientific studies, including chemistry, which reveals the relationships 
+between variables.
 
-Betrachten Sie die folgenden praktischen Beispiele: Anwendung des Lambert-
-Beerschen Gesetzes zur Quantifizierung der Konzentration einer Lösung 
-basierend auf Lichtabsorption, Bestimmung des Einflusses der Temperatur auf 
-Reaktionsgeschwindigkeiten, Herausfinden der Beziehung zwischen 
-Substratkonzentration und Enzymaktivität. Jedes dieser Beispiele zeigt, wie 
-die Regressionsanalyse dabei hilft, experimentelle Daten zu modellieren, 
-Beziehungen zwischen Variablen zu extrahieren und Vorhersagen zu treffen. 
+Consider the following practical examples: Applying Lambert-Beer's law to 
+quantify the concentration of a solution based on light absorption, 
+determining the effect of temperature on reaction rates, figuring out 
+the relationship between substrate concentration and enzyme activity. 
+Each of these examples shows how regression analysis helps to model 
+experimental data, extract relationships between variables and make 
+predictions.
 
-In diesem Kapitel werden wir uns mit den Grundlagen der Regressionsanalyse 
-befassen, angefangen bei der einfachen linearen Regression bis hin zu 
-komplexeren Modellen. Wir werden uns auch mit den zugrundeliegenden 
-Optimierungsalgorithmen befassen, die zum Fitten dieser Modelle an die Daten 
-verwendet werden. Darüberhinaus werden wir die Bedeutung der 
-Modellevaluation und der Regularisierungstechniken zur Vermeidung vom 
-Überfitten diskutieren.
+In this chapter, we will look at the basics of regression analysis, 
+from simple linear regression to more complex models. We will also look at 
+the underlying optimisation algorithms used to fit these models to the data. 
+In addition, we will discuss the importance of model evaluation and 
+regularisation techniques to avoid overfitting.
 
