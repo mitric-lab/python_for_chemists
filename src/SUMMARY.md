@@ -21,11 +21,6 @@
     - [Runge-Kutta-Verfahren]()
     - [Finite-Differenzen-Verfahren]()
 
-- [Fourier-Analyse]()
-    - [Fourier-Reihen]()
-    - [Fourier-Transformation]()
-    - [Diskrete Fourier-Transformation]()
-
 - [Eigenwert- und Singulärwertzerlegung]()
     - [Eigenwertzerlegung]()
     - [Singulärwertzerlegung]()
@@ -47,7 +42,7 @@
 
 ---
 
-[Übung 1]()
+[Übung 1](psets/01.md)
 [Übung 2]()
 [Übung 3]()
 [Übung 4]()
