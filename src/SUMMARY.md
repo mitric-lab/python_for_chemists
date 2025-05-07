@@ -12,7 +12,7 @@
 - [Regression Analysis](01-regression.md)
     - [Least Squares](01-regression/01-least_squares.md)
     - [Linear Regression](01-regression/02-linear_regression.md)
-    - [Numerical Optimisation]()
+    - [Numerical Optimisation](01-regression/03-numerical_optimisation.md)
     - [Nonlinear Regression]()
 
 - [Differentialgleichungen]()
