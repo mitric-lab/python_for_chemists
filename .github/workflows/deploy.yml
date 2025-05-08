@@ -38,14 +38,14 @@ jobs:
 
       # set the site-url for mdBook
       - name: Set mdBook site-url
-      env:
-        REPO_NAME: ${{ github.event.repository.name }}   # ← owner-less repo name
-      run: |
-        if [ "${{ github.ref_name }}" = "main" ]; then
-          echo "MDBOOK_OUTPUT__HTML__SITE_URL=/${REPO_NAME}/" >> "$GITHUB_ENV"
-        else
-          echo "MDBOOK_OUTPUT__HTML__SITE_URL=/${REPO_NAME}/${{ github.ref_name }}/" >> "$GITHUB_ENV"
-        fi
+        env:
+          REPO_NAME: ${{ github.event.repository.name }}
+        run: |
+          if [ "${{ github.ref_name }}" = "main" ]; then
+            echo "MDBOOK_OUTPUT__HTML__SITE_URL=/${REPO_NAME}/" >> "$GITHUB_ENV"
+          else
+            echo "MDBOOK_OUTPUT__HTML__SITE_URL=/${REPO_NAME}/${{ github.ref_name }}/" >> "$GITHUB_ENV"
+          fi
 
       # install mdBook and preprocessors
       - name: Install mdBook
