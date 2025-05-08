@@ -9,7 +9,9 @@ on:
   push:
     branches:
       - main
-      - '[0-9]*'
+      - 'ss*'
+      - 'ws*'
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -46,7 +48,7 @@ jobs:
           mdbook-admonish install .
           cargo install mdbook-katex --locked --version 0.9.4
           cargo install mdbook-numeq --locked --version 0.3.0
-          cargo install --git https://github.com/xmiaocat/mdbook-chapter-zero#e50441d
+          cargo install mdbook-chapter-zero --locked --version 0.1.0
       
       # build the book
       - name: Build with mdBook
@@ -61,7 +63,8 @@ jobs:
           folder: book
           clean: true
           clean-exclude: |
-            [0-9]*
+            ss*
+            ws*
 
       # deploy archive branche
       - name: Deploy archive branches
