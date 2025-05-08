@@ -112,7 +112,7 @@ where we have introduced the abbreviation $\bar{x} = \frac{1}{N} \sum_{i=1}^N\, 
 
 If we had only one data point ($N=1$), or if all $x_i$ values were identical (making the variance zero), the determinant would be zero. This means that the matrix $\bm{A}$ is not invertible, and we do not obtain a unique solution for the linear model. A unique solution of the system of equations {{eqref: eq:least_squares_linear_params}} can only be found if there are at least two data points with different $x$ values.
 
-Now we want to implement the linear regression for a simple example with the help of Eq. {{eqref: eq:least_squares_linear_params}}. For this, we first need some real-world data.
+Now let's implement linear regression using real-world data. We'll use NumPy's efficient built-in functions to solve the system of linear equations from Eq. {{eqref: eq:least_squares_linear_params}}.
 
 ### Implementation
 
@@ -253,22 +253,26 @@ import matplotlib.pyplot as plt
 [^1]: The authors would like to thank Dr. Hans-Christian Schmitt for providing the
 lab equipments for the measurements.
 
+**Self-Study Questions**
+
+- How does the mathematical form of the $\ell_1$-norm loss differ from the $\ell_2$-norm loss? Briefly explain why this difference makes $\ell_1$ (Least Absolute Deviations) less sensitive to outliers than $\ell_2$ (Least Squares).
+
+- In the context of minimizing the least squares loss function for linear regression, why do we set the partial derivatives of the loss function with respect to $\beta_0$ and $\beta_1$ to zero? What does this step represent in the optimization process?
+
+- The text mentions that the matrix $\bm{A}$ is invertible if its determinant is non-zero. For the linear regression case, when is the determinant of $\bm{A}$ zero? What does this imply about the data $x$?
+
+- Given a Python list of numbers, say `data = [1, 2, 3, 4, 5]`, write a short Python code snippet (without using NumPy) to calculate the sum of the squares of these numbers.
+
+**Challenge Questions**
+
+- Derive the formula for the optimal slope $\beta_1$ in a linear model *without* an intercept ($\hat{y}_i = \beta_1 x_i$) using the least squares principle. How does the resulting formula for $\beta_1$ compare to the one derived for the model *with* an intercept?
+
+- Investigate and implement measures of fit quality for linear regression, such as the coefficient of determination $R^2$, the mean absolute error (MAE), and the root mean squared error (RMSE). How do these metrics relate to the residuals?
+
+- Linear regression is often used with the least squares loss function because it arises naturally in Maximum Likelihood Estimation (MLE) under the assumption that the residuals are normally distributed with equal variance. MLE finds model parameters that make the observed data $y$ *most probable* given the inputs $x$ by maximizing the likelihood function. For the methylene blue data, is it reasonable to assume normally distributed residuals? Explain your reasoning.
+
 **Further Reading**
 
 - James et al., *An Introduction to Statistical Learning*, Chapter 3
 - Bishop, *Pattern Recognition and Machine Learning*, Chapter 3.1
 - Murphy, *Machine Learning: A Probabilistic Perspective*, Chapter 7
-
-**Self-Study Questions**
-
-1. How does the mathematical form of the $\ell_1$-norm loss differ from the $\ell_2$-norm loss? Briefly explain why this difference makes $\ell_1$ (Least Absolute Deviations) less sensitive to outliers than $\ell_2$ (Least Squares).
-
-2. Derive the formula for the optimal slope $\beta_1$ in a linear model *without* an intercept ($\hat{y}_i = \beta_1 x_i$) using the least squares principle. How does the resulting formula for $\beta_1$ compare to the one derived for the model *with* an intercept? What do you observe?
-
-3. Investigate and implement measures of fit quality for linear regression, such as the coefficient of determination $R^2$, the mean absolute error (MAE), and the root mean squared error (RMSE). How do these metrics relate to the residuals?
-
-4. With reference to the system of equations {{eqref: eq:least_squares_linear_params}}, explain the concepts of underdetermined and overdetermined systems. Under what conditions (considering the number of data points $N$ vs. number of parameters, and properties of $x$) does this system become underdetermined or lack a unique solution? Investigate how numerical methods like SVD can provide solutions even in these cases.
-
-5. The residual plot for the methylene blue data suggested a potential non-linear pattern, indicating a quadratic model $\hat{y}_i = \beta_0 + \beta_1 x_i + \beta_2 x_i^2$ might be better. How would you set up the equations $\mathbf{A}\vec{\beta} = \vec{b}$ to find the parameters $(\beta_0, \beta_1, \beta_2)$ for this quadratic model using least squares? Define the components of the $3 \times 3$ matrix $\mathbf{A}$ and the $3 \times 1$ vector $\vec{b}$.
-
-6. Linear regression is often used with the least squares loss function because it arises naturally in Maximum Likelihood Estimation (MLE) when the residuals are normally distributed with equal variance. MLE finds model parameters that make the observed data $y$ *most probable* given the inputs $x$ by maximizing the likelihood function. Based on the residual plot, is it reasonable to assume normally distributed residuals for the methylene blue data? Explain your reasoning.
