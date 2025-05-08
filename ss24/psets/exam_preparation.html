@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html lang="de" class="latte" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Klausurvorbereitung - Programmierkurs für Chemiker</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href=".././theme/catppuccin.css">
+        <link rel="stylesheet" href=".././theme/catppuccin-admonish.css">
+        <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+        <link rel="stylesheet" href=".././theme/mdbook-admonish-custom.css">
+        <link rel="stylesheet" href=".././theme/icomoon.css">
+        <link rel="stylesheet" href=".././theme/pagetoc.css">
+        <link rel="stylesheet" href=".././mdbook-admonish.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "mocha" : "latte";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Inhaltsverzeichnis</li><li class="chapter-item expanded "><a href="../00-preface.html"><strong aria-hidden="true">0.</strong> Vorwort</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../00-preface/01-motivation.html"><strong aria-hidden="true">0.1.</strong> Motivation</a></li><li class="chapter-item "><a href="../00-preface/02-getting_started.html"><strong aria-hidden="true">0.2.</strong> Erste Schritte</a></li><li class="chapter-item "><a href="../00-preface/03-mdbook_usage.html"><strong aria-hidden="true">0.3.</strong> Bedienung dieser Website</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../01-regression.html"><strong aria-hidden="true">1.</strong> Regressionsanalyse</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../01-regression/01-least_squares.html"><strong aria-hidden="true">1.1.</strong> Methode der kleinsten Quadrate</a></li><li class="chapter-item "><a href="../01-regression/02-linear_regression.html"><strong aria-hidden="true">1.2.</strong> Lineare Regression</a></li><li class="chapter-item "><a href="../01-regression/03-numerical_optimisation.html"><strong aria-hidden="true">1.3.</strong> Numerische Optimierung</a></li><li class="chapter-item "><a href="../01-regression/04-nonlinear_regression.html"><strong aria-hidden="true">1.4.</strong> Nichtlineare Regression</a></li></ol></li><li class="chapter-item expanded "><a href="../02-differential_equations.html"><strong aria-hidden="true">2.</strong> Differentialgleichungen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../02-differential_equations/01-initial_value_problem.html"><strong aria-hidden="true">2.1.</strong> Anfangswertproblem</a></li><li class="chapter-item "><a href="../02-differential_equations/02-euler_method.html"><strong aria-hidden="true">2.2.</strong> Euler-Verfahren</a></li><li class="chapter-item "><a href="../02-differential_equations/03-runge_kutta.html"><strong aria-hidden="true">2.3.</strong> Runge-Kutta-Verfahren</a></li><li class="chapter-item "><a href="../02-differential_equations/04-finite_differences.html"><strong aria-hidden="true">2.4.</strong> Finite-Differenzen-Verfahren</a></li></ol></li><li class="chapter-item expanded "><a href="../03-fourier_analysis.html"><strong aria-hidden="true">3.</strong> Fourier-Analyse</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../03-fourier_analysis/01-fourier_series.html"><strong aria-hidden="true">3.1.</strong> Fourier-Reihen</a></li><li class="chapter-item "><a href="../03-fourier_analysis/02-fourier_transform.html"><strong aria-hidden="true">3.2.</strong> Fourier-Transformation</a></li><li class="chapter-item "><a href="../03-fourier_analysis/03-discrete_fourier_transform.html"><strong aria-hidden="true">3.3.</strong> Diskrete Fourier-Transformation</a></li></ol></li><li class="chapter-item expanded "><a href="../04-evd_and_svd.html"><strong aria-hidden="true">4.</strong> Eigenwert- und Singulärwertzerlegung</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../04-evd_and_svd/01-eigenvalue_decomposition.html"><strong aria-hidden="true">4.1.</strong> Eigenwertzerlegung</a></li><li class="chapter-item "><a href="../04-evd_and_svd/02-singular_value_decomposition.html"><strong aria-hidden="true">4.2.</strong> Singulärwertzerlegung</a></li><li class="chapter-item "><a href="../04-evd_and_svd/03-principal_component_analysis.html"><strong aria-hidden="true">4.3.</strong> Hauptkomponentenanalyse</a></li><li class="chapter-item "><a href="../04-evd_and_svd/04-principal_coordinate_analysis.html"><strong aria-hidden="true">4.4.</strong> Hauptkoordinatenanalyse</a></li><li class="chapter-item "><a href="../04-evd_and_svd/05-linear_equations.html"><strong aria-hidden="true">4.5.</strong> Lineare Gleichungssysteme</a></li></ol></li><li class="chapter-item expanded "><a href="../05-machine_learning.html"><strong aria-hidden="true">5.</strong> Maschinelles Lernen</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../05-machine_learning/01-supervised_learning.html"><strong aria-hidden="true">5.1.</strong> Überwachtes Lernen</a></li><li class="chapter-item "><a href="../05-machine_learning/02-unsupervised_learning.html"><strong aria-hidden="true">5.2.</strong> Unüberwachtes Lernen</a></li></ol></li><li class="chapter-item expanded "><a href="../06-neural_networks.html"><strong aria-hidden="true">6.</strong> Neuronale Netzwerke</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../06-neural_networks/01-single_layer_perceptron.html"><strong aria-hidden="true">6.1.</strong> Single-Layer-Perzeptron</a></li><li class="chapter-item "><a href="../06-neural_networks/02-multi_layer_perceptron.html"><strong aria-hidden="true">6.2.</strong> Multi-Layer-Perzeptron</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><a href="../07-summary.html">Zusammenfassung und Ausblick</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="../psets/01.html">Übung 1</a></li><li class="chapter-item expanded affix "><a href="../psets/02.html">Übung 2</a></li><li class="chapter-item expanded affix "><a href="../psets/03.html">Übung 3</a></li><li class="chapter-item expanded affix "><a href="../psets/04.html">Übung 4</a></li><li class="chapter-item expanded affix "><a href="../psets/05.html">Übung 5</a></li><li class="chapter-item expanded affix "><a href="../psets/06.html">Übung 6</a></li><li class="chapter-item expanded affix "><a href="../psets/exam_preparation.html" class="active">Klausurvorbereitung</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Programmierkurs für Chemiker</h1>
+
+                    <div class="right-buttons">
+			<!--print button-->
+			<a href="../print.html" title="Buch drucken" aria-label="Buch drucken">
+			    <i id="print-button" class="fa fa-print"></i>
+			</a>
+
+                        
+                        <!-- WueCampus button -->
+                        <script>
+                            var wueCampusLink = "https://wuecampus.uni-wuerzburg.de/moodle/course/view.php?id=66271";
+                        </script>
+			<a href="javascript:void(0);" onclick="window.open(wueCampusLink)" target="_blank" rel="noopener noreferrer" title="WueCampus-Kursraum besuchen" aria-label="WueCampus-Kursraum besuchen">
+			    <i id="wuecampus-button" class="icon-uw"></i>
+			</a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="klausurvorbereitung"><a class="header" href="#klausurvorbereitung">Klausurvorbereitung</a></h1>
+<p>Die folgenden Aufgaben sollen Ihnen dabei helfen, sich auf die Klausur vorzubereiten.
+Die Aufgaben sind so gewählt, dass sie den Prüfungsfragen ähneln und Themen aus
+den Übungen und Vorlesungen abdecken.</p>
+<h2 id="aufgabe-1-code-snippets"><a class="header" href="#aufgabe-1-code-snippets">Aufgabe 1: Code-Snippets</a></h2>
+<!--- ANCHOR: aufgabe_1 --->
+<p>Wählen Sie für die folgenden Code-Snippets die erwartete Ausgabe aus.</p>
+<div class="table-wrapper"><table><thead><tr><th>a)</th><th>b)</th><th>c)</th></tr></thead><tbody>
+<tr><td><pre><code>x = [a for a in ‘pkc’]<br>y = len(x)<br>print(y ** 2)</code></pre></td><td><pre><code>x = 99<br>y = x // -10<br>z = int(y) ** 2<br>print(z)</code></pre></td><td><pre><code>x = [[i] for i in range(4)]<br>x[-1].append(4)<br>y = np.array(x)<br>print(y)</code></pre></td></tr>
+<tr><td>☐ <code>3</code></td><td>☐ <code>98.01</code></td><td>☐ <code>[[1], [2], [3, 4]]</code></td></tr>
+<tr><td>☐ <code>6</code></td><td>☐ <code>81</code></td><td>☐ <code>[[1], [2], [3], [4]]</code></td></tr>
+<tr><td>☐ <code>9</code></td><td>☐ <code>-81</code></td><td>☐ <code>[[0], [1], [2], [3, 4]]</code></td></tr>
+<tr><td>☐ <code>Error</code></td><td>☐ <code>100</code></td><td>☐ <code>Error</code></td></tr>
+</tbody></table>
+</div><!--- ANCHOR_END: aufgabe_1 --->
+<h2 id="aufgabe-2-euler-verfahren"><a class="header" href="#aufgabe-2-euler-verfahren">Aufgabe 2: Euler-Verfahren</a></h2>
+<!--- ANCHOR: aufgabe_2 --->
+<p>In der folgenden Implementierung des Euler-Verfahrens haben sich <strong>fünf Fehler</strong>
+eingeschlichen. Finden Sie die Fehler und korrigieren Sie diese. Nehmen Sie dabei an,
+dass alle benötigten Module importiert wurden.</p>
+<pre><code class="language-python">def dydx(x: float, y: float) -&gt; float:
+    k = 0.0039022970
+    return -k * y
+
+def euler_step(
+    x_n: float,
+    y_n: float,
+    h: float,
+    dydx: Callable[[float, float], float],
+) -&gt; float:
+    return x_n + h * dydx(x_n, y_n)
+
+def euler_method(
+    x0: float, 
+    y0: float, 
+    h: float, 
+    dydx: Callable[[float, float], float], 
+    nsteps: int,
+) -&gt; np.ndarray:
+    x = x0 * np.arange(0, nsteps) * h
+    y = np.zeros(nsteps + 1)
+    y[1] = y0
+
+    for i in range(0, nsteps):
+        y[i] = euler_step(x[i], y[i], h, dydx)
+
+    return x, y
+</code></pre>
+<!--- ANCHOR_END: aufgabe_2 --->
+<h2 id="aufgabe-3-k-nearest-neighbors"><a class="header" href="#aufgabe-3-k-nearest-neighbors">Aufgabe 3: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>-Nearest Neighbors</a></h2>
+<!--- ANCHOR: aufgabe_3 --->
+<p>Der <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>-Nearest Neighbors (KNN) Algorithmus ist ein einfacher Algorithmus
+für Klassifikationsprobleme, der aber auch für
+Regressionsprobleme verwendet werden kann. Er ist ein
+parameterfreier Algorithmus, das bedeutet, dass er keine Trainingsphase hat.</p>
+<p>Für einen gegebenen Punkt <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.864em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">x</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5 3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11 10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63 -1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1 -7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59 H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359 c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> sagt der KNN-Algorithmus die Klasse <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>
+voraus, indem die <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7335em;vertical-align:-0.0391em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6889em;"></span><span class="mord mathbb">N</span></span></span></span> nächsten Nachbarn von <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.864em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">x</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5 3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11 10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63 -1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1 -7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59 H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359 c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> im
+Trainingsdatensatz basierend auf ihrer euklidischen Distanz zu <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.864em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">x</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5 3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11 10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63 -1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1 -7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59 H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359 c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> bestimmt werden.
+Die Klasse <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> von <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.864em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">x</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5 3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11 10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63 -1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1 -7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59 H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359 c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ist dann diejenige Klasse, die unter den <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>
+nächsten Nachbarn am häufigsten vorkommt. Dies ist im folgenden Bild für zwei Klassen
+veranschaulicht, wobei für <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span> (innerer schwarzer Kreis) die Klasse <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>
+des grünen Punktes als <em>rot</em> vorhergesagt wird.</p>
+<p><img src="../assets/figures/07-summary/kNN.svg" alt="kNN" /></p>
+<p><strong>(a)</strong></p>
+<p>Welche Werte für <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> sind mehr oder weniger sinnvoll, wenn die Anzahl der Klassen
+zwei ist? Begründen Sie Ihre Antwort.</p>
+<p><strong>(b)</strong></p>
+<p>Vervollständigen Sie die Methode <code>predict</code> der Klasse <code>kNN_Classifier</code> in der folgenden
+Implementierung.</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+class kNN_Classifier:
+    def __init__(self, k):
+        self.k = k
+
+    def predict(self, X, y, xi):
+        #TODO: Implement the kNN label prediction for xi
+
+        
+        y_pred = ...
+        return y_pred
+</code></pre>
+<p>Das Model soll wie folgt verwendet werden:</p>
+<pre><code class="language-python">N = 20
+X = np.random.randn(N, 2)
+y = np.hstack((np.zeros(N//2), np.ones(N//2)))
+
+knn = kNN_Classifier(k=3)
+
+xi = np.array([0, 0])
+y_pred = knn.predict(X, y, xi)
+
+print(y_pred) # Output: 0 or 1
+</code></pre>
+<!-- 
+Lösung:
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+class kNN_Classifier:
+    def __init__(self, k):
+        self.k = k
+
+    def predict(self, X, y, xi):
+        distances = np.linalg.norm(X - xi, axis=1)
+        nearest = np.argsort(distances)[:self.k]
+        y_nearest = y[nearest]
+        unique_labels, label_counts = np.unique(y_nearest, return_counts=True)
+        y_pred = unique_labels[np.argmax(label_counts)]
+        return y_pred
+```
+ -->
+<!--- ANCHOR_END: aufgabe_3 --->
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../psets/06.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../psets/06.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/pagetoc.js"></script>
+
+
+    </div>
+    </body>
+</html>
