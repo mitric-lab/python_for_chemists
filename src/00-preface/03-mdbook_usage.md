@@ -52,3 +52,11 @@ Der folgende Codeblock bestätigt zum Beispiel, dass der Variable `a` erfolgreic
 a = 2
 assert a == 2
 ```
+
+### Selbststudium
+
+Am Ende vieler Abschnitte finden Sie *Self-Study Questions*. Diese Fragen beziehen sich auf die zuvor behandelten Themen und helfen Ihnen dabei, das Material zu verstehen und anzuwenden. Sie geben Ihnen auch eine Orientierung, welche Kenntnisse wir von Ihnen erwarten. Falls Sie Schwierigkeiten haben, diese Fragen zu beantworten, empfehlen wir Ihnen, die entsprechenden Abschnitte erneut durchzugehen oder sich mit Ihren Kommilitonen auszutauschen.
+
+Die *Challenge Questions* sind weiterführende Fragen, die über den behandelten Stoff hinausgehen. Diese optionalen Fragen können Ihr Verständnis zusätzlich vertiefen, sind aber für das Grundverständnis der Vorlesung nicht erforderlich.
+
+Unter *Further Reading* finden Sie am Ende jedes Kapitels Empfehlungen für weiterführende Literatur und zusätzliche Ressourcen.
