@@ -31,7 +31,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
-      MDBOOK_VERSION: 0.4.48
+      MDBOOK_VERSION: 0.4.40
     steps:
       # get the source code
       - uses: actions/checkout@v4
@@ -55,9 +55,9 @@ jobs:
           cargo install --version ${MDBOOK_VERSION} mdbook
       - name: Install mdBook preprocessors
         run: |
-          cargo install mdbook-admonish --locked --version 1.19.0
+          cargo install mdbook-admonish --locked --version 1.16.0
           mdbook-admonish install .
-          cargo install mdbook-katex --locked --version 0.9.4
+          cargo install mdbook-katex --locked --version 0.9.0
           cargo install mdbook-numeq --locked --version 0.3.0
           cargo install mdbook-chapter-zero --locked --version 0.1.0
       
