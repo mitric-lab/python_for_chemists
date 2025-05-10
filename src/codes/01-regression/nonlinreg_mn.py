@@ -12,7 +12,7 @@ time, absorbance = np.loadtxt('mn_decay.txt', unpack=True)
 
 
 ### ANCHOR: exp_model
-def exp_decay(t: np.ndarray, a0: float, k: float) -> np.ndarray:
+def exp_decay(t, a0, k):
     return a0 * np.exp(-k * t)
 ### ANCHOR_END: exp_model
 

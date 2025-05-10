@@ -8,12 +8,7 @@ from scipy.optimize import minimize
 
 
 ### ANCHOR: titration_model
-def titration_sasb_model(
-    v_b: np.ndarray,
-    c0_b: float,
-    c0_a: float,
-    v0: float,
-) -> np.ndarray:
+def titration_sasb_model(v_b, c0_b, c0_a, v0):
     k_w = 1e-14
     c_a = c0_a * v0 / (v0 + v_b)
     c_b = c0_b * v_b / (v0 + v_b)
