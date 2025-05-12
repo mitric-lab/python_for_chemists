@@ -6,56 +6,41 @@ import numpy as np
 
 
 ### ANCHOR: finite_difference
-def finite_difference(func, x0, h=1e-5, args=()):
-    n = len(x0)
+def finite_difference(func, theta0, h=1e-5, args=()):
+    n = len(theta0)
     grad = np.zeros(n)
 
     for i in range(0, n):
         e = np.zeros(n)
         e[i] = 1
         grad[i] = (
-            func(x0 + h * e, *args) - func(x0 - h * e, *args)
+            func(theta0 + h * e, *args) - func(theta0 - h * e, *args)
         ) / (2 * h)
 
     return grad
 ### ANCHOR_END: finite_difference
 
 
-### ANCHOR: objective_function
-def objective_function(beta, *args):
-    concentrations = args[0]
-    absorbances = args[1]
-    return np.sum((absorbances - (beta[0] + beta[1] * concentrations))**2)
-### ANCHOR_END: objective_function
-
-
-### ANCHOR: objective_function_gradient
-def objective_function_gradient(beta, *args):
-    concentrations = args[0]
-    absorbances = args[1]
-    grad = finite_difference(
-        objective_function, 
-        beta, 
-        args=(concentrations, absorbances),
-    )
-    return grad
-### ANCHOR_END: objective_function_gradient
+### ANCHOR: least_squares_loss
+def least_squares_loss(beta, x, y):
+    return np.sum((y - (beta[0] + beta[1] * x))**2)
+### ANCHOR_END: least_squares_loss
 
 
 ### ANCHOR: gradient_descent
-def gradient_descent(func_grad, x0, alpha=0.001, 
+def gradient_descent(func, theta0, alpha=0.001, 
                      max_norm=1e-6, max_iter=10000, args=()):
-    x = np.copy(x0)
+    theta = np.copy(theta0)
     for niter in range(0, max_iter):
-        grad = func_grad(x, *args)
-        x = x - alpha * grad
+        grad = finite_difference(func, theta, args=args)
+        theta = theta - alpha * grad
         if np.linalg.norm(grad) < max_norm:
             break
     if niter == max_iter - 1:
         print('Warning: Maximum iterations reached. '
               'Result may not be reliable.')
     
-    return x, niter
+    return theta, niter
 ### ANCHOR_END: gradient_descent
 
 
@@ -77,7 +62,7 @@ absorbances = np.array(absorbances)
 ### ANCHOR: gradient_descent_call
 beta_guess = np.array([1.0, 1.0])
 beta_opt, niter = gradient_descent(
-    objective_function_gradient, 
+    least_squares_loss, 
     beta_guess,
     alpha=0.00005,
     max_iter=100000,
@@ -97,11 +82,11 @@ print(niter)
 from scipy.optimize import minimize
 
 res = minimize(
-    objective_function,
+    least_squares_loss,
     beta_guess,
     args=(concentrations, absorbances),
     method='CG',
-    jac=objective_function_gradient,
+    jac=lambda beta, x, y: finite_difference(least_squares_loss, beta, args=(x, y)),
     options={'maxiter': 10000, 'gtol': 1e-6},
 )
 
