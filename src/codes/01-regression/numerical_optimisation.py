@@ -6,15 +6,15 @@ import numpy as np
 
 
 ### ANCHOR: finite_difference
-def finite_difference(func, theta0, h=1e-5, args=()):
-    n = len(theta0)
+def finite_difference(func, beta, h=1e-5, args=()):
+    n = len(beta)
     grad = np.zeros(n)
 
     for i in range(0, n):
         e = np.zeros(n)
         e[i] = 1
         grad[i] = (
-            func(theta0 + h * e, *args) - func(theta0 - h * e, *args)
+            func(beta + h * e, *args) - func(beta - h * e, *args)
         ) / (2 * h)
 
     return grad
@@ -28,19 +28,19 @@ def least_squares_loss(beta, x, y):
 
 
 ### ANCHOR: gradient_descent
-def gradient_descent(func, theta0, alpha=0.001, 
+def gradient_descent(func, beta0, alpha=0.001, 
                      max_norm=1e-6, max_iter=10000, args=()):
-    theta = np.copy(theta0)
+    beta = np.copy(beta0)
     for niter in range(0, max_iter):
-        grad = finite_difference(func, theta, args=args)
-        theta = theta - alpha * grad
+        grad = finite_difference(func, beta, args=args)
+        beta = beta - alpha * grad
         if np.linalg.norm(grad) < max_norm:
             break
     if niter == max_iter - 1:
         print('Warning: Maximum iterations reached. '
               'Result may not be reliable.')
     
-    return theta, niter
+    return beta, niter
 ### ANCHOR_END: gradient_descent
 
 
@@ -69,14 +69,12 @@ beta_opt, niter = gradient_descent(
     args=(concentrations, absorbances),
 )
 
-beta0, beta1 = beta_opt
-assert np.isclose(beta0, -0.04907034)
-assert np.isclose(beta1, 0.03800109)
+assert np.isclose(beta_opt[0], -0.04907034)
+assert np.isclose(beta_opt[1], 0.03800109)
+### ANCHOR_END: gradient_descent_call
 
 print(beta_opt)
 print(niter)
-### ANCHOR_END: gradient_descent_call
-
 
 ### ANCHOR: scipy_minimize
 from scipy.optimize import minimize
@@ -90,12 +88,12 @@ res = minimize(
     options={'maxiter': 10000, 'gtol': 1e-6},
 )
 
-beta0, beta1 = res.x
+beta_opt = res.x
 niter = res.nit
-assert np.isclose(beta0, -0.04907034)
-assert np.isclose(beta1, 0.03800109)
+assert np.isclose(beta_opt[0], -0.04907034)
+assert np.isclose(beta_opt[1], 0.03800109)
 ### ANCHOR_END: scipy_minimize
 
-print(res.x)
+print(beta_opt)
 print(niter)
 
