@@ -29,9 +29,10 @@ Here, we have $A(t) = \hat{f}(\beta; t)$, and we can formulate the regression
 problem using the least squares loss function as the following
 optimisation problem:
 $$
-  \beta^{* } = \argmin{\beta\in\mathbb{R}^2} \sum_{i=1}^N\, (A_i - A_0\, \eu^{-k t_i})^2
+  \beta^{* } = \argmin{\beta\in\mathbb{R}^2} \sum_{i=1}^N\, (A_i - A_0\, \eu^{-k t_i})^2,
   {{numeq}}{eq:least_squares_exp_opt}
 $$
+where $A_i$ is the measured absorbance at time $t_i$.
 
 For the implementation, we first import the required modules and libraries
 as always:
@@ -57,7 +58,7 @@ To read the data, the function `np.loadtxt` requires the filename:
 ```
 In this case, the text file is located in the same directory as the 
 executing script. If you have the text file in a different directory, you 
-need to adjust the path accordingly. The optional argument `unpack=True` 
+need to adjust the file path accordingly. The optional argument `unpack=True` 
 makes the columns of the file output separately and stores them as arrays
 `time` and `absorbance`. If we set `unpack=False`, which is also the default
 value, the function would return a 2D array in which the columns are
@@ -132,16 +133,16 @@ linear regression, which is a valid question. In fact, it is possible
 to linearise the function by
 taking the logarithm of both sides of the equation:
 $$
-  \ln(A(t)) = \ln(A_0) - k t
+  \ln(A(t)) = - k t + \ln(A_0),
 $$
+which has the form of a linear equation $y = mx + b$.
 A linear regression using this equation, however, does not yield the
 same results, as you can see in the following diagram:
 ![Exponential Regression of the Mn Decay with Linearised Function](../assets/figures/01-regression/nonlinreg_mn_wlin.svg)
 
 As a voluntary exercise, you can try to reproduce the diagram above.
 It is easy to see that the linearised fit does not match the data as well.
-This is because linear regression does not treat the errors in absorbance
-equally when taking the logarithm. The resulting parameters
+This is because linear regression does not treat the errors between the data points and the linearised model equally. The resulting parameters
 ```python
 {{#include ../codes/01-regression/nonlinreg_mn.py:verification_lin}}
 ```
@@ -151,8 +152,7 @@ data rather than using linear models with linearised data.
 
 #### Titration Curve
 
-In the analytical chemistry lab, you probably performed a titration of 
-a strong base against a strong acid with a pH meter. At that time, 
+Another experiment commonly performed in analytical chemistry labs is the titration of a strong base against a strong acid using a pH meter. When you did this experiment,
 you probably had to plot the values on millimeter paper and determine the
 equivalence point based on the position of the pH jump. This is tedious
 and inaccurate, as only the few data points near the steep rise are
@@ -188,7 +188,7 @@ and $V_\mathrm{B}$ is the volume of the added base.
 
 The pH value can be calculated from the $\mathrm{H^+}$ concentration:
 $$
-  \mathrm{pH} = -\lg \left( \frac{[\mathrm{H^+}]}{1\ \mathrm{M}} \right)\,.
+  \mathrm{pH} = -\log_{10} \left( \frac{[\mathrm{H^+}]}{1\ \mathrm{M}} \right)\,.
   {{numeq}}{eq:titration_sasb_ph}
 $$
 
@@ -278,5 +278,17 @@ It can be seen that the regression on $[\mathrm{H^+}]$
 favours the earlier data points, resulting in a completely
 incorrect determination of the equivalence point.
 
-As a voluntary exercise, you can try to reproduce the diagram above.
+---
+
+**Self-Study Questions**
+
+1. Explain why nonlinear regression is necessary for the Mn decay experiment, even though the relationship can be linearized by taking the logarithm. What are the consequences of using linear regression on the linearized data?
+
+2. In the titration curve example, why are the parameters $c_\mathrm{A}^0$ and $V^0$ correlated? How does this correlation affect the optimization process, and why is it acceptable in this case?
+
+**Challenge Questions**
+
+1. The Mn decay experiment could be extended to include temperature dependence of the rate constant $k$ through the Arrhenius equation $k = A\exp(-E_a/RT)$. How would you modify the model and optimization approach to determine both the pre-exponential factor $A$ and the activation energy $E_a$ from measurements at different temperatures?
+
+2. Try to reproduce the diagram of the titration curve with regression on $[\mathrm{H^+}]$ concentration.
 
