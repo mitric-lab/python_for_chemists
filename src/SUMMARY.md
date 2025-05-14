@@ -43,7 +43,7 @@
 ---
 
 [Problem Set 1](psets/01.md)
-[Problem Set 2]()
+[Problem Set 2](psets/02.md)
 [Problem Set 3]()
 [Problem Set 4]()
 [Problem Set 5]()
