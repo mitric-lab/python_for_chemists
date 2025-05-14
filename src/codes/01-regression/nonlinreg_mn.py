@@ -18,10 +18,10 @@ def exp_decay(t, a0, k):
 
 
 ### ANCHOR: objective_function
-def objective_function(beta, *args):
+def objective_function(beta, x, y):
+    # x: time; y: absorbance
     a0, k = beta
-    time, absorbance = args
-    return np.sum((absorbance - exp_decay(time, a0, k))**2)
+    return np.sum((y - exp_decay(x, a0, k))**2)
 ### ANCHOR_END: objective_function
 
 

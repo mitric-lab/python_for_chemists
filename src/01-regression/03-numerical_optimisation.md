@@ -117,7 +117,18 @@ Since optimisation is a very general problem, there are many implementations of 
 When calling the function `minimize`, we only need to specify the objective function `objective_function` and the initial point `beta_guess`. The numerical gradient calculation is handled internally.
 
 ~~~admonish note title="Gradient Calculation"
-  If the analytical gradient is available, or you have a good estimate of the gradient at hand, you can pass it as the `jac` argument to the `minimize` function, which can speed up the optimisation process. The `jac` argument expects a function of the form `jac(beta, arg1, arg2, ...)`, which takes the current parameters `beta` and the additional arguments and returns the gradient. Therefore, we have to use a `lambda` function to convert the `finite_difference` function into the required format.
+If the analytical gradient is available, or you have a good estimate of 
+the gradient at hand, you can pass it as the `jac` argument to the 
+`minimize` function, which can speed up the optimisation process. 
+The `jac` argument expects a function of the form `jac(beta, arg1, arg2, ...)`, 
+which takes the current parameters `beta` and the additional arguments 
+and returns the gradient. Therefore, we have to use a `lambda` function 
+to convert the `finite_difference` function into the required format.
+
+If the `jac` argument is not provided, the `minimize` function will
+automatically calculate the gradient using the finite difference method.
+Therefore, it is totally fine to not provide the `jac` argument 
+in this case.
 ~~~
 
 With the argument `method='CG'`, we have selected the 
