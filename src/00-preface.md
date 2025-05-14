@@ -32,23 +32,23 @@ kontinuierlich aktualisiert.
 |  4  | Di.     | 13.05. | Vorlesung   | Regression III  |
 |  4  | Do.     | 15.05. | Übung       | Regression      |
 |  5  | Di.     | 20.05. | Vorlesung   | Differentialgleichung I |
-|  5  | Do.     | 22.05. | Vorlesung   | Differentialgleichung II |
-|  6  | Di.     | 27.05. | Vorlesung   | Differentialgleichung III |
-|  6  | ~~Do.~~ | ~~29.05.~~ | Feiertag | Christi Himmelfahrt |
-|  7  | Di.     | 03.06. | Übung       | Differentialgleichung |
-|  7  | Do.     | 05.06. | Vorlesung   | EVD und SVD I   |
-|  8  | Di.     | 10.06. | Vorlesung   | EVD und SVD II  |
-|  8  | Do.     | 12.06. | Vorlesung   | EVD und SVD III |
-|  9  | Di.     | 17.06. | Übung       | EVD und SVD     |
-|  9  | ~~Do.~~ | ~~19.06.~~ | Feiertag | Fronleichnam   |
-| 10  | Di.     | 24.06. | Vorlesung   | Maschinelles Lernen I |
-| 10  | Do.     | 26.06. | Vorlesung   | Maschinelles Lernen II |
-| 11  | Di.     | 01.07. | Vorlesung   | Maschinelles Lernen III |
-| 11  | Do.     | 03.07. | Übung       | Maschinelles Lernen |
-| 12  | Di.     | 08.07. | Vorlesung   | Neuronale Netzwerke I  |
-| 12  | Do.     | 10.07. | Vorlesung   | Neuronale Netzwerke II |
-| 13  | Di.     | 15.07. | Vorlesung   | Neuronale Netzwerke III |
-| 13  | Do.     | 17.07. | Übung       | Neuronale Netzwerke |
-| 14  | Di.     | 22.07. |             |                 |
+|  5  | ~~Do.~~ | ~~22.05.~~ | Fällt aus |               |
+|  6  | Di.     | 27.05. | Vorlesung   | Differentialgleichung II |
+|  6  | Do.     | ~~29.05.~~ | Feiertag | Christi Himmelfahrt |
+|  7  | Di.     | 03.06. | Vorlesung   | Differentialgleichung III |
+|  7  | Do.     | 05.06. | Übung       | Differentialgleichung |
+|  8  | Di.     | 10.06. | Vorlesung   | EVD und SVD I   |
+|  8  | Do.     | 12.06. | Vorlesung   | EVD und SVD II  |
+|  9  | Di.     | 17.06. | Vorlesung   | EVD und SVD III |
+|  9  | Do.     | ~~19.06.~~ | Feiertag | Fronleichnam   |
+| 10  | Di.     | 24.06. | Übung       | EVD und SVD     |
+| 10  | Do.     | 26.06. | Vorlesung   | Maschinelles Lernen I |
+| 11  | Di.     | 01.07. | Vorlesung   | Maschinelles Lernen II |
+| 11  | Do.     | 03.07. | Vorlesung   | Maschinelles Lernen III |
+| 12  | Di.     | 08.07. | Übung       | Maschinelles Lernen |
+| 12  | Do.     | 10.07. | Vorlesung   | Neuronale Netzwerke I  |
+| 13  | Di.     | 15.07. | Vorlesung   | Neuronale Netzwerke II |
+| 13  | Do.     | 17.07. | Vorlesung   | Neuronale Netzwerke III |
+| 14  | Di.     | 22.07. | Übung       | Neuronale Netzwerke |
 | 14  | Do.     | 24.07. |             |                 |
 
