@@ -345,7 +345,17 @@ assert np.isclose(beta_opt[1], 0.03800109)
 <p><a class="admonition-anchor-link" href="#admonition-gradient-calculation"></a></p>
 </div>
 <div>
-<p>If the analytical gradient is available, or you have a good estimate of the gradient at hand, you can pass it as the <code>jac</code> argument to the <code>minimize</code> function, which can speed up the optimisation process. The <code>jac</code> argument expects a function of the form <code>jac(beta, arg1, arg2, ...)</code>, which takes the current parameters <code>beta</code> and the additional arguments and returns the gradient. Therefore, we have to use a <code>lambda</code> function to convert the <code>finite_difference</code> function into the required format.</p>
+<p>If the analytical gradient is available, or you have a good estimate of
+the gradient at hand, you can pass it as the <code>jac</code> argument to the
+<code>minimize</code> function, which can speed up the optimisation process.
+The <code>jac</code> argument expects a function of the form <code>jac(beta, arg1, arg2, ...)</code>,
+which takes the current parameters <code>beta</code> and the additional arguments
+and returns the gradient. Therefore, we have to use a <code>lambda</code> function
+to convert the <code>finite_difference</code> function into the required format.</p>
+<p>If the <code>jac</code> argument is not provided, the <code>minimize</code> function will
+automatically calculate the gradient using the finite difference method.
+Therefore, it is totally fine to not provide the <code>jac</code> argument
+in this case.</p>
 </div>
 </div>
 <p>With the argument <code>method='CG'</code>, we have selected the

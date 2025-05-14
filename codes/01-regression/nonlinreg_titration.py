@@ -20,11 +20,11 @@ def titration_sasb_model(v_b, c0_b, c0_a, v0):
 
 
 ### ANCHOR: objective_function
-def objective_function(beta, *args):
+def objective_function(beta, x, y, c0_b):
+    # x: v_b; y: ph
     c0_a, v0 = beta
-    c0_b, v_b, ph = args
-    ph_fit = titration_sasb_model(v_b, c0_b, c0_a, v0)
-    return np.sum((ph - ph_fit)**2)
+    ph_fit = titration_sasb_model(x, c0_b, c0_a, v0)
+    return np.sum((y - ph_fit)**2)
 ### ANCHOR_END: objective_function
 
 ### ANCHOR: read_data
@@ -38,9 +38,11 @@ beta_guess = (0.01, 100)
 res = minimize(
     objective_function, 
     beta_guess, 
-    args=(C0_B, v_b, ph),
+    args=(v_b, ph, C0_B),
     method='Nelder-Mead',
+    options={'maxiter': 1000},
 )
+print(res.message)
 
 c0_a, v0 = res.x
 print(f'c0_a = {c0_a} mol/l')

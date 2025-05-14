@@ -279,10 +279,10 @@ of the array. The result is again an array, which we multiply with
 the scalar <code>a0</code>.</p>
 <p>Next, we define the objective function in
 Eq. <a href="#eq:least_squares_exp_opt">(1.12)</a>:</p>
-<pre><code class="language-python">def objective_function(beta, *args):
+<pre><code class="language-python">def objective_function(beta, x, y):
+    # x: time; y: absorbance
     a0, k = beta
-    time, absorbance = args
-    return np.sum((absorbance - exp_decay(time, a0, k))**2)
+    return np.sum((y - exp_decay(x, a0, k))**2)
 </code></pre>
 <p>Now we use the <code>minimize</code> function to solve this
 optimisation problem:</p>
@@ -389,11 +389,11 @@ and <span class="katex"><span class="katex-html" aria-hidden="true"><span class=
     ph = -np.log10(c_h)
     return ph
 </code></pre>
-<pre><code class="language-python">def objective_function(beta, *args):
+<pre><code class="language-python">def objective_function(beta, x, y, c0_b):
+    # x: v_b; y: ph
     c0_a, v0 = beta
-    c0_b, v_b, ph = args
-    ph_fit = titration_sasb_model(v_b, c0_b, c0_a, v0)
-    return np.sum((ph - ph_fit)**2)
+    ph_fit = titration_sasb_model(x, c0_b, c0_a, v0)
+    return np.sum((y - ph_fit)**2)
 </code></pre>
 <p>Although the function of the pH value is relatively complicated, we can
 simplify the implementation of the function in Python significantly by
@@ -415,9 +415,11 @@ and plot the results:</p>
 res = minimize(
     objective_function, 
     beta_guess, 
-    args=(C0_B, v_b, ph),
+    args=(v_b, ph, C0_B),
     method='Nelder-Mead',
+    options={'maxiter': 1000},
 )
+print(res.message)
 
 c0_a, v0 = res.x
 print(f'c0_a = {c0_a} mol/l')
