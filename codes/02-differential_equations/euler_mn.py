@@ -3,36 +3,24 @@
 ### ANCHOR: imports
 import numpy as np
 import matplotlib.pyplot as plt
-from typing import Callable
 ### ANCHOR_END: imports
 
 
 ### ANCHOR: dydx
-def dydx(x: float, y: float) -> float:
+def dydx(x, y):
     k = 0.0039022970
     return -k * y
 ### ANCHOR_END: dydx
 
 
 ### ANCHOR: euler_step
-def euler_step(
-    x_n: float,
-    y_n: float,
-    h: float,
-    dydx: Callable[[float, float], float],
-) -> float:
+def euler_step(x_n, y_n, h, dydx):
     return y_n + h * dydx(x_n, y_n)
 ### ANCHOR_END: euler_step
 
 
 ### ANCHOR: euler_method
-def euler_method(
-    x0: float, 
-    y0: float, 
-    h: float, 
-    dydx: Callable[[float, float], float], 
-    nsteps: int,
-) -> np.ndarray:
+def euler_method(x0, y0, h, dydx, nsteps):
     x = x0 + np.arange(0, nsteps + 1) * h
     y = np.zeros(nsteps + 1)
     y[0] = y0

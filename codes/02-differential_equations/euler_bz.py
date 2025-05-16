@@ -3,12 +3,11 @@
 ### ANCHOR: imports
 import numpy as np
 import matplotlib.pyplot as plt
-from typing import Callable
 ### ANCHOR_END: imports
 
 
 ### ANCHOR: dydx
-def dydx(x: float, y: np.ndarray) -> np.ndarray:
+def dydx(x, y):
     # concentrations adapted from 
     # R. J. Field, H.-D. Försterling, J. Phys. Chem. 1986, 90, 5400–5407.
     k1 = 1.3    # M^-1 s^-1
@@ -30,24 +29,13 @@ def dydx(x: float, y: np.ndarray) -> np.ndarray:
 
 
 ### ANCHOR: euler_step
-def euler_step(
-    x_n: float,
-    y_n: np.ndarray,
-    h: float,
-    dydx: Callable[[float, np.ndarray], np.ndarray],
-) -> np.ndarray:
+def euler_step(x_n, y_n, h, dydx):
     return y_n + h * dydx(x_n, y_n)
 ### ANCHOR_END: euler_step
 
 
 ### ANCHOR: euler_method
-def euler_method(
-    x0: float, 
-    y0: np.ndarray,
-    h: float, 
-    dydx: Callable[[float, np.ndarray], np.ndarray],
-    nsteps: int,
-) -> np.ndarray:
+def euler_method(x0, y0, h, dydx, nsteps):
     ndim = len(y0)
 
     x = x0 + np.arange(0, nsteps + 1) * h
