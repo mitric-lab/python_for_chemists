@@ -1,27 +1,8 @@
-# Differentialgleichungen
+# Differential Equations
 
-Im letzten Kapitel haben wir mit Hilfe der nichtlinearen Regression den
-zeitlichen Verlauf der Konzentration eines Mn-Komplexes untersucht. 
-Dies ist ein Musterbeispiel für eine Reaktion erster Ordnung, welche durch
-eine vergleichsweise einfache zeitliche Entwicklung charakterisiert ist.
-Allerdings gibt es viele weitere chemische Reaktionen, bei denen die Dynamik
-deutlich komplexer ist. Zu diesem Zweck benötigen wir
-mathematische Modelle, die die zeitliche Entwicklung von chemischen Systemen
-beschreiben können, und welche auf Differentialgleichungen (DGLs) basieren.
+In our previous chapter, we explored the fascinating world of chemical kinetics by analyzing the concentration profile of a manganese complex using nonlinear regression. This served as a perfect example of a first-order reaction, characterized by its relatively straightforward temporal evolution. However, the realm of chemical reactions is far more diverse and complex! Many reactions exhibit intricate dynamics that require sophisticated mathematical models to describe their time-dependent behavior. This is where differential equations (DEs) come into play – they are the powerful mathematical tools that allow us to model and understand these complex chemical systems.
 
-Ein weiteres wichtiges Anwendungsgebiet von DGLs in der Chemie ist die
-Beschreibung quantenchemischer Systeme durch die Schrödingergleichung.
-Sie wissen sicherlich, dass die Schrödingergleichung für Modellsysteme wie das
-Teilchen im Kasten oder der harmonischen Oszillator analytisch lösbar ist. Für molekulare Systeme
-ist dies jedoch nicht der Fall. Die Quantenchemie
-basiert daher auf der (approximativen) numerischen Lösung dieser Gleichung, um
-die elektronischen Struktur und Eigenschaften von Molekülen zu berechnen.
+Differential equations play another crucial role in chemistry through their application in quantum mechanics. You're probably familiar with the Schrödinger equation, which can be solved analytically for model systems like the particle in a box or the harmonic oscillator. However, when we venture into the world of real molecular systems, analytical solutions become elusive. This is why quantum chemistry relies heavily on numerical methods to solve these equations, enabling us to calculate electronic structures and predict molecular properties with remarkable accuracy.
 
-In diesem Kapitel werden wir uns auf numerische Methoden zur Lösung von
-Differentialgleichungen konzentrieren, da diese in der Chemie eine wichtige
-Rolle spielen. Wir werden verschiedene
-numerische Verfahren kennenlernen und diese auf praktische Beispiele aus der
-chemischen Kinetik und Quantenchemie anwenden. Durch die Anwendung dieser
-Methoden werden Sie in die Lage versetzt, komplexe chemische Systeme zu
-modellieren und die Dynamik dieser Systeme zu verstehen.
+In this exciting chapter, we'll dive deep into the numerical methods used to solve differential equations, focusing on their practical applications in chemistry. We'll explore various numerical techniques and apply them to real-world examples from chemical kinetics and quantum chemistry. By mastering these methods, you'll gain the power to model complex chemical systems and unravel the mysteries of their dynamic behavior. Get ready to transform abstract mathematical concepts into powerful tools for understanding the molecular world!
 
