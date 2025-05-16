@@ -1,6 +1,6 @@
-## Euler-Verfahren
+## The Euler Method
 
-Wir betrachten das Anfangswertproblem
+Let's dive into the world of initial value problems (IVPs). We start with a problem of the form:
 $$
 \begin{cases}
   y'(x) = f(x, y(x))\\ 
@@ -8,25 +8,36 @@ $$
 \end{cases}\,,
 {{numeq}}{eq:ivp_first_order}
 $$
-wobei $f(x, y(x))$ eine gegebene Funktion von der unabhängigen Variablen $x$ 
-und der gesuchten Funktion $y(x)$ ist. Gl. {{eqref: eq:ivp_first_order}} ist ein
-AWP erster Ordnung, mit einer DGL erster Ordnung wie in 
-Gl. {{eqref: eq:ode_first_order}} und einer Anfangsbedingung.
+where $f(x, y(x))$ is a given function of the independent variable $x$ 
+and the unknown function $y(x)$. Equation {{eqref: eq:ivp_first_order}} represents a
+first-order IVP, consisting of a first-order differential equation (as in 
+Equation {{eqref: eq:ode_first_order}}) and an initial condition.
 
-Unser Ziel ist es, die spezielle Lösung $y(x)$ des AWP numerisch zu finden.
-Wie bei vielen numerischen Verfahren, beginnen wir mit einer Diskretisierung
-der Funktion $y(x)$, d.h. wir wählen eine Menge von Punkten $x_i$ und
-betrachten die Funktion nur an diesen Punkten anstatt auf dem gesamten
-Definitionsbereich. Die konzeptionell wohl einfachste Wahl der Punkte ist
-ein gleichmäßiges Gitter (Grid), was bedeutet, dass man einen Anfangspunkt
-$x_0$ und eine Schrittweite $h$ wählt, so dass die weiteren
-Punkte durch $x_n = x_0 + n h$ für $n = 0, 1, 2, \ldots$ festgelegt werden.
-Unser Ziel in den folgenden Abschnitten wird es sein, die Funktionswerte von
-$y(x)$ an diesen Punkten $x_1, x_2, \ldots$ zu berechnen, bzw. zu approximieren.
+```admonish info title="Example"
+Let's illustrate Equation {{eqref: eq:ivp_first_order}} with a concrete example:
+$$
+\begin{cases}
+  y'(x) = x * y(x)\\ 
+  y(0) = 2
+\end{cases}\,,
+$$
 
-Der Funktionswert von $y$ an dem Punkt $x_{n+1}$ kann (unter bestimmten
-Voraussetzung an $y(x)$) durch eine Taylor-Entwicklung um den Punkt
-$x_n$ ersetzt werden, also
+Try solving this IVP analytically using separation of variables and integration!
+```
+
+While analytical solutions are elegant, computers can't easily find particular solutions to IVPs analytically. Therefore, in the following sections, we'll explore how to find the particular solution $y(x)$ numerically.
+
+Following the pattern of many numerical methods, our first step involves discretizing the function $y(x)$. This means selecting a set of points $x_i$ and
+examining the function only at these points rather than across its entire domain. The most straightforward choice of points is
+a uniform grid, where a starting point $x_0$ and a step size $h$ define subsequent
+points as $x_n = x_0 + n h$ for $n = 0, 1, 2, \ldots$. The goal in the following sections will be to calculate, or approximate, the function values of
+$y(x)$ at these points $x_1, x_2, \ldots$.
+
+### Theoretical Foundations
+
+The function value of $y$ at the point $x_{n+1} = x_n + h$ can (under certain
+conditions on $y(x)$) be approximated using a Taylor expansion around the point
+$x_n$:
 $$
   y(x_{n+1}) = y(x_n) 
   + h y'(x_n) 
@@ -35,121 +46,114 @@ $$
   + \cdots\,.
 $$
 
-```admonish info title="Info für Mathematik-Interessierte" collapsible=true
-Die Voraussetzung ist, dass $y(x)$ im Punkt $x_n$ analytisch ist, d.h. dass es
-eine Potenzreihe
+```admonish info title="For the Mathematically Curious" collapsible=true
+The condition is that $y(x)$ must be analytic at the point $x_n$, meaning there exists
+a power series
 $$
   \sum_{k=0}^\infty a_k (x - x_n)^k
 $$
-gibt, die für alle $\|x - x_n\| < R$ konvergiert, wobei $R \in \mathbb{R}^+$ 
-der Konvergenzradius der Potenzreihe ist. Zudem muss der Konvergenzradius
-größer als die Schrittweite $h$ sein, also $h < R$.
+that converges for all $\|x - x_n\| < R$, where $R \in \mathbb{R}^+$ 
+is the radius of convergence of the power series. Additionally, the radius of convergence
+must be larger than the step size $h$, i.e., $h < R$.
 ```
 
-### Theoretische Grundlagen
-
-Gehen wir nun davon aus, dass die Funktion $y(x)$ gut durch ihr
-Taylor-Polynom 1. Ordnung
+We can approximate the function $y(x)$ using its first-order Taylor polynomial:
 $$
   y(x_{n+1}) = y(x_n) + h y'(x_n) + \mathcal{O}(h^2)
 $$
-approximiert werden kann, also dass der Fehler $\mathcal{O}(h^2)$, der proportional zu $h^2$ ist,
-klein ist. Mathematisch unsauber, aber praktisch für die Implementierung, schreiben wir 
-im Folgenden 
+where the error $\mathcal{O}(h^2)$ is proportional to $h^2$. Assuming the error term is negligible, we can write:
 $$
-  y(x_{n+1}) = y(x_n) + h y'(x_n)\,,
+  y(x_{n+1}) \approx y(x_n) + h y'(x_n)\,.
   {{numeq}}{eq:ode_taylor_first_order}
 $$
-wobei wir den Fehler vernachlässigen. 
-Gl. {{eqref: eq:ode_taylor_first_order}} zeigt, dass wir, wenn wir den
-Funktionswert $y$ und die Ableitung $y'$ an dem Punkt $x_n$ kennen,
-den Funktionswert an dem nächsten Punkt $x_{n+1}$
-berechnen können. Mit Hilfe der DGL in Gl. {{eqref: eq:ivp_first_order}} können
-wir dabei die Ableitung $y'(x_n)$ durch $f(x_n, y(x_n))$ ersetzen, was zu
+Equation {{eqref: eq:ode_taylor_first_order}} shows that knowledge of the
+function value $y$ and its derivative $y'$ at point $x_n$ enables
+calculation of the function value at the next point $x_{n+1}$.
+Using the differential equation from Equation {{eqref: eq:ivp_first_order}}, the
+derivative $y'(x_n)$ can be replaced with $f(x_n, y(x_n))$, leading to
 $$
   y(x_{n+1}) = y(x_n) + h f(x_n, y(x_n))
 $$
-führt. Um zu betonen, dass die Euler-Methode nur diskrete Werte von $y(x)$
-liefert, schreiben wir $y_n = y(x_n)$ und $y_{n+1} = y(x_{n+1})$, was zu
+To emphasize the discrete nature of the Euler method's output, let's denote $y_n = y(x_n)$ and $y_{n+1} = y(x_{n+1})$, resulting in
 $$
   y_{n+1} = y_n + h f(x_n, y_n)
   {{numeq}}{eq:euler_method}
 $$
-führt. Gl. {{eqref: eq:euler_method}} beschreibt das *explizite Euler-Verfahren* 
-für die numerische Lösung eines AWP erster Ordnung. Durch die Anfangsbedingung
-kennen wir $y(x_0)$ und können dann, Schritt für Schritt, alle weiteren
-$y(x_{n})$ mit Hilfe von Gl. {{eqref: eq:euler_method}} berechnen.
+Equation {{eqref: eq:euler_method}} defines the *explicit Euler method* 
+for numerically solving a first-order IVP. The initial condition
+provides $y(x_0)$, allowing step-by-step calculation of all subsequent
+$y(x_{n})$ using Equation {{eqref: eq:euler_method}}.
 
-### Implementierung
+### Implementation
 
-#### Mn-Zerfall
+Let's bring these concepts to life by implementing the Euler method and applying it to some exciting examples from chemistry!
 
-Wir nehmen wieder den Mn-Zerfall als Beispiel. Dort haben wir eine 
-Reaktion 1. Ordnung, welche durch die DGL
+#### Manganese Decay
+
+For our first example, we revisit the manganese decay example. Here we have a 
+first-order reaction described by the differential equation
 $$
-  c'(t) = -k c(t)
+  \dot{c}(t) = -k c(t)
   {{numeq}}{eq:mn_decay}
 $$
-beschrieben wird, wobei $c(t)$ die Konzentration des Mn-Komplexes zum Zeitpunk $t$ beschreibt. 
-Wir können nach dem Importieren der benötigten Libraries
+where $c(t)$ represents the concentration of the manganese complex at time $t$. Note that we often write $\dot{c}(t)$ instead of $c'(t)$ to emphasize that we're taking the derivative with respect to time.
+
+Starting with our required libraries
 ```python
 {{#include ../codes/02-differential_equations/euler_mn.py:imports}}
 ```
-die Funktion `dydx` implementieren, die $f(x_n, y(x_n))$ berechnet:
+the `dydx` function calculates $f(x_n, y(x_n))$:
 ```python
 {{#include ../codes/02-differential_equations/euler_mn.py:dydx}}
 ```
-Diese Funktion akzeptiert die Argumente `x` ($t_n$) und `y` ($c(t_n)$) und
-gibt die Ableitung $c'(t_n) = -k c(t_n)$ zurück. Hier haben wir die gefittete
-Geschwindigkeitskonstante $k$ aus Abschnitt 
-[1.4](../01-regression/04-nonlinear_regression.md#reaktionskinetik) verwendet.
-Anschließend können wir gemäß Gl. {{eqref: eq:euler_method}} die Funktion `euler_step`
-implementieren, die den Funktionswert $y(x_{n+1})$ berechnet:
+This function takes the arguments `x` ($t_n$) and `y` ($c(t_n)$) and
+returns the derivative $\dot{c}(t_n) = -k c(t_n)$. Here we've used the fitted
+rate constant $k$ from Section 
+[1.4](../01-regression/04-nonlinear_regression.md#reaktionskinetik).
+Following Equation {{eqref: eq:euler_method}}, the `euler_step` function calculates the function value $y(x_{n+1})$:
 ```python
 {{#include ../codes/02-differential_equations/euler_mn.py:euler_step}}
 ```
 
-Wir können jetzt das Euler-Verfahren implementieren:
+The complete Euler method implementation follows:
 ```python
 {{#include ../codes/02-differential_equations/euler_mn.py:euler_method}}
 ```
 
-Diese Funktion akzeptiert neben der Anfangsbedingungen `x0` und `y0` die
-Schrittweite `h`, die Ableitungsfunktion `dydx` und die Anzahl der Schritte
-`n`. Wir erstellen zunächst das Grid `x` mit der Funktion 
+This function takes the initial conditions `x0` and `y0`, the
+step size `h`, the derivative function `dydx`, and the number of steps
+`n`. We first create the grid `x` using the 
 [`np.arange`](https://numpy.org/doc/stable/reference/generated/numpy.arange.html)
-und initialisieren das Nullarray `y`, um später die Lösung zu speichern. Dann wird 
-der erste Eintrag `y[0]` dieses Arrays mit 
-dem Anfangswert `y0` überschrieben. Anschließend verwenden wir eine for-Schleife
-über die Anzahl der Schritte und rufen in jedem Schritt die Funktion
-`euler_step` auf, die den Funktionswert an dem jeweils nächsten Punkt berechnet, 
-und speichern diesen in `y[i + 1]`. Am Ende wird das Grid `x` und die Lösung `y`
-zurückgegeben.
+function and initialize the zero array `y` to store our solution. Then we 
+set the first entry `y[0]` of this array to
+the initial value `y0`. Next, we use a for loop
+over the number of steps, calling the `euler_step` function in each iteration
+to calculate the function value at the next point, 
+storing it in `y[i + 1]`. Finally, we return both the grid `x` and the solution `y`.
 
-Nun wenden wir das Euler-Verfahren auf Gl. {{eqref: eq:mn_decay}} an:
+Let's apply the Euler method to Equation {{eqref: eq:mn_decay}}:
 ```python
 {{#include ../codes/02-differential_equations/euler_mn.py:solve_ode}}
 ```
-Wir setzen dazu zunächst die Anfangsbedingungen `C0 = 1.0` und `T0 = 0.0`, die Schrittweite
-`h = 1.0` sowie die maximale Zeit `MAXTIME = 600.0`. Die Anzahl der Schritte
-`nsteps` wird durch `int(MAXTIME / h)` berechnet. Die `int`-Funktion rundet
-dabei das Ergebnis der Division ab und konvertiert es in eine Ganzzahl. Anschließend rufen
-wir die Funktion `euler_method` auf und speichern das Ergebnis in `x` und `y`.
+We set the initial conditions `C0 = 1.0` and `T0 = 0.0`, the step size
+`h = 1.0`, and the maximum time `MAXTIME = 900.0`. The number of steps
+`nsteps` is calculated by `int(MAXTIME / h)`. The `int` function
+rounds down the result of the division and converts it to an integer. Then we
+call the `euler_method` function and store the result in `x` and `y`.
 
-Zum Schluss können wir das numerische Ergebnis mit der analytischen Lösung
-vergleichen. Dabei sei angemerkt, dass die analytische Lösung von Gl. 
-{{eqref: eq:mn_decay}} leicht zu berechnen ist und durch $c(t) = c_0 \exp(-k t)$
-gegeben ist.
+Finally, we can compare our numerical result with the analytical solution.
+Note that the analytical solution of Equation 
+{{eqref: eq:mn_decay}} is easily calculated as $c(t) = c_0 \exp(-k t)$.
 ```python
 {{#include ../codes/02-differential_equations/euler_mn.py:plot}}
 ```
-Dabei sollte dieses Diagramm erscheinen:
-![Euler-Verfahren für Mn-Zerfall](../assets/figures/02-differential_equations/euler_mn.svg)
+This produces the following plot:
+![Euler method for Mn decay](../assets/figures/02-differential_equations/euler_mn.svg)
 
-Erst durch Vergrößerung des Konzentrationsverlaufes können wir den Unterschied zwischen der analytischen
-und der numerischen Lösung erkennen, was hier mit Hilfe des Befehls `ax.inset_axes` erreicht wurde
-(die genaue Funktionsweise dieses Befehls ist an dieser Stelle unwichtig). Das Euler-Verfahren mit $h = 1$ liefert
-demnach eine sehr gute Approximation.
+Only by zooming in on the concentration profile can we see the difference between the analytical
+and numerical solutions, which we achieved here using the `ax.inset_axes` command
+(the exact workings of this command are not important at this point). The Euler method with $h = 1$ thus provides
+a very good approximation.
 
 #### Belousov-Zhabotinsky-Reaktion
 
@@ -308,9 +312,7 @@ Es liegt daher nahe, auch höhere Ordungen zu berücksichitgen, was zu einer Fam
 
 ---
 
-### Übung
+**Self-Study Questions**
 
-#### Aufgabe 2.1: Lösen des klassischen harmonischen Oszillators mit Euler-Verfahren
-
-{{#include ../psets/02.md:aufgabe_1}}
+1. Show that the solution of Equation {{eq:mn_decay}} is given by $c(t) = c_0 \exp(-k t)$.
 
