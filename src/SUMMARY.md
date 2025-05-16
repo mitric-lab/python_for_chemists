@@ -15,11 +15,11 @@
     - [Numerical Optimisation](01-regression/03-numerical_optimisation.md)
     - [Nonlinear Regression](01-regression/04-nonlinear_regression.md)
 
-- [Differentialgleichungen]()
-    - [Anfangswertproblem]()
-    - [Euler-Verfahren]()
-    - [Runge-Kutta-Verfahren]()
-    - [Finite-Differenzen-Verfahren]()
+- [Differential Equations](02-differential_equations.md)
+    - [Initial Value Problem](02-differential_equations/01-initial_value_problem.md)
+    - [Euler Method]()
+    - [Runge-Kutta Method]()
+    - [Finite-Difference Method]()
 
 - [Eigenwert- und Singulärwertzerlegung]()
     - [Eigenwertzerlegung]()
