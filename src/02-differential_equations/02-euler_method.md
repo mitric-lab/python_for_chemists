@@ -246,7 +246,7 @@ From the above example, we can see that the Euler method has difficulties with m
 
 1. Try to understand the principle of the Euler method using pen and paper: Draw a sine function, choose a random starting point, and approximate the function using the Euler method with a constant step size $h$. Compare the result with the exact solution.
 
-2. Show that the solution of Eq. {{eq:mn_decay}} is given by $c(t) = c_0 \exp(-k t)$.
+2. Show that the solution of Eq. {{eqref: eq:mn_decay}} is given by $c(t) = c_0 \exp(-k t)$.
 
 3. Modify the Python code for the Manganese Decay example to use different step sizes, such as $h=5.0$ and $h=0.1$. Observe and describe how the numerical solution's accuracy changes compared to the analytical solution as $h$ varies.
 
