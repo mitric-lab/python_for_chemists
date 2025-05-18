@@ -17,7 +17,7 @@
 
 - [Differential Equations](02-differential_equations.md)
     - [Initial Value Problem](02-differential_equations/01-initial_value_problem.md)
-    - [Euler Method]()
+    - [Euler Method](02-differential_equations/02-euler_method.md)
     - [Runge-Kutta Method]()
     - [Finite-Difference Method]()
 
