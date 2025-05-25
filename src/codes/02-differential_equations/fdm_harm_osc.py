@@ -50,7 +50,6 @@ def build_hamiltonian(n: int, x: np.ndarray, k: float = 1.0) -> np.ndarray:
     d2 = generate_d2(n, h)
     vx = np.diag(0.5 * k * x**2)
     l_mat = -0.5 * d2 + vx
-
     return l_mat
 ### ANCHOR_END: build_hamiltonian
 
