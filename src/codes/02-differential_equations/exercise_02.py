@@ -139,135 +139,155 @@ plt.show()
 
 fig.savefig('../../assets/figures/02-differential_equations/euler_rk4_harm_osc.svg')
 
+def generate_d2(n, h=1.0):
+    d2 = np.zeros((n, n))
+    rows, cols = np.diag_indices(n)
+    d2[rows, cols] = -2
+    d2[rows[:-1], cols[1:]] = 1
+    d2[rows[1:], cols[:-1]] = 1
+    return d2 / h**2
+
 ### ANCHOR: exercise_03_a
-from scipy.integrate import solve_ivp
+# Get the potential for a particle in a box with arbitrary potential
+def get_potential(n, x, L, a=0, v_a=0, b=None, v_b=None, v_inf=1e4):
+    # Initialize potential array
+    v = np.zeros(n)
+    
+    # Add infinite walls
+    v[x <= 0] = v_inf
+    v[x >= L] = v_inf
+    
+    # If b and v_b are provided, it has two steps
+    if b is not None and v_b is not None:
+        v[(x > a) & (x < b)] = v_a
+        v[(x > b) & (x < L)] = v_b
+    # If only v_a is non-zero, it has one step
+    elif v_a != 0:
+        v[(x > a) & (x < L)] = v_a
+    # Otherwise it's just a simple box with no potential
+    
+    return v
 
-# Define differential equation for particle in a box
-def dfdx(x, f, E):
-    psi, phi = f
-    dpsi_dx = phi
-    dphi_dx = -2 * E * psi
-    return [dpsi_dx, dphi_dx]
+# Build the Hamiltonian matrix for a particle in a box with arbitrary potential
+def build_hamiltonian(n, x, L, a=0, v_a=0, b=None, v_b=None, v_inf=1e4):
+    h = x[1] - x[0]
+    d2 = generate_d2(n, h)
+    v = get_potential(n, x, L, a, v_a, b, v_b, v_inf)
+    return -0.5 * d2 + np.diag(v)
 
-# Solve Schrodinger equation with shooting method
-def solve_for_energy(num_states, L, step_size=0.01, tolerance=0.01):
-    wavefunctions, energies = [], []
-    E = 0
-    while len(energies) < num_states:
-
-        # Solve Schrodinger equation
-        sol = solve_ivp(dfdx, [0, L], [0, 1.0], args=(E,), dense_output=True, t_eval=np.linspace(0, L, 1000))
-        psi = sol.y[0]
-        error = psi[-1]
-
-        # Check if wavefunction is zero at boundary
-        if np.abs(error) < tolerance:
-            energies.append(E)
-            wavefunctions.append(psi)
-            E += 0.5
-        else:
-            E += step_size
-
-    return np.array(energies), np.array(wavefunctions)
-
-# Parameters for the problem
+# Define the parameters
 L = 4.0
-num_states = 5
-step_size = 0.0005
-tolerance = 0.002
+NX = 512
+X_ARRAY = np.linspace(-0.5, 4.5, NX)
 
-# Solve Schroedinger equation with shooting method
-E, Psi = solve_for_energy(num_states, L, step_size, tolerance)
+# Build the Hamiltonian matrix and solve the eigenvalue problem
+hamiltonian = build_hamiltonian(NX, X_ARRAY, L)
+assert np.allclose(hamiltonian, hamiltonian.T)
+e, v = np.linalg.eigh(hamiltonian)
 
-# Normalize wavefunctions 
-dx = L / len(Psi[0])
-for i in range(len(Psi)):
-    Psi[i] /= np.sqrt(np.sum(Psi[i]**2) * dx)
+# Define the number of states to plot and the potential
+NSTATES = 20
+eigenenergies = e[:NSTATES]
+eigenfunctions = v[:, :NSTATES] / np.sqrt(X_ARRAY[1] - X_ARRAY[0])
+potential = get_potential(NX, X_ARRAY, L)
 
-# Plot energy levels and wavefunctions
-fig, [ax1, ax2] = plt.subplots(1, 2, figsize=(8, 4))
+# Plot the results
+fig, axs = plt.subplots(1, 2, figsize=(8, 4))
+axs[0].plot(np.arange(NSTATES), eigenenergies, 'o', 
+            label='numerical eigenenergies')
+axs[0].plot(np.arange(NSTATES), (np.pi**2 * np.arange(NSTATES)**2) / (2 * L**2),
+            label='analytical eigenenergies')
+axs[0].set_xlabel('state')
+axs[0].set_ylabel('energy')
+axs[0].legend()
+axs[1].plot(X_ARRAY, potential, color='k', lw=2, label='potential')
+for i in range(5):
+    axs[1].plot(X_ARRAY, eigenfunctions[:, i] + eigenenergies[i], 
+                label=f'state {i}')
+axs[1].set_xlabel('x')
+axs[1].set_ylabel('energy')
+axs[1].set_xlim(X_ARRAY[0], X_ARRAY[-1])
+axs[1].set_ylim(-0.5, 9.5)
+axs[1].legend()
 
-ax1.plot(np.arange(num_states), E, 'o', label='numerical eigenenergies')
-ax1.plot(np.arange(num_states), np.arange(1, num_states + 1)**2 * np.pi**2 / (2 * L**2), label='analytical eigenenergies')
-ax1.set_xlabel('state')
-ax1.set_ylabel('energy')
-ax1.legend()
-
-for i in range(num_states):
-    ax2.plot(np.linspace(0, L, len(Psi[i])), Psi[i] + E[i], label=f'state {i}')
-ax2.set_xlabel('x')
-ax2.set_ylabel('energy')
-ax2.legend()
-
-plt.tight_layout()
+fig.tight_layout()
 plt.show()
 ### ANCHOR_END: exercise_03_a
 
-fig.savefig('../../assets/figures/02-differential_equations/shooting_method_pib.svg')
+fig.savefig('../../assets/figures/02-differential_equations/fdm_particle_in_box.svg')
 
 ### ANCHOR: exercise_03_b
-# Define differential equation for particle in a box with step potential
-def dfdx(x, f, E, V0, a):
-    psi, phi = f
-    V = V0 if x > a else 0
-    dpsi_dx = phi
-    dphi_dx = 2 * (V - E) * psi
-    return [dpsi_dx, dphi_dx]
-
-# Solve Schrodinger equation with shooting method
-def solve_for_energy(num_states, L, v0, a, step_size=0.01, tolerance=0.01):
-    wavefunctions, energies = [], []
-    E = 0
-    while len(energies) < num_states:
-        # Solve Schrodinger equation
-        sol = solve_ivp(dfdx, [0, L], [0, 1.0], args=(E, V0, a), dense_output=True, t_eval=np.linspace(0, L, 1000), rtol=1e-6, atol=1e-8)
-        psi = sol.y[0]
-        error = psi[-1]
-
-        # Check if wavefunction is zero at boundary
-        if np.abs(error) < tolerance:
-            energies.append(E)
-            wavefunctions.append(psi)
-            E += 0.5
-        else:
-            E += step_size
-
-    return np.array(energies), np.array(wavefunctions)
-
-# Parameters for the problem
+# Define the parameters
 L = 4.0
-V0 = 10.0
-a = 2.0
-num_states = 5
-step_size = 0.0005 # works with 0.0002
-tolerance = 0.002 # works with 0.05
+A = 2.0
+V_A = 10.0
+NX = 512
+X_ARRAY = np.linspace(-0.5, 4.5, NX)
 
-# Solve Schroedinger equation with shooting method
-E, Psi = solve_for_energy(num_states, L, V0, a, step_size, tolerance)
+# Build the Hamiltonian matrix and solve the eigenvalue problem
+hamiltonian = build_hamiltonian(NX, X_ARRAY, L, A, V_A)
+assert np.allclose(hamiltonian, hamiltonian.T)
+e, v = np.linalg.eigh(hamiltonian)
 
-# Normalize wavefunctions 
-dx = L / len(Psi[0])
-for i in range(len(Psi)):
-    Psi[i] /= np.sqrt(np.sum(Psi[i]**2) * dx)
+# Define the number of states to plot and the potential
+NSTATES = 20
+eigenenergies = e[:NSTATES]
+eigenfunctions = v[:, :NSTATES] / np.sqrt(X_ARRAY[1] - X_ARRAY[0])
+potential = get_potential(NX, X_ARRAY, L, A, V_A)
 
-# Plot energy levels and wavefunctions
-fig, [ax1, ax2] = plt.subplots(1, 2, figsize=(8, 4))
+# Plot the results
+fig, ax = plt.subplots(figsize=(4, 4))
+ax.plot(X_ARRAY, potential, color='k', lw=2, label='potential')
+for i in range(5):
+    ax.plot(X_ARRAY, eigenfunctions[:, i] + eigenenergies[i], 
+                label=f'state {i}')
+ax.set_xlabel('x')
+ax.set_ylabel('energy')
+ax.set_xlim(X_ARRAY[0], X_ARRAY[-1])
+ax.set_ylim(-0.5, 17.5)
+ax.legend()
 
-ax1.plot(np.arange(num_states), E, 'o', label='numerical eigenenergies')
-ax1.set_xlabel('state')
-ax1.set_ylabel('energy')
-ax1.legend()
-
-for i in range(num_states):
-    ax2.plot(np.linspace(0, L, len(Psi[i])), Psi[i] + E[i], label=f'state {i}')
-ax2.plot([0, a, a, L], [0, 0, V0, V0], 'k', label='potential')
-ax2.set_xlabel('x')
-ax2.set_ylabel('energy')
-ax2.legend()
-
-plt.tight_layout()
+fig.tight_layout()
 plt.show()
 ### ANCHOR_END: exercise_03_b
 
-fig.savefig('../../assets/figures/02-differential_equations/shooting_method_pib_step.svg')
+fig.savefig('../../assets/figures/02-differential_equations/fdm_particle_in_box_step.svg')
 
+### ANCHOR: exercise_03_c
+# Define the parameters
+L = 4.0
+A = 1.5
+B = 2.5
+V_A = 10.0
+V_B = 2.0
+NX = 512
+X_ARRAY = np.linspace(-0.5, 4.5, NX)
+
+# Build the Hamiltonian matrix and solve the eigenvalue problem
+hamiltonian = build_hamiltonian(NX, X_ARRAY, L, A, V_A, B, V_B)
+assert np.allclose(hamiltonian, hamiltonian.T)
+e, v = np.linalg.eigh(hamiltonian)
+
+# Define the number of states to plot and the potential
+NSTATES = 20
+eigenenergies = e[:NSTATES]
+eigenfunctions = v[:, :NSTATES] / np.sqrt(X_ARRAY[1] - X_ARRAY[0])
+potential = get_potential(NX, X_ARRAY, L, A, V_A, B, V_B)
+
+# Plot the results
+fig, ax = plt.subplots(figsize=(4, 4))
+ax.plot(X_ARRAY, potential, color='k', lw=2, label='potential')
+for i in range(5):
+    ax.plot(X_ARRAY, eigenfunctions[:, i] + eigenenergies[i], 
+                label=f'state {i}')
+ax.set_xlabel('x')
+ax.set_ylabel('energy')
+ax.set_xlim(X_ARRAY[0], X_ARRAY[-1])
+ax.set_ylim(-0.5, 15.0)
+ax.legend()
+
+fig.tight_layout()
+plt.show()
+### ANCHOR_END: exercise_03_c
+
+fig.savefig('../../assets/figures/02-differential_equations/fdm_particle_in_box_double_well.svg')
