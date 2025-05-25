@@ -257,7 +257,42 @@ Simply follow the steps from the derivation of the linear regression equation sy
 <!-- 
 **Solution:**
 ```python
-{{include ../codes/01-regression/exercise_01.py:exercise_01_d}}
+# Build the set of equations
+a_arr = np.array([
+    [len(x),        np.sum(x),      np.sum(x**2)],
+    [np.sum(x),     np.sum(x**2),   np.sum(x**3)],
+    [np.sum(x**2),  np.sum(x**3),   np.sum(x**4)]
+])
+b_arr = np.array([np.sum(y), np.sum(x * y), np.sum(x**2 * y)])
+
+# Solve the set of equations
+beta = np.linalg.solve(a_arr, b_arr)
+
+# Extract the parameters
+beta_0, beta_1, beta_2 = beta
+
+assert np.isclose(beta_0, -0.0208204)
+assert np.isclose(beta_1, 0.0343756)
+assert np.isclose(beta_2, 8.123859e-5)
+
+# Plot the data, the fit and the residuals
+fig, [ax1, ax2] = plt.subplots(1, 2, figsize=(16, 6))
+
+ax1.plot(x, y, 'o', label='data')
+ax1.plot(x, beta_0 + beta_1 * x + beta_2 * x**2, label='fit')
+
+ax1.set_xlabel('concentration / mM')
+ax1.set_ylabel('absorbance')
+
+ax1.legend()
+
+residuals = y - (beta_0 + beta_1 * x + beta_2 * x**2)
+ax2.bar(x, residuals)
+
+ax2.set_xlabel('concentration / mM')
+ax2.set_ylabel('residuals')
+
+plt.show()
 ```
 -->
 <!--- ANCHOR_END: aufgabe_1 --->
@@ -280,7 +315,28 @@ that best fits the data. This function takes the arrays of the independent varia
 <!-- 
 Lösung:
 ```python
-{{include ../codes/01-regression/exercise_01.py:exercise_02_a}}
+# Calculate the coefficients of the polynomial fit
+degree = 20
+beta = np.polyfit(concentrations, absorbances, degree)
+
+# Plot the data, the fit and the residuals
+fig, [ax1, ax2] = plt.subplots(1, 2, figsize=(16, 6))
+
+ax1.plot(x, y, 'o', label='data')
+ax1.plot(x, np.polyval(beta, x), label='fit')
+
+ax1.set_xlabel('concentration / mM')
+ax1.set_ylabel('absorbance')
+
+ax1.legend()
+
+residuals = y - np.polyval(beta, x)
+ax2.bar(x, residuals)
+
+ax2.set_xlabel('concentration / mM')
+ax2.set_ylabel('residuals')
+
+plt.show()
 ```
 -->
 <p><strong>(b) Prediction of New Data Points</strong></p>
@@ -289,7 +345,23 @@ Lösung:
 <!-- 
 Lösung:
 ```python
-{{include ../codes/01-regression/exercise_01.py:exercise_02_b}}
+# Create a finer grid for the plot
+x_grid = np.linspace(0, 50, 1000)
+
+# Plot the data and the fit
+fig, ax = plt.subplots(figsize=(8, 6))
+
+ax.plot(x, y, 'o', label='data')
+ax.plot(x, np.polyval(beta, x), label='fit discrete')
+ax.plot(x_grid, np.polyval(beta, x_grid), label='fit continuous')
+
+ax.set_xlabel('concentration / mM')
+ax.set_ylabel('absorbance')
+
+ax.set_ylim(0, 2.0)
+
+ax.legend()
+plt.show()
 ```
 -->
 <!--- ANCHOR_END: aufgabe_2 --->
@@ -314,7 +386,53 @@ where the parameter <span class="katex"><span class="katex-html" aria-hidden="tr
 <!--
 Lösung:
 ```python
-{{include ../codes/01-regression/exercise_01.py:exercise_03_a}}
+# Normalize the data
+x = concentrations / np.max(concentrations)
+y = absorbances / np.max(absorbances)
+
+# Recalculate the coefficients of the polynomial fit without regularization
+degree = 20
+beta = np.polyfit(x, y, degree)
+
+# Define the objective function with l2 regularization
+def objective_function(beta, *args):
+    x = args[0]
+    y = args[1]
+    lambda_ = args[2]
+    return np.sum((y - np.polyval(beta, x))**2) + lambda_ * np.linalg.norm(beta)**2
+
+# Minimize the objective function
+beta_guess = np.zeros(degree + 1)
+lambda_ = 1e-3
+
+res = minimize(
+    objective_function,
+    beta_guess,
+    args=(x, y, lambda_),
+    method='CG',
+    options={'maxiter': 1000, 'gtol': 1e-6},
+)
+
+beta_reg = res.x
+
+# Create a finer grid for the plot
+x_grid = np.linspace(0, 1, 1000)
+
+# Plot the data and the fit
+fig, ax = plt.subplots(figsize=(8, 6))
+
+ax.plot(x, y, 'o', label='data')
+ax.plot(x_grid, np.polyval(beta_reg, x_grid), label='regularized')
+ax.plot(x_grid, np.polyval(beta, x_grid), label='not regularized')
+
+ax.set_xlabel('norm. concentration')
+ax.set_ylabel('norm. absorbance')
+
+ax.set_xlim(0, 1.1)
+ax.set_ylim(0, 1.1)
+
+ax.legend()
+plt.show()
 ```
 -->
 <p><strong>(b) Influence of the Regularization Parameter <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span></span></span></span></strong></p>
