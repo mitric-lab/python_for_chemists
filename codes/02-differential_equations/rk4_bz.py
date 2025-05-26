@@ -3,12 +3,11 @@
 ### ANCHOR: imports
 import numpy as np
 import matplotlib.pyplot as plt
-from typing import Callable
 ### ANCHOR_END: imports
 
 
 ### ANCHOR: dydx
-def dydx(x: float, y: np.ndarray) -> np.ndarray:
+def dydx(x, y):
     # concentrations adapted from 
     # R. J. Field, H.-D. Försterling, J. Phys. Chem. 1986, 90, 5400–5407.
     k1 = 1.3    # M^-1 s^-1
@@ -30,12 +29,7 @@ def dydx(x: float, y: np.ndarray) -> np.ndarray:
 
 
 ### ANCHOR: rk4_step
-def rk4_step(
-    x_n: float,
-    y_n: np.ndarray,
-    h: float,
-    dydx: Callable[[float, np.ndarray], np.ndarray],
-) -> np.ndarray:
+def rk4_step(x_n, y_n, h, dydx):
     a21 = 1.0 / 3.0
     a31 = -1.0 / 3.0
     a32 = 1.0
@@ -60,13 +54,7 @@ def rk4_step(
 
 
 ### ANCHOR: rk4_method
-def rk4_method(
-    x0: float, 
-    y0: np.ndarray,
-    h: float, 
-    dydx: Callable[[float, np.ndarray], np.ndarray],
-    nsteps: int,
-) -> np.ndarray:
+def rk4_method(x0, y0, h, dydx, nsteps):
     ndim = len(y0)
 
     x = x0 + np.arange(0, nsteps + 1) * h
