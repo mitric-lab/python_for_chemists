@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 
 ### ANCHOR: generate_d2_naive
-def generate_d2_naive(n: int, h: float = 1.0) -> np.ndarray:
+def generate_d2_naive(n, h=1.0):
     d2 = np.zeros((n, n))
     for i in range(0, n):
         for j in range(0, n):
@@ -20,7 +20,7 @@ def generate_d2_naive(n: int, h: float = 1.0) -> np.ndarray:
 
 
 ### ANCHOR: generate_d2
-def generate_d2(n: int, h: float = 1.0) -> np.ndarray:
+def generate_d2(n, h=1.0):
     d2 = np.zeros((n, n))
     rows, cols = np.diag_indices(n)
     d2[rows, cols] = -2
@@ -45,7 +45,7 @@ end = time.perf_counter()
 print("Optimized: ", end - start)
 
 ### ANCHOR: build_hamiltonian
-def build_hamiltonian(n: int, x: np.ndarray, k: float = 1.0) -> np.ndarray:
+def build_hamiltonian(n, x, k=1.0):
     h = x[1] - x[0]
     d2 = generate_d2(n, h)
     vx = np.diag(0.5 * k * x**2)
