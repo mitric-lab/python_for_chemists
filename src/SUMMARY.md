@@ -19,7 +19,7 @@
     - [Initial Value Problem](02-differential_equations/01-initial_value_problem.md)
     - [Euler Method](02-differential_equations/02-euler_method.md)
     - [Runge-Kutta Method](02-differential_equations/03-runge_kutta.md)
-    - [Finite-Difference Method]()
+    - [Finite-Difference Method](02-differential_equations/04-finite_differences.md)
 
 - [Eigenwert- und Singulärwertzerlegung]()
     - [Eigenwertzerlegung]()
