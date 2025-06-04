@@ -193,9 +193,9 @@ potential = get_potential(NX, X_ARRAY, L)
 
 # Plot the results
 fig, axs = plt.subplots(1, 2, figsize=(8, 4))
-axs[0].plot(np.arange(NSTATES), eigenenergies, 'o', 
+axs[0].plot(np.arange(1,NSTATES+1), eigenenergies, 'o', 
             label='numerical eigenenergies')
-axs[0].plot(np.arange(NSTATES), (np.pi**2 * np.arange(NSTATES)**2) / (2 * L**2),
+axs[0].plot(np.arange(1,NSTATES+1), (np.pi**2 * np.arange(1,NSTATES+1)**2) / (2 * L**2),
             label='analytical eigenenergies')
 axs[0].set_xlabel('state')
 axs[0].set_ylabel('energy')
@@ -291,3 +291,55 @@ plt.show()
 ### ANCHOR_END: exercise_03_c
 
 fig.savefig('../../assets/figures/02-differential_equations/fdm_particle_in_box_double_well.svg')
+
+### ANCHOR: exercise_03_d
+# Define the parameters
+L = 4.0
+NX = 512
+X_ARRAY = np.linspace(-0.5, 4.5, NX)
+
+# Build the Hamiltonian matrix and solve the eigenvalue problem with the second-order finite difference method
+hamiltonian = build_hamiltonian(NX, X_ARRAY, L)
+assert np.allclose(hamiltonian, hamiltonian.T)
+e, v = np.linalg.eigh(hamiltonian)
+
+# Define the number of states to plot and the potential
+NSTATES = 20
+eigenenergies_old = e[:NSTATES]
+
+# Define the higher-order finite difference method
+def generate_d2(n, h=1.0):
+    d2 = np.zeros((n, n))
+    rows, cols = np.diag_indices(n)
+    d2[rows, cols] = - 5 / 2
+    d2[rows[:-1], cols[1:]] = 4 / 3
+    d2[rows[1:], cols[:-1]] = 4 / 3
+    d2[rows[:-2], cols[2:]] = -1 / 12
+    d2[rows[2:], cols[:-2]] = -1 / 12
+    return d2 / h**2
+
+# Build the Hamiltonian matrix and solve the eigenvalue problem
+hamiltonian = build_hamiltonian(NX, X_ARRAY, L)
+assert np.allclose(hamiltonian, hamiltonian.T)
+e, v = np.linalg.eigh(hamiltonian)
+
+# Define the number of states to plot
+eigenenergies = e[:NSTATES]
+
+# Plot the results
+fig, ax = plt.subplots(figsize=(4, 4))
+ax.plot(np.arange(1,NSTATES+1), eigenenergies, 'o', 
+            label='numerical eigenenergies')
+ax.plot(np.arange(1,NSTATES+1), eigenenergies_old, 'x', 
+            label='numerical eigenenergies (old)')
+ax.plot(np.arange(1,NSTATES+1), (np.pi**2 * np.arange(1,NSTATES+1)**2) / (2 * L**2),
+            label='analytical eigenenergies')
+ax.set_xlabel('state')
+ax.set_ylabel('energy')
+ax.legend()
+
+fig.tight_layout()
+plt.show()
+### ANCHOR_END: exercise_03_d
+
+fig.savefig('../../assets/figures/02-differential_equations/fdm_particle_in_box_higher_order.svg')
