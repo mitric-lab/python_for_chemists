@@ -7,7 +7,7 @@ These methods iteratively compute the solution at the next time step
 from a linear combination of the function value and the slopes at
 various points. When one refers to **the** Runge-Kutta method,
 it usually means the
-[classical Runge-Kutta method](https://en.wikipedia.org/wiki/Classical_Runge-Kutta_method),
+[classical Runge-Kutta method](https://en.wikipedia.org/wiki/Runge–Kutta_methods#The_Runge–Kutta_method),
 which is just a special case of the Runge-Kutta methods.
 
 ### Theoretical Foundations
@@ -113,7 +113,7 @@ and four unknowns. Therefore, we can choose one of the coefficients freely
 and obtain a family of consistent second-order Runge-Kutta methods with two stages.
 
 If we choose $b_1 = b_2 = \frac{1}{2}$, $c_2 = 1$, and $a_{21} = 1$, we obtain
-the so-called [Heun method](https://en.wikipedia.org/wiki/Heun_method).
+the so-called [Heun method](https://en.wikipedia.org/wiki/Heun's_method).
 If we instead choose $b_1 = 0$, $b_2 = 1$, $c_2 = \frac{1}{2}$, and
 $a_{21} = \frac{1}{2}$, we obtain the so-called
 [midpoint method](https://en.wikipedia.org/wiki/Midpoint_method).
