@@ -6,9 +6,7 @@ import numpy as np
 
 
 ### ANCHOR: power_iteration_function
-def power_iteration(
-    a: np.ndarray, eps: float, maxiter: int = 1000,
-) -> (float, np.ndarray):
+def power_iteration(a, eps, maxiter=1000):
     n = a.shape[0]
     
     x = np.random.rand(n)
