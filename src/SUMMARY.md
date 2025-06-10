@@ -21,9 +21,9 @@
     - [Runge-Kutta Method](02-differential_equations/03-runge_kutta.md)
     - [Finite-Difference Method](02-differential_equations/04-finite_differences.md)
 
-- [Eigenwert- und Singulärwertzerlegung](03-evd_and_svd.md)
-    - [Eigenwertzerlegung]()
-    - [Singulärwertzerlegung]()
+- [Eigenwert- und Singulärwertzerlegung](04-evd_and_svd.md)
+    - [Eigenwertzerlegung](04-evd_and_svd/01-eigenvalue_decomposition.md)
+    - [Singulärwertzerlegung](04-evd_and_svd/02-singular_value_decomposition.md)
     - [Hauptkomponentenanalyse]()
     - [Hauptkoordinatenanalyse]()
     - [Lineare Gleichungssysteme]()

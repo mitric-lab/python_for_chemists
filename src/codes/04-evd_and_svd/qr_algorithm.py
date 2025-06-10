@@ -6,9 +6,7 @@ import numpy as np
 
 
 ### ANCHOR: qr_algorithm_function
-def qr_algorithm(
-    a: np.ndarray, eps: float, maxiter: int = 5000,
-) -> (np.ndarray, np.ndarray):
+def qr_algorithm(a, eps, maxiter=5000):
     n = a.shape[0]
 
     a_k = a.copy()
