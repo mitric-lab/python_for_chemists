@@ -1,37 +1,38 @@
 ## Eigenvalue Decomposition
 
-To understand the definition of the eigenvalue decomposition (EVD), 
-we first need to get acquainted with the concept of a vector space.
-Although this is defined much more generally, we will restrict ourselves here
-to $\mathbb{C}^n$, the $n$-dimensional vector space over the complex numbers.
-Vectors in $\mathbb{C}^n$ can be represented as column vectors 
-in the standard basis. The notation $\vec{v} \in \mathbb{C}^n$
-denotes such a vector:
+To understand the definition and power of the eigenvalue decomposition (EVD), we first need to get acquainted with the concept of a vector space. Although this is defined much more generally, we will restrict ourselves here to $\mathbb{C}^n$, the $n$-dimensional vector space over the complex numbers. Vectors in $\mathbb{C}^n$ can be represented as column vectors in the standard basis. The notation $\vec{v} \in \mathbb{C}^n$ denotes such a vector:
 $$
   \vec{v} = \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix}
 $$
-with components $v_i \in \mathbb{C}$. A complex conjugate row vector 
-is denoted as the Hermitian conjugate of a column vector:
+with components $v_i \in \mathbb{C}$. A complex conjugate row vector is denoted as the Hermitian conjugate of a column vector:
 $$
   \vec{v}^\dag = \begin{pmatrix} v_1^* & v_2^* & \cdots & v_n^* \end{pmatrix}
 $$
-with the complex conjugated components $v_i^*$.
-The standard scalar product of two vectors $\vec{v}, \vec{w} \in \mathbb{C}^n$
-can be written in this notation as
+with the complex conjugated components $v_i^*$. Two vectors can be mapped to a scalar by the standard scalar product, defined as
 $$
-  \langle \vec{v}, \vec{w} \rangle = \vec{v}^\dag \vec{w} = \sum_{i=1}^n v_i^* w_i\,,
+  \langle \vec{v}, \vec{w} \rangle = \vec{v}^\dag \vec{w} = \begin{pmatrix} v_1^* & v_2^* & \cdots & v_n^* \end{pmatrix} \begin{pmatrix} w_1 \\ w_2 \\ \vdots \\ w_n \end{pmatrix} = \sum_{i=1}^n v_i^* w_i\,.
 $$
-where the rule for matrix multiplication applies.
 
-Let $\bm{A} \in \C{n}{n}$ be a square matrix. A vector
-$\vec{v}_i \in \mathbb{C}^n$ is called an eigenvector of $\bm{A}$ if
+### Theoretical Foundations
+
+Now lets discover the relationships between vectors and matrices. Most importantly, we look at vectors that fulfil a specific property in connection with a matrix. Let $\bm{A} \in \C{n}{n}$ be a square matrix. A vector $\vec{v}_i \in \mathbb{C}^n$ is called an eigenvector of $\bm{A}$ if
 $$
   \bm{A} \vec{v}_i = \lambda_i \vec{v}_i
 $$
-for some $\lambda \in \mathbb{C}$. The number $\lambda_i$ is referred to
-as the eigenvalue of $\bm{A}$ corresponding to the eigenvector $\vec{v}_i$.
+for some $\lambda \in \mathbb{C}$. The number $\lambda_i$ is referred to as the eigenvalue of $\bm{A}$ corresponding to the eigenvector $\vec{v}_i$. In general, for a matrix of dimension $n \times n$, there are $n$ eigenvalues and eigenvectors. 
 
-## Theoretical Foundations
+... some more information about properties of eigenvectors and eigenvalues
+
+```admonish note title="Example"
+Let $\bm{A} = \begin{pmatrix} 1 & 2 \\ 2 & 1 \end{pmatrix}$. Then, the eigenvectors and eigenvalues of $\bm{A}$ are
+$$
+  \vec{v}_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix} \quad \text{and} \quad \lambda_1 = 3\,,
+$$
+$$
+  \vec{v}_2 = \begin{pmatrix} 1 \\ -1 \end{pmatrix} \quad \text{and} \quad \lambda_2 = -1\,,
+$$
+meaning that $\bm{A} \vec{v}_1 = 3 \vec{v}_1$ and $\bm{A} \vec{v}_2 = -1 \vec{v}_2$.
+```
 
 We now define the diagonal matrix of eigenvalues $\bm{\Lambda}$ as
 $$
@@ -52,21 +53,12 @@ $$
 $$
 Then, the eigenvalue decomposition of $\bm{A}$ can be written as
 $$
-  \bm{A} = \bm{Q} \bm{\Lambda} \bm{Q}^{-1}
+  \bm{A} = \bm{Q} \bm{\Lambda} \bm{Q}^{-1}\,.
 $$
 
 ### Eigenvalue Decomposition for Normal Matrices
 
-Although the eigenvalue decomposition exists for all diagonalisable
-matrices, we will restrict ourselves here to a subset of such matrices,
-the so-called 
-[*normal matrices*](https://en.wikipedia.org/wiki/Normal_matrix). 
-A matrix $\bm{A}\in\C{n}{n}$ is called *normal* if it commutes with 
-its Hermitian conjugate, 
-i.e., if $\bm{A}^\dag \bm{A} = \bm{A} \bm{A}^\dag$ holds.
-Such matrices are unitarily diagonalisable, meaning that 
-the matrix $\bm{Q}$ is unitary. 
-Therefore, it holds
+Computing inverse matrices $\bm{Q}^{-1}$ is a computationally expensive operation. Therefore, we will restrict ourselves to a subset of such matrices, the so-called [*normal matrices*](https://en.wikipedia.org/wiki/Normal_matrix). A matrix $\bm{A}\in\C{n}{n}$ is called *normal* if it *commutes with its Hermitian conjugate*. This essentially means that $\bm{A}^\dag \bm{A} = \bm{A} \bm{A}^\dag$ holds. Such matrices are unitarily diagonalisable, meaning that the matrix $\bm{Q}$ is unitary, which means that $\bm{Q}^\dag = \bm{Q}^{-1}$. Therefore, we can write the inverse of $\bm{Q}$ as
 $$
   \bm{Q}^{-1} = \bm{Q}^\dag = \begin{pmatrix}
     \text{---}\ \vec{v}_1^\dag\ \text{---} \\
@@ -103,25 +95,19 @@ $$
   \end{align*}
 $$
 
-The product of a column vector with a row vector, such as
-$\vec{v}_i \vec{v}_i^\dag$ in the above equation, is known as the
-[*dyadic product*](https://en.wikipedia.org/wiki/Dyadics)
-and produces a (rank-1) matrix.
+Note that in the last line, the product of a column vector with a row vector $\vec{v}_i \vec{v}_i^\dag$ does not produce a scalar, as with the scalar product. Instead, this is known as the [*dyadic product*](https://en.wikipedia.org/wiki/Dyadics) between to vectors and produces a (rank-1) matrix:
+$$
+  \vec{v} \vec{w}^\dag = \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix} \begin{pmatrix} w_1^* & w_2^* & \cdots & w_n^* \end{pmatrix} = \begin{pmatrix} v_1 w_1^* & v_1 w_2^* & \cdots & v_1 w_n^* \\ v_2 w_1^* & v_2 w_2^* & \cdots & v_2 w_n^* \\ \vdots & \vdots & \ddots & \vdots \\ v_n w_1^* & v_n w_2^* & \cdots & v_n w_n^* \end{pmatrix}\,.
+$$
+From this definition, it is clear why {{eqref: eq:eigenvalue_decomposition_normal}} is called a decomposition, as it decomposes the matrix $\bm{A}$ into a sum of matrices, weighted by the eigenvalues.
 
-To perform the eigenvalue decomposition, we first need to determine the
-eigenvalues and eigenvectors of the matrix. While they can still be determined
-analytically for small matrices, numerical methods are necessary for larger
-matrices (in general for $n \geq 5$). We will discuss two such methods below.
+### Eigenvalue Algorithms
 
-#### Eigenvalue Algorithms
+From the above, it is clear that if we want to perform the eigenvalue decomposition of a matrix in practice, we first need to determine the eigenvalues and eigenvectors of the matrix. While they can still be determined analytically for small matrices (in general for $n < 5$), we need the help of computers to determine them *numerically* for larger matrices. We will discuss two such methods below.
 
-**Power Iteration**
+#### Power Iteration
 
-The probably simplest algorithm for determining the eigenvalues of a matrix
-is [*power iteration*](https://en.wikipedia.org/wiki/Power_iteration).
-This algorithm finds the eigenvector of the matrix $\bm{A}\in\C{n}{n}$
-corresponding to the eigenvalue with the largest absolute value, 
-provided that $\bm{A}$ is diagonalisable.
+The probably simplest algorithm for determining the eigenvalues of a matrix is [*power iteration*](https://en.wikipedia.org/wiki/Power_iteration). This algorithm finds the eigenvector of the matrix $\bm{A}\in\C{n}{n}$ corresponding to the eigenvalue with the largest absolute value, provided that $\bm{A}$ is diagonalisable.
 
 We assume that $\bm{A}\in\C{n}{n}$ is a matrix with (unknown) eigenvalues
 $$
@@ -180,38 +166,29 @@ in each step, which leads to the iteration
 $$
   \vec{x}^{k+1} = \frac{\bm{A} \vec{x}^k}{\|\bm{A} \vec{x}^k\|}\,.
 $$
-```
 
 A generalisation of the power iteration is the so-called *inverse iteration*, 
 which can be used to determine an eigenvalue close to a given 
 but arbitrary number $\mu$ and its eigenvector.
 
-**QR Algorithm**
+```
 
-In many cases, however, we are interested in all eigenvectors and eigenvalues
-of a matrix. A frequently used method that can determine all eigenpairs
-of a diagonalisable matrix is the 
-[*QR algorithm*](https://en.wikipedia.org/wiki/QR_algorithm).
+#### QR Algorithm
 
-The key step of the QR algorithm is the decomposition of the matrix $\bm{A}$
-into a unitary matrix $\bm{Q}$ and an upper triangular matrix $\bm{R}$, i.e.,
+In many cases, however, we are interested not only in the eigenvalue with the largest absolute value, but in all eigenvalues and eigenvectors of a matrix. A frequently used method that can determine all eigenpairs of a diagonalisable matrix is the [*QR algorithm*](https://en.wikipedia.org/wiki/QR_algorithm).
+
+The key step of the QR algorithm is the decomposition of the matrix $\bm{A}$ into a unitary matrix $\bm{Q}$ and an upper triangular matrix $\bm{R}$, i.e.,
 $$
   \bm{A} = \bm{Q} \bm{R}\,.
 $$
-This decomposition is called the 
-[*QR decomposition*](https://en.wikipedia.org/wiki/QR_decomposition).
-We will not go into the details of the QR decomposition here, but assume
-that we can compute it for any square matrix $\bm{A} \in \C{n}{n}$.
+Remember that a matrix is called *unitary* if it is invertible and its inverse is equal to its Hermitian conjugate, or $\bm{Q}^\dag \bm{Q} = \bm{Q} \bm{Q}^\dag = \identity$. An upper triangular matrix is a matrix with all elements below the diagonal being zero. We will not go into the details of this QR decomposition here, but assume that we can compute it for any square matrix $\bm{A} \in \C{n}{n}$.
 
-In the QR algorithm, the initial matrix is set to $\bm{A}_0 = \bm{A}$ 
-and its QR decomposition $\bm{A}_0 = \bm{Q}_0 \bm{R}_0$ is computed. 
-Then, the iteration
+In the QR algorithm, the initial matrix is set to $\bm{A}_0 = \bm{A}$ and its QR decomposition $\bm{A}_0 = \bm{Q}_0 \bm{R}_0$ is computed. Then, the iteration
 $$
   \bm{A}_{k+1} = \bm{R}_k \bm{Q}_k
   {{numeq}}{eq:qr_algorithm}
 $$
-is performed. In other words, the matrix in the next step $\bm{A}_{k+1}$ is computed
-by multiplying the factors of the QR decomposition in reverse order. It holds
+is performed. In other words, the matrix in the next step $\bm{A}_{k+1}$ is computed by multiplying the factors of the QR decomposition of the current step in reverse order. By applying these two identities alternately, we can show that
 $$
   \begin{align*}
     \bm{A}_{k+1} &= \bm{R}_k \bm{Q}_k = \textcolor{blue}{\identity} \textcolor{green}{\bm{R}_k} \bm{Q}_k \\
@@ -252,9 +229,6 @@ $$
   {{numeq}}{eq:qr_algorithm_eigenvectors}
 $$
 which allows us to approximate the eigenvectors of the normal matrix $\bm{A}$.
-
-The QR algorithm can be accelerated in various ways, which will not
-be discussed here.
 
 ### Implementation
 
