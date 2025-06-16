@@ -156,3 +156,7 @@ print(s.shape) # (6,)
 print(vh.shape) # (6, 6)
 ```
 
+The SVD is a powerful tool in linear algebra and has numerous applications.
+In the following chapters, we will explore some of these applications,
+including low-rank approximations, dimensionality reduction, and more.
+

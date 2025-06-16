@@ -1,4 +1,8 @@
-## Lineare Gleichungssysteme
+## System of Linear Equations
+
+```admonish danger title="Under Construction"
+This section is currently under construction. Please check back later.
+```
 
 Viele Probleme in der Naturwissenschaft, Technik und darüber hinaus lassen
 sich durch lineare Gleichungssysteme beschreiben. Solche Systeme lassen sich
