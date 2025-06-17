@@ -102,10 +102,10 @@ $\bm{B} = \bm{Q} \bm{\Lambda} \bm{Q}^{-1}$.
 In fact, the products $\bm{A}^\dag \bm{A}$ and $\bm{A} \bm{A}^\dag$ are even 
 hermitian, because
 $$
-  \begin{align}
+  \begin{align*}
     (\bm{A}^\dag \bm{A})^\dag &= \bm{A}^\dag (\bm{A}^\dag)^\dag = \bm{A}^\dag \bm{A} \\
     (\bm{A} \bm{A}^\dag)^\dag &= (\bm{A}^\dag)^\dag \bm{A}^\dag = \bm{A} \bm{A}^\dag
-  \end{align}\,,
+  \end{align*}\,,
 $$
 which also makes them normal.
 
@@ -116,11 +116,78 @@ while the right singular vectors represent the eigenvectors of
 $\bm{A}^\dag \bm{A}$. We have thus established a connection between the SVD
 and the EVD.
 
-Although Equation {{eqref: eq:svd_and_evd}} is mathematically correct, 
-one should not compute the SVD of $\bm{A}$ using the EVD of $\bm{A}^\dag \bm{A}$ 
-and $\bm{A} \bm{A}^\dag$:
+
+### Use with NumPy
+
+We shall now "implement" the SVD using Eq. {{eqref: eq:svd_and_evd}}.
+
+As for the eigenvalue decomposition, we start by creating a random matrix
+after importing NumPy:
+```python
+{{#include ../codes/04-evd_and_svd/numpy_svd.py:imports}}
+```
+```python
+{{#include ../codes/04-evd_and_svd/numpy_svd.py:random_matrix}}
+```
+This time, a proper rectangular matrix is created, and no symmetrisation
+is performed (which is not even possible for proper rectangular matrices).
+We used
+[`np.min`](https://numpy.org/doc/stable/reference/generated/numpy.min.html)
+to determine the smaller dimension of the matrix, which is stored in the variable
+`p`. The SVD is then computed using the double eigenvalue decomposition:
+```python
+{{#include ../codes/04-evd_and_svd/numpy_svd.py:double_evd}}
+```
+Since the eigenvalues coming from `np.linalg.eigh` are sorted in ascending order,
+and at most `p` eigenvalues are non-zero, the last `p` eigenvalues are
+the squared singular values, while the other eigenvalues of the larger matrix
+(in this case, $\bm{A} \bm{A}^\dag$) are zero. 
+Therefore, we checked for equality of the last `p` eigenvalues coming from
+the EVD of $\bm{A} \bm{A}^\dag$ and $\bm{A}^\dag \bm{A}$. The singular
+values were then obtained by taking the square root of these eigenvalues.
+Since singular values are conventionally sorted in descending order,
+we used the slice `[::-1]` to reverse the order of the singular values.
+Because of the slicing and reordering of the singular values, the matrices
+containing the singular vectors must be adjusted accordingly.
+
+For such a versatile and widely used mathematical tool, there is no surprise 
+that the SVD is available in NumPy via the function
+[`numpy.linalg.svd`](https://numpy.org/doc/stable/reference/generated/numpy.linalg.svd.html).
+As an argument, one passes the matrix $\bm{A}$ for which the SVD
+should be computed. The return values are the matrices $\bm{U}$,
+$\bm{\Sigma}$, and $\bm{V}^\dag$. With the optional argument
+`full_matrices=False`, the economic SVD is computed. The default option is
+`full_matrices=True`. 
+
+We shall compute the SVD of our random matrix $\bm{A}$ using NumPy:
+```python
+{{#include ../codes/04-evd_and_svd/numpy_svd.py:svd}}
+```
+
+Now, the SVD results obtained *via* the double eigenvalue decomposition
+and `numpy.linalg.svd` can be compared:
+```python
+{{#include ../codes/04-evd_and_svd/numpy_svd.py:comparison_decomposition}}
+```
+Because the phase (sign) of the eigenvectors is arbitrary, we used the same
+trick as in the EVD to compare the singular vectors. 
+
+We now verify that the results of the SVD can be used to reconstruct the
+original matrix $\bm{A}$:
+```python
+{{#include ../codes/04-evd_and_svd/numpy_svd.py:comparison_reconstruction}}
+```
+While the matrices from `numpy.linalg.svd` managed to reconstruct the original
+matrix $\bm{A}$, we get a nasty surprise with the matrices from the
+double eigenvalue decomposition. The reconstructed matrix is not equal to
+the original matrix $\bm{A}$, not even up to a phase factor.
+This happens due to the so-called 
 
 ```admonish warning title="Phase ambiguity"
+Although Equation {{eqref: eq:svd_and_evd}} is mathematically correct, 
+one should not compute the SVD of $\bm{A}$ using the EVD of $\bm{A}^\dag \bm{A}$ 
+and $\bm{A} \bm{A}^\dag$.
+
 The eigenvectors of a matrix are only unique up to a (complex) factor.
 Even if one normalises the eigenvectors, the phase remains undetermined.
 For example, if one applies a minus sign to the first left singular vector
@@ -135,25 +202,6 @@ unless only the singular values and not the singular vectors are needed.
 For the following considerations, it is sufficient to know that
 there are special algorithms that compute the left and
 right singular vectors simultaneously, which avoids this problem.
-```
-
-### Use with NumPy
-
-The singular value decomposition is available in NumPy via the function 
-[`numpy.linalg.svd`](https://numpy.org/doc/stable/reference/generated/numpy.linalg.svd.html).
-As an argument, one passes the matrix $\bm{A}$ for which the SVD
-should be computed. The return values are the matrices $\bm{U}$,
-$\bm{\Sigma}$, and $\bm{V}^\dag$. With the optional argument
-`full_matrices=False`, the economic SVD is computed. The default option is
-`full_matrices=True`. An example call looks like this:
-```python
-import numpy as np
-
-a = np.random.rand(9, 6)
-u, s, vh = np.linalg.svd(a, full_matrices=False)
-print(u.shape) # (9, 6)
-print(s.shape) # (6,)
-print(vh.shape) # (6, 6)
 ```
 
 The SVD is a powerful tool in linear algebra and has numerous applications.
