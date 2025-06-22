@@ -1,70 +1,65 @@
 ## System of Linear Equations
 
-```admonish danger title="Under Construction"
-This section is currently under construction. Please check back later.
-```
-
-Viele Probleme in der Naturwissenschaft, Technik und darüber hinaus lassen
-sich durch lineare Gleichungssysteme beschreiben. Solche Systeme lassen sich
-kompakt in Matrixschreibweise darstellen als
+Lots of problems in natural sciences, engineering, and beyond can be described
+by systems of linear equations. Such systems can be compactly represented in
+matrix notation as
 $$
   \bm{A} \vec{x} = \vec{b}
 $$
-mit der Koeffizientenmatrix $\bm{A} \in \R{m}{n}$, dem Vektor der Unbekannten 
-$\vec{x} \in \mathbb{R}^n$ und dem Vektor der rechten Seite 
-$\vec{b} \in \mathbb{R}^m$, welcher auch als Inhomogenität bezeichnet wird. 
-Die Anzahl der Gleichungen $m$ entspricht der Anzahl der Zeilen von $\bm{A}$, 
-während die Anzahl der Unbekannten $n$ der Anzahl der Spalten von $\bm{A}$
-entspricht.
+with the coefficient matrix $\bm{A} \in \R{m}{n}$, the vector of unknowns
+$\vec{x} \in \mathbb{R}^n$, and the right-hand side vector 
+$\vec{b} \in \mathbb{R}^m$, which is also referred to as the inhomogeneity. 
+The number of equations $m$ corresponds to the number of rows of $\bm{A}$, 
+while the number of unknowns $n$ corresponds to the number of columns 
+of $\bm{A}$.
 
-Das Standardverfahren zur Lösung linearer Gleichungssysteme ist der
-Gauß-Algorithmus. Die übliche Implementierung funktioniert allerdings 
-nur für Gleichungssysteme mit eindeutiger Lösung. Für unterbestimmte
-Systeme mit unendlich vielen Lösungen ist der Gauß-Algorithmus numerisch
-instabil und für überbestimmte Systeme ohne Lösungen liefert er uns
-keine nützlichen Informationen.
+The standard method for solving systems of linear equations is the 
+Gaussian elimination algorithm. However, the usual implementation 
+only works for systems with a unique solution. For underdetermined systems 
+with infinitely many solutions, the Gaussian elimination algorithm is 
+numerically unstable, and for overdetermined systems without solutions, 
+it does not provide useful information.
 
-Die formale Lösung eines eindeutigen Systems mit $m = n$ ist
-$\vec{x} = \bm{A}^{-1} \vec{b}$, wobei $\bm{A}^{-1}$ die Inverse von $\bm{A}$
-bezeichnet. Mit exakter Arithmetik ist diese Lösung identisch zur der
-aus dem Gauß-Algorithmus. Für singuläre oder gar nicht-quadratische Matrizen
-ist die Inverse aber nicht definiert und diese Lösung daher nicht anwendbar.
-Es wäre doch schön, wenn wir eine Operation hätten, die einige Eigenschaften
-der Inversen erfüllt, aber für alle Matrizen definiert ist. Solche Operationen
-nennen sich Pseudoinversen und ein bekannter Vertreter ist die
-[*Moore-Penrose-Pseudoinverse*](https://de.wikipedia.org/wiki/Pseudoinverse#Die_Moore-Penrose-Inverse),
-die wir im Folgenden kennenlernen wollen.
+The formal solution of a unique system with $m = n$ is
+$\vec{x} = \bm{A}^{-1} \vec{b}$, where $\bm{A}^{-1}$ denotes 
+the inverse of $\bm{A}$. With exact arithmetic, this solution is identical 
+to the one obtained from the Gaussian elimination algorithm. However, 
+for singular or non-square matrices, the inverse is not defined, and thus 
+this solution is not applicable. It would be nice to have an operation that
+has some properties of the inverse but is defined for all matrices.
+Such operations are called pseudoinverses, and a well-known representative 
+is the
+[*Moore-Penrose pseudoinverse*](https://en.wikipedia.org/wiki/Pseudoinverse#Moore%E2%80%93Penrose_inverse),
+which we will explore in the following.
 
-### Theoretische Grundlagen
+### Theoretical Foundations
 
-Ist eine invertierbare Matrix $\bm{A}$ auch diagonalisierbar mit der
-Eigenwertzerlegung $\bm{A} = \bm{U} \bm{\Lambda} \bm{U}^{-1}$, so kann die
-ihre Inverse durch $\bm{A}^{-1} = \bm{U} \bm{\Lambda}^{-1} \bm{U}^{-1}$
-berechnet werden, wobei $\bm{\Lambda}^{-1}$ die Diagonalmatrix der 
-invertierten Eigenwerte ist. Die Richtigkeit dieser Formel lässt sich leicht
-durch
+If an invertible matrix $\bm{A}$ is also diagonalisable with the eigenvalue
+decomposition $\bm{A} = \bm{U} \bm{\Lambda} \bm{U}^{-1}$, then its inverse can be
+computed as $\bm{A}^{-1} = \bm{U} \bm{\Lambda}^{-1} \bm{U}^{-1}$, where
+$\bm{\Lambda}^{-1}$ is the diagonal matrix of the inverted eigenvalues. The
+correctness of this formula can be easily shown by
 $$
   \bm{A} \bm{A}^{-1} = \bm{U} \bm{\Lambda} \bm{U}^{-1} \bm{U} \bm{\Lambda}^{-1} \bm{U}^{-1} = \identity
 $$
 and
 $$
-  \bm{A}^{-1} \bm{A} = \bm{U} \bm{\Lambda}^{-1} \bm{U}^{-1} \bm{U} \bm{\Lambda} \bm{U}^{-1} = \identity
+  \bm{A}^{-1} \bm{A} = \bm{U} \bm{\Lambda}^{-1} \bm{U}^{-1} \bm{U} \bm{\Lambda} \bm{U}^{-1} = \identity\,.
 $$
-zeigen. Da die Singulärwertzerlegung einer Verallgemeinerung der 
-Eigenwertzerlegung für beliebige Matrizen ist, können wir überlegen, eine 
-Verallgemeinerung der Inversen über die Singulärwertzerlegung zu definieren.
+Since the singular value decomposition is a generalisation of the eigenvalue
+decomposition for arbitrary matrices, we can consider a generalisation of the
+inverse based on the singular value decomposition.
 
-Wir definieren die *Moore-Penrose-Pseudoinverse* (MP-Pseudoinverse)
-$\bm{A}^+$ einer Matrix $\bm{A} \in \R{m}{n}$ als
+We define the *Moore-Penrose pseudoinverse* (MP pseudoinverse)
+$\bm{A}^+$ of a matrix $\bm{A} \in \R{m}{n}$ as
 $$
   \bm{A}^+ = \bm{V} \bm{\Sigma}^+ \bm{U}^T
   {{numeq}}{eq:mp_pseudoinverse}
 $$
-mit der pseudoinversen Diagonalmatrix $\bm{\Sigma}^+$, die durch Transponieren
-und Invertieren der nicht-verschwindenden Singulärwerte von $\bm{\Sigma}$
-entsteht. Es kann gezeigt werden, dass die MP-Pseudoinverse die 
-sog.
-```admonish note title="Moore-Penrose-Bedingungen"
+with the pseudoinverse diagonal matrix $\bm{\Sigma}^+$, which is obtained by
+transposing and inverting the non-zero singular values of $\bm{\Sigma}$.
+It can be shown that the MP pseudoinverse satisfies the so-called
+```admonish note title="Moore-Penrose Conditions"
 $$
   \begin{alignat}{2}
     \text{1.}\ \ &\mathbf{A} \mathbf{A}^+ \mathbf{A} &&= \mathbf{A} {{numeq}}{eq:mp_conditions_general_inverse} \\
@@ -74,27 +69,26 @@ $$
   \end{alignat}
 $$
 ```
-erfüllt. Umgekehrt definieren diese Bedingungen die MP-Pseudoinverse eindeutig.
-Ist die Matrix $\bm{A}$ invertierbar, so ist die MP-Pseudoinverse
-identisch zur Inversen, also $\bm{A}^+ = \bm{A}^{-1}$.
+Conversely, these conditions uniquely define the MP pseudoinverse.
+If the matrix $\bm{A}$ is invertible, then the MP pseudoinverse is identical to
+the inverse, i.e., $\bm{A}^+ = \bm{A}^{-1}$.
 
-Betrachten wir nun ein überbestimmtes Gleichungssystem 
-$\bm{A} \vec{x} = \vec{b}$ mit $\bm{A}\in \R{m}{n}$, $m > n$ 
-und $\vec{b} \in \mathbb{R}^m$, welches i.A. keine Lösung besitzt.
-Dann gilt das Theorem
+Consider now an overdetermined system of equations $\bm{A} \vec{x} = \vec{b}$ 
+with $\bm{A}\in \R{m}{n}$, $m > n$ and $\vec{b} \in \mathbb{R}^m$, which
+generally does not have a solution. Then the theorem holds
 $$
   x_0 := \bm{A}^+ \vec{b} = \argmin{x\in \mathbb{R}^n} \| \bm{A} \vec{x} - \vec{b} \|_2\,,
 $$
-also liefert $x_0$ die Lösung, die den quadratischen Fehler beider Seite
-des Gleichungssystems minimiert.
-~~~admonish proof title="Beweis" collapsible=true
-Wir starten mit der Differenzvektor $\bm{A} \vec{x} - \vec{b}$ 
-für ein beliebiges $\vec{x} \in \mathbb{R}^n$ und addieren 0:
+*i.e.*, $x_0$ provides the solution that minimises the quadratic error
+between both sides of the system of equations.
 
+~~~admonish proof title="Proof" collapsible=true
+We start with the difference vector $\bm{A} \vec{x} - \vec{b}$
+for an arbitrary $\vec{x} \in \mathbb{R}^n$ and add 0:
 $$
   \bm{A} \vec{x} - \vec{b} = \bm{A} \vec{x} - \bm{A} \vec{x}_0 + \bm{A} \vec{x}_0 - \vec{b} = \bm{A} (\vec{x} - \vec{x}_0) + (\bm{A} \vec{x}_0 - \vec{b})
 $$
-und berechnen dann ihre euklidische Norm:
+and calculate its Euclidean norm:
 $$
   \begin{align}
     \|\bm{A}x - b\|_2^2 &= \left(\bm{A}(x - x_0) + \left(\bm{A}x_0 - b\right)\right)^\intercal \left(\bm{A}(x - x_0) + \left(\bm{A}x_0 - b\right)\right) \\
@@ -103,9 +97,9 @@ $$
     &=: \|\bm{A}(x - x_0)\|_2^2 + \|\bm{A}x_0 - b\|_2^2 + p_1 + p_2\,,
   \end{align}
 $$
-wo $p_1$ und $p_2$ die Skalarprodukte zwischen den beiden Vektoren
-$\bm{A}(x - x_0)$ und $(\bm{A}x_0 - b)$ sind. Diese können durch Einsetzen von
-$x_0 = \bm{A}^+ b$ berechnet werden:
+where $p_1$ and $p_2$ are the scalar products between the two vectors
+$\bm{A}(x - x_0)$ and $(\bm{A}x_0 - b)$. These can be calculated by substituting
+$x_0 = \bm{A}^+ b$:
 $$
   \begin{align}
     p_1 &= \left(\bm{A}(x - x_0)\right)^\intercal \left(\bm{A}x_0 - b\right) = \left(\left(x - \bm{A}^+b\right)^\intercal \bm{A}^\intercal\right) \left(\bm{A}\bm{A}^+b - b\right) \\
@@ -128,36 +122,35 @@ $$
     &= 0\,,
   \end{align}
 $$
-wobei wir für die 3. Zeile Gl. {{eqref: eq:mp_conditions_symmetry_aapt}} und 
-für die 5. Zeile Gl. {{eqref: eq:mp_conditions_general_inverse}} eingesetzt
-wurden. 
+where we inserted Eq. {{eqref: eq:mp_conditions_symmetry_apat}} for the 3rd line
+and Eq. {{eqref: eq:mp_conditions_general_inverse}} for the 5th line.
 
-Aus der Symmetrie des Skalarprodukts folgert man $p_2 = 0$. Der ursprüngliche
-Ausdruck vereinfacht sich nun zu
+From the symmetry of the scalar product, we conclude $p_2 = 0$. The original
+expression simplifies to
 $$
   \begin{align}
     \|\mathbf{A}x - b\|_2^2 &= \|\mathbf{A}(x - x_0)\|_2^2 + \|\mathbf{A}x_0 - b\|_2^2 + 0 \\
-    &= \|\mathbf{A}(x - x_0)\|_2^2 + \|\mathbf{A}x_0 - b\|_2^2 \geq \|\mathbf{A}x_0 - b\|_2^2.
-  \end{align}
+    &= \|\mathbf{A}(x - x_0)\|_2^2 + \|\mathbf{A}x_0 - b\|_2^2 \geq \|\mathbf{A}x_0 - b\|_2^2
+  \end{align}\,.
 $$
-Also ist die euklidische Norm des Differenzvektors für beliebiges 
-$\vec{x} \in \mathbb{R}^n$ immer größer als $\|\bm{A} \vec{x_0} - \vec{b}\|$.
-Damit minimiert $x_0 = \bm{A}^+ \vec{b}$ den quadratischen Fehler beider 
-Seite des Gleichungssystems.
+In other words, the Euclidean norm of the difference vector for any
+$\vec{x} \in \mathbb{R}^n$ is always greater than $\|\bm{A} \vec{x_0} - \vec{b}\|$.
+Thus, $x_0 = \bm{A}^+ \vec{b}$ minimises the quadratic error of both sides
+of the system of equations.
 ~~~
 
-Für ein unterbestimmtes Gleichungssystem $\bm{A} \vec{x} = \vec{b}$ 
-mit $\bm{A}\in \R{m}{n}$, $m < n$ und $\vec{b} \in \mathbb{R}^m$,
-die unendlich viele Lösungen besitzt, gilt das Theorem
+For an underdetermined system of equations $\bm{A} \vec{x} = \vec{b}$
+with $\bm{A}\in \R{m}{n}$, $m < n$ and $\vec{b} \in \mathbb{R}^m$,
+which has infinitely many solutions, the theorem holds
 $$
   x_0 := \bm{A}^+ \vec{b} = \argmin{\bm{A}\vec{x}=\vec{b}} \| x \|_2\,,
 $$
-also liefert $x_0$ die Lösung mit der kleinsten euklidischen Norm.
+*i.e.*, $x_0$ provides the solution with the smallest Euclidean norm.
 
-### Implementierung
+### Example 1: Overdetermined Linear System
 
-Wir implementieren die MP-Inverse am Beispiel eines überbestimmten 
-Gleichungssystems:
+We implement the MP pseudoinverse using an example of an overdetermined
+system of equations:
 $$
 \bm{A} = \begin{pmatrix}
   1 & 1 \\
@@ -174,39 +167,39 @@ $$
 \end{pmatrix}\,.
 $$
 
-Nach dem Importieren von NumPy
+After importing NumPy
 ```python
 {{#include ../codes/04-evd_and_svd/pinv_lineq.py:imports}}
 ```
-definieren wir die Funktion `pinv`:
+we define the function `pinv`:
 ```python
 {{#include ../codes/04-evd_and_svd/pinv_lineq.py:pinv_function}}
 ```
-Nach der SVD der Ausgangsmatrix initiieren wir die invertierte Matrix
-der Singulärwerte `s_inv` mit der Dimension der Transposition von `s`.
-Danach iterieren wir über $p = \min(m,n)$ und invertieren die 
-Singulärwerte, die ungleich null sind. Da die Fließkommazahlen nicht exakt
-sind, setzen wir einen Schwellenwert `rcond`. Singulärwerte, die kleiner als
-diese Schwelle liegen, werden als null behandelt und nur größere 
-Singulärwerte werden invertiert. Am Ende gibt die Funktion die MP-Inverse
-gemäß Gl. {{eqref: eq:mp_pseudoinverse}} zurück.
+We perform the SVD of the input matrix and initialise the inverted matrix
+of singular values `s_inv` with the dimension of the transposition of `s`.
+Then we iterate over $p = \min(m,n)$ and invert the singular values that
+are not equal to zero. Since floating-point numbers are not exact,
+we set a threshold `rcond`. Singular values smaller than this threshold
+are treated as zero, and only larger singular values are inverted.
+Finally, the function returns the MP pseudoinverse according to Eq. 
+{{eqref: eq:mp_pseudoinverse}}.
 
-Nun können wir das angegebene Gleichungssystem definieren:
+Now we can define the given system of equations:
 ```python
 {{#include ../codes/04-evd_and_svd/pinv_lineq.py:define_lineq}}
 ```
-und diese mit der MP-Inversen lösen:
+and solve it using the MP pseudoinverse:
 ```python
 {{#include ../codes/04-evd_and_svd/pinv_lineq.py:solve_lineq}}
 ```
-Wir erhalten die folgenden Ergebnisse:
+We obtain the following results:
 ```python
 {{#include ../codes/04-evd_and_svd/pinv_lineq.py:verify_results}}
 ```
 
-Einige Einträge der Matrix $\bm{A}$ dürfte etwas komisch erscheinen, wie 
-z.B. die zweite Spalte, die nur Einsen enthält. Wir schreiben diese
-Matrixgleichung nun aus:
+Some entries of the matrix $\bm{A}$ may seem a bit conspicuous, such as 
+the second column, which contains only ones. We can now write out 
+this matrix equation
 $$
   \begin{align}
     x_1 + x_2 &= 4.0 \\
@@ -215,7 +208,7 @@ $$
     4x_1 + x_2 &= 6.5
   \end{align}
 $$
-oder mit familiären Variablennamen
+or with more familiar variable names
 $$
   \begin{align}
     m + t &= 4.0 \\
@@ -224,26 +217,27 @@ $$
     4m + t &= 6.5 \,.
   \end{align}
 $$
+It is now easy to see that this system of equations represents the problem
+of finding a line that passes through the 4 points 
+$(1.0, 4.0)$, $(2.0, 3.5)$, $(3.0, 5.0)$, and $(4.0, 6.5)$.
+With a little imagination, it becomes clear that such a line does not
+exist. The solution provided by the MP pseudoinverse is therefore the line
+that minimises the quadratic error between the points and the line.
+If this idea sounds familiar, it is no coincidence. This is precisely the
+linear regression using the method of least squares, which we have already
+learned in
+Chapter [1.2](../01-regression/02-linear_regression.md).
 
-Es soll jetzt unschwer erkennbar sein, dass dieses Gleichungssystem
-das Problem darstellt, eine Gerade zu finden, die durch die 4 Punkte
-$(1.0, 4.0)$, $(2.0, 3.5)$, $(3.0, 5.0)$ und $(4.0, 6.5)$ verläuft.
-Mit einwenig Vorstellung wird es einem klar, dass so eine Gerade nicht
-existiert. Die Lösung durch die MP-Inverse ist daher diejenige Gerade,
-die den quadratischen Fehler zwischen den Punkten und der Geraden
-minimiert. Falls einem diese Idee bekannt vorkommt, dann ist das kein
-Zufall. Das ist gerade die lineare Regression mit Methode der kleinsten
-Quadrate, die wir bereits in 
-Kapitel [1.2](../01-regression/02-linear_regression.md)
-kenngelernt haben. 
-
-Die MP-Inverse liefert uns eine weitere Möglichkeit,
-die Parameter der (multi-)lineare Regression zu berechnen: Für die
-Datenpunkte $\{(\text{---}\ \vec{x}_ i \text{---}, y_i)\}_ {i=1,\cdots,N}$
-mit $\vec{x}_ i \in \mathbb{R}^n$, $y_i \in \mathbb{R}$
-sowie das Modell $y = \sum_{j=1}^n w_j x_j + b = \vec{w}^\intercal \vec{x} + b$,
-sind die optimalen Parameter $\vec{w} \in \mathbb{R}^n$ und $b \in \mathbb{R}$
-durch die Least-Squares-Lösung des Gleichungssystems 
+The MP pseudoinverse provides us with another way to calculate the parameters
+of (multi-)linear regression: For the data points
+$\{(\text{---}\ \vec{x}_ i \text{---}, y_i)\}_ {i=1,\cdots,N}$
+with $\vec{x}_ i \in \mathbb{R}^n$, $y_i \in \mathbb{R}$
+and the model
+$$
+y = \sum_{j=1}^n w_j x_j + b = \vec{w}^\intercal \vec{x} + b\,,
+$$
+the optimal parameters $\vec{w} \in \mathbb{R}^n$ and $b \in \mathbb{R}$
+are given by the least-squares solution of the system of equations
 $$
   \underbrace{\begin{pmatrix}
     \text{---}\ \vec{x}_ 1 \text{---} & 1 \\
@@ -260,10 +254,25 @@ $$
     y_1 \\
     \vdots \\
     y_N
-  \end{pmatrix}}_ {\vec{y} \in \mathbb{R}^N}
+  \end{pmatrix}}_ {\vec{y} \in \mathbb{R}^N}\,,
 $$
-gegeben, also 
+or in matrix notation
 $$
 \vec{\beta} = \bm{A}^+ \vec{y}\,.
 {{numeq}}{eq:multilinear_regression_pinv}
 $$
+
+As a final note, the (multi-)linear regression problem is different from the
+principal component analysis (PCA) problem, which we discussed in 
+the previous chapter. Although both problems are solved by finding the
+"best" (hyper-)plane in a least-squares sense, the minimised error is different.
+The following figure illustrates the difference between these two problems:
+
+![Linear Regression vs PCA](../assets/figures/04-evd_and_svd/mpi_vs_pca_distances.svg)
+
+### Example 2: Underdetermined Linear System
+
+```admonish note title="Under construction"
+No appropriate example yet.
+```
+

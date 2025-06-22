@@ -325,7 +325,7 @@ grows in intensity. The O–H band of acetic acid also grows in intensity.
 We can now treat the dataset as a matrix and apply SVD to it.
 Afterwards, we plot the 10 largest singular values.
 ```python
-{{#include ../codes/04-evd_and_svd/analyse_trir.py:svd}}
+{{#include ../codes/04-evd_and_svd/analyse_trir.py:elbow_plot}}
 ```
 Because the singular values are sorted in descending order, we can simply
 plot the first 10 singular values. Since they span several 

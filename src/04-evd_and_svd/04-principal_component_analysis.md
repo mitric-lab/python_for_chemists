@@ -1,6 +1,6 @@
 ## Principal Component Analysis
 
-In last section, we learned that SVD can be used to find the best
+In the last section, we learned that SVD can be used to find the best
 rank-$k$ approximation of a matrix $\bm{A}$ with respect to the Frobenius norm.
 Consider the rank-1 approximation of $\bm{A}$. Since this is just the
 rank-1 matrix $\sigma_1 \vec{u}_ 1 \vec{v}_ 1^\dag$ with the largest
@@ -117,6 +117,7 @@ weighting of the respective principal component. A common term is the
 which is given by
 $$
   \eta_i = \frac{\sigma_i^2}{\sum_{j} \sigma_j^2}\,,
+  {{numeq}}{eq:explained_variance}
 $$
 where the sum runs over all singular values.
 
@@ -129,6 +130,7 @@ The projection of the data points onto the principal components can
 be computed by the matrix product
 $$
   \bm{X} \bm{V} = \bm{U} \bm{\Sigma} \bm{V}^\dag \bm{V} = \bm{U} \bm{\Sigma}\,.
+  {{numeq}}{eq:pca_projection}
 $$
 Thus, the projection of the data points onto the $i$-th principal component
 is given by the product of the $i$-th left singular vector $\vec{u}_ i$ with
@@ -146,133 +148,251 @@ the best approximation of the original data points in a $k$-dimensional space.
 Thus, we can use PCA to approximate a high-dimensional dataset with only a few
 principal components, without losing too much information about the data.
 
-### Implementation: Wine Categorisation
+### Example 1: Wine Categorisation
 
-```admonish danger title="Under Construction"
-This section is currently under construction. Please check back later.
-```
+It all began – as great scientific ideas often do – over a dinner conversation 
+accompanied by a glass of wine (or perhaps two). My professor, deep in discussion 
+with a colleague from food chemistry, pondered how advanced spectroscopy and 
+machine learning could elegantly classify wines. Inspired by their sophisticated 
+yet rather pricey vision, I asked myself: could we democratise wine-sniffing? 
+Could we create an affordable alternative – something a (under-)graduate student’s 
+budget could comfortably swallow?
 
-Wir implementieren die PCA am Beispiel des Weindatensatzes. 
-Dieser enthält Messungen von 13 physikalischen und chemischen 
-Eigenschaften von insgesamt 178 Weinen aus drei verschiedenen Rebsorten:
-Barolo, Grignolino und Barbera. Die ersten Einträge des Datensatzes haben
-die folgende Form:
+Recalling a playful project aptly named 
+“[Second Sense: Build an AI Smart Nose](https://makezine.com/projects/second-sense-build-an-ai-smart-nose/)”
+from *Make Magazine*, the idea fermented quickly. 
+Thus, armed with little more than curiosity and a budget-friendly gas sensor, 
+I set out to distinguish wines without breaking the bank – or the glassware.
+
+This section follows the first steps of this journey, where we explore how to
+apply Principal Component Analysis (PCA) to a dataset of wines,
+revealing the subtle patterns hidden in the scents of our beloved beverage.
+
+In this section, we will implement PCA on a dataset of wines to explore how
+we can classify wines based on seemingly unrelated properties.
+
+<div align="center">
+  <img src="../assets/figures/04-evd_and_svd/artificial_nose.jpg" alt="artificial nose" style="max-width: 500px;">
+</div>
+This budget-friendly wine sniffer, of course shaped like a nose,
+is based on a gas sensor that can detect the concentration of 
+the following gases:
+- Nitrogen dioxide (NO<sub>2</sub>)
+- Ethanol (EtOH)
+- Volatile organic compounds (VOCs)
+- Carbon monoxide (CO)
+Although NO<sub>2</sub> and CO are not directly related to the wine's
+quality, due to the sensors being not very selective, they can detect
+the presence of other gases that are present in the wine's aroma.
+
+This dataset comprises measurements of 4 different wines
+- Wappenlese Weiss (White) (1)
+- Wappenlese Rot (Red) (2)
+- Soave (White) (3)
+- Bardolino (Red) (4)
+and empty glasses (0).
+For each wine, around 1000 measurements were taken, with each measurement
+consisting of the temperature, the relative humidity, and the
+voltage reading of the gas sensor for each of the four gases
+(NO<sub>2</sub>, EtOH, VOCs, CO).
+
+The first few lines of the dataset look like this:
 ```txt
 {{#include ../codes/04-evd_and_svd/wine.csv::10}}
 ```
-und der gesamte Datensatz kann
-<a href="../codes/04-evd_and_svd/wine.csv" download>hier</a> heruntergeladen
-werden. Die Datei `wine.csv` enthält die Daten im sogenannten
-*Comma-Separated Values* (CSV) Format, also mit Werten, die durch Kommata
-getrennt sind.
+and the entire dataset can be downloaded from
+<a href="../codes/04-evd_and_svd/wine.csv" download>here</a>.
+The file `wine.csv` contains the data in the so-called
+*Comma-Separated Values* (CSV) format, meaning that the values 
+are separated by commas.
 
-Als erstes importieren wir die benötigten Bibliotheken
+First, we import the necessary libraries:
 ```python
 {{#include ../codes/04-evd_and_svd/pca_wine.py:imports}}
 ```
-und lesen die Daten aus der Datei `wine.csv` ein:
+and read the data from the file `wine.csv`:
 ```python
 {{#include ../codes/04-evd_and_svd/pca_wine.py:load_data}}
 ```
-Hier haben wir das Argument `delimiter=','` an die Funktion `np.loadtxt`
-übergeben, da die Werte in der Datei nicht wie bisher durch Leerzeichen
-getrennt sind.
-Zudem haben wir die Labels der Rebsorten (nullte Spalte) in der Variable
-`categories` als 0-indizierte Integers gespeichert und somit von den
-Eigenschaften der Weine, die wir als Floats in der Variable `features`
-gespeichert haben, abgetrennt.
+Here, we passed the argument `delimiter=','` to the function `np.loadtxt`
+because the values in the file are not separated by spaces as before, 
+but by commas. Also, we supplied the argument `skiprows=1` to skip the header
+line of the CSV file, which contains the names of the features.
+We also separated the labels of the wines (the first column) into the variable
+`categories` as integers, and the gas sensor readings
+as floats in the variable `features`. The temperature and relative humidity
+are not used for the PCA, but can be useful for further analysis.
 
-Weitere versteckte Informationen, wie die Namen der Rebsorten
-und der gemessenen Eigenschaften, sind für die 
-Mathematik zwar nicht relevant, können aber für die Interpretation der
-Ergebnisse sehr hilfreich sein. Daher speichern wir diese in Listen:
+The measurements for empty glasses are only used for calibration, so we
+do not use them for the PCA. To filter out the empty glasses, we
+use the following code:
+```python
+{{#include ../codes/04-evd_and_svd/pca_wine.py:filter_data}}
+```
+We created the boolean mask `mask` that is `True` for all rows where the
+category is not 0 (i.e., not an empty glass) and then used it to filter
+the `features` and `categories` arrays. The resulting arrays
+`features` and `categories` now only contain the measurements for the wines.
+
+Information like the names of the wines and the measured properties
+are not relevant for the mathematics, but can be very helpful for interpreting
+the results. Therefore, we store these in lists:
 ```python
 {{#include ../codes/04-evd_and_svd/pca_wine.py:labels}}
 ```
 
-Da sich in diesem Datensatz die Größenordnung der Eigenschaften sehr
-stark unterscheidet, führen wir eine Standardisierung der Daten durch:
+Now, we start the PCA by standardising the data:
 ```python
 {{#include ../codes/04-evd_and_svd/pca_wine.py:standardise}}
 ```
-Anschließend berechnen wir die Singulärwertzerlegung der standardisierten
-Datenmatrix:
+
+After standardisation, we compute the singular value decomposition
+of the standardised data matrix:
 ```python
 {{#include ../codes/04-evd_and_svd/pca_wine.py:svd}}
 ```
-Zusätzlich haben wir die Hauptkomponenten, die Projektion der Datenpunkte
-auf die Hauptkomponenten, sowie die Varianzanteile bestimmt.
-Die Ergebnisse sehen wie folgt aus:
+We also computed the principal components, the projection of the data points
+onto the principal components using {{eqref: eq:pca_projection}},
+and the explained variance of the principal components according to
+{{eqref: eq:explained_variance}}.
+The results look like this:
 ```python
 {{#include ../codes/04-evd_and_svd/pca_wine.py:verify_pca}}
 ```
-Wir sehen, dass zu der ersten Hauptkomponente `pcs[:,0]`, die eine Linearkombination
-aller Eigenschaften der Weine ist, die 5., 6. und 11. Eigenschaften
-(0-indiziert, also "total phenols", "flavanoids" und 
-"OD280/OD315") mit den (betragsmäßig) größten Gewichten beitragen. Diese Hauptkomponente erklärt
-bereits ca. 36 % der Varianz der Daten. Mit der zweiten Hauptkomponente
-zusammen können ca. 55 % der Varianz erklärt werden. Die Varianzanteile
-können wir mit dem folgenden Code visualisieren:
+
+We see that the first principal component `pcs[:,0]`, which is 
+a linear combination of all features of the wines, is primarily influenced 
+by the first three features (*i.e.* "V_NO2", "V_EtOH", and "V_VOC") 
+with the largest (absolute) weights.
+This principal component already explains about 62~% of the variance in the data.
+Together with the second principal component, about 89~% of the variance 
+can be explained.
+We can visualise the explained variance using the following code:
 ```python
 {{#include ../codes/04-evd_and_svd/pca_wine.py:plot_variance}}
 ```
-Hier haben wir die Funktion `np.cumsum` verwendet, um die kumulierten
-Summen der Varianzanteile zu berechnen. Der resultierende Plot sieht wie folgt aus:
-![Varianzanteile der Hauptkomponenten](../assets/figures/04-evd_and_svd/pca_wine_variance.svg)
+Here, we used the function `np.cumsum` to compute the cumulative sums 
+of the explained variance. The resulting plot looks like this:
+![Explained Variance of Principal Components](../assets/figures/04-evd_and_svd/pca_wine_variance.svg)
 
-Da wir Datenpunkte in 2D leicht visualisieren können, plotten wir die
-Projektion der Datenpunkte auf die ersten beiden Hauptkomponenten:
+Because the visualisation of data points works best in 2D, we plot the
+projection of the data points onto the first two principal components:
 ```python
 {{#include ../codes/04-evd_and_svd/pca_wine.py:plot_pca}}
 ```
-Aufgrund der Standardisierung der Datenpunkte auf die Einheitsvarianz 
-ist es sinnvoll, die Hauptkomponenten gleichermaßen
-skaliert zu plotten. Aus diesem Grund haben wir die Methode `set_aspect('equal')`
-auf die Achsenobjekte angewendet. Der resultierende Plot sieht wie folgt aus:
-![Projektion der Weindaten auf die ersten beiden Hauptkomponenten](../assets/figures/04-evd_and_svd/pca_wine_projection.svg)
+Due to the standardisation of the data points to unit variance,
+it makes sense to plot the principal components with equal scaling.
+We applied the method `set_aspect('equal')` to the axes objects 
+for this purpose. The resulting plot looks like this:
+![Projection of Wine Data onto the First Two Principal Components](../assets/figures/04-evd_and_svd/pca_wine_projection.svg)
 
-Da die ersten beiden Hauptkomponenten bereits ca. 55 % der Varianz der Daten
-erklären, können wir davon ausgehen, dass wichtige Strukturen des Datensatzes
-in dieser 2D-Projektion erhalten sind. In diesem Plot erkennen wir aber 
-zunächst nur einen Halbkreis an Punkten, sowie ein "Loch" in der Mitte. Um die Struktur der
-Datenpunkte in dieser Projektion besser zu verstehen, können wir die Datenpunkte gemäß den Rebsorten,
-die wir für die PCA **nicht** verwendet haben, einfärben:
+Because the first two principal components already explain about 
+89~% of the variance in the data, we can assume that important structures
+of the dataset are preserved in this 2D projection. However, in this plot, we
+initially only see some cluster of points, vaguely organised into
+three islands. To better understand the structure of the data points 
+in this projection, we can colour the data points according to the wine types
+that we **did not** use for the PCA:
 ```python
 {{#include ../codes/04-evd_and_svd/pca_wine.py:plot_pca_coloured}}
 ```
-Anstatt einen neuen Plot zu erstellen, haben wir die Farben der Datenpunkte
-mit der Methode `set_color` des Plot-Objekts geändert. Und um eine Legende
-anzeigen zu lassen, haben wir drei leere Scatter-Plots mit passenden Farben
-und Labels erstellt. Der resultierende Plot sieht wie folgt aus:
-![Projektion der Weindaten auf die ersten beiden Hauptkomponenten, eingefärbt nach Rebsorten](../assets/figures/04-evd_and_svd/pca_wine_projection_coloured.svg)
+Instead of creating a new plot, we changed the colours of the data points
+using the `set_color` method of the plot object. To display a legend,
+we created three empty scatter plots with the appropriate colours and labels.
+The resulting plot looks like this:
+![Projection of Wine Data onto the First Two Principal Components, Coloured by Wine Types](../assets/figures/04-evd_and_svd/pca_wine_projection_coloured.svg)
 
-Wir erkennen jetzt deutlich, dass die Datenpunkte, bis auf wenige Ausnahmen,
-in der 2D-Projektion entsprechend ihrer Sorten gut voneinander getrennt sind. Wir haben also eine 
-Darstellung gefunden, in welcher wir die Rebsorten anhand der physikalischen und
-chemischen Eigenschaften der Weine leicht unterscheiden (d.h. klassifizieren) könnten.
+We can now clearly see that the data points are separated according to 
+their wine types, albeit with some overlap.
+If one would project the data points onto the first three principal components
+instead of the first two, one would see an excellent separation of the
+data points according to their wine types.
+This can be used to classify the wines based on their scents, as measured
+by the budget-friendly wine sniffer.
 
-In diesem Abschnitt haben wir gesehen, dass die Kooridnaten der
-Datenpunkte in der Basis der Features vollständig bekannt sein müssen, 
-um die PCA durchzuführen.
-Bei Messdaten ist diese Voraussetzung in der Regel erfüllt, 
-aber was ist, wenn wir Daten mit sehr vielen Features
-vorliegen haben, z.B. Bilder? Ein kleines Bild mit $100 \times 100$ Pixeln hat
-bereits 10000 Features, und ein hochauflösendes Bild mit $1000 \times 1000$
-Pixeln hat sogar eine Millionen Features. In diesem Fall würde die Durchführung
-der PCA auf die Datenpunkte in der Basis der Pixelwerte sehr viel Resourcen
-benötigen. Es wäre in diesem Fall effizienter, wenn wir den  *Abstand* zwischen den
-Datenpunkten für die PCA verwendet werden könnten, für den wir nur einen Skalar
-für jedes Paar von Datenpunkten berechnen müssten. Eine Abstandsmetrik kann auch 
-dann hilfreich sein, wenn keine wirklich sinnvollen Koordinaten für die Datenpunkte
-vorliegen, wie z.B. bei Texten oder chemischen Verbindungen.
+### Example 2: Molecular Alignment
 
-Tatsächlich lassen sich die Hauptkomponenten allein aus solchen Abständen 
-bestimmen. Eine Realisierung bietet die Methode der 
-*Hauptkoordinatenanalyse* (engl. *Principal Coordinate Analysis*, PCoA).
-
-### Implementation: Molecular Alignment
-
-```admonish danger title="Under Construction"
-This section is currently under construction. Please check back later.
+We will now take a look at another application of PCA, now in the field
+of quantum chemistry. A common format of storing molecular structures
+is the *xyz* format. The first line of the file contains the number of 
+atoms, the second line is a comment, and the following lines contain the
+atomic symbols and their coordinates in 3D space. For example, the file
+`tetracene.xyz`, which can be downloaded from
+<a href="../codes/04-evd_and_svd/tetracene.xyz" download>here</a>,
+begins with the following lines:
+```txt
+{{#include ../codes/04-evd_and_svd/tetracene.xyz::10}}
 ```
+
+Although being very vivid, this representation of the molecular structure
+does not respect the translational and rotational symmetries
+(and several other symmetries) of the molecule.
+Two wildly different xyz-files can represent exactly the same molecule 
+at exactly the same position in space.
+
+The optimal structure of the tetracene molecule in its electronic ground state
+is planar, meaning that all atoms lie in the same plane. In the sample of 
+the xyz-file above, no coordinate is exactly zero, which means that the
+molecule is not aligned to the coordinate axes. 
+We shall now use PCA to find the plane where the molecule lies,
+and then project the molecule onto this plane.
+
+Again, we start by importing the necessary libraries:
+```python
+{{#include ../codes/04-evd_and_svd/tetracene_plane.py:imports}}
+```
+Next, we read the xyz-file and extract the coordinates of the atoms:
+```python
+{{#include ../codes/04-evd_and_svd/tetracene_plane.py:load_xyz}}
+```
+Afterwards, we center the coordinates of the atoms by subtracting the mean
+of the coordinates from each coordinate, followed by SVD:
+```python
+{{#include ../codes/04-evd_and_svd/tetracene_plane.py:pca}}
+```
+Normalisation or standardisation is not performed here, as we do not
+want to distort the distances between the atoms.
+
+The explained variances are computed according to
+{{eqref: eq:explained_variance}}:
+```python
+{{#include ../codes/04-evd_and_svd/tetracene_plane.py:expl_var}}
+```
+One clearly sees that the explained variance of the third principal component
+is much smaller than that of the first two principal components.
+
+For a better understanding of the principal components, 
+they are visualised as arrows in the 3D space, along with the atoms:
+<div align="center">
+  <img src="../assets/figures/04-evd_and_svd/tetracene_3d.svg" alt="PCA of Tetracene Molecule" style="max-width: 500px;">
+</div>
+The first principal component (red arrow) is the direction of the largest variance,
+in this case the longest axis of the molecule, while the second principal component
+(turquoise arrow) is the direction of the second largest variance,
+in this case the second longest axis of the molecule. The third principal component
+(purple arrow) is the direction of the smallest variance, which is perpendicular to the
+plane of the molecule. Since the tetracene molecule has almost no out-of-plane
+displacement of the atoms, the explained variance or the singular value of the
+third principal component is almost zero.
+
+Finally, we can project the molecule onto the principal components
+using {{eqref: eq:pca_projection}}, and plot the first two coordinates
+```python
+{{#include ../codes/04-evd_and_svd/tetracene_plane.py:plot_projection}}
+```
+The resulting plot looks like this:
+<div align="center">
+  <img src="../assets/figures/04-evd_and_svd/tetracene_projection.svg" alt="Projection of Tetracene Molecule onto the First Two Principal Components" style="width: 720px;">
+</div>
+
+This is a very simple way to align planar molecules to the coordinate axes.
+A more sophisticated algorithm for aligning (also non-planar) molecules is the 
+[*Kabsch algorithm*](https://en.wikipedia.org/wiki/Kabsch_algorithm),
+which is also based on PCA.
+
+In this section, we have seen how PCA can be used to reduce the dimensionality
+of data and to find the most important features of a dataset.
+This is one of many methods collectively referred to as
+[*dimensionality reduction*](https://en.wikipedia.org/wiki/Dimensionality_reduction),
+which is a common task in data analysis and machine learning.
 
