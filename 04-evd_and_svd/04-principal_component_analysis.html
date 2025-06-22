@@ -197,7 +197,7 @@
                     <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
                         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
 <h2 id="principal-component-analysis"><a class="header" href="#principal-component-analysis">Principal Component Analysis</a></h2>
-<p>In last section, we learned that SVD can be used to find the best
+<p>In the last section, we learned that SVD can be used to find the best
 rank-<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span> approximation of a matrix <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol">A</span></span></span></span></span></span> with respect to the Frobenius norm.
 Consider the rank-1 approximation of <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol">A</span></span></span></span></span></span>. Since this is just the
 rank-1 matrix <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2333em;vertical-align:-0.2663em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">u</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5 3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11 10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63 -1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1 -7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59 H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359 c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5 3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11 10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63 -1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1 -7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59 H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359 c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.967em;"><span style="top:-2.4337em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span><span style="top:-3.1809em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">†</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2663em;"><span></span></span></span></span></span></span></span></span></span> with the largest
@@ -268,7 +268,7 @@ also known as <em>loadings</em>, while the singular values <span class="katex"><
 weighting of the respective principal component. A common term is the
 <em>explained variance</em> <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">η</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> of the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>-th principal component,
 which is given by
-<span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">η</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.6129em;vertical-align:-1.1218em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4911em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.162em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4358em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7959em;"><span style="top:-2.4231em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span><span style="top:-3.0448em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.413em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-2.4413em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2587em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.1218em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span></span></span></span></span>
+<span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">η</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.6129em;vertical-align:-1.1218em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4911em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.162em;"><span style="top:-2.4003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4358em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7959em;"><span style="top:-2.4231em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span><span style="top:-3.0448em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.413em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-2.4413em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2587em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.1218em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mpunct">,</span><span class="enclosing" id="eq:explained_variance"></span></span><span class="tag"><span class="strut" style="height:2.6129em;vertical-align:-1.1218em;"></span><span class="mord text"><span class="mord">(</span><span class="mord"><span class="mord">3.9</span></span><span class="mord">)</span></span></span></span></span></span>
 where the sum runs over all singular values.</p>
 <p>Because the right singular vectors <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.864em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5 3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11 10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63 -1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1 -7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59 H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359 c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> are orthonormal, we can
 interpret them as an orthonormal basis of the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span>-dimensional space,
@@ -276,7 +276,7 @@ which might be a more natural representation of the data points than
 the original features.</p>
 <p>The projection of the data points onto the principal components can
 be computed by the matrix product
-<span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol" style="margin-right:0.07778em;">X</span></span></span><span class="mord"><span class="mord"><span class="mord boldsymbol" style="margin-right:0.25555em;">V</span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9251em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol" style="margin-right:0.11424em;">U</span></span></span><span class="mord"><span class="mord"><span class="mord mathbf">Σ</span></span></span><span class="mord"><span class="mord"><span class="mord"><span class="mord boldsymbol" style="margin-right:0.25555em;">V</span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9251em;"><span style="top:-3.139em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">†</span></span></span></span></span></span></span></span><span class="mord"><span class="mord"><span class="mord boldsymbol" style="margin-right:0.25555em;">V</span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol" style="margin-right:0.11424em;">U</span></span></span><span class="mord"><span class="mord"><span class="mord mathbf">Σ</span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">.</span></span></span></span></span>
+<span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol" style="margin-right:0.07778em;">X</span></span></span><span class="mord"><span class="mord"><span class="mord boldsymbol" style="margin-right:0.25555em;">V</span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.9251em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol" style="margin-right:0.11424em;">U</span></span></span><span class="mord"><span class="mord"><span class="mord mathbf">Σ</span></span></span><span class="mord"><span class="mord"><span class="mord"><span class="mord boldsymbol" style="margin-right:0.25555em;">V</span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9251em;"><span style="top:-3.139em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">†</span></span></span></span></span></span></span></span><span class="mord"><span class="mord"><span class="mord boldsymbol" style="margin-right:0.25555em;">V</span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord"><span class="mord"><span class="mord boldsymbol" style="margin-right:0.11424em;">U</span></span></span><span class="mord"><span class="mord"><span class="mord mathbf">Σ</span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">.</span><span class="enclosing" id="eq:pca_projection"></span></span><span class="tag"><span class="strut" style="height:1.1751em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">(</span><span class="mord"><span class="mord">3.10</span></span><span class="mord">)</span></span></span></span></span></span>
 Thus, the projection of the data points onto the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>-th principal component
 is given by the product of the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>-th left singular vector <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.864em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">u</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2077em;"><span class="overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width='0.471em' height='0.714em' style='width:0.471em' viewBox='0 0 471 714' preserveAspectRatio='xMinYMin'><path d='M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5 3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11 10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63 -1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1 -7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59 H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359 c-16-25.333-24-45-24-59z'/></svg></span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> with
 the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6595em;"></span><span class="mord mathnormal">i</span></span></span></span>-th singular value <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.0359em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>. This projection
@@ -291,80 +291,114 @@ Schmidt decomposition theorem, we know that this projection always provides
 the best approximation of the original data points in a <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>-dimensional space.
 Thus, we can use PCA to approximate a high-dimensional dataset with only a few
 principal components, without losing too much information about the data.</p>
-<h3 id="implementation-wine-categorisation"><a class="header" href="#implementation-wine-categorisation">Implementation: Wine Categorisation</a></h3>
-<div id="admonition-under-construction" class="admonition admonish-danger">
-<div class="admonition-title">
-<p>Under Construction</p>
-<p><a class="admonition-anchor-link" href="#admonition-under-construction"></a></p>
+<h3 id="example-1-wine-categorisation"><a class="header" href="#example-1-wine-categorisation">Example 1: Wine Categorisation</a></h3>
+<p>It all began – as great scientific ideas often do – over a dinner conversation
+accompanied by a glass of wine (or perhaps two). My professor, deep in discussion
+with a colleague from food chemistry, pondered how advanced spectroscopy and
+machine learning could elegantly classify wines. Inspired by their sophisticated
+yet rather pricey vision, I asked myself: could we democratise wine-sniffing?
+Could we create an affordable alternative – something a (under-)graduate student’s
+budget could comfortably swallow?</p>
+<p>Recalling a playful project aptly named
+“<a href="https://makezine.com/projects/second-sense-build-an-ai-smart-nose/">Second Sense: Build an AI Smart Nose</a>”
+from <em>Make Magazine</em>, the idea fermented quickly.
+Thus, armed with little more than curiosity and a budget-friendly gas sensor,
+I set out to distinguish wines without breaking the bank – or the glassware.</p>
+<p>This section follows the first steps of this journey, where we explore how to
+apply Principal Component Analysis (PCA) to a dataset of wines,
+revealing the subtle patterns hidden in the scents of our beloved beverage.</p>
+<p>In this section, we will implement PCA on a dataset of wines to explore how
+we can classify wines based on seemingly unrelated properties.</p>
+<div align="center">
+  <img src="../assets/figures/04-evd_and_svd/artificial_nose.jpg" alt="artificial nose" style="max-width: 500px;">
 </div>
-<div>
-<p>This section is currently under construction. Please check back later.</p>
-</div>
-</div>
-<p>Wir implementieren die PCA am Beispiel des Weindatensatzes.
-Dieser enthält Messungen von 13 physikalischen und chemischen
-Eigenschaften von insgesamt 178 Weinen aus drei verschiedenen Rebsorten:
-Barolo, Grignolino und Barbera. Die ersten Einträge des Datensatzes haben
-die folgende Form:</p>
-<pre><code class="language-txt">1,14.23,1.71,2.43,15.6,127,2.8,3.06,.28,2.29,5.64,1.04,3.92,1065
-1,13.2,1.78,2.14,11.2,100,2.65,2.76,.26,1.28,4.38,1.05,3.4,1050
-1,13.16,2.36,2.67,18.6,101,2.8,3.24,.3,2.81,5.68,1.03,3.17,1185
-1,14.37,1.95,2.5,16.8,113,3.85,3.49,.24,2.18,7.8,.86,3.45,1480
-1,13.24,2.59,2.87,21,118,2.8,2.69,.39,1.82,4.32,1.04,2.93,735
-1,14.2,1.76,2.45,15.2,112,3.27,3.39,.34,1.97,6.75,1.05,2.85,1450
-1,14.39,1.87,2.45,14.6,96,2.5,2.52,.3,1.98,5.25,1.02,3.58,1290
-1,14.06,2.15,2.61,17.6,121,2.6,2.51,.31,1.25,5.05,1.06,3.58,1295
-1,14.83,1.64,2.17,14,97,2.8,2.98,.29,1.98,5.2,1.08,2.85,1045
-1,13.86,1.35,2.27,16,98,2.98,3.15,.22,1.85,7.22,1.01,3.55,1045
+This budget-friendly wine sniffer, of course shaped like a nose,
+is based on a gas sensor that can detect the concentration of 
+the following gases:
+- Nitrogen dioxide (NO<sub>2</sub>)
+- Ethanol (EtOH)
+- Volatile organic compounds (VOCs)
+- Carbon monoxide (CO)
+Although NO<sub>2</sub> and CO are not directly related to the wine's
+quality, due to the sensors being not very selective, they can detect
+the presence of other gases that are present in the wine's aroma.
+<p>This dataset comprises measurements of 4 different wines</p>
+<ul>
+<li>Wappenlese Weiss (White) (1)</li>
+<li>Wappenlese Rot (Red) (2)</li>
+<li>Soave (White) (3)</li>
+<li>Bardolino (Red) (4)
+and empty glasses (0).
+For each wine, around 1000 measurements were taken, with each measurement
+consisting of the temperature, the relative humidity, and the
+voltage reading of the gas sensor for each of the four gases
+(NO<sub>2</sub>, EtOH, VOCs, CO).</li>
+</ul>
+<p>The first few lines of the dataset look like this:</p>
+<pre><code class="language-txt">category,temperature,humidity,v_no2,v_etoh,v_voc,v_co
+0,20.1,46.6,0.18,0.52,0.71,1.05
+0,20.1,46.7,0.18,0.52,0.71,1.05
+0,20.1,46.6,0.19,0.52,0.71,1.05
+0,20.1,46.6,0.18,0.52,0.71,1.05
+0,20.1,46.7,0.18,0.52,0.71,1.05
+0,20.1,46.6,0.18,0.52,0.71,1.05
+0,20.1,46.7,0.18,0.52,0.71,1.05
+0,20.1,46.6,0.18,0.52,0.71,1.05
+0,20.1,46.7,0.18,0.52,0.71,1.05
 </code></pre>
-<p>und der gesamte Datensatz kann
-<a href="../codes/04-evd_and_svd/wine.csv" download>hier</a> heruntergeladen
-werden. Die Datei <code>wine.csv</code> enthält die Daten im sogenannten
-<em>Comma-Separated Values</em> (CSV) Format, also mit Werten, die durch Kommata
-getrennt sind.</p>
-<p>Als erstes importieren wir die benötigten Bibliotheken</p>
+<p>and the entire dataset can be downloaded from
+<a href="../codes/04-evd_and_svd/wine.csv" download>here</a>.
+The file <code>wine.csv</code> contains the data in the so-called
+<em>Comma-Separated Values</em> (CSV) format, meaning that the values
+are separated by commas.</p>
+<p>First, we import the necessary libraries:</p>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
 </code></pre>
-<p>und lesen die Daten aus der Datei <code>wine.csv</code> ein:</p>
-<pre><code class="language-python">data = np.loadtxt('wine.csv', delimiter=',')
-categories = data[:, 0].astype(int) - 1
-features = data[:, 1:].astype(float)
+<p>and read the data from the file <code>wine.csv</code>:</p>
+<pre><code class="language-python">data = np.loadtxt('wine.csv', delimiter=',', skiprows=1)
+categories = data[:, 0].astype(int)
+features = data[:, 3:].astype(float)
 </code></pre>
-<p>Hier haben wir das Argument <code>delimiter=','</code> an die Funktion <code>np.loadtxt</code>
-übergeben, da die Werte in der Datei nicht wie bisher durch Leerzeichen
-getrennt sind.
-Zudem haben wir die Labels der Rebsorten (nullte Spalte) in der Variable
-<code>categories</code> als 0-indizierte Integers gespeichert und somit von den
-Eigenschaften der Weine, die wir als Floats in der Variable <code>features</code>
-gespeichert haben, abgetrennt.</p>
-<p>Weitere versteckte Informationen, wie die Namen der Rebsorten
-und der gemessenen Eigenschaften, sind für die
-Mathematik zwar nicht relevant, können aber für die Interpretation der
-Ergebnisse sehr hilfreich sein. Daher speichern wir diese in Listen:</p>
-<pre><code class="language-python">CATEGORY_LABELS = ['Barolo', 'Grignolino', 'Barbera']
-FEATURE_LABELS = [
-    'alcohol', 'malic acid', 'ash', 'alcalinity of ash', 'magnesium',
-    'total phenols', 'flavanoids', 'nonflavanoid phenols',
-    'proanthocyanins', 'color intensity', 'hue',
-    'OD280/OD315', 'proline',
-]
+<p>Here, we passed the argument <code>delimiter=','</code> to the function <code>np.loadtxt</code>
+because the values in the file are not separated by spaces as before,
+but by commas. Also, we supplied the argument <code>skiprows=1</code> to skip the header
+line of the CSV file, which contains the names of the features.
+We also separated the labels of the wines (the first column) into the variable
+<code>categories</code> as integers, and the gas sensor readings
+as floats in the variable <code>features</code>. The temperature and relative humidity
+are not used for the PCA, but can be useful for further analysis.</p>
+<p>The measurements for empty glasses are only used for calibration, so we
+do not use them for the PCA. To filter out the empty glasses, we
+use the following code:</p>
+<pre><code class="language-python">
 </code></pre>
-<p>Da sich in diesem Datensatz die Größenordnung der Eigenschaften sehr
-stark unterscheidet, führen wir eine Standardisierung der Daten durch:</p>
+<p>We created the boolean mask <code>mask</code> that is <code>True</code> for all rows where the
+category is not 0 (i.e., not an empty glass) and then used it to filter
+the <code>features</code> and <code>categories</code> arrays. The resulting arrays
+<code>features</code> and <code>categories</code> now only contain the measurements for the wines.</p>
+<p>Information like the names of the wines and the measured properties
+are not relevant for the mathematics, but can be very helpful for interpreting
+the results. Therefore, we store these in lists:</p>
+<pre><code class="language-python">CATEGORY_LABELS = ['Wappenlese Weiß', 'Wappenlese Rot', 'Soave', 'Bardolino']
+FEATURE_LABELS = ['V_NO2', 'V_EtOH', 'V_VOC', 'V_CO']
+</code></pre>
+<p>Now, we start the PCA by standardising the data:</p>
 <pre><code class="language-python">features -= features.mean(axis=0)
 features /= features.std(axis=0)
 </code></pre>
-<p>Anschließend berechnen wir die Singulärwertzerlegung der standardisierten
-Datenmatrix:</p>
+<p>After standardisation, we compute the singular value decomposition
+of the standardised data matrix:</p>
 <pre><code class="language-python">u, s, vh = np.linalg.svd(features, full_matrices=False)
 pcs = vh.T
 proj = u @ np.diag(s)
 expl_var = s**2 / np.sum(s**2)
 </code></pre>
-<p>Zusätzlich haben wir die Hauptkomponenten, die Projektion der Datenpunkte
-auf die Hauptkomponenten, sowie die Varianzanteile bestimmt.
-Die Ergebnisse sehen wie folgt aus:</p>
+<p>We also computed the principal components, the projection of the data points
+onto the principal components using <a href="#eq:pca_projection">(3.10)</a>,
+and the explained variance of the principal components according to
+<a href="#eq:explained_variance">(3.9)</a>.
+The results look like this:</p>
 <pre><code class="language-python">print('First principal component:')
 print(pcs[:, 0])
 print('Explained variance:')
@@ -372,41 +406,38 @@ print(expl_var)
 
 assert np.allclose(
     pcs[:, 0], 
-    [-0.1443294, 0.24518758, 0.00205106, 0.23932041, -0.14199204, -0.39466085,
-     -0.4229343, 0.2985331, -0.31342949, 0.0886167, -0.29671456, -0.37616741,
-     -0.28675223],
+    [0.57725187, 0.59546988, 0.55488817, 0.06553647],
 )
 assert np.allclose(
     expl_var,
-    [0.36198848, 0.1920749, 0.11123631, 0.0706903, 0.06563294, 0.04935823,
-     0.04238679, 0.02680749, 0.02222153, 0.01930019, 0.01736836, 0.01298233,
-     0.00795215],
+    [0.61840175, 0.27550301, 0.06891797, 0.03717727],
 )
 </code></pre>
-<p>Wir sehen, dass zu der ersten Hauptkomponente <code>pcs[:,0]</code>, die eine Linearkombination
-aller Eigenschaften der Weine ist, die 5., 6. und 11. Eigenschaften
-(0-indiziert, also “total phenols”, “flavanoids” und
-“OD280/OD315”) mit den (betragsmäßig) größten Gewichten beitragen. Diese Hauptkomponente erklärt
-bereits ca. 36 % der Varianz der Daten. Mit der zweiten Hauptkomponente
-zusammen können ca. 55 % der Varianz erklärt werden. Die Varianzanteile
-können wir mit dem folgenden Code visualisieren:</p>
+<p>We see that the first principal component <code>pcs[:,0]</code>, which is
+a linear combination of all features of the wines, is primarily influenced
+by the first three features (<em>i.e.</em> “V_NO2”, “V_EtOH”, and “V_VOC”)
+with the largest (absolute) weights.
+This principal component already explains about 62~% of the variance in the data.
+Together with the second principal component, about 89~% of the variance
+can be explained.
+We can visualise the explained variance using the following code:</p>
 <pre><code class="language-python">fig1, ax1 = plt.subplots(figsize=(8, 6))
 
-ax1.set_xticks(range(1, 14, 2))
+ax1.set_xticks(range(1, n_features + 1))
 ax1.set_xlabel('principal component index')
 ax1.set_ylabel('explained variance')
 
-ax1.bar(range(1, 14), expl_var, color='tab:blue')
-ax1.plot(range(1, 14), np.cumsum(expl_var), 'o-', c='tab:orange')
+ax1.bar(range(1, n_features + 1), expl_var, color='tab:blue')
+ax1.plot(range(1, n_features + 1), np.cumsum(expl_var), 'o-', c='tab:orange')
 
 fig1.tight_layout()
 plt.show()
 </code></pre>
-<p>Hier haben wir die Funktion <code>np.cumsum</code> verwendet, um die kumulierten
-Summen der Varianzanteile zu berechnen. Der resultierende Plot sieht wie folgt aus:
-<img src="../assets/figures/04-evd_and_svd/pca_wine_variance.svg" alt="Varianzanteile der Hauptkomponenten" /></p>
-<p>Da wir Datenpunkte in 2D leicht visualisieren können, plotten wir die
-Projektion der Datenpunkte auf die ersten beiden Hauptkomponenten:</p>
+<p>Here, we used the function <code>np.cumsum</code> to compute the cumulative sums
+of the explained variance. The resulting plot looks like this:
+<img src="../assets/figures/04-evd_and_svd/pca_wine_variance.svg" alt="Explained Variance of Principal Components" /></p>
+<p>Because the visualisation of data points works best in 2D, we plot the
+projection of the data points onto the first two principal components:</p>
 <pre><code class="language-python">fig2, ax2 = plt.subplots(figsize=(8, 6))
 ax2.set_aspect('equal')
 ax2.set_xlabel(f'PC 1 ({expl_var[0]:.2f})')
@@ -416,19 +447,20 @@ scat = ax2.scatter(proj[:, 0], proj[:, 1])
 fig2.tight_layout()
 plt.show()
 </code></pre>
-<p>Aufgrund der Standardisierung der Datenpunkte auf die Einheitsvarianz
-ist es sinnvoll, die Hauptkomponenten gleichermaßen
-skaliert zu plotten. Aus diesem Grund haben wir die Methode <code>set_aspect('equal')</code>
-auf die Achsenobjekte angewendet. Der resultierende Plot sieht wie folgt aus:
-<img src="../assets/figures/04-evd_and_svd/pca_wine_projection.svg" alt="Projektion der Weindaten auf die ersten beiden Hauptkomponenten" /></p>
-<p>Da die ersten beiden Hauptkomponenten bereits ca. 55 % der Varianz der Daten
-erklären, können wir davon ausgehen, dass wichtige Strukturen des Datensatzes
-in dieser 2D-Projektion erhalten sind. In diesem Plot erkennen wir aber
-zunächst nur einen Halbkreis an Punkten, sowie ein “Loch” in der Mitte. Um die Struktur der
-Datenpunkte in dieser Projektion besser zu verstehen, können wir die Datenpunkte gemäß den Rebsorten,
-die wir für die PCA <strong>nicht</strong> verwendet haben, einfärben:</p>
-<pre><code class="language-python">CATEGORY_COLORS = ['#66c2a5', '#fc8d62', '#8da0cb']
-colors = [CATEGORY_COLORS[c] for c in categories]
+<p>Due to the standardisation of the data points to unit variance,
+it makes sense to plot the principal components with equal scaling.
+We applied the method <code>set_aspect('equal')</code> to the axes objects
+for this purpose. The resulting plot looks like this:
+<img src="../assets/figures/04-evd_and_svd/pca_wine_projection.svg" alt="Projection of Wine Data onto the First Two Principal Components" /></p>
+<p>Because the first two principal components already explain about
+89~% of the variance in the data, we can assume that important structures
+of the dataset are preserved in this 2D projection. However, in this plot, we
+initially only see some cluster of points, vaguely organised into
+three islands. To better understand the structure of the data points
+in this projection, we can colour the data points according to the wine types
+that we <strong>did not</strong> use for the PCA:</p>
+<pre><code class="language-python">CATEGORY_COLORS = ['#ffffb3', '#bebada', '#8dd3c7', '#fb8072']
+colors = [CATEGORY_COLORS[c - 1] for c in categories]
 scat.set_color(colors)
 
 for c, l in zip(CATEGORY_COLORS, CATEGORY_LABELS):
@@ -437,42 +469,123 @@ ax2.legend()
 
 plt.show()
 </code></pre>
-<p>Anstatt einen neuen Plot zu erstellen, haben wir die Farben der Datenpunkte
-mit der Methode <code>set_color</code> des Plot-Objekts geändert. Und um eine Legende
-anzeigen zu lassen, haben wir drei leere Scatter-Plots mit passenden Farben
-und Labels erstellt. Der resultierende Plot sieht wie folgt aus:
-<img src="../assets/figures/04-evd_and_svd/pca_wine_projection_coloured.svg" alt="Projektion der Weindaten auf die ersten beiden Hauptkomponenten, eingefärbt nach Rebsorten" /></p>
-<p>Wir erkennen jetzt deutlich, dass die Datenpunkte, bis auf wenige Ausnahmen,
-in der 2D-Projektion entsprechend ihrer Sorten gut voneinander getrennt sind. Wir haben also eine
-Darstellung gefunden, in welcher wir die Rebsorten anhand der physikalischen und
-chemischen Eigenschaften der Weine leicht unterscheiden (d.h. klassifizieren) könnten.</p>
-<p>In diesem Abschnitt haben wir gesehen, dass die Kooridnaten der
-Datenpunkte in der Basis der Features vollständig bekannt sein müssen,
-um die PCA durchzuführen.
-Bei Messdaten ist diese Voraussetzung in der Regel erfüllt,
-aber was ist, wenn wir Daten mit sehr vielen Features
-vorliegen haben, z.B. Bilder? Ein kleines Bild mit <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">100</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">100</span></span></span></span> Pixeln hat
-bereits 10000 Features, und ein hochauflösendes Bild mit <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1000</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1000</span></span></span></span>
-Pixeln hat sogar eine Millionen Features. In diesem Fall würde die Durchführung
-der PCA auf die Datenpunkte in der Basis der Pixelwerte sehr viel Resourcen
-benötigen. Es wäre in diesem Fall effizienter, wenn wir den  <em>Abstand</em> zwischen den
-Datenpunkten für die PCA verwendet werden könnten, für den wir nur einen Skalar
-für jedes Paar von Datenpunkten berechnen müssten. Eine Abstandsmetrik kann auch
-dann hilfreich sein, wenn keine wirklich sinnvollen Koordinaten für die Datenpunkte
-vorliegen, wie z.B. bei Texten oder chemischen Verbindungen.</p>
-<p>Tatsächlich lassen sich die Hauptkomponenten allein aus solchen Abständen
-bestimmen. Eine Realisierung bietet die Methode der
-<em>Hauptkoordinatenanalyse</em> (engl. <em>Principal Coordinate Analysis</em>, PCoA).</p>
-<h3 id="implementation-molecular-alignment"><a class="header" href="#implementation-molecular-alignment">Implementation: Molecular Alignment</a></h3>
-<div id="admonition-under-construction-1" class="admonition admonish-danger">
-<div class="admonition-title">
-<p>Under Construction</p>
-<p><a class="admonition-anchor-link" href="#admonition-under-construction-1"></a></p>
+<p>Instead of creating a new plot, we changed the colours of the data points
+using the <code>set_color</code> method of the plot object. To display a legend,
+we created three empty scatter plots with the appropriate colours and labels.
+The resulting plot looks like this:
+<img src="../assets/figures/04-evd_and_svd/pca_wine_projection_coloured.svg" alt="Projection of Wine Data onto the First Two Principal Components, Coloured by Wine Types" /></p>
+<p>We can now clearly see that the data points are separated according to
+their wine types, albeit with some overlap.
+If one would project the data points onto the first three principal components
+instead of the first two, one would see an excellent separation of the
+data points according to their wine types.
+This can be used to classify the wines based on their scents, as measured
+by the budget-friendly wine sniffer.</p>
+<h3 id="example-2-molecular-alignment"><a class="header" href="#example-2-molecular-alignment">Example 2: Molecular Alignment</a></h3>
+<p>We will now take a look at another application of PCA, now in the field
+of quantum chemistry. A common format of storing molecular structures
+is the <em>xyz</em> format. The first line of the file contains the number of
+atoms, the second line is a comment, and the following lines contain the
+atomic symbols and their coordinates in 3D space. For example, the file
+<code>tetracene.xyz</code>, which can be downloaded from
+<a href="../codes/04-evd_and_svd/tetracene.xyz" download>here</a>,
+begins with the following lines:</p>
+<pre><code class="language-txt">   30
+ 
+ C     2.103026    -3.109072    -1.323374
+ C     0.835350    -2.955840    -0.663995
+ C    -0.333520    -3.537526    -1.279603
+ C    -0.174029    -4.261788    -2.509717
+ C     1.049708    -4.392353    -3.093802
+ C     2.207161    -3.800270    -2.493460
+ C    -1.573581    -3.374583    -0.676342
+ C    -1.721769    -2.667434     0.533868
+</code></pre>
+<p>Although being very vivid, this representation of the molecular structure
+does not respect the translational and rotational symmetries
+(and several other symmetries) of the molecule.
+Two wildly different xyz-files can represent exactly the same molecule
+at exactly the same position in space.</p>
+<p>The optimal structure of the tetracene molecule in its electronic ground state
+is planar, meaning that all atoms lie in the same plane. In the sample of
+the xyz-file above, no coordinate is exactly zero, which means that the
+molecule is not aligned to the coordinate axes.
+We shall now use PCA to find the plane where the molecule lies,
+and then project the molecule onto this plane.</p>
+<p>Again, we start by importing the necessary libraries:</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+</code></pre>
+<p>Next, we read the xyz-file and extract the coordinates of the atoms:</p>
+<pre><code class="language-python">GEOM_XYZ = 'tetracene.xyz'
+symbols = []
+coords = []
+with open(GEOM_XYZ, 'r') as f:
+    for line in f:
+        tmp = line.split()
+        if len(tmp) &gt; 3:
+            symbols.append(tmp[0])
+            coords.append([float(x) for x in tmp[1:4]])
+symbols = np.array(symbols)
+coords = np.array(coords)
+</code></pre>
+<p>Afterwards, we center the coordinates of the atoms by subtracting the mean
+of the coordinates from each coordinate, followed by SVD:</p>
+<pre><code class="language-python">centroid = np.mean(coords, axis=0)
+coords -= centroid
+
+u, s, vh = np.linalg.svd(coords, full_matrices=False)
+</code></pre>
+<p>Normalisation or standardisation is not performed here, as we do not
+want to distort the distances between the atoms.</p>
+<p>The explained variances are computed according to
+<a href="#eq:explained_variance">(3.9)</a>:</p>
+<pre><code class="language-python">expl_var = s**2 / np.sum(s**2)
+
+print('Explained variance:', expl_var)
+assert np.allclose(expl_var, [8.30213895e-01, 1.69730510e-01, 5.55956455e-05])
+</code></pre>
+<p>One clearly sees that the explained variance of the third principal component
+is much smaller than that of the first two principal components.</p>
+<p>For a better understanding of the principal components,
+they are visualised as arrows in the 3D space, along with the atoms:</p>
+<div align="center">
+  <img src="../assets/figures/04-evd_and_svd/tetracene_3d.svg" alt="PCA of Tetracene Molecule" style="max-width: 500px;">
 </div>
-<div>
-<p>This section is currently under construction. Please check back later.</p>
+The first principal component (red arrow) is the direction of the largest variance,
+in this case the longest axis of the molecule, while the second principal component
+(turquoise arrow) is the direction of the second largest variance,
+in this case the second longest axis of the molecule. The third principal component
+(purple arrow) is the direction of the smallest variance, which is perpendicular to the
+plane of the molecule. Since the tetracene molecule has almost no out-of-plane
+displacement of the atoms, the explained variance or the singular value of the
+third principal component is almost zero.
+<p>Finally, we can project the molecule onto the principal components
+using <a href="#eq:pca_projection">(3.10)</a>, and plot the first two coordinates</p>
+<pre><code class="language-python">fig, ax = plt.subplots(figsize=(6, 3))
+proj = u @ np.diag(s)
+ax.scatter(proj[:,0], proj[:,1], s=60, marker='o')
+
+ax.set_aspect('equal')
+ax.set_xlabel(f'PC1 ({expl_var[0]*100:.1f}%)')
+ax.set_ylabel(f'PC2 ({expl_var[1]*100:.1f}%)')
+
+fig.tight_layout()
+plt.show()
+</code></pre>
+<p>The resulting plot looks like this:</p>
+<div align="center">
+  <img src="../assets/figures/04-evd_and_svd/tetracene_projection.svg" alt="Projection of Tetracene Molecule onto the First Two Principal Components" style="width: 720px;">
 </div>
-</div>
+<p>This is a very simple way to align planar molecules to the coordinate axes.
+A more sophisticated algorithm for aligning (also non-planar) molecules is the
+<a href="https://en.wikipedia.org/wiki/Kabsch_algorithm"><em>Kabsch algorithm</em></a>,
+which is also based on PCA.</p>
+<p>In this section, we have seen how PCA can be used to reduce the dimensionality
+of data and to find the most important features of a dataset.
+This is one of many methods collectively referred to as
+<a href="https://en.wikipedia.org/wiki/Dimensionality_reduction"><em>dimensionality reduction</em></a>,
+which is a common task in data analysis and machine learning.</p>
 
                     </main>
 

@@ -6,19 +6,21 @@ import matplotlib.pyplot as plt
 ### ANCHOR_END: imports
 
 ### ANCHOR: load_data
-data = np.loadtxt('wine.csv', delimiter=',')
-categories = data[:, 0].astype(int) - 1
-features = data[:, 1:].astype(float)
+data = np.loadtxt('wine.csv', delimiter=',', skiprows=1)
+categories = data[:, 0].astype(int)
+features = data[:, 3:].astype(float)
 ### ANCHOR_END: load_data
 
+### AHCNOR: filter_data
+mask = categories != 0
+categories = categories[mask]
+features = features[mask]
+n_samples, n_features = features.shape
+### ANCHOR_END: filter_data
+
 ### ANCHOR: labels
-CATEGORY_LABELS = ['Barolo', 'Grignolino', 'Barbera']
-FEATURE_LABELS = [
-    'alcohol', 'malic acid', 'ash', 'alcalinity of ash', 'magnesium',
-    'total phenols', 'flavanoids', 'nonflavanoid phenols',
-    'proanthocyanins', 'color intensity', 'hue',
-    'OD280/OD315', 'proline',
-]
+CATEGORY_LABELS = ['Wappenlese Weiß', 'Wappenlese Rot', 'Soave', 'Bardolino']
+FEATURE_LABELS = ['V_NO2', 'V_EtOH', 'V_VOC', 'V_CO']
 ### ANCHOR_END: labels
 
 ### ANCHOR: standardise
@@ -41,27 +43,23 @@ print(expl_var)
 
 assert np.allclose(
     pcs[:, 0], 
-    [-0.1443294, 0.24518758, 0.00205106, 0.23932041, -0.14199204, -0.39466085,
-     -0.4229343, 0.2985331, -0.31342949, 0.0886167, -0.29671456, -0.37616741,
-     -0.28675223],
+    [0.57725187, 0.59546988, 0.55488817, 0.06553647],
 )
 assert np.allclose(
     expl_var,
-    [0.36198848, 0.1920749, 0.11123631, 0.0706903, 0.06563294, 0.04935823,
-     0.04238679, 0.02680749, 0.02222153, 0.01930019, 0.01736836, 0.01298233,
-     0.00795215],
+    [0.61840175, 0.27550301, 0.06891797, 0.03717727],
 )
 ### ANCHOR_END: verify_pca
 
 ### ANCHOR: plot_variance
 fig1, ax1 = plt.subplots(figsize=(8, 6))
 
-ax1.set_xticks(range(1, 14, 2))
+ax1.set_xticks(range(1, n_features + 1))
 ax1.set_xlabel('principal component index')
 ax1.set_ylabel('explained variance')
 
-ax1.bar(range(1, 14), expl_var, color='tab:blue')
-ax1.plot(range(1, 14), np.cumsum(expl_var), 'o-', c='tab:orange')
+ax1.bar(range(1, n_features + 1), expl_var, color='tab:blue')
+ax1.plot(range(1, n_features + 1), np.cumsum(expl_var), 'o-', c='tab:orange')
 
 fig1.tight_layout()
 plt.show()
@@ -83,8 +81,8 @@ plt.show()
 fig2.savefig('../../assets/figures/04-evd_and_svd/pca_wine_projection.svg')
 
 ### ANCHOR: plot_pca_coloured
-CATEGORY_COLORS = ['#66c2a5', '#fc8d62', '#8da0cb']
-colors = [CATEGORY_COLORS[c] for c in categories]
+CATEGORY_COLORS = ['#ffffb3', '#bebada', '#8dd3c7', '#fb8072']
+colors = [CATEGORY_COLORS[c - 1] for c in categories]
 scat.set_color(colors)
 
 for c, l in zip(CATEGORY_COLORS, CATEGORY_LABELS):

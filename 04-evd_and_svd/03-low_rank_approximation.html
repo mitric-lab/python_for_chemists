@@ -513,7 +513,14 @@ of acetic anhydride fade away, while the carbonyl band of acetic acid
 grows in intensity. The O–H band of acetic acid also grows in intensity.</p>
 <p>We can now treat the dataset as a matrix and apply SVD to it.
 Afterwards, we plot the 10 largest singular values.</p>
-<pre><code class="language-python">
+<pre><code class="language-python">u, s, vh = np.linalg.svd(trir, full_matrices=False)
+
+fig3, ax3 = plt.subplots(figsize=(6, 3))
+ax3.plot(s[:10], marker='o')
+ax3.set_xlabel('index')
+ax3.set_ylabel('singular value')
+ax3.set_yscale('log')
+fig3.tight_layout()
 </code></pre>
 <p>Because the singular values are sorted in descending order, we can simply
 plot the first 10 singular values. Since they span several
