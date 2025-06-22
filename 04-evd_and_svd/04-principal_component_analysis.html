@@ -315,25 +315,27 @@ we can classify wines based on seemingly unrelated properties.</p>
 This budget-friendly wine sniffer, of course shaped like a nose,
 is based on a gas sensor that can detect the concentration of 
 the following gases:
-- Nitrogen dioxide (NO<sub>2</sub>)
-- Ethanol (EtOH)
-- Volatile organic compounds (VOCs)
-- Carbon monoxide (CO)
-Although NO<sub>2</sub> and CO are not directly related to the wine's
+<ul>
+<li>Nitrogen dioxide (NO<sub>2</sub>)</li>
+<li>Ethanol (EtOH)</li>
+<li>Volatile organic compounds (VOCs)</li>
+<li>Carbon monoxide (CO)</li>
+</ul>
+<p>Although NO<sub>2</sub> and CO are not directly related to the wine’s
 quality, due to the sensors being not very selective, they can detect
-the presence of other gases that are present in the wine's aroma.
+the presence of other gases that are present in the wine’s aroma.</p>
 <p>This dataset comprises measurements of 4 different wines</p>
 <ul>
 <li>Wappenlese Weiss (White) (1)</li>
 <li>Wappenlese Rot (Red) (2)</li>
 <li>Soave (White) (3)</li>
-<li>Bardolino (Red) (4)
-and empty glasses (0).
+<li>Bardolino (Red) (4)</li>
+</ul>
+<p>and empty glasses (0).
 For each wine, around 1000 measurements were taken, with each measurement
 consisting of the temperature, the relative humidity, and the
 voltage reading of the gas sensor for each of the four gases
-(NO<sub>2</sub>, EtOH, VOCs, CO).</li>
-</ul>
+(NO<sub>2</sub>, EtOH, VOCs, CO).</p>
 <p>The first few lines of the dataset look like this:</p>
 <pre><code class="language-txt">category,temperature,humidity,v_no2,v_etoh,v_voc,v_co
 0,20.1,46.6,0.18,0.52,0.71,1.05
@@ -371,7 +373,10 @@ are not used for the PCA, but can be useful for further analysis.</p>
 <p>The measurements for empty glasses are only used for calibration, so we
 do not use them for the PCA. To filter out the empty glasses, we
 use the following code:</p>
-<pre><code class="language-python">
+<pre><code class="language-python">mask = categories != 0
+categories = categories[mask]
+features = features[mask]
+n_samples, n_features = features.shape
 </code></pre>
 <p>We created the boolean mask <code>mask</code> that is <code>True</code> for all rows where the
 category is not 0 (i.e., not an empty glass) and then used it to filter
