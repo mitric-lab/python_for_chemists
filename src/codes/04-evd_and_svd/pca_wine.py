@@ -11,7 +11,7 @@ categories = data[:, 0].astype(int)
 features = data[:, 3:].astype(float)
 ### ANCHOR_END: load_data
 
-### AHCNOR: filter_data
+### ANCHOR: filter_data
 mask = categories != 0
 categories = categories[mask]
 features = features[mask]

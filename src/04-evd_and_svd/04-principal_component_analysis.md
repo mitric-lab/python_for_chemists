@@ -177,19 +177,23 @@ we can classify wines based on seemingly unrelated properties.
 This budget-friendly wine sniffer, of course shaped like a nose,
 is based on a gas sensor that can detect the concentration of 
 the following gases:
+
 - Nitrogen dioxide (NO<sub>2</sub>)
 - Ethanol (EtOH)
 - Volatile organic compounds (VOCs)
 - Carbon monoxide (CO)
+
 Although NO<sub>2</sub> and CO are not directly related to the wine's
 quality, due to the sensors being not very selective, they can detect
 the presence of other gases that are present in the wine's aroma.
 
 This dataset comprises measurements of 4 different wines
+
 - Wappenlese Weiss (White) (1)
 - Wappenlese Rot (Red) (2)
 - Soave (White) (3)
 - Bardolino (Red) (4)
+
 and empty glasses (0).
 For each wine, around 1000 measurements were taken, with each measurement
 consisting of the temperature, the relative humidity, and the
