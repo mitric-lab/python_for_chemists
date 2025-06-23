@@ -44,9 +44,8 @@
 
 [Problem Set 1](psets/01.md)
 [Problem Set 2](psets/02.md)
-[Problem Set 3]()
+[Problem Set 3](psets/03.md)
 [Problem Set 4]()
 [Problem Set 5]()
-[Problem Set 6]()
 [Sample Exam]()
 
