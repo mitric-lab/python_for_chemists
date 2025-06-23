@@ -272,7 +272,214 @@ The following figure illustrates the difference between these two problems:
 
 ### Example 2: Underdetermined Linear System
 
-```admonish note title="Under construction"
-No appropriate example yet.
+```admonish note title="Computational Details" collapsible=true
+The geometries used in this section are optimised at the
+&omega;B97X-D3/def2-TZVP level of theory as implemented in
+the ORCA 6.0.1 quantum chemistry package.
+The dipole moments and CHELPG are calculated at the
+&omega;B97XD/def2-TZVP level of theory using the
+Gaussian 16 package.
 ```
+
+In quantum mechanics, the electronic charge is described by a continuous
+charge density $\rho(\vec{r})$ in space. Albeit being correct, this
+description is not as intuitive as the classical view, where the charge
+is localised at every atomic nucleus. To bridge the gap between these two
+pictures, lots of schemes have been developed that approximate the
+continuous charge density by a discrete set of point charges.
+
+```admonish warning title="Atomic Charges"
+Because the charge in quantum mechanics is continuous in nature, 
+no discrete set of point charges can perfectly reproduce the
+continuous charge density. 
+Therefore, you should be aware that every scheme can have
+some shortcomings, and might lead to nonsensical results under
+some circumstances.
+```
+
+For the sake of demonstration, we will use a simple scheme that
+reproduces the monopole and dipole moments of the continuous charge
+density. 
+Suppose we have atoms at positions
+$\vec{R}_1, \vec{R}_2, \ldots, \vec{R}_N$ with charges
+$q_1, q_2, \ldots, q_N$, then the equations
+$$
+\begin{align*}
+    \sum_{i=1}^N q_i &= Q \\
+    \sum_{i=1}^N \vec{R}_i q_i &= \vec{\mu}
+    {{numeq}}{eq:monopole_dipole_equations}
+\end{align*}
+$$
+should be satisfied, where $Q$ is the total charge and $\vec{\mu}$ is the
+total dipole moment.
+There are in total 4 equations, but $N$ unknowns, namely the
+charges $q_i$. Thus for $N > 4$, the system of equations is definitely
+underdetermined. 
+In the following, we will use the MP pseudoinverse to find a solution that
+minimises the Euclidean norm of the charges, *i.e.*, we want to find
+$$
+  q_0 := \bm{A}^+ \vec{b} = \argmin{\bm{A} \vec{q} = \vec{b}} \| \vec{q} \|_2\,,
+$$
+
+First, we use the water molecule as an example, with the following coordinates
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:center;"> </th>
+      <th style="text-align:center;">$x$</th>
+      <th style="text-align:center;">$y$</th>
+      <th style="text-align:center;">$z$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>O</td>
+      <td style="text-align:right;">0.00000000</td>
+      <td style="text-align:right;">0.00000000</td>
+      <td style="text-align:right;">0.00000000</td>
+    </tr>
+    <tr>
+      <td>H</td>
+      <td style="text-align:right;">0.00000000</td>
+      <td style="text-align:right;">-0.76221179</td>
+      <td style="text-align:right;">-0.58030122</td>
+    </tr>
+    <tr>
+      <td>H</td>
+      <td style="text-align:right;">0.00000000</td>
+      <td style="text-align:right;">0.76221179</td>
+      <td style="text-align:right;">-0.58030122</td>
+  </tbody>
+</table>
+
+The dipole moment of the water molecule is 0.43433093&nbsp;e&ThinSpace;Å.
+
+Due to symmetry, the dipole moment of the water molecule at the coordinates
+given above can only point in the $z$-direction, so we can reduce our 
+system of equations to
+$$
+\begin{align*}
+    q_1 + q_2 + q_3 &= 0 \\
+    0 \cdot q_1 + (-0.58030122) \cdot q_2 + (-0.58030122) \cdot q_3 &= -0.43433093
+\end{align*}
+$$
+or, in matrix notation,
+$$
+\begin{pmatrix}
+  1 & 1 & 1 \\
+  0 & -0.58030122 & -0.58030122
+\end{pmatrix}
+\begin{pmatrix}
+  q_1 \\
+  q_2 \\
+  q_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+  0 \\
+  -0.43433093
+\end{pmatrix}\,.
+$$
+
+We can now implement this in Python:
+```python
+{{#include ../codes/04-evd_and_svd/pinv_dipole.py:imports}}
+```
+```python
+{{#include ../codes/04-evd_and_svd/pinv_dipole.py:water_linear_system}}
+```
+Then, we solve this underdetermined system using the MP pseudoinverse:
+```python
+{{#include ../codes/04-evd_and_svd/pinv_dipole.py:water_solution}}
+```
+This time, we used the
+[`np.linalg.pinv`](https://numpy.org/doc/stable/reference/generated/numpy.linalg.pinv.html)
+function to compute the MP pseudoinverse, which is already implemented in NumPy.
+We set the `rcond` parameter to `1e-12`, as in our own implementation.
+
+Comparing the results with 
+[CHELPG](https://en.wikipedia.org/wiki/CHELPG),
+a popular scheme for approximating the continuous charge density,
+which delivers the charges 
+$q_1 = -0.748458,\ q_2 = 0.374229,\ q_3 = 0.374229$,
+we see that the MP pseudoinverse delivers a very similar result.
+
+The MP pseudoinverse works so well in this case, since we actually neglected 
+the equation concerning the $y$-component of the dipole moment:
+$$
+0 \cdot q_1 + (-0.76221179) \cdot q_2 + 0.76221179 \cdot q_3 = 0\,,
+$$
+which makes $q_2 = q_3$, and this is implicitly enforced by 
+minimising the Euclidean norm of the charges.
+Therefore, we "accidentally" solved the $3 \times 3$ system of equations
+and obtained the *unique* charges that reproduce the monopole and dipole moments.
+
+We now take a look at a slightly larger molecule, CH<sub>3</sub>Cl, at
+the following coordinates:
+```
+{{#include ../codes/04-evd_and_svd/ch3cl.xyz}}
+```
+with the dipole moment of 
+$\vec{\mu} = (0.0\quad 0.0\quad -0.40671888)^\intercal$&nbsp;e&ThinSpace;Å.
+
+The xyz-file can be downloaded from 
+<a href="../codes/04-evd_and_svd/ch3cl.xyz" download>here</a>,
+
+This time, we read the coordinates from the xyz-file:
+```python
+{{#include ../codes/04-evd_and_svd/pinv_dipole.py:load_ch3cl_xyz}}
+```
+and build the linear system containing all four equations 
+from Eq.&nbsp;{{eqref: eq:monopole_dipole_equations}}:
+```python
+{{#include ../codes/04-evd_and_svd/pinv_dipole.py:ch3cl_linear_system}}
+```
+With 4 equations and 5 unknowns, the system is in any case underdetermined.
+
+Just like in the case of the water molecule, we can solve this system
+using the MP pseudoinverse:
+```python
+{{#include ../codes/04-evd_and_svd/pinv_dipole.py:ch3cl_solution}}
+```
+This time CHELPG delivers the following charges:
+$$
+q_1 = -0.198090,\ q_2 = -0.159161,\ 
+q_3 = 0.119084,\ q_4 = 0.119084,\ q_5 = 0.119084\,,
+$$
+which is quite different from the results of the MP pseudoinverse.
+
+However, if we condense the charges into heavy atoms, we obtain
+$$
+  q_{\mathrm{C}} = 0.207641,\ q_{\mathrm{Cl}} = -0.207641
+$$
+for MP pseudoinverse and
+$$
+  q_{\mathrm{C}} = 0.159161,\ q_{\mathrm{Cl}} = -0.159161
+$$
+for CHELPG, which are quite similar.
+
+This example shows the application of the MP pseudoinverse 
+for solving underdetermined systems of equations in quantum chemistry.
+Admittedly, the results are not great, and, to the best of the author's
+knowledge, the charge scheme presented here is not used in practice.
+
+The use of underdetermined systems of equations in the field of chemistry
+is in fact quite rare, since most of the time, one tries to collect as much
+information as possible, instead of relying on the mercy of the
+minimum norm solution. In the case of atomic charges, if the number of atoms
+is larger than 4, one would try to also include the quadrupole moment
+and higher multipole moments, which would lead to more equations.
+
+In contrary, underdetermined systems of equations are quite common in
+machine learning, where the collection of high-quality data is often
+difficult or expensive. In such cases, creating a model with
+billions or even trillions of parameters is not uncommon, leading to
+an underdetermined system of equations. 
+To ensure that a sensible solution is found among the infinite number of
+possible solutions, a technique called
+[*regularisation*](https://en.wikipedia.org/wiki/Regularization_(mathematics)) is often used.
+The idea of regularisation is very similar to the minimum Euclidean norm solution
+of the MP pseudoinverse, but instead of minimising the Euclidean norm of the
+parameters, a different norm is used.
+Without regularisation, such gigantic models cannot be trained in a sensible way.
 
