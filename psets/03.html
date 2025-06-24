@@ -334,7 +334,7 @@ Lösung:
 ```python
 # Set up 3D grid for orbital calculation
 spacing = 0.2  # Grid spacing
-max_extent = 6.0  # Maximum extent from origin
+max_extent = 6.0  # Maximum extent from origin (both in Bohr)
 npoints = int(2 * max_extent / spacing) + 1
 
 # Create 1D coordinate arrays
@@ -392,14 +392,6 @@ for orbital_idx in range(len(energies)):
         mo += coefficients[atom_idx, orbital_idx] * atomic_orbitals[atom_idx]
     
     molecular_orbitals.append(mo)
-
-# Optional: Save molecular orbitals as cube files
-from utils import CubeFile
-
-for i, orbital in enumerate(molecular_orbitals):
-    cube = CubeFile(atoms=atoms, data=orbital, spacing=spacing)
-    cube.dump(f"benzene_orbital_{i+1}.cube", 
-             comment=f"Benzene molecular orbital {i+1}, E = {energies[i]:.3f}β")
 ``` 
 -->
 <p><strong>(e) Visualization (optional)</strong></p>
@@ -438,7 +430,13 @@ cube.dump("benzene_orbital_1.cube",
 <!-- 
 Lösung:
 ```python
+# Optional: Save molecular orbitals as cube files
+from utils import CubeFile
 
+for i, orbital in enumerate(molecular_orbitals):
+    cube = CubeFile(atoms=atoms, data=orbital, spacing=spacing)
+    cube.dump(f"benzene_orbital_{i+1}.cube", 
+             comment=f"Benzene molecular orbital {i+1}, E = {energies[i]:.3f}β")
 ``` 
 -->
 <!--- ANCHOR_END: aufgabe_1 --->
