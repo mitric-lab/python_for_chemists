@@ -89,8 +89,8 @@ def get_Hueckel_energies_and_coefficients(path_to_xyz_file, alpha=0.0, beta=-1.0
     # Create Hückel matrix
     huckel_matrix = alpha * np.eye(connectivity.shape[0])
     huckel_matrix[connectivity == 1] = beta
-    huckel_matrix[nitrogen_idx, nitrogen_idx] = -1.5
-    print(huckel_matrix)
+    if nitrogen_idx:
+        huckel_matrix[nitrogen_idx, nitrogen_idx] = -1.5
 
     energies, coefficients = np.linalg.eigh(huckel_matrix)
 
@@ -100,7 +100,7 @@ def get_AOs_on_grid(path_to_xyz_file, spacing=0.2):
     atoms = read_xyz(path_to_xyz_file)
     heavy_atoms = [atom for atom in atoms if atom[0] != 1]
 
-    max_extent = 2.0 * max(atom[1] for atom in heavy_atoms)
+    max_extent = 3.0 * max(np.max(np.abs(atom[1:4])) for atom in heavy_atoms)
     npoints = int(2 * max_extent / spacing) + 1
 
     x = np.linspace(-max_extent, max_extent, npoints)
@@ -124,21 +124,25 @@ def get_Hueckel_MOs_on_grid(coefficients, atomic_orbitals):
     for orbital_idx in range(len(coefficients)):
         mo = np.zeros((npoints, npoints, npoints))
 
-        for atom_idx in range(len(heavy_atoms)):
+        for atom_idx in range(len(coefficients)):
             mo += coefficients[atom_idx, orbital_idx] * atomic_orbitals[atom_idx]
 
         molecular_orbitals.append(mo)
 
     return molecular_orbitals
 
+# Set parameters
+spacing = 0.5
+path_to_xyz_file = "test.xyz"
+
 # Read structure from test.xyz
-atoms = read_xyz("test.xyz")
+atoms = read_xyz(path_to_xyz_file)
 
 # Calculate Hückel energies and coefficients
-energies, coefficients = get_Hueckel_energies_and_coefficients("test.xyz")
+energies, coefficients = get_Hueckel_energies_and_coefficients(path_to_xyz_file)
 
 # Calculate atomic orbitals on grid
-atomic_orbitals = get_AOs_on_grid("test.xyz")
+atomic_orbitals = get_AOs_on_grid(path_to_xyz_file, spacing=spacing)
 
 # Calculate Hückel molecular orbitals on grid
 molecular_orbitals = get_Hueckel_MOs_on_grid(coefficients, atomic_orbitals)
@@ -146,6 +150,6 @@ molecular_orbitals = get_Hueckel_MOs_on_grid(coefficients, atomic_orbitals)
 # Save molecular orbitals as cube files
 for i, orbital in enumerate(molecular_orbitals):
     cube = CubeFile(atoms=atoms, data=orbital, spacing=spacing)
-    cube.dump(f"test_orbital_{i+1}.cube", 
-             comment=f"Test molecular orbital {i+1}, E = {energies[i]:.3f}β")
+    cube.dump(f"mo_{i+1}.cube", 
+             comment=f"Molecular orbital {i+1}, E = {energies[i]:.3f}β")
 ### ANCHOR_END: exercise_02_a
