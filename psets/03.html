@@ -646,6 +646,87 @@ for i, (hole, electron) in enumerate(zip(ntos_hole, ntos_electron)):
 ``` 
 -->
 <!--- ANCHOR_END: aufgabe_2 --->
+<details id="admonition-real-world-application-2-naphtol" class="admonition admonish-note">
+<summary class="admonition-title">
+<p>Real-World Application: 2-Naphtol</p>
+<p><a class="admonition-anchor-link" href="#admonition-real-world-application-2-naphtol"></a></p>
+</summary>
+<div>
+<p>The calculations are performed at the ωB97X-D4/def2-TZVP level of theory
+as implemented in the ORCA 6.0.1 software package.</p>
+<p>In the practical course of physical chemistry, you were asked to calculate
+the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathrm">p</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">a</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> value of 2-naphtol in its first electronically
+excited singlet state (S<sub>1</sub>) using UV absorption
+and fluorescence spectroscopy.
+A comparison of the <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathrm">p</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">a</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> value in the ground state
+and the S<sub>1</sub> state shows that 2-naphtol becomes more acidic in the
+excited state. You were asked to explain this observation.</p>
+<p>An reasonably simple explanation can be given using resonance.
+If one assumes that the weakly contributing resonance structures in the
+electronic ground state become more important in the excited state, one arrives
+at an excited state of 2-naphtol with more positive charge on the oxygen atom,
+thus leading to a easier deprotonation and a lower <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathrm">p</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0715em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathrm mtight">a</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> value.
+This assumption, however, is difficult to justify using chemical intuition alone.
+Furthermore, one does not for which excited state(s) the resonance structures
+become more important.</p>
+<p>A more rigorous approach is to calculate the electronically excited states
+of 2-naphtol and the change of the electronic density upon excitation.
+The 4 frontier orbitals involved in the excitation
+<span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathrm">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathrm">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathrm mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> are shown below.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">HOMO (H)</th><th style="text-align: center">LUMO (L)</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="../assets/figures/04-evd_and_svd/2-naphtol/homo.png" alt="HOMO" width=350px></td><td style="text-align: center"><img src="../assets/figures/04-evd_and_svd/2-naphtol/lumo.png" alt="LUMO" width=350px></td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th style="text-align: center">HOMO-1 (H-1)</th><th style="text-align: center">LUMO+1 (L+1)</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="../assets/figures/04-evd_and_svd/2-naphtol/homo-1.png" alt="HOMO" width=350px></td><td style="text-align: center"><img src="../assets/figures/04-evd_and_svd/2-naphtol/lumo+1.png" alt="LUMO" width=350px></td></tr>
+</tbody></table>
+</div>
+<p>The S<sub>1</sub> state consists of lots of configurations, with the most
+important four being</p>
+<div class="table-wrapper"><table><thead><tr><th>transition</th><th style="text-align: right">coefficient</th><th style="text-align: right">contribution / %</th></tr></thead><tbody>
+<tr><td>H-1 → L</td><td style="text-align: right">-0.449</td><td style="text-align: right">20.1</td></tr>
+<tr><td>H-1 → L+1</td><td style="text-align: right">0.326</td><td style="text-align: right">10.6</td></tr>
+<tr><td>H   → L</td><td style="text-align: right">0.684</td><td style="text-align: right">46.8</td></tr>
+<tr><td>H   → L+1</td><td style="text-align: right">0.439</td><td style="text-align: right">19.3</td></tr>
+</tbody></table>
+</div>
+<p>Note that the HOMO-LUMO transition, which is commonly used as an approximation
+for the S<sub>1</sub> state, accounts for less than 50 % of this transition.
+More importantly, interpreting a state according to a mixture of four different
+configurations is rather difficult.</p>
+<p>This is where NTOs become handy. By performing SVD on the
+transition density matrix, just as you did in Problem 2, we obtain
+just two important NTO pairs, which are visualised below.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">HONTO</th><th style="text-align: center">LUNTO</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="../assets/figures/04-evd_and_svd/2-naphtol/honto.png" alt="HONTO" width=350px></td><td style="text-align: center"><img src="../assets/figures/04-evd_and_svd/2-naphtol/lunto.png" alt="LUNTO" width=350px></td></tr>
+</tbody></table>
+</div><div class="table-wrapper"><table><thead><tr><th style="text-align: center">HONTO-1</th><th style="text-align: center">LUNTO+1</th></tr></thead><tbody>
+<tr><td style="text-align: center"><img src="../assets/figures/04-evd_and_svd/2-naphtol/honto-1.png" alt="HONTO" width=350px></td><td style="text-align: center"><img src="../assets/figures/04-evd_and_svd/2-naphtol/lunto+1.png" alt="LUNTO" width=350px></td></tr>
+</tbody></table>
+</div>
+<p>We can thus interpret the S<sub>1</sub> state using just two transitions</p>
+<div class="table-wrapper"><table><thead><tr><th>transition</th><th style="text-align: right">contribution / %</th></tr></thead><tbody>
+<tr><td>HONTO   → LUNTO</td><td style="text-align: right">73.0</td></tr>
+<tr><td>HINTO-1 → LUNTO+1</td><td style="text-align: right">24.8</td></tr>
+</tbody></table>
+</div>
+<p>Now let us take a look at the first NTO pair. By squaring the NTOs in your head
+(alternatively, just ignore the sign), we arrive at something that shall be called
+“natural transition density”, which shows how electrons are distributed
+before and after the excitation.
+The occupied NTO shows the density that is removed by the excitation, while
+the virtual NTO shows the density that is created by the excitation. Therefore,
+HONTO → LUNTO clearly shows a transfer of electronic density from the
+oxygen atom to the naphthalene, making the O atom more positively charged
+in the S<sub>1</sub> state.</p>
+<p>Although the HONTO-1 → LUNTO+1 shows a transfer of electronic density from
+the naphthalene unit to the oxygen atom, its contribution is smaller than the
+first NTO pair (and the transfer is weaker as can be seen from the figures above).
+Therefore, the first NTO dominates the character of the S<sub>1</sub> state
+and we arrive at a rigourous explanation for the higher acidity of
+2-naphtol in the S<sub>1</sub> state.</p>
+</div>
+</details>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
