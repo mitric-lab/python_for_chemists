@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+import re
+
 ### ANCHOR: exercise_01_b
 import numpy as np
 from utils import read_xyz, get_connectivity_matrix
@@ -76,6 +78,59 @@ for i, orbital in enumerate(molecular_orbitals):
     cube.dump(f"benzene_mo_{i+1}.cube", 
              comment=f"Benzene molecular orbital {i+1}, E = {energies[i]:.3f}β")
 ### ANCHOR_END: exercise_01_e
+
+def get_transition_density_matrix(path_to_orca_file, occ_map, virt_map, state=1, nocc=7, nvirt=6):
+    """
+    Get the transition density matrix from an ORCA output file.
+    """
+
+    # Initialize transition density matrix
+    T = np.zeros((nocc, nvirt))
+
+    # Read the ORCA output file
+    with open(path_to_orca_file, 'r') as file:
+        content = file.read()
+
+    # Find the CIS-EXCITED STATES block
+    cis_block_match = re.search(r'CIS-EXCITED STATES \(SINGLETS\)\s*-+\s*(.*)', content, re.DOTALL)
+    if not cis_block_match:
+        raise ValueError("Could not find CIS-EXCITED STATES (SINGLETS) block in the output file.")
+
+    cis_block = cis_block_match.group(1)
+
+    # Find the specific state block
+    state_block_match = re.search(fr'STATE\s+{state}:\s+E=.*?\n(.*?)(?=\n\s*STATE|\Z)', cis_block, re.DOTALL)
+    if not state_block_match:
+        raise ValueError(f"Could not find data for state {state}.")
+
+    state_block = state_block_match.group(1)
+
+    # Regex to find transition contributions
+    transition_regex = re.compile(r'\s*(\d+)a ->\s*(\d+)a\s*:.*?\(c=\s*([-\d.]+)\)')
+
+    for line in state_block.splitlines():
+        match = transition_regex.match(line)
+        if match:
+            occ_orca, virt_orca, coeff = match.groups()
+            occ_orca, virt_orca = int(occ_orca), int(virt_orca)
+            coeff = float(coeff)
+
+            if occ_orca in occ_map and virt_orca in virt_map:
+                row_idx = occ_map[occ_orca]
+                col_idx = virt_map[virt_orca]
+                if row_idx < nocc and col_idx < nvirt:
+                    T[row_idx, col_idx] = coeff
+    return T
+
+path_to_orca_file = "./nto.out"
+state = 1
+nocc = 7
+nvirt = 6
+occ_map = {40:4, 42:5, 43:6} # zero-based indexing
+virt_map = {44:0, 45:1, 46:2} # zero-based indexing
+T = get_transition_density_matrix(path_to_orca_file, occ_map, virt_map, state, nocc, nvirt)
+print(T)
+np.save("tdm.npy", T)
 
 ### ANCHOR: exercise_02_a
 def get_Hueckel_energies_and_coefficients(path_to_xyz_file, alpha=0.0, beta=-1.0):
@@ -168,16 +223,6 @@ for i, orbital in enumerate(molecular_orbitals):
     cube.dump(f"benzoindol_mo_{i+1}.cube", 
              comment=f"Molecular orbital {i+1}, E = {energies[i]:.3f}β")
 ### ANCHOR_END: exercise_02_a
-
-T = np.array([[0, 0, 0, 0, 0, 0],
-              [0, 0, 0, 0, 0, 0],
-              [0, 0, 0, 0, 0, 0],
-              [0, 0, 0, 0, 0, 0],
-              [0, 0, 0, 0, 0.11, 0],
-              [0, 0, 0, 0.41, -0.41, 0],
-              [0, 0, 0, -0.55, -0.51, 0]])
-
-np.save("tdm.npy", T)
 
 ### ANCHOR: exercise_02_b
 # Load transition density matrix
