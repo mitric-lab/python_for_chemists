@@ -29,8 +29,10 @@
     - [System of Linear Equations](04-evd_and_svd/05-linear_systems.md)
 
 - [Machine Learning](05-machine_learning.md)
-    - [Supervised Learning]()
-    - [Unsupervised Learning]()
+    - [Regression](05-machine_learning/01-regression.md)
+    - [Classification]()
+    - [Clustering]()
+    - [Dimensionality Reduction]()
 
 - [Neuronale Netzwerke]()
     - [Single-Layer-Perzeptron]()
