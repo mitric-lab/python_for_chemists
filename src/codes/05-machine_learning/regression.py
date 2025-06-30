@@ -11,11 +11,10 @@ print(df.head())
 ### ANCHOR_END: load_data_from_csv
 
 ### ANCHOR: process_data
-columns = df.columns
 target_column = "fl_int"
 
 X = df.drop(target_column, axis=1).values # Ignore the target column
-X = np.hstack([X, np.ones((X.shape[0], 1))]) # Add a column of ones to the data matrix
+X = np.hstack([np.ones((X.shape[0], 1)), X]) # Add a column of ones to the data matrix
 y = df[target_column].values # Target column
 
 print(X.shape)
@@ -34,11 +33,11 @@ class LinearRegression:
         return X @ self.weights
 ### ANCHOR_END: regression_class
 
-### ANCHOR: linear_regression
+### ANCHOR: fit_model
 model = LinearRegression() # Create a model
 model.fit(X, y) # Fit the model to the data
 y_pred = model.predict(X) # Predict the target values
-### ANCHOR_END: linear_regression
+### ANCHOR_END: fit_model
 
 ### ANCHOR: calculate_mae
 mae = np.mean(np.abs(y - y_pred))
@@ -70,7 +69,7 @@ fig.savefig('../../assets/figures/05-machine_learning/regression_predictions.svg
 
 ### ANCHOR: plot_model_weights
 feature_names = df.drop(target_column, axis=1).columns
-feature_weights = model.weights[:-1] # Exclude the bias term (which is the last weight)
+feature_weights = model.weights[1:] # Exclude the bias term (which is the first weight)
 
 fig, ax = plt.subplots(figsize=(7, 6))
 ax.bar(feature_names, feature_weights)
