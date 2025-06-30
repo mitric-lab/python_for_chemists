@@ -28,9 +28,9 @@
     - [Principal Component Analysis](04-evd_and_svd/04-principal_component_analysis.md)
     - [System of Linear Equations](04-evd_and_svd/05-linear_systems.md)
 
-- [Maschinelles Lernen]()
-    - [Überwachtes Lernen]()
-    - [Unüberwachtes Lernen]()
+- [Machine Learning](05-machine_learning.md)
+    - [Supervised Learning]()
+    - [Unsupervised Learning]()
 
 - [Neuronale Netzwerke]()
     - [Single-Layer-Perzeptron]()
