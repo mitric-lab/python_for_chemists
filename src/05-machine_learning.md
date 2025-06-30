@@ -19,7 +19,7 @@ To understand why ML is so powerful, let's first consider how we would solve a p
 
 <figure>
     <center>
-    <img src="./assets/figures/05-machine_learning/ML_classical_programming.svg"
+    <img src="./assets/figures/05-machine_learning/ML_Classical_Programming.svg"
          alt="Classical Algorithms vs. ML"
          width="500"\>
     <figcaption>Illustration of classical programming vs. ML.</figcaption>
