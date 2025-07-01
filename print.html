@@ -4102,6 +4102,14 @@ df = pd.read_csv(path_to_csv)
 print(df.head())
 </code></pre>
 <p>The data is loaded into a <code>pandas</code> DataFrame, a two-dimensional table with labeled rows and columns. The <code>head()</code> method displays the first few rows, giving us a quick overview of the data.</p>
+<div class="table-wrapper"><table><thead><tr><th>Index</th><th>MolWeight</th><th>TPSA</th><th>NumHDonors</th><th>…</th><th>FractionCSP3</th><th>NumAromaticRings</th><th>fl_int</th></tr></thead><tbody>
+<tr><td>0</td><td>-1.963085</td><td>-0.64118</td><td>-0.447214</td><td>…</td><td>0.711087</td><td>-1.333333</td><td>-0.227077</td></tr>
+<tr><td>1</td><td>-1.698002</td><td>-0.64118</td><td>-0.447214</td><td>…</td><td>1.253471</td><td>-1.333333</td><td>-0.107639</td></tr>
+<tr><td>2</td><td>-1.432920</td><td>-0.64118</td><td>-0.447214</td><td>…</td><td>1.728057</td><td>-1.333333</td><td>-0.438808</td></tr>
+<tr><td>3</td><td>-1.167838</td><td>-0.64118</td><td>-0.447214</td><td>…</td><td>2.146810</td><td>-1.333333</td><td>-0.438808</td></tr>
+<tr><td>4</td><td>-0.410690</td><td>-0.64118</td><td>-0.447214</td><td>…</td><td>3.151816</td><td>-1.333333</td><td>-0.156500</td></tr>
+</tbody></table>
+</div>
 <p>From this overview, you can see that each ligand (molecule) is described by a set of features, such as molecular weight, number of rotatable bonds, and number of aromatic rings. Our goal is to predict the <code>fl_int</code> column, which contains the fluorescence intensity of the ligand. Note that the values may seem arbitrary because we have already preprocessed the data by standardizing each column to have a zero mean and unit variance. This is a common step in machine learning to ensure all features contribute equally during training.</p>
 <p>A few exemplary molecules from the dataset are shown below.</p>
 <p><img src="05-machine_learning/../assets/figures/05-machine_learning/random_molecules.svg" alt="Exemplary molecules" /></p>
@@ -4150,7 +4158,7 @@ ax.plot([min_val, max_val], [min_val, max_val], 'k--', alpha=0.5, label='Perfect
 ax.legend()
 plt.show()
 </code></pre>
-<p>The plot shows significant deviations between the predicted and true values. This is not entirely surprising, given the limited number of features used to predict a complex property like fluorescence intensity.</p>
+<p>The plot shows significant deviations between the predicted and true values. This is not entirely surprising, given the limited number of features used to predict a complex property like fluorescence intensity. We will explore how to improve feature engineering in the following chapters.</p>
 <p><img src="05-machine_learning/../assets/figures/05-machine_learning/regression_predictions.svg" alt="Predicted vs. true fluorescence intensity" /></p>
 <p>To quantify the model’s performance, we can calculate a metric like the Mean Absolute Error (MAE).</p>
 <pre><code class="language-python">mae = np.mean(np.abs(y - y_pred))
