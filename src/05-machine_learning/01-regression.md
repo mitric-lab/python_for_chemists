@@ -180,6 +180,14 @@ If you haven't already, you can install the `pandas` library using `mamba instal
 
 The data is loaded into a `pandas` DataFrame, a two-dimensional table with labeled rows and columns. The `head()` method displays the first few rows, giving us a quick overview of the data.
 
+| Index | MolWeight | TPSA | NumHDonors | ... | FractionCSP3 | NumAromaticRings | fl_int |
+|-------|-----------|------|------------|-----|--------------|------------------|---------|
+| 0 | -1.963085 | -0.64118 | -0.447214 | ... | 0.711087 | -1.333333 | -0.227077 |
+| 1 | -1.698002 | -0.64118 | -0.447214 | ... | 1.253471 | -1.333333 | -0.107639 |
+| 2 | -1.432920 | -0.64118 | -0.447214 | ... | 1.728057 | -1.333333 | -0.438808 |
+| 3 | -1.167838 | -0.64118 | -0.447214 | ... | 2.146810 | -1.333333 | -0.438808 |
+| 4 | -0.410690 | -0.64118 | -0.447214 | ... | 3.151816 | -1.333333 | -0.156500 |
+
 From this overview, you can see that each ligand (molecule) is described by a set of features, such as molecular weight, number of rotatable bonds, and number of aromatic rings. Our goal is to predict the `fl_int` column, which contains the fluorescence intensity of the ligand. Note that the values may seem arbitrary because we have already preprocessed the data by standardizing each column to have a zero mean and unit variance. This is a common step in machine learning to ensure all features contribute equally during training.
 
 A few exemplary molecules from the dataset are shown below.
@@ -210,7 +218,7 @@ Let's visualize our model's performance by plotting the predicted fluorescence i
 {{#include ../codes/05-machine_learning/regression.py:plot_predictions}}
 ```
 
-The plot shows significant deviations between the predicted and true values. This is not entirely surprising, given the limited number of features used to predict a complex property like fluorescence intensity.
+The plot shows significant deviations between the predicted and true values. This is not entirely surprising, given the limited number of features used to predict a complex property like fluorescence intensity. We will explore how to improve feature engineering in the following chapters.
 
 ![Predicted vs. true fluorescence intensity](../assets/figures/05-machine_learning/regression_predictions.svg)
 
