@@ -30,7 +30,7 @@
 
 - [Machine Learning](05-machine_learning.md)
     - [Regression](05-machine_learning/01-regression.md)
-    - [Classification]()
+    - [Classification](05-machine_learning/02-classification.md)
     - [Clustering]()
     - [Dimensionality Reduction]()
 
