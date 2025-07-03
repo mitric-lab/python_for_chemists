@@ -209,7 +209,7 @@ def main_regression(input_path, output_path, target_column):
     mols = create_molecules(df_raw["smiles"])
     
     # Visualize random molecules
-    visualize_random_molecules(mols)
+    # visualize_random_molecules(mols)
     
     # Calculate molecular features
     features_df = calculate_molecular_features(mols, df_raw[target_column].values, target_column)
@@ -258,7 +258,7 @@ def main_classification(input_path, output_path, target_column):
         f'{target_column}_class': target_classes
     })
     
-    classification_df.to_csv(output_path, index=False)
+    classification_df.to_csv(output_path, index=False, float_format='%.4f')
     print(f"Classification data saved to '{output_path}'")
     print(f"Dataset shape: {classification_df.shape}")
     print(classification_df.head())
