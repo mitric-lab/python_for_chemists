@@ -169,10 +169,10 @@ def perform_pca(fingerprints, n_components=2):
 
 def create_target_classes(target_values, threshold):
     """Create binary classes from continuous target values using given threshold."""
-    classes = (target_values > threshold).astype(int)
+    classes = np.where(target_values > threshold, 1, -1)
     
     print(f"Created classes with threshold: {threshold:.3f}")
-    print(f"Class distribution: {np.bincount(classes)}")
+    print(f"Class distribution: {np.bincount(classes + 1)}")  # Add 1 to handle negative labels
     
     return classes
 
