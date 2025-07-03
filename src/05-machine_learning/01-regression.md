@@ -18,19 +18,19 @@ $$
 \hat{f}_{\vec{w}}(\vec{x}) = w_0 + w_1 x_1 + w_2 x_2 + \dots + w_d x_d = w_0 + \sum_{j=1}^{d} w_j x_j
 $$
 
-To simplify this, we can augment our input vector $\vec{x}$ by adding a constant value of 1 as its first element, making it $\vec{x}' = (1, x_1, \dots, x_d)$. We can then combine our weights into a single vector $\vec{w} = (w_0, w_1, \dots, w_d)$. Now, the model becomes a simple dot product:
+To simplify this, we can augment our input vector $\vec{x}$ by adding a constant value of 1 as its first element, making it $\vec{x} = (1, x_1, \dots, x_d)$. We can then combine our weights into a single vector $\vec{w} = (w_0, w_1, \dots, w_d)$. Now, the model becomes a simple dot product:
 
 $$
-\hat{f}_{\vec{w}}(\vec{x}') = \vec{w} \cdot \vec{x}'
+\hat{f}_{\vec{w}}(\vec{x}) = \vec{w} \cdot \vec{x}
 $$
 
-We can extend this to the entire dataset by organizing our inputs into a matrix $\bm{X} \in \mathbb{R}^{N \times (d+1)}$, where each row is an augmented input vector $\vec{x}_i'$. The predictions for all data points can then be computed in a single matrix-vector product:
+We can extend this to the entire dataset by organizing our inputs into a matrix $\bm{X} \in \mathbb{R}^{N \times (d+1)}$, where each row is an augmented input vector $\vec{x}_i$. The predictions for all data points can then be computed in a single matrix-vector product:
 
 $$
 \hat{\bm{y}} = \bm{X} \vec{w}
 $$
 
-where $\hat{\bm{y}} = (\hat{f}_{\vec{w}}(\vec{x}'_1), \dots, \hat{f}_{\vec{w}}(\vec{x}'_N))^T \in \mathbb{R}^N$. The data matrix $\bm{X}$ looks like this:
+where $\hat{\bm{y}} = (\hat{f}_{\vec{w}}(\vec{x}_1), \dots, \hat{f}_{\vec{w}}(\vec{x}_N))^T \in \mathbb{R}^N$. The data matrix $\bm{X}$ looks like this:
 
 $$
 \bm{X} = \begin{pmatrix}
@@ -160,7 +160,7 @@ You have likely already used classes and instances without realizing it. Common 
 
 ### Implementing Linear Regression
 
-Now that we understand the basics of OOP, we can implement our linear regression model as a Python class. To do this, we need to consider the essential attributes and methods for our model. For linear regression, the only attribute we need is the weight vector $\vec{w}$. Although the weights are unknown before training, it is good practice to initialize them in the constructor—for example, to `None`.
+Now that we have a basic idea of OOP, we can implement our linear regression model as a Python class. To do this, we need to consider the essential attributes and methods for our model. For linear regression, the only attribute we need is the weight vector $\vec{w}$. Although the weights are unknown before training, it is good practice to initialize them in the constructor—for example, to `None`.
 
 The most important method for any machine learning model is `fit`, which takes the data matrix $\bm{X}$ and the target vector $\bm{y}$ as input and then calculates the model's weights using Equation {{eqref: eq:linear_regression_weights}}. The `predict` method then uses these learned weights to make predictions on new data. Our complete implementation is shown below:
 
@@ -168,7 +168,7 @@ The most important method for any machine learning model is `fit`, which takes t
 {{#include ../codes/05-machine_learning/regression.py:regression_class}}
 ```
 
-With our model defined, we need data to train it. We will use a real-world dataset from a study on the fluorescence properties of various ligands for RNA aptamers.[^1] The data is available as a `.csv` file, which you can download from [here](../codes/05-machine_learning/aptamer_data.csv). The [`pandas`](https://pandas.pydata.org/) library is an excellent tool for this, offering convenient ways to handle structured data.
+With our model defined, we need data to train it. We will use a real-world dataset from a study on the fluorescence properties of various ligands for RNA aptamers.[^1] The data is available as a `.csv` file, which you can <a href="../codes/05-machine_learning/aptamer_regression_data.csv" download>download here</a>. To import the data, we will use the [`pandas`](https://pandas.pydata.org/) library, which provides an excellent way to import and handle structured data.
 
 ```admonish note title="Installing pandas"
 If you haven't already, you can install the `pandas` library using `mamba install -c conda-forge pandas`.
@@ -178,7 +178,7 @@ If you haven't already, you can install the `pandas` library using `mamba instal
 {{#include ../codes/05-machine_learning/regression.py:load_data_from_csv}}
 ```
 
-The data is loaded into a `pandas` DataFrame, a two-dimensional table with labeled rows and columns. The `head()` method displays the first few rows, giving us a quick overview of the data.
+The data is loaded into a `pandas` DataFrame, a two-dimensional table with labeled rows and columns. This is the core data structure of `pandas`. The `head()` method displays the first few rows, giving us a quick overview of the data.
 
 | Index | MolWeight | TPSA | NumHDonors | ... | FractionCSP3 | NumAromaticRings | fl_int |
 |-------|-----------|------|------------|-----|--------------|------------------|---------|
@@ -188,7 +188,7 @@ The data is loaded into a `pandas` DataFrame, a two-dimensional table with label
 | 3 | -1.167838 | -0.64118 | -0.447214 | ... | 2.146810 | -1.333333 | -0.438808 |
 | 4 | -0.410690 | -0.64118 | -0.447214 | ... | 3.151816 | -1.333333 | -0.156500 |
 
-From this overview, you can see that each ligand (molecule) is described by a set of features, such as molecular weight, number of rotatable bonds, and number of aromatic rings. Our goal is to predict the `fl_int` column, which contains the fluorescence intensity of the ligand. Note that the values may seem arbitrary because we have already preprocessed the data by standardizing each column to have a zero mean and unit variance. This is a common step in machine learning to ensure all features contribute equally during training.
+From this overview, you can see that each ligand (molecule) is described by a set of features, such as molecular weight, number of rotatable bonds, and number of aromatic rings. Our goal is to predict the `fl_int` column, which contains the fluorescence intensity of the ligand, based on these features. Note that the absolute values may seem arbitrary because we have already preprocessed the data by standardizing each column to have a zero mean and unit variance. This is a common step in machine learning to ensure all features contribute equally during training.
 
 A few exemplary molecules from the dataset are shown below.
 
@@ -210,23 +210,23 @@ Now we can create an instance of our `LinearRegression` model, fit it to the dat
 You might have realized that evaluating a model on the same data it was trained on is not a reliable measure of its performance. In practice, we split our data into a **training set** (for fitting the model) and a **test set** (for evaluating its performance on unseen data). We will explore this concept, known as **cross-validation**, in a later section.
 ```
 
-### Visualizing the Results
-
-Let's visualize our model's performance by plotting the predicted fluorescence intensities against the true values.
-
-```python
-{{#include ../codes/05-machine_learning/regression.py:plot_predictions}}
-```
-
-The plot shows significant deviations between the predicted and true values. This is not entirely surprising, given the limited number of features used to predict a complex property like fluorescence intensity. We will explore how to improve feature engineering in the following chapters.
-
-![Predicted vs. true fluorescence intensity](../assets/figures/05-machine_learning/regression_predictions.svg)
+### Evaluating the Results
 
 To quantify the model's performance, we can calculate a metric like the Mean Absolute Error (MAE).
 
 ```python
 {{#include ../codes/05-machine_learning/regression.py:calculate_mae}}
 ```
+
+Let's also visualize our model's performance by plotting the predicted fluorescence intensities against the true values.
+
+```python
+{{#include ../codes/05-machine_learning/regression.py:plot_predictions}}
+```
+
+The plot shows significant deviations between the predicted and true values. This is not entirely surprising, given the limited number and arbitrariness of features used to predict a complex property like fluorescence intensity. We will explore how to improve feature selection and engineering in the following chapters.
+
+![Predicted vs. true fluorescence intensity](../assets/figures/05-machine_learning/regression_predictions.svg)
 
 Although the model's accuracy is limited, we can still gain insights by examining how it makes its predictions. In a linear regression model, the learned weights directly correspond to the importance of each feature. Plotting these weights can reveal which features the model considers most influential.
 
