@@ -29,15 +29,17 @@ ax.set_ylabel('PC2')
 plt.show()
 ### ANCHOR_END: plot_data
 
-fig.savefig('../../assets/figures/05-machine_learning/classification_data.svg')
+# fig.savefig('../../assets/figures/05-machine_learning/classification_data.svg')
 
-### ANCHOR: classification_class
+### ANCHOR: classification_class_init
 class RosenblattPerceptron:
     def __init__(self, learning_rate=0.1, n_iterations=100):
         self.learning_rate = learning_rate
         self.n_iterations = n_iterations
         self.weights = None
+### ANCHOR_END: classification_class_init
     
+### ANCHOR: classification_class_fit
     def fit(self, X, y):
         self.weights = np.zeros(X.shape[1])
 
@@ -46,10 +48,12 @@ class RosenblattPerceptron:
                 loss = - y_i * np.dot(self.weights, x_i)
                 if loss >= 0:
                     self.weights += self.learning_rate * y_i * x_i
+### ANCHOR_END: classification_class_fit
 
+### ANCHOR: classification_class_predict
     def predict(self, X):
         return np.sign(np.dot(X, self.weights))
-### ANCHOR_END: classification_class
+### ANCHOR_END: classification_class_predict
 
 ### ANCHOR: fit_model
 model = RosenblattPerceptron()
@@ -66,21 +70,17 @@ print(f"Accuracy: {accuracy}")
 fig, ax = plt.subplots(figsize=(7, 6))
 ax.scatter(X[:, 0], X[:, 1], c=y, cmap='coolwarm', alpha=0.7)
 
-# Plot decision boundary (where w·x = 0)
-# For weights [w0, w1, w2] and features [PC1, PC2, 1]:
-# w0*PC1 + w1*PC2 + w2 = 0
-# Solving for PC2: PC2 = -(w0*PC1 + w2) / w1
+# Define the decision boundary as a function of the first feature
+x1_range = np.linspace(X[:, 0].min(), X[:, 0].max(), 100)
+x2_boundary = -(model.weights[0] * x1_range + model.weights[2]) / model.weights[1]
 
-if model.weights[1] != 0:  # Avoid division by zero
-    pc1_min, pc1_max = X[:, 0].min(), X[:, 0].max()
-    pc1_range = np.linspace(pc1_min, pc1_max, 100)
-    pc2_boundary = -(model.weights[0] * pc1_range + model.weights[2]) / model.weights[1]
-    ax.plot(pc1_range, pc2_boundary, 'k-', linewidth=2, label='Decision Boundary')
-    ax.legend()
+# Plot the decision boundary
+ax.plot(x1_range, x2_boundary, 'k--', linewidth=2, label='Decision Boundary')
+ax.legend()
 
 ax.set_xlabel('PC1')
 ax.set_ylabel('PC2')
 plt.show()
 ### ANCHOR_END: plot_decision_boundary
 
-fig.savefig('../../assets/figures/05-machine_learning/classification_decision_boundary.svg')
+# fig.savefig('../../assets/figures/05-machine_learning/classification_decision_boundary.svg')
