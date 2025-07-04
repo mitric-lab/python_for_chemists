@@ -65,7 +65,7 @@ ax.legend()
 plt.show()
 ### ANCHOR_END: plot_predictions
 
-fig.savefig('../../assets/figures/05-machine_learning/regression_predictions.svg')
+# fig.savefig('../../assets/figures/05-machine_learning/regression_predictions.svg')
 
 ### ANCHOR: plot_model_weights
 feature_names = df.drop(target_column, axis=1).columns
@@ -80,7 +80,7 @@ plt.tight_layout()
 plt.show()
 ### ANCHOR_END: plot_model_weights
 
-fig.savefig('../../assets/figures/05-machine_learning/regression_model_weights.svg')
+# fig.savefig('../../assets/figures/05-machine_learning/regression_model_weights.svg')
 
 
 
