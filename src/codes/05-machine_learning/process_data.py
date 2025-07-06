@@ -15,6 +15,7 @@ import random
 INPUT_CSV_PATH = "aptamers_not_processed.csv"
 REGRESSION_OUTPUT_CSV_PATH = "aptamer_regression_data.csv"
 CLASSIFICATION_OUTPUT_CSV_PATH = "aptamer_classification_data.csv"
+FINGERPRINTS_OUTPUT_CSV_PATH = "aptamer_fingerprints_data.csv"
 REGRESSION_TARGET_COLUMN = "fl_int"
 CLASSIFICATION_TARGET_COLUMN = "lambda_abs"
 
@@ -263,6 +264,42 @@ def main_classification(input_path, output_path, target_column):
     print(f"Dataset shape: {classification_df.shape}")
     print(classification_df.head())
 
+def main_pca(input_path, output_path, target_column):
+    """Main pipeline for generating Morgan fingerprints and saving with binary target labels."""
+    # Load and clean data
+    df_raw = load_data(input_path, target_column)
+    
+    # Create RDKit molecule objects
+    mols = create_molecules(df_raw["smiles"])
+    
+    # Convert molecules to Morgan fingerprints
+    fingerprints = molecules_to_fingerprints(mols)
+    
+    # Remove columns with all zeros or all ones
+    n_samples = fingerprints.shape[0]
+    col_sums = np.sum(fingerprints, axis=0)
+    valid_cols = (col_sums > 0) & (col_sums < n_samples)  # Not all zeros and not all ones
+    # fingerprints = fingerprints[:, valid_cols]
+    
+    print(f"Removed {np.sum(~valid_cols)} constant columns (all zeros or all ones)")
+    print(f"Remaining fingerprint bits: {fingerprints.shape[1]}")
+    
+    # Create target classes from continuous values (same as classification)
+    threshold = np.median(df_raw[target_column].values)
+    target_classes = create_target_classes(df_raw[target_column].values, threshold)
+    
+    # Create DataFrame with fingerprints and target
+    fingerprint_columns = [f'fp_{i}' for i in range(fingerprints.shape[1])]
+    fingerprints_df = pd.DataFrame(fingerprints, columns=fingerprint_columns)
+    # fingerprints_df[f'{target_column}_continuous'] = df_raw[target_column].values
+    fingerprints_df[f'{target_column}_class'] = target_classes
+    
+    # Save processed data
+    save_processed_data(fingerprints_df, output_path)
+    
+    return fingerprints_df
+
 if __name__ == "__main__":
-    main_regression(INPUT_CSV_PATH, REGRESSION_OUTPUT_CSV_PATH, REGRESSION_TARGET_COLUMN)
-    main_classification(INPUT_CSV_PATH, CLASSIFICATION_OUTPUT_CSV_PATH, CLASSIFICATION_TARGET_COLUMN)
+    # main_regression(INPUT_CSV_PATH, REGRESSION_OUTPUT_CSV_PATH, REGRESSION_TARGET_COLUMN)
+    # main_classification(INPUT_CSV_PATH, CLASSIFICATION_OUTPUT_CSV_PATH, CLASSIFICATION_TARGET_COLUMN)
+    main_pca(INPUT_CSV_PATH, FINGERPRINTS_OUTPUT_CSV_PATH, CLASSIFICATION_TARGET_COLUMN)

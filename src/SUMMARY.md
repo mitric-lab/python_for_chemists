@@ -31,8 +31,8 @@
 - [Machine Learning](05-machine_learning.md)
     - [Regression](05-machine_learning/01-regression.md)
     - [Classification](05-machine_learning/02-classification.md)
-    - [Clustering]()
-    - [Dimensionality Reduction]()
+    - [Dimensionality Reduction](05-machine_learning/03-dimensionality_reduction.md)
+    - [Clustering](05-machine_learning/04-clustering.md)
 
 - [Neuronale Netzwerke]()
     - [Single-Layer-Perzeptron]()

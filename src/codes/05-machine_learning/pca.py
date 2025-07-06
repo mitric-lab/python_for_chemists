@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 class PCA:
-    def __init__(self, n_components=2):
-        self.n_components = n_components
+    def __init__(self, k=2):
+        self.k = k
         self.components = None
         self.explained_variance = None
 ### ANCHOR_END: pca_init
@@ -28,16 +28,16 @@ class PCA:
         eigenvalues = eigenvalues[sorted_indices]
         eigenvectors = eigenvectors[:, sorted_indices]
         
-        # Store the top n_components eigenvectors (principal components)
-        self.components = eigenvectors[:, :self.n_components]
+        # Store the top k eigenvectors (principal components)
+        self.components = eigenvectors[:, :self.k]
         
         # Calculate the explained variances
-        self.explained_variance = eigenvalues[:self.n_components] / np.sum(eigenvalues)
+        self.explained_variance = eigenvalues[:self.k] / np.sum(eigenvalues)
 ### ANCHOR_END: pca_fit
     
 ### ANCHOR: pca_transform
     def transform(self, X):
-        # Project the data onto the principal components
+        # Project the data onto the first k principal components
         X_centered = X - np.mean(X, axis=0)
         return np.dot(X_centered, self.components)
     
@@ -47,41 +47,114 @@ class PCA:
         return self.transform(X)
 ### ANCHOR_END: pca_transform
 
-if __name__ == '__main__':
-    ### ANCHOR: pca_example
-    # Import Iris dataset
-    csv_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
-    col_names = ['Sepal_Length', 'Sepal_Width', 'Petal_Length', 'Petal_Width', 'Class']
-    df =  pd.read_csv(csv_url, names=col_names)
-    
-    # Show the first few rows
-    print(df.head())
-    
-    # Convert class labels to integers
-    df['Class'] = df['Class'].astype('category').cat.codes
-    
-    # Define data matrix and labels
-    X = df.drop('Class', axis=1).to_numpy()
-    y = df['Class'].to_numpy()
-    
-    # Perform PCA
-    pca = PCA(n_components=2)
-    X_pca = pca.fit_transform(X)
-    
-    # Plot projected data and color-code by class
-    fig, ax = plt.subplots(figsize=(7, 5))
-    
-    ax.scatter(X_pca[y == 0, 0], X_pca[y == 0, 1], color='blue', label='Iris-setosa')
-    ax.scatter(X_pca[y == 1, 0], X_pca[y == 1, 1], color='red', label='Iris-versicolor')
-    ax.scatter(X_pca[y == 2, 0], X_pca[y == 2, 1], color='green', label='Iris-virginica')
-    
-    ax.set_xlabel('Principal Component 1')
-    ax.set_ylabel('Principal Component 2')
-    ax.legend()
-    
-    fig.tight_layout()
-    
-    plt.show()
-    ### ANCHOR_END: pca_example
-    
-    #fig.savefig('../../assets/figures/05-machine_learning/pca_iris.svg')
+### ANCHOR: load_data_from_csv
+path_to_csv = "aptamer_fingerprints_data.csv"
+df = pd.read_csv(path_to_csv)
+print(df.head())    
+### ANCHOR_END: load_data_from_csv
+
+### ANCHOR: rdkit_fingerprints
+from rdkit import Chem
+from rdkit.Chem.rdMolDescriptors import GetMorganFingerprintAsBitVect
+
+# Create molecule from SMILES
+smiles = "CCO"  # ethanol
+mol = Chem.MolFromSmiles(smiles)
+
+# Basic molecular properties
+print(f"Number of atoms: {mol.GetNumAtoms()}")
+print(f"Number of heavy atoms: {mol.GetNumHeavyAtoms()}")
+
+# Generate Morgan fingerprint
+morgan_fp = GetMorganFingerprintAsBitVect(mol, radius=2, nBits=2048)
+fp_array = np.array(morgan_fp)
+print(f"Morgan fingerprint shape: {fp_array.shape}")
+print(f"Number of bits set: {np.sum(fp_array)}")
+### ANCHOR_END: rdkit_fingerprints
+
+### ANCHOR: process_data
+target_column = "lambda_abs_class"
+X = df.drop(target_column, axis=1).values # Ignore the target column
+print(X.shape)
+### ANCHOR_END: process_data
+
+### ANCHOR: pca_fit_transform
+pca = PCA(k=2)
+X_pca = pca.fit_transform(X)
+print(X_pca.shape)
+### ANCHOR_END: pca_fit_transform
+
+### ANCHOR: plot_pca
+fig, ax = plt.subplots(figsize=(6, 6))
+ax.scatter(X_pca[:, 0], X_pca[:, 1], color='blue', label='Data')
+ax.set_xlabel('Principal Component 1')
+ax.set_ylabel('Principal Component 2')
+ax.legend()
+plt.show()
+### ANCHOR_END: plot_pca
+
+# fig.savefig('../../assets/figures/05-machine_learning/pca_aptamers.svg')
+
+### ANCHOR: plot_pca_hover
+from matplotlib.offsetbox import OffsetImage, AnnotationBbox
+from rdkit.Chem import Draw
+
+# Load original data to get SMILES
+df_original = pd.read_csv("aptamers_not_processed.csv")
+smiles_list = df_original["smiles"].values
+
+# Create RDKit molecule objects
+mols = [Chem.MolFromSmiles(smiles) for smiles in smiles_list]
+
+# Create matplotlib scatter plot with minimal styling to match plot_pca
+fig, ax = plt.subplots(figsize=(6, 6))
+
+sc = ax.scatter(X_pca[:, 0], X_pca[:, 1], color='blue', label='Data')
+
+ax.set_xlabel('Principal Component 1')
+ax.set_ylabel('Principal Component 2')
+ax.legend()
+
+# Create annotation box for molecular structures
+imagebox = OffsetImage(np.zeros((100, 100, 3)), zoom=0.5)
+imagebox.image.axes = ax
+
+ab = AnnotationBbox(
+    imagebox, (30, 30), xycoords='data', 
+    boxcoords="offset points", arrowprops=dict(arrowstyle="->"), 
+)
+ax.add_artist(ab)
+ab.set_visible(False)  # Initially hidden
+
+def update_annotation_box(idx):
+    """Update annotation box position and molecular image."""
+    ab.xy = (X_pca[idx, 0], X_pca[idx, 1])
+    mol = mols[idx]
+    if mol is not None:
+        img = Draw.MolToImage(mol, size=(100, 100), wedgeBonds=False)
+        ab.offsetbox.set_data(img)
+    else:
+        # Show empty image for invalid molecules
+        ab.offsetbox.set_data(np.zeros((100, 100, 3)))
+
+def hover(event):
+    """Handle hover events to show/hide molecular structures."""
+    vis = ab.get_visible()
+    if event.inaxes == ax:
+        cont, ind = sc.contains(event)
+        if cont:
+            update_annotation_box(ind['ind'][0])
+            ab.set_visible(True)
+            fig.canvas.draw_idle()
+        else:
+            if vis:
+                ab.set_visible(False)
+                fig.canvas.draw_idle()
+
+# Connect hover event to the figure
+fig.canvas.mpl_connect('motion_notify_event', hover)
+
+plt.show()
+### ANCHOR_END: plot_pca_hover
+
+# fig.savefig('../../assets/figures/05-machine_learning/pca_aptamers_interactive.svg')
