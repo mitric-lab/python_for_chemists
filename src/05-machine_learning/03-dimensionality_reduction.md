@@ -41,5 +41,5 @@ Because we are doing unsupervised learning, we do not need a `predict` method. H
 
 ### PCA on the aptamer dataset
 
-
+We want to apply the PCA to the aptamer dataset to find a low-dimensional representation of the molecules. We will use the `fit_transform` method to compute the principal components and the low-dimensional representation of the data. Instead of the more or less randomly hand-crafted features that we used in the chapter on regression, we will use a more *natural* representation 
 
