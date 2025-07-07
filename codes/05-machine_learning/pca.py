@@ -31,8 +31,8 @@ class PCA:
         # Store the top k eigenvectors (principal components)
         self.components = eigenvectors[:, :self.k]
         
-        # Calculate the explained variances
-        self.explained_variance = eigenvalues[:self.k] / np.sum(eigenvalues)
+        # Calculate the explained variances of all principal components
+        self.explained_variance = eigenvalues / np.sum(eigenvalues)
 ### ANCHOR_END: pca_fit
     
 ### ANCHOR: pca_transform
@@ -81,8 +81,24 @@ print(X.shape)
 ### ANCHOR: pca_fit_transform
 pca = PCA(k=2)
 X_pca = pca.fit_transform(X)
-print(X_pca.shape)
+print(X_pca.shape) # (N, 2)
 ### ANCHOR_END: pca_fit_transform
+
+### ANCHOR: pca_explained_variance
+n = 5
+
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.bar(range(1, n + 1), pca.explained_variance[:n], color='tab:blue', label='Explained Variance')
+ax.plot(range(1, n + 1), np.cumsum(pca.explained_variance[:n]), 'o-', c='tab:orange', label='Cumulative Explained Variance')
+ax.set_xlabel('Principal Component')
+ax.set_ylabel('Explained Variance')
+ax.legend()
+plt.show()
+### ANCHOR_END: pca_explained_variance
+
+print(np.cumsum(pca.explained_variance[:n]))
+
+# fig.savefig('../../assets/figures/05-machine_learning/pca_aptamers_explained_variance.svg')
 
 ### ANCHOR: plot_pca
 fig, ax = plt.subplots(figsize=(6, 6))
