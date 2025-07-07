@@ -44,3 +44,34 @@ Sometimes, other types of ML are distinguished, like **reinforcement learning** 
 Try to think about the algorithms we have already covered in this course and whether they fit the classical programming approach or the machine learning approach (supervised or unsupervised). You will find that some techniques can be classified as machine learning, so you can already claim to have some knowledge of ML. Congratulations!
 ```
 
+---
+
+**Self-Study Questions**
+
+1. Suppose someone creates a chatbot which has a humongous database of 
+questions and answers. When a user asks a question, the chatbot searches its 
+database for the most similar question and returns the corresponding answer.
+Is this an example of machine learning? Where in the diagram about
+AI, ML, and DL would you place this chatbot?
+
+2. Are the following examples machine learning or classical programming?
+  - Predicting the absorbance of a solution at $c = 0.1 \, \mathrm{mol/l}$ 
+    based on measured absorbances at lower concentrations and a linear
+    regression model.
+  - Calculating of the first one million digits of $\pi$ using the
+    Leibniz formula.
+  - Playing noughts and crosses (tic-tac-toe) by checking all possible
+    future moves and choosing the one that maximises the chance of winning.
+  - Playing chess by using a model that takes the current board state and
+    predicts the best move based on a large number of previous games.
+
+3. Interpret the following cartoon.
+<figure>
+    <center>
+    <img src="../assets/figures/05-machine_learning/limit_fail.jpg"
+         alt="ML cartoon"
+         width="400"\>
+    <figcaption>This is why you can’t just train on examples…</figcaption>
+    </center>
+</figure>
+

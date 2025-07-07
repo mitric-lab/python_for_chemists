@@ -236,9 +236,58 @@ Although the model's accuracy is limited, we can still gain insights by examinin
 
 ![Learned feature weights](../assets/figures/05-machine_learning/regression_model_weights.svg)
 
-
-
+[^1]: Christian Steinmetzger, Irene Bessi, Ann-Kathrin Lenz, Claudia Höbartner, Structure–fluorescence activation relationships of a large Stokes shift fluorogenic RNA aptamer, Nucleic Acids Research, Volume 47, Issue 22, 16 December 2019, Pages 11538–11550, https://doi.org/10.1093/nar/gkz1084
 
 ---
 
-[^1]: Christian Steinmetzger, Irene Bessi, Ann-Kathrin Lenz, Claudia Höbartner, Structure–fluorescence activation relationships of a large Stokes shift fluorogenic RNA aptamer, Nucleic Acids Research, Volume 47, Issue 22, 16 December 2019, Pages 11538–11550, https://doi.org/10.1093/nar/gkz1084
+**Self-Study Questions**
+
+1. Eq. {{eqref: eq:linear_regression_weights}} is equivalent to
+$(\bm{X}^T \bm{X}) \hat{\vec{w}} = \bm{X}^T \bm{y}$. Derive the special
+case of simple linear regression in Eq. {{eqref: eq:least_squares_linear_params}} 
+from this equation.
+
+2. Explain the difference between a class and an instance in OOP. 
+How do attributes and methods relate to these concepts?
+
+3. What is the purpose of the `__init__` method in a class? 
+   How does it differ from other methods?
+
+**Challenge Questions**
+
+There are other quality metrics for linear regression models besides MAE. 
+One common metric is the **coefficient of determination**, denoted as $R^2$.
+By defining the sum of squares of the residuals
+$$
+  SS_{\text{res}} = \sum_{i=1}^N (y_i - \hat{f}_{\vec{w}}(\vec{x}_i))^2
+$$
+and the total sum of squares
+$$
+  SS_{\text{tot}} = \sum_{i=1}^N (y_i - \bar{y})^2
+$$
+where $N$ is the number of data points and $\bar{y}$ is the 
+mean of the true outputs, one can define $R^2$ as
+$$
+  R^2 = 1 - \frac{SS_{\text{res}}}{SS_{\text{tot}}} \,.
+$$
+
+1. What is the range of possible values for $R^2$? 
+   What does it mean if $R^2 = 0$ or $R^2 = 1$?
+
+2. Implement a method in the `LinearRegression` class to calculate $R^2$,
+   and use it to evaluate the model's performance on the fluorescence dataset.
+
+3. For linear regression, the $R^2$ value is identical to the square of the
+   [*Pearson correlation coefficient*](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient).
+   Inform yourself about the Pearson correlation coefficient and explain
+   the following graph, where the Pearson correlation coefficient is shown
+   for different data distributions. 
+   What does a correlation coefficient of 0 mean, especially in the context 
+   of linear regression?
+
+<figure>
+  <center>
+  <img src="../assets/figures/05-machine_learning/correlation.svg" alt="Pearson correlation coefficient for different data distributions" width="600">
+  <figcaption>Source: <a href="https://commons.wikimedia.org/wiki/File:Correlation_examples2.svg">Wikimedia Commons</a></figcaption>
+  </center>
+</figure>
