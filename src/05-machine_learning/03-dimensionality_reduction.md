@@ -107,8 +107,16 @@ We see that with two principal components, we can explain approximately 35% of t
 {{#include ../codes/05-machine_learning/pca.py:plot_pca}}
 ```
 
-![PCA of the aptamer dataset](../../assets/figures/05-machine_learning/pca_aptamers.svg)
+<figure>
+  <center>
+  <div id="scatter-container"></div>
+  <figcaption>Scatter plot of the aptamer dataset projected onto the first two principal components.</figcaption>
+  </center>
+</figure>
+
+{{#include ../codes/05-machine_learning/interactive_pca.html}}
 
 ```admonish note title="Combining unsupervised and supervised learning"
 As you can see, this projection of the data onto the first two principal components is exactly the representation of the data that we used when training a classifier. This is a classic example of how unsupervised learning can be combined with supervised learning, for example, to find a low-dimensional representation of the data that is useful for classification or regression.
 ```
+

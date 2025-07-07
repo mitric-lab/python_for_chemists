@@ -84,6 +84,8 @@ X_pca = pca.fit_transform(X)
 print(X_pca.shape) # (N, 2)
 ### ANCHOR_END: pca_fit_transform
 
+np.save("X_pca.npy", X_pca)
+
 ### ANCHOR: pca_explained_variance
 n = 5
 
