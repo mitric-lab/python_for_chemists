@@ -138,9 +138,11 @@ This visualization code creates the same scatter plot as before, colored by true
 <!-- ![Decision boundary](../assets/figures/05-machine_learning/classification_decision_boundary.svg)
  -->
 
-<p>
-  <img src="../assets/figures/05-machine_learning/pca_classification_animated.gif" alt="Decision boundary" />
-</p>
+<figure>
+  <center>
+  <img src="../assets/figures/05-machine_learning/pca_classification_animated.gif" alt="Decision boundary" style="max-width: 600px;" />
+  </center>
+</figure>
 
 The resulting plot shows how the perceptron has learned to separate the two classes with a linear decision boundary. 
 
