@@ -135,7 +135,12 @@ Finally, we visualize the decision boundary learned by our perceptron:
 
 This visualization code creates the same scatter plot as before, colored by true class labels. The decision boundary is defined as the line where $\vec{w} \cdot \vec{x} = 0$, and we solve for the second coordinate using the equation $x_2 = -(w_0 x_1 + w_2) / w_1$. Remember that the first weight $w_0$ is the bias term, and the corresponding feature is always 1. We generate a range of `x1` values and compute the corresponding `x2` values on the decision boundary. The dashed line shows where our perceptron separates the two classes, and we include a legend to clearly identify the decision boundary.
 
-![Decision boundary](../assets/figures/05-machine_learning/classification_decision_boundary.svg)
+<!-- ![Decision boundary](../assets/figures/05-machine_learning/classification_decision_boundary.svg)
+ -->
+
+<p>
+  <img src="../assets/figures/05-machine_learning/pca_classification_animated.gif" alt="Decision boundary" />
+</p>
 
 The resulting plot shows how the perceptron has learned to separate the two classes with a linear decision boundary. 
 

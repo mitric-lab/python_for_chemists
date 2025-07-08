@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+SEED = 1234
+
 ## ANCHOR: load_data_from_csv
 import numpy as np
 import matplotlib.pyplot as plt
@@ -33,7 +35,7 @@ plt.show()
 
 ### ANCHOR: classification_class_init
 class RosenblattPerceptron:
-    def __init__(self, learning_rate=0.1, n_iterations=100):
+    def __init__(self, learning_rate=0.01, n_iterations=50):
         self.learning_rate = learning_rate
         self.n_iterations = n_iterations
         self.weights = None
@@ -41,12 +43,12 @@ class RosenblattPerceptron:
     
 ### ANCHOR: classification_class_fit
     def fit(self, X, y):
-        self.weights = np.zeros(X.shape[1])
+        self.weights = np.random.randn(X.shape[1])
 
         for _ in range(self.n_iterations):
             for x_i, y_i in zip(X, y):
                 loss = - y_i * np.dot(self.weights, x_i)
-                if loss >= 0:
+                if loss > 0:
                     self.weights += self.learning_rate * y_i * x_i
 ### ANCHOR_END: classification_class_fit
 
@@ -55,6 +57,7 @@ class RosenblattPerceptron:
         return np.sign(np.dot(X, self.weights))
 ### ANCHOR_END: classification_class_predict
 
+np.random.seed(SEED)
 ### ANCHOR: fit_model
 model = RosenblattPerceptron()
 model.fit(X, y)
@@ -76,11 +79,64 @@ x2_boundary = -(model.weights[0] * x1_range + model.weights[2]) / model.weights[
 
 # Plot the decision boundary
 ax.plot(x1_range, x2_boundary, 'k--', linewidth=2, label='Decision Boundary')
-ax.legend()
+ax.legend(loc='upper right')
 
 ax.set_xlabel('PC1')
 ax.set_ylabel('PC2')
+ax.set_xlim(X[:, 0].min()-0.1, X[:, 0].max()+0.1)
+ax.set_ylim(X[:, 1].min()-0.1, X[:, 1].max()+0.1)
 plt.show()
 ### ANCHOR_END: plot_decision_boundary
 
 # fig.savefig('../../assets/figures/05-machine_learning/classification_decision_boundary.svg')
+
+class RosenblattPerceptronWithHistory:
+    def __init__(self, learning_rate=0.01, n_iterations=50, save_interval=10):
+        self.learning_rate = learning_rate
+        self.n_iterations = n_iterations
+        self.save_interval = save_interval
+        self.weights = None
+        self.weight_history = []
+    
+    def fit(self, X, y):
+        self.weights = np.random.randn(X.shape[1])
+        self.weight_history = [self.weights.copy()]
+        
+        for iteration in range(self.n_iterations):
+            for x_i, y_i in zip(X, y):
+                loss = - y_i * np.dot(self.weights, x_i)
+                if loss > 0:
+                    self.weights += self.learning_rate * y_i * x_i
+            
+            self.weight_history.append(self.weights.copy())
+            
+            if iteration % self.save_interval == 0 or iteration == self.n_iterations - 1:
+                self.plot_and_save_boundary(X, y, iteration)
+    
+    def predict(self, X):
+        return np.sign(np.dot(X, self.weights))
+    
+    def plot_and_save_boundary(self, X, y, iteration):
+        fig, ax = plt.subplots(figsize=(7, 6))
+        ax.scatter(X[:, 0], X[:, 1], c=y, cmap='coolwarm', alpha=0.7)
+        
+        x1_range = np.linspace(X[:, 0].min(), X[:, 0].max(), 100)
+        
+        if self.weights[1] != 0:
+            x2_boundary = -(self.weights[0] * x1_range + self.weights[2]) / self.weights[1]
+            ax.plot(x1_range, x2_boundary, 'k--', linewidth=2, label=f'Decision Boundary')
+        
+        ax.set_title(f'Iteration {iteration+1}')
+        ax.legend(loc='upper right')
+        ax.set_xlabel('PC1')
+        ax.set_ylabel('PC2')
+        ax.set_xlim(X[:, 0].min()-0.1, X[:, 0].max()+0.1)
+        ax.set_ylim(X[:, 1].min()-0.1, X[:, 1].max()+0.1)
+        
+        plt.savefig(f'../../assets/figures/05-machine_learning/classification_boundary/iter_{iteration:03d}.png', dpi=150, bbox_inches='tight')
+        plt.close()
+
+np.random.seed(SEED)
+model_with_history = RosenblattPerceptronWithHistory(learning_rate=0.01, n_iterations=50, save_interval=1)
+model_with_history.fit(X, y)
+
