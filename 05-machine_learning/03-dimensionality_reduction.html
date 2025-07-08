@@ -335,7 +335,7 @@ ax.set_ylabel('Explained Variance')
 ax.legend()
 plt.show()
 </code></pre>
-<p><img src="../../assets/figures/05-machine_learning/pca_aptamers_explained_variance.svg" alt="Explained variance of the principal components" /></p>
+<p><img src="../assets/figures/05-machine_learning/pca_aptamers_explained_variance.svg" alt="Explained variance of the principal components" /></p>
 <p>We see that with two principal components, we can explain approximately 35% of the variance in the data. With four principal components, we could already explain more than 50% of the variance. This means that by projecting the data onto the first two principal components, we lose a significant amount of information. However, this allows us to visualize the data in two dimensions, which is much easier to interpret. Let us plot the data in this two-dimensional space:</p>
 <pre><code class="language-python">fig, ax = plt.subplots(figsize=(6, 6))
 ax.scatter(X_pca[:, 0], X_pca[:, 1], color='blue', label='Data')
@@ -353,36 +353,36 @@ plt.show()
 <script>
 // 1) Data array
 const data = [
-  { x: -0.0515, y: 1.7994, img: "../../assets/figures/05-machine_learning/molecules/mol_0000.png", id: "pt1" },
-  { x: -0.7790, y: 1.7741, img: "../../assets/figures/05-machine_learning/molecules/mol_0001.png", id: "pt2" },
-  { x: -0.7006, y: 1.4832, img: "../../assets/figures/05-machine_learning/molecules/mol_0002.png", id: "pt3" },
-  { x: -0.8047, y: 1.4448, img: "../../assets/figures/05-machine_learning/molecules/mol_0003.png", id: "pt4" },
-  { x: -0.6912, y: 1.5818, img: "../../assets/figures/05-machine_learning/molecules/mol_0004.png", id: "pt5" },
-  { x: -0.6263, y: 1.8796, img: "../../assets/figures/05-machine_learning/molecules/mol_0005.png", id: "pt6" },
-  { x: -1.1786, y: 1.8794, img: "../../assets/figures/05-machine_learning/molecules/mol_0006.png", id: "pt7" },
-  { x: -1.3897, y: -0.1856, img: "../../assets/figures/05-machine_learning/molecules/mol_0007.png", id: "pt8" },
-  { x: -1.6215, y: -0.9812, img: "../../assets/figures/05-machine_learning/molecules/mol_0008.png", id: "pt9" },
-  { x: -2.0295, y: -0.4462, img: "../../assets/figures/05-machine_learning/molecules/mol_0009.png", id: "pt10" },
-  { x: -2.0704, y: -0.5861, img: "../../assets/figures/05-machine_learning/molecules/mol_0010.png", id: "pt11" },
-  { x: -2.2086, y: -0.5557, img: "../../assets/figures/05-machine_learning/molecules/mol_0011.png", id: "pt12" },
-  { x: -1.8780, y: -0.5449, img: "../../assets/figures/05-machine_learning/molecules/mol_0012.png", id: "pt13" },
-  { x: -1.8246, y: -1.0209, img: "../../assets/figures/05-machine_learning/molecules/mol_0013.png", id: "pt14" },
-  { x: -2.0024, y: -0.5351, img: "../../assets/figures/05-machine_learning/molecules/mol_0014.png", id: "pt15" },
-  { x: -2.2922, y: -0.4904, img: "../../assets/figures/05-machine_learning/molecules/mol_0015.png", id: "pt16" },
-  { x: -0.0844, y: 2.0059, img: "../../assets/figures/05-machine_learning/molecules/mol_0016.png", id: "pt17" },
-  { x: 0.9778, y: 1.7144, img: "../../assets/figures/05-machine_learning/molecules/mol_0017.png", id: "pt18" },
-  { x: 2.3972, y: 0.7040, img: "../../assets/figures/05-machine_learning/molecules/mol_0018.png", id: "pt19" },
-  { x: 2.7038, y: 0.4517, img: "../../assets/figures/05-machine_learning/molecules/mol_0019.png", id: "pt20" },
-  { x: 2.6502, y: 0.4216, img: "../../assets/figures/05-machine_learning/molecules/mol_0020.png", id: "pt21" },
-  { x: 2.6699, y: 0.5610, img: "../../assets/figures/05-machine_learning/molecules/mol_0021.png", id: "pt22" },
-  { x: 2.9094, y: 0.3966, img: "../../assets/figures/05-machine_learning/molecules/mol_0022.png", id: "pt23" },
-  { x: 1.1153, y: -2.4049, img: "../../assets/figures/05-machine_learning/molecules/mol_0023.png", id: "pt24" },
-  { x: 1.0617, y: -2.4349, img: "../../assets/figures/05-machine_learning/molecules/mol_0024.png", id: "pt25" },
-  { x: 1.2589, y: -2.3609, img: "../../assets/figures/05-machine_learning/molecules/mol_0025.png", id: "pt26" },
-  { x: 1.2928, y: -2.6284, img: "../../assets/figures/05-machine_learning/molecules/mol_0026.png", id: "pt27" },
-  { x: 2.5812, y: 1.0622, img: "../../assets/figures/05-machine_learning/molecules/mol_0027.png", id: "pt28" },
-  { x: 0.8054, y: -2.1721, img: "../../assets/figures/05-machine_learning/molecules/mol_0028.png", id: "pt29" },
-  { x: -0.1904, y: -1.8125, img: "../../assets/figures/05-machine_learning/molecules/mol_0029.png", id: "pt30" },
+  { x: -0.0515, y: 1.7994, img: "../assets/figures/05-machine_learning/molecules/mol_0000.png", id: "pt1" },
+  { x: -0.7790, y: 1.7741, img: "../assets/figures/05-machine_learning/molecules/mol_0001.png", id: "pt2" },
+  { x: -0.7006, y: 1.4832, img: "../assets/figures/05-machine_learning/molecules/mol_0002.png", id: "pt3" },
+  { x: -0.8047, y: 1.4448, img: "../assets/figures/05-machine_learning/molecules/mol_0003.png", id: "pt4" },
+  { x: -0.6912, y: 1.5818, img: "../assets/figures/05-machine_learning/molecules/mol_0004.png", id: "pt5" },
+  { x: -0.6263, y: 1.8796, img: "../assets/figures/05-machine_learning/molecules/mol_0005.png", id: "pt6" },
+  { x: -1.1786, y: 1.8794, img: "../assets/figures/05-machine_learning/molecules/mol_0006.png", id: "pt7" },
+  { x: -1.3897, y: -0.1856, img: "../assets/figures/05-machine_learning/molecules/mol_0007.png", id: "pt8" },
+  { x: -1.6215, y: -0.9812, img: "../assets/figures/05-machine_learning/molecules/mol_0008.png", id: "pt9" },
+  { x: -2.0295, y: -0.4462, img: "../assets/figures/05-machine_learning/molecules/mol_0009.png", id: "pt10" },
+  { x: -2.0704, y: -0.5861, img: "../assets/figures/05-machine_learning/molecules/mol_0010.png", id: "pt11" },
+  { x: -2.2086, y: -0.5557, img: "../assets/figures/05-machine_learning/molecules/mol_0011.png", id: "pt12" },
+  { x: -1.8780, y: -0.5449, img: "../assets/figures/05-machine_learning/molecules/mol_0012.png", id: "pt13" },
+  { x: -1.8246, y: -1.0209, img: "../assets/figures/05-machine_learning/molecules/mol_0013.png", id: "pt14" },
+  { x: -2.0024, y: -0.5351, img: "../assets/figures/05-machine_learning/molecules/mol_0014.png", id: "pt15" },
+  { x: -2.2922, y: -0.4904, img: "../assets/figures/05-machine_learning/molecules/mol_0015.png", id: "pt16" },
+  { x: -0.0844, y: 2.0059, img: "../assets/figures/05-machine_learning/molecules/mol_0016.png", id: "pt17" },
+  { x: 0.9778, y: 1.7144, img: "../assets/figures/05-machine_learning/molecules/mol_0017.png", id: "pt18" },
+  { x: 2.3972, y: 0.7040, img: "../assets/figures/05-machine_learning/molecules/mol_0018.png", id: "pt19" },
+  { x: 2.7038, y: 0.4517, img: "../assets/figures/05-machine_learning/molecules/mol_0019.png", id: "pt20" },
+  { x: 2.6502, y: 0.4216, img: "../assets/figures/05-machine_learning/molecules/mol_0020.png", id: "pt21" },
+  { x: 2.6699, y: 0.5610, img: "../assets/figures/05-machine_learning/molecules/mol_0021.png", id: "pt22" },
+  { x: 2.9094, y: 0.3966, img: "../assets/figures/05-machine_learning/molecules/mol_0022.png", id: "pt23" },
+  { x: 1.1153, y: -2.4049, img: "../assets/figures/05-machine_learning/molecules/mol_0023.png", id: "pt24" },
+  { x: 1.0617, y: -2.4349, img: "../assets/figures/05-machine_learning/molecules/mol_0024.png", id: "pt25" },
+  { x: 1.2589, y: -2.3609, img: "../assets/figures/05-machine_learning/molecules/mol_0025.png", id: "pt26" },
+  { x: 1.2928, y: -2.6284, img: "../assets/figures/05-machine_learning/molecules/mol_0026.png", id: "pt27" },
+  { x: 2.5812, y: 1.0622, img: "../assets/figures/05-machine_learning/molecules/mol_0027.png", id: "pt28" },
+  { x: 0.8054, y: -2.1721, img: "../assets/figures/05-machine_learning/molecules/mol_0028.png", id: "pt29" },
+  { x: -0.1904, y: -1.8125, img: "../assets/figures/05-machine_learning/molecules/mol_0029.png", id: "pt30" },
 ];
 
 // 2) Frame extents in data coords (customizable)
