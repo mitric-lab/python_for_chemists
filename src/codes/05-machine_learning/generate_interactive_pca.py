@@ -245,7 +245,7 @@ svg.appendChild(legend);
 </script>
 '''
 
-IMG_ROOT = '../../assets/figures/05-machine_learning/molecules'
+IMG_ROOT = '../assets/figures/05-machine_learning/molecules'
 
 X_pca = np.load('X_pca.npy')
 n_imgs, n_components = X_pca.shape

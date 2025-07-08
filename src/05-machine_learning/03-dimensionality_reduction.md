@@ -99,7 +99,7 @@ We can see that the data is reduced to two dimensions, as we have set the number
 {{#include ../codes/05-machine_learning/pca.py:pca_explained_variance}}
 ```
 
-![Explained variance of the principal components](../../assets/figures/05-machine_learning/pca_aptamers_explained_variance.svg)
+![Explained variance of the principal components](../assets/figures/05-machine_learning/pca_aptamers_explained_variance.svg)
 
 We see that with two principal components, we can explain approximately 35% of the variance in the data. With four principal components, we could already explain more than 50% of the variance. This means that by projecting the data onto the first two principal components, we lose a significant amount of information. However, this allows us to visualize the data in two dimensions, which is much easier to interpret. Let us plot the data in this two-dimensional space:
 
