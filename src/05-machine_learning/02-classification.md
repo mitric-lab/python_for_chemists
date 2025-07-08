@@ -139,3 +139,39 @@ This visualization code creates the same scatter plot as before, colored by true
 
 The resulting plot shows how the perceptron has learned to separate the two classes with a linear decision boundary. 
 
+---
+
+**Self-Study Questions:**
+1. What is the difference between regression and classification?
+2. Sketch a 2D dataset that is not linearly separable. 
+   Explain why the perceptron algorithm cannot achieve a loss of 0 
+   on this dataset.
+3. Why is it important to include a bias term in the perceptron model?
+   Sketch a 2D dataset where a loss of 0 can be achieved with a bias term,
+   but not without it.
+4. The decision boundary in the figure above can be rotated
+   counter-clockwise by a small angle without changing the accuracy of the model.
+   How does the loss function change during this rotation?
+
+**Challenge Questions:**
+1. Suppose we now work in a one-dimensional features space.
+   Why is it not practical to apply regression using the 
+   Heaviside step function
+   $$
+     \Theta_{\theta}(x) = \begin{cases}
+       1 & \text{if } x > \theta \\
+       0 & \text{otherwise}
+     \end{cases}
+   $$
+   in combination with gradient descent to solve 
+   a binary classification problem?
+   Inform yourself about the
+   [logistic regression](https://en.wikipedia.org/wiki/Logistic_regression)
+   and explain why it is a better choice than the Heaviside step function.
+2. The decision boundary in the figure above does not seem very robust,
+   since it is very close to one of the red data points.
+   Sketch a more robust decision boundary and explain
+   why Rosenblatt's Perceptron does not produce such a boundary.
+3. Which measure could you add to the perceptron algorithm to
+   achieve a more robust decision boundary?
+
