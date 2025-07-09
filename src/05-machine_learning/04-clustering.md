@@ -40,70 +40,61 @@ $$
 and can be visualized in [Voronoi diagrams](https://en.wikipedia.org/wiki/Voronoi_diagram).
 ```
 
-<!-- ### Implementation
+### Implementation
 
-Wir implementieren auch den $k$-Means Algorithmus als Klasse. In der `__init__` Methode
-initialisieren wir die Anzahl der Cluster und die maximale Anzahl an Iterationen. Zudem 
-setzen wir die Variablen `self.centroids` und `self.labels`, die im Laufe des Algorithmus
-abwechselnd aktualisiert werden:
+Of course, we implement the $k$-means algorithm as a class. In the `__init__` method
+we set the number of clusters and the maximum number of iterations. Additionally,
+we already initialize the class attributes `self.centroids` and `self.labels`, which will be updated alternately during the algorithm. `self.centroids` will be, of course, a 2D array holding in each row the centroid of a cluster. `self.labels` will be a 1D array holding the cluster label ($0, \ldots, K-1$) for each data point.
 
 ```python
 {{#include ../codes/05-machine_learning/k_means.py:kmeans_init}}
 ```
 
-Dann implementieren wir die Methode `fit`, die den Algorithmus wie oben beschrieben
-ausführt. Nachdem wir zufällig ausgewählte Datenpunkte als Mittelwerte `self.centroids` 
-der $K$ Cluster initialisiert haben, berechnen wir in einer Schleife die Zuweisungen und Mittelwerte
-der Cluster:
+Then, we implement the `fit` method, which executes the algorithm as described above. Here, we have used [`np.random.choice`](https://numpy.org/doc/stable/reference/random/generated/numpy.random.choice.html) to randomly select indices of data points to serve as the initial centroids. The function `np.random.choice` selects `self.n_clusters` unique indices from the range of available data points, given by `X.shape[0]`. The parameter `replace=False` ensures that the same data point is not selected more than once. By indexing the data matrix `X` with these indices, we obtain the initial centroids. After that, we update the centroids and labels in a loop as described above for `self.num_iter` iterations.
 
 ```python
 {{#include ../codes/05-machine_learning/k_means.py:kmeans_fit}}
 ```
 
-Hier haben wir angenommen, dass wir die Methoden `assign_labels` und `compute_centroids`
-noch implementieren werden. Dabei sei noch einmal darauf hingewiesen, dass wir auf 
-die Variablen `self.centroids` und `self.labels` innerhalb der Methoden der Klasse zugreifen können,
-da diese als Klassenattribute definiert sind. Die Methode `assign_labels` berechnet zunächst die 
-Distanzen aller Datenpunkte zu allen Mittelwerten. Dazu erweitern wir die Datenmatrix `X` um eine
-zusätzliche Dimension, also `X.shape = (n_points, 1, n_features)`, um die Abstandsvektoren zu den
-Mittelwerten `self.centroids`, die die Form `(n_clusters, n_features)` haben, zu berechnen. Die 
-Subtraktion der beiden Arrays führt also zu einem Array der Form `(n_points, n_clusters, n_features)`.
-Die Distanz erhalten wir dann durch die Berechnung der euklidischen Norm entlang der letzten Achse
-(`axis=2`). Der Array `distances` speichert also für alle Datenpunkte die Distanzen zu den $K$
-Mittelwerten. Die Zuweisung erfolgt demnach durch die Auswahl des Clusters mit dem kleinsten Abstand
-für jeden Datenpunkt, was mit der `numpy` Funktion `argmin` realisiert werden kann:
+Here, we actually assumed that we will implement the methods `assign_labels` and `compute_centroids` later.
+
+Within the `assign_labels` method, we first compute the distances between all data points and all centroids. This is done by subtracting the centroids from the data points and then computing the euclidean norm of the resulting vectors. However, because the shape of the data matrix `X` is `(n_points, n_features)`, while the shape of the centroids is `(n_clusters, n_features)`, we need to expand the data matrix to match the shape of the centroids. This is done by adding an additional dimension to the data matrix, i.e. `X.shape = (n_points, 1, n_features)`. The subtraction of the centroids from the data points then results in an array of shape `(n_points, n_clusters, n_features)`. The euclidean norm of the resulting vectors is then computed accross all features, i.e. `axis=2`. The resulting array `distances` then holds the distances between all data points and all centroids. The assignment of the data points to the clusters is then done by selecting the cluster with the smallest distance for each data point, which can be achieved by using the `np.argmin` function, along the second axis, i.e. `axis=1`.
+ 
 
 ```python
 {{#include ../codes/05-machine_learning/k_means.py:kmeans_assign_labels}}
 ```
 
-Die Berechnung der Mittelwerte ist vergleichsweise einfach, da wir ledigleich für jedes Cluster 
-$i = 1, \ldots, K$ die Mittelwerte der Datenpunkte des $i$-ten Clusters berechnen müssen und in 
-einem Array speichern müssen. Dazu nutzen wir List-Comprehension:
+The calculation of the centroids is relatively simple, since we only need to compute the mean values of the data points for each cluster $i = 1, \ldots, K$ and store them in an array. Remeber that we can get the data points assigned to a cluster by indexing the data matrix `X` with the cluster labels, i.e. `X[labels == i]`. We use list comprehension for this:
 
 ```python
 {{#include ../codes/05-machine_learning/k_means.py:kmeans_compute_centroids}}
 ```
 
-Um dem Konzept der allgemeinen ML-Klasse treu zu bleiben, implementieren wir auch die Methode
-`predict`, die die Zuweisungen für ggf. neue Datenpunkte berechnet. 
+To stay true to the concept of the general ML class, we also implement the `predict` method, which computes the assignments for possibly new data points.
 
-Wir testen unsere Implementierung des $k$-Means Algorithmus anhand der Projektion des Iris Datensatzes
-auf die zwei Hauptkomponenten, die wir zuvor mit der PCA berechnet haben:
+### Clustering of aptamers
+
+We can now test our implementation of the $k$-means algorithm on the aptamer dataset. We will use the representation of the aptamers in the principal component space, which we computed earlier with the PCA. With some imagination, we can see that the aptamers are clustered into four groups, which we want to identify with the $k$-means algorithm.
+
+Loading the data from the CSV file and converting the data to a numpy array is straightforward:
 
 ```python
-{{#include ../codes/05-machine_learning/k_means.py:kmeans_example}}
+{{#include ../codes/05-machine_learning/k_means.py:load_data_from_csv}}
 ```
 
-Dabei erhalten wir die folgende Abbildung, wobei wir die vorhergesagten Cluster durch die Farben
-der Punkte darstellen:
+We can now create an instance of the `KMeans` class and fit it to the data:
 
-![Iris k-Means](../assets/figures/05-machine_learning/k_means_iris.svg)
+```python
+{{#include ../codes/05-machine_learning/k_means.py:kmeans_fit_and_predict}}
+```
 
-Ohne Beachtung der korrekten Farben erkennen wir durch Vergleich der tatsächlichen Labels von oben,
-dass die drei Cluster mit hinreichender Genauigkeit den korrekten Schwertlilien-Arten zugeordnet
-werden konnten. Dabei sei nochmal angemerkt, dass es sich bei Clustering um eine Methode des 
-unüberwachten Lernens handelt, d.h. wir haben keine Information über die tatsächlichen Labels
-der Datenpunkte verwendet.
+Plotting the result is also straightforward. We simply color the data points according to the cluster labels. Additionally, we access the class attribute `centroids` to plot the centroids as red crosses:
 
---- -->
+```python
+{{#include ../codes/05-machine_learning/k_means.py:plot_kmeans_result}}
+```
+
+By inspecting the plot, we can see that the $k$-means algorithm will correctly identified the four clusters of aptamers in most cases. Because centroids are initialized randomly, the result will vary slightly between runs.
+
+![Result of the $k$-means algorithm on the aptamer dataset](../assets/figures/05-machine_learning/k_means_aptamers.svg)
