@@ -68,7 +68,7 @@ AI, ML, and DL would you place this chatbot?
 3. Interpret the following cartoon.
 <figure>
     <center>
-    <img src="../assets/figures/05-machine_learning/limit_fail.jpg"
+    <img src="assets/figures/05-machine_learning/limit_fail.jpg"
          alt="ML cartoon"
          width="400"\>
     <figcaption>This is why you can’t just train on examples…</figcaption>
