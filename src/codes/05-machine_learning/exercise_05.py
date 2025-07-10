@@ -7,7 +7,8 @@ class LinearRegression:
         self.weights = None
     
     def fit(self, X, y):
-        self.weights = np.linalg.pinv(X) @ y
+        # self.weights = np.linalg.pinv(X) @ y
+        self.weights = np.linalg.inv(X.T @ X) @ X.T @ y
     
     def predict(self, X):
         return X @ self.weights
