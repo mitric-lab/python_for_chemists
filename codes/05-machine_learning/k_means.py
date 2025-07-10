@@ -14,9 +14,6 @@ class KMeans:
 ### ANCHOR: kmeans_fit
     def fit(self, X):
         # Randomly initialize centroids
-        # Randomly select indices of data points to serve as the initial centroids.
-        # np.random.choice selects 'self.n_clusters' unique indices from the range of available data points (X.shape[0]).
-        # 'replace=False' ensures that the same data point is not selected more than once.
         random_indices = np.random.choice(X.shape[0], self.n_clusters, replace=False)
         self.centroids = X[random_indices]
         
@@ -170,7 +167,7 @@ for i in range(len(kmeans_hist.centroids_history)):
         ax.set_title(f"K-Means Clustering - Iteration {iteration_num}")
     
     # Save the plot
-    # fig.savefig(f'../../assets/figures/05-machine_learning/kmeans_iterations/step_{i:02d}.svg', dpi=300, bbox_inches='tight')
+    # fig.savefig(f'../../assets/figures/05-machine_learning/kmeans_iterations/step_{i:02d}.png', dpi=300, bbox_inches='tight')
     plt.close(fig)  # Close to save memory
 
 print(f"Saved {len(kmeans_hist.centroids_history)} step plots")
