@@ -323,6 +323,9 @@ def main_fingerprints_regression(input_path, output_path, target_column):
     fingerprint_columns = [f'fp_{i}' for i in range(fingerprints.shape[1])]
     fingerprints_df = pd.DataFrame(fingerprints, columns=fingerprint_columns)
     fingerprints_df[target_column] = df_raw[target_column].values
+
+    # Remove columns with only zeros or ones
+    fingerprints_df = fingerprints_df.loc[:, fingerprints_df.std() != 0]
     
     # Save processed data
     save_processed_data(fingerprints_df, output_path)
