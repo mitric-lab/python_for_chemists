@@ -108,11 +108,13 @@ By inspecting the plot, we can see that the $k$-means algorithm correctly identi
 1. Decrease and increase the number of clusters $K$ 
    and observe how the clustering changes.
 
+2. What is the difference between classification and clustering?
+
 The cluster energy $E$ is defined by
 $$
   E(\mathbf{C}, \mathbf{M}) = \sum_{k=1}^K \sum_{\vec{x}_i \in C_k} \|\vec{x}_i - \vec{m}_k\|^2\,.
 
-2. For which $K$ does the cluster energy $E$ reach a minimum?
+3. For which $K$ does the cluster energy $E$ reach a minimum?
    Is this the optimal number of clusters?
 
 **Challenge Questions:**
