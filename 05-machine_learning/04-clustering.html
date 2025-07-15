@@ -307,6 +307,23 @@ plt.show()
   <img src="../assets/figures/05-machine_learning/k_means_aptamers_animated.gif" alt="K-Means Clustering of aptamers" style="max-width: 600px;" />
   </center>
 </figure>
+<hr />
+<p><strong>Self-Study Questions:</strong></p>
+<ol>
+<li>Decrease and increase the number of clusters <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span></span>
+and observe how the clustering changes.</li>
+</ol>
+<p>The cluster energy <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span></span></span></span> is defined by
+$$
+E(\mathbf{C}, \mathbf{M}) = \sum_{k=1}^K \sum_{\vec{x}_i \in C_k} |\vec{x}_i - \vec{m}_k|^2,.</p>
+<ol start="2">
+<li>For which $K$ does the cluster energy $E$ reach a minimum?
+Is this the optimal number of clusters?</li>
+</ol>
+<p><strong>Challenge Questions:</strong>
+Suppose we start with a small number of clusters. After every iteration, we merge two clusters
+or split one cluster into two at random. Come up with a scheme that you think could
+help us find the “optimal” number of clusters $K$.</p>
 
                     </main>
 
