@@ -120,3 +120,25 @@ We see that with two principal components, we can explain approximately 35% of t
 As you can see, this projection of the data onto the first two principal components is exactly the representation of the data that we used when training a classifier. This is a classic example of how unsupervised learning can be combined with supervised learning, for example, to find a low-dimensional representation of the data that is useful for classification or regression.
 ```
 
+---
+
+**Self-Study Questions:**
+
+1. What is the main goal of dimensionality reduction in unsupervised learning?
+
+2. Explain the steps of the PCA algorithm. When is it important to
+   normalise the data before applying PCA?
+
+3. How can the eigenvalues of the covariance matrix be interpreted
+   in the context of PCA beyond the squared singular values?
+
+**Challenge Questions:**
+
+1. Why is it necessary to center the data matrix $\bm{X}$ before applying PCA? 
+   What would happen if we did not center the data?
+
+2. Show that the transformed data matrix $\bm{Z}_k = \bm{X} \bm{V}_k$ can also
+   be written as $\bm{Z}_k = \bm{U}_k \bm{\Sigma}_k$, where $\bm{U}_k$ is the matrix of the
+   first $k$ left singular vectors and $\bm{\Sigma}_k$ is the diagonal matrix of the 
+   first $k$ singular values.
+

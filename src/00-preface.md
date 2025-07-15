@@ -50,5 +50,5 @@ kontinuierlich aktualisiert.
 | 13  | Di.     | 15.07. | Übung       | Maschinelles Lernen |
 | 13  | Do.     | 17.07. | Vorlesung   | Neuronale Netzwerke I |
 | 14  | Di.     | 22.07. | Vorlesung   | Neuronale Netzwerke II |
-| 14  | Do.     | 24.07. | Übung       | Neuronale Netzwerke |
+| 14  | Do.     | 24.07. | Klausurvorbereitung | Wiederholung und Fragen |
 

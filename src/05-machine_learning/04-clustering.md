@@ -101,3 +101,22 @@ By inspecting the plot, we can see that the $k$-means algorithm correctly identi
   </center>
 </figure>
 
+---
+
+**Self-Study Questions:**
+
+1. Decrease and increase the number of clusters $K$ 
+   and observe how the clustering changes.
+
+The cluster energy $E$ is defined by
+$$
+  E(\mathbf{C}, \mathbf{M}) = \sum_{k=1}^K \sum_{\vec{x}_i \in C_k} \|\vec{x}_i - \vec{m}_k\|^2\,.
+
+2. For which $K$ does the cluster energy $E$ reach a minimum?
+   Is this the optimal number of clusters?
+
+**Challenge Questions:**
+Suppose we start with a small number of clusters. After every iteration, we merge two clusters
+or split one cluster into two at random. Come up with a scheme that you think could
+help us find the "optimal" number of clusters $K$.
+
