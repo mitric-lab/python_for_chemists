@@ -113,6 +113,7 @@ By inspecting the plot, we can see that the $k$-means algorithm correctly identi
 The cluster energy $E$ is defined by
 $$
   E(\mathbf{C}, \mathbf{M}) = \sum_{k=1}^K \sum_{\vec{x}_i \in C_k} \|\vec{x}_i - \vec{m}_k\|^2\,.
+$$
 
 3. For which $K$ does the cluster energy $E$ reach a minimum?
    Is this the optimal number of clusters?
