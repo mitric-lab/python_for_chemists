@@ -37,17 +37,43 @@ def euler_method(
 import numpy as np
 import matplotlib.pyplot as plt
 
-class kNN_Classifier:
+class kNNClassifier:
     def __init__(self, k):
         self.k = k
 
     def predict(self, X, y, xi):
-        #TODO: Implement the kNN label prediction for xi
+        # TODO: Implement the kNN label prediction for xi
 
         
+
+
+
+
+
+
         y_pred = ...
         return y_pred
 ### ANCHOR_END: knn_incomplete
+
+### ANCHOR: knn_weighted_incomplete
+class kNNWeightedClassifier
+    def __init__(self, k, sigma=1.0):
+        self.k = k
+        self.sigma = sigma
+
+    def predict(self, X, y, xi):
+        # TODO: Implement the weighted kNN label prediction for xi
+
+
+
+
+
+
+
+
+        y_pred = ...
+        return y_pred
+### ANCHOR_END: knn_weighted_incomplete
 
 ### ANCHOR: knn_complete
 import numpy as np
@@ -76,7 +102,7 @@ knn = kNN_Classifier(k=3)
 xi = np.array([0, 0])
 y_pred = knn.predict(X, y, xi)
 
-print(y_pred) # Output: 0 or 1
+print(y_pred)  # Output: 0 or 1
 ### ANCHOR_END: knn_example
 
 fig, ax = plt.subplots(figsize=(3, 3))

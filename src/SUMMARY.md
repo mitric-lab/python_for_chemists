@@ -48,6 +48,5 @@
 [Problem Set 2](psets/02.md)
 [Problem Set 3](psets/03.md)
 [Problem Set 4](psets/04.md)
-[Problem Set 5]()
-[Sample Exam]()
+[Sample Exam](psets/exam_preparation.md)
 
