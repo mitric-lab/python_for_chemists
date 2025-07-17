@@ -161,6 +161,12 @@ Das Model soll wie folgt verwendet werden:
 {{#include ../codes/07-summary/exam_preparation.py:knn_example}}
 ```
 
+**(c)**
+Ist eine lineare Separationsgrenze zwischen den Klassen notwendig, 
+um den kNN-Algorithmus einzusetzen? Begründen Sie Ihre Antwort
+mit einer Skizze eines Beispieldatensatzes aus zwei Klassen
+und einem zu klassifizierenden Punkt.
+
 Der kNN-Algorithmus wählt nur die $k$ nächsten Nachbarn aus,
 und lässt diese eine Abstimmung über die Klasse des neuen Punktes treffen.
 Dabei hat jeder Nachbar eine Stimme. Man könnte aber auch
@@ -175,7 +181,7 @@ gewichtet, wobei $d(\vec{x}_i, \vec{x}_j)$ die euklidische Distanz zwischen
 dem zu klassifizierenden Punkt $\vec{x}_i$ und dem $j$-ten Nachbarn $\vec{x}_j$ ist,
 und $\sigma$ genau so wie $k$ bei der Konstruktion des Modells festzulegen ist.
 
-**(c)**
+**(d)**
 Vervollständigen Sie die Methode `predict` der Klasse `kNNWeightedClassifier`
 in der folgenden Implementierung.
 
