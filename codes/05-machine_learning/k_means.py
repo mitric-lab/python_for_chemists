@@ -189,3 +189,48 @@ plt.close(fig)
 
 print("Final result saved as k_means_final_with_history.svg")
 ### ANCHOR_END: kmeans_optimization_visualization
+
+df = df.copy()
+
+# Save data with labels to csv
+final_labels[final_labels == 0] = -1
+final_labels[final_labels == 1] = 1
+final_labels[final_labels == 2] = -1
+final_labels[final_labels == 3] = 1
+df["labels"] = final_labels
+
+# Create a copy of the original data points and labels
+new_points = []
+new_labels = []
+
+# For each point, sample another nearby point with same label
+for i in range(len(df)):
+    point = df[["PC1", "PC2"]].iloc[i].values
+    label = df["labels"].iloc[i]
+    
+    for j in range(2):
+
+        # Add small random offset to create nearby point
+        offset = np.random.normal(0, 0.2, size=2)  # Small random offset
+        new_point = point + offset
+        
+        new_points.append(new_point)
+        new_labels.append(label)
+
+# Convert to numpy arrays and append to dataframe
+new_points = np.array(new_points) * 2
+df = pd.concat([
+    df,
+    pd.DataFrame({
+        "PC1": new_points[:, 0],
+        "PC2": new_points[:, 1], 
+        "labels": new_labels
+    })
+])
+
+
+df.drop(["lambda_abs_continuous", "lambda_abs_class"], axis=1, inplace=True)
+df.to_csv("../06-neural_networks/aptamer_xor_data.csv", index=False)
+
+plt.scatter(df["PC1"], df["PC2"], c=df["labels"], cmap="coolwarm")
+plt.show()
