@@ -227,7 +227,7 @@ def main_regression(input_path, output_path, target_column):
     # Save processed data
     save_processed_data(scaled_df, output_path)
 
-def main_classification(input_path, output_path, target_column):
+def main_classification(input_path, output_path, target_column, threshold=None):
     """Main classification analysis pipeline."""
     # Load and clean data
     df_raw = load_data(input_path, target_column)
@@ -245,7 +245,8 @@ def main_classification(input_path, output_path, target_column):
     pca_result, pca_model = perform_pca(fingerprints, n_components=2)
     
     # Create target classes from continuous values
-    threshold = np.median(df_raw[target_column].values)
+    if threshold is None:
+        threshold = np.median(df_raw[target_column].values)
     target_classes = create_target_classes(df_raw[target_column].values, threshold)
     
     # Plot PCA results
@@ -336,4 +337,5 @@ if __name__ == "__main__":
     # main_regression(INPUT_CSV_PATH, REGRESSION_OUTPUT_CSV_PATH, REGRESSION_TARGET_COLUMN)
     # main_classification(INPUT_CSV_PATH, CLASSIFICATION_OUTPUT_CSV_PATH, CLASSIFICATION_TARGET_COLUMN)
     # main_pca(INPUT_CSV_PATH, FINGERPRINTS_OUTPUT_CSV_PATH, CLASSIFICATION_TARGET_COLUMN)
-    main_fingerprints_regression(INPUT_CSV_PATH, "aptamer_fingerprints_regression_data.csv", "fl_int")
+    # main_fingerprints_regression(INPUT_CSV_PATH, "aptamer_fingerprints_regression_data.csv", "fl_int")
+
