@@ -26,14 +26,13 @@ print(y.shape)
 # fig.savefig('../../assets/figures/05-machine_learning/classification_data.svg')
 
 ### ANCHOR: svm_init
-class SupportVectorMachine:
+class SVM:
     def __init__(self, learning_rate=0.01, n_iterations=50, lam=10.0):
         self.learning_rate = learning_rate
         self.n_iterations = n_iterations
-        self.lam = lam  # regularization parameter lambda
+        self.lam = lam
         self.weights = None
-        self.losses = []  # store loss values for each epoch
-        self.margins = []  # store margin values (2 / ||w||) for each epoch
+        self.losses = []
 ### ANCHOR_END: svm_init
     
 ### ANCHOR: svm_fit
@@ -61,19 +60,8 @@ class SupportVectorMachine:
                 
                 # Accumulate loss for this epoch
                 epoch_loss += hinge_loss
-            
-            # Calculate total loss for this epoch (hinge loss + regularization)
-            regularization_loss = 0.5 * self.lam * np.dot(self.weights, self.weights)
-            total_loss = epoch_loss / n_samples + regularization_loss
-            self.losses.append(total_loss)
-            
-            # Calculate margin (2 / ||w||)
-            weight_norm = np.linalg.norm(self.weights)
-            margin = 2 / weight_norm if weight_norm > 0 else 0
-            self.margins.append(margin)
-            
-            if epoch % 10 == 0:
-                print(f"Epoch {epoch}, Loss: {total_loss:.4f}, Margin: {margin:.4f}")
+
+            self.losses.append(epoch_loss)
 ### ANCHOR_END: svm_fit
 
 ### ANCHOR: svm_predict
@@ -82,10 +70,11 @@ class SupportVectorMachine:
 ### ANCHOR_END: svm_predict
 
 np.random.seed(SEED)
+
 ### ANCHOR: fit_svm_model
-svm_model = SupportVectorMachine(learning_rate=0.01, n_iterations=100, lam=0.1)
-svm_model.fit(X, y)
-y_pred_svm = svm_model.predict(X)
+model = SVM(learning_rate=0.01, n_iterations=100, lam=0.1)
+model.fit(X, y)
+y_pred_svm = model.predict(X)
 ### ANCHOR_END: fit_svm_model
 
 ### ANCHOR: calculate_svm_accuracy
@@ -101,8 +90,8 @@ ax.scatter(X[:, 0], X[:, 1], c=y, cmap='coolwarm', alpha=0.7)
 
 # Define the decision boundary as a function of the first feature
 x1_range = np.linspace(X[:, 0].min(), X[:, 0].max(), 100)
-if svm_model.weights[1] != 0:
-    x2_boundary = -(svm_model.weights[0] * x1_range + svm_model.weights[2]) / svm_model.weights[1]
+if model.weights[1] != 0:
+    x2_boundary = -(model.weights[0] * x1_range + model.weights[2]) / model.weights[1]
     ax.plot(x1_range, x2_boundary, 'k--', linewidth=2, label='SVM Decision Boundary')
 
 ax.legend(loc='upper right')
@@ -115,4 +104,4 @@ ax.set_ylim(X[:, 1].min()-0.1, X[:, 1].max()+0.1)
 plt.show()
 ### ANCHOR_END: plot_svm_decision_boundary
 
-
+fig.savefig('../../assets/figures/05-machine_learning/svm_decision_boundary.svg')
