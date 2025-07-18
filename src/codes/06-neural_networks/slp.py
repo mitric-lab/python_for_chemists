@@ -1,6 +1,7 @@
+
 #!/usr/bin/env python
 
-### ANCHOR: slp
+### ANCHOR: sigmoid
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -24,13 +25,17 @@ ax.set_ylabel(r'$\sigma$(x)')
 fig.tight_layout()
 
 plt.show()
+### ANCHOR_END: sigmoid
 
 #fig.savefig('../../assets/figures/06-neural_networks/sigmoid.svg')
 
+np.random.seed(42)
+
+### ANCHOR: slp_init_predict
 # Define model class
 class SLP:
-    def __init__(self, dim=2, hidden_size=5, activation='Sigmoid', epochs=100, tau=0.1):
-        self.weights = np.random.randn(dim, hidden_size)  # dim includes bias column
+    def __init__(self, dim=3, hidden_size=5, activation='Sigmoid', epochs=100, tau=0.1):
+        self.weights = np.random.randn(hidden_size, dim)  # dim includes bias column
         self.linear_weights = np.random.randn(hidden_size)
         if activation == "Sigmoid":
             self.activation = Sigmoid()
@@ -40,27 +45,35 @@ class SLP:
         self.tau = tau
         self.losses = []
     
-    def feedforward(self, x): 
-        # x already includes bias column (1) from data preprocessing
-        z = np.dot(self.weights.T, x)
-        return np.dot(self.linear_weights.T, self.activation(z))
+    def predict(self, x): 
+        z = np.dot(self.weights, x)
+        return np.dot(self.linear_weights, self.activation(z))
+### ANCHOR_END: slp_init_predict
 
-    def train(self, X, y):        
+### ANCHOR: slp_fit
+    def fit(self, X, y):        
+        
+        # Shuffle data
         N = X.shape[0]
+        indices = np.random.permutation(N)
+        X = X[indices]
+        y = y[indices]
+
+        # Training loop
         for e in range(self.epochs):
             print(f"Epoch {e + 1}/{self.epochs}")
             loss = 0
 
-            # Iterate over all data points and update after each one
+            # Iterate over all data points and update after each one (SGD)
             for xi, yi in zip(X, y):
         
-                zi = np.dot(self.weights.T, xi)
+                zi = np.dot(self.weights, xi)
                 d_inner = self.linear_weights * self.activation.gradient(zi)
-                residue = self.feedforward(xi) - yi
+                residue = self.predict(xi) - yi
                 loss += residue ** 2
 
                 # Compute gradients for this single data point
-                gradient_w = residue * np.outer(d_inner, xi).T
+                gradient_w = residue * np.outer(d_inner, xi)
                 gradient_lw = residue * self.activation(zi)
 
                 # Update parameters after each data point
@@ -69,7 +82,9 @@ class SLP:
             
             # Append loss after each epoch
             self.losses.append(loss / N)
+### ANCHOR_END: slp_fit
 
+### ANCHOR: load_data
 # Load the data
 path = 'aptamer_xor_data.csv'
 df = pd.read_csv(path)
@@ -79,19 +94,23 @@ print(df.head())
 X = df.drop('labels', axis=1).values
 X = np.hstack([X, np.ones((X.shape[0], 1))])
 y = df['labels'].values
+### ANCHOR_END: load_data
 
+### ANCHOR: train_model
 # Set hyperparameters
-hidden_size = 50
-tau = 0.001
+hidden_size = 5
+tau = 0.01
 dim = X.shape[1]
-epochs = 500
+epochs = 100
 
 # Instantiate the model
 model = SLP(dim=dim, hidden_size=hidden_size, tau=tau, epochs=epochs)
 
 # Train the model
-model.train(X, y)
+model.fit(X, y)
+### ANCHOR_END: train_model
 
+### ANCHOR: plot_results
 # Make plot
 fig, [ax1, ax2] = plt.subplots(1, 2, figsize=(12, 6))
 
@@ -106,8 +125,9 @@ X1_grid, X2_grid = np.meshgrid(x1_grid, x2_grid, indexing='ij')
 Y = np.zeros_like(X1_grid)
 for i, x1 in enumerate(x1_grid):
     for j, x2 in enumerate(x2_grid):
-        Y[i, j] = model.feedforward([x1, x2, 1])  # Add bias term
+        Y[i, j] = model.predict([x1, x2, 1])  # Add bias term
 
+# Assign colors to the grid points based on the predicted class
 ax1.contour(X1_grid, X2_grid, Y, levels=[0.0], colors='black', linestyles='dashed')
 ax1.contourf(X1_grid, X2_grid, Y, levels=[-10.0, 0.0, 10.0], colors=['red', 'blue'], alpha=0.2)
 
@@ -119,6 +139,6 @@ ax2.set_ylabel('Loss')
 fig.tight_layout()
 
 plt.show()
-### ANCHOR_END: slp
+### ANCHOR_END: plot_results
 
-#fig.savefig('../../assets/figures/06-neural_networks/slp_circles.svg')
+# fig.savefig('../../assets/figures/06-neural_networks/slp_xor_classification.svg')

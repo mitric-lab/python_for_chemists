@@ -34,9 +34,9 @@
     - [Dimensionality Reduction](05-machine_learning/03-dimensionality_reduction.md)
     - [Clustering](05-machine_learning/04-clustering.md)
 
-- [Neuronale Netzwerke]()
-    - [Single-Layer-Perzeptron]()
-    - [Multi-Layer-Perzeptron]()
+- [Neural Networks](06-neural_networks.md)
+    - [Single-Layer-Perceptron](06-neural_networks/01-slp.md)
+    - [Multi-Layer-Perceptron]()
 
 ---
 
