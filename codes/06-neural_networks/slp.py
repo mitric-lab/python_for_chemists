@@ -46,8 +46,8 @@ class SLP:
         self.losses = []
     
     def predict(self, x): 
-        z = np.dot(self.weights, x)
-        return np.dot(self.linear_weights, self.activation(z))
+        z = np.dot(x, self.weights.T)
+        return np.dot(self.activation(z), self.linear_weights)
 ### ANCHOR_END: slp_init_predict
 
 ### ANCHOR: slp_fit
@@ -142,3 +142,75 @@ plt.show()
 ### ANCHOR_END: plot_results
 
 # fig.savefig('../../assets/figures/06-neural_networks/slp_xor_classification.svg')
+
+def split_data(X, y, test_size=0.2):
+    """Split the data into training and test sets."""
+    n_samples = X.shape[0]
+    n_test = int(n_samples * test_size)
+    indices = np.random.permutation(n_samples)
+
+    X_train = X[indices[:-n_test]]
+    y_train = y[indices[:-n_test]]
+    X_test = X[indices[-n_test:]]
+    y_test = y[-n_test:]
+
+    return X_train, y_train, X_test, y_test
+
+### ANCHOR: load_regression_data
+# Load the data
+path = '../05-machine_learning/aptamer_fingerprints_regression_data.csv'
+df = pd.read_csv(path)
+print(df.head())
+
+# Define data matrix and labels
+X = df.drop('fl_int', axis=1).values
+X = np.hstack([X, np.ones((X.shape[0], 1))])
+y = df['fl_int'].values
+
+X_train, y_train, X_test, y_test = split_data(X, y, test_size=0.2)
+### ANCHOR_END: load_regression_data
+
+### ANCHOR: train_regression_model
+# Set hyperparameters
+hidden_size = 32
+tau = 0.001
+dim = X_train.shape[1]
+epochs = 500
+
+# Instantiate the model
+model = SLP(dim=dim, hidden_size=hidden_size, tau=tau, epochs=epochs)
+
+# Train the model
+model.fit(X_train, y_train)
+### ANCHOR_END: train_regression_model
+
+### ANCHOR: plot_regression_results
+y_train_pred = model.predict(X_train)
+y_test_pred = model.predict(X_test)
+
+print("MAE:")
+print(f"Training: {np.mean(np.abs(y_train - y_train_pred))}")
+print(f"Test: {np.mean(np.abs(y_test - y_test_pred))}")
+
+fig, ax = plt.subplots(figsize=(6, 6))
+ax.scatter(y_train, y_train_pred, color='blue', label='Training data')
+ax.scatter(y_test, y_test_pred, color='red', label='Test data')
+ax.set_xlabel('True Target')
+ax.set_ylabel('Predicted Target')
+ax.set_title('True vs Predicted Targets')
+
+# Get the min and max across both axes to set equal limits
+min_val = min(min(y_train), min(y_test), min(y_train_pred), min(y_test_pred)) - 0.1
+max_val = max(max(y_train), max(y_test), max(y_train_pred), max(y_test_pred)) + 0.1
+ax.set_xlim(min_val, max_val)
+ax.set_ylim(min_val, max_val)
+
+# Add diagonal line representing perfect predictions
+ax.plot([min_val, max_val], [min_val, max_val], 'k--', alpha=0.5, label='Perfect Prediction')
+
+ax.legend()
+plt.show()
+
+### ANCHOR_END: plot_regression_results
+
+fig.savefig('../../assets/figures/06-neural_networks/slp_regression.svg')
