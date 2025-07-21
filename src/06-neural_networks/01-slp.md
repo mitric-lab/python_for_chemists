@@ -153,6 +153,8 @@ To perform stochastic gradient descent, we first shuffle the data by creating an
 
 The gradient calculation follows Eq. {{eqref: eq:slp_gradient}}. Here we have defined several helper variables, such as `d_inner`, which corresponds to $\vec{a} \odot \sigma'(W^T \vec{x}_i + \vec{b})$ and simplifies the gradient calculation. Note that we use the numpy function [`np.outer`](https://numpy.org/doc/stable/reference/generated/numpy.outer.html) to calculate the outer product of the vectors `d_inner` $\in \mathbb{R}^n$ and `x$ \in \mathbb{R}^d$. Since the weights, and thus also the gradients, have dimensions $d \times n$, we need to transpose the outer product.
 
+### Training the SLP to classify the Aptamer dataset
+
 We train the model using a dataset that is inspired by the Aptamer dataset, embedded in two-dimensional PCA space. The four clusters, which we have identified already using the $k$-means algorithm, are now labeled in a way that does not allow for a linear decision boundary, similar to the XOR problem. You can download the data <a href="../codes/06-neural_networks/aptamer_xor_data.csv" download>here</a>.
 
 ```python
@@ -173,3 +175,13 @@ We visualize the decision boundary of the SLP ($\hat{f}(\vec{x}) = 0$) together 
 ![Single-Layer Perceptron](../assets/figures/06-neural_networks/slp_xor_classification.svg)
 
 As you can see, the SLP is able to model a nonlinear decision boundary that correctly classifies the data points.
+
+### Training the SLP to predict the Fluorescence Intensity
+
+Of course, the SLP can also be used for regression tasks. We can use the same dataset as in the previous section, but now we want to predict the fluorescence intensity of the Aptamers from the fingerprints. By splitting the data into training and test sets, we can train the model and evaluate its performance. 
+
+```admonish note title="Try it yourself"
+Try to train the SLP to predict the fluorescence intensity, evaluate the degree of overfitting by cross-validation, and plot the results. Try to vary the number of hidden neurons and the learning rate. Expected results:
+
+![Single-Layer Perceptron](../assets/figures/06-neural_networks/slp_regression.svg)
+```
