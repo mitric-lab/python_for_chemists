@@ -36,7 +36,7 @@
 
 - [Neural Networks](06-neural_networks.md)
     - [Single-Layer-Perceptron](06-neural_networks/01-slp.md)
-    - [Multi-Layer-Perceptron]()
+    - [Multi-Layer-Perceptron](06-neural_networks/02-mlp.md)
 
 ---
 

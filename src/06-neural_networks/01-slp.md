@@ -176,12 +176,12 @@ We visualize the decision boundary of the SLP ($\hat{f}(\vec{x}) = 0$) together 
 
 As you can see, the SLP is able to model a nonlinear decision boundary that correctly classifies the data points.
 
+```admonish note title="Multi-class classification"
+For this binary classification problem, we have used the output of the SLP to classify the data points into two classes based on a threshold (here, $\hat{f}(\vec{x}) = 0$). However, the SLP can also be used for multi-class classification. In this case, we would have multiple output neurons, and weights connecting each hidden neuron to each output neuron. The output of the SLP would then represent a vector of probabilities for each class. Investigate, how the [softmax](https://en.wikipedia.org/wiki/Softmax_function) activation function is a generalisation of the sigmoid function and can help us in the last layer.
+```
+
 ### Training the SLP to predict the Fluorescence Intensity
 
-Of course, the SLP can also be used for regression tasks. We can use the same dataset as in the previous section, but now we want to predict the fluorescence intensity of the Aptamers from the fingerprints. By splitting the data into training and test sets, we can train the model and evaluate its performance. 
-
-```admonish note title="Try it yourself"
-Try to train the SLP to predict the fluorescence intensity, evaluate the degree of overfitting by cross-validation, and plot the results. Try to vary the number of hidden neurons and the learning rate. Expected results:
+Of course, the SLP can also be used for regression tasks. We can use the same dataset as in the previous section, but now we want to predict the fluorescence intensity of the Aptamers from the fingerprints. By splitting the data into training and test sets, we can train the model and evaluate its performance. Expected results:
 
 ![Single-Layer Perceptron](../assets/figures/06-neural_networks/slp_regression.svg)
-```
