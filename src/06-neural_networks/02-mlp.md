@@ -117,3 +117,92 @@ $$
 What do these equations tell us about the actual calculation of gradients in training an MLP?
 
 Due to the recursion, we must **first calculate the gradients of the last layer and can then obtain the gradients of the previous layers recursively** from the gradients of the subsequent layers. All other components of the calculation, such as $\vec{a}_l$ and $\vec{h}_l$, are already known from the *forward pass*. This means that for the calculation of the gradient of a data point, we first perform a *forward pass* with the current weights and biases and store the activations $\vec{a}_l$ and $\vec{h}_l$.
+
+## PyTorch: A Modern Framework for Deep Learning
+
+While understanding the mathematical foundations of backpropagation is crucial, implementing neural networks from scratch can be tedious and error-prone. Modern deep learning frameworks like **PyTorch** provide powerful tools that automate many aspects of neural network implementation, including:
+
+- **Automatic differentiation**: PyTorch automatically computes gradients using the chain rule
+- **GPU acceleration**: Seamless computation on graphics processing units for faster training
+- **Optimized operations**: Highly efficient implementations of common neural network operations
+- **Rich ecosystem**: Pre-built layers, loss functions, optimizers, and utilities
+
+PyTorch's core concept is the **computational graph**, where operations are represented as nodes and data flows as edges. When you perform operations on tensors (PyTorch's multi-dimensional arrays), PyTorch builds a graph that tracks how to compute gradients automatically.
+
+### Key PyTorch Components
+
+1. **Tensors**: Multi-dimensional arrays that can store gradients
+2. **nn.Module**: Base class for neural network layers and models
+3. **Optimizers**: Algorithms for updating model parameters (SGD, Adam, etc.)
+4. **Loss Functions**: Functions that measure prediction error
+5. **DataLoader**: Utilities for efficient data handling and batching
+
+Let's see how our MLP can be implemented much more simply using PyTorch by revisiting the classification problem of the previous section:
+
+### Setting Up PyTorch
+
+First, we import the necessary modules and check our PyTorch installation:
+
+```python
+{{#include ../codes/06-neural_networks/pytorch_demo.py:pytorch_intro}}
+```
+
+### Data Preparation
+
+PyTorch works with tensors, so we need to convert our data:
+
+```python
+{{#include ../codes/06-neural_networks/pytorch_demo.py:data_preparation}}
+```
+
+### Model Definition
+
+Defining a neural network in PyTorch is straightforward using `nn.Module`:
+
+```python
+{{#include ../codes/06-neural_networks/pytorch_demo.py:model_definition}}
+```
+
+The key advantages here are:
+- **Automatic parameter management**: PyTorch automatically tracks all parameters that need gradients
+- **Clean forward pass**: The `forward` method defines the computation graph
+- **GPU support**: Simply call `.to(device)` to move the model to GPU
+
+### Training Setup
+
+Setting up training components is equally simple:
+
+```python
+{{#include ../codes/06-neural_networks/pytorch_demo.py:training_setup}}
+```
+
+### Training Loop
+
+The training loop demonstrates PyTorch's automatic differentiation:
+
+```python
+{{#include ../codes/06-neural_networks/pytorch_demo.py:training_loop}}
+```
+
+The magic happens in `loss.backward()` - PyTorch automatically computes all gradients using the computational graph built during the forward pass. This replaces all the manual gradient calculations we derived earlier!
+
+### Evaluation and Visualization
+
+```python
+{{#include ../codes/06-neural_networks/pytorch_demo.py:evaluation}}
+```
+
+```python
+{{#include ../codes/06-neural_networks/pytorch_demo.py:visualization}}
+```
+
+```admonish info title="Advanced Features" collapsible=true
+
+PyTorch provides many additional features for building sophisticated models:
+
+~~~python
+{{#include ../codes/06-neural_networks/pytorch_demo.py:advanced_features}}
+~~~
+```
+
+## Application of Deep Neural Networks in Chemical Research
