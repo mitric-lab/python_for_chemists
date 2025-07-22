@@ -206,3 +206,139 @@ PyTorch provides many additional features for building sophisticated models:
 ```
 
 ## Application of Deep Neural Networks in Chemical Research
+
+Let's now dive into some applications of deep neural networks in chemical research.
+
+### Dimensionality Reduction using Autoencoders
+
+So far, we have focused on supervised learning tasks where we have labeled data. However, neural networks can also be powerful tools for unsupervised learning, particularly for dimensionality reduction. One of the most elegant approaches is the **Autoencoder** (AE), which learns to compress data into a lower-dimensional representation and then reconstruct it.
+
+The key insight behind autoencoders is to force a neural network to learn an efficient encoding of the data by creating a bottleneck in the network architecture. The network consists of two parts:
+
+1. **Encoder**: Maps the input data $\vec{x} \in \mathbb{R}^d$ to a compressed representation $\vec{z} \in \mathbb{R}^{d'}$ where $d' < d$
+2. **Decoder**: Reconstructs the original data from the compressed representation: $\vec{x}' = \text{Decoder}(\vec{z})$
+
+<figure>
+    <center>
+    <img src="../assets/figures/07-summary/Autoencoder_scheme.svg"
+         alt="Autoencoder Architecture"
+         width="500"\>
+    <figcaption>Architecture of an autoencoder with encoder (left) and decoder (right) components.</figcaption>
+    </center>
+</figure>
+
+The training objective is to minimize the reconstruction error:
+
+$$
+    \mathcal{L}_{\text{recon}}(\vec{x}, \vec{x}') = \frac{1}{2} \sum_{i=1}^{N} \| \vec{x}_i - \vec{x}_i' \|^2
+$$
+
+By forcing the network to reconstruct the input through a bottleneck, the encoder learns to capture the most important features of the data in the compressed representation $\vec{z}$. This compressed space is often called the **latent space** or **hidden space**.
+
+#### Autoencoder Implementation in PyTorch
+
+Here's a simple implementation of an autoencoder for the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database), which is a collection of handwritten digits:
+
+```python
+class Autoencoder(nn.Module):
+    def __init__(self, input_dim=784, hidden_dim=128, latent_dim=2):
+        super(Autoencoder, self).__init__()
+        
+        # Encoder
+        self.encoder = nn.Sequential(
+            nn.Linear(input_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, latent_dim)
+        )
+        
+        # Decoder
+        self.decoder = nn.Sequential(
+            nn.Linear(latent_dim, hidden_dim),
+            nn.ReLU(),
+            nn.Linear(hidden_dim, input_dim),
+            nn.Sigmoid()  # For MNIST pixel values [0,1]
+        )
+    
+    def forward(self, x):
+        # Flatten the input
+        x = x.view(x.size(0), -1)
+        
+        # Encode
+        z = self.encoder(x)
+        
+        # Decode
+        x_recon = self.decoder(z)
+        
+        return x_recon, z
+```
+
+#### Visualizing the Latent Space
+
+One of the most fascinating aspects of autoencoders is that they can learn meaningful structure in the latent space, even without explicit supervision. When trained on MNIST, the autoencoder often organizes digits by their visual similarity in the 2D latent space:
+
+<figure>
+    <center>
+    <img src="../assets/figures/07-summary/autoencoder_latent_space.svg"
+         alt="MNIST Latent Space"
+         width="400"\>
+    <figcaption>2D latent space representation of MNIST digits learned by an autoencoder.</figcaption>
+    </center>
+</figure>
+
+This visualization shows that the autoencoder has learned to cluster similar digits together, demonstrating that it has captured meaningful features of the data in the compressed representation.
+
+### Generative Modeling using Variational Autoencoders
+
+While autoencoders are excellent for dimensionality reduction, they have a fundamental limitation for generative modeling: the latent space is not structured in a way that allows for meaningful sampling. If we randomly sample points from the latent space and decode them, we often get poor or nonsensical results.
+
+**Variational Autoencoders (VAEs)** address this limitation by imposing a specific structure on the latent space. Instead of encoding data to a single point in latent space, the encoder learns to map each input to a probability distribution over the latent space.
+
+<figure>
+    <center>
+    <img src="../assets/figures/07-summary/VAE_scheme.svg"
+         alt="VAE Architecture"
+         width="500"\>
+    <figcaption>Architecture of a Variational Autoencoder with probabilistic encoder and decoder.</figcaption>
+    </center>
+</figure>
+
+#### Key Differences from Standard Autoencoders
+
+1. **Probabilistic Encoder**: Instead of outputting a single latent vector $\vec{z}$, the encoder outputs parameters of a probability distribution (typically mean $\vec{\mu}$ and variance $\vec{\sigma}^2$ of a Gaussian)
+
+2. **Sampling**: During training and generation, we sample from this distribution: $\vec{z} \sim \mathcal{N}(\vec{\mu}, \vec{\sigma}^2)$
+
+3. **Regularization**: The VAE loss function includes a regularization term that encourages the learned distributions to be close to a standard normal distribution $\mathcal{N}(0, I)$
+
+The VAE loss function consists of two terms:
+
+$$
+    \mathcal{L}(\vec{x}, \vec{x}') = \mathcal{L}_{\text{recon}}(\vec{x}, \vec{x}') + \mathcal{L}_{\text{KL}}
+$$
+
+where $\mathcal{L}_{\text{KL}}$ is the Kullback-Leibler divergence between the learned distribution and the standard normal distribution:
+
+$$
+    \mathcal{L}_{\text{KL}} = D_{KL}(\mathcal{N}(\vec{\mu}, \vec{\sigma}^2) \| \mathcal{N}(0, I))
+$$
+
+This regularization ensures that the latent space is well-structured and continuous, making it possible to generate new data by sampling from the latent space and decoding, which is shown in the figure below. Sampling from this latent space now allows us to generate new data.
+
+<figure>
+    <center>
+    <img src="../assets/figures/07-summary/vae_latent_space.svg"
+         alt="VAE Latent Space"
+         width="400"\>
+    <figcaption>2D latent space of a VAE trained on MNIST, showing better structure than standard autoencoders.</figcaption>
+    </center>
+</figure>
+
+### Generative Modeling in Chemical Research
+
+The [paper by Gómez-Bombarelli and co-workers](https://doi.org/10.1021/acscentsci.7b00572) applies exactly this idea to molecules. Instead of working with images or digits, they train a VAE to encode and decode SMILES strings, which are text-based representations of molecules. The encoder network learns to map each SMILES string into a continuous vector — a point in latent space — and the decoder reconstructs the original SMILES from that vector. In this way, the network learns a compact and continuous representation of molecular structure.
+
+But the goal here is not just to reconstruct molecules — the real innovation is using the latent space to generate new molecules. Because the latent space is continuous and smooth, you can take a point (representing a known molecule), slightly change it, and decode the result into a new molecule that is chemically similar. This is powerful: rather than building molecules by hand or randomly combining fragments, we can navigate through chemical space in a structured way.
+
+To guide this navigation, the authors add a third component to their model: a property predictor. This is a neural network that learns to predict molecular properties (such as drug-likeness or solubility) directly from the latent vector. During training, the autoencoder and the property predictor are optimized together. This means the latent space becomes organized not just by molecular structure, but also by chemical functionality — nearby points tend to correspond to molecules with similar properties.
+
+This setup allows for gradient-based optimization in chemical space. Instead of searching for good molecules by trial and error, one can compute the gradient of the property of interest with respect to the latent vector, and then move in the direction that improves the property — just like you would in regular optimization problems. Once a promising point is found, it can be decoded back into a molecule using the decoder.
