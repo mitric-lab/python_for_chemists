@@ -148,26 +148,22 @@ print("Ein lokales Minimum liegt bei x = " , x_opt)  # x_opt = -0.8872
 ## Aufgabe 3: $k$-Nearest Neighbors
 
 <!--- ANCHOR: aufgabe_3 --->
-Der $k$-Nearest Neighbors (kNN) Algorithmus ist ein einfacher Algorithmus 
-für Klassifikationsprobleme, der aber auch für 
-Regressionsprobleme verwendet werden kann. Er ist ein 
-parameterfreier Algorithmus, das bedeutet, dass er keine Trainingsphase hat. 
+Der $k$-Nearest Neighbors (kNN) Algorithmus ist ein einfacher Algorithmus für Klassifikationsprobleme, der aber auch für Regressionsprobleme verwendet werden kann. Er ist ein parameterfreier Algorithmus, das bedeutet, dass er keine Trainingsphase hat. 
 
-Für einen gegebenen Punkt $\vec{x}_i$ sagt der kNN-Algorithmus die Klasse $y_i$ 
-voraus, indem die $k \in \mathbb{N}$ nächsten Nachbarn von $\vec{x}_i$ im 
-Trainingsdatensatz basierend auf ihrer euklidischen Distanz zu $\vec{x}_i$ bestimmt werden.
-Die Klasse $y_i$ von $\vec{x}_i$ ist dann diejenige Klasse, die unter den $k$ 
-nächsten Nachbarn am häufigsten vorkommt. Dies ist im folgenden Bild für zwei Klassen 
-veranschaulicht, wobei für $k = 3$ (innerer schwarzer Kreis) die Klasse $y_i$ 
-des grünen Punktes als *rot* vorhergesagt wird.
+Für einen gegebenen Punkt $\vec{x}_i$ sagt der kNN-Algorithmus die Klasse $y_i$ voraus, indem die $k \in \mathbb{N}$ nächsten Nachbarn von $\vec{x}_i$ im Trainingsdatensatz basierend auf ihrer euklidischen Distanz zu $\vec{x}_i$ bestimmt werden. Die Klasse $y_i$ von $\vec{x}_i$ ist dann diejenige Klasse, die unter den $k$ nächsten Nachbarn am häufigsten vorkommt. Dies ist im folgenden Bild für zwei Klassen veranschaulicht, wobei für $k = 3$ (innerer schwarzer Kreis) die Klasse $y_i$ des grünen Punktes als *rot* vorhergesagt wird.
 
 <figure align="center">
     <img src="../assets/figures/07-summary/kNN.svg" alt="kNN">
 </figure>
 
 **(a)** 
-Welche Werte für $k$ sind mehr oder weniger sinnvoll, wenn die Anzahl der Klassen 
-zwei ist? Begründen Sie Ihre Antwort.
+Welche Werte für $k$ sind mehr oder weniger sinnvoll, wenn die Anzahl der Klassen zwei ist? Begründen Sie Ihre Antwort.
+
+<!-- 
+**Lösung:**
+
+Bei zwei Klassen sind ungerade Werte für $k$ sinnvoll, da es sonst zu Unentscheidungen kommen kann.
+ -->
 
 **(b)**
 Vervollständigen Sie die Methode `predict` der Klasse `kNNClassifier` 
@@ -183,35 +179,39 @@ Das Model soll wie folgt verwendet werden:
 {{#include ../codes/07-summary/exam_preparation.py:knn_example}}
 ```
 
-**(c)**
-Ist eine lineare Separationsgrenze zwischen den Klassen notwendig, 
-um den kNN-Algorithmus einzusetzen? Begründen Sie Ihre Antwort
-mit einer Skizze eines Beispieldatensatzes aus zwei Klassen
-und einem zu klassifizierenden Punkt.
+<!-- 
+**Lösung:**
+```
+{{#include ../codes/07-summary/exam_preparation.py:knn_complete}}
+```
+ -->
 
-Der kNN-Algorithmus wählt nur die $k$ nächsten Nachbarn aus,
-und lässt diese eine Abstimmung über die Klasse des neuen Punktes treffen.
-Dabei hat jeder Nachbar eine Stimme. Man könnte aber auch
-meinen, dass die näheren Nachbarn mehr Gewicht haben sollten
-als die weiter entfernten Nachbarn.
-Das führt zum distanzgewichteten kNN-Algorithmus.
-Hierbei wird die Stimme des $j$-ten Nachbarn z.B. mit dem Faktor
+**(c)**
+
+Ist eine lineare Separationsgrenze zwischen den Klassen notwendig, um den kNN-Algorithmus einzusetzen? Begründen Sie Ihre Antwort mit einer Skizze eines Beispieldatensatzes aus zwei Klassen und einem zu klassifizierenden Punkt.
+
+<!-- 
+**Lösung:**
+Nein, die Klassen müssen nicht linear separiert sein. Beispielsweise können die Klassen durch eine Kreislinie getrennt sein.
+ -->
+
+Der kNN-Algorithmus wählt nur die $k$ nächsten Nachbarn aus, und lässt diese eine Abstimmung über die Klasse des neuen Punktes treffen. Dabei hat jeder Nachbar eine Stimme. Man könnte jedoch auch argumentieren, dass die näheren Nachbarn mehr Gewicht haben sollten als die weiter entfernten Nachbarn. Das führt zum distanzgewichteten kNN-Algorithmus. Hierbei wird die Stimme des $j$-ten Nachbarn z.B. mit dem Faktor
+
 $$
     w_j = \exp\left(-\frac{d(\vec{x}_i, \vec{x}_j)^2}{2 \sigma^2}\right)
 $$
-gewichtet, wobei $d(\vec{x}_i, \vec{x}_j)$ die euklidische Distanz zwischen 
-dem zu klassifizierenden Punkt $\vec{x}_i$ und dem $j$-ten Nachbarn $\vec{x}_j$ ist,
-und $\sigma$ genau so wie $k$ bei der Konstruktion des Modells festzulegen ist.
+
+gewichtet, wobei $d(\vec{x}_i, \vec{x}_j)$ die euklidische Distanz zwischen dem zu klassifizierenden Punkt $\vec{x}_i$ und dem $j$-ten Nachbarn $\vec{x}_j$ ist, und $\sigma$ genau so wie $k$ bei der Konstruktion des Modells festzulegen ist.
 
 **(d)**
-Vervollständigen Sie die Methode `predict` der Klasse `kNNWeightedClassifier`
-in der folgenden Implementierung.
+
+Vervollständigen Sie die Methode `predict` der Klasse `kNNWeightedClassifier` in der folgenden Implementierung.
 
 ```python
 {{#include ../codes/07-summary/exam_preparation.py:knn_weighted_incomplete}}
 ```
-Der Aufruf der `predict`-Methode soll identisch sein wie bei der Klasse `kNNClassifier`.
 
+Der Aufruf der `predict`-Methode soll identisch sein wie bei der Klasse `kNNClassifier`.
 
 <!-- 
 Lösung:

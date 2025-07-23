@@ -60,18 +60,18 @@ def double_well_gradient(x):  # x: float
     grad = 6 * x**5 - 4 * x - 0.25  # Error 1: -2*x should be -4*x (derivative of -2x^2 is -4x)
     return grad
 
-def gradient_descent(func_grad, x0, tau=0.01, maxgrad=1e-6, maxiter=500):
-    x = x0  # Error 2: Should initialize x with x0, not 0
+def gradient_descent(func_grad, x0, tau=0.01, maxgrad=1e-6, maxiter=500): # Error 2: missing colon
+    x = x0  # Error 3: Should initialize x with x0, not 0
     converged = False
 
     for _ in range(0, maxiter):
         grad = func_grad(x)
         x = x - tau * grad
-        if abs(grad) < maxgrad:  # Error 3: Should use abs(grad) for convergence check
+        if abs(grad) < maxgrad:  # Error 4: Should use abs(grad) for convergence check
             converged = True
             break
 
-    return x, converged  # Error 4: return must be outside the for loop
+    return x, converged  # Error 5: return must be outside the for loop
 
 x_opt, converged = gradient_descent(double_well_gradient, -1.2)
 print("Ein lokales Minimum liegt bei x = " , x_opt)  # x_opt = -0.8872
@@ -100,7 +100,7 @@ class kNNClassifier:
 ### ANCHOR_END: knn_incomplete
 
 ### ANCHOR: knn_weighted_incomplete
-class kNNWeightedClassifier
+class kNNWeightedClassifier:
     def __init__(self, k, sigma=1.0):
         self.k = k
         self.sigma = sigma
