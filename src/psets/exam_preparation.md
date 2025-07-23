@@ -35,6 +35,11 @@ print(y)
 <div style="max-width: 300px; margin: 1em auto; 
     padding: 1em; border: 1px solid #ccc; border-radius: 4px; text-align: left;"
 
+<!-- 
+**Lösung:**
+`[6, 4, 2]` 
+-->
+
 **(b)**
 
 ```python
@@ -57,6 +62,11 @@ print(z)
 <div style="max-width: 300px; margin: 1em auto; 
     padding: 1em; border: 1px solid #ccc; border-radius: 4px; text-align: left;"
 
+<!-- 
+**Lösung:**
+`[5, 7, 9]`
+-->
+
 **(c)**
 
 ```python
@@ -76,6 +86,11 @@ print(z)
 <label><input type="radio" name="1c">Error</label>
 
 </div>
+
+<!-- 
+**Lösung:**
+`32`
+-->
 
 <!--- ANCHOR_END: aufgabe_1 --->
 
@@ -120,6 +135,13 @@ def gradient_descent(func_grad, x0, tau=0.01, maxgrad=1e-6, maxiter=500)
 x_opt, converged = gradient_descent(double_well_gradient, -1.2)
 print("Ein lokales Minimum liegt bei x = " , x_opt)  # x_opt = -0.8872
 ```
+
+<!-- 
+**Lösung:**
+```
+{{#include ../codes/07-summary/exam_preparation.py:gradient_descent_correct}}
+```
+-->
 
 <!--- ANCHOR_END: aufgabe_2 --->
 
