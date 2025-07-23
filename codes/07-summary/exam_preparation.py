@@ -33,6 +33,50 @@ def euler_method(
     return x, y
 ### ANCHOR_END: euler_errors
 
+### ANCHOR: gradient_descent_errors
+def double_well_gradient(x):  # x: float
+    grad = 6 * x**5 - 2 * x - 0.25
+    return grad
+
+def gradient_descent(func_grad, x0, tau=0.01, maxgrad=1e-6, maxiter=500)
+    x = 0
+    converged = False
+    
+    for _ in range(0, maxiter):
+        grad = func_grad(x)
+        x = x - tau * grad
+        if grad < maxgrad:
+            converged = True
+            break
+    
+        return x, converged
+
+x_opt, converged = gradient_descent(double_well_gradient, -1.2)
+print("Ein lokales Minimum liegt bei x = " , x_opt)  # x_opt = -0.8872
+### ANCHOR_END: gradient_descent_errors
+
+### ANCHOR: gradient_descent_correct
+def double_well_gradient(x):  # x: float
+    grad = 6 * x**5 - 4 * x - 0.25  # Error 1: -2*x should be -4*x (derivative of -2x^2 is -4x)
+    return grad
+
+def gradient_descent(func_grad, x0, tau=0.01, maxgrad=1e-6, maxiter=500):
+    x = x0  # Error 2: Should initialize x with x0, not 0
+    converged = False
+
+    for _ in range(0, maxiter):
+        grad = func_grad(x)
+        x = x - tau * grad
+        if abs(grad) < maxgrad:  # Error 3: Should use abs(grad) for convergence check
+            converged = True
+            break
+
+    return x, converged  # Error 4: return must be outside the for loop
+
+x_opt, converged = gradient_descent(double_well_gradient, -1.2)
+print("Ein lokales Minimum liegt bei x = " , x_opt)  # x_opt = -0.8872
+### ANCHOR_END: gradient_descent_correct
+
 ### ANCHOR: knn_incomplete
 import numpy as np
 import matplotlib.pyplot as plt
@@ -91,6 +135,22 @@ class kNN_Classifier:
         y_pred = unique_labels[np.argmax(label_counts)]
         return y_pred
 ### ANCHOR_END: knn_complete
+
+### ANCHOR: knn_weighted_complete
+class kNNWeightedClassifier:
+    def __init__(self, k, sigma=1.0):
+        self.k = k
+        self.sigma = sigma
+
+    def predict(self, X, y, xi):
+        distances = np.linalg.norm(X - xi, axis=1)
+        weights = np.exp(-distances**2 / (2 * self.sigma**2))
+        nearest = np.argsort(distances)[:self.k]
+        y_nearest = y[nearest]
+        unique_labels, label_counts = np.unique(y_nearest, return_counts=True)
+        y_pred = unique_labels[np.argmax(label_counts)]
+        return y_pred
+### ANCHOR_END: knn_weighted_complete
 
 ### ANCHOR: knn_example
 N = 20

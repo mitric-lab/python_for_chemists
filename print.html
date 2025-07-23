@@ -7045,6 +7045,10 @@ print(y)
 </div>
 <div style="max-width: 300px; margin: 1em auto; 
     padding: 1em; border: 1px solid #ccc; border-radius: 4px; text-align: left;"
+<!-- 
+**Lösung:**
+`[6, 4, 2]` 
+-->
 <p><strong>(b)</strong></p>
 <pre><code class="language-python">x = [1, 2, 3]
 y = [4, 5, 6]
@@ -7058,6 +7062,10 @@ print(z)
 </div>
 <div style="max-width: 300px; margin: 1em auto; 
     padding: 1em; border: 1px solid #ccc; border-radius: 4px; text-align: left;"
+<!-- 
+**Lösung:**
+`[5, 7, 9]`
+-->
 <p><strong>(c)</strong></p>
 <pre><code class="language-python">import numpy as np
 x = np.array([1, 2, 3])
@@ -7070,6 +7078,10 @@ print(z)
 <p><label><input type="radio" name="1c"><code>36</code></label></p>
 <p><label><input type="radio" name="1c">Error</label></p>
 </div>
+<!-- 
+**Lösung:**
+`32`
+-->
 <!--- ANCHOR_END: aufgabe_1 --->
 <h2 id="aufgabe-2-gradientenverfahren"><a class="header" href="#aufgabe-2-gradientenverfahren">Aufgabe 2: Gradientenverfahren</a></h2>
 <!--- ANCHOR: aufgabe_2 --->
@@ -7104,6 +7116,30 @@ def gradient_descent(func_grad, x0, tau=0.01, maxgrad=1e-6, maxiter=500)
 x_opt, converged = gradient_descent(double_well_gradient, -1.2)
 print("Ein lokales Minimum liegt bei x = " , x_opt)  # x_opt = -0.8872
 </code></pre>
+<!-- 
+**Lösung:**
+```
+def double_well_gradient(x):  # x: float
+    grad = 6 * x**5 - 4 * x - 0.25  # Error 1: -2*x should be -4*x (derivative of -2x^2 is -4x)
+    return grad
+
+def gradient_descent(func_grad, x0, tau=0.01, maxgrad=1e-6, maxiter=500):
+    x = x0  # Error 2: Should initialize x with x0, not 0
+    converged = False
+
+    for _ in range(0, maxiter):
+        grad = func_grad(x)
+        x = x - tau * grad
+        if abs(grad) < maxgrad:  # Error 3: Should use abs(grad) for convergence check
+            converged = True
+            break
+
+    return x, converged  # Error 4: return must be outside the for loop
+
+x_opt, converged = gradient_descent(double_well_gradient, -1.2)
+print("Ein lokales Minimum liegt bei x = " , x_opt)  # x_opt = -0.8872
+```
+-->
 <!--- ANCHOR_END: aufgabe_2 --->
 <h2 id="aufgabe-3-k-nearest-neighbors"><a class="header" href="#aufgabe-3-k-nearest-neighbors">Aufgabe 3: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>-Nearest Neighbors</a></h2>
 <!--- ANCHOR: aufgabe_3 --->
