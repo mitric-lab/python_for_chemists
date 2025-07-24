@@ -40,7 +40,7 @@
 
 ---
 
-[Zusammenfassung und Ausblick]()
+[Aktuelle Forschungsthemen](07-summary.md)
 
 ---
 

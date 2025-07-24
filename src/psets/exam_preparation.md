@@ -32,13 +32,11 @@ print(y)
 
 </div>
 
+<!-- **Lösung:**
+`[6, 4, 2]`  -->
+
 <div style="max-width: 300px; margin: 1em auto; 
     padding: 1em; border: 1px solid #ccc; border-radius: 4px; text-align: left;"
-
-<!-- 
-**Lösung:**
-`[6, 4, 2]` 
--->
 
 **(b)**
 
@@ -59,13 +57,11 @@ print(z)
 
 </div>
 
+<!-- **Lösung:**
+`[5, 7, 9]` -->
+
 <div style="max-width: 300px; margin: 1em auto; 
     padding: 1em; border: 1px solid #ccc; border-radius: 4px; text-align: left;"
-
-<!-- 
-**Lösung:**
-`[5, 7, 9]`
--->
 
 **(c)**
 
@@ -87,10 +83,8 @@ print(z)
 
 </div>
 
-<!-- 
-**Lösung:**
-`32`
--->
+<!-- **Lösung:**
+`32` -->
 
 <!--- ANCHOR_END: aufgabe_1 --->
 
@@ -136,12 +130,12 @@ x_opt, converged = gradient_descent(double_well_gradient, -1.2)
 print("Ein lokales Minimum liegt bei x = " , x_opt)  # x_opt = -0.8872
 ```
 
-<!-- 
-**Lösung:**
+
+<!-- **Lösung:**
 ```
 {{#include ../codes/07-summary/exam_preparation.py:gradient_descent_correct}}
-```
--->
+``` -->
+
 
 <!--- ANCHOR_END: aufgabe_2 --->
 
@@ -159,11 +153,11 @@ Für einen gegebenen Punkt $\vec{x}_i$ sagt der kNN-Algorithmus die Klasse $y_i$
 **(a)** 
 Welche Werte für $k$ sind mehr oder weniger sinnvoll, wenn die Anzahl der Klassen zwei ist? Begründen Sie Ihre Antwort.
 
-<!-- 
-**Lösung:**
 
-Bei zwei Klassen sind ungerade Werte für $k$ sinnvoll, da es sonst zu Unentscheidungen kommen kann.
- -->
+<!-- **Lösung:**
+
+Bei zwei Klassen sind ungerade Werte für $k$ sinnvoll, da es sonst zu Unentscheidungen kommen kann. -->
+
 
 **(b)**
 Vervollständigen Sie die Methode `predict` der Klasse `kNNClassifier` 
@@ -179,21 +173,21 @@ Das Model soll wie folgt verwendet werden:
 {{#include ../codes/07-summary/exam_preparation.py:knn_example}}
 ```
 
-<!-- 
-**Lösung:**
+
+<!-- **Lösung:**
 ```
 {{#include ../codes/07-summary/exam_preparation.py:knn_complete}}
-```
- -->
+``` -->
+
 
 **(c)**
 
 Ist eine lineare Separationsgrenze zwischen den Klassen notwendig, um den kNN-Algorithmus einzusetzen? Begründen Sie Ihre Antwort mit einer Skizze eines Beispieldatensatzes aus zwei Klassen und einem zu klassifizierenden Punkt.
 
-<!-- 
-**Lösung:**
-Nein, die Klassen müssen nicht linear separiert sein. Beispielsweise können die Klassen durch eine Kreislinie getrennt sein.
- -->
+
+<!-- **Lösung:**
+Nein, die Klassen müssen nicht linear separiert sein. Beispielsweise können die Klassen durch eine Kreislinie getrennt sein. -->
+
 
 Der kNN-Algorithmus wählt nur die $k$ nächsten Nachbarn aus, und lässt diese eine Abstimmung über die Klasse des neuen Punktes treffen. Dabei hat jeder Nachbar eine Stimme. Man könnte jedoch auch argumentieren, dass die näheren Nachbarn mehr Gewicht haben sollten als die weiter entfernten Nachbarn. Das führt zum distanzgewichteten kNN-Algorithmus. Hierbei wird die Stimme des $j$-ten Nachbarn z.B. mit dem Faktor
 
@@ -213,11 +207,11 @@ Vervollständigen Sie die Methode `predict` der Klasse `kNNWeightedClassifier` i
 
 Der Aufruf der `predict`-Methode soll identisch sein wie bei der Klasse `kNNClassifier`.
 
-<!-- 
-Lösung:
+
+<!-- **Lösung:**
 ```
 {{#include ../codes/07-summary/exam_preparation.py:knn_complete}}
-```
- -->
+``` -->
+
 
 <!--- ANCHOR_END: aufgabe_3 --->
