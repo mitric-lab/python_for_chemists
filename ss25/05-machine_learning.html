@@ -1,0 +1,330 @@
+<!DOCTYPE HTML>
+<html lang="de" class="latte" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Machine Learning - Programmierkurs für Chemiker</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="./theme/catppuccin.css">
+        <link rel="stylesheet" href="./theme/catppuccin-admonish.css">
+        <link rel="stylesheet" href="./theme/mdbook-admonish.css">
+        <link rel="stylesheet" href="./theme/mdbook-admonish-custom.css">
+        <link rel="stylesheet" href="./theme/icomoon.css">
+        <link rel="stylesheet" href="./theme/pagetoc.css">
+        <link rel="stylesheet" href="./mdbook-admonish.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "mocha" : "latte";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Table of Contents</li><li class="chapter-item expanded "><a href="00-preface.html"><strong aria-hidden="true">0.</strong> Vorwort</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="00-preface/01-motivation.html"><strong aria-hidden="true">0.1.</strong> Motivation</a></li><li class="chapter-item "><a href="00-preface/02-getting_started.html"><strong aria-hidden="true">0.2.</strong> Erste Schritte</a></li><li class="chapter-item "><a href="00-preface/03-mdbook_usage.html"><strong aria-hidden="true">0.3.</strong> Bedienung dieser Website</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><a href="01-regression.html"><strong aria-hidden="true">1.</strong> Regression Analysis</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="01-regression/01-least_squares.html"><strong aria-hidden="true">1.1.</strong> Least Squares</a></li><li class="chapter-item "><a href="01-regression/02-linear_regression.html"><strong aria-hidden="true">1.2.</strong> Linear Regression</a></li><li class="chapter-item "><a href="01-regression/03-numerical_optimisation.html"><strong aria-hidden="true">1.3.</strong> Numerical Optimisation</a></li><li class="chapter-item "><a href="01-regression/04-nonlinear_regression.html"><strong aria-hidden="true">1.4.</strong> Nonlinear Regression</a></li></ol></li><li class="chapter-item expanded "><a href="02-differential_equations.html"><strong aria-hidden="true">2.</strong> Differential Equations</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="02-differential_equations/01-initial_value_problem.html"><strong aria-hidden="true">2.1.</strong> Initial Value Problem</a></li><li class="chapter-item "><a href="02-differential_equations/02-euler_method.html"><strong aria-hidden="true">2.2.</strong> Euler Method</a></li><li class="chapter-item "><a href="02-differential_equations/03-runge_kutta.html"><strong aria-hidden="true">2.3.</strong> Runge-Kutta Method</a></li><li class="chapter-item "><a href="02-differential_equations/04-finite_differences.html"><strong aria-hidden="true">2.4.</strong> Finite-Difference Method</a></li></ol></li><li class="chapter-item expanded "><a href="04-evd_and_svd.html"><strong aria-hidden="true">3.</strong> Eigenvalues and Singular Values</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="04-evd_and_svd/01-eigenvalue_decomposition.html"><strong aria-hidden="true">3.1.</strong> Eigenvalue Decomposition</a></li><li class="chapter-item "><a href="04-evd_and_svd/02-singular_value_decomposition.html"><strong aria-hidden="true">3.2.</strong> Singular Value Decomposition</a></li><li class="chapter-item "><a href="04-evd_and_svd/03-low_rank_approximation.html"><strong aria-hidden="true">3.3.</strong> Low-rank Approximation</a></li><li class="chapter-item "><a href="04-evd_and_svd/04-principal_component_analysis.html"><strong aria-hidden="true">3.4.</strong> Principal Component Analysis</a></li><li class="chapter-item "><a href="04-evd_and_svd/05-linear_systems.html"><strong aria-hidden="true">3.5.</strong> System of Linear Equations</a></li></ol></li><li class="chapter-item expanded "><a href="05-machine_learning.html" class="active"><strong aria-hidden="true">4.</strong> Machine Learning</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="05-machine_learning/01-regression.html"><strong aria-hidden="true">4.1.</strong> Regression</a></li><li class="chapter-item "><a href="05-machine_learning/02-classification.html"><strong aria-hidden="true">4.2.</strong> Classification</a></li><li class="chapter-item "><a href="05-machine_learning/03-dimensionality_reduction.html"><strong aria-hidden="true">4.3.</strong> Dimensionality Reduction</a></li><li class="chapter-item "><a href="05-machine_learning/04-clustering.html"><strong aria-hidden="true">4.4.</strong> Clustering</a></li></ol></li><li class="chapter-item expanded "><a href="06-neural_networks.html"><strong aria-hidden="true">5.</strong> Neural Networks</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="06-neural_networks/01-slp.html"><strong aria-hidden="true">5.1.</strong> Single-Layer-Perceptron</a></li><li class="chapter-item "><a href="06-neural_networks/02-mlp.html"><strong aria-hidden="true">5.2.</strong> Multi-Layer-Perceptron</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="07-summary.html">Aktuelle Forschungsthemen</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="psets/01.html">Problem Set 1</a></li><li class="chapter-item expanded affix "><a href="psets/02.html">Problem Set 2</a></li><li class="chapter-item expanded affix "><a href="psets/03.html">Problem Set 3</a></li><li class="chapter-item expanded affix "><a href="psets/04.html">Problem Set 4</a></li><li class="chapter-item expanded affix "><a href="psets/exam_preparation.html">Sample Exam</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Programmierkurs für Chemiker</h1>
+
+                    <div class="right-buttons">
+			<!--print button-->
+			<a href="print.html" title="Buch drucken" aria-label="Buch drucken">
+			    <i id="print-button" class="fa fa-print"></i>
+			</a>
+
+                        
+                        <!-- WueCampus button -->
+                        <script>
+                            var wueCampusLink = "https://wuecampus.uni-wuerzburg.de/moodle/course/view.php?id=73209";
+                        </script>
+			<a href="javascript:void(0);" onclick="window.open(wueCampusLink)" target="_blank" rel="noopener noreferrer" title="WueCampus-Kursraum besuchen" aria-label="WueCampus-Kursraum besuchen">
+			    <i id="wuecampus-button" class="icon-uw"></i>
+			</a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<h1 id="machine-learning"><a class="header" href="#machine-learning">Machine Learning</a></h1>
+<p>We have finally gained enough coding skills to turn to the fascinating topic of machine learning. Although we will not cover all aspects of machine learning, we will learn enough to be able to apply it to real-world problems in chemical research.</p>
+<h2 id="what-is-machine-learning"><a class="header" href="#what-is-machine-learning">What is Machine Learning?</a></h2>
+<p>Let us first clarify some basic terminology. In recent years, <strong>Artificial Intelligence</strong> (AI) has become a buzzword to describe a range of new technologies that have revolutionized many fields of science and industry or simply made our lives easier. In fact, AI has been around for a long time and is a collective term for techniques that solve problems that typically require human intelligence. For example, the ability to recognize objects in images, drive a car autonomously, or understand natural language are all forms of AI. In this course, we will focus on a subset of AI called <strong>machine learning</strong> (ML), which tackles these problems in a very specific way. Later in the course, we will also touch on <strong>deep learning</strong>, a subfield of ML that uses neural networks and is mainly responsible for the recent breakthroughs in AI.</p>
+<figure>
+    <center>
+    <img src="./assets/figures/05-machine_learning/AI_ML_DL.svg"
+         alt="AI, ML, and DL"
+         width="400"\>
+    <figcaption>Illustration of the relationship between AI, ML, and Deep Learning.</figcaption>
+    </center>
+</figure>
+<p>To understand why ML is so powerful, let’s first consider how we would solve a problem without it. Take an example from chemistry: we want to estimate the solubility of a molecule in a given solvent without performing any lab experiments. Since solubility depends on factors like the presence of polar or nonpolar groups, we could write a program that checks for these groups (e.g., using <code>for</code> loops and <code>if/else</code> statements) and then increases or decreases the predicted solubility accordingly. This approach does not require examples of molecules with known solubilities, but it does require us to know the underlying rules of solubility. However, in chemistry and many other fields, we often face problems where these rules are unknown, too complex for simple logic, or too difficult to implement.</p>
+<figure>
+    <center>
+    <img src="./assets/figures/05-machine_learning/ML_Classical_Programming.svg"
+         alt="Classical Algorithms vs. ML"
+         width="500"\>
+    <figcaption>Illustration of classical programming vs. ML.</figcaption>
+    </center>
+</figure>
+<p>ML, on the other hand, does not rely on a predefined set of rules. Instead, it <em>learns</em> to make predictions from a set of examples where the answers are already known. This means the ML algorithm independently extracts the underlying patterns from the data, rather than being explicitly programmed with a set of rules. The learned relationships, which map the input (e.g., the molecule) to the output (e.g., the solubility), are captured in <em>models</em>. These models have many parameters that can be flexibly adapted to the data. In the next sections, we will explore a programming style for creating and applying such models.</p>
+<p>From the above example, we see that ML does not require us to know the underlying rules of solubility. However, it does require a (preferably large) set of examples where the input and output are known. This is why ML has made such breakthroughs in fields like natural language processing and image recognition, where vast amounts of data are readily available on the internet.</p>
+<h2 id="types-of-machine-learning"><a class="header" href="#types-of-machine-learning">Types of Machine Learning</a></h2>
+<p>One typically distinguishes between two types of ML:</p>
+<ul>
+<li>
+<p><strong>Supervised Learning</strong>: This is the scenario described above with the solubility example. Here, the algorithm is given data consisting of inputs and their corresponding outputs. The algorithm then learns to map the inputs to the outputs.</p>
+</li>
+<li>
+<p><strong>Unsupervised Learning</strong>: Here, the algorithm is given data consisting of inputs only, without any corresponding outputs. The algorithm then learns to group the inputs into meaningful clusters. An example of this is identifying groups of molecules with similar properties.</p>
+</li>
+</ul>
+<p>Sometimes, other types of ML are distinguished, like <strong>reinforcement learning</strong> or <strong>semi-supervised learning</strong>. We will not cover these in this course.</p>
+<div id="admonition-tip" class="admonition admonish-tip">
+<div class="admonition-title">
+<p>Tip</p>
+<p><a class="admonition-anchor-link" href="#admonition-tip"></a></p>
+</div>
+<div>
+<p>Try to think about the algorithms we have already covered in this course and whether they fit the classical programming approach or the machine learning approach (supervised or unsupervised). You will find that some techniques can be classified as machine learning, so you can already claim to have some knowledge of ML. Congratulations!</p>
+</div>
+</div>
+<hr />
+<p><strong>Self-Study Questions</strong></p>
+<ol>
+<li>
+<p>Suppose someone creates a chatbot which has a humongous database of
+questions and answers. When a user asks a question, the chatbot searches its
+database for the most similar question and returns the corresponding answer.
+Is this an example of machine learning? Where in the diagram about
+AI, ML, and DL would you place this chatbot?</p>
+</li>
+<li>
+<p>Are the following examples machine learning or classical programming?</p>
+</li>
+</ol>
+<ul>
+<li>Predicting the absorbance of a solution at <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">c</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0.1</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathrm">mol/l</span></span></span></span></span>
+based on measured absorbances at lower concentrations and a linear
+regression model.</li>
+<li>Calculating of the first one million digits of <span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span></span></span></span> using the
+Leibniz formula.</li>
+<li>Playing noughts and crosses (tic-tac-toe) by checking all possible
+future moves and choosing the one that maximises the chance of winning.</li>
+<li>Playing chess by using a model that takes the current board state and
+predicts the best move based on a large number of previous games.</li>
+</ul>
+<ol start="3">
+<li>Interpret the following cartoon.</li>
+</ol>
+<figure>
+    <center>
+    <img src="assets/figures/05-machine_learning/limit_fail.jpg"
+         alt="ML cartoon"
+         width="400"\>
+    <figcaption>This is why you can’t just train on examples…</figcaption>
+    </center>
+</figure>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="04-evd_and_svd/05-linear_systems.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="05-machine_learning/01-regression.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="04-evd_and_svd/05-linear_systems.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="05-machine_learning/01-regression.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="./theme/pagetoc.js"></script>
+
+
+    </div>
+    </body>
+</html>
