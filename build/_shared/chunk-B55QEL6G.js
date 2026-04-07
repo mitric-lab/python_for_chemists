@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/icu-message-format.js
 var require_icu_message_format = __commonJS({
@@ -159,4 +159,4 @@ var require_icu_message_format = __commonJS({
 export {
   require_icu_message_format
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-B55QEL6G.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-B55QEL6G.js.map

@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/pcaxis.js
 var require_pcaxis = __commonJS({
@@ -68,4 +68,4 @@ var require_pcaxis = __commonJS({
 export {
   require_pcaxis
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-PLJFYOUF.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-PLJFYOUF.js.map

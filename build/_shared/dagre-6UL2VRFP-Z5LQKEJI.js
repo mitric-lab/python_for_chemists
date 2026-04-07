@@ -1,22 +1,22 @@
 import {
   layout
-} from "/python_for_chemists//build/_shared/chunk-QLPZGFBP.js";
+} from "/python_for_chemists/build/_shared/chunk-QLPZGFBP.js";
 import {
   Graph
-} from "/python_for_chemists//build/_shared/chunk-E6IIAUT5.js";
+} from "/python_for_chemists/build/_shared/chunk-E6IIAUT5.js";
 import {
   clone_default,
   isUndefined_default,
   map_default
-} from "/python_for_chemists//build/_shared/chunk-75Y45RJ5.js";
+} from "/python_for_chemists/build/_shared/chunk-75Y45RJ5.js";
 import {
   clear as clear3,
   insertEdge,
   insertEdgeLabel,
   markers_default,
   positionEdgeLabel
-} from "/python_for_chemists//build/_shared/chunk-QZO55VED.js";
-import "/python_for_chemists//build/_shared/chunk-SJNWNCJG.js";
+} from "/python_for_chemists/build/_shared/chunk-QZO55VED.js";
+import "/python_for_chemists/build/_shared/chunk-SJNWNCJG.js";
 import {
   clear,
   clear2,
@@ -25,26 +25,26 @@ import {
   positionNode,
   setNodeElem,
   updateNodeBounds
-} from "/python_for_chemists//build/_shared/chunk-WP6UWRBG.js";
+} from "/python_for_chemists/build/_shared/chunk-WP6UWRBG.js";
 import {
   getSubGraphTitleMargins
-} from "/python_for_chemists//build/_shared/chunk-6ICL6EEV.js";
-import "/python_for_chemists//build/_shared/chunk-R2WPI2J6.js";
-import "/python_for_chemists//build/_shared/chunk-V6SU7KPH.js";
-import "/python_for_chemists//build/_shared/chunk-WEDXSMQA.js";
-import "/python_for_chemists//build/_shared/chunk-6CUK2GM5.js";
+} from "/python_for_chemists/build/_shared/chunk-6ICL6EEV.js";
+import "/python_for_chemists/build/_shared/chunk-R2WPI2J6.js";
+import "/python_for_chemists/build/_shared/chunk-V6SU7KPH.js";
+import "/python_for_chemists/build/_shared/chunk-WEDXSMQA.js";
+import "/python_for_chemists/build/_shared/chunk-6CUK2GM5.js";
 import {
   getConfig2
-} from "/python_for_chemists//build/_shared/chunk-463FZTZ7.js";
+} from "/python_for_chemists/build/_shared/chunk-463FZTZ7.js";
 import {
   __name,
   log
-} from "/python_for_chemists//build/_shared/chunk-7PDOACA3.js";
-import "/python_for_chemists//build/_shared/chunk-5XJWQ5WJ.js";
-import "/python_for_chemists//build/_shared/chunk-SP2MKLPW.js";
-import "/python_for_chemists//build/_shared/chunk-T7QTAV5N.js";
-import "/python_for_chemists//build/_shared/chunk-2WW6JOYG.js";
-import "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-7PDOACA3.js";
+import "/python_for_chemists/build/_shared/chunk-5XJWQ5WJ.js";
+import "/python_for_chemists/build/_shared/chunk-SP2MKLPW.js";
+import "/python_for_chemists/build/_shared/chunk-T7QTAV5N.js";
+import "/python_for_chemists/build/_shared/chunk-2WW6JOYG.js";
+import "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/dagre-d3-es/src/graphlib/json.js
 function write(g) {
@@ -737,4 +737,4 @@ var render = /* @__PURE__ */ __name(async (data4Layout, svg) => {
 export {
   render
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/dagre-6UL2VRFP-Z5LQKEJI.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/dagre-6UL2VRFP-Z5LQKEJI.js.map

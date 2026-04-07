@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/mathematica.js
 var require_mathematica = __commonJS({
@@ -6752,4 +6752,4 @@ var require_mathematica = __commonJS({
   }
 });
 export default require_mathematica();
-//# sourceMappingURL=/python_for_chemists//build/_shared/mathematica-HEP25EQ4.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/mathematica-HEP25EQ4.js.map

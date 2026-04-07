@@ -1,1 +1,1 @@
-import{a}from"/python_for_chemists//build/_shared/chunk-UPK3JI4Q.js";import"/python_for_chemists//build/_shared/chunk-5XNNEDOD.js";import"/python_for_chemists//build/_shared/chunk-J3PKFMLQ.js";import"/python_for_chemists//build/_shared/chunk-OZE3FFNP.js";export default a();
+import{a}from"/python_for_chemists/build/_shared/chunk-UPK3JI4Q.js";import"/python_for_chemists/build/_shared/chunk-5XNNEDOD.js";import"/python_for_chemists/build/_shared/chunk-J3PKFMLQ.js";import"/python_for_chemists/build/_shared/chunk-OZE3FFNP.js";export default a();

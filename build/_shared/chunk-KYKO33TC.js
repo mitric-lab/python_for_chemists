@@ -1,9 +1,9 @@
 import {
   require_markup_templating
-} from "/python_for_chemists//build/_shared/chunk-E6QZW6U4.js";
+} from "/python_for_chemists/build/_shared/chunk-E6QZW6U4.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/soy.js
 var require_soy = __commonJS({
@@ -112,4 +112,4 @@ var require_soy = __commonJS({
 export {
   require_soy
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-KYKO33TC.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-KYKO33TC.js.map

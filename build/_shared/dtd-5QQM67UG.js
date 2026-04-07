@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/dtd.js
 function ret(style, tp) {
@@ -142,4 +142,4 @@ init_dtd();
 export {
   dtd
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/dtd-5QQM67UG.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/dtd-5QQM67UG.js.map

@@ -84,17 +84,17 @@ import {
   resolveReferencesTransform,
   unnestTransform,
   updateLinkTextIfEmpty
-} from "/python_for_chemists//build/_shared/chunk-NT723IVF.js";
-import "/python_for_chemists//build/_shared/chunk-JUCOPL2A.js";
-import "/python_for_chemists//build/_shared/chunk-YX4KLQK2.js";
-import "/python_for_chemists//build/_shared/chunk-YTFS7O5J.js";
-import "/python_for_chemists//build/_shared/chunk-7SI5XUIQ.js";
-import "/python_for_chemists//build/_shared/chunk-DOEQHMLC.js";
-import "/python_for_chemists//build/_shared/chunk-ZNG4DSCS.js";
-import "/python_for_chemists//build/_shared/chunk-MWXHQG25.js";
-import "/python_for_chemists//build/_shared/chunk-Q6DHUCUI.js";
-import "/python_for_chemists//build/_shared/chunk-LPSXN4QV.js";
-import "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-NT723IVF.js";
+import "/python_for_chemists/build/_shared/chunk-JUCOPL2A.js";
+import "/python_for_chemists/build/_shared/chunk-YX4KLQK2.js";
+import "/python_for_chemists/build/_shared/chunk-YTFS7O5J.js";
+import "/python_for_chemists/build/_shared/chunk-7SI5XUIQ.js";
+import "/python_for_chemists/build/_shared/chunk-DOEQHMLC.js";
+import "/python_for_chemists/build/_shared/chunk-ZNG4DSCS.js";
+import "/python_for_chemists/build/_shared/chunk-MWXHQG25.js";
+import "/python_for_chemists/build/_shared/chunk-Q6DHUCUI.js";
+import "/python_for_chemists/build/_shared/chunk-LPSXN4QV.js";
+import "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 export {
   DOITransformer,
   GithubTransformer,
@@ -182,4 +182,4 @@ export {
   unnestTransform,
   updateLinkTextIfEmpty
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/dist-FDKBWCQ6.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/dist-FDKBWCQ6.js.map

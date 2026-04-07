@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/color-name/index.js
 var require_color_name = __commonJS({
@@ -387,4 +387,4 @@ export {
   require_color_name,
   require_color_string
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-VF3UZM2T.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-VF3UZM2T.js.map

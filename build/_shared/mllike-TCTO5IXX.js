@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/mllike.js
 function mlLike(parserConfig) {
@@ -351,4 +351,4 @@ export {
   oCaml,
   sml
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/mllike-TCTO5IXX.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/mllike-TCTO5IXX.js.map

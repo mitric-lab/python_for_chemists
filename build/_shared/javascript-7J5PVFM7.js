@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/javascript.js
 var require_javascript = __commonJS({
@@ -552,4 +552,4 @@ var require_javascript = __commonJS({
   }
 });
 export default require_javascript();
-//# sourceMappingURL=/python_for_chemists//build/_shared/javascript-7J5PVFM7.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/javascript-7J5PVFM7.js.map

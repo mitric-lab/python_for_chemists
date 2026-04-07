@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/x86asm.js
 var require_x86asm = __commonJS({
@@ -104,4 +104,4 @@ var require_x86asm = __commonJS({
   }
 });
 export default require_x86asm();
-//# sourceMappingURL=/python_for_chemists//build/_shared/x86asm-APHZLTJU.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/x86asm-APHZLTJU.js.map

@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/latex.js
 var require_latex = __commonJS({
@@ -79,4 +79,4 @@ var require_latex = __commonJS({
 export {
   require_latex
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-JAZWIYZC.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-JAZWIYZC.js.map

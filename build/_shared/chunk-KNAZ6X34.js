@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/qore.js
 var require_qore = __commonJS({
@@ -36,4 +36,4 @@ var require_qore = __commonJS({
 export {
   require_qore
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-KNAZ6X34.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-KNAZ6X34.js.map

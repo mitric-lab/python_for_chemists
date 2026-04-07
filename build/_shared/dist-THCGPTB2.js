@@ -2,13 +2,13 @@ import {
   html,
   htmlCompletionSource,
   init_dist as init_dist7
-} from "/python_for_chemists//build/_shared/chunk-XHGRI2HF.js";
-import "/python_for_chemists//build/_shared/chunk-H6SVTQIS.js";
-import "/python_for_chemists//build/_shared/chunk-QCGUJ3KP.js";
+} from "/python_for_chemists/build/_shared/chunk-XHGRI2HF.js";
+import "/python_for_chemists/build/_shared/chunk-H6SVTQIS.js";
+import "/python_for_chemists/build/_shared/chunk-QCGUJ3KP.js";
 import {
   CompletionContext,
   init_dist as init_dist6
-} from "/python_for_chemists//build/_shared/chunk-DXWAMBZP.js";
+} from "/python_for_chemists/build/_shared/chunk-DXWAMBZP.js";
 import {
   EditorSelection,
   EditorState,
@@ -41,10 +41,10 @@ import {
   styleTags,
   syntaxTree,
   tags
-} from "/python_for_chemists//build/_shared/chunk-3I3NFLZ5.js";
+} from "/python_for_chemists/build/_shared/chunk-3I3NFLZ5.js";
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@lezer/markdown/dist/index.js
 function skipForList(bl, cx, line) {
@@ -2549,4 +2549,4 @@ export {
   markdownLanguage,
   pasteURLAsLink
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/dist-THCGPTB2.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/dist-THCGPTB2.js.map

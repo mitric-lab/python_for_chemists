@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/hpkp.js
 var require_hpkp = __commonJS({
@@ -24,4 +24,4 @@ var require_hpkp = __commonJS({
 export {
   require_hpkp
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-YCWNRGLB.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-YCWNRGLB.js.map

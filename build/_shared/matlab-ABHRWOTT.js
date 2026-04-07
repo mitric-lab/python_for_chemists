@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/matlab.js
 var require_matlab = __commonJS({
@@ -85,4 +85,4 @@ var require_matlab = __commonJS({
   }
 });
 export default require_matlab();
-//# sourceMappingURL=/python_for_chemists//build/_shared/matlab-ABHRWOTT.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/matlab-ABHRWOTT.js.map

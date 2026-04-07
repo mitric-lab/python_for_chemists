@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/forth.js
 function toWordList(words) {
@@ -125,4 +125,4 @@ init_forth();
 export {
   forth
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/forth-PUDXV67F.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/forth-PUDXV67F.js.map

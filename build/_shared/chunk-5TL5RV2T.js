@@ -22,7 +22,7 @@ import {
   some_default,
   uniqBy_default,
   values_default
-} from "/python_for_chemists//build/_shared/chunk-75Y45RJ5.js";
+} from "/python_for_chemists/build/_shared/chunk-75Y45RJ5.js";
 import {
   difference_default,
   flatten_default,
@@ -37,23 +37,23 @@ import {
   pickBy_default,
   reduce_default,
   uniq_default
-} from "/python_for_chemists//build/_shared/chunk-5XJWQ5WJ.js";
+} from "/python_for_chemists/build/_shared/chunk-5XJWQ5WJ.js";
 import {
   init_isEmpty,
   isEmpty_default
-} from "/python_for_chemists//build/_shared/chunk-SP2MKLPW.js";
+} from "/python_for_chemists/build/_shared/chunk-SP2MKLPW.js";
 import {
   identity_default,
   isArray_default,
   isFunction_default,
   isObject_default
-} from "/python_for_chemists//build/_shared/chunk-T7QTAV5N.js";
+} from "/python_for_chemists/build/_shared/chunk-T7QTAV5N.js";
 import {
   __commonJS,
   __export,
   __reExport,
   __toESM
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/vscode-jsonrpc/lib/common/ral.js
 var require_ral = __commonJS({
@@ -17891,4 +17891,4 @@ export {
   CommonValueConverter,
   AbstractMermaidTokenBuilder
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-5TL5RV2T.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-5TL5RV2T.js.map

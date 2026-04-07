@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/armasm.js
 var require_armasm = __commonJS({
@@ -99,4 +99,4 @@ var require_armasm = __commonJS({
   }
 });
 export default require_armasm();
-//# sourceMappingURL=/python_for_chemists//build/_shared/armasm-5MTCE2S5.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/armasm-5MTCE2S5.js.map

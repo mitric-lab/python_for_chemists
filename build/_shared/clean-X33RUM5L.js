@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/clean.js
 var require_clean = __commonJS({
@@ -34,4 +34,4 @@ var require_clean = __commonJS({
   }
 });
 export default require_clean();
-//# sourceMappingURL=/python_for_chemists//build/_shared/clean-X33RUM5L.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/clean-X33RUM5L.js.map

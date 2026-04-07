@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/classnames/index.js
 var require_classnames = __commonJS({
@@ -74,4 +74,4 @@ classnames/index.js:
   	http://jedwatson.github.io/classnames
   *)
 */
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-ZNG4DSCS.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-ZNG4DSCS.js.map

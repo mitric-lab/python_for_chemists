@@ -1,18 +1,18 @@
 import {
   require_markup
-} from "/python_for_chemists//build/_shared/chunk-5X3WPYGV.js";
+} from "/python_for_chemists/build/_shared/chunk-5X3WPYGV.js";
 import {
   require_javascript
-} from "/python_for_chemists//build/_shared/chunk-TYTWADG3.js";
+} from "/python_for_chemists/build/_shared/chunk-TYTWADG3.js";
 import {
   require_css
-} from "/python_for_chemists//build/_shared/chunk-CWASSZWZ.js";
+} from "/python_for_chemists/build/_shared/chunk-CWASSZWZ.js";
 import {
   require_clike
-} from "/python_for_chemists//build/_shared/chunk-RBKIIXPM.js";
+} from "/python_for_chemists/build/_shared/chunk-RBKIIXPM.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/xtend/immutable.js
 var require_immutable = __commonJS({
@@ -2676,4 +2676,4 @@ prismjs/components/prism-core.js:
    * @public
    *)
 */
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-7XMITT3F.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-7XMITT3F.js.map

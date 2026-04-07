@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@marijn/find-cluster-break/src/index.js
 function isExtendingChar(code) {
@@ -20019,4 +20019,4 @@ export {
   LRParser,
   init_dist6
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-3I3NFLZ5.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-3I3NFLZ5.js.map

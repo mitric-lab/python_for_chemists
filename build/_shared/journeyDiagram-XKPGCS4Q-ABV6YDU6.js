@@ -3,11 +3,11 @@ import {
   drawRect,
   drawText,
   getNoteRect
-} from "/python_for_chemists//build/_shared/chunk-PBNQRLL6.js";
+} from "/python_for_chemists/build/_shared/chunk-PBNQRLL6.js";
 import {
   getIconStyles
-} from "/python_for_chemists//build/_shared/chunk-BGO6WPMI.js";
-import "/python_for_chemists//build/_shared/chunk-6CUK2GM5.js";
+} from "/python_for_chemists/build/_shared/chunk-BGO6WPMI.js";
+import "/python_for_chemists/build/_shared/chunk-6CUK2GM5.js";
 import {
   clear,
   configureSvgSize,
@@ -18,14 +18,14 @@ import {
   setAccDescription,
   setAccTitle,
   setDiagramTitle
-} from "/python_for_chemists//build/_shared/chunk-463FZTZ7.js";
+} from "/python_for_chemists/build/_shared/chunk-463FZTZ7.js";
 import {
   __name,
   arc_default,
   select_default
-} from "/python_for_chemists//build/_shared/chunk-7PDOACA3.js";
-import "/python_for_chemists//build/_shared/chunk-2WW6JOYG.js";
-import "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-7PDOACA3.js";
+import "/python_for_chemists/build/_shared/chunk-2WW6JOYG.js";
+import "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/mermaid/dist/chunks/mermaid.core/journeyDiagram-XKPGCS4Q.mjs
 var parser = function() {
@@ -1301,4 +1301,4 @@ var diagram = {
 export {
   diagram
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/journeyDiagram-XKPGCS4Q-ABV6YDU6.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/journeyDiagram-XKPGCS4Q-ABV6YDU6.js.map

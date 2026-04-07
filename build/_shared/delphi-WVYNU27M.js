@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/delphi.js
 var require_delphi = __commonJS({
@@ -116,4 +116,4 @@ var require_delphi = __commonJS({
   }
 });
 export default require_delphi();
-//# sourceMappingURL=/python_for_chemists//build/_shared/delphi-WVYNU27M.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/delphi-WVYNU27M.js.map

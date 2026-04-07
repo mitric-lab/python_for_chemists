@@ -1,25 +1,25 @@
 import {
   package_default
-} from "/python_for_chemists//build/_shared/chunk-EYXQDAO3.js";
+} from "/python_for_chemists/build/_shared/chunk-EYXQDAO3.js";
 import {
   selectSvgElement
-} from "/python_for_chemists//build/_shared/chunk-YZZVRB5P.js";
+} from "/python_for_chemists/build/_shared/chunk-YZZVRB5P.js";
 import {
   JSON_SCHEMA,
   load
-} from "/python_for_chemists//build/_shared/chunk-OXD2KSWA.js";
+} from "/python_for_chemists/build/_shared/chunk-OXD2KSWA.js";
 import {
   registerLayoutLoaders
-} from "/python_for_chemists//build/_shared/chunk-QDIBAP63.js";
-import "/python_for_chemists//build/_shared/chunk-QZO55VED.js";
-import "/python_for_chemists//build/_shared/chunk-SJNWNCJG.js";
-import "/python_for_chemists//build/_shared/chunk-WP6UWRBG.js";
-import "/python_for_chemists//build/_shared/chunk-6ICL6EEV.js";
-import "/python_for_chemists//build/_shared/chunk-R2WPI2J6.js";
+} from "/python_for_chemists/build/_shared/chunk-QDIBAP63.js";
+import "/python_for_chemists/build/_shared/chunk-QZO55VED.js";
+import "/python_for_chemists/build/_shared/chunk-SJNWNCJG.js";
+import "/python_for_chemists/build/_shared/chunk-WP6UWRBG.js";
+import "/python_for_chemists/build/_shared/chunk-6ICL6EEV.js";
+import "/python_for_chemists/build/_shared/chunk-R2WPI2J6.js";
 import {
   dedent,
   registerIconPacks
-} from "/python_for_chemists//build/_shared/chunk-V6SU7KPH.js";
+} from "/python_for_chemists/build/_shared/chunk-V6SU7KPH.js";
 import {
   cleanAndMerge,
   decodeEntities,
@@ -27,8 +27,8 @@ import {
   isDetailedError,
   removeDirectives,
   utils_default
-} from "/python_for_chemists//build/_shared/chunk-WEDXSMQA.js";
-import "/python_for_chemists//build/_shared/chunk-6CUK2GM5.js";
+} from "/python_for_chemists/build/_shared/chunk-WEDXSMQA.js";
+import "/python_for_chemists/build/_shared/chunk-6CUK2GM5.js";
 import {
   UnknownDiagramError,
   addDirective,
@@ -53,20 +53,20 @@ import {
   styles_default,
   themes_default,
   updateSiteConfig
-} from "/python_for_chemists//build/_shared/chunk-463FZTZ7.js";
+} from "/python_for_chemists/build/_shared/chunk-463FZTZ7.js";
 import {
   __name,
   log,
   select_default,
   setLogLevel
-} from "/python_for_chemists//build/_shared/chunk-7PDOACA3.js";
+} from "/python_for_chemists/build/_shared/chunk-7PDOACA3.js";
 import {
   init_isEmpty,
   isEmpty_default
-} from "/python_for_chemists//build/_shared/chunk-SP2MKLPW.js";
-import "/python_for_chemists//build/_shared/chunk-T7QTAV5N.js";
-import "/python_for_chemists//build/_shared/chunk-2WW6JOYG.js";
-import "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-SP2MKLPW.js";
+import "/python_for_chemists/build/_shared/chunk-T7QTAV5N.js";
+import "/python_for_chemists/build/_shared/chunk-2WW6JOYG.js";
+import "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/stylis/src/Enum.js
 var COMMENT = "comm";
@@ -405,7 +405,7 @@ var detector = /* @__PURE__ */ __name((txt) => {
   return /^\s*C4Context|C4Container|C4Component|C4Dynamic|C4Deployment/.test(txt);
 }, "detector");
 var loader = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/c4Diagram-YG6GDRKO-QNWNO6GU.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/c4Diagram-YG6GDRKO-QNWNO6GU.js");
   return { id, diagram: diagram2 };
 }, "loader");
 var plugin = {
@@ -422,7 +422,7 @@ var detector2 = /* @__PURE__ */ __name((txt, config) => {
   return /^\s*graph/.test(txt);
 }, "detector");
 var loader2 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/flowDiagram-NV44I4VS-XDNPPFPG.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/flowDiagram-NV44I4VS-XDNPPFPG.js");
   return { id: id2, diagram: diagram2 };
 }, "loader");
 var plugin2 = {
@@ -445,7 +445,7 @@ var detector3 = /* @__PURE__ */ __name((txt, config) => {
   return /^\s*flowchart/.test(txt);
 }, "detector");
 var loader3 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/flowDiagram-NV44I4VS-XDNPPFPG.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/flowDiagram-NV44I4VS-XDNPPFPG.js");
   return { id: id3, diagram: diagram2 };
 }, "loader");
 var plugin3 = {
@@ -459,7 +459,7 @@ var detector4 = /* @__PURE__ */ __name((txt) => {
   return /^\s*erDiagram/.test(txt);
 }, "detector");
 var loader4 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/erDiagram-Q2GNP2WA-437CX2QT.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/erDiagram-Q2GNP2WA-437CX2QT.js");
   return { id: id4, diagram: diagram2 };
 }, "loader");
 var plugin4 = {
@@ -473,7 +473,7 @@ var detector5 = /* @__PURE__ */ __name((txt) => {
   return /^\s*gitGraph/.test(txt);
 }, "detector");
 var loader5 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/gitGraphDiagram-NY62KEGX-DMIVNKPG.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/gitGraphDiagram-NY62KEGX-DMIVNKPG.js");
   return { id: id5, diagram: diagram2 };
 }, "loader");
 var plugin5 = {
@@ -487,7 +487,7 @@ var detector6 = /* @__PURE__ */ __name((txt) => {
   return /^\s*gantt/.test(txt);
 }, "detector");
 var loader6 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/ganttDiagram-JELNMOA3-55ULYQND.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/ganttDiagram-JELNMOA3-55ULYQND.js");
   return { id: id6, diagram: diagram2 };
 }, "loader");
 var plugin6 = {
@@ -501,7 +501,7 @@ var detector7 = /* @__PURE__ */ __name((txt) => {
   return /^\s*info/.test(txt);
 }, "detector");
 var loader7 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/infoDiagram-WHAUD3N6-JTVWR6NY.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/infoDiagram-WHAUD3N6-JTVWR6NY.js");
   return { id: id7, diagram: diagram2 };
 }, "loader");
 var info = {
@@ -514,7 +514,7 @@ var detector8 = /* @__PURE__ */ __name((txt) => {
   return /^\s*pie/.test(txt);
 }, "detector");
 var loader8 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/pieDiagram-ADFJNKIX-W54NYPWG.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/pieDiagram-ADFJNKIX-W54NYPWG.js");
   return { id: id8, diagram: diagram2 };
 }, "loader");
 var pie = {
@@ -527,7 +527,7 @@ var detector9 = /* @__PURE__ */ __name((txt) => {
   return /^\s*quadrantChart/.test(txt);
 }, "detector");
 var loader9 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/quadrantDiagram-AYHSOK5B-7VAFDTSS.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/quadrantDiagram-AYHSOK5B-7VAFDTSS.js");
   return { id: id9, diagram: diagram2 };
 }, "loader");
 var plugin7 = {
@@ -541,7 +541,7 @@ var detector10 = /* @__PURE__ */ __name((txt) => {
   return /^\s*xychart(-beta)?/.test(txt);
 }, "detector");
 var loader10 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/xychartDiagram-PRI3JC2R-KKM65VZ5.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/xychartDiagram-PRI3JC2R-KKM65VZ5.js");
   return { id: id10, diagram: diagram2 };
 }, "loader");
 var plugin8 = {
@@ -555,7 +555,7 @@ var detector11 = /* @__PURE__ */ __name((txt) => {
   return /^\s*requirement(Diagram)?/.test(txt);
 }, "detector");
 var loader11 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/requirementDiagram-UZGBJVZJ-SMZN7KKU.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/requirementDiagram-UZGBJVZJ-SMZN7KKU.js");
   return { id: id11, diagram: diagram2 };
 }, "loader");
 var plugin9 = {
@@ -569,7 +569,7 @@ var detector12 = /* @__PURE__ */ __name((txt) => {
   return /^\s*sequenceDiagram/.test(txt);
 }, "detector");
 var loader12 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/sequenceDiagram-WL72ISMW-X4E7RMHJ.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/sequenceDiagram-WL72ISMW-X4E7RMHJ.js");
   return { id: id12, diagram: diagram2 };
 }, "loader");
 var plugin10 = {
@@ -586,7 +586,7 @@ var detector13 = /* @__PURE__ */ __name((txt, config) => {
   return /^\s*classDiagram/.test(txt);
 }, "detector");
 var loader13 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/classDiagram-2ON5EDUG-3HQ7WP63.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/classDiagram-2ON5EDUG-3HQ7WP63.js");
   return { id: id13, diagram: diagram2 };
 }, "loader");
 var plugin11 = {
@@ -603,7 +603,7 @@ var detector14 = /* @__PURE__ */ __name((txt, config) => {
   return /^\s*classDiagram-v2/.test(txt);
 }, "detector");
 var loader14 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/classDiagram-v2-WZHVMYZB-VL2SSB6Q.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/classDiagram-v2-WZHVMYZB-VL2SSB6Q.js");
   return { id: id14, diagram: diagram2 };
 }, "loader");
 var plugin12 = {
@@ -620,7 +620,7 @@ var detector15 = /* @__PURE__ */ __name((txt, config) => {
   return /^\s*stateDiagram/.test(txt);
 }, "detector");
 var loader15 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/stateDiagram-FKZM4ZOC-MJ4KBYSR.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/stateDiagram-FKZM4ZOC-MJ4KBYSR.js");
   return { id: id15, diagram: diagram2 };
 }, "loader");
 var plugin13 = {
@@ -640,7 +640,7 @@ var detector16 = /* @__PURE__ */ __name((txt, config) => {
   return false;
 }, "detector");
 var loader16 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/stateDiagram-v2-4FDKWEC3-HTWRU57O.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/stateDiagram-v2-4FDKWEC3-HTWRU57O.js");
   return { id: id16, diagram: diagram2 };
 }, "loader");
 var plugin14 = {
@@ -654,7 +654,7 @@ var detector17 = /* @__PURE__ */ __name((txt) => {
   return /^\s*journey/.test(txt);
 }, "detector");
 var loader17 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/journeyDiagram-XKPGCS4Q-ABV6YDU6.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/journeyDiagram-XKPGCS4Q-ABV6YDU6.js");
   return { id: id17, diagram: diagram2 };
 }, "loader");
 var plugin15 = {
@@ -721,7 +721,7 @@ var detector18 = /* @__PURE__ */ __name((txt, config = {}) => {
   return false;
 }, "detector");
 var loader18 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/flowDiagram-NV44I4VS-XDNPPFPG.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/flowDiagram-NV44I4VS-XDNPPFPG.js");
   return { id: id18, diagram: diagram2 };
 }, "loader");
 var plugin16 = {
@@ -735,7 +735,7 @@ var detector19 = /* @__PURE__ */ __name((txt) => {
   return /^\s*timeline/.test(txt);
 }, "detector");
 var loader19 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/timeline-definition-IT6M3QCI-VYSFST2L.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/timeline-definition-IT6M3QCI-VYSFST2L.js");
   return { id: id19, diagram: diagram2 };
 }, "loader");
 var plugin17 = {
@@ -749,7 +749,7 @@ var detector20 = /* @__PURE__ */ __name((txt) => {
   return /^\s*mindmap/.test(txt);
 }, "detector");
 var loader20 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/mindmap-definition-VGOIOE7T-J5M6VQZA.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/mindmap-definition-VGOIOE7T-J5M6VQZA.js");
   return { id: id20, diagram: diagram2 };
 }, "loader");
 var plugin18 = {
@@ -763,7 +763,7 @@ var detector21 = /* @__PURE__ */ __name((txt) => {
   return /^\s*kanban/.test(txt);
 }, "detector");
 var loader21 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/kanban-definition-3W4ZIXB7-GBZZNGKR.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/kanban-definition-3W4ZIXB7-GBZZNGKR.js");
   return { id: id21, diagram: diagram2 };
 }, "loader");
 var plugin19 = {
@@ -777,7 +777,7 @@ var detector22 = /* @__PURE__ */ __name((txt) => {
   return /^\s*sankey(-beta)?/.test(txt);
 }, "detector");
 var loader22 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/sankeyDiagram-TZEHDZUN-TNMTU4WP.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/sankeyDiagram-TZEHDZUN-TNMTU4WP.js");
   return { id: id22, diagram: diagram2 };
 }, "loader");
 var plugin20 = {
@@ -791,7 +791,7 @@ var detector23 = /* @__PURE__ */ __name((txt) => {
   return /^\s*packet(-beta)?/.test(txt);
 }, "detector");
 var loader23 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/diagram-S2PKOQOG-ZBAXIXNN.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/diagram-S2PKOQOG-ZBAXIXNN.js");
   return { id: id23, diagram: diagram2 };
 }, "loader");
 var packet = {
@@ -804,7 +804,7 @@ var detector24 = /* @__PURE__ */ __name((txt) => {
   return /^\s*radar-beta/.test(txt);
 }, "detector");
 var loader24 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/diagram-QEK2KX5R-RQMTJO4B.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/diagram-QEK2KX5R-RQMTJO4B.js");
   return { id: id24, diagram: diagram2 };
 }, "loader");
 var radar = {
@@ -817,7 +817,7 @@ var detector25 = /* @__PURE__ */ __name((txt) => {
   return /^\s*block(-beta)?/.test(txt);
 }, "detector");
 var loader25 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/blockDiagram-VD42YOAC-L6I3VQG4.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/blockDiagram-VD42YOAC-L6I3VQG4.js");
   return { id: id25, diagram: diagram2 };
 }, "loader");
 var plugin21 = {
@@ -831,7 +831,7 @@ var detector26 = /* @__PURE__ */ __name((txt) => {
   return /^\s*architecture/.test(txt);
 }, "detector");
 var loader26 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/architectureDiagram-VXUJARFQ-UXOGOBVR.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/architectureDiagram-VXUJARFQ-UXOGOBVR.js");
   return { id: id26, diagram: diagram2 };
 }, "loader");
 var architecture = {
@@ -845,7 +845,7 @@ var detector27 = /* @__PURE__ */ __name((txt) => {
   return /^\s*treemap/.test(txt);
 }, "detector");
 var loader27 = /* @__PURE__ */ __name(async () => {
-  const { diagram: diagram2 } = await import("/python_for_chemists//build/_shared/diagram-PSM6KHXK-TLIWXWI7.js");
+  const { diagram: diagram2 } = await import("/python_for_chemists/build/_shared/diagram-PSM6KHXK-TLIWXWI7.js");
   return { id: id27, diagram: diagram2 };
 }, "loader");
 var treemap = {
@@ -1615,4 +1615,4 @@ mermaid/dist/mermaid.core.mjs:
    * Wait for document loaded before starting the execution
    *)
 */
-//# sourceMappingURL=/python_for_chemists//build/_shared/mermaid.core-BRCSVNUK.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/mermaid.core-BRCSVNUK.js.map

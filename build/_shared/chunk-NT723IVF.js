@@ -8,13 +8,13 @@ import {
   parse2,
   rehypeParse,
   webNamespaces
-} from "/python_for_chemists//build/_shared/chunk-JUCOPL2A.js";
+} from "/python_for_chemists/build/_shared/chunk-JUCOPL2A.js";
 import {
   unified
-} from "/python_for_chemists//build/_shared/chunk-YX4KLQK2.js";
+} from "/python_for_chemists/build/_shared/chunk-YX4KLQK2.js";
 import {
   u
-} from "/python_for_chemists//build/_shared/chunk-YTFS7O5J.js";
+} from "/python_for_chemists/build/_shared/chunk-YTFS7O5J.js";
 import {
   doi,
   fillMissingKeys,
@@ -24,13 +24,13 @@ import {
   normalizeJsonToString,
   stashPlaceholder,
   validationWarning
-} from "/python_for_chemists//build/_shared/chunk-7SI5XUIQ.js";
+} from "/python_for_chemists/build/_shared/chunk-7SI5XUIQ.js";
 import {
   jsYaml
-} from "/python_for_chemists//build/_shared/chunk-DOEQHMLC.js";
+} from "/python_for_chemists/build/_shared/chunk-DOEQHMLC.js";
 import {
   VFile
-} from "/python_for_chemists//build/_shared/chunk-MWXHQG25.js";
+} from "/python_for_chemists/build/_shared/chunk-MWXHQG25.js";
 import {
   AdmonitionKind,
   NotebookCell,
@@ -53,13 +53,13 @@ import {
   setTextAsChild,
   toText,
   transferTargetAttrs
-} from "/python_for_chemists//build/_shared/chunk-Q6DHUCUI.js";
+} from "/python_for_chemists/build/_shared/chunk-Q6DHUCUI.js";
 import {
   visit
-} from "/python_for_chemists//build/_shared/chunk-LPSXN4QV.js";
+} from "/python_for_chemists/build/_shared/chunk-LPSXN4QV.js";
 import {
   __export
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/myst-frontmatter/dist/utils/fillPageFrontmatter.js
 function fillSiteFrontmatter(base2, filler, opts, keys, trimUnused) {
@@ -30917,4 +30917,4 @@ export {
   basicTransformationsPlugin,
   getFrontmatter
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-NT723IVF.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-NT723IVF.js.map

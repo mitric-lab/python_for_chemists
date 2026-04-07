@@ -1,832 +1,832 @@
 import {
   require_yang
-} from "/python_for_chemists//build/_shared/chunk-OPEISDRP.js";
+} from "/python_for_chemists/build/_shared/chunk-OPEISDRP.js";
 import {
   require_zig
-} from "/python_for_chemists//build/_shared/chunk-4ZHK3HRX.js";
+} from "/python_for_chemists/build/_shared/chunk-4ZHK3HRX.js";
 import {
   require_core
-} from "/python_for_chemists//build/_shared/chunk-7XMITT3F.js";
+} from "/python_for_chemists/build/_shared/chunk-7XMITT3F.js";
 import {
   require_web_idl
-} from "/python_for_chemists//build/_shared/chunk-2QD4PBIG.js";
+} from "/python_for_chemists/build/_shared/chunk-2QD4PBIG.js";
 import {
   require_wiki
-} from "/python_for_chemists//build/_shared/chunk-V32DDEN7.js";
+} from "/python_for_chemists/build/_shared/chunk-V32DDEN7.js";
 import {
   require_wolfram
-} from "/python_for_chemists//build/_shared/chunk-PNRN4TSD.js";
+} from "/python_for_chemists/build/_shared/chunk-PNRN4TSD.js";
 import {
   require_wren
-} from "/python_for_chemists//build/_shared/chunk-LFP6ZFT2.js";
+} from "/python_for_chemists/build/_shared/chunk-LFP6ZFT2.js";
 import {
   require_xeora
-} from "/python_for_chemists//build/_shared/chunk-V6X2OPPP.js";
+} from "/python_for_chemists/build/_shared/chunk-V6X2OPPP.js";
 import {
   require_xml_doc
-} from "/python_for_chemists//build/_shared/chunk-Q4OEMLYV.js";
+} from "/python_for_chemists/build/_shared/chunk-Q4OEMLYV.js";
 import {
   require_xojo
-} from "/python_for_chemists//build/_shared/chunk-HTEDHQGQ.js";
+} from "/python_for_chemists/build/_shared/chunk-HTEDHQGQ.js";
 import {
   require_xquery
-} from "/python_for_chemists//build/_shared/chunk-BHY25EY7.js";
+} from "/python_for_chemists/build/_shared/chunk-BHY25EY7.js";
 import {
   require_vala
-} from "/python_for_chemists//build/_shared/chunk-Z4LYV54E.js";
+} from "/python_for_chemists/build/_shared/chunk-Z4LYV54E.js";
 import {
   require_velocity
-} from "/python_for_chemists//build/_shared/chunk-ZZ7SQEE4.js";
+} from "/python_for_chemists/build/_shared/chunk-ZZ7SQEE4.js";
 import {
   require_verilog
-} from "/python_for_chemists//build/_shared/chunk-RNZSNFG5.js";
+} from "/python_for_chemists/build/_shared/chunk-RNZSNFG5.js";
 import {
   require_vhdl
-} from "/python_for_chemists//build/_shared/chunk-LT6Y6BF5.js";
+} from "/python_for_chemists/build/_shared/chunk-LT6Y6BF5.js";
 import {
   require_vim
-} from "/python_for_chemists//build/_shared/chunk-OZF2J7NB.js";
+} from "/python_for_chemists/build/_shared/chunk-OZF2J7NB.js";
 import {
   require_visual_basic
-} from "/python_for_chemists//build/_shared/chunk-DXQZQ7VH.js";
+} from "/python_for_chemists/build/_shared/chunk-DXQZQ7VH.js";
 import {
   require_warpscript
-} from "/python_for_chemists//build/_shared/chunk-K2UJXE6Q.js";
+} from "/python_for_chemists/build/_shared/chunk-K2UJXE6Q.js";
 import {
   require_wasm
-} from "/python_for_chemists//build/_shared/chunk-LIN435LI.js";
+} from "/python_for_chemists/build/_shared/chunk-LIN435LI.js";
 import {
   require_tsx
-} from "/python_for_chemists//build/_shared/chunk-H4EI3P3B.js";
+} from "/python_for_chemists/build/_shared/chunk-H4EI3P3B.js";
 import {
   require_tt2
-} from "/python_for_chemists//build/_shared/chunk-3FJPBX37.js";
+} from "/python_for_chemists/build/_shared/chunk-3FJPBX37.js";
 import {
   require_twig
-} from "/python_for_chemists//build/_shared/chunk-S7FROPVF.js";
+} from "/python_for_chemists/build/_shared/chunk-S7FROPVF.js";
 import {
   require_typoscript
-} from "/python_for_chemists//build/_shared/chunk-Y2L2DH4H.js";
+} from "/python_for_chemists/build/_shared/chunk-Y2L2DH4H.js";
 import {
   require_unrealscript
-} from "/python_for_chemists//build/_shared/chunk-W7C3RARD.js";
+} from "/python_for_chemists/build/_shared/chunk-W7C3RARD.js";
 import {
   require_uorazor
-} from "/python_for_chemists//build/_shared/chunk-MUG5QBXN.js";
+} from "/python_for_chemists/build/_shared/chunk-MUG5QBXN.js";
 import {
   require_uri
-} from "/python_for_chemists//build/_shared/chunk-VIKBSM6H.js";
+} from "/python_for_chemists/build/_shared/chunk-VIKBSM6H.js";
 import {
   require_v
-} from "/python_for_chemists//build/_shared/chunk-VIYPFDV6.js";
+} from "/python_for_chemists/build/_shared/chunk-VIYPFDV6.js";
 import {
   require_t4_vb
-} from "/python_for_chemists//build/_shared/chunk-PADAB2PH.js";
+} from "/python_for_chemists/build/_shared/chunk-PADAB2PH.js";
 import {
   require_vbnet
-} from "/python_for_chemists//build/_shared/chunk-XZPFVGSQ.js";
+} from "/python_for_chemists/build/_shared/chunk-XZPFVGSQ.js";
 import {
   require_tap
-} from "/python_for_chemists//build/_shared/chunk-5KGAH2PC.js";
+} from "/python_for_chemists/build/_shared/chunk-5KGAH2PC.js";
 import {
   require_yaml
-} from "/python_for_chemists//build/_shared/chunk-IGIHLU5C.js";
+} from "/python_for_chemists/build/_shared/chunk-IGIHLU5C.js";
 import {
   require_tcl
-} from "/python_for_chemists//build/_shared/chunk-YKPQTSLH.js";
+} from "/python_for_chemists/build/_shared/chunk-YKPQTSLH.js";
 import {
   require_textile
-} from "/python_for_chemists//build/_shared/chunk-QGPAXJPC.js";
+} from "/python_for_chemists/build/_shared/chunk-QGPAXJPC.js";
 import {
   require_toml
-} from "/python_for_chemists//build/_shared/chunk-VC7TD3V3.js";
+} from "/python_for_chemists/build/_shared/chunk-VC7TD3V3.js";
 import {
   require_tremor
-} from "/python_for_chemists//build/_shared/chunk-BK354DQ2.js";
+} from "/python_for_chemists/build/_shared/chunk-BK354DQ2.js";
 import {
   require_sqf
-} from "/python_for_chemists//build/_shared/chunk-HMROFNJF.js";
+} from "/python_for_chemists/build/_shared/chunk-HMROFNJF.js";
 import {
   require_squirrel
-} from "/python_for_chemists//build/_shared/chunk-3AMWQRDL.js";
+} from "/python_for_chemists/build/_shared/chunk-3AMWQRDL.js";
 import {
   require_stan
-} from "/python_for_chemists//build/_shared/chunk-A4KD4W2M.js";
+} from "/python_for_chemists/build/_shared/chunk-A4KD4W2M.js";
 import {
   require_stylus
-} from "/python_for_chemists//build/_shared/chunk-NQDFOBL6.js";
+} from "/python_for_chemists/build/_shared/chunk-NQDFOBL6.js";
 import {
   require_swift
-} from "/python_for_chemists//build/_shared/chunk-5Y66IYLE.js";
+} from "/python_for_chemists/build/_shared/chunk-5Y66IYLE.js";
 import {
   require_systemd
-} from "/python_for_chemists//build/_shared/chunk-N56POPLO.js";
+} from "/python_for_chemists/build/_shared/chunk-N56POPLO.js";
 import {
   require_t4_cs
-} from "/python_for_chemists//build/_shared/chunk-DY2MRAPI.js";
+} from "/python_for_chemists/build/_shared/chunk-DY2MRAPI.js";
 import {
   require_t4_templating
-} from "/python_for_chemists//build/_shared/chunk-VVE4QZ3U.js";
+} from "/python_for_chemists/build/_shared/chunk-VVE4QZ3U.js";
 import {
   require_smarty
-} from "/python_for_chemists//build/_shared/chunk-YHMTFKWM.js";
+} from "/python_for_chemists/build/_shared/chunk-YHMTFKWM.js";
 import {
   require_sml
-} from "/python_for_chemists//build/_shared/chunk-BKK2ADGR.js";
+} from "/python_for_chemists/build/_shared/chunk-BKK2ADGR.js";
 import {
   require_solidity
-} from "/python_for_chemists//build/_shared/chunk-DCFHI55Q.js";
+} from "/python_for_chemists/build/_shared/chunk-DCFHI55Q.js";
 import {
   require_solution_file
-} from "/python_for_chemists//build/_shared/chunk-ZVTPABSE.js";
+} from "/python_for_chemists/build/_shared/chunk-ZVTPABSE.js";
 import {
   require_soy
-} from "/python_for_chemists//build/_shared/chunk-KYKO33TC.js";
+} from "/python_for_chemists/build/_shared/chunk-KYKO33TC.js";
 import {
   require_sparql
-} from "/python_for_chemists//build/_shared/chunk-4GCEH6U7.js";
+} from "/python_for_chemists/build/_shared/chunk-4GCEH6U7.js";
 import {
   require_turtle
-} from "/python_for_chemists//build/_shared/chunk-57LYTWL4.js";
+} from "/python_for_chemists/build/_shared/chunk-57LYTWL4.js";
 import {
   require_splunk_spl
-} from "/python_for_chemists//build/_shared/chunk-C6SMQBZ7.js";
+} from "/python_for_chemists/build/_shared/chunk-C6SMQBZ7.js";
 import {
   require_rust
-} from "/python_for_chemists//build/_shared/chunk-YJF32COI.js";
+} from "/python_for_chemists/build/_shared/chunk-YJF32COI.js";
 import {
   require_sas
-} from "/python_for_chemists//build/_shared/chunk-WQME434W.js";
+} from "/python_for_chemists/build/_shared/chunk-WQME434W.js";
 import {
   require_sass
-} from "/python_for_chemists//build/_shared/chunk-COTAKOYI.js";
+} from "/python_for_chemists/build/_shared/chunk-COTAKOYI.js";
 import {
   require_scala
-} from "/python_for_chemists//build/_shared/chunk-GA4LSCZZ.js";
+} from "/python_for_chemists/build/_shared/chunk-GA4LSCZZ.js";
 import {
   require_scss
-} from "/python_for_chemists//build/_shared/chunk-SUQ6QYGH.js";
+} from "/python_for_chemists/build/_shared/chunk-SUQ6QYGH.js";
 import {
   require_shell_session
-} from "/python_for_chemists//build/_shared/chunk-ODRFFPN3.js";
+} from "/python_for_chemists/build/_shared/chunk-ODRFFPN3.js";
 import {
   require_smali
-} from "/python_for_chemists//build/_shared/chunk-MZRYG74R.js";
+} from "/python_for_chemists/build/_shared/chunk-MZRYG74R.js";
 import {
   require_smalltalk
-} from "/python_for_chemists//build/_shared/chunk-5BRDBPN5.js";
+} from "/python_for_chemists/build/_shared/chunk-5BRDBPN5.js";
 import {
   require_reason
-} from "/python_for_chemists//build/_shared/chunk-AFHIGBKQ.js";
+} from "/python_for_chemists/build/_shared/chunk-AFHIGBKQ.js";
 import {
   require_regex
-} from "/python_for_chemists//build/_shared/chunk-57AX3CK2.js";
+} from "/python_for_chemists/build/_shared/chunk-57AX3CK2.js";
 import {
   require_rego
-} from "/python_for_chemists//build/_shared/chunk-KBOH6KJG.js";
+} from "/python_for_chemists/build/_shared/chunk-KBOH6KJG.js";
 import {
   require_renpy
-} from "/python_for_chemists//build/_shared/chunk-CGPBXBDR.js";
+} from "/python_for_chemists/build/_shared/chunk-CGPBXBDR.js";
 import {
   require_rest
-} from "/python_for_chemists//build/_shared/chunk-2TOKDLBZ.js";
+} from "/python_for_chemists/build/_shared/chunk-2TOKDLBZ.js";
 import {
   require_rip
-} from "/python_for_chemists//build/_shared/chunk-4SH4TG6O.js";
+} from "/python_for_chemists/build/_shared/chunk-4SH4TG6O.js";
 import {
   require_roboconf
-} from "/python_for_chemists//build/_shared/chunk-Q7OUMSYQ.js";
+} from "/python_for_chemists/build/_shared/chunk-Q7OUMSYQ.js";
 import {
   require_robotframework
-} from "/python_for_chemists//build/_shared/chunk-ZK7P3DSZ.js";
+} from "/python_for_chemists/build/_shared/chunk-ZK7P3DSZ.js";
 import {
   require_purescript
-} from "/python_for_chemists//build/_shared/chunk-XU4PJUWY.js";
+} from "/python_for_chemists/build/_shared/chunk-XU4PJUWY.js";
 import {
   require_python
-} from "/python_for_chemists//build/_shared/chunk-GGCUIMPJ.js";
+} from "/python_for_chemists/build/_shared/chunk-GGCUIMPJ.js";
 import {
   require_q
-} from "/python_for_chemists//build/_shared/chunk-IV55NS3X.js";
+} from "/python_for_chemists/build/_shared/chunk-IV55NS3X.js";
 import {
   require_qml
-} from "/python_for_chemists//build/_shared/chunk-QPCUBZCI.js";
+} from "/python_for_chemists/build/_shared/chunk-QPCUBZCI.js";
 import {
   require_qore
-} from "/python_for_chemists//build/_shared/chunk-KNAZ6X34.js";
+} from "/python_for_chemists/build/_shared/chunk-KNAZ6X34.js";
 import {
   require_qsharp
-} from "/python_for_chemists//build/_shared/chunk-J4IK24L5.js";
+} from "/python_for_chemists/build/_shared/chunk-J4IK24L5.js";
 import {
   require_r
-} from "/python_for_chemists//build/_shared/chunk-2XPBXLML.js";
+} from "/python_for_chemists/build/_shared/chunk-2XPBXLML.js";
 import {
   require_racket
-} from "/python_for_chemists//build/_shared/chunk-ZQNPBDA5.js";
+} from "/python_for_chemists/build/_shared/chunk-ZQNPBDA5.js";
 import {
   require_promql
-} from "/python_for_chemists//build/_shared/chunk-3B6C7IPT.js";
+} from "/python_for_chemists/build/_shared/chunk-3B6C7IPT.js";
 import {
   require_properties
-} from "/python_for_chemists//build/_shared/chunk-TK3MV2VO.js";
+} from "/python_for_chemists/build/_shared/chunk-TK3MV2VO.js";
 import {
   require_protobuf
-} from "/python_for_chemists//build/_shared/chunk-DY6AZUHY.js";
+} from "/python_for_chemists/build/_shared/chunk-DY6AZUHY.js";
 import {
   require_psl
-} from "/python_for_chemists//build/_shared/chunk-D3T3VAKA.js";
+} from "/python_for_chemists/build/_shared/chunk-D3T3VAKA.js";
 import {
   require_pug
-} from "/python_for_chemists//build/_shared/chunk-6KHDIJDA.js";
+} from "/python_for_chemists/build/_shared/chunk-6KHDIJDA.js";
 import {
   require_puppet
-} from "/python_for_chemists//build/_shared/chunk-7Z4QGLMX.js";
+} from "/python_for_chemists/build/_shared/chunk-7Z4QGLMX.js";
 import {
   require_pure
-} from "/python_for_chemists//build/_shared/chunk-AOJIZIVT.js";
+} from "/python_for_chemists/build/_shared/chunk-AOJIZIVT.js";
 import {
   require_purebasic
-} from "/python_for_chemists//build/_shared/chunk-GI2WEZVC.js";
+} from "/python_for_chemists/build/_shared/chunk-GI2WEZVC.js";
 import {
   require_perl
-} from "/python_for_chemists//build/_shared/chunk-I3K3XOVW.js";
+} from "/python_for_chemists/build/_shared/chunk-I3K3XOVW.js";
 import {
   require_php_extras
-} from "/python_for_chemists//build/_shared/chunk-53ERXY2A.js";
+} from "/python_for_chemists/build/_shared/chunk-53ERXY2A.js";
 import {
   require_phpdoc
-} from "/python_for_chemists//build/_shared/chunk-SSCKMJNI.js";
+} from "/python_for_chemists/build/_shared/chunk-SSCKMJNI.js";
 import {
   require_plsql
-} from "/python_for_chemists//build/_shared/chunk-G6SSALTZ.js";
+} from "/python_for_chemists/build/_shared/chunk-G6SSALTZ.js";
 import {
   require_powerquery
-} from "/python_for_chemists//build/_shared/chunk-RNWIGWR6.js";
+} from "/python_for_chemists/build/_shared/chunk-RNWIGWR6.js";
 import {
   require_powershell
-} from "/python_for_chemists//build/_shared/chunk-3V6E757J.js";
+} from "/python_for_chemists/build/_shared/chunk-3V6E757J.js";
 import {
   require_processing
-} from "/python_for_chemists//build/_shared/chunk-JTTV4UEP.js";
+} from "/python_for_chemists/build/_shared/chunk-JTTV4UEP.js";
 import {
   require_prolog
-} from "/python_for_chemists//build/_shared/chunk-BCZDCQFV.js";
+} from "/python_for_chemists/build/_shared/chunk-BCZDCQFV.js";
 import {
   require_openqasm
-} from "/python_for_chemists//build/_shared/chunk-ZJTG6EXB.js";
+} from "/python_for_chemists/build/_shared/chunk-ZJTG6EXB.js";
 import {
   require_oz
-} from "/python_for_chemists//build/_shared/chunk-RGOIZTWB.js";
+} from "/python_for_chemists/build/_shared/chunk-RGOIZTWB.js";
 import {
   require_parigp
-} from "/python_for_chemists//build/_shared/chunk-3QQYRRRY.js";
+} from "/python_for_chemists/build/_shared/chunk-3QQYRRRY.js";
 import {
   require_parser
-} from "/python_for_chemists//build/_shared/chunk-IXL3HI2A.js";
+} from "/python_for_chemists/build/_shared/chunk-IXL3HI2A.js";
 import {
   require_pascal
-} from "/python_for_chemists//build/_shared/chunk-KZ2DZXND.js";
+} from "/python_for_chemists/build/_shared/chunk-KZ2DZXND.js";
 import {
   require_pascaligo
-} from "/python_for_chemists//build/_shared/chunk-2MPMYMPK.js";
+} from "/python_for_chemists/build/_shared/chunk-2MPMYMPK.js";
 import {
   require_pcaxis
-} from "/python_for_chemists//build/_shared/chunk-PLJFYOUF.js";
+} from "/python_for_chemists/build/_shared/chunk-PLJFYOUF.js";
 import {
   require_peoplecode
-} from "/python_for_chemists//build/_shared/chunk-DXAK56HO.js";
+} from "/python_for_chemists/build/_shared/chunk-DXAK56HO.js";
 import {
   require_nevod
-} from "/python_for_chemists//build/_shared/chunk-VXDUR4YQ.js";
+} from "/python_for_chemists/build/_shared/chunk-VXDUR4YQ.js";
 import {
   require_nginx
-} from "/python_for_chemists//build/_shared/chunk-2N2IFCJF.js";
+} from "/python_for_chemists/build/_shared/chunk-2N2IFCJF.js";
 import {
   require_nim
-} from "/python_for_chemists//build/_shared/chunk-6GLP6U7T.js";
+} from "/python_for_chemists/build/_shared/chunk-6GLP6U7T.js";
 import {
   require_nix
-} from "/python_for_chemists//build/_shared/chunk-YDUTPWPF.js";
+} from "/python_for_chemists/build/_shared/chunk-YDUTPWPF.js";
 import {
   require_nsis
-} from "/python_for_chemists//build/_shared/chunk-AVXI4S37.js";
+} from "/python_for_chemists/build/_shared/chunk-AVXI4S37.js";
 import {
   require_objectivec
-} from "/python_for_chemists//build/_shared/chunk-REPXQ353.js";
+} from "/python_for_chemists/build/_shared/chunk-REPXQ353.js";
 import {
   require_ocaml
-} from "/python_for_chemists//build/_shared/chunk-RACZYGLX.js";
+} from "/python_for_chemists/build/_shared/chunk-RACZYGLX.js";
 import {
   require_opencl
-} from "/python_for_chemists//build/_shared/chunk-X6PL2MXO.js";
+} from "/python_for_chemists/build/_shared/chunk-X6PL2MXO.js";
 import {
   require_monkey
-} from "/python_for_chemists//build/_shared/chunk-ZDOEY54D.js";
+} from "/python_for_chemists/build/_shared/chunk-ZDOEY54D.js";
 import {
   require_moonscript
-} from "/python_for_chemists//build/_shared/chunk-2N2MMHT4.js";
+} from "/python_for_chemists/build/_shared/chunk-2N2MMHT4.js";
 import {
   require_n1ql
-} from "/python_for_chemists//build/_shared/chunk-DDMCF6PY.js";
+} from "/python_for_chemists/build/_shared/chunk-DDMCF6PY.js";
 import {
   require_n4js
-} from "/python_for_chemists//build/_shared/chunk-WCAF62NI.js";
+} from "/python_for_chemists/build/_shared/chunk-WCAF62NI.js";
 import {
   require_nand2tetris_hdl
-} from "/python_for_chemists//build/_shared/chunk-GPF4X3D4.js";
+} from "/python_for_chemists/build/_shared/chunk-GPF4X3D4.js";
 import {
   require_naniscript
-} from "/python_for_chemists//build/_shared/chunk-RWR7OORS.js";
+} from "/python_for_chemists/build/_shared/chunk-RWR7OORS.js";
 import {
   require_nasm
-} from "/python_for_chemists//build/_shared/chunk-LR3PFHLY.js";
+} from "/python_for_chemists/build/_shared/chunk-LR3PFHLY.js";
 import {
   require_neon
-} from "/python_for_chemists//build/_shared/chunk-YMCTLO7G.js";
+} from "/python_for_chemists/build/_shared/chunk-YMCTLO7G.js";
 import {
   require_markdown
-} from "/python_for_chemists//build/_shared/chunk-DSEVLNCF.js";
-import "/python_for_chemists//build/_shared/chunk-5X3WPYGV.js";
+} from "/python_for_chemists/build/_shared/chunk-DSEVLNCF.js";
+import "/python_for_chemists/build/_shared/chunk-5X3WPYGV.js";
 import {
   require_matlab
-} from "/python_for_chemists//build/_shared/chunk-6QTQHZLL.js";
+} from "/python_for_chemists/build/_shared/chunk-6QTQHZLL.js";
 import {
   require_maxscript
-} from "/python_for_chemists//build/_shared/chunk-XM2SJQEJ.js";
+} from "/python_for_chemists/build/_shared/chunk-XM2SJQEJ.js";
 import {
   require_mel
-} from "/python_for_chemists//build/_shared/chunk-CDHIOIJ5.js";
+} from "/python_for_chemists/build/_shared/chunk-CDHIOIJ5.js";
 import {
   require_mermaid
-} from "/python_for_chemists//build/_shared/chunk-Y67JDDIF.js";
+} from "/python_for_chemists/build/_shared/chunk-Y67JDDIF.js";
 import {
   require_mizar
-} from "/python_for_chemists//build/_shared/chunk-EJA33NZX.js";
+} from "/python_for_chemists/build/_shared/chunk-EJA33NZX.js";
 import {
   require_mongodb
-} from "/python_for_chemists//build/_shared/chunk-BOCHBYEG.js";
+} from "/python_for_chemists/build/_shared/chunk-BOCHBYEG.js";
 import {
   require_liquid
-} from "/python_for_chemists//build/_shared/chunk-JZFWUI4K.js";
+} from "/python_for_chemists/build/_shared/chunk-JZFWUI4K.js";
 import {
   require_lisp
-} from "/python_for_chemists//build/_shared/chunk-YGK6QQ2E.js";
+} from "/python_for_chemists/build/_shared/chunk-YGK6QQ2E.js";
 import {
   require_livescript
-} from "/python_for_chemists//build/_shared/chunk-GGUARZ54.js";
+} from "/python_for_chemists/build/_shared/chunk-GGUARZ54.js";
 import {
   require_llvm
-} from "/python_for_chemists//build/_shared/chunk-JWTOFDIB.js";
+} from "/python_for_chemists/build/_shared/chunk-JWTOFDIB.js";
 import {
   require_log
-} from "/python_for_chemists//build/_shared/chunk-TPGVBACW.js";
+} from "/python_for_chemists/build/_shared/chunk-TPGVBACW.js";
 import {
   require_lolcode
-} from "/python_for_chemists//build/_shared/chunk-XPJ4GHH3.js";
+} from "/python_for_chemists/build/_shared/chunk-XPJ4GHH3.js";
 import {
   require_magma
-} from "/python_for_chemists//build/_shared/chunk-GQCTAJDA.js";
+} from "/python_for_chemists/build/_shared/chunk-GQCTAJDA.js";
 import {
   require_makefile
-} from "/python_for_chemists//build/_shared/chunk-27VJNWHW.js";
+} from "/python_for_chemists/build/_shared/chunk-27VJNWHW.js";
 import {
   require_kumir
-} from "/python_for_chemists//build/_shared/chunk-55TNJROC.js";
+} from "/python_for_chemists/build/_shared/chunk-55TNJROC.js";
 import {
   require_kusto
-} from "/python_for_chemists//build/_shared/chunk-6WUVP4O5.js";
+} from "/python_for_chemists/build/_shared/chunk-6WUVP4O5.js";
 import {
   require_latex
-} from "/python_for_chemists//build/_shared/chunk-JAZWIYZC.js";
+} from "/python_for_chemists/build/_shared/chunk-JAZWIYZC.js";
 import {
   require_latte
-} from "/python_for_chemists//build/_shared/chunk-IFTZJEMN.js";
+} from "/python_for_chemists/build/_shared/chunk-IFTZJEMN.js";
 import {
   require_php
-} from "/python_for_chemists//build/_shared/chunk-3VZHJCWL.js";
+} from "/python_for_chemists/build/_shared/chunk-3VZHJCWL.js";
 import {
   require_less
-} from "/python_for_chemists//build/_shared/chunk-ZA5X3C3X.js";
+} from "/python_for_chemists/build/_shared/chunk-ZA5X3C3X.js";
 import {
   require_lilypond
-} from "/python_for_chemists//build/_shared/chunk-LXQHWN2Q.js";
+} from "/python_for_chemists/build/_shared/chunk-LXQHWN2Q.js";
 import {
   require_scheme
-} from "/python_for_chemists//build/_shared/chunk-V5N2IUKJ.js";
+} from "/python_for_chemists/build/_shared/chunk-V5N2IUKJ.js";
 import {
   require_json5
-} from "/python_for_chemists//build/_shared/chunk-A5N72HK3.js";
+} from "/python_for_chemists/build/_shared/chunk-A5N72HK3.js";
 import {
   require_jsonp
-} from "/python_for_chemists//build/_shared/chunk-HSBTLLT2.js";
+} from "/python_for_chemists/build/_shared/chunk-HSBTLLT2.js";
 import {
   require_jsstacktrace
-} from "/python_for_chemists//build/_shared/chunk-2RQXKQCS.js";
+} from "/python_for_chemists/build/_shared/chunk-2RQXKQCS.js";
 import {
   require_jsx
-} from "/python_for_chemists//build/_shared/chunk-6QCI5B74.js";
+} from "/python_for_chemists/build/_shared/chunk-6QCI5B74.js";
 import {
   require_julia
-} from "/python_for_chemists//build/_shared/chunk-IFSE3V2P.js";
+} from "/python_for_chemists/build/_shared/chunk-IFSE3V2P.js";
 import {
   require_keepalived
-} from "/python_for_chemists//build/_shared/chunk-FJAPXMAC.js";
+} from "/python_for_chemists/build/_shared/chunk-FJAPXMAC.js";
 import {
   require_keyman
-} from "/python_for_chemists//build/_shared/chunk-NLN46D6N.js";
+} from "/python_for_chemists/build/_shared/chunk-NLN46D6N.js";
 import {
   require_kotlin
-} from "/python_for_chemists//build/_shared/chunk-6QA5OEVY.js";
+} from "/python_for_chemists/build/_shared/chunk-6QA5OEVY.js";
 import {
   require_jexl
-} from "/python_for_chemists//build/_shared/chunk-2PVEUVAI.js";
+} from "/python_for_chemists/build/_shared/chunk-2PVEUVAI.js";
 import {
   require_jolie
-} from "/python_for_chemists//build/_shared/chunk-FOH7MSKS.js";
+} from "/python_for_chemists/build/_shared/chunk-FOH7MSKS.js";
 import {
   require_jq
-} from "/python_for_chemists//build/_shared/chunk-KD25LYB7.js";
+} from "/python_for_chemists/build/_shared/chunk-KD25LYB7.js";
 import {
   require_js_extras
-} from "/python_for_chemists//build/_shared/chunk-ETRLT6JG.js";
+} from "/python_for_chemists/build/_shared/chunk-ETRLT6JG.js";
 import {
   require_js_templates
-} from "/python_for_chemists//build/_shared/chunk-SZFUDHGS.js";
+} from "/python_for_chemists/build/_shared/chunk-SZFUDHGS.js";
 import {
   require_jsdoc
-} from "/python_for_chemists//build/_shared/chunk-J6LBZICF.js";
+} from "/python_for_chemists/build/_shared/chunk-J6LBZICF.js";
 import {
   require_typescript
-} from "/python_for_chemists//build/_shared/chunk-JA6ZLOJZ.js";
+} from "/python_for_chemists/build/_shared/chunk-JA6ZLOJZ.js";
 import {
   require_json
-} from "/python_for_chemists//build/_shared/chunk-5IOB2Y3D.js";
+} from "/python_for_chemists/build/_shared/chunk-5IOB2Y3D.js";
 import {
   require_ini
-} from "/python_for_chemists//build/_shared/chunk-R4MJND7T.js";
+} from "/python_for_chemists/build/_shared/chunk-R4MJND7T.js";
 import {
   require_io
-} from "/python_for_chemists//build/_shared/chunk-5ZUWC2GZ.js";
+} from "/python_for_chemists/build/_shared/chunk-5ZUWC2GZ.js";
 import {
   require_j
-} from "/python_for_chemists//build/_shared/chunk-26EX4TYT.js";
+} from "/python_for_chemists/build/_shared/chunk-26EX4TYT.js";
 import {
   require_javadoc
-} from "/python_for_chemists//build/_shared/chunk-3IKNOBH7.js";
+} from "/python_for_chemists/build/_shared/chunk-3IKNOBH7.js";
 import {
   require_java
-} from "/python_for_chemists//build/_shared/chunk-KR5TX4ID.js";
+} from "/python_for_chemists/build/_shared/chunk-KR5TX4ID.js";
 import {
   require_javadoclike
-} from "/python_for_chemists//build/_shared/chunk-XG7NZX75.js";
-import "/python_for_chemists//build/_shared/chunk-TYTWADG3.js";
+} from "/python_for_chemists/build/_shared/chunk-XG7NZX75.js";
+import "/python_for_chemists/build/_shared/chunk-TYTWADG3.js";
 import {
   require_javastacktrace
-} from "/python_for_chemists//build/_shared/chunk-MKVHMJHY.js";
+} from "/python_for_chemists/build/_shared/chunk-MKVHMJHY.js";
 import {
   require_http
-} from "/python_for_chemists//build/_shared/chunk-5UROKY6S.js";
+} from "/python_for_chemists/build/_shared/chunk-5UROKY6S.js";
 import {
   require_ichigojam
-} from "/python_for_chemists//build/_shared/chunk-CAUBTB4F.js";
+} from "/python_for_chemists/build/_shared/chunk-CAUBTB4F.js";
 import {
   require_icon
-} from "/python_for_chemists//build/_shared/chunk-XMERHZ4Z.js";
+} from "/python_for_chemists/build/_shared/chunk-XMERHZ4Z.js";
 import {
   require_icu_message_format
-} from "/python_for_chemists//build/_shared/chunk-B55QEL6G.js";
+} from "/python_for_chemists/build/_shared/chunk-B55QEL6G.js";
 import {
   require_idris
-} from "/python_for_chemists//build/_shared/chunk-5RFEFE7W.js";
+} from "/python_for_chemists/build/_shared/chunk-5RFEFE7W.js";
 import {
   require_iecst
-} from "/python_for_chemists//build/_shared/chunk-O4WR24HB.js";
+} from "/python_for_chemists/build/_shared/chunk-O4WR24HB.js";
 import {
   require_ignore
-} from "/python_for_chemists//build/_shared/chunk-Y6FALWJV.js";
+} from "/python_for_chemists/build/_shared/chunk-Y6FALWJV.js";
 import {
   require_inform7
-} from "/python_for_chemists//build/_shared/chunk-SYJQRUTQ.js";
+} from "/python_for_chemists/build/_shared/chunk-SYJQRUTQ.js";
 import {
   require_handlebars
-} from "/python_for_chemists//build/_shared/chunk-2KKO6AUO.js";
+} from "/python_for_chemists/build/_shared/chunk-2KKO6AUO.js";
 import {
   require_haskell
-} from "/python_for_chemists//build/_shared/chunk-SMNNMFAT.js";
+} from "/python_for_chemists/build/_shared/chunk-SMNNMFAT.js";
 import {
   require_haxe
-} from "/python_for_chemists//build/_shared/chunk-RN3ZNWTZ.js";
+} from "/python_for_chemists/build/_shared/chunk-RN3ZNWTZ.js";
 import {
   require_hcl
-} from "/python_for_chemists//build/_shared/chunk-QVKSYLDK.js";
+} from "/python_for_chemists/build/_shared/chunk-QVKSYLDK.js";
 import {
   require_hlsl
-} from "/python_for_chemists//build/_shared/chunk-D7TLKGZW.js";
+} from "/python_for_chemists/build/_shared/chunk-D7TLKGZW.js";
 import {
   require_hoon
-} from "/python_for_chemists//build/_shared/chunk-4JFXSAYN.js";
+} from "/python_for_chemists/build/_shared/chunk-4JFXSAYN.js";
 import {
   require_hpkp
-} from "/python_for_chemists//build/_shared/chunk-YCWNRGLB.js";
+} from "/python_for_chemists/build/_shared/chunk-YCWNRGLB.js";
 import {
   require_hsts
-} from "/python_for_chemists//build/_shared/chunk-CS75ZVJS.js";
+} from "/python_for_chemists/build/_shared/chunk-CS75ZVJS.js";
 import {
   require_glsl
-} from "/python_for_chemists//build/_shared/chunk-IQDFWTQL.js";
+} from "/python_for_chemists/build/_shared/chunk-IQDFWTQL.js";
 import {
   require_gml
-} from "/python_for_chemists//build/_shared/chunk-XKB3ZM7W.js";
+} from "/python_for_chemists/build/_shared/chunk-XKB3ZM7W.js";
 import {
   require_gn
-} from "/python_for_chemists//build/_shared/chunk-EPJQT5XF.js";
+} from "/python_for_chemists/build/_shared/chunk-EPJQT5XF.js";
 import {
   require_go_module
-} from "/python_for_chemists//build/_shared/chunk-3ZXHBYKZ.js";
+} from "/python_for_chemists/build/_shared/chunk-3ZXHBYKZ.js";
 import {
   require_go
-} from "/python_for_chemists//build/_shared/chunk-YEV5ZKV6.js";
+} from "/python_for_chemists/build/_shared/chunk-YEV5ZKV6.js";
 import {
   require_graphql
-} from "/python_for_chemists//build/_shared/chunk-KL2KBLSN.js";
+} from "/python_for_chemists/build/_shared/chunk-KL2KBLSN.js";
 import {
   require_groovy
-} from "/python_for_chemists//build/_shared/chunk-LFCPW5LR.js";
+} from "/python_for_chemists/build/_shared/chunk-LFCPW5LR.js";
 import {
   require_haml
-} from "/python_for_chemists//build/_shared/chunk-DI6PU352.js";
+} from "/python_for_chemists/build/_shared/chunk-DI6PU352.js";
 import {
   require_fsharp
-} from "/python_for_chemists//build/_shared/chunk-EZSOZP23.js";
+} from "/python_for_chemists/build/_shared/chunk-EZSOZP23.js";
 import {
   require_ftl
-} from "/python_for_chemists//build/_shared/chunk-HUMPHLYK.js";
+} from "/python_for_chemists/build/_shared/chunk-HUMPHLYK.js";
 import {
   require_gap
-} from "/python_for_chemists//build/_shared/chunk-VMKRBJ43.js";
+} from "/python_for_chemists/build/_shared/chunk-VMKRBJ43.js";
 import {
   require_gcode
-} from "/python_for_chemists//build/_shared/chunk-TFEKMIXV.js";
+} from "/python_for_chemists/build/_shared/chunk-TFEKMIXV.js";
 import {
   require_gdscript
-} from "/python_for_chemists//build/_shared/chunk-6T7CHLR3.js";
+} from "/python_for_chemists/build/_shared/chunk-6T7CHLR3.js";
 import {
   require_gedcom
-} from "/python_for_chemists//build/_shared/chunk-NXR5T5LC.js";
+} from "/python_for_chemists/build/_shared/chunk-NXR5T5LC.js";
 import {
   require_gherkin
-} from "/python_for_chemists//build/_shared/chunk-JDTFOKIJ.js";
+} from "/python_for_chemists/build/_shared/chunk-JDTFOKIJ.js";
 import {
   require_git
-} from "/python_for_chemists//build/_shared/chunk-MXPIP2Q3.js";
+} from "/python_for_chemists/build/_shared/chunk-MXPIP2Q3.js";
 import {
   require_etlua
-} from "/python_for_chemists//build/_shared/chunk-Q4UEXWQH.js";
+} from "/python_for_chemists/build/_shared/chunk-Q4UEXWQH.js";
 import {
   require_lua
-} from "/python_for_chemists//build/_shared/chunk-QZILPKJ6.js";
+} from "/python_for_chemists/build/_shared/chunk-QZILPKJ6.js";
 import {
   require_excel_formula
-} from "/python_for_chemists//build/_shared/chunk-VUSFCAOW.js";
+} from "/python_for_chemists/build/_shared/chunk-VUSFCAOW.js";
 import {
   require_factor
-} from "/python_for_chemists//build/_shared/chunk-A7PY6X5C.js";
+} from "/python_for_chemists/build/_shared/chunk-A7PY6X5C.js";
 import {
   require_false
-} from "/python_for_chemists//build/_shared/chunk-3I2WKTH3.js";
+} from "/python_for_chemists/build/_shared/chunk-3I2WKTH3.js";
 import {
   require_firestore_security_rules
-} from "/python_for_chemists//build/_shared/chunk-SXEGPKKL.js";
+} from "/python_for_chemists/build/_shared/chunk-SXEGPKKL.js";
 import {
   require_flow
-} from "/python_for_chemists//build/_shared/chunk-4SASERF7.js";
+} from "/python_for_chemists/build/_shared/chunk-4SASERF7.js";
 import {
   require_fortran
-} from "/python_for_chemists//build/_shared/chunk-HACHESDB.js";
+} from "/python_for_chemists/build/_shared/chunk-HACHESDB.js";
 import {
   require_ebnf
-} from "/python_for_chemists//build/_shared/chunk-SBYSLBCI.js";
+} from "/python_for_chemists/build/_shared/chunk-SBYSLBCI.js";
 import {
   require_editorconfig
-} from "/python_for_chemists//build/_shared/chunk-IUOP526H.js";
+} from "/python_for_chemists/build/_shared/chunk-IUOP526H.js";
 import {
   require_eiffel
-} from "/python_for_chemists//build/_shared/chunk-3PNLPMNZ.js";
+} from "/python_for_chemists/build/_shared/chunk-3PNLPMNZ.js";
 import {
   require_ejs
-} from "/python_for_chemists//build/_shared/chunk-KM4RQNKQ.js";
+} from "/python_for_chemists/build/_shared/chunk-KM4RQNKQ.js";
 import {
   require_elixir
-} from "/python_for_chemists//build/_shared/chunk-HVOTHJDG.js";
+} from "/python_for_chemists/build/_shared/chunk-HVOTHJDG.js";
 import {
   require_elm
-} from "/python_for_chemists//build/_shared/chunk-TGKEUV5S.js";
+} from "/python_for_chemists/build/_shared/chunk-TGKEUV5S.js";
 import {
   require_erb
-} from "/python_for_chemists//build/_shared/chunk-O7T3B7VZ.js";
+} from "/python_for_chemists/build/_shared/chunk-O7T3B7VZ.js";
 import {
   require_erlang
-} from "/python_for_chemists//build/_shared/chunk-J22Z2ZHW.js";
+} from "/python_for_chemists/build/_shared/chunk-J22Z2ZHW.js";
 import {
   require_dax
-} from "/python_for_chemists//build/_shared/chunk-VA2OGFXM.js";
+} from "/python_for_chemists/build/_shared/chunk-VA2OGFXM.js";
 import {
   require_dhall
-} from "/python_for_chemists//build/_shared/chunk-FI4JEXPN.js";
+} from "/python_for_chemists/build/_shared/chunk-FI4JEXPN.js";
 import {
   require_diff
-} from "/python_for_chemists//build/_shared/chunk-756WNYFX.js";
+} from "/python_for_chemists/build/_shared/chunk-756WNYFX.js";
 import {
   require_django
-} from "/python_for_chemists//build/_shared/chunk-ZP66EOH4.js";
+} from "/python_for_chemists/build/_shared/chunk-ZP66EOH4.js";
 import {
   require_markup_templating
-} from "/python_for_chemists//build/_shared/chunk-E6QZW6U4.js";
+} from "/python_for_chemists/build/_shared/chunk-E6QZW6U4.js";
 import {
   require_dns_zone_file
-} from "/python_for_chemists//build/_shared/chunk-BOF3ZS6V.js";
+} from "/python_for_chemists/build/_shared/chunk-BOF3ZS6V.js";
 import {
   require_docker
-} from "/python_for_chemists//build/_shared/chunk-52XF5LFV.js";
+} from "/python_for_chemists/build/_shared/chunk-52XF5LFV.js";
 import {
   require_dot
-} from "/python_for_chemists//build/_shared/chunk-HVGPS7SE.js";
+} from "/python_for_chemists/build/_shared/chunk-HVGPS7SE.js";
 import {
   require_csp
-} from "/python_for_chemists//build/_shared/chunk-TD3YAJBB.js";
+} from "/python_for_chemists/build/_shared/chunk-TD3YAJBB.js";
 import {
   require_css_extras
-} from "/python_for_chemists//build/_shared/chunk-YBZBWUCK.js";
-import "/python_for_chemists//build/_shared/chunk-CWASSZWZ.js";
+} from "/python_for_chemists/build/_shared/chunk-YBZBWUCK.js";
+import "/python_for_chemists/build/_shared/chunk-CWASSZWZ.js";
 import {
   require_csv
-} from "/python_for_chemists//build/_shared/chunk-MRGRX2JO.js";
+} from "/python_for_chemists/build/_shared/chunk-MRGRX2JO.js";
 import {
   require_cypher
-} from "/python_for_chemists//build/_shared/chunk-YT75PF7I.js";
+} from "/python_for_chemists/build/_shared/chunk-YT75PF7I.js";
 import {
   require_d
-} from "/python_for_chemists//build/_shared/chunk-6XWODOFX.js";
+} from "/python_for_chemists/build/_shared/chunk-6XWODOFX.js";
 import {
   require_dart
-} from "/python_for_chemists//build/_shared/chunk-AKFAN5RR.js";
+} from "/python_for_chemists/build/_shared/chunk-AKFAN5RR.js";
 import {
   require_dataweave
-} from "/python_for_chemists//build/_shared/chunk-7KSWRXAK.js";
+} from "/python_for_chemists/build/_shared/chunk-7KSWRXAK.js";
 import {
   require_cmake
-} from "/python_for_chemists//build/_shared/chunk-F5ZK3MEN.js";
+} from "/python_for_chemists/build/_shared/chunk-F5ZK3MEN.js";
 import {
   require_cobol
-} from "/python_for_chemists//build/_shared/chunk-QGPAV3YK.js";
+} from "/python_for_chemists/build/_shared/chunk-QGPAV3YK.js";
 import {
   require_coffeescript
-} from "/python_for_chemists//build/_shared/chunk-WQXBVDRI.js";
+} from "/python_for_chemists/build/_shared/chunk-WQXBVDRI.js";
 import {
   require_concurnas
-} from "/python_for_chemists//build/_shared/chunk-6FSG3D2J.js";
+} from "/python_for_chemists/build/_shared/chunk-6FSG3D2J.js";
 import {
   require_coq
-} from "/python_for_chemists//build/_shared/chunk-GZF6DJEB.js";
+} from "/python_for_chemists/build/_shared/chunk-GZF6DJEB.js";
 import {
   require_crystal
-} from "/python_for_chemists//build/_shared/chunk-ZMUJ2V7I.js";
+} from "/python_for_chemists/build/_shared/chunk-ZMUJ2V7I.js";
 import {
   require_ruby
-} from "/python_for_chemists//build/_shared/chunk-IZ2CIBO4.js";
+} from "/python_for_chemists/build/_shared/chunk-IZ2CIBO4.js";
 import {
   require_cshtml
-} from "/python_for_chemists//build/_shared/chunk-ZTNAJTEA.js";
+} from "/python_for_chemists/build/_shared/chunk-ZTNAJTEA.js";
 import {
   require_brightscript
-} from "/python_for_chemists//build/_shared/chunk-L47DKDCH.js";
+} from "/python_for_chemists/build/_shared/chunk-L47DKDCH.js";
 import {
   require_bro
-} from "/python_for_chemists//build/_shared/chunk-YC4ML2KM.js";
+} from "/python_for_chemists/build/_shared/chunk-YC4ML2KM.js";
 import {
   require_bsl
-} from "/python_for_chemists//build/_shared/chunk-WWGTDUH6.js";
+} from "/python_for_chemists/build/_shared/chunk-WWGTDUH6.js";
 import {
   require_cfscript
-} from "/python_for_chemists//build/_shared/chunk-IDYJEI4G.js";
+} from "/python_for_chemists/build/_shared/chunk-IDYJEI4G.js";
 import {
   require_chaiscript
-} from "/python_for_chemists//build/_shared/chunk-EMGRGP4K.js";
+} from "/python_for_chemists/build/_shared/chunk-EMGRGP4K.js";
 import {
   require_cil
-} from "/python_for_chemists//build/_shared/chunk-SUDOGN7D.js";
-import "/python_for_chemists//build/_shared/chunk-RBKIIXPM.js";
+} from "/python_for_chemists/build/_shared/chunk-SUDOGN7D.js";
+import "/python_for_chemists/build/_shared/chunk-RBKIIXPM.js";
 import {
   require_clojure
-} from "/python_for_chemists//build/_shared/chunk-NMRLM4MC.js";
+} from "/python_for_chemists/build/_shared/chunk-NMRLM4MC.js";
 import {
   require_basic
-} from "/python_for_chemists//build/_shared/chunk-4PPREKOU.js";
+} from "/python_for_chemists/build/_shared/chunk-4PPREKOU.js";
 import {
   require_batch
-} from "/python_for_chemists//build/_shared/chunk-XOYG7SPC.js";
+} from "/python_for_chemists/build/_shared/chunk-XOYG7SPC.js";
 import {
   require_bbcode
-} from "/python_for_chemists//build/_shared/chunk-GC3PXAM2.js";
+} from "/python_for_chemists/build/_shared/chunk-GC3PXAM2.js";
 import {
   require_bicep
-} from "/python_for_chemists//build/_shared/chunk-UDPUVATW.js";
+} from "/python_for_chemists/build/_shared/chunk-UDPUVATW.js";
 import {
   require_birb
-} from "/python_for_chemists//build/_shared/chunk-XUMMPF5J.js";
+} from "/python_for_chemists/build/_shared/chunk-XUMMPF5J.js";
 import {
   require_bison
-} from "/python_for_chemists//build/_shared/chunk-5GG3W5CW.js";
+} from "/python_for_chemists/build/_shared/chunk-5GG3W5CW.js";
 import {
   require_bnf
-} from "/python_for_chemists//build/_shared/chunk-YXGJK6QE.js";
+} from "/python_for_chemists/build/_shared/chunk-YXGJK6QE.js";
 import {
   require_brainfuck
-} from "/python_for_chemists//build/_shared/chunk-OMB3O5PL.js";
+} from "/python_for_chemists/build/_shared/chunk-OMB3O5PL.js";
 import {
   require_asmatmel
-} from "/python_for_chemists//build/_shared/chunk-QXOYVHX5.js";
+} from "/python_for_chemists/build/_shared/chunk-QXOYVHX5.js";
 import {
   require_aspnet
-} from "/python_for_chemists//build/_shared/chunk-DRDLHXJJ.js";
+} from "/python_for_chemists/build/_shared/chunk-DRDLHXJJ.js";
 import {
   require_csharp
-} from "/python_for_chemists//build/_shared/chunk-JWAGNOMV.js";
+} from "/python_for_chemists/build/_shared/chunk-JWAGNOMV.js";
 import {
   require_autohotkey
-} from "/python_for_chemists//build/_shared/chunk-IE4C2MRI.js";
+} from "/python_for_chemists/build/_shared/chunk-IE4C2MRI.js";
 import {
   require_autoit
-} from "/python_for_chemists//build/_shared/chunk-OREMNPUI.js";
+} from "/python_for_chemists/build/_shared/chunk-OREMNPUI.js";
 import {
   require_avisynth
-} from "/python_for_chemists//build/_shared/chunk-I2L2FV24.js";
+} from "/python_for_chemists/build/_shared/chunk-I2L2FV24.js";
 import {
   require_avro_idl
-} from "/python_for_chemists//build/_shared/chunk-ZPQ43UXO.js";
+} from "/python_for_chemists/build/_shared/chunk-ZPQ43UXO.js";
 import {
   require_bash
-} from "/python_for_chemists//build/_shared/chunk-IDIWAL47.js";
+} from "/python_for_chemists/build/_shared/chunk-IDIWAL47.js";
 import {
   require_applescript
-} from "/python_for_chemists//build/_shared/chunk-UD7QZ4NC.js";
+} from "/python_for_chemists/build/_shared/chunk-UD7QZ4NC.js";
 import {
   require_aql
-} from "/python_for_chemists//build/_shared/chunk-CLTFEQ64.js";
+} from "/python_for_chemists/build/_shared/chunk-CLTFEQ64.js";
 import {
   require_arduino
-} from "/python_for_chemists//build/_shared/chunk-KRAYFBRY.js";
+} from "/python_for_chemists/build/_shared/chunk-KRAYFBRY.js";
 import {
   require_cpp
-} from "/python_for_chemists//build/_shared/chunk-Y6HUVYQU.js";
+} from "/python_for_chemists/build/_shared/chunk-Y6HUVYQU.js";
 import {
   require_c
-} from "/python_for_chemists//build/_shared/chunk-Y5OVBNFJ.js";
+} from "/python_for_chemists/build/_shared/chunk-Y5OVBNFJ.js";
 import {
   require_arff
-} from "/python_for_chemists//build/_shared/chunk-YWY7DOTY.js";
+} from "/python_for_chemists/build/_shared/chunk-YWY7DOTY.js";
 import {
   require_asciidoc
-} from "/python_for_chemists//build/_shared/chunk-HOEUNCI3.js";
+} from "/python_for_chemists/build/_shared/chunk-HOEUNCI3.js";
 import {
   require_asm6502
-} from "/python_for_chemists//build/_shared/chunk-YXIAE5IT.js";
+} from "/python_for_chemists/build/_shared/chunk-YXIAE5IT.js";
 import {
   require_ada
-} from "/python_for_chemists//build/_shared/chunk-MZEG4T3Z.js";
+} from "/python_for_chemists/build/_shared/chunk-MZEG4T3Z.js";
 import {
   require_agda
-} from "/python_for_chemists//build/_shared/chunk-BRM67TN5.js";
+} from "/python_for_chemists/build/_shared/chunk-BRM67TN5.js";
 import {
   require_al
-} from "/python_for_chemists//build/_shared/chunk-UNNRQMAY.js";
+} from "/python_for_chemists/build/_shared/chunk-UNNRQMAY.js";
 import {
   require_antlr4
-} from "/python_for_chemists//build/_shared/chunk-NFY3TS7O.js";
+} from "/python_for_chemists/build/_shared/chunk-NFY3TS7O.js";
 import {
   require_apacheconf
-} from "/python_for_chemists//build/_shared/chunk-QAKWE6CH.js";
+} from "/python_for_chemists/build/_shared/chunk-QAKWE6CH.js";
 import {
   require_apex
-} from "/python_for_chemists//build/_shared/chunk-ASLZBUTR.js";
+} from "/python_for_chemists/build/_shared/chunk-ASLZBUTR.js";
 import {
   require_sql
-} from "/python_for_chemists//build/_shared/chunk-PY3WXTWD.js";
+} from "/python_for_chemists/build/_shared/chunk-PY3WXTWD.js";
 import {
   require_apl
-} from "/python_for_chemists//build/_shared/chunk-RMOGZHQE.js";
+} from "/python_for_chemists/build/_shared/chunk-RMOGZHQE.js";
 import {
   require_abap
-} from "/python_for_chemists//build/_shared/chunk-TUXEEURN.js";
+} from "/python_for_chemists/build/_shared/chunk-TUXEEURN.js";
 import {
   require_abnf
-} from "/python_for_chemists//build/_shared/chunk-T2QIWSWI.js";
+} from "/python_for_chemists/build/_shared/chunk-T2QIWSWI.js";
 import {
   require_actionscript
-} from "/python_for_chemists//build/_shared/chunk-3PER73GY.js";
+} from "/python_for_chemists/build/_shared/chunk-3PER73GY.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/index.js
 var require_refractor = __commonJS({
@@ -1109,4 +1109,4 @@ var require_refractor = __commonJS({
   }
 });
 export default require_refractor();
-//# sourceMappingURL=/python_for_chemists//build/_shared/refractor-RJIAWRTI.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/refractor-RJIAWRTI.js.map

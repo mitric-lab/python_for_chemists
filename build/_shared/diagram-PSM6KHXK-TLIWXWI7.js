@@ -1,32 +1,32 @@
 import {
   selectSvgElement
-} from "/python_for_chemists//build/_shared/chunk-YZZVRB5P.js";
+} from "/python_for_chemists/build/_shared/chunk-YZZVRB5P.js";
 import {
   populateCommonDb
-} from "/python_for_chemists//build/_shared/chunk-KENABJ3K.js";
+} from "/python_for_chemists/build/_shared/chunk-KENABJ3K.js";
 import {
   parse
-} from "/python_for_chemists//build/_shared/chunk-OA3SYV6I.js";
-import "/python_for_chemists//build/_shared/chunk-FLZJMRFV.js";
-import "/python_for_chemists//build/_shared/chunk-MD55FDMD.js";
-import "/python_for_chemists//build/_shared/chunk-UH5LSYEI.js";
-import "/python_for_chemists//build/_shared/chunk-GJ35H52W.js";
-import "/python_for_chemists//build/_shared/chunk-WGO24YBI.js";
-import "/python_for_chemists//build/_shared/chunk-UORA2QU4.js";
-import "/python_for_chemists//build/_shared/chunk-2WSSL7DL.js";
-import "/python_for_chemists//build/_shared/chunk-5TL5RV2T.js";
-import "/python_for_chemists//build/_shared/chunk-75Y45RJ5.js";
+} from "/python_for_chemists/build/_shared/chunk-OA3SYV6I.js";
+import "/python_for_chemists/build/_shared/chunk-FLZJMRFV.js";
+import "/python_for_chemists/build/_shared/chunk-MD55FDMD.js";
+import "/python_for_chemists/build/_shared/chunk-UH5LSYEI.js";
+import "/python_for_chemists/build/_shared/chunk-GJ35H52W.js";
+import "/python_for_chemists/build/_shared/chunk-WGO24YBI.js";
+import "/python_for_chemists/build/_shared/chunk-UORA2QU4.js";
+import "/python_for_chemists/build/_shared/chunk-2WSSL7DL.js";
+import "/python_for_chemists/build/_shared/chunk-5TL5RV2T.js";
+import "/python_for_chemists/build/_shared/chunk-75Y45RJ5.js";
 import {
   setupViewPortForSVG
-} from "/python_for_chemists//build/_shared/chunk-WMU6LCGH.js";
+} from "/python_for_chemists/build/_shared/chunk-WMU6LCGH.js";
 import {
   isLabelStyle,
   styles2String
-} from "/python_for_chemists//build/_shared/chunk-R2WPI2J6.js";
+} from "/python_for_chemists/build/_shared/chunk-R2WPI2J6.js";
 import {
   cleanAndMerge
-} from "/python_for_chemists//build/_shared/chunk-WEDXSMQA.js";
-import "/python_for_chemists//build/_shared/chunk-6CUK2GM5.js";
+} from "/python_for_chemists/build/_shared/chunk-WEDXSMQA.js";
+import "/python_for_chemists/build/_shared/chunk-6CUK2GM5.js";
 import {
   clear,
   configureSvgSize,
@@ -38,7 +38,7 @@ import {
   setAccDescription,
   setAccTitle,
   setDiagramTitle
-} from "/python_for_chemists//build/_shared/chunk-463FZTZ7.js";
+} from "/python_for_chemists/build/_shared/chunk-463FZTZ7.js";
 import {
   __name,
   format,
@@ -47,12 +47,12 @@ import {
   ordinal,
   select_default,
   treemap_default
-} from "/python_for_chemists//build/_shared/chunk-7PDOACA3.js";
-import "/python_for_chemists//build/_shared/chunk-5XJWQ5WJ.js";
-import "/python_for_chemists//build/_shared/chunk-SP2MKLPW.js";
-import "/python_for_chemists//build/_shared/chunk-T7QTAV5N.js";
-import "/python_for_chemists//build/_shared/chunk-2WW6JOYG.js";
-import "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-7PDOACA3.js";
+import "/python_for_chemists/build/_shared/chunk-5XJWQ5WJ.js";
+import "/python_for_chemists/build/_shared/chunk-SP2MKLPW.js";
+import "/python_for_chemists/build/_shared/chunk-T7QTAV5N.js";
+import "/python_for_chemists/build/_shared/chunk-2WW6JOYG.js";
+import "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/mermaid/dist/chunks/mermaid.core/diagram-PSM6KHXK.mjs
 var TreeMapDB = class {
@@ -577,4 +577,4 @@ var diagram = {
 export {
   diagram
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/diagram-PSM6KHXK-TLIWXWI7.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/diagram-PSM6KHXK-TLIWXWI7.js.map

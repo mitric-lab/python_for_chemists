@@ -1,6 +1,6 @@
 import {
   defaultDirectives
-} from "/python_for_chemists//build/_shared/chunk-2GZXDR27.js";
+} from "/python_for_chemists/build/_shared/chunk-2GZXDR27.js";
 import {
   require_entities,
   require_mdurl,
@@ -10,14 +10,14 @@ import {
   require_regex4,
   require_utils,
   u
-} from "/python_for_chemists//build/_shared/chunk-YTFS7O5J.js";
+} from "/python_for_chemists/build/_shared/chunk-YTFS7O5J.js";
 import {
   jsYaml
-} from "/python_for_chemists//build/_shared/chunk-DOEQHMLC.js";
-import "/python_for_chemists//build/_shared/chunk-ZNG4DSCS.js";
+} from "/python_for_chemists/build/_shared/chunk-DOEQHMLC.js";
+import "/python_for_chemists/build/_shared/chunk-ZNG4DSCS.js";
 import {
   VFile
-} from "/python_for_chemists//build/_shared/chunk-MWXHQG25.js";
+} from "/python_for_chemists/build/_shared/chunk-MWXHQG25.js";
 import {
   ParseTypesEnum,
   RuleId,
@@ -30,17 +30,17 @@ import {
   remove,
   selectAll,
   setTextAsChild
-} from "/python_for_chemists//build/_shared/chunk-Q6DHUCUI.js";
+} from "/python_for_chemists/build/_shared/chunk-Q6DHUCUI.js";
 import {
   visit
-} from "/python_for_chemists//build/_shared/chunk-LPSXN4QV.js";
+} from "/python_for_chemists/build/_shared/chunk-LPSXN4QV.js";
 import {
   __commonJS,
   __esm,
   __export,
   __toCommonJS,
   __toESM
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/markdown-it-front-matter/index.js
 var require_markdown_it_front_matter = __commonJS({
@@ -9638,4 +9638,4 @@ markdown-it-myst/dist/citations.js:
    * https://github.com/martinring/markdown-it-citations
    *)
 */
-//# sourceMappingURL=/python_for_chemists//build/_shared/dist-LXYLGOUT.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/dist-LXYLGOUT.js.map

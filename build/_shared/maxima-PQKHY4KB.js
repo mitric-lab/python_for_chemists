@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/maxima.js
 var require_maxima = __commonJS({
@@ -61,4 +61,4 @@ var require_maxima = __commonJS({
   }
 });
 export default require_maxima();
-//# sourceMappingURL=/python_for_chemists//build/_shared/maxima-PQKHY4KB.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/maxima-PQKHY4KB.js.map

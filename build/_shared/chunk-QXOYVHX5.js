@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/asmatmel.js
 var require_asmatmel = __commonJS({
@@ -57,4 +57,4 @@ var require_asmatmel = __commonJS({
 export {
   require_asmatmel
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-QXOYVHX5.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-QXOYVHX5.js.map

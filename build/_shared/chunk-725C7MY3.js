@@ -1,7 +1,7 @@
 import {
   __name,
   select_default
-} from "/python_for_chemists//build/_shared/chunk-7PDOACA3.js";
+} from "/python_for_chemists/build/_shared/chunk-7PDOACA3.js";
 
 // ../../node_modules/mermaid/dist/chunks/mermaid.core/chunk-55IACEB6.mjs
 var getDiagramElement = /* @__PURE__ */ __name((id, securityLevel) => {
@@ -17,4 +17,4 @@ var getDiagramElement = /* @__PURE__ */ __name((id, securityLevel) => {
 export {
   getDiagramElement
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-725C7MY3.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-725C7MY3.js.map

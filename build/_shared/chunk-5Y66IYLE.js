@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/swift.js
 var require_swift = __commonJS({
@@ -136,4 +136,4 @@ var require_swift = __commonJS({
 export {
   require_swift
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-5Y66IYLE.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-5Y66IYLE.js.map

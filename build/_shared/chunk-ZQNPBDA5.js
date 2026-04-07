@@ -1,9 +1,9 @@
 import {
   require_scheme
-} from "/python_for_chemists//build/_shared/chunk-V5N2IUKJ.js";
+} from "/python_for_chemists/build/_shared/chunk-V5N2IUKJ.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/racket.js
 var require_racket = __commonJS({
@@ -37,4 +37,4 @@ var require_racket = __commonJS({
 export {
   require_racket
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-ZQNPBDA5.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-ZQNPBDA5.js.map

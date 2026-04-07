@@ -1,7 +1,7 @@
 import {
   __commonJS,
   __toESM
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/is-buffer/index.js
 var require_is_buffer = __commonJS({
@@ -676,4 +676,4 @@ is-buffer/index.js:
    * @license  MIT
    *)
 */
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-MWXHQG25.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-MWXHQG25.js.map

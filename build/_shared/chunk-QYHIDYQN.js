@@ -65,7 +65,7 @@ import {
   some,
   toPropertyKey,
   tslib_es6_exports
-} from "/python_for_chemists//build/_shared/chunk-IW6XPN43.js";
+} from "/python_for_chemists/build/_shared/chunk-IW6XPN43.js";
 import {
   MessageLoop,
   Panel,
@@ -74,28 +74,28 @@ import {
   Widget,
   init_index_es6 as init_index_es69,
   init_index_es62 as init_index_es610
-} from "/python_for_chemists//build/_shared/chunk-ZNGG4FXY.js";
+} from "/python_for_chemists/build/_shared/chunk-ZNGG4FXY.js";
 import {
   color,
   init_src
-} from "/python_for_chemists//build/_shared/chunk-2WW6JOYG.js";
+} from "/python_for_chemists/build/_shared/chunk-2WW6JOYG.js";
 import {
   SourceFileKind
-} from "/python_for_chemists//build/_shared/chunk-IMMBAB6Q.js";
+} from "/python_for_chemists/build/_shared/chunk-IMMBAB6Q.js";
 import {
   doi,
   validatePageFrontmatter
-} from "/python_for_chemists//build/_shared/chunk-7SI5XUIQ.js";
+} from "/python_for_chemists/build/_shared/chunk-7SI5XUIQ.js";
 import {
   dump,
   load
-} from "/python_for_chemists//build/_shared/chunk-DOEQHMLC.js";
+} from "/python_for_chemists/build/_shared/chunk-DOEQHMLC.js";
 import {
   require_classnames
-} from "/python_for_chemists//build/_shared/chunk-ZNG4DSCS.js";
+} from "/python_for_chemists/build/_shared/chunk-ZNG4DSCS.js";
 import {
   VFile
-} from "/python_for_chemists//build/_shared/chunk-MWXHQG25.js";
+} from "/python_for_chemists/build/_shared/chunk-MWXHQG25.js";
 import {
   RuleId,
   extractPart,
@@ -105,7 +105,7 @@ import {
   selectAll,
   selectMdastNodes,
   slugToUrl
-} from "/python_for_chemists//build/_shared/chunk-Q6DHUCUI.js";
+} from "/python_for_chemists/build/_shared/chunk-Q6DHUCUI.js";
 import {
   Link,
   Links,
@@ -121,19 +121,19 @@ import {
   useNavigate,
   useNavigation,
   useRouteError
-} from "/python_for_chemists//build/_shared/chunk-2RVQXRZB.js";
+} from "/python_for_chemists/build/_shared/chunk-2RVQXRZB.js";
 import {
   require_client,
   require_react,
   require_react_dom
-} from "/python_for_chemists//build/_shared/chunk-3RNZ6DIW.js";
+} from "/python_for_chemists/build/_shared/chunk-3RNZ6DIW.js";
 import {
   __commonJS,
   __esm,
   __export,
   __toCommonJS,
   __toESM
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/object-keys/isArguments.js
 var require_isArguments = __commonJS({
@@ -85539,7 +85539,7 @@ var init_lib15 = __esm({
        * Render JSON into this widget's node.
        */
       async renderModel(model) {
-        const { Component } = await import("/python_for_chemists//build/_shared/component-2I35LYEA.js");
+        const { Component } = await import("/python_for_chemists/build/_shared/component-2I35LYEA.js");
         let data;
         if (MIME_TYPES_JSONL.indexOf(this._mimeType) >= 0) {
           const lines = (model.data[this._mimeType] || "").trim().split(/\n/);
@@ -94238,1147 +94238,1147 @@ var hljs_default = {
   oneC: create_language_async_loader_default("oneC", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_oneC" */
-      "/python_for_chemists//build/_shared/1c-IPKSHA4E.js"
+      "/python_for_chemists/build/_shared/1c-IPKSHA4E.js"
     );
   }),
   abnf: create_language_async_loader_default("abnf", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_abnf" */
-      "/python_for_chemists//build/_shared/abnf-C33QBXSX.js"
+      "/python_for_chemists/build/_shared/abnf-C33QBXSX.js"
     );
   }),
   accesslog: create_language_async_loader_default("accesslog", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_accesslog" */
-      "/python_for_chemists//build/_shared/accesslog-UHSG2BZF.js"
+      "/python_for_chemists/build/_shared/accesslog-UHSG2BZF.js"
     );
   }),
   actionscript: create_language_async_loader_default("actionscript", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_actionscript" */
-      "/python_for_chemists//build/_shared/actionscript-NOEVHCAJ.js"
+      "/python_for_chemists/build/_shared/actionscript-NOEVHCAJ.js"
     );
   }),
   ada: create_language_async_loader_default("ada", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_ada" */
-      "/python_for_chemists//build/_shared/ada-KCSJZC4T.js"
+      "/python_for_chemists/build/_shared/ada-KCSJZC4T.js"
     );
   }),
   angelscript: create_language_async_loader_default("angelscript", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_angelscript" */
-      "/python_for_chemists//build/_shared/angelscript-J5QT7S4A.js"
+      "/python_for_chemists/build/_shared/angelscript-J5QT7S4A.js"
     );
   }),
   apache: create_language_async_loader_default("apache", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_apache" */
-      "/python_for_chemists//build/_shared/apache-GDDC7LQ3.js"
+      "/python_for_chemists/build/_shared/apache-GDDC7LQ3.js"
     );
   }),
   applescript: create_language_async_loader_default("applescript", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_applescript" */
-      "/python_for_chemists//build/_shared/applescript-GDRRS2BT.js"
+      "/python_for_chemists/build/_shared/applescript-GDRRS2BT.js"
     );
   }),
   arcade: create_language_async_loader_default("arcade", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_arcade" */
-      "/python_for_chemists//build/_shared/arcade-MNZOWGEV.js"
+      "/python_for_chemists/build/_shared/arcade-MNZOWGEV.js"
     );
   }),
   arduino: create_language_async_loader_default("arduino", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_arduino" */
-      "/python_for_chemists//build/_shared/arduino-ONLMH7IA.js"
+      "/python_for_chemists/build/_shared/arduino-ONLMH7IA.js"
     );
   }),
   armasm: create_language_async_loader_default("armasm", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_armasm" */
-      "/python_for_chemists//build/_shared/armasm-5MTCE2S5.js"
+      "/python_for_chemists/build/_shared/armasm-5MTCE2S5.js"
     );
   }),
   asciidoc: create_language_async_loader_default("asciidoc", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_asciidoc" */
-      "/python_for_chemists//build/_shared/asciidoc-AJVCY74C.js"
+      "/python_for_chemists/build/_shared/asciidoc-AJVCY74C.js"
     );
   }),
   aspectj: create_language_async_loader_default("aspectj", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_aspectj" */
-      "/python_for_chemists//build/_shared/aspectj-XONGF66R.js"
+      "/python_for_chemists/build/_shared/aspectj-XONGF66R.js"
     );
   }),
   autohotkey: create_language_async_loader_default("autohotkey", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_autohotkey" */
-      "/python_for_chemists//build/_shared/autohotkey-AYZ4LUJJ.js"
+      "/python_for_chemists/build/_shared/autohotkey-AYZ4LUJJ.js"
     );
   }),
   autoit: create_language_async_loader_default("autoit", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_autoit" */
-      "/python_for_chemists//build/_shared/autoit-ABYJWDX4.js"
+      "/python_for_chemists/build/_shared/autoit-ABYJWDX4.js"
     );
   }),
   avrasm: create_language_async_loader_default("avrasm", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_avrasm" */
-      "/python_for_chemists//build/_shared/avrasm-BKD3NPZJ.js"
+      "/python_for_chemists/build/_shared/avrasm-BKD3NPZJ.js"
     );
   }),
   awk: create_language_async_loader_default("awk", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_awk" */
-      "/python_for_chemists//build/_shared/awk-5SOG2SZL.js"
+      "/python_for_chemists/build/_shared/awk-5SOG2SZL.js"
     );
   }),
   axapta: create_language_async_loader_default("axapta", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_axapta" */
-      "/python_for_chemists//build/_shared/axapta-ZWGH36IY.js"
+      "/python_for_chemists/build/_shared/axapta-ZWGH36IY.js"
     );
   }),
   bash: create_language_async_loader_default("bash", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_bash" */
-      "/python_for_chemists//build/_shared/bash-2JPXFWMK.js"
+      "/python_for_chemists/build/_shared/bash-2JPXFWMK.js"
     );
   }),
   basic: create_language_async_loader_default("basic", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_basic" */
-      "/python_for_chemists//build/_shared/basic-VU5EYEOM.js"
+      "/python_for_chemists/build/_shared/basic-VU5EYEOM.js"
     );
   }),
   bnf: create_language_async_loader_default("bnf", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_bnf" */
-      "/python_for_chemists//build/_shared/bnf-T3KQHXJO.js"
+      "/python_for_chemists/build/_shared/bnf-T3KQHXJO.js"
     );
   }),
   brainfuck: create_language_async_loader_default("brainfuck", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_brainfuck" */
-      "/python_for_chemists//build/_shared/brainfuck-3OAN3GLN.js"
+      "/python_for_chemists/build/_shared/brainfuck-3OAN3GLN.js"
     );
   }),
   cLike: create_language_async_loader_default("cLike", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_cLike" */
-      "/python_for_chemists//build/_shared/c-like-J2NHU5CI.js"
+      "/python_for_chemists/build/_shared/c-like-J2NHU5CI.js"
     );
   }),
   c: create_language_async_loader_default("c", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_c" */
-      "/python_for_chemists//build/_shared/c-S6JJOG7F.js"
+      "/python_for_chemists/build/_shared/c-S6JJOG7F.js"
     );
   }),
   cal: create_language_async_loader_default("cal", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_cal" */
-      "/python_for_chemists//build/_shared/cal-7ZREG6PY.js"
+      "/python_for_chemists/build/_shared/cal-7ZREG6PY.js"
     );
   }),
   capnproto: create_language_async_loader_default("capnproto", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_capnproto" */
-      "/python_for_chemists//build/_shared/capnproto-B6KKV6WA.js"
+      "/python_for_chemists/build/_shared/capnproto-B6KKV6WA.js"
     );
   }),
   ceylon: create_language_async_loader_default("ceylon", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_ceylon" */
-      "/python_for_chemists//build/_shared/ceylon-ZKJ6CMAP.js"
+      "/python_for_chemists/build/_shared/ceylon-ZKJ6CMAP.js"
     );
   }),
   clean: create_language_async_loader_default("clean", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_clean" */
-      "/python_for_chemists//build/_shared/clean-X33RUM5L.js"
+      "/python_for_chemists/build/_shared/clean-X33RUM5L.js"
     );
   }),
   clojureRepl: create_language_async_loader_default("clojureRepl", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_clojureRepl" */
-      "/python_for_chemists//build/_shared/clojure-repl-X5VETLNI.js"
+      "/python_for_chemists/build/_shared/clojure-repl-X5VETLNI.js"
     );
   }),
   clojure: create_language_async_loader_default("clojure", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_clojure" */
-      "/python_for_chemists//build/_shared/clojure-AMWNVHNT.js"
+      "/python_for_chemists/build/_shared/clojure-AMWNVHNT.js"
     );
   }),
   cmake: create_language_async_loader_default("cmake", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_cmake" */
-      "/python_for_chemists//build/_shared/cmake-OHI43MN5.js"
+      "/python_for_chemists/build/_shared/cmake-OHI43MN5.js"
     );
   }),
   coffeescript: create_language_async_loader_default("coffeescript", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_coffeescript" */
-      "/python_for_chemists//build/_shared/coffeescript-7SVDFN7H.js"
+      "/python_for_chemists/build/_shared/coffeescript-7SVDFN7H.js"
     );
   }),
   coq: create_language_async_loader_default("coq", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_coq" */
-      "/python_for_chemists//build/_shared/coq-I6MBISEE.js"
+      "/python_for_chemists/build/_shared/coq-I6MBISEE.js"
     );
   }),
   cos: create_language_async_loader_default("cos", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_cos" */
-      "/python_for_chemists//build/_shared/cos-OTXHFTTC.js"
+      "/python_for_chemists/build/_shared/cos-OTXHFTTC.js"
     );
   }),
   cpp: create_language_async_loader_default("cpp", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_cpp" */
-      "/python_for_chemists//build/_shared/cpp-KY534ROQ.js"
+      "/python_for_chemists/build/_shared/cpp-KY534ROQ.js"
     );
   }),
   crmsh: create_language_async_loader_default("crmsh", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_crmsh" */
-      "/python_for_chemists//build/_shared/crmsh-EQIYYD23.js"
+      "/python_for_chemists/build/_shared/crmsh-EQIYYD23.js"
     );
   }),
   crystal: create_language_async_loader_default("crystal", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_crystal" */
-      "/python_for_chemists//build/_shared/crystal-TKRKPCIQ.js"
+      "/python_for_chemists/build/_shared/crystal-TKRKPCIQ.js"
     );
   }),
   csharp: create_language_async_loader_default("csharp", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_csharp" */
-      "/python_for_chemists//build/_shared/csharp-AOY2GLX6.js"
+      "/python_for_chemists/build/_shared/csharp-AOY2GLX6.js"
     );
   }),
   csp: create_language_async_loader_default("csp", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_csp" */
-      "/python_for_chemists//build/_shared/csp-GHOPDS4F.js"
+      "/python_for_chemists/build/_shared/csp-GHOPDS4F.js"
     );
   }),
   css: create_language_async_loader_default("css", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_css" */
-      "/python_for_chemists//build/_shared/css-TOK3G2XH.js"
+      "/python_for_chemists/build/_shared/css-TOK3G2XH.js"
     );
   }),
   d: create_language_async_loader_default("d", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_d" */
-      "/python_for_chemists//build/_shared/d-HHKVDACB.js"
+      "/python_for_chemists/build/_shared/d-HHKVDACB.js"
     );
   }),
   dart: create_language_async_loader_default("dart", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_dart" */
-      "/python_for_chemists//build/_shared/dart-RUSNUN43.js"
+      "/python_for_chemists/build/_shared/dart-RUSNUN43.js"
     );
   }),
   delphi: create_language_async_loader_default("delphi", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_delphi" */
-      "/python_for_chemists//build/_shared/delphi-WVYNU27M.js"
+      "/python_for_chemists/build/_shared/delphi-WVYNU27M.js"
     );
   }),
   diff: create_language_async_loader_default("diff", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_diff" */
-      "/python_for_chemists//build/_shared/diff-CSNSKFAE.js"
+      "/python_for_chemists/build/_shared/diff-CSNSKFAE.js"
     );
   }),
   django: create_language_async_loader_default("django", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_django" */
-      "/python_for_chemists//build/_shared/django-LZDK32GX.js"
+      "/python_for_chemists/build/_shared/django-LZDK32GX.js"
     );
   }),
   dns: create_language_async_loader_default("dns", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_dns" */
-      "/python_for_chemists//build/_shared/dns-EC57ZCT3.js"
+      "/python_for_chemists/build/_shared/dns-EC57ZCT3.js"
     );
   }),
   dockerfile: create_language_async_loader_default("dockerfile", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_dockerfile" */
-      "/python_for_chemists//build/_shared/dockerfile-ZJC5G4JE.js"
+      "/python_for_chemists/build/_shared/dockerfile-ZJC5G4JE.js"
     );
   }),
   dos: create_language_async_loader_default("dos", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_dos" */
-      "/python_for_chemists//build/_shared/dos-3EP5SJG3.js"
+      "/python_for_chemists/build/_shared/dos-3EP5SJG3.js"
     );
   }),
   dsconfig: create_language_async_loader_default("dsconfig", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_dsconfig" */
-      "/python_for_chemists//build/_shared/dsconfig-VFNAWR7R.js"
+      "/python_for_chemists/build/_shared/dsconfig-VFNAWR7R.js"
     );
   }),
   dts: create_language_async_loader_default("dts", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_dts" */
-      "/python_for_chemists//build/_shared/dts-DRX5TT4I.js"
+      "/python_for_chemists/build/_shared/dts-DRX5TT4I.js"
     );
   }),
   dust: create_language_async_loader_default("dust", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_dust" */
-      "/python_for_chemists//build/_shared/dust-RFLKGTWW.js"
+      "/python_for_chemists/build/_shared/dust-RFLKGTWW.js"
     );
   }),
   ebnf: create_language_async_loader_default("ebnf", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_ebnf" */
-      "/python_for_chemists//build/_shared/ebnf-2K7ELIYO.js"
+      "/python_for_chemists/build/_shared/ebnf-2K7ELIYO.js"
     );
   }),
   elixir: create_language_async_loader_default("elixir", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_elixir" */
-      "/python_for_chemists//build/_shared/elixir-46BRCSM6.js"
+      "/python_for_chemists/build/_shared/elixir-46BRCSM6.js"
     );
   }),
   elm: create_language_async_loader_default("elm", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_elm" */
-      "/python_for_chemists//build/_shared/elm-WXEVH4LG.js"
+      "/python_for_chemists/build/_shared/elm-WXEVH4LG.js"
     );
   }),
   erb: create_language_async_loader_default("erb", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_erb" */
-      "/python_for_chemists//build/_shared/erb-2BQ4ROQY.js"
+      "/python_for_chemists/build/_shared/erb-2BQ4ROQY.js"
     );
   }),
   erlangRepl: create_language_async_loader_default("erlangRepl", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_erlangRepl" */
-      "/python_for_chemists//build/_shared/erlang-repl-NQ4A4RF6.js"
+      "/python_for_chemists/build/_shared/erlang-repl-NQ4A4RF6.js"
     );
   }),
   erlang: create_language_async_loader_default("erlang", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_erlang" */
-      "/python_for_chemists//build/_shared/erlang-NOUNQZUB.js"
+      "/python_for_chemists/build/_shared/erlang-NOUNQZUB.js"
     );
   }),
   excel: create_language_async_loader_default("excel", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_excel" */
-      "/python_for_chemists//build/_shared/excel-DNTMJJF3.js"
+      "/python_for_chemists/build/_shared/excel-DNTMJJF3.js"
     );
   }),
   fix: create_language_async_loader_default("fix", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_fix" */
-      "/python_for_chemists//build/_shared/fix-BYQGB3GD.js"
+      "/python_for_chemists/build/_shared/fix-BYQGB3GD.js"
     );
   }),
   flix: create_language_async_loader_default("flix", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_flix" */
-      "/python_for_chemists//build/_shared/flix-GXEJQ36B.js"
+      "/python_for_chemists/build/_shared/flix-GXEJQ36B.js"
     );
   }),
   fortran: create_language_async_loader_default("fortran", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_fortran" */
-      "/python_for_chemists//build/_shared/fortran-4FENY6OD.js"
+      "/python_for_chemists/build/_shared/fortran-4FENY6OD.js"
     );
   }),
   fsharp: create_language_async_loader_default("fsharp", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_fsharp" */
-      "/python_for_chemists//build/_shared/fsharp-7EJANNGL.js"
+      "/python_for_chemists/build/_shared/fsharp-7EJANNGL.js"
     );
   }),
   gams: create_language_async_loader_default("gams", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_gams" */
-      "/python_for_chemists//build/_shared/gams-4YAUNXTO.js"
+      "/python_for_chemists/build/_shared/gams-4YAUNXTO.js"
     );
   }),
   gauss: create_language_async_loader_default("gauss", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_gauss" */
-      "/python_for_chemists//build/_shared/gauss-CSYOGZKR.js"
+      "/python_for_chemists/build/_shared/gauss-CSYOGZKR.js"
     );
   }),
   gcode: create_language_async_loader_default("gcode", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_gcode" */
-      "/python_for_chemists//build/_shared/gcode-OQE6L2XT.js"
+      "/python_for_chemists/build/_shared/gcode-OQE6L2XT.js"
     );
   }),
   gherkin: create_language_async_loader_default("gherkin", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_gherkin" */
-      "/python_for_chemists//build/_shared/gherkin-PAVW34OH.js"
+      "/python_for_chemists/build/_shared/gherkin-PAVW34OH.js"
     );
   }),
   glsl: create_language_async_loader_default("glsl", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_glsl" */
-      "/python_for_chemists//build/_shared/glsl-3XFBYYQU.js"
+      "/python_for_chemists/build/_shared/glsl-3XFBYYQU.js"
     );
   }),
   gml: create_language_async_loader_default("gml", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_gml" */
-      "/python_for_chemists//build/_shared/gml-O6LQ7DOF.js"
+      "/python_for_chemists/build/_shared/gml-O6LQ7DOF.js"
     );
   }),
   go: create_language_async_loader_default("go", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_go" */
-      "/python_for_chemists//build/_shared/go-MAZI5OWP.js"
+      "/python_for_chemists/build/_shared/go-MAZI5OWP.js"
     );
   }),
   golo: create_language_async_loader_default("golo", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_golo" */
-      "/python_for_chemists//build/_shared/golo-YGMQZ22W.js"
+      "/python_for_chemists/build/_shared/golo-YGMQZ22W.js"
     );
   }),
   gradle: create_language_async_loader_default("gradle", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_gradle" */
-      "/python_for_chemists//build/_shared/gradle-6D3GYEMJ.js"
+      "/python_for_chemists/build/_shared/gradle-6D3GYEMJ.js"
     );
   }),
   groovy: create_language_async_loader_default("groovy", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_groovy" */
-      "/python_for_chemists//build/_shared/groovy-MYYZNIXH.js"
+      "/python_for_chemists/build/_shared/groovy-MYYZNIXH.js"
     );
   }),
   haml: create_language_async_loader_default("haml", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_haml" */
-      "/python_for_chemists//build/_shared/haml-OBQ7BWER.js"
+      "/python_for_chemists/build/_shared/haml-OBQ7BWER.js"
     );
   }),
   handlebars: create_language_async_loader_default("handlebars", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_handlebars" */
-      "/python_for_chemists//build/_shared/handlebars-BPQE3VDO.js"
+      "/python_for_chemists/build/_shared/handlebars-BPQE3VDO.js"
     );
   }),
   haskell: create_language_async_loader_default("haskell", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_haskell" */
-      "/python_for_chemists//build/_shared/haskell-Q4LAZD77.js"
+      "/python_for_chemists/build/_shared/haskell-Q4LAZD77.js"
     );
   }),
   haxe: create_language_async_loader_default("haxe", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_haxe" */
-      "/python_for_chemists//build/_shared/haxe-OJMFVDER.js"
+      "/python_for_chemists/build/_shared/haxe-OJMFVDER.js"
     );
   }),
   hsp: create_language_async_loader_default("hsp", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_hsp" */
-      "/python_for_chemists//build/_shared/hsp-AWPNJWHJ.js"
+      "/python_for_chemists/build/_shared/hsp-AWPNJWHJ.js"
     );
   }),
   htmlbars: create_language_async_loader_default("htmlbars", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_htmlbars" */
-      "/python_for_chemists//build/_shared/htmlbars-APYUL26S.js"
+      "/python_for_chemists/build/_shared/htmlbars-APYUL26S.js"
     );
   }),
   http: create_language_async_loader_default("http", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_http" */
-      "/python_for_chemists//build/_shared/http-NDT6AFW2.js"
+      "/python_for_chemists/build/_shared/http-NDT6AFW2.js"
     );
   }),
   hy: create_language_async_loader_default("hy", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_hy" */
-      "/python_for_chemists//build/_shared/hy-AH6F52TQ.js"
+      "/python_for_chemists/build/_shared/hy-AH6F52TQ.js"
     );
   }),
   inform7: create_language_async_loader_default("inform7", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_inform7" */
-      "/python_for_chemists//build/_shared/inform7-QJ4DD7HV.js"
+      "/python_for_chemists/build/_shared/inform7-QJ4DD7HV.js"
     );
   }),
   ini: create_language_async_loader_default("ini", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_ini" */
-      "/python_for_chemists//build/_shared/ini-FMHP6J7N.js"
+      "/python_for_chemists/build/_shared/ini-FMHP6J7N.js"
     );
   }),
   irpf90: create_language_async_loader_default("irpf90", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_irpf90" */
-      "/python_for_chemists//build/_shared/irpf90-LGAZUJHT.js"
+      "/python_for_chemists/build/_shared/irpf90-LGAZUJHT.js"
     );
   }),
   isbl: create_language_async_loader_default("isbl", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_isbl" */
-      "/python_for_chemists//build/_shared/isbl-D5GESWZW.js"
+      "/python_for_chemists/build/_shared/isbl-D5GESWZW.js"
     );
   }),
   java: create_language_async_loader_default("java", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_java" */
-      "/python_for_chemists//build/_shared/java-E54JBMMB.js"
+      "/python_for_chemists/build/_shared/java-E54JBMMB.js"
     );
   }),
   javascript: create_language_async_loader_default("javascript", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_javascript" */
-      "/python_for_chemists//build/_shared/javascript-7J5PVFM7.js"
+      "/python_for_chemists/build/_shared/javascript-7J5PVFM7.js"
     );
   }),
   jbossCli: create_language_async_loader_default("jbossCli", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_jbossCli" */
-      "/python_for_chemists//build/_shared/jboss-cli-3EFU7SKJ.js"
+      "/python_for_chemists/build/_shared/jboss-cli-3EFU7SKJ.js"
     );
   }),
   json: create_language_async_loader_default("json", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_json" */
-      "/python_for_chemists//build/_shared/json-WHDGF45S.js"
+      "/python_for_chemists/build/_shared/json-WHDGF45S.js"
     );
   }),
   juliaRepl: create_language_async_loader_default("juliaRepl", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_juliaRepl" */
-      "/python_for_chemists//build/_shared/julia-repl-FNCWDQ5U.js"
+      "/python_for_chemists/build/_shared/julia-repl-FNCWDQ5U.js"
     );
   }),
   julia: create_language_async_loader_default("julia", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_julia" */
-      "/python_for_chemists//build/_shared/julia-PFBYOAVG.js"
+      "/python_for_chemists/build/_shared/julia-PFBYOAVG.js"
     );
   }),
   kotlin: create_language_async_loader_default("kotlin", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_kotlin" */
-      "/python_for_chemists//build/_shared/kotlin-65HXB34U.js"
+      "/python_for_chemists/build/_shared/kotlin-65HXB34U.js"
     );
   }),
   lasso: create_language_async_loader_default("lasso", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_lasso" */
-      "/python_for_chemists//build/_shared/lasso-UF5VF6QS.js"
+      "/python_for_chemists/build/_shared/lasso-UF5VF6QS.js"
     );
   }),
   latex: create_language_async_loader_default("latex", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_latex" */
-      "/python_for_chemists//build/_shared/latex-WB2B7ADL.js"
+      "/python_for_chemists/build/_shared/latex-WB2B7ADL.js"
     );
   }),
   ldif: create_language_async_loader_default("ldif", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_ldif" */
-      "/python_for_chemists//build/_shared/ldif-HVHSOMYI.js"
+      "/python_for_chemists/build/_shared/ldif-HVHSOMYI.js"
     );
   }),
   leaf: create_language_async_loader_default("leaf", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_leaf" */
-      "/python_for_chemists//build/_shared/leaf-VQGGX7PV.js"
+      "/python_for_chemists/build/_shared/leaf-VQGGX7PV.js"
     );
   }),
   less: create_language_async_loader_default("less", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_less" */
-      "/python_for_chemists//build/_shared/less-DNDSQKZ2.js"
+      "/python_for_chemists/build/_shared/less-DNDSQKZ2.js"
     );
   }),
   lisp: create_language_async_loader_default("lisp", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_lisp" */
-      "/python_for_chemists//build/_shared/lisp-CU4XAYB7.js"
+      "/python_for_chemists/build/_shared/lisp-CU4XAYB7.js"
     );
   }),
   livecodeserver: create_language_async_loader_default("livecodeserver", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_livecodeserver" */
-      "/python_for_chemists//build/_shared/livecodeserver-MSL75AYE.js"
+      "/python_for_chemists/build/_shared/livecodeserver-MSL75AYE.js"
     );
   }),
   livescript: create_language_async_loader_default("livescript", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_livescript" */
-      "/python_for_chemists//build/_shared/livescript-RR3KXPCN.js"
+      "/python_for_chemists/build/_shared/livescript-RR3KXPCN.js"
     );
   }),
   llvm: create_language_async_loader_default("llvm", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_llvm" */
-      "/python_for_chemists//build/_shared/llvm-MXUZY2NG.js"
+      "/python_for_chemists/build/_shared/llvm-MXUZY2NG.js"
     );
   }),
   lsl: create_language_async_loader_default("lsl", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_lsl" */
-      "/python_for_chemists//build/_shared/lsl-WDHI55YT.js"
+      "/python_for_chemists/build/_shared/lsl-WDHI55YT.js"
     );
   }),
   lua: create_language_async_loader_default("lua", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_lua" */
-      "/python_for_chemists//build/_shared/lua-SPPIQZXR.js"
+      "/python_for_chemists/build/_shared/lua-SPPIQZXR.js"
     );
   }),
   makefile: create_language_async_loader_default("makefile", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_makefile" */
-      "/python_for_chemists//build/_shared/makefile-HQPARP43.js"
+      "/python_for_chemists/build/_shared/makefile-HQPARP43.js"
     );
   }),
   markdown: create_language_async_loader_default("markdown", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_markdown" */
-      "/python_for_chemists//build/_shared/markdown-RHVAPKA4.js"
+      "/python_for_chemists/build/_shared/markdown-RHVAPKA4.js"
     );
   }),
   mathematica: create_language_async_loader_default("mathematica", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_mathematica" */
-      "/python_for_chemists//build/_shared/mathematica-HEP25EQ4.js"
+      "/python_for_chemists/build/_shared/mathematica-HEP25EQ4.js"
     );
   }),
   matlab: create_language_async_loader_default("matlab", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_matlab" */
-      "/python_for_chemists//build/_shared/matlab-ABHRWOTT.js"
+      "/python_for_chemists/build/_shared/matlab-ABHRWOTT.js"
     );
   }),
   maxima: create_language_async_loader_default("maxima", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_maxima" */
-      "/python_for_chemists//build/_shared/maxima-PQKHY4KB.js"
+      "/python_for_chemists/build/_shared/maxima-PQKHY4KB.js"
     );
   }),
   mel: create_language_async_loader_default("mel", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_mel" */
-      "/python_for_chemists//build/_shared/mel-HXEUYW3T.js"
+      "/python_for_chemists/build/_shared/mel-HXEUYW3T.js"
     );
   }),
   mercury: create_language_async_loader_default("mercury", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_mercury" */
-      "/python_for_chemists//build/_shared/mercury-HIDV7SBZ.js"
+      "/python_for_chemists/build/_shared/mercury-HIDV7SBZ.js"
     );
   }),
   mipsasm: create_language_async_loader_default("mipsasm", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_mipsasm" */
-      "/python_for_chemists//build/_shared/mipsasm-JPKEFSL4.js"
+      "/python_for_chemists/build/_shared/mipsasm-JPKEFSL4.js"
     );
   }),
   mizar: create_language_async_loader_default("mizar", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_mizar" */
-      "/python_for_chemists//build/_shared/mizar-ZRTDJXJ6.js"
+      "/python_for_chemists/build/_shared/mizar-ZRTDJXJ6.js"
     );
   }),
   mojolicious: create_language_async_loader_default("mojolicious", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_mojolicious" */
-      "/python_for_chemists//build/_shared/mojolicious-HGKXBKLS.js"
+      "/python_for_chemists/build/_shared/mojolicious-HGKXBKLS.js"
     );
   }),
   monkey: create_language_async_loader_default("monkey", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_monkey" */
-      "/python_for_chemists//build/_shared/monkey-WMSOXAHX.js"
+      "/python_for_chemists/build/_shared/monkey-WMSOXAHX.js"
     );
   }),
   moonscript: create_language_async_loader_default("moonscript", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_moonscript" */
-      "/python_for_chemists//build/_shared/moonscript-SMVGHDVU.js"
+      "/python_for_chemists/build/_shared/moonscript-SMVGHDVU.js"
     );
   }),
   n1ql: create_language_async_loader_default("n1ql", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_n1ql" */
-      "/python_for_chemists//build/_shared/n1ql-QQ6BTB4V.js"
+      "/python_for_chemists/build/_shared/n1ql-QQ6BTB4V.js"
     );
   }),
   nginx: create_language_async_loader_default("nginx", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_nginx" */
-      "/python_for_chemists//build/_shared/nginx-7ILN5UEI.js"
+      "/python_for_chemists/build/_shared/nginx-7ILN5UEI.js"
     );
   }),
   nim: create_language_async_loader_default("nim", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_nim" */
-      "/python_for_chemists//build/_shared/nim-TW6FUM2E.js"
+      "/python_for_chemists/build/_shared/nim-TW6FUM2E.js"
     );
   }),
   nix: create_language_async_loader_default("nix", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_nix" */
-      "/python_for_chemists//build/_shared/nix-THBG4LAT.js"
+      "/python_for_chemists/build/_shared/nix-THBG4LAT.js"
     );
   }),
   nodeRepl: create_language_async_loader_default("nodeRepl", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_nodeRepl" */
-      "/python_for_chemists//build/_shared/node-repl-O2ICLQBA.js"
+      "/python_for_chemists/build/_shared/node-repl-O2ICLQBA.js"
     );
   }),
   nsis: create_language_async_loader_default("nsis", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_nsis" */
-      "/python_for_chemists//build/_shared/nsis-5CY2IGLA.js"
+      "/python_for_chemists/build/_shared/nsis-5CY2IGLA.js"
     );
   }),
   objectivec: create_language_async_loader_default("objectivec", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_objectivec" */
-      "/python_for_chemists//build/_shared/objectivec-CTXRL6TC.js"
+      "/python_for_chemists/build/_shared/objectivec-CTXRL6TC.js"
     );
   }),
   ocaml: create_language_async_loader_default("ocaml", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_ocaml" */
-      "/python_for_chemists//build/_shared/ocaml-W4MG3ZCW.js"
+      "/python_for_chemists/build/_shared/ocaml-W4MG3ZCW.js"
     );
   }),
   openscad: create_language_async_loader_default("openscad", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_openscad" */
-      "/python_for_chemists//build/_shared/openscad-YJQEQSMU.js"
+      "/python_for_chemists/build/_shared/openscad-YJQEQSMU.js"
     );
   }),
   oxygene: create_language_async_loader_default("oxygene", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_oxygene" */
-      "/python_for_chemists//build/_shared/oxygene-44IL7AEA.js"
+      "/python_for_chemists/build/_shared/oxygene-44IL7AEA.js"
     );
   }),
   parser3: create_language_async_loader_default("parser3", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_parser3" */
-      "/python_for_chemists//build/_shared/parser3-SRJDQB5A.js"
+      "/python_for_chemists/build/_shared/parser3-SRJDQB5A.js"
     );
   }),
   perl: create_language_async_loader_default("perl", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_perl" */
-      "/python_for_chemists//build/_shared/perl-M6EZHFA4.js"
+      "/python_for_chemists/build/_shared/perl-M6EZHFA4.js"
     );
   }),
   pf: create_language_async_loader_default("pf", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_pf" */
-      "/python_for_chemists//build/_shared/pf-X7P5IGAB.js"
+      "/python_for_chemists/build/_shared/pf-X7P5IGAB.js"
     );
   }),
   pgsql: create_language_async_loader_default("pgsql", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_pgsql" */
-      "/python_for_chemists//build/_shared/pgsql-QCSP2FQC.js"
+      "/python_for_chemists/build/_shared/pgsql-QCSP2FQC.js"
     );
   }),
   phpTemplate: create_language_async_loader_default("phpTemplate", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_phpTemplate" */
-      "/python_for_chemists//build/_shared/php-template-P6NJTCWN.js"
+      "/python_for_chemists/build/_shared/php-template-P6NJTCWN.js"
     );
   }),
   php: create_language_async_loader_default("php", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_php" */
-      "/python_for_chemists//build/_shared/php-2BEMAWSP.js"
+      "/python_for_chemists/build/_shared/php-2BEMAWSP.js"
     );
   }),
   plaintext: create_language_async_loader_default("plaintext", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_plaintext" */
-      "/python_for_chemists//build/_shared/plaintext-BWCF6ZFV.js"
+      "/python_for_chemists/build/_shared/plaintext-BWCF6ZFV.js"
     );
   }),
   pony: create_language_async_loader_default("pony", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_pony" */
-      "/python_for_chemists//build/_shared/pony-Z7Z5LQGS.js"
+      "/python_for_chemists/build/_shared/pony-Z7Z5LQGS.js"
     );
   }),
   powershell: create_language_async_loader_default("powershell", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_powershell" */
-      "/python_for_chemists//build/_shared/powershell-CLQEPVGZ.js"
+      "/python_for_chemists/build/_shared/powershell-CLQEPVGZ.js"
     );
   }),
   processing: create_language_async_loader_default("processing", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_processing" */
-      "/python_for_chemists//build/_shared/processing-QVO6XVZA.js"
+      "/python_for_chemists/build/_shared/processing-QVO6XVZA.js"
     );
   }),
   profile: create_language_async_loader_default("profile", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_profile" */
-      "/python_for_chemists//build/_shared/profile-FTNUDPO2.js"
+      "/python_for_chemists/build/_shared/profile-FTNUDPO2.js"
     );
   }),
   prolog: create_language_async_loader_default("prolog", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_prolog" */
-      "/python_for_chemists//build/_shared/prolog-AN5OSMMS.js"
+      "/python_for_chemists/build/_shared/prolog-AN5OSMMS.js"
     );
   }),
   properties: create_language_async_loader_default("properties", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_properties" */
-      "/python_for_chemists//build/_shared/properties-DF2B5ZKV.js"
+      "/python_for_chemists/build/_shared/properties-DF2B5ZKV.js"
     );
   }),
   protobuf: create_language_async_loader_default("protobuf", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_protobuf" */
-      "/python_for_chemists//build/_shared/protobuf-5M63AFPY.js"
+      "/python_for_chemists/build/_shared/protobuf-5M63AFPY.js"
     );
   }),
   puppet: create_language_async_loader_default("puppet", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_puppet" */
-      "/python_for_chemists//build/_shared/puppet-UIOXKLBS.js"
+      "/python_for_chemists/build/_shared/puppet-UIOXKLBS.js"
     );
   }),
   purebasic: create_language_async_loader_default("purebasic", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_purebasic" */
-      "/python_for_chemists//build/_shared/purebasic-7MB4F43O.js"
+      "/python_for_chemists/build/_shared/purebasic-7MB4F43O.js"
     );
   }),
   pythonRepl: create_language_async_loader_default("pythonRepl", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_pythonRepl" */
-      "/python_for_chemists//build/_shared/python-repl-R6H4KFTT.js"
+      "/python_for_chemists/build/_shared/python-repl-R6H4KFTT.js"
     );
   }),
   python: create_language_async_loader_default("python", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_python" */
-      "/python_for_chemists//build/_shared/python-73C266VD.js"
+      "/python_for_chemists/build/_shared/python-73C266VD.js"
     );
   }),
   q: create_language_async_loader_default("q", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_q" */
-      "/python_for_chemists//build/_shared/q-GIS76RHU.js"
+      "/python_for_chemists/build/_shared/q-GIS76RHU.js"
     );
   }),
   qml: create_language_async_loader_default("qml", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_qml" */
-      "/python_for_chemists//build/_shared/qml-YR54X6VZ.js"
+      "/python_for_chemists/build/_shared/qml-YR54X6VZ.js"
     );
   }),
   r: create_language_async_loader_default("r", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_r" */
-      "/python_for_chemists//build/_shared/r-MGZM4FUU.js"
+      "/python_for_chemists/build/_shared/r-MGZM4FUU.js"
     );
   }),
   reasonml: create_language_async_loader_default("reasonml", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_reasonml" */
-      "/python_for_chemists//build/_shared/reasonml-4CQBVGJA.js"
+      "/python_for_chemists/build/_shared/reasonml-4CQBVGJA.js"
     );
   }),
   rib: create_language_async_loader_default("rib", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_rib" */
-      "/python_for_chemists//build/_shared/rib-IPBKO7LS.js"
+      "/python_for_chemists/build/_shared/rib-IPBKO7LS.js"
     );
   }),
   roboconf: create_language_async_loader_default("roboconf", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_roboconf" */
-      "/python_for_chemists//build/_shared/roboconf-TOEYAKC7.js"
+      "/python_for_chemists/build/_shared/roboconf-TOEYAKC7.js"
     );
   }),
   routeros: create_language_async_loader_default("routeros", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_routeros" */
-      "/python_for_chemists//build/_shared/routeros-JWWEDVEH.js"
+      "/python_for_chemists/build/_shared/routeros-JWWEDVEH.js"
     );
   }),
   rsl: create_language_async_loader_default("rsl", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_rsl" */
-      "/python_for_chemists//build/_shared/rsl-A72YEBU3.js"
+      "/python_for_chemists/build/_shared/rsl-A72YEBU3.js"
     );
   }),
   ruby: create_language_async_loader_default("ruby", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_ruby" */
-      "/python_for_chemists//build/_shared/ruby-THCS76C6.js"
+      "/python_for_chemists/build/_shared/ruby-THCS76C6.js"
     );
   }),
   ruleslanguage: create_language_async_loader_default("ruleslanguage", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_ruleslanguage" */
-      "/python_for_chemists//build/_shared/ruleslanguage-I47ADSG2.js"
+      "/python_for_chemists/build/_shared/ruleslanguage-I47ADSG2.js"
     );
   }),
   rust: create_language_async_loader_default("rust", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_rust" */
-      "/python_for_chemists//build/_shared/rust-UL2BRG6H.js"
+      "/python_for_chemists/build/_shared/rust-UL2BRG6H.js"
     );
   }),
   sas: create_language_async_loader_default("sas", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_sas" */
-      "/python_for_chemists//build/_shared/sas-2AMAMQFI.js"
+      "/python_for_chemists/build/_shared/sas-2AMAMQFI.js"
     );
   }),
   scala: create_language_async_loader_default("scala", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_scala" */
-      "/python_for_chemists//build/_shared/scala-KSCWN52X.js"
+      "/python_for_chemists/build/_shared/scala-KSCWN52X.js"
     );
   }),
   scheme: create_language_async_loader_default("scheme", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_scheme" */
-      "/python_for_chemists//build/_shared/scheme-UUE7MSE2.js"
+      "/python_for_chemists/build/_shared/scheme-UUE7MSE2.js"
     );
   }),
   scilab: create_language_async_loader_default("scilab", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_scilab" */
-      "/python_for_chemists//build/_shared/scilab-3WYN4EWD.js"
+      "/python_for_chemists/build/_shared/scilab-3WYN4EWD.js"
     );
   }),
   scss: create_language_async_loader_default("scss", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_scss" */
-      "/python_for_chemists//build/_shared/scss-G2SOKEMP.js"
+      "/python_for_chemists/build/_shared/scss-G2SOKEMP.js"
     );
   }),
   shell: create_language_async_loader_default("shell", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_shell" */
-      "/python_for_chemists//build/_shared/shell-6Y37AU72.js"
+      "/python_for_chemists/build/_shared/shell-6Y37AU72.js"
     );
   }),
   smali: create_language_async_loader_default("smali", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_smali" */
-      "/python_for_chemists//build/_shared/smali-HSRKQQ5P.js"
+      "/python_for_chemists/build/_shared/smali-HSRKQQ5P.js"
     );
   }),
   smalltalk: create_language_async_loader_default("smalltalk", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_smalltalk" */
-      "/python_for_chemists//build/_shared/smalltalk-RBRXGAYB.js"
+      "/python_for_chemists/build/_shared/smalltalk-RBRXGAYB.js"
     );
   }),
   sml: create_language_async_loader_default("sml", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_sml" */
-      "/python_for_chemists//build/_shared/sml-LFNSAI73.js"
+      "/python_for_chemists/build/_shared/sml-LFNSAI73.js"
     );
   }),
   sqf: create_language_async_loader_default("sqf", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_sqf" */
-      "/python_for_chemists//build/_shared/sqf-PL736WG2.js"
+      "/python_for_chemists/build/_shared/sqf-PL736WG2.js"
     );
   }),
   sql: create_language_async_loader_default("sql", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_sql" */
-      "/python_for_chemists//build/_shared/sql-JYMDUR3S.js"
+      "/python_for_chemists/build/_shared/sql-JYMDUR3S.js"
     );
   }),
   sqlMore: create_language_async_loader_default("sqlMore", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_sqlMore" */
-      "/python_for_chemists//build/_shared/sql_more-7QOIJ3B2.js"
+      "/python_for_chemists/build/_shared/sql_more-7QOIJ3B2.js"
     );
   }),
   stan: create_language_async_loader_default("stan", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_stan" */
-      "/python_for_chemists//build/_shared/stan-QFWT5BN2.js"
+      "/python_for_chemists/build/_shared/stan-QFWT5BN2.js"
     );
   }),
   stata: create_language_async_loader_default("stata", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_stata" */
-      "/python_for_chemists//build/_shared/stata-RITWKLTA.js"
+      "/python_for_chemists/build/_shared/stata-RITWKLTA.js"
     );
   }),
   step21: create_language_async_loader_default("step21", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_step21" */
-      "/python_for_chemists//build/_shared/step21-KBGFBN2Z.js"
+      "/python_for_chemists/build/_shared/step21-KBGFBN2Z.js"
     );
   }),
   stylus: create_language_async_loader_default("stylus", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_stylus" */
-      "/python_for_chemists//build/_shared/stylus-AGGMHNVF.js"
+      "/python_for_chemists/build/_shared/stylus-AGGMHNVF.js"
     );
   }),
   subunit: create_language_async_loader_default("subunit", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_subunit" */
-      "/python_for_chemists//build/_shared/subunit-TBN23I3R.js"
+      "/python_for_chemists/build/_shared/subunit-TBN23I3R.js"
     );
   }),
   swift: create_language_async_loader_default("swift", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_swift" */
-      "/python_for_chemists//build/_shared/swift-2RPS6J6S.js"
+      "/python_for_chemists/build/_shared/swift-2RPS6J6S.js"
     );
   }),
   taggerscript: create_language_async_loader_default("taggerscript", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_taggerscript" */
-      "/python_for_chemists//build/_shared/taggerscript-M2XFEJXS.js"
+      "/python_for_chemists/build/_shared/taggerscript-M2XFEJXS.js"
     );
   }),
   tap: create_language_async_loader_default("tap", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_tap" */
-      "/python_for_chemists//build/_shared/tap-6BP2H7WO.js"
+      "/python_for_chemists/build/_shared/tap-6BP2H7WO.js"
     );
   }),
   tcl: create_language_async_loader_default("tcl", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_tcl" */
-      "/python_for_chemists//build/_shared/tcl-7UABWQRL.js"
+      "/python_for_chemists/build/_shared/tcl-7UABWQRL.js"
     );
   }),
   thrift: create_language_async_loader_default("thrift", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_thrift" */
-      "/python_for_chemists//build/_shared/thrift-D66KLTA6.js"
+      "/python_for_chemists/build/_shared/thrift-D66KLTA6.js"
     );
   }),
   tp: create_language_async_loader_default("tp", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_tp" */
-      "/python_for_chemists//build/_shared/tp-OLENCBUQ.js"
+      "/python_for_chemists/build/_shared/tp-OLENCBUQ.js"
     );
   }),
   twig: create_language_async_loader_default("twig", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_twig" */
-      "/python_for_chemists//build/_shared/twig-72ZCO7SO.js"
+      "/python_for_chemists/build/_shared/twig-72ZCO7SO.js"
     );
   }),
   typescript: create_language_async_loader_default("typescript", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_typescript" */
-      "/python_for_chemists//build/_shared/typescript-I53XKLFK.js"
+      "/python_for_chemists/build/_shared/typescript-I53XKLFK.js"
     );
   }),
   vala: create_language_async_loader_default("vala", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_vala" */
-      "/python_for_chemists//build/_shared/vala-VXYUZK6S.js"
+      "/python_for_chemists/build/_shared/vala-VXYUZK6S.js"
     );
   }),
   vbnet: create_language_async_loader_default("vbnet", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_vbnet" */
-      "/python_for_chemists//build/_shared/vbnet-HRXLSA35.js"
+      "/python_for_chemists/build/_shared/vbnet-HRXLSA35.js"
     );
   }),
   vbscriptHtml: create_language_async_loader_default("vbscriptHtml", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_vbscriptHtml" */
-      "/python_for_chemists//build/_shared/vbscript-html-XLLGZQMF.js"
+      "/python_for_chemists/build/_shared/vbscript-html-XLLGZQMF.js"
     );
   }),
   vbscript: create_language_async_loader_default("vbscript", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_vbscript" */
-      "/python_for_chemists//build/_shared/vbscript-HEZ7VS2Y.js"
+      "/python_for_chemists/build/_shared/vbscript-HEZ7VS2Y.js"
     );
   }),
   verilog: create_language_async_loader_default("verilog", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_verilog" */
-      "/python_for_chemists//build/_shared/verilog-3M6HMXRK.js"
+      "/python_for_chemists/build/_shared/verilog-3M6HMXRK.js"
     );
   }),
   vhdl: create_language_async_loader_default("vhdl", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_vhdl" */
-      "/python_for_chemists//build/_shared/vhdl-2JQWEDPL.js"
+      "/python_for_chemists/build/_shared/vhdl-2JQWEDPL.js"
     );
   }),
   vim: create_language_async_loader_default("vim", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_vim" */
-      "/python_for_chemists//build/_shared/vim-GWBSWV4C.js"
+      "/python_for_chemists/build/_shared/vim-GWBSWV4C.js"
     );
   }),
   x86asm: create_language_async_loader_default("x86asm", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_x86asm" */
-      "/python_for_chemists//build/_shared/x86asm-APHZLTJU.js"
+      "/python_for_chemists/build/_shared/x86asm-APHZLTJU.js"
     );
   }),
   xl: create_language_async_loader_default("xl", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_xl" */
-      "/python_for_chemists//build/_shared/xl-7P4TFZJG.js"
+      "/python_for_chemists/build/_shared/xl-7P4TFZJG.js"
     );
   }),
   xml: create_language_async_loader_default("xml", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_xml" */
-      "/python_for_chemists//build/_shared/xml-URPKGRLJ.js"
+      "/python_for_chemists/build/_shared/xml-URPKGRLJ.js"
     );
   }),
   xquery: create_language_async_loader_default("xquery", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_xquery" */
-      "/python_for_chemists//build/_shared/xquery-4GTGNZHA.js"
+      "/python_for_chemists/build/_shared/xquery-4GTGNZHA.js"
     );
   }),
   yaml: create_language_async_loader_default("yaml", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_yaml" */
-      "/python_for_chemists//build/_shared/yaml-NBGEA765.js"
+      "/python_for_chemists/build/_shared/yaml-NBGEA765.js"
     );
   }),
   zephir: create_language_async_loader_default("zephir", function() {
     return import(
       /* webpackChunkName: "react-syntax-highlighter_languages_highlight_zephir" */
-      "/python_for_chemists//build/_shared/zephir-UIPJ2B4I.js"
+      "/python_for_chemists/build/_shared/zephir-UIPJ2B4I.js"
     );
   })
 };
@@ -95388,7 +95388,7 @@ var light_async_default = async_syntax_highlighter_default({
   loader: function loader() {
     return import(
       /* webpackChunkName:"react-syntax-highlighter/lowlight-import" */
-      "/python_for_chemists//build/_shared/core-Z44T46PJ.js"
+      "/python_for_chemists/build/_shared/core-Z44T46PJ.js"
     ).then(function(module) {
       return module["default"] || module;
     });
@@ -104613,8 +104613,8 @@ function downloadBlob(filename, blob) {
 }
 function saveDocxFile(filename, mdast) {
   return __awaiter3(this, void 0, void 0, function* () {
-    const { unified } = yield import("/python_for_chemists//build/_shared/unified-WRWGV356.js");
-    const { mystToDocx, fetchImagesAsBuffers } = yield import("/python_for_chemists//build/_shared/dist-5Q6NXYLZ.js");
+    const { unified } = yield import("/python_for_chemists/build/_shared/unified-WRWGV356.js");
+    const { mystToDocx, fetchImagesAsBuffers } = yield import("/python_for_chemists/build/_shared/dist-5Q6NXYLZ.js");
     const tree = JSON.parse(JSON.stringify(mdast));
     const opts = yield fetchImagesAsBuffers(tree);
     const docxBlob = yield unified().use(mystToDocx, opts).stringify(tree).result;
@@ -104647,20 +104647,20 @@ function getFrontmatter(vfile, tree) {
 function parse2(text, defaultFrontmatter, options) {
   return __awaiter3(this, void 0, void 0, function* () {
     var _a, _b, _c;
-    const { visit } = yield import("/python_for_chemists//build/_shared/unist-util-visit-O7D3UJFN.js");
-    const { unified } = yield import("/python_for_chemists//build/_shared/unified-WRWGV356.js");
-    const { mystParse } = yield import("/python_for_chemists//build/_shared/dist-LXYLGOUT.js");
-    const { mathPlugin, footnotesPlugin, keysPlugin, htmlPlugin, reconstructHtmlPlugin, basicTransformationsPlugin, enumerateTargetsPlugin, resolveReferencesPlugin, WikiTransformer, GithubTransformer, DOITransformer, RRIDTransformer, RORTransformer, linksPlugin, ReferenceState, abbreviationPlugin, glossaryPlugin, joinGatesPlugin } = yield import("/python_for_chemists//build/_shared/dist-FDKBWCQ6.js");
-    const { default: mystToTex } = yield import("/python_for_chemists//build/_shared/dist-K6SQELBU.js");
-    const { default: mystToTypst } = yield import("/python_for_chemists//build/_shared/dist-XPT4CEBR.js");
-    const { default: mystToJats } = yield import("/python_for_chemists//build/_shared/dist-QKOOMYAF.js").catch(() => ({ default: null }));
-    const { mystToHtml } = yield import("/python_for_chemists//build/_shared/dist-C3BJ2CXQ.js");
-    const { buttonRole } = yield import("/python_for_chemists//build/_shared/dist-JBJC3W4I.js");
-    const { cardDirective } = yield import("/python_for_chemists//build/_shared/dist-CG3I3ZBM.js");
-    const { gridDirectives } = yield import("/python_for_chemists//build/_shared/dist-GWMOJ7IX.js");
-    const { tabDirectives } = yield import("/python_for_chemists//build/_shared/dist-4TCTIEL4.js");
-    const { proofDirective } = yield import("/python_for_chemists//build/_shared/dist-CHBDMFYC.js");
-    const { exerciseDirectives } = yield import("/python_for_chemists//build/_shared/dist-WH5IDONK.js");
+    const { visit } = yield import("/python_for_chemists/build/_shared/unist-util-visit-O7D3UJFN.js");
+    const { unified } = yield import("/python_for_chemists/build/_shared/unified-WRWGV356.js");
+    const { mystParse } = yield import("/python_for_chemists/build/_shared/dist-LXYLGOUT.js");
+    const { mathPlugin, footnotesPlugin, keysPlugin, htmlPlugin, reconstructHtmlPlugin, basicTransformationsPlugin, enumerateTargetsPlugin, resolveReferencesPlugin, WikiTransformer, GithubTransformer, DOITransformer, RRIDTransformer, RORTransformer, linksPlugin, ReferenceState, abbreviationPlugin, glossaryPlugin, joinGatesPlugin } = yield import("/python_for_chemists/build/_shared/dist-FDKBWCQ6.js");
+    const { default: mystToTex } = yield import("/python_for_chemists/build/_shared/dist-K6SQELBU.js");
+    const { default: mystToTypst } = yield import("/python_for_chemists/build/_shared/dist-XPT4CEBR.js");
+    const { default: mystToJats } = yield import("/python_for_chemists/build/_shared/dist-QKOOMYAF.js").catch(() => ({ default: null }));
+    const { mystToHtml } = yield import("/python_for_chemists/build/_shared/dist-C3BJ2CXQ.js");
+    const { buttonRole } = yield import("/python_for_chemists/build/_shared/dist-JBJC3W4I.js");
+    const { cardDirective } = yield import("/python_for_chemists/build/_shared/dist-CG3I3ZBM.js");
+    const { gridDirectives } = yield import("/python_for_chemists/build/_shared/dist-GWMOJ7IX.js");
+    const { tabDirectives } = yield import("/python_for_chemists/build/_shared/dist-4TCTIEL4.js");
+    const { proofDirective } = yield import("/python_for_chemists/build/_shared/dist-CHBDMFYC.js");
+    const { exerciseDirectives } = yield import("/python_for_chemists/build/_shared/dist-WH5IDONK.js");
     const vfile = new VFile();
     const parseMyst = (content) => mystParse(content, {
       markdownit: { linkify: true },
@@ -104887,7 +104887,7 @@ var _mermaid = void 0;
 function loadMermaid() {
   return __awaiter4(this, void 0, void 0, function* () {
     if (_mermaid === void 0) {
-      const module = yield import("/python_for_chemists//build/_shared/mermaid.core-BRCSVNUK.js");
+      const module = yield import("/python_for_chemists/build/_shared/mermaid.core-BRCSVNUK.js");
       _mermaid = module.default;
       _mermaid.initialize({ startOnLoad: false });
     }
@@ -105849,7 +105849,7 @@ function useLoadPlotly() {
   (0, import_react72.useEffect)(() => {
     if (plotly)
       return;
-    import("/python_for_chemists//build/_shared/plotly-renderer-MVA6RQ6V.js").then((module) => {
+    import("/python_for_chemists/build/_shared/plotly-renderer-MVA6RQ6V.js").then((module) => {
       console.debug("Jupyter: Adding plotly renderer factory to rendermime registry", {
         module
       });
@@ -105871,7 +105871,7 @@ function usePlotlyPassively(rendermime, outputs) {
   (0, import_react72.useEffect)(() => {
     if (loaded || !isPlotlyOutput)
       return;
-    import("/python_for_chemists//build/_shared/plotly-renderer-MVA6RQ6V.js").then((module) => {
+    import("/python_for_chemists/build/_shared/plotly-renderer-MVA6RQ6V.js").then((module) => {
       console.debug("Jupyter: Adding plotly renderer factory to rendermime registry", {
         module
       });
@@ -107591,4 +107591,4 @@ jquery/dist/jquery.js:
    * Date: 2023-08-28T13:37Z
    *)
 */
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-QYHIDYQN.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-QYHIDYQN.js.map

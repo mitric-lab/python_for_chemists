@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/perl.js
 function look(stream, c) {
@@ -1114,4 +1114,4 @@ init_perl();
 export {
   perl
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/perl-ACC5MR7G.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/perl-ACC5MR7G.js.map

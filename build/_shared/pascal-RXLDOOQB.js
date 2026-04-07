@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/pascal.js
 function words(str) {
@@ -120,4 +120,4 @@ init_pascal();
 export {
   pascal
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/pascal-RXLDOOQB.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/pascal-RXLDOOQB.js.map

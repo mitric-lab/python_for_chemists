@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/hsp.js
 var require_hsp = __commonJS({
@@ -60,4 +60,4 @@ var require_hsp = __commonJS({
   }
 });
 export default require_hsp();
-//# sourceMappingURL=/python_for_chemists//build/_shared/hsp-AWPNJWHJ.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/hsp-AWPNJWHJ.js.map

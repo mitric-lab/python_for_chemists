@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/haxe.js
 var require_haxe = __commonJS({
@@ -160,4 +160,4 @@ var require_haxe = __commonJS({
   }
 });
 export default require_haxe();
-//# sourceMappingURL=/python_for_chemists//build/_shared/haxe-OJMFVDER.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/haxe-OJMFVDER.js.map

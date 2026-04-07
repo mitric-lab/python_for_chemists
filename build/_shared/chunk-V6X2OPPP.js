@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/xeora.js
 var require_xeora = __commonJS({
@@ -133,4 +133,4 @@ var require_xeora = __commonJS({
 export {
   require_xeora
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-V6X2OPPP.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-V6X2OPPP.js.map

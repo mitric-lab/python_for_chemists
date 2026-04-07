@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/docker.js
 var require_docker = __commonJS({
@@ -118,4 +118,4 @@ var require_docker = __commonJS({
 export {
   require_docker
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-52XF5LFV.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-52XF5LFV.js.map

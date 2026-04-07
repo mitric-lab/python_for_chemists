@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/ada.js
 var require_ada = __commonJS({
@@ -151,4 +151,4 @@ var require_ada = __commonJS({
   }
 });
 export default require_ada();
-//# sourceMappingURL=/python_for_chemists//build/_shared/ada-KCSJZC4T.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/ada-KCSJZC4T.js.map

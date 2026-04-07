@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/lua.js
 var require_lua = __commonJS({
@@ -36,4 +36,4 @@ var require_lua = __commonJS({
 export {
   require_lua
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-QZILPKJ6.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-QZILPKJ6.js.map

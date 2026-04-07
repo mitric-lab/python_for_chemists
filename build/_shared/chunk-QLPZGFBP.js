@@ -1,6 +1,6 @@
 import {
   Graph
-} from "/python_for_chemists//build/_shared/chunk-E6IIAUT5.js";
+} from "/python_for_chemists/build/_shared/chunk-E6IIAUT5.js";
 import {
   defaults_default,
   filter_default,
@@ -20,7 +20,7 @@ import {
   sortBy_default,
   values_default,
   zipObject_default
-} from "/python_for_chemists//build/_shared/chunk-75Y45RJ5.js";
+} from "/python_for_chemists/build/_shared/chunk-75Y45RJ5.js";
 import {
   cloneDeep_default,
   flatten_default,
@@ -29,12 +29,12 @@ import {
   pick_default,
   reduce_default,
   uniqueId_default
-} from "/python_for_chemists//build/_shared/chunk-5XJWQ5WJ.js";
+} from "/python_for_chemists/build/_shared/chunk-5XJWQ5WJ.js";
 import {
   constant_default,
   isArray_default,
   merge_default
-} from "/python_for_chemists//build/_shared/chunk-T7QTAV5N.js";
+} from "/python_for_chemists/build/_shared/chunk-T7QTAV5N.js";
 
 // ../../node_modules/dagre-d3-es/src/dagre/util.js
 function addDummyNode(g, type, attrs, name) {
@@ -2050,4 +2050,4 @@ function canonicalize(attrs) {
 export {
   layout
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-QLPZGFBP.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-QLPZGFBP.js.map

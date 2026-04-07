@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/javadoclike.js
 var require_javadoclike = __commonJS({
@@ -84,4 +84,4 @@ var require_javadoclike = __commonJS({
 export {
   require_javadoclike
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-XG7NZX75.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-XG7NZX75.js.map

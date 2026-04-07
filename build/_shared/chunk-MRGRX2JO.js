@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/csv.js
 var require_csv = __commonJS({
@@ -20,4 +20,4 @@ var require_csv = __commonJS({
 export {
   require_csv
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-MRGRX2JO.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-MRGRX2JO.js.map

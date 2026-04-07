@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/swift.js
 var require_swift = __commonJS({
@@ -799,4 +799,4 @@ var require_swift = __commonJS({
   }
 });
 export default require_swift();
-//# sourceMappingURL=/python_for_chemists//build/_shared/swift-2RPS6J6S.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/swift-2RPS6J6S.js.map

@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/plotly.js/dist/plotly.js
 var require_plotly = __commonJS({
@@ -284765,4 +284765,4 @@ plotly.js/dist/plotly.js:
    * @license 3-Clause BSD. Full text of license: https://github.com/maplibre/maplibre-gl-js/blob/v4.5.2/LICENSE.txt
    *)
 */
-//# sourceMappingURL=/python_for_chemists//build/_shared/plotly-ELWLZ5EC.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/plotly-ELWLZ5EC.js.map

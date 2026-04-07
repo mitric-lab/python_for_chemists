@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/dts.js
 var require_dts = __commonJS({
@@ -142,4 +142,4 @@ var require_dts = __commonJS({
   }
 });
 export default require_dts();
-//# sourceMappingURL=/python_for_chemists//build/_shared/dts-DRX5TT4I.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/dts-DRX5TT4I.js.map

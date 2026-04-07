@@ -1,6 +1,6 @@
 import {
   __name
-} from "/python_for_chemists//build/_shared/chunk-7PDOACA3.js";
+} from "/python_for_chemists/build/_shared/chunk-7PDOACA3.js";
 
 // ../../node_modules/mermaid/dist/chunks/mermaid.core/chunk-CVBHYZKI.mjs
 var getSubGraphTitleMargins = /* @__PURE__ */ __name(({
@@ -19,4 +19,4 @@ var getSubGraphTitleMargins = /* @__PURE__ */ __name(({
 export {
   getSubGraphTitleMargins
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-6ICL6EEV.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-6ICL6EEV.js.map

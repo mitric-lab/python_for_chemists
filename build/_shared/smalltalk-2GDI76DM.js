@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/smalltalk.js
 var specialChars, keywords, Context, Token, State, next, nextComment, nextString, nextSymbol, nextTemporaries, smalltalk;
@@ -130,4 +130,4 @@ init_smalltalk();
 export {
   smalltalk
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/smalltalk-2GDI76DM.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/smalltalk-2GDI76DM.js.map

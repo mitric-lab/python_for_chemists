@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/crystal.js
 var require_crystal = __commonJS({
@@ -320,4 +320,4 @@ var require_crystal = __commonJS({
   }
 });
 export default require_crystal();
-//# sourceMappingURL=/python_for_chemists//build/_shared/crystal-TKRKPCIQ.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/crystal-TKRKPCIQ.js.map

@@ -17,10 +17,10 @@ import {
   styleTags,
   syntaxTree,
   tags
-} from "/python_for_chemists//build/_shared/chunk-3I3NFLZ5.js";
+} from "/python_for_chemists/build/_shared/chunk-3I3NFLZ5.js";
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@lezer/css/dist/index.js
 function isAlpha(ch) {
@@ -1081,4 +1081,4 @@ export {
   css,
   init_dist6 as init_dist
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-H6SVTQIS.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-H6SVTQIS.js.map

@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/nasm.js
 var require_nasm = __commonJS({
@@ -40,4 +40,4 @@ var require_nasm = __commonJS({
 export {
   require_nasm
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-LR3PFHLY.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-LR3PFHLY.js.map

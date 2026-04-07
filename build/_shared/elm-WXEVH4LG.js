@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/elm.js
 var require_elm = __commonJS({
@@ -118,4 +118,4 @@ var require_elm = __commonJS({
   }
 });
 export default require_elm();
-//# sourceMappingURL=/python_for_chemists//build/_shared/elm-WXEVH4LG.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/elm-WXEVH4LG.js.map

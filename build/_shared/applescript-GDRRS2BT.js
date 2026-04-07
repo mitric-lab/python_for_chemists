@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/applescript.js
 var require_applescript = __commonJS({
@@ -146,4 +146,4 @@ var require_applescript = __commonJS({
   }
 });
 export default require_applescript();
-//# sourceMappingURL=/python_for_chemists//build/_shared/applescript-GDRRS2BT.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/applescript-GDRRS2BT.js.map

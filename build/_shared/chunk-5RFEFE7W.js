@@ -1,9 +1,9 @@
 import {
   require_haskell
-} from "/python_for_chemists//build/_shared/chunk-SMNNMFAT.js";
+} from "/python_for_chemists/build/_shared/chunk-SMNNMFAT.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/idris.js
 var require_idris = __commonJS({
@@ -38,4 +38,4 @@ var require_idris = __commonJS({
 export {
   require_idris
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-5RFEFE7W.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-5RFEFE7W.js.map

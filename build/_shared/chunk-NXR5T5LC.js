@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/gedcom.js
 var require_gedcom = __commonJS({
@@ -44,4 +44,4 @@ var require_gedcom = __commonJS({
 export {
   require_gedcom
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-NXR5T5LC.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-NXR5T5LC.js.map

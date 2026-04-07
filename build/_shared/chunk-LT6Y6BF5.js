@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/vhdl.js
 var require_vhdl = __commonJS({
@@ -39,4 +39,4 @@ var require_vhdl = __commonJS({
 export {
   require_vhdl
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-LT6Y6BF5.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-LT6Y6BF5.js.map

@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/arduino.js
 var require_arduino = __commonJS({
@@ -430,4 +430,4 @@ var require_arduino = __commonJS({
   }
 });
 export default require_arduino();
-//# sourceMappingURL=/python_for_chemists//build/_shared/arduino-ONLMH7IA.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/arduino-ONLMH7IA.js.map

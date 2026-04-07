@@ -1,12 +1,12 @@
 import {
   addCommonDirectiveOptions,
   commonDirectiveOptions
-} from "/python_for_chemists//build/_shared/chunk-2GZXDR27.js";
-import "/python_for_chemists//build/_shared/chunk-DOEQHMLC.js";
-import "/python_for_chemists//build/_shared/chunk-ZNG4DSCS.js";
-import "/python_for_chemists//build/_shared/chunk-Q6DHUCUI.js";
-import "/python_for_chemists//build/_shared/chunk-LPSXN4QV.js";
-import "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-2GZXDR27.js";
+import "/python_for_chemists/build/_shared/chunk-DOEQHMLC.js";
+import "/python_for_chemists/build/_shared/chunk-ZNG4DSCS.js";
+import "/python_for_chemists/build/_shared/chunk-Q6DHUCUI.js";
+import "/python_for_chemists/build/_shared/chunk-LPSXN4QV.js";
+import "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/myst-ext-tabs/dist/index.js
 var tabSetDirective = {
@@ -65,4 +65,4 @@ export {
   tabItemDirective,
   tabSetDirective
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/dist-4TCTIEL4.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/dist-4TCTIEL4.js.map

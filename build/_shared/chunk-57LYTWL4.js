@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/turtle.js
 var require_turtle = __commonJS({
@@ -67,4 +67,4 @@ var require_turtle = __commonJS({
 export {
   require_turtle
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-57LYTWL4.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-57LYTWL4.js.map

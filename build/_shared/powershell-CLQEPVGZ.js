@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/powershell.js
 var require_powershell = __commonJS({
@@ -278,4 +278,4 @@ var require_powershell = __commonJS({
   }
 });
 export default require_powershell();
-//# sourceMappingURL=/python_for_chemists//build/_shared/powershell-CLQEPVGZ.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/powershell-CLQEPVGZ.js.map

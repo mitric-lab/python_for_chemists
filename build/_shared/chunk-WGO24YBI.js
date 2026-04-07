@@ -9,7 +9,7 @@ import {
   createDefaultSharedCoreModule,
   inject,
   lib_exports
-} from "/python_for_chemists//build/_shared/chunk-5TL5RV2T.js";
+} from "/python_for_chemists/build/_shared/chunk-5TL5RV2T.js";
 
 // ../../node_modules/@mermaid-js/parser/dist/chunks/mermaid-parser.core/chunk-S6J4BHB3.mjs
 var GitGraphTokenBuilder = class extends AbstractMermaidTokenBuilder {
@@ -45,4 +45,4 @@ export {
   GitGraphModule,
   createGitGraphServices
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-WGO24YBI.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-WGO24YBI.js.map

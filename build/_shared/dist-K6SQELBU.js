@@ -8,9 +8,9 @@ import {
   selectAll,
   toText,
   writeTexLabelledComment
-} from "/python_for_chemists//build/_shared/chunk-Q6DHUCUI.js";
-import "/python_for_chemists//build/_shared/chunk-LPSXN4QV.js";
-import "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-Q6DHUCUI.js";
+import "/python_for_chemists/build/_shared/chunk-LPSXN4QV.js";
+import "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/myst-to-tex/dist/types.js
 var DEFAULT_IMAGE_WIDTH = 0.7;
@@ -1475,4 +1475,4 @@ export {
   generatePreamble,
   mergePreambles
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/dist-K6SQELBU.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/dist-K6SQELBU.js.map

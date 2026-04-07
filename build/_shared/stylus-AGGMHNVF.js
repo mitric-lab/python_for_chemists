@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/stylus.js
 var require_stylus = __commonJS({
@@ -603,4 +603,4 @@ var require_stylus = __commonJS({
   }
 });
 export default require_stylus();
-//# sourceMappingURL=/python_for_chemists//build/_shared/stylus-AGGMHNVF.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/stylus-AGGMHNVF.js.map

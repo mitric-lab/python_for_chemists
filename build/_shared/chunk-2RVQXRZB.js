@@ -1,11 +1,11 @@
 import {
   require_react
-} from "/python_for_chemists//build/_shared/chunk-3RNZ6DIW.js";
+} from "/python_for_chemists/build/_shared/chunk-3RNZ6DIW.js";
 import {
   __commonJS,
   __esm,
   __toESM
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@remix-run/router/dist/router.js
 function _extends() {
@@ -6968,4 +6968,4 @@ react/cjs/react-jsx-dev-runtime.development.js:
    * @license MIT
    *)
 */
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-2RVQXRZB.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-2RVQXRZB.js.map

@@ -1,9 +1,9 @@
 import {
   require_basic
-} from "/python_for_chemists//build/_shared/chunk-4PPREKOU.js";
+} from "/python_for_chemists/build/_shared/chunk-4PPREKOU.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/vbnet.js
 var require_vbnet = __commonJS({
@@ -43,4 +43,4 @@ var require_vbnet = __commonJS({
 export {
   require_vbnet
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-XZPFVGSQ.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-XZPFVGSQ.js.map

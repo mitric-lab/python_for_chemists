@@ -1,6 +1,6 @@
 import {
   require_makefile
-} from "/python_for_chemists//build/_shared/chunk-27VJNWHW.js";
-import "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-27VJNWHW.js";
+import "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 export default require_makefile();
-//# sourceMappingURL=/python_for_chemists//build/_shared/makefile-Q4FDR5EE.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/makefile-Q4FDR5EE.js.map

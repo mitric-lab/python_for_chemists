@@ -1,6 +1,6 @@
 import {
   require_perl
-} from "/python_for_chemists//build/_shared/chunk-I3K3XOVW.js";
-import "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-I3K3XOVW.js";
+import "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 export default require_perl();
-//# sourceMappingURL=/python_for_chemists//build/_shared/perl-TO6Y3M7P.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/perl-TO6Y3M7P.js.map

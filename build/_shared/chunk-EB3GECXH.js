@@ -1,16 +1,16 @@
 import {
   getDiagramElement
-} from "/python_for_chemists//build/_shared/chunk-725C7MY3.js";
+} from "/python_for_chemists/build/_shared/chunk-725C7MY3.js";
 import {
   setupViewPortForSVG
-} from "/python_for_chemists//build/_shared/chunk-WMU6LCGH.js";
+} from "/python_for_chemists/build/_shared/chunk-WMU6LCGH.js";
 import {
   render
-} from "/python_for_chemists//build/_shared/chunk-QDIBAP63.js";
+} from "/python_for_chemists/build/_shared/chunk-QDIBAP63.js";
 import {
   generateId,
   utils_default
-} from "/python_for_chemists//build/_shared/chunk-WEDXSMQA.js";
+} from "/python_for_chemists/build/_shared/chunk-WEDXSMQA.js";
 import {
   clear,
   common_default,
@@ -21,11 +21,11 @@ import {
   setAccDescription,
   setAccTitle,
   setDiagramTitle
-} from "/python_for_chemists//build/_shared/chunk-463FZTZ7.js";
+} from "/python_for_chemists/build/_shared/chunk-463FZTZ7.js";
 import {
   __name,
   log
-} from "/python_for_chemists//build/_shared/chunk-7PDOACA3.js";
+} from "/python_for_chemists/build/_shared/chunk-7PDOACA3.js";
 
 // ../../node_modules/mermaid/dist/chunks/mermaid.core/chunk-DI55MBZ5.mjs
 var parser = function() {
@@ -2021,4 +2021,4 @@ export {
   StateDB,
   styles_default
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-EB3GECXH.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-EB3GECXH.js.map

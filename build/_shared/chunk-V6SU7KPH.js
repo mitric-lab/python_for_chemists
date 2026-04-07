@@ -1,21 +1,21 @@
 import {
   decodeEntities
-} from "/python_for_chemists//build/_shared/chunk-WEDXSMQA.js";
+} from "/python_for_chemists/build/_shared/chunk-WEDXSMQA.js";
 import {
   common_default,
   getConfig,
   hasKatex,
   renderKatexSanitized,
   sanitizeText
-} from "/python_for_chemists//build/_shared/chunk-463FZTZ7.js";
+} from "/python_for_chemists/build/_shared/chunk-463FZTZ7.js";
 import {
   __name,
   log,
   select_default
-} from "/python_for_chemists//build/_shared/chunk-7PDOACA3.js";
+} from "/python_for_chemists/build/_shared/chunk-7PDOACA3.js";
 import {
   __publicField
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/ts-dedent/esm/index.js
 function dedent(templ) {
@@ -2061,4 +2061,4 @@ export {
   replaceIconSubstring,
   createText
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-V6SU7KPH.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-V6SU7KPH.js.map

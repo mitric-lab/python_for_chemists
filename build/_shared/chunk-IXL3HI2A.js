@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/parser.js
 var require_parser = __commonJS({
@@ -91,4 +91,4 @@ var require_parser = __commonJS({
 export {
   require_parser
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-IXL3HI2A.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-IXL3HI2A.js.map

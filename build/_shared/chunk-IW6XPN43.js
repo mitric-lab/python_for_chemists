@@ -1,11 +1,11 @@
 import {
   init_isString,
   isString_default
-} from "/python_for_chemists//build/_shared/chunk-5XJWQ5WJ.js";
+} from "/python_for_chemists/build/_shared/chunk-5XJWQ5WJ.js";
 import {
   require_client,
   require_react
-} from "/python_for_chemists//build/_shared/chunk-3RNZ6DIW.js";
+} from "/python_for_chemists/build/_shared/chunk-3RNZ6DIW.js";
 import {
   __commonJS,
   __esm,
@@ -13,7 +13,7 @@ import {
   __require,
   __toCommonJS,
   __toESM
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@lumino/algorithm/dist/index.es6.js
 var index_es6_exports = {};
@@ -12465,7 +12465,7 @@ var init_lib = __esm({
 var bad_default;
 var init_bad = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/debug/bad.svg"() {
-    bad_default = "/python_for_chemists//build/_assets/bad-FQMIYYET.svg";
+    bad_default = "/python_for_chemists/build/_assets/bad-FQMIYYET.svg";
   }
 });
 
@@ -12473,7 +12473,7 @@ var init_bad = __esm({
 var blank_default;
 var init_blank = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/debug/blank.svg"() {
-    blank_default = "/python_for_chemists//build/_assets/blank-US55MPOI.svg";
+    blank_default = "/python_for_chemists/build/_assets/blank-US55MPOI.svg";
   }
 });
 
@@ -12481,7 +12481,7 @@ var init_blank = __esm({
 var refresh_default;
 var init_refresh = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/refresh.svg"() {
-    refresh_default = "/python_for_chemists//build/_assets/refresh-6QLTU3ED.svg";
+    refresh_default = "/python_for_chemists/build/_assets/refresh-6QLTU3ED.svg";
   }
 });
 
@@ -14068,7 +14068,7 @@ name: ${name2}, svgstr: ${svgstr}`;
 var add_above_default;
 var init_add_above = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/add-above.svg"() {
-    add_above_default = "/python_for_chemists//build/_assets/add-above-DJUVZDA6.svg";
+    add_above_default = "/python_for_chemists/build/_assets/add-above-DJUVZDA6.svg";
   }
 });
 
@@ -14076,7 +14076,7 @@ var init_add_above = __esm({
 var add_below_default;
 var init_add_below = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/add-below.svg"() {
-    add_below_default = "/python_for_chemists//build/_assets/add-below-JUD23Q32.svg";
+    add_below_default = "/python_for_chemists/build/_assets/add-below-JUD23Q32.svg";
   }
 });
 
@@ -14084,7 +14084,7 @@ var init_add_below = __esm({
 var add_default;
 var init_add = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/add.svg"() {
-    add_default = "/python_for_chemists//build/_assets/add-EXEHS4L2.svg";
+    add_default = "/python_for_chemists/build/_assets/add-EXEHS4L2.svg";
   }
 });
 
@@ -14092,7 +14092,7 @@ var init_add = __esm({
 var audio_default;
 var init_audio = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/audio.svg"() {
-    audio_default = "/python_for_chemists//build/_assets/audio-EHWPVEAB.svg";
+    audio_default = "/python_for_chemists/build/_assets/audio-EHWPVEAB.svg";
   }
 });
 
@@ -14100,7 +14100,7 @@ var init_audio = __esm({
 var bell_default;
 var init_bell = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/statusbar/bell.svg"() {
-    bell_default = "/python_for_chemists//build/_assets/bell-UZR6IG3E.svg";
+    bell_default = "/python_for_chemists/build/_assets/bell-UZR6IG3E.svg";
   }
 });
 
@@ -14108,7 +14108,7 @@ var init_bell = __esm({
 var breakpoint_default;
 var init_breakpoint = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/debugger/breakpoint.svg"() {
-    breakpoint_default = "/python_for_chemists//build/_assets/breakpoint-ESAUWSLU.svg";
+    breakpoint_default = "/python_for_chemists/build/_assets/breakpoint-ESAUWSLU.svg";
   }
 });
 
@@ -14116,7 +14116,7 @@ var init_breakpoint = __esm({
 var bug_dot_default;
 var init_bug_dot = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/bug-dot.svg"() {
-    bug_dot_default = "/python_for_chemists//build/_assets/bug-dot-RWRZ6PJ5.svg";
+    bug_dot_default = "/python_for_chemists/build/_assets/bug-dot-RWRZ6PJ5.svg";
   }
 });
 
@@ -14124,7 +14124,7 @@ var init_bug_dot = __esm({
 var bug_default;
 var init_bug = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/bug.svg"() {
-    bug_default = "/python_for_chemists//build/_assets/bug-TFP464KX.svg";
+    bug_default = "/python_for_chemists/build/_assets/bug-TFP464KX.svg";
   }
 });
 
@@ -14132,7 +14132,7 @@ var init_bug = __esm({
 var build_default;
 var init_build = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/sidebar/build.svg"() {
-    build_default = "/python_for_chemists//build/_assets/build-5VK2B6YU.svg";
+    build_default = "/python_for_chemists/build/_assets/build-5VK2B6YU.svg";
   }
 });
 
@@ -14140,7 +14140,7 @@ var init_build = __esm({
 var caret_down_empty_default;
 var init_caret_down_empty = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/arrow/caret-down-empty.svg"() {
-    caret_down_empty_default = "/python_for_chemists//build/_assets/caret-down-empty-PDAJTPAD.svg";
+    caret_down_empty_default = "/python_for_chemists/build/_assets/caret-down-empty-PDAJTPAD.svg";
   }
 });
 
@@ -14148,7 +14148,7 @@ var init_caret_down_empty = __esm({
 var caret_down_empty_thin_default;
 var init_caret_down_empty_thin = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/arrow/caret-down-empty-thin.svg"() {
-    caret_down_empty_thin_default = "/python_for_chemists//build/_assets/caret-down-empty-thin-WDJR4YZW.svg";
+    caret_down_empty_thin_default = "/python_for_chemists/build/_assets/caret-down-empty-thin-WDJR4YZW.svg";
   }
 });
 
@@ -14156,7 +14156,7 @@ var init_caret_down_empty_thin = __esm({
 var caret_down_default;
 var init_caret_down = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/arrow/caret-down.svg"() {
-    caret_down_default = "/python_for_chemists//build/_assets/caret-down-O345KY3P.svg";
+    caret_down_default = "/python_for_chemists/build/_assets/caret-down-O345KY3P.svg";
   }
 });
 
@@ -14164,7 +14164,7 @@ var init_caret_down = __esm({
 var caret_left_default;
 var init_caret_left = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/arrow/caret-left.svg"() {
-    caret_left_default = "/python_for_chemists//build/_assets/caret-left-LIM3NHXF.svg";
+    caret_left_default = "/python_for_chemists/build/_assets/caret-left-LIM3NHXF.svg";
   }
 });
 
@@ -14172,7 +14172,7 @@ var init_caret_left = __esm({
 var caret_right_default;
 var init_caret_right = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/arrow/caret-right.svg"() {
-    caret_right_default = "/python_for_chemists//build/_assets/caret-right-7TSVDNQT.svg";
+    caret_right_default = "/python_for_chemists/build/_assets/caret-right-7TSVDNQT.svg";
   }
 });
 
@@ -14180,7 +14180,7 @@ var init_caret_right = __esm({
 var caret_up_empty_thin_default;
 var init_caret_up_empty_thin = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/arrow/caret-up-empty-thin.svg"() {
-    caret_up_empty_thin_default = "/python_for_chemists//build/_assets/caret-up-empty-thin-CZ3TJKGB.svg";
+    caret_up_empty_thin_default = "/python_for_chemists/build/_assets/caret-up-empty-thin-CZ3TJKGB.svg";
   }
 });
 
@@ -14188,7 +14188,7 @@ var init_caret_up_empty_thin = __esm({
 var caret_up_default;
 var init_caret_up = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/arrow/caret-up.svg"() {
-    caret_up_default = "/python_for_chemists//build/_assets/caret-up-AOF2BNFW.svg";
+    caret_up_default = "/python_for_chemists/build/_assets/caret-up-AOF2BNFW.svg";
   }
 });
 
@@ -14196,7 +14196,7 @@ var init_caret_up = __esm({
 var case_sensitive_default;
 var init_case_sensitive = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/search/case-sensitive.svg"() {
-    case_sensitive_default = "/python_for_chemists//build/_assets/case-sensitive-SYZQ2IQZ.svg";
+    case_sensitive_default = "/python_for_chemists/build/_assets/case-sensitive-SYZQ2IQZ.svg";
   }
 });
 
@@ -14204,7 +14204,7 @@ var init_case_sensitive = __esm({
 var check_default;
 var init_check = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/check.svg"() {
-    check_default = "/python_for_chemists//build/_assets/check-JMGWD44E.svg";
+    check_default = "/python_for_chemists/build/_assets/check-JMGWD44E.svg";
   }
 });
 
@@ -14212,7 +14212,7 @@ var init_check = __esm({
 var circle_empty_default;
 var init_circle_empty = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/circle-empty.svg"() {
-    circle_empty_default = "/python_for_chemists//build/_assets/circle-empty-4T5YPCG7.svg";
+    circle_empty_default = "/python_for_chemists/build/_assets/circle-empty-4T5YPCG7.svg";
   }
 });
 
@@ -14220,7 +14220,7 @@ var init_circle_empty = __esm({
 var circle_default;
 var init_circle = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/circle.svg"() {
-    circle_default = "/python_for_chemists//build/_assets/circle-TBRY7AKG.svg";
+    circle_default = "/python_for_chemists/build/_assets/circle-TBRY7AKG.svg";
   }
 });
 
@@ -14228,7 +14228,7 @@ var init_circle = __esm({
 var cleaning_default;
 var init_cleaning = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/cleaning.svg"() {
-    cleaning_default = "/python_for_chemists//build/_assets/cleaning-VHKWIOHC.svg";
+    cleaning_default = "/python_for_chemists/build/_assets/cleaning-VHKWIOHC.svg";
   }
 });
 
@@ -14236,7 +14236,7 @@ var init_cleaning = __esm({
 var clear_default;
 var init_clear = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/clear.svg"() {
-    clear_default = "/python_for_chemists//build/_assets/clear-SYYJCOUN.svg";
+    clear_default = "/python_for_chemists/build/_assets/clear-SYYJCOUN.svg";
   }
 });
 
@@ -14244,7 +14244,7 @@ var init_clear = __esm({
 var close_all_default;
 var init_close_all = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/debugger/close-all.svg"() {
-    close_all_default = "/python_for_chemists//build/_assets/close-all-QYKV7C7H.svg";
+    close_all_default = "/python_for_chemists/build/_assets/close-all-QYKV7C7H.svg";
   }
 });
 
@@ -14252,7 +14252,7 @@ var init_close_all = __esm({
 var close_default;
 var init_close = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/close.svg"() {
-    close_default = "/python_for_chemists//build/_assets/close-NU2KBLEM.svg";
+    close_default = "/python_for_chemists/build/_assets/close-NU2KBLEM.svg";
   }
 });
 
@@ -14260,7 +14260,7 @@ var init_close = __esm({
 var code_check_default;
 var init_code_check = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/lsp/code-check.svg"() {
-    code_check_default = "/python_for_chemists//build/_assets/code-check-S36ZPFM6.svg";
+    code_check_default = "/python_for_chemists/build/_assets/code-check-S36ZPFM6.svg";
   }
 });
 
@@ -14268,7 +14268,7 @@ var init_code_check = __esm({
 var code_default;
 var init_code = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/code.svg"() {
-    code_default = "/python_for_chemists//build/_assets/code-5H26NJU2.svg";
+    code_default = "/python_for_chemists/build/_assets/code-5H26NJU2.svg";
   }
 });
 
@@ -14276,7 +14276,7 @@ var init_code = __esm({
 var collapse_all_default;
 var init_collapse_all = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/collapse-all.svg"() {
-    collapse_all_default = "/python_for_chemists//build/_assets/collapse-all-EHMBEKE7.svg";
+    collapse_all_default = "/python_for_chemists/build/_assets/collapse-all-EHMBEKE7.svg";
   }
 });
 
@@ -14284,7 +14284,7 @@ var init_collapse_all = __esm({
 var collapse_default;
 var init_collapse = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/output/collapse.svg"() {
-    collapse_default = "/python_for_chemists//build/_assets/collapse-RSBQCHOJ.svg";
+    collapse_default = "/python_for_chemists/build/_assets/collapse-RSBQCHOJ.svg";
   }
 });
 
@@ -14292,7 +14292,7 @@ var init_collapse = __esm({
 var console_default;
 var init_console = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/console.svg"() {
-    console_default = "/python_for_chemists//build/_assets/console-RIJDZ7YO.svg";
+    console_default = "/python_for_chemists/build/_assets/console-RIJDZ7YO.svg";
   }
 });
 
@@ -14300,7 +14300,7 @@ var init_console = __esm({
 var copy_default;
 var init_copy = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/copy.svg"() {
-    copy_default = "/python_for_chemists//build/_assets/copy-BG7YLYNB.svg";
+    copy_default = "/python_for_chemists/build/_assets/copy-BG7YLYNB.svg";
   }
 });
 
@@ -14308,7 +14308,7 @@ var init_copy = __esm({
 var copyright_default;
 var init_copyright = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/licenses/copyright.svg"() {
-    copyright_default = "/python_for_chemists//build/_assets/copyright-EYOPP2RX.svg";
+    copyright_default = "/python_for_chemists/build/_assets/copyright-EYOPP2RX.svg";
   }
 });
 
@@ -14316,7 +14316,7 @@ var init_copyright = __esm({
 var cut_default;
 var init_cut = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/cut.svg"() {
-    cut_default = "/python_for_chemists//build/_assets/cut-WTMC2L3J.svg";
+    cut_default = "/python_for_chemists/build/_assets/cut-WTMC2L3J.svg";
   }
 });
 
@@ -14324,7 +14324,7 @@ var init_cut = __esm({
 var delete_default;
 var init_delete = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/delete.svg"() {
-    delete_default = "/python_for_chemists//build/_assets/delete-ODP3MM4R.svg";
+    delete_default = "/python_for_chemists/build/_assets/delete-ODP3MM4R.svg";
   }
 });
 
@@ -14332,7 +14332,7 @@ var init_delete = __esm({
 var dock_bottom_default;
 var init_dock_bottom = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/dock-bottom.svg"() {
-    dock_bottom_default = "/python_for_chemists//build/_assets/dock-bottom-364P7VUQ.svg";
+    dock_bottom_default = "/python_for_chemists/build/_assets/dock-bottom-364P7VUQ.svg";
   }
 });
 
@@ -14340,7 +14340,7 @@ var init_dock_bottom = __esm({
 var dock_left_default;
 var init_dock_left = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/dock-left.svg"() {
-    dock_left_default = "/python_for_chemists//build/_assets/dock-left-JTNG2JPR.svg";
+    dock_left_default = "/python_for_chemists/build/_assets/dock-left-JTNG2JPR.svg";
   }
 });
 
@@ -14348,7 +14348,7 @@ var init_dock_left = __esm({
 var dock_right_default;
 var init_dock_right = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/dock-right.svg"() {
-    dock_right_default = "/python_for_chemists//build/_assets/dock-right-LCSRZFJO.svg";
+    dock_right_default = "/python_for_chemists/build/_assets/dock-right-LCSRZFJO.svg";
   }
 });
 
@@ -14356,7 +14356,7 @@ var init_dock_right = __esm({
 var dock_top_default;
 var init_dock_top = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/dock-top.svg"() {
-    dock_top_default = "/python_for_chemists//build/_assets/dock-top-QJNCVPS7.svg";
+    dock_top_default = "/python_for_chemists/build/_assets/dock-top-QJNCVPS7.svg";
   }
 });
 
@@ -14364,7 +14364,7 @@ var init_dock_top = __esm({
 var dots_default;
 var init_dots = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/dots.svg"() {
-    dots_default = "/python_for_chemists//build/_assets/dots-UTPINTYU.svg";
+    dots_default = "/python_for_chemists/build/_assets/dots-UTPINTYU.svg";
   }
 });
 
@@ -14372,7 +14372,7 @@ var init_dots = __esm({
 var download_default;
 var init_download = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/download.svg"() {
-    download_default = "/python_for_chemists//build/_assets/download-2Z72GO5G.svg";
+    download_default = "/python_for_chemists/build/_assets/download-2Z72GO5G.svg";
   }
 });
 
@@ -14380,7 +14380,7 @@ var init_download = __esm({
 var duplicate_default;
 var init_duplicate = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/duplicate.svg"() {
-    duplicate_default = "/python_for_chemists//build/_assets/duplicate-IKKRPCQN.svg";
+    duplicate_default = "/python_for_chemists/build/_assets/duplicate-IKKRPCQN.svg";
   }
 });
 
@@ -14388,7 +14388,7 @@ var init_duplicate = __esm({
 var edit_default;
 var init_edit = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/edit.svg"() {
-    edit_default = "/python_for_chemists//build/_assets/edit-DULKWQS5.svg";
+    edit_default = "/python_for_chemists/build/_assets/edit-DULKWQS5.svg";
   }
 });
 
@@ -14396,7 +14396,7 @@ var init_edit = __esm({
 var ellipses_default;
 var init_ellipses = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/ellipses.svg"() {
-    ellipses_default = "/python_for_chemists//build/_assets/ellipses-DOPMFHFD.svg";
+    ellipses_default = "/python_for_chemists/build/_assets/ellipses-DOPMFHFD.svg";
   }
 });
 
@@ -14404,7 +14404,7 @@ var init_ellipses = __esm({
 var error_default;
 var init_error = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/error.svg"() {
-    error_default = "/python_for_chemists//build/_assets/error-NLUEYA3X.svg";
+    error_default = "/python_for_chemists/build/_assets/error-NLUEYA3X.svg";
   }
 });
 
@@ -14412,7 +14412,7 @@ var init_error = __esm({
 var exceptions_default;
 var init_exceptions = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/debugger/exceptions.svg"() {
-    exceptions_default = "/python_for_chemists//build/_assets/exceptions-4NDLBHYM.svg";
+    exceptions_default = "/python_for_chemists/build/_assets/exceptions-4NDLBHYM.svg";
   }
 });
 
@@ -14420,7 +14420,7 @@ var init_exceptions = __esm({
 var expand_all_default;
 var init_expand_all = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/expand-all.svg"() {
-    expand_all_default = "/python_for_chemists//build/_assets/expand-all-LLL5IAMT.svg";
+    expand_all_default = "/python_for_chemists/build/_assets/expand-all-LLL5IAMT.svg";
   }
 });
 
@@ -14428,7 +14428,7 @@ var init_expand_all = __esm({
 var expand_default;
 var init_expand = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/output/expand.svg"() {
-    expand_default = "/python_for_chemists//build/_assets/expand-P4KBH3BP.svg";
+    expand_default = "/python_for_chemists/build/_assets/expand-P4KBH3BP.svg";
   }
 });
 
@@ -14436,7 +14436,7 @@ var init_expand = __esm({
 var extension_default;
 var init_extension = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/sidebar/extension.svg"() {
-    extension_default = "/python_for_chemists//build/_assets/extension-M557DX5T.svg";
+    extension_default = "/python_for_chemists/build/_assets/extension-M557DX5T.svg";
   }
 });
 
@@ -14444,7 +14444,7 @@ var init_extension = __esm({
 var fast_forward_default;
 var init_fast_forward = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/fast-forward.svg"() {
-    fast_forward_default = "/python_for_chemists//build/_assets/fast-forward-72LR7MZN.svg";
+    fast_forward_default = "/python_for_chemists/build/_assets/fast-forward-72LR7MZN.svg";
   }
 });
 
@@ -14452,7 +14452,7 @@ var init_fast_forward = __esm({
 var file_default;
 var init_file = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/file.svg"() {
-    file_default = "/python_for_chemists//build/_assets/file-ZFA45KYV.svg";
+    file_default = "/python_for_chemists/build/_assets/file-ZFA45KYV.svg";
   }
 });
 
@@ -14460,7 +14460,7 @@ var init_file = __esm({
 var file_upload_default;
 var init_file_upload = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/file-upload.svg"() {
-    file_upload_default = "/python_for_chemists//build/_assets/file-upload-T4IKY7DZ.svg";
+    file_upload_default = "/python_for_chemists/build/_assets/file-upload-T4IKY7DZ.svg";
   }
 });
 
@@ -14468,7 +14468,7 @@ var init_file_upload = __esm({
 var filter_dot_default;
 var init_filter_dot = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/search/filter-dot.svg"() {
-    filter_dot_default = "/python_for_chemists//build/_assets/filter-dot-RRWZDFGJ.svg";
+    filter_dot_default = "/python_for_chemists/build/_assets/filter-dot-RRWZDFGJ.svg";
   }
 });
 
@@ -14476,7 +14476,7 @@ var init_filter_dot = __esm({
 var filter_list_default;
 var init_filter_list = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/filter-list.svg"() {
-    filter_list_default = "/python_for_chemists//build/_assets/filter-list-75E3GUMO.svg";
+    filter_list_default = "/python_for_chemists/build/_assets/filter-list-75E3GUMO.svg";
   }
 });
 
@@ -14484,7 +14484,7 @@ var init_filter_list = __esm({
 var filter_default;
 var init_filter = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/search/filter.svg"() {
-    filter_default = "/python_for_chemists//build/_assets/filter-4E5YWSDN.svg";
+    filter_default = "/python_for_chemists/build/_assets/filter-4E5YWSDN.svg";
   }
 });
 
@@ -14492,7 +14492,7 @@ var init_filter = __esm({
 var folder_favorite_default;
 var init_folder_favorite = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/folder-favorite.svg"() {
-    folder_favorite_default = "/python_for_chemists//build/_assets/folder-favorite-MT5D7EYE.svg";
+    folder_favorite_default = "/python_for_chemists/build/_assets/folder-favorite-MT5D7EYE.svg";
   }
 });
 
@@ -14500,7 +14500,7 @@ var init_folder_favorite = __esm({
 var folder_default;
 var init_folder = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/folder.svg"() {
-    folder_default = "/python_for_chemists//build/_assets/folder-SLNIHPBN.svg";
+    folder_default = "/python_for_chemists/build/_assets/folder-SLNIHPBN.svg";
   }
 });
 
@@ -14508,7 +14508,7 @@ var init_folder = __esm({
 var history_default;
 var init_history = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/history.svg"() {
-    history_default = "/python_for_chemists//build/_assets/history-J7VCQIYQ.svg";
+    history_default = "/python_for_chemists/build/_assets/history-J7VCQIYQ.svg";
   }
 });
 
@@ -14516,7 +14516,7 @@ var init_history = __esm({
 var home_default;
 var init_home = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/home.svg"() {
-    home_default = "/python_for_chemists//build/_assets/home-5Q2FN7D4.svg";
+    home_default = "/python_for_chemists/build/_assets/home-5Q2FN7D4.svg";
   }
 });
 
@@ -14524,7 +14524,7 @@ var init_home = __esm({
 var html5_default;
 var init_html5 = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/html5.svg"() {
-    html5_default = "/python_for_chemists//build/_assets/html5-YHVA3ZAF.svg";
+    html5_default = "/python_for_chemists/build/_assets/html5-YHVA3ZAF.svg";
   }
 });
 
@@ -14532,7 +14532,7 @@ var init_html5 = __esm({
 var image_default;
 var init_image = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/image.svg"() {
-    image_default = "/python_for_chemists//build/_assets/image-HMQWCSCV.svg";
+    image_default = "/python_for_chemists/build/_assets/image-HMQWCSCV.svg";
   }
 });
 
@@ -14540,7 +14540,7 @@ var init_image = __esm({
 var info_default;
 var init_info = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/info.svg"() {
-    info_default = "/python_for_chemists//build/_assets/info-KZC3CSMP.svg";
+    info_default = "/python_for_chemists/build/_assets/info-KZC3CSMP.svg";
   }
 });
 
@@ -14548,7 +14548,7 @@ var init_info = __esm({
 var inspector_default;
 var init_inspector = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/inspector.svg"() {
-    inspector_default = "/python_for_chemists//build/_assets/inspector-WF3WTDME.svg";
+    inspector_default = "/python_for_chemists/build/_assets/inspector-WF3WTDME.svg";
   }
 });
 
@@ -14556,7 +14556,7 @@ var init_inspector = __esm({
 var json_default;
 var init_json = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/json.svg"() {
-    json_default = "/python_for_chemists//build/_assets/json-ICXIIW2Q.svg";
+    json_default = "/python_for_chemists/build/_assets/json-ICXIIW2Q.svg";
   }
 });
 
@@ -14564,7 +14564,7 @@ var init_json = __esm({
 var julia_default;
 var init_julia = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/julia.svg"() {
-    julia_default = "/python_for_chemists//build/_assets/julia-Z43FOCKA.svg";
+    julia_default = "/python_for_chemists/build/_assets/julia-Z43FOCKA.svg";
   }
 });
 
@@ -14572,7 +14572,7 @@ var init_julia = __esm({
 var jupyter_favicon_default;
 var init_jupyter_favicon = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/jupyter/jupyter-favicon.svg"() {
-    jupyter_favicon_default = "/python_for_chemists//build/_assets/jupyter-favicon-BJPTC5W3.svg";
+    jupyter_favicon_default = "/python_for_chemists/build/_assets/jupyter-favicon-BJPTC5W3.svg";
   }
 });
 
@@ -14580,7 +14580,7 @@ var init_jupyter_favicon = __esm({
 var jupyter_default;
 var init_jupyter = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/jupyter/jupyter.svg"() {
-    jupyter_default = "/python_for_chemists//build/_assets/jupyter-CLDTFGKE.svg";
+    jupyter_default = "/python_for_chemists/build/_assets/jupyter-CLDTFGKE.svg";
   }
 });
 
@@ -14588,7 +14588,7 @@ var init_jupyter = __esm({
 var jupyterlab_wordmark_default;
 var init_jupyterlab_wordmark = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/jupyter/jupyterlab-wordmark.svg"() {
-    jupyterlab_wordmark_default = "/python_for_chemists//build/_assets/jupyterlab-wordmark-X46RH4YR.svg";
+    jupyterlab_wordmark_default = "/python_for_chemists/build/_assets/jupyterlab-wordmark-X46RH4YR.svg";
   }
 });
 
@@ -14596,7 +14596,7 @@ var init_jupyterlab_wordmark = __esm({
 var kernel_default;
 var init_kernel = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/statusbar/kernel.svg"() {
-    kernel_default = "/python_for_chemists//build/_assets/kernel-64ZJF2BV.svg";
+    kernel_default = "/python_for_chemists/build/_assets/kernel-64ZJF2BV.svg";
   }
 });
 
@@ -14604,7 +14604,7 @@ var init_kernel = __esm({
 var keyboard_default;
 var init_keyboard = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/keyboard.svg"() {
-    keyboard_default = "/python_for_chemists//build/_assets/keyboard-RPD7WNG3.svg";
+    keyboard_default = "/python_for_chemists/build/_assets/keyboard-RPD7WNG3.svg";
   }
 });
 
@@ -14612,7 +14612,7 @@ var init_keyboard = __esm({
 var launch_default;
 var init_launch = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/launch.svg"() {
-    launch_default = "/python_for_chemists//build/_assets/launch-HTTG5BMY.svg";
+    launch_default = "/python_for_chemists/build/_assets/launch-HTTG5BMY.svg";
   }
 });
 
@@ -14620,7 +14620,7 @@ var init_launch = __esm({
 var launcher_default;
 var init_launcher = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/launcher.svg"() {
-    launcher_default = "/python_for_chemists//build/_assets/launcher-HGLSSDQQ.svg";
+    launcher_default = "/python_for_chemists/build/_assets/launcher-HGLSSDQQ.svg";
   }
 });
 
@@ -14628,7 +14628,7 @@ var init_launcher = __esm({
 var line_form_default;
 var init_line_form = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/statusbar/line-form.svg"() {
-    line_form_default = "/python_for_chemists//build/_assets/line-form-HLFC5GXN.svg";
+    line_form_default = "/python_for_chemists/build/_assets/line-form-HLFC5GXN.svg";
   }
 });
 
@@ -14636,7 +14636,7 @@ var init_line_form = __esm({
 var link_default;
 var init_link = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/link.svg"() {
-    link_default = "/python_for_chemists//build/_assets/link-N3PRXZYS.svg";
+    link_default = "/python_for_chemists/build/_assets/link-N3PRXZYS.svg";
   }
 });
 
@@ -14644,7 +14644,7 @@ var init_link = __esm({
 var list_default;
 var init_list = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/statusbar/list.svg"() {
-    list_default = "/python_for_chemists//build/_assets/list-776XSMFG.svg";
+    list_default = "/python_for_chemists/build/_assets/list-776XSMFG.svg";
   }
 });
 
@@ -14652,7 +14652,7 @@ var init_list = __esm({
 var lock_default;
 var init_lock = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/lock.svg"() {
-    lock_default = "/python_for_chemists//build/_assets/lock-U2OO6ZKE.svg";
+    lock_default = "/python_for_chemists/build/_assets/lock-U2OO6ZKE.svg";
   }
 });
 
@@ -14660,7 +14660,7 @@ var init_lock = __esm({
 var markdown_default;
 var init_markdown = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/markdown.svg"() {
-    markdown_default = "/python_for_chemists//build/_assets/markdown-7VYKMUK4.svg";
+    markdown_default = "/python_for_chemists/build/_assets/markdown-7VYKMUK4.svg";
   }
 });
 
@@ -14668,7 +14668,7 @@ var init_markdown = __esm({
 var mermaid_default;
 var init_mermaid = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/mermaid.svg"() {
-    mermaid_default = "/python_for_chemists//build/_assets/mermaid-4IGUJJE6.svg";
+    mermaid_default = "/python_for_chemists/build/_assets/mermaid-4IGUJJE6.svg";
   }
 });
 
@@ -14676,7 +14676,7 @@ var init_mermaid = __esm({
 var move_down_default;
 var init_move_down = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/move-down.svg"() {
-    move_down_default = "/python_for_chemists//build/_assets/move-down-BK666PUN.svg";
+    move_down_default = "/python_for_chemists/build/_assets/move-down-BK666PUN.svg";
   }
 });
 
@@ -14684,7 +14684,7 @@ var init_move_down = __esm({
 var move_up_default;
 var init_move_up = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/move-up.svg"() {
-    move_up_default = "/python_for_chemists//build/_assets/move-up-AZUX24IH.svg";
+    move_up_default = "/python_for_chemists/build/_assets/move-up-AZUX24IH.svg";
   }
 });
 
@@ -14692,7 +14692,7 @@ var init_move_up = __esm({
 var new_folder_default;
 var init_new_folder = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/new-folder.svg"() {
-    new_folder_default = "/python_for_chemists//build/_assets/new-folder-ZTGUIMZF.svg";
+    new_folder_default = "/python_for_chemists/build/_assets/new-folder-ZTGUIMZF.svg";
   }
 });
 
@@ -14700,7 +14700,7 @@ var init_new_folder = __esm({
 var not_trusted_default;
 var init_not_trusted = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/statusbar/not-trusted.svg"() {
-    not_trusted_default = "/python_for_chemists//build/_assets/not-trusted-WPJCOTBZ.svg";
+    not_trusted_default = "/python_for_chemists/build/_assets/not-trusted-WPJCOTBZ.svg";
   }
 });
 
@@ -14708,7 +14708,7 @@ var init_not_trusted = __esm({
 var notebook_default;
 var init_notebook = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/notebook.svg"() {
-    notebook_default = "/python_for_chemists//build/_assets/notebook-P5FYW3Q3.svg";
+    notebook_default = "/python_for_chemists/build/_assets/notebook-P5FYW3Q3.svg";
   }
 });
 
@@ -14716,7 +14716,7 @@ var init_notebook = __esm({
 var numbering_default;
 var init_numbering = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/numbering.svg"() {
-    numbering_default = "/python_for_chemists//build/_assets/numbering-IHZOKY27.svg";
+    numbering_default = "/python_for_chemists/build/_assets/numbering-IHZOKY27.svg";
   }
 });
 
@@ -14724,7 +14724,7 @@ var init_numbering = __esm({
 var offline_bolt_default;
 var init_offline_bolt = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/offline-bolt.svg"() {
-    offline_bolt_default = "/python_for_chemists//build/_assets/offline-bolt-FWQJODIQ.svg";
+    offline_bolt_default = "/python_for_chemists/build/_assets/offline-bolt-FWQJODIQ.svg";
   }
 });
 
@@ -14732,7 +14732,7 @@ var init_offline_bolt = __esm({
 var open_kernel_source_default;
 var init_open_kernel_source = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/debugger/open-kernel-source.svg"() {
-    open_kernel_source_default = "/python_for_chemists//build/_assets/open-kernel-source-OZS7ZFOI.svg";
+    open_kernel_source_default = "/python_for_chemists/build/_assets/open-kernel-source-OZS7ZFOI.svg";
   }
 });
 
@@ -14740,7 +14740,7 @@ var init_open_kernel_source = __esm({
 var palette_default;
 var init_palette = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/sidebar/palette.svg"() {
-    palette_default = "/python_for_chemists//build/_assets/palette-HCEGY3LH.svg";
+    palette_default = "/python_for_chemists/build/_assets/palette-HCEGY3LH.svg";
   }
 });
 
@@ -14748,7 +14748,7 @@ var init_palette = __esm({
 var paste_default;
 var init_paste = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/paste.svg"() {
-    paste_default = "/python_for_chemists//build/_assets/paste-PFM4TTHL.svg";
+    paste_default = "/python_for_chemists/build/_assets/paste-PFM4TTHL.svg";
   }
 });
 
@@ -14756,7 +14756,7 @@ var init_paste = __esm({
 var pause_default;
 var init_pause = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/debugger/pause.svg"() {
-    pause_default = "/python_for_chemists//build/_assets/pause-JH4AFR5I.svg";
+    pause_default = "/python_for_chemists/build/_assets/pause-JH4AFR5I.svg";
   }
 });
 
@@ -14764,7 +14764,7 @@ var init_pause = __esm({
 var pdf_default;
 var init_pdf = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/pdf.svg"() {
-    pdf_default = "/python_for_chemists//build/_assets/pdf-3LH3N3NY.svg";
+    pdf_default = "/python_for_chemists/build/_assets/pdf-3LH3N3NY.svg";
   }
 });
 
@@ -14772,7 +14772,7 @@ var init_pdf = __esm({
 var python_default;
 var init_python = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/python.svg"() {
-    python_default = "/python_for_chemists//build/_assets/python-4D3ZAEQC.svg";
+    python_default = "/python_for_chemists/build/_assets/python-4D3ZAEQC.svg";
   }
 });
 
@@ -14780,7 +14780,7 @@ var init_python = __esm({
 var r_kernel_default;
 var init_r_kernel = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/r-kernel.svg"() {
-    r_kernel_default = "/python_for_chemists//build/_assets/r-kernel-AC4XU7AD.svg";
+    r_kernel_default = "/python_for_chemists/build/_assets/r-kernel-AC4XU7AD.svg";
   }
 });
 
@@ -14788,7 +14788,7 @@ var init_r_kernel = __esm({
 var react_default;
 var init_react = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/react.svg"() {
-    react_default = "/python_for_chemists//build/_assets/react-KEWG4YFH.svg";
+    react_default = "/python_for_chemists/build/_assets/react-KEWG4YFH.svg";
   }
 });
 
@@ -14796,7 +14796,7 @@ var init_react = __esm({
 var redo_default;
 var init_redo = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/redo.svg"() {
-    redo_default = "/python_for_chemists//build/_assets/redo-D2NJAQDT.svg";
+    redo_default = "/python_for_chemists/build/_assets/redo-D2NJAQDT.svg";
   }
 });
 
@@ -14804,7 +14804,7 @@ var init_redo = __esm({
 var regex_default;
 var init_regex = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/search/regex.svg"() {
-    regex_default = "/python_for_chemists//build/_assets/regex-OLOQFQYH.svg";
+    regex_default = "/python_for_chemists/build/_assets/regex-OLOQFQYH.svg";
   }
 });
 
@@ -14812,7 +14812,7 @@ var init_regex = __esm({
 var run_default;
 var init_run = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/run.svg"() {
-    run_default = "/python_for_chemists//build/_assets/run-JASR5YET.svg";
+    run_default = "/python_for_chemists/build/_assets/run-JASR5YET.svg";
   }
 });
 
@@ -14820,7 +14820,7 @@ var init_run = __esm({
 var running_default;
 var init_running = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/sidebar/running.svg"() {
-    running_default = "/python_for_chemists//build/_assets/running-WXSXH3AW.svg";
+    running_default = "/python_for_chemists/build/_assets/running-WXSXH3AW.svg";
   }
 });
 
@@ -14828,7 +14828,7 @@ var init_running = __esm({
 var save_default;
 var init_save = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/save.svg"() {
-    save_default = "/python_for_chemists//build/_assets/save-F7CIKF5U.svg";
+    save_default = "/python_for_chemists/build/_assets/save-F7CIKF5U.svg";
   }
 });
 
@@ -14836,7 +14836,7 @@ var init_save = __esm({
 var search_default;
 var init_search = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/search.svg"() {
-    search_default = "/python_for_chemists//build/_assets/search-IUWCZPNI.svg";
+    search_default = "/python_for_chemists/build/_assets/search-IUWCZPNI.svg";
   }
 });
 
@@ -14844,7 +14844,7 @@ var init_search = __esm({
 var selected_breakpoint_default;
 var init_selected_breakpoint = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/debugger/selected-breakpoint.svg"() {
-    selected_breakpoint_default = "/python_for_chemists//build/_assets/selected-breakpoint-I3BOBCXF.svg";
+    selected_breakpoint_default = "/python_for_chemists/build/_assets/selected-breakpoint-I3BOBCXF.svg";
   }
 });
 
@@ -14852,7 +14852,7 @@ var init_selected_breakpoint = __esm({
 var settings_default;
 var init_settings = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/settings.svg"() {
-    settings_default = "/python_for_chemists//build/_assets/settings-NVLGB56U.svg";
+    settings_default = "/python_for_chemists/build/_assets/settings-NVLGB56U.svg";
   }
 });
 
@@ -14860,7 +14860,7 @@ var init_settings = __esm({
 var share_default;
 var init_share = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/sidebar/share.svg"() {
-    share_default = "/python_for_chemists//build/_assets/share-V2TJNE23.svg";
+    share_default = "/python_for_chemists/build/_assets/share-V2TJNE23.svg";
   }
 });
 
@@ -14868,7 +14868,7 @@ var init_share = __esm({
 var spreadsheet_default;
 var init_spreadsheet = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/spreadsheet.svg"() {
-    spreadsheet_default = "/python_for_chemists//build/_assets/spreadsheet-53IRUUNR.svg";
+    spreadsheet_default = "/python_for_chemists/build/_assets/spreadsheet-53IRUUNR.svg";
   }
 });
 
@@ -14876,7 +14876,7 @@ var init_spreadsheet = __esm({
 var step_into_default;
 var init_step_into = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/debugger/step-into.svg"() {
-    step_into_default = "/python_for_chemists//build/_assets/step-into-CMYG6HZ3.svg";
+    step_into_default = "/python_for_chemists/build/_assets/step-into-CMYG6HZ3.svg";
   }
 });
 
@@ -14884,7 +14884,7 @@ var init_step_into = __esm({
 var step_out_default;
 var init_step_out = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/debugger/step-out.svg"() {
-    step_out_default = "/python_for_chemists//build/_assets/step-out-4EAP4RZP.svg";
+    step_out_default = "/python_for_chemists/build/_assets/step-out-4EAP4RZP.svg";
   }
 });
 
@@ -14892,7 +14892,7 @@ var init_step_out = __esm({
 var step_over_default;
 var init_step_over = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/debugger/step-over.svg"() {
-    step_over_default = "/python_for_chemists//build/_assets/step-over-MSBBRXNS.svg";
+    step_over_default = "/python_for_chemists/build/_assets/step-over-MSBBRXNS.svg";
   }
 });
 
@@ -14900,7 +14900,7 @@ var init_step_over = __esm({
 var stop_default;
 var init_stop = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/stop.svg"() {
-    stop_default = "/python_for_chemists//build/_assets/stop-MRBZ5DJC.svg";
+    stop_default = "/python_for_chemists/build/_assets/stop-MRBZ5DJC.svg";
   }
 });
 
@@ -14908,7 +14908,7 @@ var init_stop = __esm({
 var tab_default;
 var init_tab = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/sidebar/tab.svg"() {
-    tab_default = "/python_for_chemists//build/_assets/tab-BK4HQPU4.svg";
+    tab_default = "/python_for_chemists/build/_assets/tab-BK4HQPU4.svg";
   }
 });
 
@@ -14916,7 +14916,7 @@ var init_tab = __esm({
 var table_rows_default;
 var init_table_rows = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/table-rows.svg"() {
-    table_rows_default = "/python_for_chemists//build/_assets/table-rows-RR4IRJT7.svg";
+    table_rows_default = "/python_for_chemists/build/_assets/table-rows-RR4IRJT7.svg";
   }
 });
 
@@ -14924,7 +14924,7 @@ var init_table_rows = __esm({
 var tag_default;
 var init_tag = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/tag.svg"() {
-    tag_default = "/python_for_chemists//build/_assets/tag-3CFWX7QM.svg";
+    tag_default = "/python_for_chemists/build/_assets/tag-3CFWX7QM.svg";
   }
 });
 
@@ -14932,7 +14932,7 @@ var init_tag = __esm({
 var terminal_default;
 var init_terminal = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/statusbar/terminal.svg"() {
-    terminal_default = "/python_for_chemists//build/_assets/terminal-DTKKDLBB.svg";
+    terminal_default = "/python_for_chemists/build/_assets/terminal-DTKKDLBB.svg";
   }
 });
 
@@ -14940,7 +14940,7 @@ var init_terminal = __esm({
 var text_editor_default;
 var init_text_editor = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/text-editor.svg"() {
-    text_editor_default = "/python_for_chemists//build/_assets/text-editor-MJBWRXDS.svg";
+    text_editor_default = "/python_for_chemists/build/_assets/text-editor-MJBWRXDS.svg";
   }
 });
 
@@ -14948,7 +14948,7 @@ var init_text_editor = __esm({
 var toc_default;
 var init_toc = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/sidebar/toc.svg"() {
-    toc_default = "/python_for_chemists//build/_assets/toc-I57DEZZ3.svg";
+    toc_default = "/python_for_chemists/build/_assets/toc-I57DEZZ3.svg";
   }
 });
 
@@ -14956,7 +14956,7 @@ var init_toc = __esm({
 var tree_view_default;
 var init_tree_view = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/tree-view.svg"() {
-    tree_view_default = "/python_for_chemists//build/_assets/tree-view-EXAO5CJQ.svg";
+    tree_view_default = "/python_for_chemists/build/_assets/tree-view-EXAO5CJQ.svg";
   }
 });
 
@@ -14964,7 +14964,7 @@ var init_tree_view = __esm({
 var trusted_default;
 var init_trusted = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/statusbar/trusted.svg"() {
-    trusted_default = "/python_for_chemists//build/_assets/trusted-EPQAOZZM.svg";
+    trusted_default = "/python_for_chemists/build/_assets/trusted-EPQAOZZM.svg";
   }
 });
 
@@ -14972,7 +14972,7 @@ var init_trusted = __esm({
 var undo_default;
 var init_undo = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/toolbar/undo.svg"() {
-    undo_default = "/python_for_chemists//build/_assets/undo-HFH7A3CK.svg";
+    undo_default = "/python_for_chemists/build/_assets/undo-HFH7A3CK.svg";
   }
 });
 
@@ -14980,7 +14980,7 @@ var init_undo = __esm({
 var user_default;
 var init_user = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/sidebar/user.svg"() {
-    user_default = "/python_for_chemists//build/_assets/user-LRCJLM6U.svg";
+    user_default = "/python_for_chemists/build/_assets/user-LRCJLM6U.svg";
   }
 });
 
@@ -14988,7 +14988,7 @@ var init_user = __esm({
 var users_default;
 var init_users = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/sidebar/users.svg"() {
-    users_default = "/python_for_chemists//build/_assets/users-K2RBK42E.svg";
+    users_default = "/python_for_chemists/build/_assets/users-K2RBK42E.svg";
   }
 });
 
@@ -14996,7 +14996,7 @@ var init_users = __esm({
 var variable_default;
 var init_variable = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/debugger/variable.svg"() {
-    variable_default = "/python_for_chemists//build/_assets/variable-EEIM2DMM.svg";
+    variable_default = "/python_for_chemists/build/_assets/variable-EEIM2DMM.svg";
   }
 });
 
@@ -15004,7 +15004,7 @@ var init_variable = __esm({
 var vega_default;
 var init_vega = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/vega.svg"() {
-    vega_default = "/python_for_chemists//build/_assets/vega-5KBIVREI.svg";
+    vega_default = "/python_for_chemists/build/_assets/vega-5KBIVREI.svg";
   }
 });
 
@@ -15012,7 +15012,7 @@ var init_vega = __esm({
 var video_default;
 var init_video = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/video.svg"() {
-    video_default = "/python_for_chemists//build/_assets/video-65O2WMJE.svg";
+    video_default = "/python_for_chemists/build/_assets/video-65O2WMJE.svg";
   }
 });
 
@@ -15020,7 +15020,7 @@ var init_video = __esm({
 var view_breakpoint_default;
 var init_view_breakpoint = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/debugger/view-breakpoint.svg"() {
-    view_breakpoint_default = "/python_for_chemists//build/_assets/view-breakpoint-OZS7ZFOI.svg";
+    view_breakpoint_default = "/python_for_chemists/build/_assets/view-breakpoint-OZS7ZFOI.svg";
   }
 });
 
@@ -15028,7 +15028,7 @@ var init_view_breakpoint = __esm({
 var word_default;
 var init_word = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/search/word.svg"() {
-    word_default = "/python_for_chemists//build/_assets/word-BSZOGJVT.svg";
+    word_default = "/python_for_chemists/build/_assets/word-BSZOGJVT.svg";
   }
 });
 
@@ -15036,7 +15036,7 @@ var init_word = __esm({
 var yaml_default;
 var init_yaml = __esm({
   "../../node_modules/@jupyterlab/ui-components/style/icons/filetype/yaml.svg"() {
-    yaml_default = "/python_for_chemists//build/_assets/yaml-UNYFGJCG.svg";
+    yaml_default = "/python_for_chemists/build/_assets/yaml-UNYFGJCG.svg";
   }
 });
 
@@ -116301,4 +116301,4 @@ is-plain-object/dist/is-plain-object.js:
    * Released under the MIT License.
    *)
 */
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-IW6XPN43.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-IW6XPN43.js.map

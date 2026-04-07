@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/haskell.js
 function switchState(source, setState, f) {
@@ -468,4 +468,4 @@ init_haskell();
 export {
   haskell
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/haskell-F66KTLEJ.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/haskell-F66KTLEJ.js.map

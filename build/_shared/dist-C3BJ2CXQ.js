@@ -6,14 +6,14 @@ import {
   mystToHtml,
   renderMath,
   transform
-} from "/python_for_chemists//build/_shared/chunk-JUCOPL2A.js";
-import "/python_for_chemists//build/_shared/chunk-YX4KLQK2.js";
-import "/python_for_chemists//build/_shared/chunk-YTFS7O5J.js";
-import "/python_for_chemists//build/_shared/chunk-ZNG4DSCS.js";
-import "/python_for_chemists//build/_shared/chunk-MWXHQG25.js";
-import "/python_for_chemists//build/_shared/chunk-Q6DHUCUI.js";
-import "/python_for_chemists//build/_shared/chunk-LPSXN4QV.js";
-import "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-JUCOPL2A.js";
+import "/python_for_chemists/build/_shared/chunk-YX4KLQK2.js";
+import "/python_for_chemists/build/_shared/chunk-YTFS7O5J.js";
+import "/python_for_chemists/build/_shared/chunk-ZNG4DSCS.js";
+import "/python_for_chemists/build/_shared/chunk-MWXHQG25.js";
+import "/python_for_chemists/build/_shared/chunk-Q6DHUCUI.js";
+import "/python_for_chemists/build/_shared/chunk-LPSXN4QV.js";
+import "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 export {
   State,
   addMathRenderers,
@@ -23,4 +23,4 @@ export {
   renderMath,
   transform
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/dist-C3BJ2CXQ.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/dist-C3BJ2CXQ.js.map

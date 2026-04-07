@@ -6,16 +6,16 @@ import {
   is_dark_default,
   lighten_default,
   setupGraphViewbox
-} from "/python_for_chemists//build/_shared/chunk-463FZTZ7.js";
+} from "/python_for_chemists/build/_shared/chunk-463FZTZ7.js";
 import {
   __export,
   __name,
   arc_default,
   log,
   select_default
-} from "/python_for_chemists//build/_shared/chunk-7PDOACA3.js";
-import "/python_for_chemists//build/_shared/chunk-2WW6JOYG.js";
-import "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-7PDOACA3.js";
+import "/python_for_chemists/build/_shared/chunk-2WW6JOYG.js";
+import "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/mermaid/dist/chunks/mermaid.core/timeline-definition-IT6M3QCI.mjs
 var parser = function() {
@@ -1260,4 +1260,4 @@ var diagram = {
 export {
   diagram
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/timeline-definition-IT6M3QCI-VYSFST2L.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/timeline-definition-IT6M3QCI-VYSFST2L.js.map

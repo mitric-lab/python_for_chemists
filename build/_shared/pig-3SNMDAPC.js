@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/pig.js
 function words(str) {
@@ -114,4 +114,4 @@ init_pig();
 export {
   pig
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/pig-3SNMDAPC.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/pig-3SNMDAPC.js.map

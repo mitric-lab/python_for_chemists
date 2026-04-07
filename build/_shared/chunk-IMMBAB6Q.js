@@ -9,4 +9,4 @@ var SourceFileKind;
 export {
   SourceFileKind
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-IMMBAB6Q.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-IMMBAB6Q.js.map

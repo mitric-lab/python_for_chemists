@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/processing.js
 var require_processing = __commonJS({
@@ -30,4 +30,4 @@ var require_processing = __commonJS({
 export {
   require_processing
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-JTTV4UEP.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-JTTV4UEP.js.map

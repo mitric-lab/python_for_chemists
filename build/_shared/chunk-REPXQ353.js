@@ -1,9 +1,9 @@
 import {
   require_c
-} from "/python_for_chemists//build/_shared/chunk-Y5OVBNFJ.js";
+} from "/python_for_chemists/build/_shared/chunk-Y5OVBNFJ.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/objectivec.js
 var require_objectivec = __commonJS({
@@ -31,4 +31,4 @@ var require_objectivec = __commonJS({
 export {
   require_objectivec
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-REPXQ353.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-REPXQ353.js.map

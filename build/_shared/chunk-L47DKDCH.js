@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/brightscript.js
 var require_brightscript = __commonJS({
@@ -60,4 +60,4 @@ var require_brightscript = __commonJS({
 export {
   require_brightscript
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-L47DKDCH.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-L47DKDCH.js.map

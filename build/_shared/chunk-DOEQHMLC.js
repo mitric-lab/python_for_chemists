@@ -2706,4 +2706,4 @@ export {
 js-yaml/dist/js-yaml.mjs:
   (*! js-yaml 4.1.1 https://github.com/nodeca/js-yaml @license MIT *)
 */
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-DOEQHMLC.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-DOEQHMLC.js.map

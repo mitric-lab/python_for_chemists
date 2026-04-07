@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/clojure.js
 var require_clojure = __commonJS({
@@ -125,4 +125,4 @@ var require_clojure = __commonJS({
   }
 });
 export default require_clojure();
-//# sourceMappingURL=/python_for_chemists//build/_shared/clojure-AMWNVHNT.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/clojure-AMWNVHNT.js.map

@@ -1,6 +1,6 @@
 import {
   __name
-} from "/python_for_chemists//build/_shared/chunk-7PDOACA3.js";
+} from "/python_for_chemists/build/_shared/chunk-7PDOACA3.js";
 
 // ../../node_modules/mermaid/dist/chunks/mermaid.core/chunk-MI3HLSF2.mjs
 function isNothing(subject) {
@@ -2788,4 +2788,4 @@ mermaid/dist/chunks/mermaid.core/chunk-MI3HLSF2.mjs:
     (*! js-yaml 4.1.0 https://github.com/nodeca/js-yaml @license MIT *)
   *)
 */
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-OXD2KSWA.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-OXD2KSWA.js.map

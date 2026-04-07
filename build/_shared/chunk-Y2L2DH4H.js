@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/typoscript.js
 var require_typoscript = __commonJS({
@@ -94,4 +94,4 @@ var require_typoscript = __commonJS({
 export {
   require_typoscript
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-Y2L2DH4H.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-Y2L2DH4H.js.map

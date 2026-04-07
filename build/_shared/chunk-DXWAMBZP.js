@@ -23,10 +23,10 @@ import {
   init_dist5 as init_dist3,
   keymap,
   syntaxTree
-} from "/python_for_chemists//build/_shared/chunk-3I3NFLZ5.js";
+} from "/python_for_chemists/build/_shared/chunk-3I3NFLZ5.js";
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/autocomplete/dist/index.js
 function toSet(chars) {
@@ -731,4 +731,4 @@ export {
   closeBracketsKeymap,
   init_dist4 as init_dist
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-DXWAMBZP.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-DXWAMBZP.js.map

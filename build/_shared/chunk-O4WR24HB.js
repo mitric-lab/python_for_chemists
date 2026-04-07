@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/iecst.js
 var require_iecst = __commonJS({
@@ -48,4 +48,4 @@ var require_iecst = __commonJS({
 export {
   require_iecst
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-O4WR24HB.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-O4WR24HB.js.map

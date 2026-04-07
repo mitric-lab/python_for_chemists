@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/agda.js
 var require_agda = __commonJS({
@@ -40,4 +40,4 @@ var require_agda = __commonJS({
 export {
   require_agda
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-BRM67TN5.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-BRM67TN5.js.map

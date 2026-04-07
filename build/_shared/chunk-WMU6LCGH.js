@@ -1,10 +1,10 @@
 import {
   configureSvgSize
-} from "/python_for_chemists//build/_shared/chunk-463FZTZ7.js";
+} from "/python_for_chemists/build/_shared/chunk-463FZTZ7.js";
 import {
   __name,
   log
-} from "/python_for_chemists//build/_shared/chunk-7PDOACA3.js";
+} from "/python_for_chemists/build/_shared/chunk-7PDOACA3.js";
 
 // ../../node_modules/mermaid/dist/chunks/mermaid.core/chunk-QN33PNHL.mjs
 var setupViewPortForSVG = /* @__PURE__ */ __name((svg, padding, cssDiagram, useMaxWidth) => {
@@ -31,4 +31,4 @@ var createViewBox = /* @__PURE__ */ __name((x, y, width, height, padding) => {
 export {
   setupViewPortForSVG
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-WMU6LCGH.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-WMU6LCGH.js.map

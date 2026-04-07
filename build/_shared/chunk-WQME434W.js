@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/sas.js
 var require_sas = __commonJS({
@@ -363,4 +363,4 @@ var require_sas = __commonJS({
 export {
   require_sas
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-WQME434W.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-WQME434W.js.map

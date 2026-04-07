@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/smali.js
 var require_smali = __commonJS({
@@ -95,4 +95,4 @@ var require_smali = __commonJS({
 export {
   require_smali
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-MZRYG74R.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-MZRYG74R.js.map

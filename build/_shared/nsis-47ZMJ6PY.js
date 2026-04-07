@@ -1,10 +1,10 @@
 import {
   init_simple_mode,
   simpleMode
-} from "/python_for_chemists//build/_shared/chunk-TVPXKM32.js";
+} from "/python_for_chemists/build/_shared/chunk-TVPXKM32.js";
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/nsis.js
 var nsis;
@@ -75,4 +75,4 @@ init_nsis();
 export {
   nsis
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/nsis-47ZMJ6PY.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/nsis-47ZMJ6PY.js.map

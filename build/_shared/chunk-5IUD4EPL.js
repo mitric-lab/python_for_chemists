@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/javascript.js
 function mkJavaScript(parserConfig) {
@@ -1175,4 +1175,4 @@ export {
   typescript,
   init_javascript
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-5IUD4EPL.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-5IUD4EPL.js.map

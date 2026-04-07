@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/crystal.js
 function wordRegExp(words, end) {
@@ -407,4 +407,4 @@ init_crystal();
 export {
   crystal
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/crystal-OOCWGMYW.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/crystal-OOCWGMYW.js.map

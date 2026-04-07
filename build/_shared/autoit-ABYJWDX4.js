@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/autoit.js
 var require_autoit = __commonJS({
@@ -166,4 +166,4 @@ var require_autoit = __commonJS({
   }
 });
 export default require_autoit();
-//# sourceMappingURL=/python_for_chemists//build/_shared/autoit-ABYJWDX4.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/autoit-ABYJWDX4.js.map

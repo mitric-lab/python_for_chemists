@@ -1,9 +1,9 @@
 import {
   require_json
-} from "/python_for_chemists//build/_shared/chunk-5IOB2Y3D.js";
+} from "/python_for_chemists/build/_shared/chunk-5IOB2Y3D.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/json5.js
 var require_json5 = __commonJS({
@@ -41,4 +41,4 @@ var require_json5 = __commonJS({
 export {
   require_json5
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-A5N72HK3.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-A5N72HK3.js.map

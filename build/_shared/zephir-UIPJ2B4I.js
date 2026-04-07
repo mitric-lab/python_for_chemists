@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/zephir.js
 var require_zephir = __commonJS({
@@ -116,4 +116,4 @@ var require_zephir = __commonJS({
   }
 });
 export default require_zephir();
-//# sourceMappingURL=/python_for_chemists//build/_shared/zephir-UIPJ2B4I.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/zephir-UIPJ2B4I.js.map

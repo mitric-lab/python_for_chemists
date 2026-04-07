@@ -197,4 +197,4 @@ export {
   visitParents,
   visit
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-LPSXN4QV.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-LPSXN4QV.js.map

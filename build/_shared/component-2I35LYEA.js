@@ -2,7 +2,7 @@ import {
   closeBrackets,
   closeBracketsKeymap,
   init_dist as init_dist6
-} from "/python_for_chemists//build/_shared/chunk-DXWAMBZP.js";
+} from "/python_for_chemists/build/_shared/chunk-DXWAMBZP.js";
 import {
   Annotation,
   ChangeDesc,
@@ -74,10 +74,10 @@ import {
   syntaxTree,
   tags,
   tooltips
-} from "/python_for_chemists//build/_shared/chunk-3I3NFLZ5.js";
+} from "/python_for_chemists/build/_shared/chunk-3I3NFLZ5.js";
 import {
   require_color_string
-} from "/python_for_chemists//build/_shared/chunk-VF3UZM2T.js";
+} from "/python_for_chemists/build/_shared/chunk-VF3UZM2T.js";
 import {
   ArrayExt,
   AttachedProperty,
@@ -130,18 +130,18 @@ import {
   retro,
   showPopup,
   some
-} from "/python_for_chemists//build/_shared/chunk-IW6XPN43.js";
-import "/python_for_chemists//build/_shared/chunk-5XJWQ5WJ.js";
-import "/python_for_chemists//build/_shared/chunk-SP2MKLPW.js";
-import "/python_for_chemists//build/_shared/chunk-T7QTAV5N.js";
+} from "/python_for_chemists/build/_shared/chunk-IW6XPN43.js";
+import "/python_for_chemists/build/_shared/chunk-5XJWQ5WJ.js";
+import "/python_for_chemists/build/_shared/chunk-SP2MKLPW.js";
+import "/python_for_chemists/build/_shared/chunk-T7QTAV5N.js";
 import {
   require_react
-} from "/python_for_chemists//build/_shared/chunk-3RNZ6DIW.js";
+} from "/python_for_chemists/build/_shared/chunk-3RNZ6DIW.js";
 import {
   __commonJS,
   __esm,
   __toESM
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/commands/dist/index.js
 function command(f, option) {
@@ -28542,7 +28542,7 @@ var init_language = __esm({
       }
       EditorLanguageRegistry2.legacy = legacy;
       async function sql(dialectName) {
-        const m = await import("/python_for_chemists//build/_shared/dist-ZOQ6U3ZJ.js");
+        const m = await import("/python_for_chemists/build/_shared/dist-ZOQ6U3ZJ.js");
         return m.sql({ dialect: m[dialectName] });
       }
       function getDefaultLanguages(translator) {
@@ -28554,7 +28554,7 @@ var init_language = __esm({
             mime: "text/x-csrc",
             extensions: ["c", "h", "ino"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-4CUJEZPA.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-4CUJEZPA.js");
               return m.cpp();
             }
           },
@@ -28564,7 +28564,7 @@ var init_language = __esm({
             mime: "text/x-c++src",
             extensions: ["cpp", "c++", "cc", "cxx", "hpp", "h++", "hh", "hxx"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-4CUJEZPA.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-4CUJEZPA.js");
               return m.cpp();
             }
           },
@@ -28583,7 +28583,7 @@ var init_language = __esm({
             mime: "text/css",
             extensions: ["css"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-UBYCARNW.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-UBYCARNW.js");
               return m.css();
             }
           },
@@ -28594,7 +28594,7 @@ var init_language = __esm({
             mime: "text/html",
             extensions: ["html", "htm", "handlebars", "hbs"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-IXHZNBA6.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-IXHZNBA6.js");
               return m.html();
             }
           },
@@ -28604,7 +28604,7 @@ var init_language = __esm({
             mime: "text/x-java",
             extensions: ["java"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-4EMCUA6K.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-4EMCUA6K.js");
               return m.java();
             }
           },
@@ -28621,7 +28621,7 @@ var init_language = __esm({
             ],
             extensions: ["js", "mjs", "cjs"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-2YXWTVS4.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-2YXWTVS4.js");
               return m.javascript();
             }
           },
@@ -28632,7 +28632,7 @@ var init_language = __esm({
             mime: ["application/json", "application/x-json"],
             extensions: ["json", "map"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-KTPI7BYK.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-KTPI7BYK.js");
               return m.json();
             }
           },
@@ -28642,7 +28642,7 @@ var init_language = __esm({
             mime: "text/jsx",
             extensions: ["jsx"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-2YXWTVS4.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-2YXWTVS4.js");
               return m.javascript({ jsx: true });
             }
           },
@@ -28660,7 +28660,7 @@ var init_language = __esm({
             mime: "text/x-markdown",
             extensions: ["md", "markdown", "mkd"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-THCGPTB2.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-THCGPTB2.js");
               return m.markdown({ codeLanguages: this._modeList });
             }
           },
@@ -28690,7 +28690,7 @@ var init_language = __esm({
             ],
             extensions: ["php", "php3", "php4", "php5", "php7", "phtml"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-7O3TT2ZG.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-7O3TT2ZG.js");
               return m.php();
             }
           },
@@ -28718,7 +28718,7 @@ var init_language = __esm({
             extensions: ["BUILD", "bzl", "py", "pyw"],
             filename: /^(BUCK|BUILD)$/,
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-YXYL6EYD.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-YXYL6EYD.js");
               return new LanguageSupport(m.pythonLanguage, pythonBuiltin(m.pythonLanguage));
             }
           },
@@ -28727,7 +28727,7 @@ var init_language = __esm({
             displayName: trans.__("ipython"),
             mime: "text/x-ipython",
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-YXYL6EYD.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-YXYL6EYD.js");
               return new LanguageSupport(m.pythonLanguage, pythonBuiltin(m.pythonLanguage));
             }
           },
@@ -28737,7 +28737,7 @@ var init_language = __esm({
             mime: "text/x-rustsrc",
             extensions: ["rs"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-6O54Y3PK.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-6O54Y3PK.js");
               return m.rust();
             }
           },
@@ -28765,7 +28765,7 @@ var init_language = __esm({
             mime: "text/typescript-jsx",
             extensions: ["tsx"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-2YXWTVS4.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-2YXWTVS4.js");
               return m.javascript({ jsx: true, typescript: true });
             }
           },
@@ -28776,7 +28776,7 @@ var init_language = __esm({
             mime: "application/typescript",
             extensions: ["ts"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-2YXWTVS4.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-2YXWTVS4.js");
               return m.javascript({ typescript: true });
             }
           },
@@ -28786,7 +28786,7 @@ var init_language = __esm({
             mime: "text/webassembly",
             extensions: ["wat", "wast"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-5JU32RVK.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-5JU32RVK.js");
               return m.wast();
             }
           },
@@ -28797,7 +28797,7 @@ var init_language = __esm({
             mime: ["application/xml", "text/xml"],
             extensions: ["xml", "xsl", "xsd", "svg"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dist-I55HZNRO.js");
+              const m = await import("/python_for_chemists/build/_shared/dist-I55HZNRO.js");
               return m.xml();
             }
           },
@@ -28808,7 +28808,7 @@ var init_language = __esm({
             mime: "text/apl",
             extensions: ["dyalog", "apl"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/apl-PQCX3IL4.js");
+              const m = await import("/python_for_chemists/build/_shared/apl-PQCX3IL4.js");
               return legacy(m.apl);
             }
           },
@@ -28824,7 +28824,7 @@ var init_language = __esm({
             ],
             extensions: ["asc", "pgp", "sig"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/asciiarmor-LPICYFP3.js");
+              const m = await import("/python_for_chemists/build/_shared/asciiarmor-LPICYFP3.js");
               return legacy(m.asciiArmor);
             }
           },
@@ -28834,7 +28834,7 @@ var init_language = __esm({
             mime: "text/x-ttcn-asn",
             extensions: ["asn", "asn1"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/asn1-DAP3NAU7.js");
+              const m = await import("/python_for_chemists/build/_shared/asn1-DAP3NAU7.js");
               return legacy(m.asn1({}));
             }
           },
@@ -28844,7 +28844,7 @@ var init_language = __esm({
             mime: "text/x-asterisk",
             filename: /^extensions\.conf$/i,
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/asterisk-SCQJERQB.js");
+              const m = await import("/python_for_chemists/build/_shared/asterisk-SCQJERQB.js");
               return legacy(m.asterisk);
             }
           },
@@ -28854,7 +28854,7 @@ var init_language = __esm({
             mime: "text/x-brainfuck",
             extensions: ["b", "bf"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/brainfuck-HKF4PCT2.js");
+              const m = await import("/python_for_chemists/build/_shared/brainfuck-HKF4PCT2.js");
               return legacy(m.brainfuck);
             }
           },
@@ -28864,7 +28864,7 @@ var init_language = __esm({
             mime: "text/x-cobol",
             extensions: ["cob", "cpy"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/cobol-6JTRRDJO.js");
+              const m = await import("/python_for_chemists/build/_shared/cobol-6JTRRDJO.js");
               return legacy(m.cobol);
             }
           },
@@ -28875,7 +28875,7 @@ var init_language = __esm({
             mime: "text/x-csharp",
             extensions: ["cs"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/clike-U3KSNIK6.js");
+              const m = await import("/python_for_chemists/build/_shared/clike-U3KSNIK6.js");
               return legacy(m.csharp);
             }
           },
@@ -28885,7 +28885,7 @@ var init_language = __esm({
             mime: "text/x-clojure",
             extensions: ["clj", "cljc", "cljx"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/clojure-SRN6ZRUQ.js");
+              const m = await import("/python_for_chemists/build/_shared/clojure-SRN6ZRUQ.js");
               return legacy(m.clojure);
             }
           },
@@ -28895,7 +28895,7 @@ var init_language = __esm({
             mime: "text/x-clojurescript",
             extensions: ["cljs"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/clojure-SRN6ZRUQ.js");
+              const m = await import("/python_for_chemists/build/_shared/clojure-SRN6ZRUQ.js");
               return legacy(m.clojure);
             }
           },
@@ -28905,7 +28905,7 @@ var init_language = __esm({
             mime: "text/x-gss",
             extensions: ["gss"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/css-FYV36AOE.js");
+              const m = await import("/python_for_chemists/build/_shared/css-FYV36AOE.js");
               return legacy(m.gss);
             }
           },
@@ -28916,7 +28916,7 @@ var init_language = __esm({
             extensions: ["cmake", "cmake.in"],
             filename: /^CMakeLists\.txt$/,
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/cmake-5PAJ56QP.js");
+              const m = await import("/python_for_chemists/build/_shared/cmake-5PAJ56QP.js");
               return legacy(m.cmake);
             }
           },
@@ -28931,7 +28931,7 @@ var init_language = __esm({
             ],
             extensions: ["coffee"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/coffeescript-YST6AOGM.js");
+              const m = await import("/python_for_chemists/build/_shared/coffeescript-YST6AOGM.js");
               return legacy(m.coffeeScript);
             }
           },
@@ -28942,7 +28942,7 @@ var init_language = __esm({
             mime: "text/x-common-lisp",
             extensions: ["cl", "lisp", "el"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/commonlisp-UYHQTAUY.js");
+              const m = await import("/python_for_chemists/build/_shared/commonlisp-UYHQTAUY.js");
               return legacy(m.commonLisp);
             }
           },
@@ -28952,7 +28952,7 @@ var init_language = __esm({
             mime: "application/x-cypher-query",
             extensions: ["cyp", "cypher"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/cypher-AQWVCBVI.js");
+              const m = await import("/python_for_chemists/build/_shared/cypher-AQWVCBVI.js");
               return legacy(m.cypher);
             }
           },
@@ -28962,7 +28962,7 @@ var init_language = __esm({
             mime: "text/x-cython",
             extensions: ["pyx", "pxd", "pxi"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/python-JOLHXBUB.js");
+              const m = await import("/python_for_chemists/build/_shared/python-JOLHXBUB.js");
               return legacy(m.cython);
             }
           },
@@ -28972,7 +28972,7 @@ var init_language = __esm({
             mime: "text/x-crystal",
             extensions: ["cr"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/crystal-OOCWGMYW.js");
+              const m = await import("/python_for_chemists/build/_shared/crystal-OOCWGMYW.js");
               return legacy(m.crystal);
             }
           },
@@ -28982,7 +28982,7 @@ var init_language = __esm({
             mime: "text/x-d",
             extensions: ["d"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/d-BRO65ULJ.js");
+              const m = await import("/python_for_chemists/build/_shared/d-BRO65ULJ.js");
               return legacy(m.d);
             }
           },
@@ -28992,7 +28992,7 @@ var init_language = __esm({
             mime: ["application/dart", "text/x-dart"],
             extensions: ["dart"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/clike-U3KSNIK6.js");
+              const m = await import("/python_for_chemists/build/_shared/clike-U3KSNIK6.js");
               return legacy(m.dart);
             }
           },
@@ -29002,7 +29002,7 @@ var init_language = __esm({
             mime: "text/x-diff",
             extensions: ["diff", "patch"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/diff-47DYCX3I.js");
+              const m = await import("/python_for_chemists/build/_shared/diff-47DYCX3I.js");
               return legacy(m.diff);
             }
           },
@@ -29012,7 +29012,7 @@ var init_language = __esm({
             mime: "text/x-dockerfile",
             filename: /^Dockerfile$/,
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dockerfile-IHGFFLTS.js");
+              const m = await import("/python_for_chemists/build/_shared/dockerfile-IHGFFLTS.js");
               return legacy(m.dockerFile);
             }
           },
@@ -29022,7 +29022,7 @@ var init_language = __esm({
             mime: "application/xml-dtd",
             extensions: ["dtd"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dtd-5QQM67UG.js");
+              const m = await import("/python_for_chemists/build/_shared/dtd-5QQM67UG.js");
               return legacy(m.dtd);
             }
           },
@@ -29032,7 +29032,7 @@ var init_language = __esm({
             mime: "text/x-dylan",
             extensions: ["dylan", "dyl", "intr"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/dylan-45ZPDXVM.js");
+              const m = await import("/python_for_chemists/build/_shared/dylan-45ZPDXVM.js");
               return legacy(m.dylan);
             }
           },
@@ -29041,7 +29041,7 @@ var init_language = __esm({
             displayName: trans.__("EBNF"),
             mime: "text/x-ebnf",
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/ebnf-SYTXLS5O.js");
+              const m = await import("/python_for_chemists/build/_shared/ebnf-SYTXLS5O.js");
               return legacy(m.ebnf);
             }
           },
@@ -29051,7 +29051,7 @@ var init_language = __esm({
             mime: "text/x-ecl",
             extensions: ["ecl"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/ecl-AQGOAQQO.js");
+              const m = await import("/python_for_chemists/build/_shared/ecl-AQGOAQQO.js");
               return legacy(m.ecl);
             }
           },
@@ -29061,7 +29061,7 @@ var init_language = __esm({
             mime: "application/edn",
             extensions: ["edn"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/clojure-SRN6ZRUQ.js");
+              const m = await import("/python_for_chemists/build/_shared/clojure-SRN6ZRUQ.js");
               return legacy(m.clojure);
             }
           },
@@ -29071,7 +29071,7 @@ var init_language = __esm({
             mime: "text/x-eiffel",
             extensions: ["e"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/eiffel-J3PHLANL.js");
+              const m = await import("/python_for_chemists/build/_shared/eiffel-J3PHLANL.js");
               return legacy(m.eiffel);
             }
           },
@@ -29081,7 +29081,7 @@ var init_language = __esm({
             mime: "text/x-elm",
             extensions: ["elm"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/elm-NKVT3CLC.js");
+              const m = await import("/python_for_chemists/build/_shared/elm-NKVT3CLC.js");
               return legacy(m.elm);
             }
           },
@@ -29091,7 +29091,7 @@ var init_language = __esm({
             mime: "text/x-erlang",
             extensions: ["erl"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/erlang-4DZPJVP7.js");
+              const m = await import("/python_for_chemists/build/_shared/erlang-4DZPJVP7.js");
               return legacy(m.erlang);
             }
           },
@@ -29100,7 +29100,7 @@ var init_language = __esm({
             displayName: trans.__("Esper"),
             mime: "text/x-esper",
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/sql-EEMHUQ55.js");
+              const m = await import("/python_for_chemists/build/_shared/sql-EEMHUQ55.js");
               return legacy(m.esper);
             }
           },
@@ -29110,7 +29110,7 @@ var init_language = __esm({
             mime: "text/x-factor",
             extensions: ["factor"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/factor-WZM26QBF.js");
+              const m = await import("/python_for_chemists/build/_shared/factor-WZM26QBF.js");
               return legacy(m.factor);
             }
           },
@@ -29119,7 +29119,7 @@ var init_language = __esm({
             displayName: trans.__("FCL"),
             mime: "text/x-fcl",
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/fcl-OTXATFYE.js");
+              const m = await import("/python_for_chemists/build/_shared/fcl-OTXATFYE.js");
               return legacy(m.fcl);
             }
           },
@@ -29129,7 +29129,7 @@ var init_language = __esm({
             mime: "text/x-forth",
             extensions: ["forth", "fth", "4th"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/forth-PUDXV67F.js");
+              const m = await import("/python_for_chemists/build/_shared/forth-PUDXV67F.js");
               return legacy(m.forth);
             }
           },
@@ -29139,7 +29139,7 @@ var init_language = __esm({
             mime: "text/x-fortran",
             extensions: ["f", "for", "f77", "f90", "f95"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/fortran-RHELYCYL.js");
+              const m = await import("/python_for_chemists/build/_shared/fortran-RHELYCYL.js");
               return legacy(m.fortran);
             }
           },
@@ -29150,7 +29150,7 @@ var init_language = __esm({
             mime: "text/x-fsharp",
             extensions: ["fs"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/mllike-TCTO5IXX.js");
+              const m = await import("/python_for_chemists/build/_shared/mllike-TCTO5IXX.js");
               return legacy(m.fSharp);
             }
           },
@@ -29160,7 +29160,7 @@ var init_language = __esm({
             mime: "text/x-gas",
             extensions: ["s"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/gas-HJMAFV5Z.js");
+              const m = await import("/python_for_chemists/build/_shared/gas-HJMAFV5Z.js");
               return legacy(m.gas);
             }
           },
@@ -29170,7 +29170,7 @@ var init_language = __esm({
             mime: "text/x-feature",
             extensions: ["feature"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/gherkin-BWSK24OC.js");
+              const m = await import("/python_for_chemists/build/_shared/gherkin-BWSK24OC.js");
               return legacy(m.gherkin);
             }
           },
@@ -29180,7 +29180,7 @@ var init_language = __esm({
             mime: "text/x-go",
             extensions: ["go"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/go-MM4ZMTOK.js");
+              const m = await import("/python_for_chemists/build/_shared/go-MM4ZMTOK.js");
               return legacy(m.go);
             }
           },
@@ -29191,7 +29191,7 @@ var init_language = __esm({
             extensions: ["groovy", "gradle"],
             filename: /^Jenkinsfile$/,
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/groovy-HPLLVN57.js");
+              const m = await import("/python_for_chemists/build/_shared/groovy-HPLLVN57.js");
               return legacy(m.groovy);
             }
           },
@@ -29201,7 +29201,7 @@ var init_language = __esm({
             mime: "text/x-haskell",
             extensions: ["hs"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/haskell-F66KTLEJ.js");
+              const m = await import("/python_for_chemists/build/_shared/haskell-F66KTLEJ.js");
               return legacy(m.haskell);
             }
           },
@@ -29211,7 +29211,7 @@ var init_language = __esm({
             mime: "text/x-haxe",
             extensions: ["hx"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/haxe-KSLIVOJL.js");
+              const m = await import("/python_for_chemists/build/_shared/haxe-KSLIVOJL.js");
               return legacy(m.haxe);
             }
           },
@@ -29221,7 +29221,7 @@ var init_language = __esm({
             mime: "text/x-hxml",
             extensions: ["hxml"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/haxe-KSLIVOJL.js");
+              const m = await import("/python_for_chemists/build/_shared/haxe-KSLIVOJL.js");
               return legacy(m.hxml);
             }
           },
@@ -29230,7 +29230,7 @@ var init_language = __esm({
             displayName: trans.__("HTTP"),
             mime: "message/http",
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/http-EIMRV62H.js");
+              const m = await import("/python_for_chemists/build/_shared/http-EIMRV62H.js");
               return legacy(m.http);
             }
           },
@@ -29240,7 +29240,7 @@ var init_language = __esm({
             mime: "text/x-idl",
             extensions: ["pro"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/idl-GEK5X7P5.js");
+              const m = await import("/python_for_chemists/build/_shared/idl-GEK5X7P5.js");
               return legacy(m.idl);
             }
           },
@@ -29251,7 +29251,7 @@ var init_language = __esm({
             mime: "application/ld+json",
             extensions: ["jsonld"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/javascript-UBDWB2KR.js");
+              const m = await import("/python_for_chemists/build/_shared/javascript-UBDWB2KR.js");
               return legacy(m.jsonld);
             }
           },
@@ -29261,7 +29261,7 @@ var init_language = __esm({
             mime: "text/jinja2",
             extensions: ["j2", "jinja", "jinja2"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/jinja2-ET3LFNRL.js");
+              const m = await import("/python_for_chemists/build/_shared/jinja2-ET3LFNRL.js");
               return legacy(m.jinja2);
             }
           },
@@ -29271,7 +29271,7 @@ var init_language = __esm({
             mime: "text/x-julia",
             extensions: ["jl"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/julia-2JXKRMW4.js");
+              const m = await import("/python_for_chemists/build/_shared/julia-2JXKRMW4.js");
               return legacy(m.julia);
             }
           },
@@ -29281,7 +29281,7 @@ var init_language = __esm({
             mime: "text/x-kotlin",
             extensions: ["kt"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/clike-U3KSNIK6.js");
+              const m = await import("/python_for_chemists/build/_shared/clike-U3KSNIK6.js");
               return legacy(m.kotlin);
             }
           },
@@ -29291,7 +29291,7 @@ var init_language = __esm({
             mime: "text/x-less",
             extensions: ["less"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/css-FYV36AOE.js");
+              const m = await import("/python_for_chemists/build/_shared/css-FYV36AOE.js");
               return legacy(m.less);
             }
           },
@@ -29302,7 +29302,7 @@ var init_language = __esm({
             mime: "text/x-livescript",
             extensions: ["ls"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/livescript-Z6DTHVRD.js");
+              const m = await import("/python_for_chemists/build/_shared/livescript-Z6DTHVRD.js");
               return legacy(m.liveScript);
             }
           },
@@ -29312,7 +29312,7 @@ var init_language = __esm({
             mime: "text/x-lua",
             extensions: ["lua"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/lua-ERIRGESW.js");
+              const m = await import("/python_for_chemists/build/_shared/lua-ERIRGESW.js");
               return legacy(m.lua);
             }
           },
@@ -29321,7 +29321,7 @@ var init_language = __esm({
             displayName: trans.__("mIRC"),
             mime: "text/mirc",
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/mirc-U3JDTMBE.js");
+              const m = await import("/python_for_chemists/build/_shared/mirc-U3JDTMBE.js");
               return legacy(m.mirc);
             }
           },
@@ -29331,7 +29331,7 @@ var init_language = __esm({
             mime: "text/x-mathematica",
             extensions: ["m", "nb", "wl", "wls"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/mathematica-KTVMRBJS.js");
+              const m = await import("/python_for_chemists/build/_shared/mathematica-KTVMRBJS.js");
               return legacy(m.mathematica);
             }
           },
@@ -29341,7 +29341,7 @@ var init_language = __esm({
             mime: "text/x-modelica",
             extensions: ["mo"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/modelica-VSWV7PFR.js");
+              const m = await import("/python_for_chemists/build/_shared/modelica-VSWV7PFR.js");
               return legacy(m.modelica);
             }
           },
@@ -29351,7 +29351,7 @@ var init_language = __esm({
             mime: "text/x-mumps",
             extensions: ["mps"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/mumps-7JYNGSQG.js");
+              const m = await import("/python_for_chemists/build/_shared/mumps-7JYNGSQG.js");
               return legacy(m.mumps);
             }
           },
@@ -29361,7 +29361,7 @@ var init_language = __esm({
             mime: "application/mbox",
             extensions: ["mbox"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/mbox-WRIUVXCF.js");
+              const m = await import("/python_for_chemists/build/_shared/mbox-WRIUVXCF.js");
               return legacy(m.mbox);
             }
           },
@@ -29371,7 +29371,7 @@ var init_language = __esm({
             mime: "text/x-nginx-conf",
             filename: /nginx.*\.conf$/i,
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/nginx-TVQASGL2.js");
+              const m = await import("/python_for_chemists/build/_shared/nginx-TVQASGL2.js");
               return legacy(m.nginx);
             }
           },
@@ -29381,7 +29381,7 @@ var init_language = __esm({
             mime: "text/x-nsis",
             extensions: ["nsh", "nsi"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/nsis-47ZMJ6PY.js");
+              const m = await import("/python_for_chemists/build/_shared/nsis-47ZMJ6PY.js");
               return legacy(m.nsis);
             }
           },
@@ -29395,7 +29395,7 @@ var init_language = __esm({
             ],
             extensions: ["nt", "nq"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/ntriples-OQNPTFXG.js");
+              const m = await import("/python_for_chemists/build/_shared/ntriples-OQNPTFXG.js");
               return legacy(m.ntriples);
             }
           },
@@ -29406,7 +29406,7 @@ var init_language = __esm({
             mime: "text/x-objectivec",
             extensions: ["m"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/clike-U3KSNIK6.js");
+              const m = await import("/python_for_chemists/build/_shared/clike-U3KSNIK6.js");
               return legacy(m.objectiveC);
             }
           },
@@ -29417,7 +29417,7 @@ var init_language = __esm({
             mime: "text/x-objectivec++",
             extensions: ["mm"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/clike-U3KSNIK6.js");
+              const m = await import("/python_for_chemists/build/_shared/clike-U3KSNIK6.js");
               return legacy(m.objectiveCpp);
             }
           },
@@ -29427,7 +29427,7 @@ var init_language = __esm({
             mime: "text/x-ocaml",
             extensions: ["ml", "mli", "mll", "mly"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/mllike-TCTO5IXX.js");
+              const m = await import("/python_for_chemists/build/_shared/mllike-TCTO5IXX.js");
               return legacy(m.oCaml);
             }
           },
@@ -29437,7 +29437,7 @@ var init_language = __esm({
             mime: "text/x-octave",
             extensions: ["m"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/octave-D3WSWF2S.js");
+              const m = await import("/python_for_chemists/build/_shared/octave-D3WSWF2S.js");
               return legacy(m.octave);
             }
           },
@@ -29447,7 +29447,7 @@ var init_language = __esm({
             mime: "text/x-oz",
             extensions: ["oz"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/oz-JM6ISGKV.js");
+              const m = await import("/python_for_chemists/build/_shared/oz-JM6ISGKV.js");
               return legacy(m.oz);
             }
           },
@@ -29457,7 +29457,7 @@ var init_language = __esm({
             mime: "text/x-pascal",
             extensions: ["p", "pas"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/pascal-RXLDOOQB.js");
+              const m = await import("/python_for_chemists/build/_shared/pascal-RXLDOOQB.js");
               return legacy(m.pascal);
             }
           },
@@ -29467,7 +29467,7 @@ var init_language = __esm({
             mime: "text/x-perl",
             extensions: ["pl", "pm"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/perl-ACC5MR7G.js");
+              const m = await import("/python_for_chemists/build/_shared/perl-ACC5MR7G.js");
               return legacy(m.perl);
             }
           },
@@ -29477,7 +29477,7 @@ var init_language = __esm({
             mime: "text/x-pig",
             extensions: ["pig"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/pig-3SNMDAPC.js");
+              const m = await import("/python_for_chemists/build/_shared/pig-3SNMDAPC.js");
               return legacy(m.pig);
             }
           },
@@ -29487,7 +29487,7 @@ var init_language = __esm({
             mime: "application/x-powershell",
             extensions: ["ps1", "psd1", "psm1"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/powershell-5EQPKYCI.js");
+              const m = await import("/python_for_chemists/build/_shared/powershell-5EQPKYCI.js");
               return legacy(m.powerShell);
             }
           },
@@ -29498,7 +29498,7 @@ var init_language = __esm({
             mime: "text/x-properties",
             extensions: ["properties", "ini", "in"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/properties-SC5AKLKA.js");
+              const m = await import("/python_for_chemists/build/_shared/properties-SC5AKLKA.js");
               return legacy(m.properties);
             }
           },
@@ -29508,7 +29508,7 @@ var init_language = __esm({
             mime: "text/x-protobuf",
             extensions: ["proto"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/protobuf-6EKLLOZO.js");
+              const m = await import("/python_for_chemists/build/_shared/protobuf-6EKLLOZO.js");
               return legacy(m.protobuf);
             }
           },
@@ -29518,7 +29518,7 @@ var init_language = __esm({
             mime: "text/x-pug",
             extensions: ["pug"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/pug-4NBNMFSZ.js");
+              const m = await import("/python_for_chemists/build/_shared/pug-4NBNMFSZ.js");
               return legacy(m.pug);
             }
           },
@@ -29528,7 +29528,7 @@ var init_language = __esm({
             mime: "text/x-puppet",
             extensions: ["pp"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/puppet-OIYIY5CW.js");
+              const m = await import("/python_for_chemists/build/_shared/puppet-OIYIY5CW.js");
               return legacy(m.puppet);
             }
           },
@@ -29538,7 +29538,7 @@ var init_language = __esm({
             mime: "text/x-q",
             extensions: ["q"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/q-55EV3NRJ.js");
+              const m = await import("/python_for_chemists/build/_shared/q-55EV3NRJ.js");
               return legacy(m.q);
             }
           },
@@ -29549,7 +29549,7 @@ var init_language = __esm({
             mime: "text/x-rsrc",
             extensions: ["r", "R"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/r-CCDIMGIZ.js");
+              const m = await import("/python_for_chemists/build/_shared/r-CCDIMGIZ.js");
               return legacy(m.r);
             }
           },
@@ -29558,7 +29558,7 @@ var init_language = __esm({
             displayName: trans.__("RPM Changes"),
             mime: "text/x-rpm-changes",
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/rpm-WONXWFBR.js");
+              const m = await import("/python_for_chemists/build/_shared/rpm-WONXWFBR.js");
               return legacy(m.rpmChanges);
             }
           },
@@ -29568,7 +29568,7 @@ var init_language = __esm({
             mime: "text/x-rpm-spec",
             extensions: ["spec"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/rpm-WONXWFBR.js");
+              const m = await import("/python_for_chemists/build/_shared/rpm-WONXWFBR.js");
               return legacy(m.rpmSpec);
             }
           },
@@ -29579,7 +29579,7 @@ var init_language = __esm({
             mime: "text/x-ruby",
             extensions: ["rb"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/ruby-ZGK6AKUX.js");
+              const m = await import("/python_for_chemists/build/_shared/ruby-ZGK6AKUX.js");
               return legacy(m.ruby);
             }
           },
@@ -29589,7 +29589,7 @@ var init_language = __esm({
             mime: "text/x-sas",
             extensions: ["sas"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/sas-ULIOSCM3.js");
+              const m = await import("/python_for_chemists/build/_shared/sas-ULIOSCM3.js");
               return legacy(m.sas);
             }
           },
@@ -29599,7 +29599,7 @@ var init_language = __esm({
             mime: "text/x-scala",
             extensions: ["scala"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/clike-U3KSNIK6.js");
+              const m = await import("/python_for_chemists/build/_shared/clike-U3KSNIK6.js");
               return legacy(m.scala);
             }
           },
@@ -29609,7 +29609,7 @@ var init_language = __esm({
             mime: "text/x-scheme",
             extensions: ["scm", "ss"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/scheme-ZMWB77L7.js");
+              const m = await import("/python_for_chemists/build/_shared/scheme-ZMWB77L7.js");
               return legacy(m.scheme);
             }
           },
@@ -29619,7 +29619,7 @@ var init_language = __esm({
             mime: "text/x-scss",
             extensions: ["scss"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/css-FYV36AOE.js");
+              const m = await import("/python_for_chemists/build/_shared/css-FYV36AOE.js");
               return legacy(m.sCSS);
             }
           },
@@ -29631,7 +29631,7 @@ var init_language = __esm({
             extensions: ["sh", "ksh", "bash"],
             filename: /^PKGBUILD$/,
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/shell-6Q7LSBBH.js");
+              const m = await import("/python_for_chemists/build/_shared/shell-6Q7LSBBH.js");
               return legacy(m.shell);
             }
           },
@@ -29641,7 +29641,7 @@ var init_language = __esm({
             mime: "application/sieve",
             extensions: ["siv", "sieve"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/sieve-KR56TNOZ.js");
+              const m = await import("/python_for_chemists/build/_shared/sieve-KR56TNOZ.js");
               return legacy(m.sieve);
             }
           },
@@ -29651,7 +29651,7 @@ var init_language = __esm({
             mime: "text/x-stsrc",
             extensions: ["st"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/smalltalk-2GDI76DM.js");
+              const m = await import("/python_for_chemists/build/_shared/smalltalk-2GDI76DM.js");
               return legacy(m.smalltalk);
             }
           },
@@ -29660,7 +29660,7 @@ var init_language = __esm({
             displayName: trans.__("Solr"),
             mime: "text/x-solr",
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/solr-2RPJKL5O.js");
+              const m = await import("/python_for_chemists/build/_shared/solr-2RPJKL5O.js");
               return legacy(m.solr);
             }
           },
@@ -29670,7 +29670,7 @@ var init_language = __esm({
             mime: "text/x-sml",
             extensions: ["sml", "sig", "fun", "smackspec"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/mllike-TCTO5IXX.js");
+              const m = await import("/python_for_chemists/build/_shared/mllike-TCTO5IXX.js");
               return legacy(m.sml);
             }
           },
@@ -29681,7 +29681,7 @@ var init_language = __esm({
             mime: "application/sparql-query",
             extensions: ["rq", "sparql"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/sparql-MOYOOLFK.js");
+              const m = await import("/python_for_chemists/build/_shared/sparql-MOYOOLFK.js");
               return legacy(m.sparql);
             }
           },
@@ -29691,7 +29691,7 @@ var init_language = __esm({
             alias: ["excel", "formula"],
             mime: "text/x-spreadsheet",
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/spreadsheet-ORKT7M35.js");
+              const m = await import("/python_for_chemists/build/_shared/spreadsheet-ORKT7M35.js");
               return legacy(m.spreadsheet);
             }
           },
@@ -29701,7 +29701,7 @@ var init_language = __esm({
             mime: "text/x-squirrel",
             extensions: ["nut"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/clike-U3KSNIK6.js");
+              const m = await import("/python_for_chemists/build/_shared/clike-U3KSNIK6.js");
               return legacy(m.squirrel);
             }
           },
@@ -29711,7 +29711,7 @@ var init_language = __esm({
             mime: "text/x-styl",
             extensions: ["styl"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/stylus-F3UINHQ6.js");
+              const m = await import("/python_for_chemists/build/_shared/stylus-F3UINHQ6.js");
               return legacy(m.stylus);
             }
           },
@@ -29721,7 +29721,7 @@ var init_language = __esm({
             mime: "text/x-swift",
             extensions: ["swift"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/swift-T2QATWAP.js");
+              const m = await import("/python_for_chemists/build/_shared/swift-T2QATWAP.js");
               return legacy(m.swift);
             }
           },
@@ -29730,7 +29730,7 @@ var init_language = __esm({
             displayName: trans.__("sTeX"),
             mime: "text/x-stex",
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/stex-ESTQJC5R.js");
+              const m = await import("/python_for_chemists/build/_shared/stex-ESTQJC5R.js");
               return legacy(m.stex);
             }
           },
@@ -29741,7 +29741,7 @@ var init_language = __esm({
             mime: "text/x-latex",
             extensions: ["text", "ltx", "tex"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/stex-ESTQJC5R.js");
+              const m = await import("/python_for_chemists/build/_shared/stex-ESTQJC5R.js");
               return legacy(m.stex);
             }
           },
@@ -29751,7 +29751,7 @@ var init_language = __esm({
             mime: "text/x-systemverilog",
             extensions: ["v", "sv", "svh"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/verilog-NYV2SVBC.js");
+              const m = await import("/python_for_chemists/build/_shared/verilog-NYV2SVBC.js");
               return legacy(m.verilog);
             }
           },
@@ -29761,7 +29761,7 @@ var init_language = __esm({
             mime: "text/x-tcl",
             extensions: ["tcl"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/tcl-V4WDWD7Q.js");
+              const m = await import("/python_for_chemists/build/_shared/tcl-V4WDWD7Q.js");
               return legacy(m.tcl);
             }
           },
@@ -29771,7 +29771,7 @@ var init_language = __esm({
             mime: "text/x-textile",
             extensions: ["textile"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/textile-ROVXYQIM.js");
+              const m = await import("/python_for_chemists/build/_shared/textile-ROVXYQIM.js");
               return legacy(m.textile);
             }
           },
@@ -29780,7 +29780,7 @@ var init_language = __esm({
             displayName: trans.__("TiddlyWiki"),
             mime: "text/x-tiddlywiki",
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/tiddlywiki-Y2VIHDBN.js");
+              const m = await import("/python_for_chemists/build/_shared/tiddlywiki-Y2VIHDBN.js");
               return legacy(m.tiddlyWiki);
             }
           },
@@ -29789,7 +29789,7 @@ var init_language = __esm({
             displayName: trans.__("Tiki wiki"),
             mime: "text/tiki",
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/tiki-TW5XTX3P.js");
+              const m = await import("/python_for_chemists/build/_shared/tiki-TW5XTX3P.js");
               return legacy(m.tiki);
             }
           },
@@ -29799,7 +29799,7 @@ var init_language = __esm({
             mime: "text/x-toml",
             extensions: ["toml"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/toml-X4KE7LPD.js");
+              const m = await import("/python_for_chemists/build/_shared/toml-X4KE7LPD.js");
               return legacy(m.toml);
             }
           },
@@ -29809,7 +29809,7 @@ var init_language = __esm({
             mime: "text/troff",
             extensions: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/troff-GQ2GNUXY.js");
+              const m = await import("/python_for_chemists/build/_shared/troff-GQ2GNUXY.js");
               return legacy(m.troff);
             }
           },
@@ -29819,7 +29819,7 @@ var init_language = __esm({
             mime: "text/x-ttcn",
             extensions: ["ttcn", "ttcn3", "ttcnpp"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/ttcn-7CP3ODIC.js");
+              const m = await import("/python_for_chemists/build/_shared/ttcn-7CP3ODIC.js");
               return legacy(m.ttcn);
             }
           },
@@ -29829,7 +29829,7 @@ var init_language = __esm({
             mime: "text/x-ttcn-cfg",
             extensions: ["cfg"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/ttcn-cfg-FLMZM44L.js");
+              const m = await import("/python_for_chemists/build/_shared/ttcn-cfg-FLMZM44L.js");
               return legacy(m.ttcnCfg);
             }
           },
@@ -29839,7 +29839,7 @@ var init_language = __esm({
             mime: "text/turtle",
             extensions: ["ttl"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/turtle-I3X4CIJB.js");
+              const m = await import("/python_for_chemists/build/_shared/turtle-I3X4CIJB.js");
               return legacy(m.turtle);
             }
           },
@@ -29849,7 +29849,7 @@ var init_language = __esm({
             mime: "text/x-webidl",
             extensions: ["webidl"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/webidl-HJTPJ47D.js");
+              const m = await import("/python_for_chemists/build/_shared/webidl-HJTPJ47D.js");
               return legacy(m.webIDL);
             }
           },
@@ -29859,7 +29859,7 @@ var init_language = __esm({
             mime: "text/x-vb",
             extensions: ["vb"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/vb-LMC6HBA2.js");
+              const m = await import("/python_for_chemists/build/_shared/vb-LMC6HBA2.js");
               return legacy(m.vb);
             }
           },
@@ -29869,7 +29869,7 @@ var init_language = __esm({
             mime: "text/vbscript",
             extensions: ["vbs"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/vbscript-AWNTTPMV.js");
+              const m = await import("/python_for_chemists/build/_shared/vbscript-AWNTTPMV.js");
               return legacy(m.vbScript);
             }
           },
@@ -29879,7 +29879,7 @@ var init_language = __esm({
             mime: "text/velocity",
             extensions: ["vtl"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/velocity-FEDDLZ4R.js");
+              const m = await import("/python_for_chemists/build/_shared/velocity-FEDDLZ4R.js");
               return legacy(m.velocity);
             }
           },
@@ -29889,7 +29889,7 @@ var init_language = __esm({
             mime: "text/x-verilog",
             extensions: ["v"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/verilog-NYV2SVBC.js");
+              const m = await import("/python_for_chemists/build/_shared/verilog-NYV2SVBC.js");
               return legacy(m.verilog);
             }
           },
@@ -29899,7 +29899,7 @@ var init_language = __esm({
             mime: "text/x-vhdl",
             extensions: ["vhd", "vhdl"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/vhdl-Z57YYFMQ.js");
+              const m = await import("/python_for_chemists/build/_shared/vhdl-Z57YYFMQ.js");
               return legacy(m.vhdl);
             }
           },
@@ -29909,7 +29909,7 @@ var init_language = __esm({
             mime: "application/xquery",
             extensions: ["xy", "xquery"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/xquery-ZCU5EKUX.js");
+              const m = await import("/python_for_chemists/build/_shared/xquery-ZCU5EKUX.js");
               return legacy(m.xQuery);
             }
           },
@@ -29919,7 +29919,7 @@ var init_language = __esm({
             mime: "text/x-yacas",
             extensions: ["ys"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/yacas-W234EASF.js");
+              const m = await import("/python_for_chemists/build/_shared/yacas-W234EASF.js");
               return legacy(m.yacas);
             }
           },
@@ -29930,7 +29930,7 @@ var init_language = __esm({
             mime: ["text/x-yaml", "text/yaml"],
             extensions: ["yaml", "yml"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/yaml-CAPVMBQ5.js");
+              const m = await import("/python_for_chemists/build/_shared/yaml-CAPVMBQ5.js");
               return legacy(m.yaml);
             }
           },
@@ -29940,7 +29940,7 @@ var init_language = __esm({
             mime: "text/x-z80",
             extensions: ["z80"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/z80-4NN4V4AV.js");
+              const m = await import("/python_for_chemists/build/_shared/z80-4NN4V4AV.js");
               return legacy(m.z80);
             }
           },
@@ -29950,7 +29950,7 @@ var init_language = __esm({
             mime: "text/x-mscgen",
             extensions: ["mscgen", "mscin", "msc"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/mscgen-THHJWJYB.js");
+              const m = await import("/python_for_chemists/build/_shared/mscgen-THHJWJYB.js");
               return legacy(m.mscgen);
             }
           },
@@ -29960,7 +29960,7 @@ var init_language = __esm({
             mime: "text/x-xu",
             extensions: ["xu"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/mscgen-THHJWJYB.js");
+              const m = await import("/python_for_chemists/build/_shared/mscgen-THHJWJYB.js");
               return legacy(m.xu);
             }
           },
@@ -29970,7 +29970,7 @@ var init_language = __esm({
             mime: "text/x-msgenny",
             extensions: ["msgenny"],
             async load() {
-              const m = await import("/python_for_chemists//build/_shared/mscgen-THHJWJYB.js");
+              const m = await import("/python_for_chemists/build/_shared/mscgen-THHJWJYB.js");
               return legacy(m.msgenny);
             }
           }
@@ -35629,4 +35629,4 @@ react-highlight-words/dist/main.js:
   @license MIT
   *)
 */
-//# sourceMappingURL=/python_for_chemists//build/_shared/component-2I35LYEA.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/component-2I35LYEA.js.map

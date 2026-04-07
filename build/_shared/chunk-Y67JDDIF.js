@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/mermaid.js
 var require_mermaid = __commonJS({
@@ -120,4 +120,4 @@ var require_mermaid = __commonJS({
 export {
   require_mermaid
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-Y67JDDIF.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-Y67JDDIF.js.map

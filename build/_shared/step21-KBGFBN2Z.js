@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/step21.js
 var require_step21 = __commonJS({
@@ -66,4 +66,4 @@ var require_step21 = __commonJS({
   }
 });
 export default require_step21();
-//# sourceMappingURL=/python_for_chemists//build/_shared/step21-KBGFBN2Z.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/step21-KBGFBN2Z.js.map

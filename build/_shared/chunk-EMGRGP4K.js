@@ -1,9 +1,9 @@
 import {
   require_cpp
-} from "/python_for_chemists//build/_shared/chunk-Y6HUVYQU.js";
+} from "/python_for_chemists/build/_shared/chunk-Y6HUVYQU.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/chaiscript.js
 var require_chaiscript = __commonJS({
@@ -76,4 +76,4 @@ var require_chaiscript = __commonJS({
 export {
   require_chaiscript
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-EMGRGP4K.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-EMGRGP4K.js.map

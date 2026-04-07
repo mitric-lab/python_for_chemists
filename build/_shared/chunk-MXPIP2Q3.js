@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/git.js
 var require_git = __commonJS({
@@ -79,4 +79,4 @@ var require_git = __commonJS({
 export {
   require_git
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-MXPIP2Q3.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-MXPIP2Q3.js.map

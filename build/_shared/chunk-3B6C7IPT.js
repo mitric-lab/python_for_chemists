@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/promql.js
 var require_promql = __commonJS({
@@ -107,4 +107,4 @@ var require_promql = __commonJS({
 export {
   require_promql
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-3B6C7IPT.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-3B6C7IPT.js.map

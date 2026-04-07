@@ -1,9 +1,9 @@
 import {
   require_c
-} from "/python_for_chemists//build/_shared/chunk-Y5OVBNFJ.js";
+} from "/python_for_chemists/build/_shared/chunk-Y5OVBNFJ.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/hlsl.js
 var require_hlsl = __commonJS({
@@ -40,4 +40,4 @@ var require_hlsl = __commonJS({
 export {
   require_hlsl
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-D7TLKGZW.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-D7TLKGZW.js.map

@@ -1,9 +1,9 @@
 import {
   require_markup_templating
-} from "/python_for_chemists//build/_shared/chunk-E6QZW6U4.js";
+} from "/python_for_chemists/build/_shared/chunk-E6QZW6U4.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/handlebars.js
 var require_handlebars = __commonJS({
@@ -62,4 +62,4 @@ var require_handlebars = __commonJS({
 export {
   require_handlebars
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-2KKO6AUO.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-2KKO6AUO.js.map

@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/sas.js
 var require_sas = __commonJS({
@@ -64,4 +64,4 @@ var require_sas = __commonJS({
   }
 });
 export default require_sas();
-//# sourceMappingURL=/python_for_chemists//build/_shared/sas-2AMAMQFI.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/sas-2AMAMQFI.js.map

@@ -9,7 +9,7 @@ import {
   createDefaultSharedCoreModule,
   inject,
   lib_exports
-} from "/python_for_chemists//build/_shared/chunk-5TL5RV2T.js";
+} from "/python_for_chemists/build/_shared/chunk-5TL5RV2T.js";
 
 // ../../node_modules/@mermaid-js/parser/dist/chunks/mermaid-parser.core/chunk-T53DSG4Q.mjs
 var PieTokenBuilder = class extends AbstractMermaidTokenBuilder {
@@ -56,4 +56,4 @@ export {
   PieModule,
   createPieServices
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-UH5LSYEI.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-UH5LSYEI.js.map

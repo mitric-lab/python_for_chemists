@@ -1,12 +1,12 @@
 import {
   require_java
-} from "/python_for_chemists//build/_shared/chunk-KR5TX4ID.js";
+} from "/python_for_chemists/build/_shared/chunk-KR5TX4ID.js";
 import {
   require_javadoclike
-} from "/python_for_chemists//build/_shared/chunk-XG7NZX75.js";
+} from "/python_for_chemists/build/_shared/chunk-XG7NZX75.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/javadoc.js
 var require_javadoc = __commonJS({
@@ -111,4 +111,4 @@ var require_javadoc = __commonJS({
 export {
   require_javadoc
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-3IKNOBH7.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-3IKNOBH7.js.map

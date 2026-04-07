@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/cfscript.js
 var require_cfscript = __commonJS({
@@ -57,4 +57,4 @@ var require_cfscript = __commonJS({
 export {
   require_cfscript
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-IDYJEI4G.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-IDYJEI4G.js.map

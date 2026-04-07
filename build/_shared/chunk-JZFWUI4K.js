@@ -1,9 +1,9 @@
 import {
   require_markup_templating
-} from "/python_for_chemists//build/_shared/chunk-E6QZW6U4.js";
+} from "/python_for_chemists/build/_shared/chunk-E6QZW6U4.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/liquid.js
 var require_liquid = __commonJS({
@@ -88,4 +88,4 @@ var require_liquid = __commonJS({
 export {
   require_liquid
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-JZFWUI4K.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-JZFWUI4K.js.map

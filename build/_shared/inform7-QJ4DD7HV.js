@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/inform7.js
 var require_inform7 = __commonJS({
@@ -64,4 +64,4 @@ var require_inform7 = __commonJS({
   }
 });
 export default require_inform7();
-//# sourceMappingURL=/python_for_chemists//build/_shared/inform7-QJ4DD7HV.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/inform7-QJ4DD7HV.js.map

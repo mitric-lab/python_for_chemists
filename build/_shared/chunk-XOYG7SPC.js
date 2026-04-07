@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/batch.js
 var require_batch = __commonJS({
@@ -112,4 +112,4 @@ var require_batch = __commonJS({
 export {
   require_batch
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-XOYG7SPC.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-XOYG7SPC.js.map

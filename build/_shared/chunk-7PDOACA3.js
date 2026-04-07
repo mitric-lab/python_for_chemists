@@ -3,11 +3,11 @@ import {
   hcl,
   init_src,
   rgb
-} from "/python_for_chemists//build/_shared/chunk-2WW6JOYG.js";
+} from "/python_for_chemists/build/_shared/chunk-2WW6JOYG.js";
 import {
   __commonJS,
   __toESM
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/dayjs/dayjs.min.js
 var require_dayjs_min = __commonJS({
@@ -7620,4 +7620,4 @@ export {
   timeMonth2 as timeMonth,
   timeFormat2 as timeFormat
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-7PDOACA3.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-7PDOACA3.js.map

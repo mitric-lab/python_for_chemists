@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/lasso.js
 var require_lasso = __commonJS({
@@ -168,4 +168,4 @@ var require_lasso = __commonJS({
   }
 });
 export default require_lasso();
-//# sourceMappingURL=/python_for_chemists//build/_shared/lasso-UF5VF6QS.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/lasso-UF5VF6QS.js.map

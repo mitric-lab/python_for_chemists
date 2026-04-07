@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/commonlisp.js
 function readSym(stream) {
@@ -153,4 +153,4 @@ init_commonlisp();
 export {
   commonLisp
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/commonlisp-UYHQTAUY.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/commonlisp-UYHQTAUY.js.map

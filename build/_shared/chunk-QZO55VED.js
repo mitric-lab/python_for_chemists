@@ -2,28 +2,28 @@ import {
   getLineFunctionsWithOffset,
   markerOffsets,
   markerOffsets2
-} from "/python_for_chemists//build/_shared/chunk-SJNWNCJG.js";
+} from "/python_for_chemists/build/_shared/chunk-SJNWNCJG.js";
 import {
   at,
   createLabel_default
-} from "/python_for_chemists//build/_shared/chunk-WP6UWRBG.js";
+} from "/python_for_chemists/build/_shared/chunk-WP6UWRBG.js";
 import {
   getSubGraphTitleMargins
-} from "/python_for_chemists//build/_shared/chunk-6ICL6EEV.js";
+} from "/python_for_chemists/build/_shared/chunk-6ICL6EEV.js";
 import {
   isLabelStyle,
   styles2String
-} from "/python_for_chemists//build/_shared/chunk-R2WPI2J6.js";
+} from "/python_for_chemists/build/_shared/chunk-R2WPI2J6.js";
 import {
   createText
-} from "/python_for_chemists//build/_shared/chunk-V6SU7KPH.js";
+} from "/python_for_chemists/build/_shared/chunk-V6SU7KPH.js";
 import {
   utils_default
-} from "/python_for_chemists//build/_shared/chunk-WEDXSMQA.js";
+} from "/python_for_chemists/build/_shared/chunk-WEDXSMQA.js";
 import {
   evaluate,
   getConfig2
-} from "/python_for_chemists//build/_shared/chunk-463FZTZ7.js";
+} from "/python_for_chemists/build/_shared/chunk-463FZTZ7.js";
 import {
   __name,
   basis_default,
@@ -41,7 +41,7 @@ import {
   stepAfter,
   stepBefore,
   step_default
-} from "/python_for_chemists//build/_shared/chunk-7PDOACA3.js";
+} from "/python_for_chemists/build/_shared/chunk-7PDOACA3.js";
 
 // ../../node_modules/mermaid/dist/chunks/mermaid.core/chunk-QXUST7PY.mjs
 var addEdgeMarkers = /* @__PURE__ */ __name((svgPath, edge, url, id, diagramType, strokeColor) => {
@@ -844,4 +844,4 @@ export {
   insertEdge,
   markers_default
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-QZO55VED.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-QZO55VED.js.map

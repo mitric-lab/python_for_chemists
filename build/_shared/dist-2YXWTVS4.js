@@ -12,10 +12,10 @@ import {
   tsxLanguage,
   typescriptLanguage,
   typescriptSnippets
-} from "/python_for_chemists//build/_shared/chunk-QCGUJ3KP.js";
-import "/python_for_chemists//build/_shared/chunk-DXWAMBZP.js";
-import "/python_for_chemists//build/_shared/chunk-3I3NFLZ5.js";
-import "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-QCGUJ3KP.js";
+import "/python_for_chemists/build/_shared/chunk-DXWAMBZP.js";
+import "/python_for_chemists/build/_shared/chunk-3I3NFLZ5.js";
+import "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 init_dist();
 export {
   autoCloseTags,
@@ -31,4 +31,4 @@ export {
   typescriptLanguage,
   typescriptSnippets
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/dist-2YXWTVS4.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/dist-2YXWTVS4.js.map

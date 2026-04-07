@@ -1,6 +1,6 @@
 import {
   __name
-} from "/python_for_chemists//build/_shared/chunk-7PDOACA3.js";
+} from "/python_for_chemists/build/_shared/chunk-7PDOACA3.js";
 
 // ../../node_modules/mermaid/dist/chunks/mermaid.core/chunk-HN2XXSSU.mjs
 var markerOffsets = {
@@ -157,4 +157,4 @@ export {
   markerOffsets2,
   getLineFunctionsWithOffset
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-SJNWNCJG.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-SJNWNCJG.js.map

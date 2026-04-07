@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/openscad.js
 var require_openscad = __commonJS({
@@ -80,4 +80,4 @@ var require_openscad = __commonJS({
   }
 });
 export default require_openscad();
-//# sourceMappingURL=/python_for_chemists//build/_shared/openscad-YJQEQSMU.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/openscad-YJQEQSMU.js.map

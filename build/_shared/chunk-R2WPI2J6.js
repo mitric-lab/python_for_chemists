@@ -1,9 +1,9 @@
 import {
   getConfig2
-} from "/python_for_chemists//build/_shared/chunk-463FZTZ7.js";
+} from "/python_for_chemists/build/_shared/chunk-463FZTZ7.js";
 import {
   __name
-} from "/python_for_chemists//build/_shared/chunk-7PDOACA3.js";
+} from "/python_for_chemists/build/_shared/chunk-7PDOACA3.js";
 
 // ../../node_modules/mermaid/dist/chunks/mermaid.core/chunk-ATLVNIR6.mjs
 var solidStateFill = /* @__PURE__ */ __name((color) => {
@@ -111,4 +111,4 @@ export {
   styles2String,
   userNodeOverrides
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-R2WPI2J6.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-R2WPI2J6.js.map

@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // browser-route-module:routes/($project)_.($a).($b).($c).($d).$slug[.json].tsx?browser
 var require_project_a_b_c_d_slug_json = __commonJS({
@@ -9,4 +9,4 @@ var require_project_a_b_c_d_slug_json = __commonJS({
   }
 });
 export default require_project_a_b_c_d_slug_json();
-//# sourceMappingURL=/python_for_chemists//build/routes/($project)_.($a).($b).($c).($d).$slug[.json]-GRFYTMZ2.js.map
+//# sourceMappingURL=/python_for_chemists/build/routes/($project)_.($a).($b).($c).($d).$slug[.json]-GRFYTMZ2.js.map

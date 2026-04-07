@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/modelica.js
 function words(str) {
@@ -168,4 +168,4 @@ init_modelica();
 export {
   modelica
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/modelica-VSWV7PFR.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/modelica-VSWV7PFR.js.map

@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/warpscript.js
 var require_warpscript = __commonJS({
@@ -37,4 +37,4 @@ var require_warpscript = __commonJS({
 export {
   require_warpscript
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-K2UJXE6Q.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-K2UJXE6Q.js.map

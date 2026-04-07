@@ -9,7 +9,7 @@ import {
   createDefaultSharedCoreModule,
   inject,
   lib_exports
-} from "/python_for_chemists//build/_shared/chunk-5TL5RV2T.js";
+} from "/python_for_chemists/build/_shared/chunk-5TL5RV2T.js";
 
 // ../../node_modules/@mermaid-js/parser/dist/chunks/mermaid-parser.core/chunk-LHMN2FUI.mjs
 var RadarTokenBuilder = class extends AbstractMermaidTokenBuilder {
@@ -45,4 +45,4 @@ export {
   RadarModule,
   createRadarServices
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-UORA2QU4.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-UORA2QU4.js.map

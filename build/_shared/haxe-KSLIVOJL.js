@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/haxe.js
 function kw(type2) {
@@ -607,4 +607,4 @@ export {
   haxe,
   hxml
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/haxe-KSLIVOJL.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/haxe-KSLIVOJL.js.map

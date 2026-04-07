@@ -1,9 +1,9 @@
 import {
   require_ruby
-} from "/python_for_chemists//build/_shared/chunk-IZ2CIBO4.js";
+} from "/python_for_chemists/build/_shared/chunk-IZ2CIBO4.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/haml.js
 var require_haml = __commonJS({
@@ -163,4 +163,4 @@ var require_haml = __commonJS({
 export {
   require_haml
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-DI6PU352.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-DI6PU352.js.map

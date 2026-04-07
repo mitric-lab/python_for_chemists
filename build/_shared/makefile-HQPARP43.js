@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/makefile.js
 var require_makefile = __commonJS({
@@ -80,4 +80,4 @@ var require_makefile = __commonJS({
   }
 });
 export default require_makefile();
-//# sourceMappingURL=/python_for_chemists//build/_shared/makefile-HQPARP43.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/makefile-HQPARP43.js.map

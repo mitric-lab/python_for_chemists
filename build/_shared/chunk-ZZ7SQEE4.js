@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/velocity.js
 var require_velocity = __commonJS({
@@ -85,4 +85,4 @@ var require_velocity = __commonJS({
 export {
   require_velocity
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-ZZ7SQEE4.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-ZZ7SQEE4.js.map

@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/handlebars.js
 var require_handlebars = __commonJS({
@@ -270,4 +270,4 @@ var require_handlebars = __commonJS({
   }
 });
 export default require_handlebars();
-//# sourceMappingURL=/python_for_chemists//build/_shared/handlebars-BPQE3VDO.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/handlebars-BPQE3VDO.js.map

@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/q.js
 var require_q = __commonJS({
@@ -31,4 +31,4 @@ var require_q = __commonJS({
   }
 });
 export default require_q();
-//# sourceMappingURL=/python_for_chemists//build/_shared/q-GIS76RHU.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/q-GIS76RHU.js.map

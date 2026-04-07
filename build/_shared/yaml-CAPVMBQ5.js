@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/yaml.js
 var cons, keywordRegex, yaml;
@@ -116,4 +116,4 @@ init_yaml();
 export {
   yaml
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/yaml-CAPVMBQ5.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/yaml-CAPVMBQ5.js.map

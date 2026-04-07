@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/irpf90.js
 var require_irpf90 = __commonJS({
@@ -81,4 +81,4 @@ var require_irpf90 = __commonJS({
   }
 });
 export default require_irpf90();
-//# sourceMappingURL=/python_for_chemists//build/_shared/irpf90-LGAZUJHT.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/irpf90-LGAZUJHT.js.map

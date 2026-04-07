@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/verilog.js
 var require_verilog = __commonJS({
@@ -70,4 +70,4 @@ var require_verilog = __commonJS({
   }
 });
 export default require_verilog();
-//# sourceMappingURL=/python_for_chemists//build/_shared/verilog-3M6HMXRK.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/verilog-3M6HMXRK.js.map

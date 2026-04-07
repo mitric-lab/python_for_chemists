@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/mel.js
 var require_mel = __commonJS({
@@ -33,4 +33,4 @@ var require_mel = __commonJS({
   }
 });
 export default require_mel();
-//# sourceMappingURL=/python_for_chemists//build/_shared/mel-HXEUYW3T.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/mel-HXEUYW3T.js.map

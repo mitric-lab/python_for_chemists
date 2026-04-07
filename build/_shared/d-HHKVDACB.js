@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/d.js
 var require_d = __commonJS({
@@ -119,4 +119,4 @@ var require_d = __commonJS({
   }
 });
 export default require_d();
-//# sourceMappingURL=/python_for_chemists//build/_shared/d-HHKVDACB.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/d-HHKVDACB.js.map

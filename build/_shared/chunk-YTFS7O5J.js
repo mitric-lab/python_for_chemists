@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/entities/lib/maps/entities.json
 var require_entities = __commonJS({
@@ -710,4 +710,4 @@ export {
   require_utils,
   u
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-YTFS7O5J.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-YTFS7O5J.js.map

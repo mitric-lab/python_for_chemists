@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/xquery.js
 function chain(stream, state, f) {
@@ -551,4 +551,4 @@ init_xquery();
 export {
   xQuery
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/xquery-ZCU5EKUX.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/xquery-ZCU5EKUX.js.map

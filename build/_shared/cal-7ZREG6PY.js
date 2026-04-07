@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/cal.js
 var require_cal = __commonJS({
@@ -99,4 +99,4 @@ var require_cal = __commonJS({
   }
 });
 export default require_cal();
-//# sourceMappingURL=/python_for_chemists//build/_shared/cal-7ZREG6PY.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/cal-7ZREG6PY.js.map

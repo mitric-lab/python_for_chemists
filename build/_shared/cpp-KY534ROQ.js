@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/cpp.js
 var require_cpp = __commonJS({
@@ -409,4 +409,4 @@ var require_cpp = __commonJS({
   }
 });
 export default require_cpp();
-//# sourceMappingURL=/python_for_chemists//build/_shared/cpp-KY534ROQ.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/cpp-KY534ROQ.js.map

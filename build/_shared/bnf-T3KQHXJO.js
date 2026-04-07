@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/bnf.js
 var require_bnf = __commonJS({
@@ -38,4 +38,4 @@ var require_bnf = __commonJS({
   }
 });
 export default require_bnf();
-//# sourceMappingURL=/python_for_chemists//build/_shared/bnf-T3KQHXJO.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/bnf-T3KQHXJO.js.map

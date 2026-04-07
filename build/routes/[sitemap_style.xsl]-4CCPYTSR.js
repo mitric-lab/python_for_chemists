@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // browser-route-module:routes/[sitemap_style.xsl].tsx?browser
 var require_sitemap_style_xsl = __commonJS({
@@ -9,4 +9,4 @@ var require_sitemap_style_xsl = __commonJS({
   }
 });
 export default require_sitemap_style_xsl();
-//# sourceMappingURL=/python_for_chemists//build/routes/[sitemap_style.xsl]-4CCPYTSR.js.map
+//# sourceMappingURL=/python_for_chemists/build/routes/[sitemap_style.xsl]-4CCPYTSR.js.map

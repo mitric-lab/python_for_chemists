@@ -1,9 +1,9 @@
 import {
   require_markup_templating
-} from "/python_for_chemists//build/_shared/chunk-E6QZW6U4.js";
+} from "/python_for_chemists/build/_shared/chunk-E6QZW6U4.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/ftl.js
 var require_ftl = __commonJS({
@@ -136,4 +136,4 @@ var require_ftl = __commonJS({
 export {
   require_ftl
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-HUMPHLYK.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-HUMPHLYK.js.map

@@ -2,7 +2,7 @@ import {
   css,
   cssLanguage,
   init_dist as init_dist7
-} from "/python_for_chemists//build/_shared/chunk-H6SVTQIS.js";
+} from "/python_for_chemists/build/_shared/chunk-H6SVTQIS.js";
 import {
   init_dist as init_dist8,
   javascript,
@@ -10,7 +10,7 @@ import {
   jsxLanguage,
   tsxLanguage,
   typescriptLanguage
-} from "/python_for_chemists//build/_shared/chunk-QCGUJ3KP.js";
+} from "/python_for_chemists/build/_shared/chunk-QCGUJ3KP.js";
 import {
   ContextTracker,
   EditorSelection,
@@ -32,10 +32,10 @@ import {
   styleTags,
   syntaxTree,
   tags
-} from "/python_for_chemists//build/_shared/chunk-3I3NFLZ5.js";
+} from "/python_for_chemists/build/_shared/chunk-3I3NFLZ5.js";
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@lezer/html/dist/index.js
 function nameChar(ch) {
@@ -1167,4 +1167,4 @@ export {
   autoCloseTags,
   init_dist10 as init_dist
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-XHGRI2HF.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-XHGRI2HF.js.map

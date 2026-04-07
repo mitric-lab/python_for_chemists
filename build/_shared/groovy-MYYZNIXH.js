@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/groovy.js
 var require_groovy = __commonJS({
@@ -147,4 +147,4 @@ var require_groovy = __commonJS({
   }
 });
 export default require_groovy();
-//# sourceMappingURL=/python_for_chemists//build/_shared/groovy-MYYZNIXH.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/groovy-MYYZNIXH.js.map

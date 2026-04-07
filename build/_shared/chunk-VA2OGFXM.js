@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/dax.js
 var require_dax = __commonJS({
@@ -43,4 +43,4 @@ var require_dax = __commonJS({
 export {
   require_dax
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-VA2OGFXM.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-VA2OGFXM.js.map

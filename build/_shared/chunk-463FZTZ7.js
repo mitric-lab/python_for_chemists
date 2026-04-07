@@ -3,7 +3,7 @@ import {
   __name,
   log,
   setLogLevel
-} from "/python_for_chemists//build/_shared/chunk-7PDOACA3.js";
+} from "/python_for_chemists/build/_shared/chunk-7PDOACA3.js";
 
 // ../../node_modules/khroma/dist/utils/channel.js
 var Channel = {
@@ -4497,7 +4497,7 @@ var renderKatexUnsanitized = /* @__PURE__ */ __name(async (text2, config2) => {
     return text2.replace(katexRegex, "MathML is unsupported in this environment.");
   }
   if (true) {
-    const { default: katex } = await import("/python_for_chemists//build/_shared/katex-LWHGFBWL.js");
+    const { default: katex } = await import("/python_for_chemists/build/_shared/katex-LWHGFBWL.js");
     const outputMode = config2.forceLegacyMathML || !isMathMLSupported() && config2.legacyMathML ? "htmlAndMathml" : "mathml";
     return text2.split(lineBreakRegex).map(
       (line) => hasKatex(line) ? `<div style="display: flex; align-items: center; justify-content: center; white-space: nowrap;">${line}</div>` : `<div>${line}</div>`
@@ -4797,4 +4797,4 @@ export {
 dompurify/dist/purify.es.mjs:
   (*! @license DOMPurify 3.3.0 | (c) Cure53 and other contributors | Released under the Apache license 2.0 and Mozilla Public License 2.0 | github.com/cure53/DOMPurify/blob/3.3.0/LICENSE *)
 */
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-463FZTZ7.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-463FZTZ7.js.map

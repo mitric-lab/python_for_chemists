@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/octave.js
 function wordRegexp(words) {
@@ -221,4 +221,4 @@ init_octave();
 export {
   octave
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/octave-D3WSWF2S.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/octave-D3WSWF2S.js.map

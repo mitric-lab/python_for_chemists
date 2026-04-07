@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/cypher.js
 var wordRegexp, tokenBase, pushContext, popContext, curPunc, funcs, preds, keywords, systemKeywords, operatorChars, cypher;
@@ -135,4 +135,4 @@ init_cypher();
 export {
   cypher
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/cypher-AQWVCBVI.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/cypher-AQWVCBVI.js.map

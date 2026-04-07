@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/mbox.js
 function styleForHeader(header2) {
@@ -131,4 +131,4 @@ init_mbox();
 export {
   mbox
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/mbox-WRIUVXCF.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/mbox-WRIUVXCF.js.map

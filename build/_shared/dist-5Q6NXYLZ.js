@@ -4,12 +4,12 @@ import {
   fileWarn,
   getMetadataTags,
   selectAll
-} from "/python_for_chemists//build/_shared/chunk-Q6DHUCUI.js";
-import "/python_for_chemists//build/_shared/chunk-LPSXN4QV.js";
+} from "/python_for_chemists/build/_shared/chunk-Q6DHUCUI.js";
+import "/python_for_chemists/build/_shared/chunk-LPSXN4QV.js";
 import {
   __commonJS,
   __toESM
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/docx/build/index.js
 var require_build = __commonJS({
@@ -11758,4 +11758,4 @@ export {
 docx/build/index.js:
   (*! For license information please see index.js.LICENSE.txt *)
 */
-//# sourceMappingURL=/python_for_chemists//build/_shared/dist-5Q6NXYLZ.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/dist-5Q6NXYLZ.js.map

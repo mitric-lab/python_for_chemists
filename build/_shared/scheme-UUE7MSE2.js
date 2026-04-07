@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/scheme.js
 var require_scheme = __commonJS({
@@ -157,4 +157,4 @@ var require_scheme = __commonJS({
   }
 });
 export default require_scheme();
-//# sourceMappingURL=/python_for_chemists//build/_shared/scheme-UUE7MSE2.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/scheme-UUE7MSE2.js.map

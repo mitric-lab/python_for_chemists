@@ -144,4 +144,4 @@ var package_default = {
 export {
   package_default
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-EYXQDAO3.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-EYXQDAO3.js.map

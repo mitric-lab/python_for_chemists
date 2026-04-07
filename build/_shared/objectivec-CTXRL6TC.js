@@ -1,6 +1,6 @@
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/highlight.js/lib/languages/objectivec.js
 var require_objectivec = __commonJS({
@@ -94,4 +94,4 @@ var require_objectivec = __commonJS({
   }
 });
 export default require_objectivec();
-//# sourceMappingURL=/python_for_chemists//build/_shared/objectivec-CTXRL6TC.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/objectivec-CTXRL6TC.js.map

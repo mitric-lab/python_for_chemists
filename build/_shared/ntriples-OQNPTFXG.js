@@ -1,6 +1,6 @@
 import {
   __esm
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/@codemirror/legacy-modes/mode/ntriples.js
 function transitState(currState, c) {
@@ -182,4 +182,4 @@ init_ntriples();
 export {
   ntriples
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/ntriples-OQNPTFXG.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/ntriples-OQNPTFXG.js.map

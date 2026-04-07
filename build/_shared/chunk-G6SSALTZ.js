@@ -1,9 +1,9 @@
 import {
   require_sql
-} from "/python_for_chemists//build/_shared/chunk-PY3WXTWD.js";
+} from "/python_for_chemists/build/_shared/chunk-PY3WXTWD.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/plsql.js
 var require_plsql = __commonJS({
@@ -37,4 +37,4 @@ var require_plsql = __commonJS({
 export {
   require_plsql
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-G6SSALTZ.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-G6SSALTZ.js.map

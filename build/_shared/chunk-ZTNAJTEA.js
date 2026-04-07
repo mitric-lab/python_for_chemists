@@ -1,9 +1,9 @@
 import {
   require_csharp
-} from "/python_for_chemists//build/_shared/chunk-JWAGNOMV.js";
+} from "/python_for_chemists/build/_shared/chunk-JWAGNOMV.js";
 import {
   __commonJS
-} from "/python_for_chemists//build/_shared/chunk-CGOEG7L2.js";
+} from "/python_for_chemists/build/_shared/chunk-CGOEG7L2.js";
 
 // ../../node_modules/refractor/lang/cshtml.js
 var require_cshtml = __commonJS({
@@ -129,4 +129,4 @@ var require_cshtml = __commonJS({
 export {
   require_cshtml
 };
-//# sourceMappingURL=/python_for_chemists//build/_shared/chunk-ZTNAJTEA.js.map
+//# sourceMappingURL=/python_for_chemists/build/_shared/chunk-ZTNAJTEA.js.map
