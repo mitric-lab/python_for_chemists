@@ -14,3 +14,27 @@ uv run jupyter book start
 ```
 
 The site will be available at [http://localhost:3000](http://localhost:3000).
+
+Before building the student-facing book, regenerate the student notebooks from
+the instructor solution notebooks:
+
+```bash
+uv run python scripts/generate_student_notebooks.py
+```
+
+The generator looks for notebooks named `instructors/*_solution.ipynb` and
+creates the corresponding student notebook in `chapters/problem_sets/`. Inside
+code cells, content between `# SOLUTION-START` and `# SOLUTION-END` is replaced
+with `# your code here`, preserving the original indentation and roughly the
+same number of lines.
+
+A typical local workflow is:
+
+```bash
+uv run python scripts/generate_student_notebooks.py
+uv run jupyter book start
+```
+
+The GitHub Pages deploy workflow runs the same generator automatically before
+building the HTML site, so the published book always uses the generated student
+notebooks.

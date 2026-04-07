@@ -58,9 +58,16 @@ jobs:
         if: env.SHOULD_DEPLOY == 'true'
         with:
           node-version: 18.x
+      - uses: actions/setup-python@v5
+        if: env.SHOULD_DEPLOY == 'true'
+        with:
+          python-version: '3.12'
       - name: Install Jupyter Book (via myst)
         if: env.SHOULD_DEPLOY == 'true'
         run: npm install -g jupyter-book
+      - name: Generate student notebooks
+        if: env.SHOULD_DEPLOY == 'true'
+        run: python scripts/generate_student_notebooks.py
       - name: Build HTML Assets
         if: env.SHOULD_DEPLOY == 'true'
         run: jupyter-book build --html
