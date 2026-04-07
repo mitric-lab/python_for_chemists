@@ -1,18 +1,15 @@
 [project]
 name = "python-for-chemists"
 version = "0.1.0"
-description = "Add your description here"
+description = "Python for Chemists SS26"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.12"
 dependencies = [
-    "matplotlib>=3.9.4",
-    "mpld3>=0.5.10",
-    "numpy>=2.0.2",
-    "pandas>=2.2.3",
-    "plotly>=6.2.0",
-    "rdkit>=2025.3.3",
-    "scikit-learn>=1.6.1",
-    "scipy>=1.13.1",
-    "seaborn>=0.13.2",
-    "torch>=2.7.1",
+    "jupyter-book>=2.0.0",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.3",
+    "pandas>=3.0.1",
+    "rdkit>=2025.9.6",
+    "scikit-learn>=1.8.0",
+    "scipy>=1.17.1",
 ]

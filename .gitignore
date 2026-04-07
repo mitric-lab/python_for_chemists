@@ -1,5 +1,5 @@
-# mdbook
-book/
+# jupyter book
+_build/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -8,12 +8,7 @@ book/
 **/__pycache__/
 **/*.py[cod]
 code/*/.hypothesis
+.venv/
 
 # Mac
 .DS_Store
-*/.DS_Store
-
-# Pytorch data sets and models
-src/codes/07-summary/data/
-src/codes/07-summary/models/
-
