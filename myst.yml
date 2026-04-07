@@ -3,6 +3,8 @@ version: 1
 project:
   id: 06bbf8a2-9f01-4dd4-a99e-b5e9c5eb8d3e
   title: Programmierkurs für Chemiker
+  exclude:
+    - instructors/**
   keywords:
     - python
     - chemistry

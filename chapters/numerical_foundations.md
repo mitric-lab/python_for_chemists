@@ -11,6 +11,9 @@ Along the way, the chapter also introduces
 central programming patterns for numerical work, including reusable
 functions, iterative algorithms, and standard tools from `scipy`.
 
+The accompanying problem set for this chapter is available at
+{ref}`sec:pset_1`.
+
 | Section | Covered Examples | New Concepts and Tools |
 | --- | --- | --- |
 | Root Finding | molar volumes from the Van der Waals equation | `while`-loops, default arguments, iterative methods, convergence criteria, finite-difference derivatives |
