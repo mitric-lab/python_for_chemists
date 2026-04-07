@@ -5,57 +5,57 @@
     <loc>http://localhost:3000</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/preface</loc>
+    <loc>http://localhost:3000/preface</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/preface/motivation</loc>
+    <loc>http://localhost:3000/motivation</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/preface/what-is-programming</loc>
+    <loc>http://localhost:3000/what-is-programming</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/preface/software-setup</loc>
+    <loc>http://localhost:3000/software-setup</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/crash-course</loc>
+    <loc>http://localhost:3000/crash-course</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/crash-course/python-basics</loc>
+    <loc>http://localhost:3000/python-basics</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/crash-course/numerical-programming</loc>
+    <loc>http://localhost:3000/numerical-programming</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/crash-course/visualising-data</loc>
+    <loc>http://localhost:3000/visualising-data</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/crash-course/functions-and-classes</loc>
+    <loc>http://localhost:3000/functions-and-classes</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/numerical-foundations</loc>
+    <loc>http://localhost:3000/numerical-foundations</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/numerical-foundations/root-finding</loc>
+    <loc>http://localhost:3000/root-finding</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/numerical-foundations/computational-optimisation</loc>
+    <loc>http://localhost:3000/computational-optimisation</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/numerical-foundations/ode-solvers</loc>
+    <loc>http://localhost:3000/ode-solvers</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/spectral-analysis</loc>
+    <loc>http://localhost:3000/spectral-analysis</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/data-driven-modelling</loc>
+    <loc>http://localhost:3000/data-driven-modelling</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/deep-learning</loc>
+    <loc>http://localhost:3000/deep-learning</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/problem-sets/pset-0</loc>
+    <loc>http://localhost:3000/pset-0</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/problem-sets/pset-1</loc>
+    <loc>http://localhost:3000/pset-1</loc>
   </url>
 </urlset>
