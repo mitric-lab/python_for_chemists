@@ -18,7 +18,8 @@ extends:
 site:
   template: book-theme
   options:
-    logo_text: Programmierkurs für Chemiker
+    favicon: assets/icon/favicon.png
+    logo_text: Python for Chemists
     style: book.css
   parts:
     primary_sidebar_footer:
