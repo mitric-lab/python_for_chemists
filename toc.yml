@@ -6,8 +6,8 @@ project:
       title: 0 Vorwort
       children:
         - file: chapters/preface/motivation.md
-        - file: chapters/preface/getting_started.md
-        - file: chapters/preface/book_usage.md
+        - file: chapters/preface/what_is_programming.md
+        - file: chapters/preface/software_setup.md
     - file: chapters/crash_course.md
       children:
         - file: chapters/crash_course/python_basics.ipynb
