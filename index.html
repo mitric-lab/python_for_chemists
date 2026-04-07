@@ -1,291 +1,32 @@
-<!DOCTYPE HTML>
-<html lang="de" class="latte" dir="ltr">
-    <head>
-        <!-- Book generated using mdBook -->
-        <meta charset="UTF-8">
-        <title>Vorwort - Programmierkurs für Chemiker</title>
-
-
-        <!-- Custom HTML head -->
-        
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff">
-
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
-
-        <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
-
-        <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="./theme/catppuccin.css">
-        <link rel="stylesheet" href="./theme/catppuccin-admonish.css">
-        <link rel="stylesheet" href="./theme/mdbook-admonish.css">
-        <link rel="stylesheet" href="./theme/mdbook-admonish-custom.css">
-        <link rel="stylesheet" href="./theme/icomoon.css">
-        <link rel="stylesheet" href="./theme/pagetoc.css">
-        <link rel="stylesheet" href="./mdbook-admonish.css">
-
-        <!-- MathJax -->
-        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    </head>
-    <body class="sidebar-visible no-js">
-    <div id="body-container">
-        <!-- Provide site root to javascript -->
-        <script>
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "mocha" : "latte";
-        </script>
-
-        <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script>
-            try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
-
-                if (theme.startsWith('"') && theme.endsWith('"')) {
-                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
-                }
-
-                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
-                }
-            } catch (e) { }
-        </script>
-
-        <!-- Set the theme before any content is loaded, prevents flash -->
-        <script>
-            var theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
-            if (theme === null || theme === undefined) { theme = default_theme; }
-            var html = document.querySelector('html');
-            html.classList.remove('latte')
-            html.classList.add(theme);
-            var body = document.querySelector('body');
-            body.classList.remove('no-js')
-            body.classList.add('js');
-        </script>
-
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
-
-        <!-- Hide / unhide sidebar before it is displayed -->
-        <script>
-            var body = document.querySelector('body');
-            var sidebar = null;
-            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
-            if (document.body.clientWidth >= 1080) {
-                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
-                sidebar = sidebar || 'visible';
-            } else {
-                sidebar = 'hidden';
+<!DOCTYPE html><html lang="en" class="" style="scroll-padding:60px"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Programmierkurs für Chemiker - Programmierkurs für Chemiker</title><meta property="og:title" content="Programmierkurs für Chemiker - Programmierkurs für Chemiker"/><meta name="generator" content="mystmd"/><meta name="keywords" content="python, chemistry, jupyter-book"/><link rel="stylesheet" href="/python_for_chemists//build/_assets/app-GJNX3FZP.css"/><link rel="stylesheet" href="/python_for_chemists//build/_assets/thebe-core-VKVHG5VY.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jupyter-matplotlib@0.11.3/css/mpl_widget.css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous"/><link rel="icon" href="/python_for_chemists//favicon.ico"/><link rel="stylesheet" href="/python_for_chemists//myst-theme.css"/><script>
+  const savedTheme = localStorage.getItem("myst:theme");
+  const theme = window.matchMedia("(prefers-color-scheme: light)").matches ? 'light' : 'dark';
+  const classes = document.documentElement.classList;
+  const hasAnyTheme = classes.contains('light') || classes.contains('dark');
+  if (!hasAnyTheme) classes.add(savedTheme ?? theme);
+</script></head><body class="m-0 transition-colors duration-500 bg-white dark:bg-stone-900"><div class="myst-skip-to-article fixed top-1 left-1 h-[0px] w-[0px] focus-within:z-40 focus-within:h-auto focus-within:w-auto bg-white overflow-hidden focus-within:p-2 focus-within:ring-1" aria-label="skip to content options"><a href="#skip-to-frontmatter" class="myst-skip-to-link block px-2 py-1 text-black underline">Skip to article frontmatter</a><a href="#skip-to-article" class="myst-skip-to-link block px-2 py-1 text-black underline">Skip to article content</a></div><dialog id="myst-no-css" style="position:fixed;left:0px;top:0px;width:100%;height:100vh;font-size:4rem;padding:1rem;color:black;background:white"><strong>Site not loading correctly?</strong><p>This may be due to an incorrect <code>BASE_URL</code> configuration. See<!-- --> <a href="https://mystmd.org/guide/deployment#deploy-base-url">the MyST Documentation</a> <!-- -->for reference.</p><script>
+    (() => {
+            // Test for has-styling variable set by the MyST stylesheet
+            const node = document.currentScript.parentNode;
+            const hasCSS = window.getComputedStyle(node).getPropertyValue("--has-styling");
+            if (hasCSS === ""){
+                    node.showModal();
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            body.classList.remove('sidebar-visible');
-            body.classList.add("sidebar-" + sidebar);
-        </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Table of Contents</li><li class="chapter-item expanded "><a href="00-preface.html" class="active"><strong aria-hidden="true">0.</strong> Vorwort</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="00-preface/01-motivation.html"><strong aria-hidden="true">0.1.</strong> Motivation</a></li><li class="chapter-item "><a href="00-preface/02-getting_started.html"><strong aria-hidden="true">0.2.</strong> Erste Schritte</a></li><li class="chapter-item "><a href="00-preface/03-mdbook_usage.html"><strong aria-hidden="true">0.3.</strong> Bedienung dieser Website</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded "><a href="01-regression.html"><strong aria-hidden="true">1.</strong> Regression Analysis</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="01-regression/01-least_squares.html"><strong aria-hidden="true">1.1.</strong> Least Squares</a></li><li class="chapter-item "><a href="01-regression/02-linear_regression.html"><strong aria-hidden="true">1.2.</strong> Linear Regression</a></li><li class="chapter-item "><a href="01-regression/03-numerical_optimisation.html"><strong aria-hidden="true">1.3.</strong> Numerical Optimisation</a></li><li class="chapter-item "><a href="01-regression/04-nonlinear_regression.html"><strong aria-hidden="true">1.4.</strong> Nonlinear Regression</a></li></ol></li><li class="chapter-item expanded "><a href="02-differential_equations.html"><strong aria-hidden="true">2.</strong> Differential Equations</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="02-differential_equations/01-initial_value_problem.html"><strong aria-hidden="true">2.1.</strong> Initial Value Problem</a></li><li class="chapter-item "><a href="02-differential_equations/02-euler_method.html"><strong aria-hidden="true">2.2.</strong> Euler Method</a></li><li class="chapter-item "><a href="02-differential_equations/03-runge_kutta.html"><strong aria-hidden="true">2.3.</strong> Runge-Kutta Method</a></li><li class="chapter-item "><a href="02-differential_equations/04-finite_differences.html"><strong aria-hidden="true">2.4.</strong> Finite-Difference Method</a></li></ol></li><li class="chapter-item expanded "><a href="04-evd_and_svd.html"><strong aria-hidden="true">3.</strong> Eigenvalues and Singular Values</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="04-evd_and_svd/01-eigenvalue_decomposition.html"><strong aria-hidden="true">3.1.</strong> Eigenvalue Decomposition</a></li><li class="chapter-item "><a href="04-evd_and_svd/02-singular_value_decomposition.html"><strong aria-hidden="true">3.2.</strong> Singular Value Decomposition</a></li><li class="chapter-item "><a href="04-evd_and_svd/03-low_rank_approximation.html"><strong aria-hidden="true">3.3.</strong> Low-rank Approximation</a></li><li class="chapter-item "><a href="04-evd_and_svd/04-principal_component_analysis.html"><strong aria-hidden="true">3.4.</strong> Principal Component Analysis</a></li><li class="chapter-item "><a href="04-evd_and_svd/05-linear_systems.html"><strong aria-hidden="true">3.5.</strong> System of Linear Equations</a></li></ol></li><li class="chapter-item expanded "><a href="05-machine_learning.html"><strong aria-hidden="true">4.</strong> Machine Learning</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="05-machine_learning/01-regression.html"><strong aria-hidden="true">4.1.</strong> Regression</a></li><li class="chapter-item "><a href="05-machine_learning/02-classification.html"><strong aria-hidden="true">4.2.</strong> Classification</a></li><li class="chapter-item "><a href="05-machine_learning/03-dimensionality_reduction.html"><strong aria-hidden="true">4.3.</strong> Dimensionality Reduction</a></li><li class="chapter-item "><a href="05-machine_learning/04-clustering.html"><strong aria-hidden="true">4.4.</strong> Clustering</a></li></ol></li><li class="chapter-item expanded "><a href="06-neural_networks.html"><strong aria-hidden="true">5.</strong> Neural Networks</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="06-neural_networks/01-slp.html"><strong aria-hidden="true">5.1.</strong> Single-Layer-Perceptron</a></li><li class="chapter-item "><a href="06-neural_networks/02-mlp.html"><strong aria-hidden="true">5.2.</strong> Multi-Layer-Perceptron</a></li></ol></li><li class="chapter-item expanded "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="07-summary.html">Aktuelle Forschungsthemen</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded affix "><a href="psets/01.html">Problem Set 1</a></li><li class="chapter-item expanded affix "><a href="psets/02.html">Problem Set 2</a></li><li class="chapter-item expanded affix "><a href="psets/03.html">Problem Set 3</a></li><li class="chapter-item expanded affix "><a href="psets/04.html">Problem Set 4</a></li><li class="chapter-item expanded affix "><a href="psets/exam_preparation.html">Sample Exam</a></li></ol>
-            </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
-                <div class="sidebar-resize-indicator"></div>
-            </div>
-        </nav>
+    })()
+</script></dialog><div class="myst-top-nav bg-white/80 backdrop-blur dark:bg-stone-900/80 shadow dark:shadow-stone-700 p-3 md:px-8 sticky w-full top-0 z-30 h-[60px]"><nav class="myst-top-nav-bar flex items-center justify-between flex-nowrap max-w-[1440px] mx-auto"><div class="flex flex-row xl:min-w-[19.5rem] mr-2 sm:mr-7 justify-start items-center shrink-0"><div class="block xl:hidden"><button class="myst-top-nav-menu-button flex items-center justify-center border-stone-400 text-stone-800 hover:text-stone-900 dark:text-stone-200 hover:dark:text-stone-100 w-10 h-10"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" width="1.5rem" height="1.5rem"><path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"></path></svg><span class="sr-only">Open Menu</span></button></div><a class="myst-home-link flex items-center ml-3 dark:text-white w-fit md:ml-5 xl:ml-7" href="/python_for_chemists//"><span class="text-md sm:text-xl tracking-tight sm:mr-5">Programmierkurs für Chemiker</span></a></div><div class="flex items-center flex-grow w-auto"><div class="flex-grow hidden text-md lg:block"></div><div class="flex-grow block"></div><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:R75cp:" data-state="closed" class="myst-search-bar flex items-center h-10 aspect-square sm:w-64 text-left text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 myst-search-bar-disabled hover:ring-blue-500 dark:hover:ring-blue-500 hover:border-blue-500 dark:hover:border-blue-500"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="p-2.5 h-10 w-10 aspect-square"><path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd"></path></svg><span class="myst-search-text-placeholder hidden sm:block grow">Search</span><div aria-hidden="true" class="myst-search-shortcut items-center hidden mx-1 font-mono text-sm text-gray-600 dark:text-gray-300 sm:flex gap-x-1"><kbd class="px-2 py-1 border border-gray-300 dark:border-gray-600 rounded-md shadow-[0px_2px_0px_0px_rgba(0,0,0,0.08)] dark:shadow-none hide-mac">CTRL</kbd><kbd class="px-2 py-1 border border-gray-300 dark:border-gray-600 rounded-md shadow-[0px_2px_0px_0px_rgba(0,0,0,0.08)] dark:shadow-none show-mac">⌘</kbd><kbd class="px-2 py-1 border border-gray-300 dark:border-gray-600 rounded-md shadow-[0px_2px_0px_0px_rgba(0,0,0,0.08)] dark:shadow-none ">K</kbd><script>
+;(() => {
+const script = document.currentScript;
+const root = script.parentElement;
 
-        <!-- Track and set sidebar scroll position -->
-        <script>
-            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
-            sidebarScrollbox.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') {
-                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
-                }
-            }, { passive: true });
-            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
-            sessionStorage.removeItem('sidebar-scroll');
-            if (sidebarScrollTop) {
-                // preserve sidebar scroll position when navigating via links within sidebar
-                sidebarScrollbox.scrollTop = sidebarScrollTop;
-            } else {
-                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
-                var activeSection = document.querySelector('#sidebar .active');
-                if (activeSection) {
-                    activeSection.scrollIntoView({ block: 'center' });
-                }
-            }
-        </script>
+const isMac = /mac/i.test(
+      window.navigator.userAgentData?.platform ?? window.navigator.userAgent,
+    );
+root.querySelectorAll(".hide-mac").forEach(node => {node.classList.add(isMac ? "hidden" : "block")});
+root.querySelectorAll(".show-mac").forEach(node => {node.classList.add(!isMac ? "hidden" : "block")});
+})()</script></div></button><button class="myst-theme-button theme rounded-full aspect-square border border-stone-700 dark:border-white hover:bg-neutral-100 border-solid overflow-hidden text-stone-700 dark:text-white hover:text-stone-500 dark:hover:text-neutral-800 w-10 h-10 ml-3" title="Toggle theme between light and dark mode" aria-label="Toggle theme between light and dark mode"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="myst-theme-moon-icon h-full w-full p-0.5 hidden dark:block"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd"></path></svg><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="myst-theme-sun-icon h-full w-full p-0.5 dark:hidden"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"></path></svg></button><div class="block sm:hidden"></div><div class="hidden sm:block"></div></div></nav></div><div class="myst-primary-sidebar fixed xl:article-grid grid-gap xl:w-full xl:pointer-events-none overflow-auto max-xl:w-[75vw] max-xl:max-w-[350px] max-xl:!top-0 max-xl:h-screen hidden z-10" style="top:60px"><div class="myst-primary-sidebar-pointer pointer-events-auto xl:col-margin-left flex-col overflow-hidden max-xl:h-full hidden xl:flex"><div class="myst-primary-sidebar-nav flex-grow py-6 overflow-y-auto primary-scrollbar"><nav aria-label="Navigation" class="myst-primary-sidebar-topnav overflow-y-hidden transition-opacity lg:hidden ml-3 xl:ml-0 mr-3 max-w-[350px]"><div class="w-full px-1 dark:text-white font-medium"></div></nav><div class="my-3 border-b-2 lg:hidden"></div><nav aria-label="Table of Contents" class="myst-primary-sidebar-toc flex-grow overflow-y-hidden transition-opacity ml-3 xl:ml-0 mr-3 max-w-[350px]"><div class="myst-toc w-full px-1 dark:text-white"><a title="Programmierkurs für Chemiker" class="block break-words focus:outline outline-blue-200 outline-2 rounded myst-toc-item p-2 my-1 rounded-lg hover:bg-slate-300/30 font-bold" href="/python_for_chemists//">Programmierkurs für Chemiker</a><div data-state="closed" class="w-full"><div class="myst-toc-item flex flex-row w-full gap-2 pl-2 my-1 text-left rounded-lg outline-none hover:bg-slate-300/30"><a title="0  Vorwort" class="block break-words focus:outline outline-blue-200 outline-2 rounded py-2 grow" href="/python_for_chemists//preface">0 Vorwort</a><button class="self-stretch flex items-center flex-none px-1 rounded-l-md group hover:bg-slate-300/30 focus-visible:outline outline-blue-200 outline-2" aria-label="Open Folder" type="button" aria-controls="radix-:R18psp:" aria-expanded="false" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="transition-transform duration-300 group-data-[state=open]:rotate-90 text-text-slate-700 dark:text-slate-100" height="1.5rem" width="1.5rem"><path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd"></path></svg></button></div><div data-state="closed" id="radix-:R18psp:" hidden="" class="pl-3 pr-[2px] collapsible-content"></div></div><div data-state="closed" class="w-full"><div class="myst-toc-item flex flex-row w-full gap-2 pl-2 my-1 text-left rounded-lg outline-none hover:bg-slate-300/30"><a title="1 Crash Course" class="block break-words focus:outline outline-blue-200 outline-2 rounded py-2 grow" href="/python_for_chemists//crash-course">1 Crash Course</a><button class="self-stretch flex items-center flex-none px-1 rounded-l-md group hover:bg-slate-300/30 focus-visible:outline outline-blue-200 outline-2" aria-label="Open Folder" type="button" aria-controls="radix-:R1opsp:" aria-expanded="false" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="transition-transform duration-300 group-data-[state=open]:rotate-90 text-text-slate-700 dark:text-slate-100" height="1.5rem" width="1.5rem"><path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd"></path></svg></button></div><div data-state="closed" id="radix-:R1opsp:" hidden="" class="pl-3 pr-[2px] collapsible-content"></div></div><div data-state="closed" class="w-full"><div class="myst-toc-item flex flex-row w-full gap-2 pl-2 my-1 text-left rounded-lg outline-none hover:bg-slate-300/30"><a title="2 Numerical Foundations" class="block break-words focus:outline outline-blue-200 outline-2 rounded py-2 grow" href="/python_for_chemists//numerical-foundations">2 Numerical Foundations</a><button class="self-stretch flex items-center flex-none px-1 rounded-l-md group hover:bg-slate-300/30 focus-visible:outline outline-blue-200 outline-2" aria-label="Open Folder" type="button" aria-controls="radix-:R28psp:" aria-expanded="false" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="transition-transform duration-300 group-data-[state=open]:rotate-90 text-text-slate-700 dark:text-slate-100" height="1.5rem" width="1.5rem"><path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd"></path></svg></button></div><div data-state="closed" id="radix-:R28psp:" hidden="" class="pl-3 pr-[2px] collapsible-content"></div></div><a title="3 Spectral Analysis" class="block break-words focus:outline outline-blue-200 outline-2 rounded myst-toc-item p-2 my-1 rounded-lg hover:bg-slate-300/30" href="/python_for_chemists//spectral-analysis">3 Spectral Analysis</a><a title="4 Data Driven Modelling" class="block break-words focus:outline outline-blue-200 outline-2 rounded myst-toc-item p-2 my-1 rounded-lg hover:bg-slate-300/30" href="/python_for_chemists//data-driven-modelling">4 Data Driven Modelling</a><a title="5 Deep Learning" class="block break-words focus:outline outline-blue-200 outline-2 rounded myst-toc-item p-2 my-1 rounded-lg hover:bg-slate-300/30" href="/python_for_chemists//deep-learning">5 Deep Learning</a><div data-state="closed" class="w-full"><div class="myst-toc-item flex flex-row w-full gap-2 pl-2 my-1 text-left rounded-lg outline-none hover:bg-slate-300/30"><div title="Problem Sets" class="block break-words rounded py-2 grow cursor-pointer">Problem Sets</div><button class="self-stretch flex items-center flex-none px-1 rounded-l-md group hover:bg-slate-300/30 focus-visible:outline outline-blue-200 outline-2" aria-label="Open Folder" type="button" aria-controls="radix-:R48psp:" aria-expanded="false" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" class="transition-transform duration-300 group-data-[state=open]:rotate-90 text-text-slate-700 dark:text-slate-100" height="1.5rem" width="1.5rem"><path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd"></path></svg></button></div><div data-state="closed" id="radix-:R48psp:" hidden="" class="pl-3 pr-[2px] collapsible-content"></div></div></div></nav></div><div class="myst-primary-sidebar-footer flex-none py-6 transition-all duration-700 translate-y-6 opacity-0 ml-3 xl:ml-0 mr-3 max-w-[350px]"><div class="article footer myst-primary-sidebar-footer"></div></div></div></div><main class="article-grid grid-gap"><article class="article-grid subgrid-gap col-screen article content"><div class="hidden"></div><div id="skip-to-frontmatter" aria-label="article frontmatter" class="myst-fm-block mb-8 pt-9"><div class="myst-fm-block-header flex items-center mb-5 h-6 text-sm font-light"><div class="flex-grow"></div><div class="myst-fm-block-badges"></div><div class="myst-fm-downloads-dropdown relative flex inline-block mx-1 grow-0" data-headlessui-state=""><button class="myst-fm-downloads-button relative ml-2 -mr-1" id="headlessui-menu-button-:Rs8ucp:" type="button" aria-haspopup="menu" aria-expanded="false" data-headlessui-state=""><span class="sr-only">Downloads</span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" width="1.25rem" height="1.25rem" class="myst-fm-downloads-icon"><title>Download</title><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"></path></svg></button></div></div><h1 class="myst-fm-block-title mb-0">Programmierkurs für Chemiker</h1></div><div class="block my-10 lg:sticky lg:z-10 lg:h-0 lg:pt-0 lg:my-0 lg:ml-10 lg:col-margin-right" style="top:60px"><nav></nav></div><div id="skip-to-article"></div><p>Willkommen zum Skript des Programmierkurses für Chemiker.</p><p>Bitte verwenden Sie die Navigation links, um die Kapitel zu öffnen.</p><div class="myst-backmatter-parts"></div><div class="myst-footer-links flex pt-10 mb-10 space-x-4"><a class="myst-footer-link flex-1 block p-4 font-normal text-gray-600 no-underline border border-gray-200 rounded shadow-sm group hover:border-blue-600 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 dark:text-gray-100 dark:border-gray-500 hover:shadow-lg dark:shadow-neutral-700 myst-footer-link-next" aria-label="Next: 0 Vorwort" href="/python_for_chemists//preface"><div class="flex h-full align-middle"><div class="flex-grow"><div class="myst-footer-link-group text-xs text-gray-500 dark:text-gray-400">Programmierkurs für Chemiker</div>0 Vorwort</div><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" width="1.5rem" height="1.5rem" class="myst-footer-link-icon self-center transition-transform group-hover:translate-x-1 shrink-0"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path></svg></div></a></div></article></main><footer class="article footer article-grid bg-white dark:bg-slate-950 mt-10 shadow-2xl shadow py-10"></footer><script>((a,l)=>{if(!window.history.state||!window.history.state.key){let u=Math.random().toString(32).slice(2);window.history.replaceState({key:u},"")}try{let d=JSON.parse(sessionStorage.getItem(a)||"{}")[l||window.history.state.key];typeof d=="number"&&window.scrollTo(0,d)}catch(u){console.error(u),sessionStorage.removeItem(a)}})("positions", null)</script><link rel="modulepreload" href="/python_for_chemists//build/entry.client-PCJPW7TK.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-AQ2CODAG.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-JJXTQVMA.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-OZE3FFNP.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-M7I6MSNA.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-C4DFGG5C.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-J7TUH54J.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-FZ2S7OYD.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-JEM6JXYA.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-34XIY2DH.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-KQM5FBHR.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-OCWQY3HK.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-7HNKBP4B.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-CUKUDK3R.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-3EBOCCHJ.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-O4VQNZ62.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-4OEDG4JQ.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-GUCIBHGO.js"/><link rel="modulepreload" href="/python_for_chemists//build/root-MMWEPVRR.js"/><link rel="modulepreload" href="/python_for_chemists//build/_shared/chunk-WVBTC5H5.js"/><link rel="modulepreload" href="/python_for_chemists//build/routes/$-WSG6RAW5.js"/><script>window.__remixContext = {"url":"/index","state":{"loaderData":{"root":{"config":{"version":3,"myst":"1.8.3","options":{"logo_text":"Programmierkurs für Chemiker","style":"/python_for_chemists//build/book-f935b30ac0f6a7940ea45d6d1819abf5.css"},"parts":{"primary_sidebar_footer":{"mdast":{"type":"root","children":[{"type":"block","data":{"part":"primary_sidebar_footer"},"children":[],"key":"PPhSkZSxyn"}],"key":"UNF6YzbkrY"},"frontmatter":{"numbering":{"title":{"enabled":true},"equation":{"enabled":true,"continue":true}},"keywords":["python","chemistry","jupyter-book"],"enumerator":"6"}},"footer":{"mdast":{"type":"root","children":[{"type":"block","data":{"part":"footer"},"children":[],"key":"R7KVwh2OuR"}],"key":"TeRvpY4TPf"},"frontmatter":{"numbering":{"title":{"enabled":true},"equation":{"enabled":true,"continue":true}},"keywords":["python","chemistry","jupyter-book"],"enumerator":"7"}}},"nav":[],"actions":[],"projects":[{"numbering":{"title":{"enabled":true},"equation":{"continue":true,"enabled":true}},"title":"Programmierkurs für Chemiker","keywords":["python","chemistry","jupyter-book"],"id":"06bbf8a2-9f01-4dd4-a99e-b5e9c5eb8d3e","toc":[{"file":"chapters/index.md"},{"children":[{"file":"chapters/preface/motivation.md"},{"file":"chapters/preface/getting_started.md"},{"file":"chapters/preface/book_usage.md"}],"file":"chapters/preface.md","title":"0 Vorwort"},{"children":[{"file":"chapters/crash_course/python_basics.ipynb"},{"file":"chapters/crash_course/numerical_programming.ipynb"},{"file":"chapters/crash_course/visualising_data.ipynb"},{"file":"chapters/crash_course/functions_and_classes.ipynb"}],"file":"chapters/crash_course.md"},{"children":[{"file":"chapters/numerical_foundations/root_finding.ipynb"},{"file":"chapters/numerical_foundations/computational_optimisation.ipynb"},{"file":"chapters/numerical_foundations/ode_solvers.ipynb"}],"file":"chapters/numerical_foundations.md"},{"file":"chapters/spectral_analysis.md"},{"file":"chapters/data-driven_modelling.md"},{"file":"chapters/deep_learning.md"},{"children":[{"file":"chapters/problem_sets/pset_0.ipynb"},{"file":"chapters/problem_sets/pset_1.ipynb"}],"title":"Problem Sets"}],"exports":[],"bibliography":[],"index":"index","pages":[{"slug":"preface","title":"0  Vorwort","short_title":"0 Vorwort","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1},{"slug":"motivation","title":"Motivation","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"0.1"},{"slug":"getting-started","title":"Erste Schritte","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"0.2"},{"slug":"book-usage","title":"Bedienung dieser Webseite","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"0.3"},{"slug":"crash-course","title":"Crash Course","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1,"enumerator":"1"},{"slug":"python-basics","title":"Python Basics","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"1.1"},{"slug":"numerical-programming","title":"Numerical Programming","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"1.2"},{"slug":"visualising-data","title":"Visualising Data with Matplotlib","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"1.3"},{"slug":"functions-and-classes","title":"Functions and Classes","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"1.4"},{"slug":"numerical-foundations","title":"Numerical Foundations","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1,"enumerator":"2"},{"slug":"root-finding","title":"Root Finding","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"2.1"},{"slug":"computational-optimisation","title":"Computational Optimisation","description":"","date":"","thumbnail":"/python_for_chemists//build/48114d2a3ddce098dd6ba10c3b579e38.gif","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"2.2"},{"slug":"ode-solvers","title":"ODE Solvers","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"2.3"},{"slug":"spectral-analysis","title":"Spectral Analysis","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1,"enumerator":"3"},{"slug":"data-driven-modelling","title":"Data Driven Modelling","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1,"enumerator":"4"},{"slug":"deep-learning","title":"Deep Learning","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1,"enumerator":"5"},{"level":1,"title":"Problem Sets"},{"slug":"pset-0","title":"Problem Set 0","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"5.1"},{"slug":"pset-1","title":"Problem Set 1","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"5.2"}]}]},"CONTENT_CDN_PORT":"3100","MODE":"static","BASE_URL":"/python_for_chemists/"},"routes/$":{"config":{"version":3,"myst":"1.8.3","options":{"logo_text":"Programmierkurs für Chemiker","style":"/python_for_chemists//build/book-f935b30ac0f6a7940ea45d6d1819abf5.css"},"parts":{"primary_sidebar_footer":{"mdast":{"type":"root","children":[{"type":"block","data":{"part":"primary_sidebar_footer"},"children":[],"key":"PPhSkZSxyn"}],"key":"UNF6YzbkrY"},"frontmatter":{"numbering":{"title":{"enabled":true},"equation":{"enabled":true,"continue":true}},"keywords":["python","chemistry","jupyter-book"],"enumerator":"6"}},"footer":{"mdast":{"type":"root","children":[{"type":"block","data":{"part":"footer"},"children":[],"key":"R7KVwh2OuR"}],"key":"TeRvpY4TPf"},"frontmatter":{"numbering":{"title":{"enabled":true},"equation":{"enabled":true,"continue":true}},"keywords":["python","chemistry","jupyter-book"],"enumerator":"7"}}},"nav":[],"actions":[],"projects":[{"numbering":{"title":{"enabled":true},"equation":{"continue":true,"enabled":true}},"title":"Programmierkurs für Chemiker","keywords":["python","chemistry","jupyter-book"],"id":"06bbf8a2-9f01-4dd4-a99e-b5e9c5eb8d3e","toc":[{"file":"chapters/index.md"},{"children":[{"file":"chapters/preface/motivation.md"},{"file":"chapters/preface/getting_started.md"},{"file":"chapters/preface/book_usage.md"}],"file":"chapters/preface.md","title":"0 Vorwort"},{"children":[{"file":"chapters/crash_course/python_basics.ipynb"},{"file":"chapters/crash_course/numerical_programming.ipynb"},{"file":"chapters/crash_course/visualising_data.ipynb"},{"file":"chapters/crash_course/functions_and_classes.ipynb"}],"file":"chapters/crash_course.md"},{"children":[{"file":"chapters/numerical_foundations/root_finding.ipynb"},{"file":"chapters/numerical_foundations/computational_optimisation.ipynb"},{"file":"chapters/numerical_foundations/ode_solvers.ipynb"}],"file":"chapters/numerical_foundations.md"},{"file":"chapters/spectral_analysis.md"},{"file":"chapters/data-driven_modelling.md"},{"file":"chapters/deep_learning.md"},{"children":[{"file":"chapters/problem_sets/pset_0.ipynb"},{"file":"chapters/problem_sets/pset_1.ipynb"}],"title":"Problem Sets"}],"exports":[],"bibliography":[],"index":"index","pages":[{"slug":"preface","title":"0  Vorwort","short_title":"0 Vorwort","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1},{"slug":"motivation","title":"Motivation","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"0.1"},{"slug":"getting-started","title":"Erste Schritte","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"0.2"},{"slug":"book-usage","title":"Bedienung dieser Webseite","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"0.3"},{"slug":"crash-course","title":"Crash Course","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1,"enumerator":"1"},{"slug":"python-basics","title":"Python Basics","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"1.1"},{"slug":"numerical-programming","title":"Numerical Programming","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"1.2"},{"slug":"visualising-data","title":"Visualising Data with Matplotlib","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"1.3"},{"slug":"functions-and-classes","title":"Functions and Classes","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"1.4"},{"slug":"numerical-foundations","title":"Numerical Foundations","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1,"enumerator":"2"},{"slug":"root-finding","title":"Root Finding","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"2.1"},{"slug":"computational-optimisation","title":"Computational Optimisation","description":"","date":"","thumbnail":"/python_for_chemists//build/48114d2a3ddce098dd6ba10c3b579e38.gif","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"2.2"},{"slug":"ode-solvers","title":"ODE Solvers","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"2.3"},{"slug":"spectral-analysis","title":"Spectral Analysis","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1,"enumerator":"3"},{"slug":"data-driven-modelling","title":"Data Driven Modelling","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1,"enumerator":"4"},{"slug":"deep-learning","title":"Deep Learning","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1,"enumerator":"5"},{"level":1,"title":"Problem Sets"},{"slug":"pset-0","title":"Problem Set 0","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"5.1"},{"slug":"pset-1","title":"Problem Set 1","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"5.2"}]}]},"page":{"version":3,"kind":"Article","sha256":"db9971eafa3146177f00f757503118db9be5ed26929dae7d5e73494cdd6c65c6","slug":"index","location":"/chapters/index.md","dependencies":[],"frontmatter":{"title":"Programmierkurs für Chemiker","numbering":{"title":{"enabled":true},"equation":{"enabled":true,"continue":true},"heading_1":{"enabled":false},"heading_2":{"enabled":false},"heading_3":{"enabled":false},"heading_4":{"enabled":false},"heading_5":{"enabled":false},"heading_6":{"enabled":false}},"content_includes_title":false,"keywords":["python","chemistry","jupyter-book"],"exports":[{"format":"md","filename":"index.md","url":"/python_for_chemists//build/index-1f6294893a0fd94873f6a58d2c85926c.md"}]},"mdast":{"type":"root","children":[{"type":"block","children":[{"type":"paragraph","position":{"start":{"line":8,"column":1},"end":{"line":8,"column":1}},"children":[{"type":"text","value":"Willkommen zum Skript des Programmierkurses für Chemiker.","position":{"start":{"line":8,"column":1},"end":{"line":8,"column":1}},"key":"WLoccWtkhc"}],"key":"ZGlgBxaKJc"},{"type":"paragraph","position":{"start":{"line":10,"column":1},"end":{"line":10,"column":1}},"children":[{"type":"text","value":"Bitte verwenden Sie die Navigation links, um die Kapitel zu öffnen.","position":{"start":{"line":10,"column":1},"end":{"line":10,"column":1}},"key":"oXfmVWTyLn"}],"key":"nAG40MnXif"}],"key":"nv8EwHKDNF"}],"key":"xy6CKTuy1h"},"references":{"cite":{"order":[],"data":{}}},"footer":{"navigation":{"next":{"title":"0  Vorwort","short_title":"0 Vorwort","url":"/preface","group":"Programmierkurs für Chemiker"}}},"domain":"http://localhost:3000"},"project":{"numbering":{"title":{"enabled":true},"equation":{"continue":true,"enabled":true}},"title":"Programmierkurs für Chemiker","keywords":["python","chemistry","jupyter-book"],"id":"06bbf8a2-9f01-4dd4-a99e-b5e9c5eb8d3e","toc":[{"file":"chapters/index.md"},{"children":[{"file":"chapters/preface/motivation.md"},{"file":"chapters/preface/getting_started.md"},{"file":"chapters/preface/book_usage.md"}],"file":"chapters/preface.md","title":"0 Vorwort"},{"children":[{"file":"chapters/crash_course/python_basics.ipynb"},{"file":"chapters/crash_course/numerical_programming.ipynb"},{"file":"chapters/crash_course/visualising_data.ipynb"},{"file":"chapters/crash_course/functions_and_classes.ipynb"}],"file":"chapters/crash_course.md"},{"children":[{"file":"chapters/numerical_foundations/root_finding.ipynb"},{"file":"chapters/numerical_foundations/computational_optimisation.ipynb"},{"file":"chapters/numerical_foundations/ode_solvers.ipynb"}],"file":"chapters/numerical_foundations.md"},{"file":"chapters/spectral_analysis.md"},{"file":"chapters/data-driven_modelling.md"},{"file":"chapters/deep_learning.md"},{"children":[{"file":"chapters/problem_sets/pset_0.ipynb"},{"file":"chapters/problem_sets/pset_1.ipynb"}],"title":"Problem Sets"}],"exports":[],"bibliography":[],"index":"index","pages":[{"slug":"preface","title":"0  Vorwort","short_title":"0 Vorwort","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1},{"slug":"motivation","title":"Motivation","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"0.1"},{"slug":"getting-started","title":"Erste Schritte","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"0.2"},{"slug":"book-usage","title":"Bedienung dieser Webseite","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"0.3"},{"slug":"crash-course","title":"Crash Course","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1,"enumerator":"1"},{"slug":"python-basics","title":"Python Basics","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"1.1"},{"slug":"numerical-programming","title":"Numerical Programming","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"1.2"},{"slug":"visualising-data","title":"Visualising Data with Matplotlib","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"1.3"},{"slug":"functions-and-classes","title":"Functions and Classes","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"1.4"},{"slug":"numerical-foundations","title":"Numerical Foundations","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1,"enumerator":"2"},{"slug":"root-finding","title":"Root Finding","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"2.1"},{"slug":"computational-optimisation","title":"Computational Optimisation","description":"","date":"","thumbnail":"/python_for_chemists//build/48114d2a3ddce098dd6ba10c3b579e38.gif","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"2.2"},{"slug":"ode-solvers","title":"ODE Solvers","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"2.3"},{"slug":"spectral-analysis","title":"Spectral Analysis","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1,"enumerator":"3"},{"slug":"data-driven-modelling","title":"Data Driven Modelling","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1,"enumerator":"4"},{"slug":"deep-learning","title":"Deep Learning","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":1,"enumerator":"5"},{"level":1,"title":"Problem Sets"},{"slug":"pset-0","title":"Problem Set 0","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"5.1"},{"slug":"pset-1","title":"Problem Set 1","description":"","date":"","thumbnail":"","thumbnailOptimized":"","banner":"","bannerOptimized":"","tags":[],"level":2,"enumerator":"5.2"}]}}},"actionData":null,"errors":null},"future":{"unstable_dev":false,"unstable_postcss":false,"unstable_tailwind":false,"v2_errorBoundary":true,"v2_headers":true,"v2_meta":true,"v2_normalizeFormMethod":true,"v2_routeConvention":true}};</script><script type="module" async="">import "/python_for_chemists//build/manifest-4F8FBA95.js";
+import * as route0 from "/python_for_chemists//build/root-MMWEPVRR.js";
+import * as route1 from "/python_for_chemists//build/routes/$-WSG6RAW5.js";
+window.__remixRouteModules = {"root":route0,"routes/$":route1};
 
-        <div id="page-wrapper" class="page-wrapper">
-
-            <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
-                    <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
-                        </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
-                        </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
-                        </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </div>
-
-                    <h1 class="menu-title">Programmierkurs für Chemiker</h1>
-
-                    <div class="right-buttons">
-			<!--print button-->
-			<a href="print.html" title="Buch drucken" aria-label="Buch drucken">
-			    <i id="print-button" class="fa fa-print"></i>
-			</a>
-
-                        
-                        <!-- WueCampus button -->
-                        <script>
-                            var wueCampusLink = "https://wuecampus.uni-wuerzburg.de/moodle/course/view.php?id=73209";
-                        </script>
-			<a href="javascript:void(0);" onclick="window.open(wueCampusLink)" target="_blank" rel="noopener noreferrer" title="WueCampus-Kursraum besuchen" aria-label="WueCampus-Kursraum besuchen">
-			    <i id="wuecampus-button" class="icon-uw"></i>
-			</a>
-
-                    </div>
-                </div>
-
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                    </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
-                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
-                    });
-                </script>
-
-                <div id="content" class="content">
-                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
-                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
-<h1 id="vorwort"><a class="header" href="#vorwort">Vorwort</a></h1>
-<p>Liebe Studierende,</p>
-<p>herzlich willkommen zur Vorlesung <strong>Programmierkurs für Chemiker</strong>. Dieser Programmierkurs vermittelt grundlegende Kenntnisse in Python und zeigt, wie numerische Algorithmen in der Chemie praktisch angewendet werden können.</p>
-<p>Diese Veranstaltung findet</p>
-<ul>
-<li>dienstags von 10:15 bis 11:45 Uhr
-und</li>
-<li>donnerstags von 14:15 bis 15:45 Uhr</li>
-</ul>
-<p>im Seminarraum 00.006 des Instituts für Theoretische Chemie (Campus Hubland Nord) statt.</p>
-<p><strong>Die erste Veranstaltung findet am Donnerstag, den 24.04.2025 statt.</strong></p>
-<p>Ansprechpartner für diese Veranstaltung sind <a href="mailto:xincheng.miao@uni-wuerzburg.de">Xincheng Miao</a> und <a href="mailto:lasse.kreimendahl@uni-wuerzburg.de">Lasse Kreimendahl</a>, Doktoranden am Lehrstuhl für Theoretische Chemie. Bei Fragen oder Anregungen können Sie uns jederzeit kontaktieren.</p>
-<h2 id="syllabus"><a class="header" href="#syllabus">Syllabus</a></h2>
-<p>Ein vorläufiger Syllabus ist unten dargestellt. Dieser wird
-im Laufe des Semesters entsprechend dem Fortschritt der Vorlesung
-kontinuierlich aktualisiert.</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Woche</th><th>Wochentag</th><th>Datum</th><th>Typ</th><th>Thema</th></tr></thead><tbody>
-<tr><td style="text-align: center">1</td><td><del>Di.</del></td><td><del>22.04.</del></td><td>Vorlesungsfrei</td><td>Osterdienstag</td></tr>
-<tr><td style="text-align: center">1</td><td>Do.</td><td>24.04.</td><td>Einführung</td><td>Kursüberblick und Installation von Python</td></tr>
-<tr><td style="text-align: center">2</td><td>Di.</td><td>29.04.</td><td>Einführung</td><td>Python-Grundlagen</td></tr>
-<tr><td style="text-align: center">2</td><td><del>Do.</del></td><td><del>01.05.</del></td><td>Feiertag</td><td>Tag der Arbeit</td></tr>
-<tr><td style="text-align: center">3</td><td>Di.</td><td>06.05.</td><td>Vorlesung</td><td>Regression I</td></tr>
-<tr><td style="text-align: center">3</td><td>Do.</td><td>08.05.</td><td>Vorlesung</td><td>Regression II</td></tr>
-<tr><td style="text-align: center">4</td><td>Di.</td><td>13.05.</td><td>Vorlesung</td><td>Regression III</td></tr>
-<tr><td style="text-align: center">4</td><td>Do.</td><td>15.05.</td><td>Übung</td><td>Regression</td></tr>
-<tr><td style="text-align: center">5</td><td>Di.</td><td>20.05.</td><td>Vorlesung</td><td>Differentialgleichung I</td></tr>
-<tr><td style="text-align: center">5</td><td><del>Do.</del></td><td><del>22.05.</del></td><td>Fällt aus</td><td></td></tr>
-<tr><td style="text-align: center">6</td><td>Di.</td><td>27.05.</td><td>Vorlesung</td><td>Differentialgleichung II</td></tr>
-<tr><td style="text-align: center">6</td><td>Do.</td><td><del>29.05.</del></td><td>Feiertag</td><td>Christi Himmelfahrt</td></tr>
-<tr><td style="text-align: center">7</td><td>Di.</td><td>03.06.</td><td>Vorlesung</td><td>Differentialgleichung III</td></tr>
-<tr><td style="text-align: center">7</td><td>Do.</td><td>05.06.</td><td>Übung</td><td>Differentialgleichung</td></tr>
-<tr><td style="text-align: center">8</td><td>Di.</td><td><del>10.06.</del></td><td>Vorlesungsfrei</td><td>Pfingstdienstag</td></tr>
-<tr><td style="text-align: center">8</td><td>Do.</td><td>12.06.</td><td>Vorlesung</td><td>EVD und SVD I</td></tr>
-<tr><td style="text-align: center">9</td><td>Di.</td><td>17.06.</td><td>Vorlesung</td><td>EVD und SVD II</td></tr>
-<tr><td style="text-align: center">9</td><td>Do.</td><td><del>19.06.</del></td><td>Feiertag</td><td>Fronleichnam</td></tr>
-<tr><td style="text-align: center">10</td><td>Di.</td><td>24.06.</td><td>Vorlesung</td><td>EVD und SVD III</td></tr>
-<tr><td style="text-align: center">10</td><td>Do.</td><td>26.06.</td><td>Übung</td><td>EVD und SVD</td></tr>
-<tr><td style="text-align: center">11</td><td>Di.</td><td>01.07.</td><td>Vorlesung</td><td>Maschinelles Lernen I</td></tr>
-<tr><td style="text-align: center">11</td><td>Do.</td><td>03.07.</td><td>Vorlesung</td><td>Maschinelles Lernen II</td></tr>
-<tr><td style="text-align: center">12</td><td>Di.</td><td>08.07.</td><td>Vorlesung</td><td>Maschinelles Lernen III</td></tr>
-<tr><td style="text-align: center">12</td><td>Do.</td><td>10.07.</td><td>Vorlesung</td><td>Maschinelles Lernen IV</td></tr>
-<tr><td style="text-align: center">13</td><td>Di.</td><td>15.07.</td><td>Übung</td><td>Maschinelles Lernen</td></tr>
-<tr><td style="text-align: center">13</td><td>Do.</td><td>17.07.</td><td>Vorlesung</td><td>Neuronale Netzwerke I</td></tr>
-<tr><td style="text-align: center">14</td><td>Di.</td><td>22.07.</td><td>Vorlesung</td><td>Neuronale Netzwerke II</td></tr>
-<tr><td style="text-align: center">14</td><td>Do.</td><td>24.07.</td><td>Klausurvorbereitung</td><td>Wiederholung und Fragen</td></tr>
-</tbody></table>
-</div>
-                    </main>
-
-                    <nav class="nav-wrapper" aria-label="Page navigation">
-                        <!-- Mobile navigation buttons -->
-
-                            <a rel="next prefetch" href="00-preface/01-motivation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-
-                        <div style="clear: both"></div>
-                    </nav>
-                </div>
-            </div>
-
-            <nav class="nav-wide-wrapper" aria-label="Page navigation">
-
-                    <a rel="next prefetch" href="00-preface/01-motivation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-            </nav>
-
-        </div>
-
-
-
-
-        <script>
-            window.playground_copyable = true;
-        </script>
-
-
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
-
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
-
-        <!-- Custom JS scripts -->
-        <script src="./theme/pagetoc.js"></script>
-
-
-    </div>
-    </body>
-</html>
+import("/python_for_chemists//build/entry.client-PCJPW7TK.js");</script></body></html>

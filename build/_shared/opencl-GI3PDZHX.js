@@ -1,0 +1,1 @@
+import{a}from"/python_for_chemists//build/_shared/chunk-RX3YIEIM.js";import"/python_for_chemists//build/_shared/chunk-CBDDV5MN.js";import"/python_for_chemists//build/_shared/chunk-OZE3FFNP.js";export default a();
