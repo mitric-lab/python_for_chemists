@@ -4,15 +4,19 @@
 name: Jupyter Book (via myst) GitHub Pages Deploy
 on:
   push:
-    branches:
-      - main
-      - 'ss*'
-      - 'ws*'
-  workflow_dispatch:
+    # Runs on pushes targeting the default branch
+    branches: [main]
+env:
+  # `BASE_URL` determines, relative to the root of the domain, the URL that your site is served from.
+  # E.g., if your site lives at `https://mydomain.org/myproject`, set `BASE_URL=/myproject`.
+  # If, instead, your site lives at the root of the domain, at `https://mydomain.org`, set `BASE_URL=''`.
+  BASE_URL: /${{ github.event.repository.name }}
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
@@ -20,74 +24,25 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set deployment config
-        env:
-          REPO_NAME: ${{ github.event.repository.name }}
-        run: |
-          branch="${{ github.ref_name }}"
-
-          if [ "$branch" = "main" ]; then
-            echo "SHOULD_DEPLOY=true" >> "$GITHUB_ENV"
-            echo "BASE_URL=/${REPO_NAME}/" >> "$GITHUB_ENV"
-            echo "DEPLOY_TARGET_ROOT=true" >> "$GITHUB_ENV"
-            exit 0
-          fi
-
-          prefix="${branch%${branch#??}}"
-          number="${branch#??}"
-
-          if ! printf '%s' "$number" | grep -Eq '^[0-9]{2,}$'; then
-            echo "SHOULD_DEPLOY=false" >> "$GITHUB_ENV"
-            exit 0
-          fi
-
-          if { [ "$prefix" = "ss" ] || [ "$prefix" = "ws" ]; } && [ "$number" -ge 26 ]; then
-            echo "SHOULD_DEPLOY=true" >> "$GITHUB_ENV"
-            echo "BASE_URL=/${REPO_NAME}/${branch}/" >> "$GITHUB_ENV"
-            echo "DEPLOY_TARGET_ROOT=false" >> "$GITHUB_ENV"
-            echo "DEPLOY_TARGET_FOLDER=${branch}" >> "$GITHUB_ENV"
-          else
-            echo "SHOULD_DEPLOY=false" >> "$GITHUB_ENV"
-          fi
-
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
       - uses: actions/setup-node@v4
-        if: env.SHOULD_DEPLOY == 'true'
         with:
           node-version: 18.x
-      - uses: actions/setup-python@v5
-        if: env.SHOULD_DEPLOY == 'true'
-        with:
-          python-version: '3.12'
       - name: Install Jupyter Book (via myst)
-        if: env.SHOULD_DEPLOY == 'true'
         run: npm install -g jupyter-book
-      - name: Generate student notebooks
-        if: env.SHOULD_DEPLOY == 'true'
-        run: python scripts/generate_student_notebooks.py
       - name: Build HTML Assets
-        if: env.SHOULD_DEPLOY == 'true'
         run: jupyter-book build --html
-
-      - name: Deploy main branch
-        if: env.SHOULD_DEPLOY == 'true' && env.DEPLOY_TARGET_ROOT == 'true'
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          branch: gh-pages
-          folder: _build/html
-          clean: true
-          clean-exclude: |
-            ss*
-            ws*
-
-      - name: Deploy archive branches
-        if: env.SHOULD_DEPLOY == 'true' && env.DEPLOY_TARGET_ROOT != 'true'
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: _build/html
-          target-folder: ${{ env.DEPLOY_TARGET_FOLDER }}
-          clean: true
+          path: './_build/html'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
