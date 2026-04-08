@@ -1,3 +1,8 @@
+---
+numbering:
+  headings: false
+---
+
 (sec:software_setup)=
 
 # Software-Installation und Einrichtung

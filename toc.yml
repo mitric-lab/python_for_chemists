@@ -3,17 +3,17 @@ project:
   toc:
     - file: chapters/index.md
     - file: chapters/preface.md
-      title: 0 Vorwort
       children:
         - file: chapters/preface/motivation.md
         - file: chapters/preface/what_is_programming.md
         - file: chapters/preface/software_setup.md
     - file: chapters/crash_course.md
+      title: 0 Crash Course
       children:
         - file: chapters/crash_course/python_basics.ipynb
+        - file: chapters/crash_course/functions_and_classes.ipynb
         - file: chapters/crash_course/numerical_programming.ipynb
         - file: chapters/crash_course/visualising_data.ipynb
-        - file: chapters/crash_course/functions_and_classes.ipynb
     - file: chapters/numerical_foundations.md
       children:
         - file: chapters/numerical_foundations/root_finding.ipynb

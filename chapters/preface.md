@@ -5,7 +5,7 @@ numbering:
 
 (cpt:preface)=
 
-# 0&nbsp;&nbsp;Vorwort
+# Vorwort
 
 Liebe Studierende,
 
