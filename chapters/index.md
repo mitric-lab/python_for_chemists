@@ -35,7 +35,7 @@ numerischen Berechnungen, Datenanalyse, Modellierung und Visualisierung.
 Die Inhalte sind so aufgebaut, dass sie sowohl zum Mitlernen in der Vorlesung 
 als auch zum selbstständigen Nacharbeiten geeignet sind. Wenn Sie neu 
 in Python sind, beginnen Sie am besten mit dem [Vorwort](preface.md), 
-[Was ist Programmierung?](preface/what_is_programming.md), 
+[Was ist Programmieren?](preface/what_is_programming.md), 
 der [Software-Installation und Einrichtung](preface/software_setup.md) 
 und dem [Crashkurs](crash_course.md). Dort finden Sie eine kurze Einführung 
 in grundlegende Begriffe, Hinweise zur Installation und die wichtigsten 
