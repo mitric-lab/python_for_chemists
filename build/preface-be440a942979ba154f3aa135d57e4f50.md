@@ -7,10 +7,6 @@ numbering:
 
 # Vorwort
 
-Liebe Studierende,
-
-herzlich willkommen zur Vorlesung **Programmierkurs für Chemiker**. Dieser Programmierkurs vermittelt grundlegende Kenntnisse in Python und zeigt, wie numerische Algorithmen in der Chemie praktisch angewendet werden können.
-
 Diese Veranstaltung findet
 - dienstags von 10:15 bis 11:45 Uhr
 und
