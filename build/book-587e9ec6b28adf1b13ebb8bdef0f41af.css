@@ -1,6 +1,24 @@
+pre:not(.myst-code-body):has(> code.language-python) {
+  margin: 1.25rem 0;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #60a5fa;
+  border-radius: 0.4rem;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  overflow: auto;
+}
+
 .myst-jp-nb-block .myst-code {
   margin-bottom: 0;
   border-radius: 0.4rem 0.4rem 0 0;
+}
+
+.myst-jp-nb-block > .myst-code:has(code.language-python):last-child {
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #60a5fa;
+  border-radius: 0.4rem 0.4rem 0 0;
+  background: #ffffff;
 }
 
 .myst-jp-nb-block [data-name="outputs-container"] {
@@ -38,6 +56,13 @@
 .dark .myst-jp-nb-block .myst-jp-stream-output::before {
   color: #fbd38d;
 }
+
+/*
+  Reserved for future Thebe/live-output support.
+
+  These selectors were used to style interactive Jupyter outputs when notebook
+  execution happens in the browser. They are currently disabled because this
+  book does not use executable notebook cells in the published site.
 
 .myst-jp-nb-block .thebe-output {
   margin-top: 0;
@@ -130,21 +155,4 @@
 .dark .myst-jp-nb-block .thebe-output .jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stdout"]::before {
   color: #fbd38d;
 }
-
-pre:not(.myst-code-body):has(> code.language-python) {
-  margin: 1.25rem 0;
-  padding: 0.75rem 0.9rem;
-  border: 1px solid #e5e7eb;
-  border-left: 4px solid #60a5fa;
-  border-radius: 0.4rem;
-  background: #ffffff;
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
-  overflow: auto;
-}
-
-.myst-jp-nb-block > .myst-code:has(code.language-python):last-child {
-  border: 1px solid #e5e7eb;
-  border-left: 4px solid #60a5fa;
-  border-radius: 0.4rem 0.4rem 0 0;
-  background: #ffffff;
-}
+*/

@@ -1,6 +1,24 @@
 ---
 numbering:
   headings: false
+authors:
+  - name: Lasse Kreimendahl
+    affiliations:
+      - id: jmu_iptc
+        institution: Julius-Maximilians-Universität Würzburg
+        department: Institut für Physikalische und Theoretische Chemie
+        ror: 00fbnyb24
+    equal_contributor: true
+    corresponding: true
+    email: lasse.kreimendahl@uni-wuerzburg.de
+    github: carlportz
+  - name: Xincheng Miao
+    affiliations:
+      - id: jmu_iptc
+    equal_contributor: true
+    corresponding: true
+    email: xincheng.miao@uni-wuerzburg.de
+    github: xmiaocat
 ---
 
 # Programmierkurs für Chemiker
