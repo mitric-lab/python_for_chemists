@@ -23,13 +23,13 @@
     <loc>http://localhost:3000/chapters/crash-course/python-basics</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/chapters/crash-course/functions-and-classes</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/chapters/crash-course/numerical-programming</loc>
   </url>
   <url>
     <loc>http://localhost:3000/chapters/crash-course/visualising-data</loc>
-  </url>
-  <url>
-    <loc>http://localhost:3000/chapters/crash-course/functions-and-classes</loc>
   </url>
   <url>
     <loc>http://localhost:3000/chapters/numerical-foundations</loc>

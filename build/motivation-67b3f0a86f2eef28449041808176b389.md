@@ -1,3 +1,8 @@
+---
+numbering:
+  headings: false
+---
+
 (sec:motivation)=
 
 # Motivation
