@@ -1,5 +1,6 @@
 # jupyter book
 _build/
+book/
 
 # Jupyter Notebook
 .ipynb_checkpoints
