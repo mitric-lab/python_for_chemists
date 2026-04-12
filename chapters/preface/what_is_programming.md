@@ -19,10 +19,14 @@ Python ist eine Programmiersprache, also eine bestimmte Art, solche Anweisungen 
 
 Wenn Sie ein Python-Programm starten, liest der Computer den Code und arbeitet die Befehle der Reihe nach ab. So lassen sich Berechnungen automatisieren, Daten auswerten und wiederholbare Abläufe zuverlässig ausführen.
 
-:::{figure} ../../assets/figures/preface/computer_diagram.png
+:::{figure} ../../assets/figures/preface/computer_figma.pdf
 :align: center
-Block diagram of a basic computer with uniprocessor CPU. Black lines indicate the flow of control signals, whereas red lines indicate the flow of processor instructions and data. Arrows indicate the direction of flow.[^1][^2]
 :::
 
-[^1]: [Computer architecture, Wikipedia](https://en.wikipedia.org/wiki/Computer_architecture)
-[^2]: [File:Computer architecture block diagram.png](https://commons.wikimedia.org/wiki/File:Computer_architecture_block_diagram.png)
+:::{figure} ../../assets/figures/preface/python_figma.pdf
+:align: center
+:::
+
+:::{figure} ../../assets/figures/preface/code_figma.pdf
+:align: center
+:::
