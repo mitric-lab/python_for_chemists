@@ -7,11 +7,6 @@ numbering:
 
 # Was ist Programmieren?
 
-:::{caution} Under Construction
-Diese Seite befindet sich noch im Aufbau. Bitte haben Sie etwas Geduld, bis 
-sie vollständig ist.
-:::
-
 Programmieren bedeutet, einem Computer Anweisungen so aufzuschreiben, dass er 
 sie Schritt für Schritt ausführen kann. Diese Anweisungen werden in einer Textdatei 
 gespeichert und bilden zusammen ein Programm.
