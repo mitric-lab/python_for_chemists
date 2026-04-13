@@ -51,12 +51,25 @@ ein Grund dafür, dass Python oft langsamer ist als kompilierte Sprachen.
 Implementierung der Programmiersprache Python. Andere Implementierungen wie 
 [*PyPy*](wiki:PyPy) oder [*Jython*](wiki:Jython) funktionieren teilweise anders.
 
-:::{figure} ../../assets/figures/preface/code_figma.svg
+:::{figure}
 :align: center
 :label: fig:program_execution
+:no-subfigures:
+
+```{image} ../../assets/figures/preface/code_figma.svg
+:class: dark:hidden
 :width: 534.6 px
+```
+```{image} ../../assets/figures/preface/code_dark_figma.svg
+:class: hidden dark:block
+:width: 534.6 px
+```
 Ausführung eines Programms in kompilierten und interpretierten Sprachen.
 :::
+
+
+
+
 
 Für Python ist damit jedoch noch nicht die ganze Ausführungssituation beschrieben. 
 Neben dem Quellcode ist auch die Umgebung wichtig, in der ein Programm läuft.
