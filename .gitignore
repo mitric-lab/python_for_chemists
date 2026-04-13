@@ -2,6 +2,9 @@
 _build/
 book/
 
+# generated problem sets
+chapters/problem_sets/*
+
 # Jupyter Notebook
 .ipynb_checkpoints
 
