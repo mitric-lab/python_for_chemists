@@ -4,6 +4,7 @@ book/
 
 # generated problem sets
 chapters/problem_sets/*.ipynb
+assets/downloads/problem_sets/*.ipynb
 
 # Jupyter Notebook
 .ipynb_checkpoints

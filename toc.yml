@@ -24,5 +24,5 @@ project:
     - file: chapters/deep_learning.md
     - title: Problem Sets
       children: 
-        - file: chapters/problem_sets/pset_0.ipynb
-        - file: chapters/problem_sets/pset_1.ipynb
+        - file: chapters/problem_sets/pset_0_rich.ipynb
+        - file: chapters/problem_sets/pset_1_rich.ipynb

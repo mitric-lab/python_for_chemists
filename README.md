@@ -22,11 +22,21 @@ the instructor solution notebooks:
 uv run python scripts/generate_student_notebooks.py
 ```
 
-The generator looks for notebooks named `instructors/*_solution.ipynb` and
-creates the corresponding student notebook in `chapters/problem_sets/`. Inside
-code cells, content between `# SOLUTION-START` and `# SOLUTION-END` is replaced
-with `# your code here`, preserving the original indentation and roughly the
-same number of lines.
+The generator looks for notebooks named `instructors/*_solution.ipynb` and creates:
+
+- A **rich** notebook for rendering the book page:
+  - `chapters/problem_sets/pset_X_rich.ipynb`
+- A **clean** notebook for students to download:
+  - `assets/downloads/problem_sets/pset_X.ipynb`
+
+Inside code cells, content between `# SOLUTION-START` and `# SOLUTION-END` is replaced
+with `# your code here`, preserving the original indentation and roughly the same number
+of lines. The clean notebooks also have all outputs removed.
+
+Expected outputs can be shown on the rendered pages by tagging an instructor code cell
+with the `expected-output` cell tag. The generator then injects a small HTML block after
+that cell into the **rich** notebook. Image outputs are written to
+`assets/figures/problem_sets/expected_outputs/` and referenced from the injected HTML.
 
 A typical local workflow is:
 
