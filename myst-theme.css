@@ -1,5 +1,9 @@
 /* User Provided Stylesheet */
 
+/* -------------------------------------------------------------------------- */
+/* Code Blocks                                                                 */
+/* -------------------------------------------------------------------------- */
+
 pre:not(.myst-code-body):has(> code.language-python) {
   margin: 1.25rem 0;
   padding: 0.75rem 0.9rem;
@@ -22,6 +26,10 @@ pre:not(.myst-code-body):has(> code.language-python) {
   border-radius: 0.4rem 0.4rem 0 0;
   background: #ffffff;
 }
+
+/* -------------------------------------------------------------------------- */
+/* Notebook Outputs                                                   */
+/* -------------------------------------------------------------------------- */
 
 .myst-jp-nb-block [data-name="outputs-container"] {
   margin-top: 0;
@@ -58,6 +66,82 @@ pre:not(.myst-code-body):has(> code.language-python) {
 .dark .myst-jp-nb-block .myst-jp-stream-output::before {
   color: #fbd38d;
 }
+
+/* -------------------------------------------------------------------------- */
+/* Expected Outputs (Injected Markdown Cells)                                  */
+/* -------------------------------------------------------------------------- */
+
+.expected-output-container {
+  margin: 0 0 1.25rem;
+}
+
+/* Use the regular output styling, but adjust typography to match real outputs. */
+.expected-output-container .myst-jp-stream-output {
+  margin-top: 0;
+  font-family: Menlo, Consolas, DejaVu Sans Mono, monospace;
+  font-size: 0.80rem;
+  font-weight: 100;
+  line-height: 1.25rem;
+  letter-spacing: 0;
+  white-space: pre-wrap;
+}
+
+.expected-output-container .myst-jp-stream-output.expected-output::before {
+  content: "Expected Output";
+}
+
+.expected-output-container .myst-jp-stream-output span {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+.expected-output-container .expected-output-text {
+  white-space: pre-wrap;
+}
+
+.expected-output-image-frame {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #e7d7bf;
+  border-left: 4px solid #f6ad55;
+  border-radius: 0 0 0.4rem 0.4rem;
+  background: transparent;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  text-align: center;
+}
+
+.expected-output-image-frame .expected-output-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #c05621;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.expected-output-image-frame img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.dark .expected-output-image-frame {
+  border-color: #3f3a2b;
+  border-left-color: #f6ad55;
+}
+
+.dark .expected-output-image-frame .expected-output-label {
+  color: #fbd38d;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Notebook Image Outputs (Regular Outputs Container)                           */
+/* -------------------------------------------------------------------------- */
 
 .myst-jp-nb-block:has(> .myst-code:not(.hidden)) [data-name="outputs-container"] > *:has(img) {
   display: block;

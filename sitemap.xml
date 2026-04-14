@@ -53,9 +53,9 @@
     <loc>http://localhost:3000/chapters/deep-learning</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/problem-sets/pset-0</loc>
+    <loc>http://localhost:3000/chapters/problem-sets/pset-0-rich</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/problem-sets/pset-1</loc>
+    <loc>http://localhost:3000/chapters/problem-sets/pset-1-rich</loc>
   </url>
 </urlset>
