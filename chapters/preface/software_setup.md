@@ -29,8 +29,8 @@ Während des Kurses verwenden wir verschiedene Python-Pakete, die einfach mit de
 | Paket | Befehl |
 | ----- | ------------ |
 | [NumPy](https://numpy.org) | `mamba install numpy` |
-| [Matplotlib](https://matplotlib.org) | `mamba install -c conda-forge matplotlib` |
-| [SciPy](https://scipy.org) | `mamba install -c conda-forge scipy` |
+| [Matplotlib](https://matplotlib.org) | `mamba install matplotlib` |
+| [SciPy](https://scipy.org) | `mamba install scipy` |
 | [Jupyter](https://jupyter.org) | `mamba install jupyter` |
 
 :::{note}
