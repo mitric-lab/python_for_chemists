@@ -47,6 +47,9 @@
     <loc>http://localhost:3000/chapters/spectral-analysis</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/chapters/spectral-analysis/eigenvalue-algorithms</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/chapters/data-driven-modelling</loc>
   </url>
   <url>
