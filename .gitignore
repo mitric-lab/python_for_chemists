@@ -2,6 +2,9 @@
 _build/
 book/
 
+# old materials
+archive/
+
 # generated problem sets
 chapters/problem_sets/*.ipynb
 assets/downloads/problem_sets/*.ipynb

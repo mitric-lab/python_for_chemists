@@ -20,9 +20,12 @@ project:
         - file: chapters/numerical_foundations/computational_optimisation.ipynb
         - file: chapters/numerical_foundations/ode_solvers.ipynb
     - file: chapters/spectral_analysis.md
+      children:
+        - file: chapters/spectral_analysis/eigenvalue_algorithms.ipynb
     - file: chapters/data-driven_modelling.md
     - file: chapters/deep_learning.md
     - title: Problem Sets
       children: 
         - file: chapters/problem_sets/pset_0_rich.ipynb
         - file: chapters/problem_sets/pset_1_rich.ipynb
+        - file: chapters/problem_sets/pset_2_rich.ipynb

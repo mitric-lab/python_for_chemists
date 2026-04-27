@@ -169,6 +169,12 @@ pre:not(.myst-code-body):has(> code.language-python) {
   border-left-color: #f6ad55;
 }
 
+.myst-jp-nb-block [data-name="outputs-container"] > *:has(.vega-embed) .vega-embed {
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
 /*
   Reserved for future Thebe/live-output support.
 
