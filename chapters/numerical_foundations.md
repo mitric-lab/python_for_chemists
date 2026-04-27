@@ -16,6 +16,6 @@ The accompanying problem set for this chapter is available at
 
 | Section | Covered Examples | New Concepts and Tools |
 | --- | --- | --- |
-| Root Finding | molar volumes from the Van der Waals equation | `while`-loops, default arguments, iterative methods, convergence criteria, finite-difference derivatives |
-| Computational Optimisation | yield optimisation for a synthetic reaction | `for`-loops, vector-valued parameters, objective functions, termination vs. convergence, `scipy.optimize.minimize` |
+| Root Finding | molar volumes from the Van der Waals equation | `while` loops, default arguments, iterative methods, convergence criteria, finite-difference derivatives |
+| Computational Optimisation | yield optimisation for a synthetic reaction | `for` loops, `break` statement, vector-valued parameters, objective functions, termination vs. convergence, `scipy.optimize.minimize` |
 | ODE Solvers | concentration profile modelling for a chemical reaction | 2D arrays, initial value problems, time-series plotting, `scipy.integrate.solve_ivp` |
