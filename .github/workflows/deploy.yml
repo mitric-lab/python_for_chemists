@@ -62,15 +62,16 @@ jobs:
         if: env.SHOULD_DEPLOY == 'true'
         with:
           python-version: '3.12'
-      - name: Install Jupyter Book (via myst)
+      - uses: astral-sh/setup-uv@v6
         if: env.SHOULD_DEPLOY == 'true'
-        run: npm install -g jupyter-book
+        with:
+          enable-cache: true
       - name: Generate student notebooks
         if: env.SHOULD_DEPLOY == 'true'
-        run: python scripts/generate_student_notebooks.py
+        run: uv run --locked python scripts/generate_student_notebooks.py
       - name: Build HTML Assets
         if: env.SHOULD_DEPLOY == 'true'
-        run: jupyter-book build --html
+        run: uv run --locked jupyter-book build --html
 
       - name: Deploy main branch
         if: env.SHOULD_DEPLOY == 'true' && env.DEPLOY_TARGET_ROOT == 'true'
