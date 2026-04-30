@@ -10,6 +10,8 @@ project:
   numbering:
     equation:
       continue: true
+    figure:
+      continue: true
     title: true
   title: Programmierkurs für Chemiker
 

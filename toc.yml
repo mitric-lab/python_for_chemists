@@ -22,6 +22,7 @@ project:
     - file: chapters/spectral_analysis.md
       children:
         - file: chapters/spectral_analysis/eigenvalue_algorithms.ipynb
+        - file: chapters/spectral_analysis/singular_value_decomposition.ipynb
     - file: chapters/data-driven_modelling.md
     - file: chapters/deep_learning.md
     - title: Problem Sets
