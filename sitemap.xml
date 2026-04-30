@@ -50,6 +50,9 @@
     <loc>http://localhost:3000/chapters/spectral-analysis/eigenvalue-algorithms</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/chapters/spectral-analysis/singular-value-decomposition</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/chapters/data-driven-modelling</loc>
   </url>
   <url>
@@ -60,5 +63,8 @@
   </url>
   <url>
     <loc>http://localhost:3000/chapters/problem-sets/pset-1-rich</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/chapters/problem-sets/pset-2-rich</loc>
   </url>
 </urlset>

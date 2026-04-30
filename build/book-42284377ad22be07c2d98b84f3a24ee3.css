@@ -78,6 +78,14 @@ pre:not(.myst-code-body):has(> code.language-python) {
   color: #fbd38d;
 }
 
+.jp-RenderedHTMLCommon.jp-RenderedHTML.jp-mod-trusted.jp-OutputArea-output > .vega-embed.has-actions {
+  padding-right: 0 !important;
+}
+
+.jp-RenderedHTMLCommon.jp-RenderedHTML.jp-mod-trusted.jp-OutputArea-output:has(.vega-embed.has-actions) {
+  padding-right: 0 !important;
+}
+
 /* -------------------------------------------------------------------------- */
 /* Expected Outputs (Injected Markdown Cells)                                  */
 /* -------------------------------------------------------------------------- */
