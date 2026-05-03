@@ -18,6 +18,6 @@ The accompanying problem set for this chapter is available at
 
 | Section | Covered Examples | New Concepts and Tools |
 | --- | --- | --- |
-| Eigenvalue Algorithms | reaction pathway networks for repeated reaction | `@` operator, transition matrices, pseudo-random numbers, `np.linalg.eig` / `np.linalg.eigh` |
-| Singular Value Decomposition | protein structure determination from circular dichroism spectra | matrix norm, low-rank approximation, absolute and relative paths, advanced plotting, `np.linalg.svd` |
-| Linear Systems | to be determined | matrix inverse, Moore-Penrose pseudoinverse, `np.linalg.solve`, `np.linalg.lstsq`, `np.linalg.pinv` |
+| Eigenvalue Algorithms | reaction pathway networks with repeated reaction cycles | `@` operator, transition matrices, pseudo-random numbers, `np.linalg.eig` / `np.linalg.eigh` |
+| Singular Value Decomposition | protein structure analysis from circular dichroism spectra | matrix norm, matrix rank, low-rank approximation, absolute and relative paths, advanced plotting, `np.linalg.svd` |
+| Linear Systems | smoothie composition determination from absorption spectra | matrix inverse, Moore-Penrose pseudoinverse, least-squares fitting, `np.linalg.pinv`, `np.linalg.lstsq` |

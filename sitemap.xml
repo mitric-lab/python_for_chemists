@@ -53,6 +53,9 @@
     <loc>http://localhost:3000/chapters/spectral-analysis/singular-value-decomposition</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/chapters/spectral-analysis/linear-systems</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/chapters/data-driven-modelling</loc>
   </url>
   <url>
