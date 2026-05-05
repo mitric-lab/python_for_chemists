@@ -111,15 +111,15 @@ pre:not(.myst-code-body):has(> code.language-python) {
   content: "Expected Output";
 }
 
-.expected-output-container .myst-jp-stream-output span {
+.expected-output-container .myst-jp-stream-output .expected-output-text {
+  display: block;
+  margin: 0;
+  padding: 0;
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
   letter-spacing: inherit;
-}
-
-.expected-output-container .expected-output-text {
   white-space: pre-wrap;
 }
 
