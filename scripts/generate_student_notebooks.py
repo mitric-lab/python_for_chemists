@@ -22,6 +22,8 @@ INSTRUCTORS_DIR = ROOT / "instructors"
 EXPECTED_OUTPUT_TAG = "expected-output"
 EXPECTED_OUTPUT_IMAGE_DIR = ROOT / "assets/figures/problem_sets/expected_outputs"
 CLEAN_NOTEBOOK_DIR = ROOT / "assets/downloads/problem_sets"
+INSTRUCTOR_ONLY_START = "# INSTRUCTOR-ONLY-START"
+INSTRUCTOR_ONLY_END = "# INSTRUCTOR-ONLY-END"
 
 # TODO (future): Convert MyST equation directives to plain markdown/LaTeX for clean notebooks.
 
@@ -95,6 +97,30 @@ def strip_solution_blocks(source: list[str]) -> list[str]:
 
         result.append(source[i])
         i += 1
+
+    return result
+
+
+def strip_instructor_only_blocks(source: list[str]) -> list[str]:
+    """Remove instructor-only regions without inserting student placeholders.
+
+    Instructor-only regions are delimited by:
+    - `# INSTRUCTOR-ONLY-START`
+    - `# INSTRUCTOR-ONLY-END`
+    """
+    result: list[str] = []
+    skipping = False
+
+    for line in source:
+        stripped = line.strip()
+        if stripped == INSTRUCTOR_ONLY_START:
+            skipping = True
+            continue
+        if stripped == INSTRUCTOR_ONLY_END:
+            skipping = False
+            continue
+        if not skipping:
+            result.append(line)
 
     return result
 
@@ -194,8 +220,9 @@ def _as_text(value: object) -> str:
 
 
 def _escape_output_text(text: str) -> str:
-    # Preserve line breaks for display while remaining safe in HTML.
-    return html.escape(text.rstrip()).replace("\n", "<br/>")
+    # Preserve output whitespace in regular HTML without using <pre>, which
+    # some themes treat as a copyable code block.
+    return html.escape(text.rstrip()).replace(" ", "&nbsp;").replace("\n", "<br/>")
 
 
 def _output_has_image(output: dict) -> bool:
@@ -220,7 +247,7 @@ def output_to_html(
         return (
             '<div class="expected-output-container">'
             '<div class="myst-jp-stream-output expected-output">'
-            f'<span class="expected-output-text">{escaped}</span>'
+            f'<div class="expected-output-text">{escaped}</div>'
             "</div>"
             "</div>"
         )
@@ -254,7 +281,7 @@ def output_to_html(
         return (
             '<div class="expected-output-container">'
             '<div class="myst-jp-stream-output expected-output">'
-            f'<span class="expected-output-text">{escaped}</span>'
+            f'<div class="expected-output-text">{escaped}</div>'
             "</div>"
             "</div>"
         )
@@ -340,12 +367,16 @@ def generate_student_notebook(solution_path: Path) -> tuple[Path, Path]:
             continue
 
         # Code cell: strip solutions and clear outputs in both.
-        clean_cell["source"] = strip_solution_blocks(clean_cell.get("source", []))
+        clean_cell["source"] = strip_solution_blocks(
+            strip_instructor_only_blocks(clean_cell.get("source", []))
+        )
         clean_cell["outputs"] = []
         clean_cell["execution_count"] = None
         clean_cells.append(clean_cell)
 
-        rich_cell["source"] = strip_solution_blocks(rich_cell.get("source", []))
+        rich_cell["source"] = strip_solution_blocks(
+            strip_instructor_only_blocks(rich_cell.get("source", []))
+        )
         rich_cell["outputs"] = []
         rich_cell["execution_count"] = None
         rich_cells.append(rich_cell)
