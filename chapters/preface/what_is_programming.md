@@ -28,7 +28,7 @@ werden von dort gelesen, verarbeitet und anschließend wieder abgelegt. Ergebnis
 werden schließlich über die Ausgabe bereitgestellt, etwa auf dem Bildschirm oder 
 in einer Datei.
 
-:::{figure} ../../assets/figures/preface/computer_figma.svg
+:::{figure} /assets/figures/preface/computer_figma.svg
 :align: center
 :label: fig:computer_components
 :width: 590.4 px
@@ -56,11 +56,11 @@ Implementierung der Programmiersprache Python. Andere Implementierungen wie
 :label: fig:program_execution
 :no-subfigures:
 
-```{image} ../../assets/figures/preface/code_figma.svg
+```{image} /assets/figures/preface/code_figma.svg
 :class: dark:hidden
 :width: 534.6 px
 ```
-```{image} ../../assets/figures/preface/code_dark_figma.svg
+```{image} /assets/figures/preface/code_dark_figma.svg
 :class: hidden dark:block
 :width: 534.6 px
 ```
@@ -93,7 +93,7 @@ leicht andere Resultate oder eine Fehlermeldung, wenn ein benötigtes Paket fehl
 inkompatibel ist. Deshalb ist die verwendete Umgebung ein wichtiger Bestandteil 
 eines Programms.
 
-:::{figure} ../../assets/figures/preface/python_figma.svg
+:::{figure} /assets/figures/preface/python_figma.svg
 :align: center
 :label: fig:python_environment
 :width: 600 px
