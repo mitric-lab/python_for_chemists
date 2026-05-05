@@ -9,6 +9,7 @@ project:
     - chemistry
   numbering:
     equation:
+      enabled: false
       continue: true
     figure:
       continue: true
