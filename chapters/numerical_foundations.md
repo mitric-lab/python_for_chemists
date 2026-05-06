@@ -1,3 +1,7 @@
+---
+downloads: []
+---
+
 # Numerical Foundations
 
 This chapter introduces three core classes of numerical methods that
