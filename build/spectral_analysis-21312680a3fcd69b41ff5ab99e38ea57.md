@@ -1,3 +1,7 @@
+---
+downloads: []
+---
+
 # Spectral Analysis
 
 This chapter introduces spectral methods for extracting structure from
