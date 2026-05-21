@@ -1,3 +1,9 @@
+---
+numbering:
+  headings: false
+downloads: []
+---
+
 # Project Ideas
 
 During the project phase, you will work in groups of 2-3 students and use your coding skills to solve a real-world problem of your choice. Below are some ideas for projects. Feel free to come up with your own ideas!

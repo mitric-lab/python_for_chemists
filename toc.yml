@@ -26,6 +26,7 @@ project:
         - file: chapters/spectral_analysis/linear_systems.ipynb
     - file: chapters/data-driven_modelling.md
     - file: chapters/deep_learning.md
+    - file: chapters/project_ideas.md
     - title: Problem Sets
       children: 
         - file: chapters/problem_sets/pset_0_rich.ipynb
