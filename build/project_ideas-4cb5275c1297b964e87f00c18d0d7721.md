@@ -64,15 +64,15 @@ model to predict suitable TLC mobile phase compositions, and evaluate its perfor
 on a test set.
 
 **Related knowledge:**
-- linear regression (Sec.&nbsp;??)
+- linear regression (Sec.&nbsp;{ref}`sec:regression`)
 - molecular representations
 
 ## Classifying chemical samples from spectra
 
 Spectra often contain enough information to distinguish between different types of
 chemical samples. In this project, you will train a simple classification model to assign
-spectra to predefined classes and evaluate how reliably the model recognises new samples.
+spectra to predefined classes of molecules and evaluate how reliably the model recognises new samples.
 
 **Related knowledge:**
-- classification (Sec.&nbsp;??)
+- classification 
 - molecular representations
