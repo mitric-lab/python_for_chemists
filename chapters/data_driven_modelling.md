@@ -8,7 +8,7 @@ In this chapter, we shift our focus from strictly rule-based modelling to a data
 
 We cover supervised learning techniques (regression and classification) and unsupervised learning techniques (dimensionality reduction and clustering), applied to real-world chemical data sets. We further introduce powerful libraries for handling and structuring large datasets and explore new concepts for object-oriented programming.
 
-The accompanying problem set for this chapter is available at {ref}`sec:pset_2`.
+The accompanying problem set for this chapter is available at {ref}`sec:pset_3`.
 
 | Section | Covered Examples | New Concepts and Tools |
 | ------- | ---------------- | ---------------------- |
