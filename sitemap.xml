@@ -65,6 +65,9 @@
     <loc>http://localhost:3000/chapters/data-driven-modelling/classification</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/chapters/data-driven-modelling/dim-reduction</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/chapters/deep-learning</loc>
   </url>
   <url>
