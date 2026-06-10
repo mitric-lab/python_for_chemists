@@ -28,6 +28,7 @@ project:
       children:
         - file: chapters/data_driven_modelling/regression.ipynb
         - file: chapters/data_driven_modelling/classification.ipynb
+        - file: chapters/data_driven_modelling/dim_reduction.ipynb
     - file: chapters/deep_learning.md
     - file: chapters/project_ideas.md
     - title: Problem Sets
