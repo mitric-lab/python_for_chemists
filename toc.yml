@@ -37,3 +37,4 @@ project:
         - file: chapters/problem_sets/pset_0_rich.ipynb
         - file: chapters/problem_sets/pset_1_rich.ipynb
         - file: chapters/problem_sets/pset_2_rich.ipynb
+        - file: chapters/problem_sets/pset_3_rich.ipynb
