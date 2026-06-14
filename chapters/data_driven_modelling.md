@@ -12,7 +12,7 @@ The accompanying problem set for this chapter is available at {ref}`sec:pset_3`.
 
 | Section | Covered Examples | New Concepts and Tools |
 | ------- | ---------------- | ---------------------- |
-| Regression | Lambert-Beer's law | `pandas` |
-| Classification | classification of wines | classes |
-| Dimensionality Reduction | PCA of wine data |  |
-| Clustering | clustering of wine data |  |
+| Regression | Lambert-Beer's law | Loss functions, `pandas`, `np.polyfit`, cross-validation, overfitting |
+| Classification | Classification of wines | Logistic regression, Support Vector Machines, object-oriented programming, Stochastic gradient descent, `scikit-learn` |
+| Dimensionality Reduction | PAH-solvent conformers | Covariance matrix, explained variance |
+| Clustering | PAH-solvent conformers | `np.random.choice`, `np.argmin`, `np.linalg.norm`, adding an extra axis to an array |
