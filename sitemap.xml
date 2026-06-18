@@ -74,6 +74,9 @@
     <loc>http://localhost:3000/chapters/deep-learning</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/chapters/deep-learning/single-layer-neural-networks</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/chapters/project-ideas</loc>
   </url>
   <url>
