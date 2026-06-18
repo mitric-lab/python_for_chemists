@@ -1,0 +1,297 @@
+/* -------------------------------------------------------------------------- */
+/* Code Blocks                                                                 */
+/* -------------------------------------------------------------------------- */
+
+pre:not(.myst-code-body):has(> code.language-python) {
+  margin: 1.25rem 0;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #60a5fa;
+  border-radius: 0.4rem;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  overflow: auto;
+}
+
+/* Some MyST/Jupyter Book versions render highlighted code as
+   .myst-code-body > pre > code. Keep our standalone pre styling from creating
+   a second framed box inside the theme's .myst-code wrapper. */
+.myst-code .myst-code-body pre:has(> code.language-python) {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-left: 0;
+  border-radius: 0;
+  background: transparent !important;
+  box-shadow: none;
+}
+
+.myst-jp-nb-block .myst-code {
+  margin-bottom: 0;
+  border-radius: 0.4rem 0.4rem 0 0;
+}
+
+.myst-jp-nb-block > .myst-code:has(code.language-python):last-child {
+  border: 1px solid #e5e7eb;
+  border-left: 4px solid #60a5fa;
+  border-radius: 0.4rem 0.4rem 0 0;
+  background: #ffffff;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Notebook Outputs                                                   */
+/* -------------------------------------------------------------------------- */
+
+.myst-jp-nb-block [data-name="outputs-container"] {
+  margin-top: 0;
+}
+
+.myst-jp-nb-block .myst-jp-stream-output {
+  margin-top: 0;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #e7d7bf;
+  border-top: 0;
+  border-left: 4px solid #f6ad55;
+  border-radius: 0 0 0.4rem 0.4rem;
+  background: #fff7ed;
+}
+
+.myst-jp-nb-block .myst-jp-stream-output::before {
+  content: "Out";
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #c05621;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.dark .myst-jp-nb-block .myst-jp-stream-output {
+  border-color: #3f3a2b;
+  border-left-color: #f6ad55;
+  background: #221d14;
+  color: #f7fafc;
+}
+
+.dark .myst-jp-nb-block .myst-jp-stream-output::before {
+  color: #fbd38d;
+}
+
+.jp-RenderedHTMLCommon.jp-RenderedHTML.jp-mod-trusted.jp-OutputArea-output > .vega-embed.has-actions {
+  padding-right: 0 !important;
+}
+
+.jp-RenderedHTMLCommon.jp-RenderedHTML.jp-mod-trusted.jp-OutputArea-output:has(.vega-embed.has-actions) {
+  padding-right: 0 !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Expected Outputs (Injected Markdown Cells)                                  */
+/* -------------------------------------------------------------------------- */
+
+.expected-output-container {
+  margin: 0 0 1.25rem;
+}
+
+/* Use the regular output styling, but adjust typography to match real outputs. */
+.expected-output-container .myst-jp-stream-output {
+  margin-top: 0;
+  font-family: Menlo, Consolas, DejaVu Sans Mono, monospace;
+  font-size: 0.80rem;
+  font-weight: 100;
+  line-height: 1.25rem;
+  letter-spacing: 0;
+  white-space: pre-wrap;
+}
+
+.expected-output-container .myst-jp-stream-output.expected-output::before {
+  content: "Expected Output";
+}
+
+.expected-output-container .myst-jp-stream-output .expected-output-text {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  white-space: pre-wrap;
+}
+
+.expected-output-image-frame {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #e7d7bf;
+  border-left: 4px solid #f6ad55;
+  border-radius: 0 0 0.4rem 0.4rem;
+  background: transparent;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  text-align: center;
+}
+
+.expected-output-image-frame .expected-output-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #c05621;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.expected-output-image-frame img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.dark .expected-output-image-frame {
+  border-color: #3f3a2b;
+  border-left-color: #f6ad55;
+}
+
+.dark .expected-output-image-frame .expected-output-label {
+  color: #fbd38d;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Notebook Image Outputs (Regular Outputs Container)                           */
+/* -------------------------------------------------------------------------- */
+
+.myst-jp-nb-block:has(> .myst-code:not(.hidden)) [data-name="outputs-container"] > *:has(img) {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #e7d7bf;
+  border-top: 0;
+  border-left: 4px solid #f6ad55;
+  border-radius: 0 0 0.4rem 0.4rem;
+  background: transparent;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  max-width: 100%;
+  text-align: center;
+}
+
+.myst-jp-nb-block:has(> .myst-code:not(.hidden)) [data-name="outputs-container"] > *:has(img) img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.dark .myst-jp-nb-block:has(> .myst-code:not(.hidden)) [data-name="outputs-container"] > *:has(img) {
+  border-color: #3f3a2b;
+  border-left-color: #f6ad55;
+}
+
+.myst-jp-nb-block [data-name="outputs-container"] > *:has(.vega-embed) .vega-embed {
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/*
+  Reserved for future Thebe/live-output support.
+
+  These selectors were used to style interactive Jupyter outputs when notebook
+  execution happens in the browser. They are currently disabled because this
+  book does not use executable notebook cells in the published site.
+
+.myst-jp-nb-block .thebe-output {
+  margin-top: 0;
+}
+
+.myst-jp-nb-block .thebe-output .jp-OutputArea {
+  margin-top: 0;
+  background: transparent;
+  box-shadow: none;
+  border: 0;
+}
+
+.myst-jp-nb-block .thebe-output .jp-OutputArea-child {
+  display: block;
+}
+
+.myst-jp-nb-block .thebe-output .jp-OutputArea-prompt {
+  display: none;
+}
+
+.myst-jp-nb-block .thebe-output .jp-OutputArea-output {
+  display: block;
+}
+
+.myst-jp-nb-block .thebe-output .jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stdout"] {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid #e7d7bf;
+  border-top: 0;
+  border-left: 4px solid #f6ad55;
+  border-radius: 0 0 0.4rem 0.4rem;
+  background: #fff7ed;
+}
+
+.myst-jp-nb-block .thebe-output .jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stdout"]::before {
+  content: "Out";
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #c05621;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.myst-jp-nb-block .thebe-output .jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stdout"] pre {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  white-space: pre-wrap;
+}
+
+.myst-jp-nb-block .thebe-output .jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"] {
+  padding: 0.35rem 0.5rem;
+  background: #fef2f2;
+  color: #991b1b;
+  border-top: 1px solid #fecaca;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  box-shadow: none;
+}
+
+.myst-jp-nb-block .thebe-output .jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"] pre {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  white-space: pre-wrap;
+}
+
+.dark .myst-jp-nb-block .thebe-output .jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stderr"] {
+  background: #3b1215;
+  color: #fecaca;
+  border-top-color: #7f1d1d;
+}
+
+.dark .myst-jp-nb-block .thebe-output .jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stdout"] {
+  border-color: #3f3a2b;
+  border-left-color: #f6ad55;
+  background: #221d14;
+  color: #f7fafc;
+}
+
+.dark .myst-jp-nb-block .thebe-output .jp-OutputArea-output[data-mime-type="application/vnd.jupyter.stdout"]::before {
+  color: #fbd38d;
+}
+*/
