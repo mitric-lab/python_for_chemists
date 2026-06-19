@@ -1,15 +1,9 @@
 ---
 numbering:
   headings: false
-downloads: []
 ---
 
-# Project Ideas
-
-During the project phase, you will work in groups of 2&ndash;3 students and use the methods
-you have learned in this lecture to solve a real-world problem of your choice. The ideas
-below are starting points: you are welcome to use one of them as it is, adapt it to your
-interests, or propose a project idea of your own.
+# Overview 
 
 ## Visualising Newton fractals
 

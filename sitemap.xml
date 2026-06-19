@@ -77,7 +77,13 @@
     <loc>http://localhost:3000/chapters/deep-learning/single-layer-neural-networks</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/project-ideas</loc>
+    <loc>http://localhost:3000/chapters/projects</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/chapters/projects/overview</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/chapters/projects/template</loc>
   </url>
   <url>
     <loc>http://localhost:3000/chapters/problem-sets/pset-0-rich</loc>
