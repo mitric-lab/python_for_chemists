@@ -33,7 +33,10 @@ project:
     - file: chapters/deep_learning.md
       children:
         - file: chapters/deep_learning/single_layer_neural_networks.ipynb
-    - file: chapters/project_ideas.md
+    - file: chapters/projects.md
+      children:
+        - file: chapters/projects/overview.md
+        - file: chapters/projects/template.ipynb
     - title: Problem Sets
       children: 
         - file: chapters/problem_sets/pset_0_rich.ipynb
