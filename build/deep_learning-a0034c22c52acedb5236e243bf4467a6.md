@@ -10,4 +10,4 @@ First, we outline how linear and logistic regression can be extended to so-calle
 
 | Section | Covered Examples | New Concepts and Tools |
 | ------- | ---------------- | ---------------------- |
-| Single-layer neural networks |  |  |
+| Single-layer neural networks | Classification of two concentric circles | Activation functions, `__call__` method, `numpy.contourf`, `numpy.meshgrid` |
