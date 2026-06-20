@@ -5,17 +5,6 @@ numbering:
 
 # Overview 
 
-## Visualising Newton fractals
-
-The Newton&ndash;Raphson method does not only find roots: depending on the starting point, 
-it can also create intricate convergence patterns. In this project, you will apply the 
-Newton&ndash;Raphson method to a equations in the complex plane and visualise which root 
-is reached from each starting point as a heatmap.
-
-**Related knowledge:**
-- Newton&ndash;Raphson method (Sec.&nbsp;{ref}`sec:root_finding`)
-- heatmaps
-
 ## Fitting absorbance data for the decay of tris(oxalato)manganate(III)
 
 In the physical chemistry practical course, you used a linearised model of the absorbance
@@ -25,29 +14,7 @@ nonlinear model, including a background correction.
 
 **Related knowledge:**
 - numerical optimisation (Sec.&nbsp;{ref}`sec:computational_optimisation`)
-- nonlinear regression
-
-## Solving one-dimensional Schrödinger equations
-
-Many quantum-mechanical model systems can be studied by solving the time-independent
-Schrödinger equation numerically. In this project, you will discretise a one-dimensional
-potential with the finite-difference method and compute the corresponding energy levels
-and wave functions.
-
-**Related knowledge:**
-- eigenvalue algorithms (Sec.&nbsp;{ref}`sec:eigenvalue_algorithms`)
-- finite-difference method
-
-## Creating a spice map
-
-Spices can be approximately represented as points in a high-dimensional vector space,
-where similarities between spices are encoded through scalar products or distances. In
-this project, you will use these distances to create a two-dimensional spice map, where
-similar spices appear close to each other and different spices appear farther apart.
-
-**Related knowledge:**
-- singular value decomposition (Sec.&nbsp;{ref}`sec:singular_value_decomposition`)
-- principal coordinate analysis
+- nonlinear regression (Sec.&nbsp;{ref}`sec:regression`)
 
 ## Predicting TLC mobile phase compositions for organic molecules
 
@@ -70,3 +37,7 @@ spectra to predefined classes of molecules and evaluate how reliably the model r
 **Related knowledge:**
 - classification 
 - molecular representations
+
+## Solubility prediction for organic molecules
+
+## Conductivity prediction for ionic solutions
