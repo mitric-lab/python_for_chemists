@@ -54,4 +54,4 @@ aktualisiert.
 | 13  | Di.     | 07.07. | Projektphase | Arbeit an Projekt |
 | 13  | Do.     | 09.07. | Projektphase | Arbeit an Projekt |
 | 14  | Di.     | 14.07. | Projektphase | Präsentationen |
-| 14  | Do.     | 16.07. | Klausurvorbereitung | Wiederholung und Fragen |
+| 14  | Do.     | 16.07. | Klausurvorbereitung | Probeklausur und Fragen |
