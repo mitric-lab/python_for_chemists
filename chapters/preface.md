@@ -52,6 +52,6 @@ aktualisiert.
 | 12  | Di.     | 30.06. | Projektphase | Arbeit an Projekt |
 | 12  | Do.     | 02.07. | Projektphase | Arbeit an Projekt |
 | 13  | Di.     | 07.07. | Projektphase | Arbeit an Projekt |
-| 13  | Do.     | 09.07. | Projektphase | Präsentationen |
+| 13  | Do.     | 09.07. | Projektphase | Arbeit an Projekt |
 | 14  | Di.     | 14.07. | Projektphase | Präsentationen |
 | 14  | Do.     | 16.07. | Klausurvorbereitung | Wiederholung und Fragen |
