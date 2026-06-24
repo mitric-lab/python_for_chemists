@@ -5,6 +5,8 @@ numbering:
 
 # Overview 
 
+Below is an overview of the projects, which are designed to help you apply and deepen the knowledge gained in the course. Please note that **these project outlines are preliminary** and meant to assist you as you begin your work. Stay adaptable and be ready to adjust your approach as you gain new understanding during the project.
+
 ## Fitting absorbance data for the decay of tris(oxalato)manganate(III)
 
 In the physical chemistry practical course, you used a linearised model of the absorbance
@@ -13,8 +15,8 @@ project, you will return to the original data and fit it directly with a more re
 nonlinear model, including a background correction.
 
 **Related knowledge:**
-- numerical optimisation (Sec.&nbsp;{ref}`sec:computational_optimisation`)
-- nonlinear least-squares fitting
+- Numerical optimisation (Sec.&nbsp;{ref}`sec:computational_optimisation`)
+- Nonlinear least-squares fitting (Sec.&nbsp;{ref}`sec:regression`)
 
 **Suggested project guide:**
 
@@ -87,8 +89,17 @@ model to predict suitable TLC mobile phase compositions, and evaluate its perfor
 on a test set.
 
 **Related knowledge:**
-- linear regression (Sec.&nbsp;{ref}`sec:regression`)
-- molecular representations
+- Regression models (Sec.&nbsp;{ref}`sec:regression`)
+- Neural networks (Sec.&nbsp;{ref}`sec:multi_layer_neural_networks`)
+- Molecular representations (Sec.&nbsp;{ref}`sec:molecular_representations`)
+
+**Suggested project guide:**
+
+Start by treating mobile-phase prediction as a supervised machine learning task and define the problem statement carefully, since the data collection strategy depends on this choice. In particular, specify which solvent systems are considered and what the input $\vec{x}$ and target $\vec{y}$ should represent. Once the predictive task is fixed, search the literature for relevant datasets and protocols. Extracting and postprocessing these data can be time consuming, so use tools such as `pandas` for data management and `rdkit` for chemical data handling.
+
+Similar studies show that both molecular representation and model architecture can strongly affect predictive performance.[^1] To make a meaningful comparison, evaluate all models on data that was not used for training, for example using nested cross-validation. Metrics such as $R^2$ help assess how much of the target variance is captured by the predictions.
+
+[^1]: https://doi.org/10.3390/molecules26092474
 
 ## Classifying chemical samples from spectra
 
@@ -97,8 +108,15 @@ chemical samples. In this project, you will train a simple classification model 
 spectra to predefined classes of molecules and evaluate how reliably the model recognises new samples.
 
 **Related knowledge:**
-- classification (Sec.&nbsp;{ref}`sec:classification`)
-- molecular representations
+- Classification models (Sec.&nbsp;{ref}`sec:classification`)
+- Neural networks (Sec.&nbsp;{ref}`sec:multi_layer_neural_networks`)
+- Molecular representations (Sec.&nbsp;{ref}`sec:molecular_representations`)
+
+**Suggested project guide:**
+
+Start by defining the classification task, including the type of spectra you want to use, such as IR, NMR, simulated spectra, or experimental spectra. A rich data source is the [NIST Chemistry WebBook](https://webbook.nist.gov/chemistry/). Choose the class labels carefully, for example molecular classes, functional groups, compound identities, or sample types, because this choice determines the structure of the dataset.
+
+Next, decide how the spectra should be represented numerically, for example as raw intensities on a common grid, binned spectra, extracted peak positions, or peak intensities. Apply preprocessing steps such as baseline correction, normalisation, smoothing, or standardisation consistently, and avoid leaking information from the test set into the training process. Suitable models include support vector machines, random forests, and neural networks with a softmax output layer. Evaluate the final model on unseen data using metrics such as accuracy, precision, recall, F1 score, and, where useful, a confusion matrix. Discuss possible pitfalls such as overfitting, underfitting, class imbalance, and overly optimistic results caused by data leakage.
 
 ## Solubility prediction for organic molecules
 
@@ -109,8 +127,17 @@ aqueous solubility, and evaluate which molecular features are most useful for
 prediction.
 
 **Related knowledge:**
-- linear regression (Sec.&nbsp;{ref}`sec:regression`)
-- molecular representations
+- Regression models (Sec.&nbsp;{ref}`sec:regression`)
+- Neural networks (Sec.&nbsp;{ref}`sec:multi_layer_neural_networks`)
+- Molecular representations (Sec.&nbsp;{ref}`sec:molecular_representations`)
+
+**Suggested project guide:**
+
+Treat solubility prediction as a supervised regression task in which molecular structure is used to predict an experimentally measured solubility value. Use the literature as a starting point, since numerous studies and benchmark datasets exist for aqueous solubility prediction of organic molecules.[^2] Choose suitable molecular representations, such as hand-crafted descriptors, fingerprints, or learned embeddings, and compare how strongly this choice affects model performance.
+
+Train and compare regression models such as linear regression, random forests, kernel methods, or neural networks, while keeping a separate test set for unbiased evaluation. Assess predictive performance with metrics such as mean squared error, mean absolute error, and $R^2$. In addition to prediction accuracy, focus on explainability: analyse which descriptors, substructures, or functional groups contribute most strongly to the predicted solubility, and discuss whether the model decisions are chemically plausible. For example, polar groups, hydrogen-bond donors and acceptors, charge, molecular size, and hydrophobic fragments should influence the prediction in chemically meaningful ways.
+
+[^2]: https://doi.org/10.1021/acs.jcim.4c02399
 
 ## Inferring ionic solution composition
 
@@ -120,8 +147,8 @@ conductivity curves and use them to infer a plausible composition of an unknown 
 solution.
 
 **Related knowledge:**
-- numerical optimisation (Sec.&nbsp;{ref}`sec:computational_optimisation`)
-- electrolyte conductivity models
+- Numerical optimisation (Sec.&nbsp;{ref}`sec:computational_optimisation`)
+- Electrolyte conductivity models
 
 **Suggested project guide:**
 
