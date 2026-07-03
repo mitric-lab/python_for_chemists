@@ -103,4 +103,7 @@
   <url>
     <loc>http://localhost:3000/chapters/problem-sets/pset-3-rich</loc>
   </url>
+  <url>
+    <loc>http://localhost:3000/assets/downloads/problem-sets/sample-exam</loc>
+  </url>
 </urlset>
