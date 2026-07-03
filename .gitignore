@@ -8,6 +8,7 @@ archive/
 # generated problem sets
 chapters/problem_sets/*.ipynb
 assets/downloads/problem_sets/*.ipynb
+!assets/downloads/problem_sets/sample_exam.ipynb
 
 # Jupyter Notebook
 .ipynb_checkpoints

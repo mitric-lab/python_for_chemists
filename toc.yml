@@ -45,3 +45,5 @@ project:
         - file: chapters/problem_sets/pset_1_rich.ipynb
         - file: chapters/problem_sets/pset_2_rich.ipynb
         - file: chapters/problem_sets/pset_3_rich.ipynb
+        - file: assets/downloads/problem_sets/sample_exam.ipynb
+          title: Klausurvorbereitung
