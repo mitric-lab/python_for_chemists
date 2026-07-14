@@ -37,8 +37,12 @@ project:
         - file: chapters/deep_learning/molecular_representations.ipynb
     - file: chapters/projects.md
       children:
-        - file: chapters/projects/overview.md
         - file: chapters/projects/template.ipynb
+        - file: chapters/projects/manganate_decay.ipynb
+        - file: chapters/projects/tlc_mobile_phase_prediction.ipynb
+        - file: chapters/projects/spectra_classification.ipynb
+        - file: chapters/projects/solubility_prediction.ipynb
+        - file: chapters/projects/electrolyte_identification.ipynb
     - title: Problem Sets
       children: 
         - file: chapters/problem_sets/pset_0_rich.ipynb

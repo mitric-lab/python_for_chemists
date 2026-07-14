@@ -13,6 +13,10 @@ assets/downloads/problem_sets/*.ipynb
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# Large project data files (download from original source)
+assets/data/projects/IR_data_chunk001_of_009.parquet
+assets/data/projects/IR_data_chunk002_of_009.parquet
+
 # Python
 **/__pycache__/
 **/*.py[cod]
