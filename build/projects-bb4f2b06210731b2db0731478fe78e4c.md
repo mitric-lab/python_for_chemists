@@ -12,5 +12,9 @@ We will be available during the usual lecture times to answer questions and help
 
 | Section | Content |
 | ------- | ------- |
-| Overview | Brief descriptions of the project topics |
 | Template | Notebook template for the project report |
+| Manganate Decay | Fitting absorbance data for the decay of tris(oxalato)manganate(III) |
+| TLC Mobile Phase Prediction | Predicting TLC mobile phase compositions for organic molecules |
+| Spectra Classification | Classifying chemical samples from IR spectra |
+| Solubility Prediction | Predicting aqueous solubility from molecular structure |
+| Electrolyte Identification | Inferring ionic solution composition from conductivity data |

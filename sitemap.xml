@@ -86,10 +86,22 @@
     <loc>http://localhost:3000/chapters/projects</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/projects/overview</loc>
+    <loc>http://localhost:3000/chapters/projects/template</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/chapters/projects/template</loc>
+    <loc>http://localhost:3000/chapters/projects/manganate-decay</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/chapters/projects/tlc-mobile-phase-prediction</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/chapters/projects/spectra-classification</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/chapters/projects/solubility-prediction</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/chapters/projects/electrolyte-identification</loc>
   </url>
   <url>
     <loc>http://localhost:3000/chapters/problem-sets/pset-0-rich</loc>
