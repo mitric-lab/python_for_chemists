@@ -83,6 +83,9 @@
     <loc>http://localhost:3000/chapters/deep-learning/molecular-representations</loc>
   </url>
   <url>
+    <loc>http://localhost:3000/chapters/summary</loc>
+  </url>
+  <url>
     <loc>http://localhost:3000/chapters/projects</loc>
   </url>
   <url>
