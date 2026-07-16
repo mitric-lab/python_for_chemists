@@ -9,6 +9,7 @@ archive/
 chapters/problem_sets/*.ipynb
 assets/downloads/problem_sets/*.ipynb
 !assets/downloads/problem_sets/sample_exam.ipynb
+!assets/downloads/problem_sets/sample_exam_solution.ipynb
 
 # Jupyter Notebook
 .ipynb_checkpoints

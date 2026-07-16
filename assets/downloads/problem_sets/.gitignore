@@ -1,5 +1,6 @@
 *.ipynb
 !sample_exam.ipynb
+!sample_exam_solution.ipynb
 !.gitignore
 !README.md
 
