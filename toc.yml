@@ -35,8 +35,8 @@ project:
         - file: chapters/deep_learning/single_layer_neural_networks.ipynb
         - file: chapters/deep_learning/multi_layer_neural_networks.ipynb
         - file: chapters/deep_learning/molecular_representations.ipynb
-    # - file: chapters/summary.ipynb
-    #   title: Forschungsthemen
+    - file: chapters/summary.ipynb
+      title: Forschungsthemen
     - file: chapters/projects.md
       children:
         - file: chapters/projects/template.ipynb
