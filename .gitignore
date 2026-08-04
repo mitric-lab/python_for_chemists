@@ -4,6 +4,7 @@ book/
 
 # old materials
 archive/
+exam/
 
 # generated problem sets
 chapters/problem_sets/*.ipynb
